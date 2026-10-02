@@ -11,7 +11,9 @@ permissions:
 concurrency: rpi-refresh
 jobs:
   refresh:
-    runs-on: ubuntu-latest
+    # Repository variable RPI_RUNNER = self-hosted (a machine in India) once set up; default is GitHub's cloud runner.
+    # GitHub's US datacenter IPs get 403 from the DoCA mirror (see probe.yml), so DoCA-fed items need an India-based runner.
+    runs-on: ${{ vars.RPI_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4

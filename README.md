@@ -222,3 +222,15 @@ The Rajkot-centre DoCA quotes are one sticky reporter, and 17 of 20 failed the g
 ### Twelfth look: nothing new passed (independent share unchanged at 36.5%)
 
 A further sweep of brand stores, open price trackers and Rajkot administered-price news found no new series that clears the bar. The brand-store diary now also accrues Bajaj Electricals 9 W LED and 3 L pressure cookers (list prices, no discounts; diagnostic only because Wayback has nothing before Apr 2025). The Rajkot chai step (D002) was re-checked; it was later wired as a conservative proxy (+15.4%, see the thirteenth note). Details: section P of `data/official/source_inventory_2026-10-02.md`.
+
+
+## Deployment (GitHub Actions)
+
+* `daily.yml` refreshes every source and commits `data/` and `docs/` daily (10:30 IST) or on demand (Actions -> rpi-refresh -> Run workflow). `ci.yml` runs the tests on code changes.
+  `probe.yml` (manual) prints which data hosts answer from the runner.
+* **Network caveat, measured 2026-10-02 from a GitHub-hosted runner (Phoenix, US, Azure):** `cpi.reclaimchennai.city` (the DoCA mirror) returns **403**, and Labour Bureau and the
+  MoSPI API do not answer. On the hosted runner the DoCA-fed items (F002, F003, F005, F006, F008, F011, F013, F020, F024, F026) and the CPI-IW benchmark therefore do not refresh; the run logs the error
+  and keeps the last good data instead of faking it. PPAC, IBJA, acrop, goodreturns, Divya Bhaskar and fcainfoweb answer normally.
+* **Fix:** register a self-hosted runner on a machine with an Indian IP (Settings -> Actions -> Runners -> New self-hosted runner), then set the repository variable
+  `RPI_RUNNER` to `self-hosted` (Settings -> Secrets and variables -> Actions -> Variables). No code change needed.
+* Raw HTTP snapshots (`data/sources_raw/`, `data/raw/`) are git-ignored; everything the index needs is in `data/` and `docs/`.
