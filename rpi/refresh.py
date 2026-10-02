@@ -302,6 +302,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
                        ("mandi_rajkot_district", AcropCollector(client, store, "mandi_rajkot_district")),
                        ("yard_rajkot_board", YardBoardCollector(client, store)),
                        ("gr_png", _png_collector(client, store, root)), ("necc_ahmedabad", EggCollector(client, store))]
+        from .collectors.dmart import DmartCollector     # Ahmedabad DMart Ready shelf prices; own 4 s client (WAF rate limit), stops on first non-200
+        collectors.append(("dmart_ahmedabad", DmartCollector(PoliteClient(ua, min_delay=4.0, retries=1, session=session()), store, root=root)))
         if doca_state["ok"]:
             from .collectors.doca import DocaRetailCollector
             collectors.append(("doca_rajkot", DocaRetailCollector(client, store)))

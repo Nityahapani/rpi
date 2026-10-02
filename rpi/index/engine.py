@@ -47,7 +47,8 @@ def _load_ref(conn):
     return items, w.set_index("item_id")["weight"], w["weight_source"].iloc[0]
 
 
-SINGLE_SERIES_SOURCES = ("official_link", "gr_metals", "mandi_gondal", "gr_png", "necc_ahmedabad", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "doca_rajkot", "doca_national", "tariff")
+# dmart_ahmedabad is a multi-SKU pool but min_matched=1: a SKU that is out of stock for a month must not make the whole item imputed.
+SINGLE_SERIES_SOURCES = ("official_link", "gr_metals", "mandi_gondal", "gr_png", "necc_ahmedabad", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "doca_rajkot", "doca_national", "dmart_ahmedabad", "tariff")
 
 
 def price_update_weights(weights: pd.Series, wsrc: str, base_period: str, official_csv=None, mapping_csv=None):

@@ -314,3 +314,23 @@ Pre-registered adoption rule: out-of-sample RMSE gain ≥ 10% on the reference t
 - Caveats: WFP "Rice", "Wheat flour", "Oil (groundnut)" are generic grades, not the basket specs; WFP has no matching ghee, banana, brinjal or tur/chana dal series, so F003/F005/F007/F012/F024/F025 were not tested.
 
 **Effect on the index:** none. Published Aug 107.666, Sep 108.885 (nowcast), Oct 109.413 (nowcast), independent share 38.5% — all unchanged.
+
+## W. Seventeenth look (2026-10-02): DMart Ready Ahmedabad shelf prices WIRED for 17 packaged items
+
+**Why it was missed before:** section S rejected DMart because Rajkot pincodes are not served (`isHDEnabled=false`) and the default store is Mumbai. The missing step was the pincode -> store lookup (`/v1/pincodes/search/380001` -> StoreId 10681 = Ahmedabad). Category listings for that store return every SKU with MRP and shelf price, so an Ahmedabad (Gujarat big-city) proxy is available, in the same class as NECC Ahmedabad eggs.
+
+| Item | What was found |
+|---|---|
+| Endpoint | `https://digital.dmart.in/api/v3/plp/{categoryId}?page&size=40&channel=web&storeId=10681`; category ids from `/v1/categories/top?storeId=10681`. No robots.txt on the API host (404); www.dmart.in robots disallows only app/cart/pdp pages. |
+| WAF | The *search* endpoint returned HTTP 403 after about 40 requests in a minute and stayed blocked for the rest of the session. Category listings were not blocked at 4 s spacing (24 requests). The collector uses 4 s spacing, about 25 requests per run, no retries, and stops on the first non-200. Nothing evades the WAF. |
+| Pool | `data/dmart/pool.csv`: 66 mainstream SKUs, 2-5 per item, fixed on 2026-10-02 before any history existed (rules in `scripts/build_dmart_pool.py`). Price = shelf price (priceSALE); MRP kept as `regular_price`. |
+| Items wired (plan weight 16.6%) | F007 cottonseed oil, F012 ghee, F014 tea, F015 salt, F016 turmeric, F017 biscuits, F018 noodles, F019 bread, H001 detergent, H002 dishwash, H003 LED bulb, H004 pressure cooker, M002 antiseptic liquid, E003 notebook, P001 soap, P002 shampoo, P003 toothpaste. |
+| Not wired | F010 curd (only one in-stock curd SKU at selection). Clothing/footwear (DMart's range is private-label and not our fixed brand/style). |
+| History | None exists: accrues forward from 2 Oct 2026. Earlier months keep the official stand-in; the splice month is imputed. So the Sep and Oct 2026 index levels are unchanged by this wiring (checked: 108.885 / 109.413). |
+| Gate | Proxy gate (corr >= 0.5, drift <= 0.10 vs the official item index) applies after 6 overlapping months, so every DMart item is `pending` until about April 2027. Multi-SKU series are validated as a matched-model Jevons chain (`rpi/proxy_check.chain_series`). |
+| Reachability | Sandbox: yes. GitHub-hosted runner: refused (HTTP 403, probe 2026-10-02), so the daily workflow logs `ingest:dmart_ahmedabad` as an error step and carries on; the series accrues when the pipeline is run from a network that can reach it. |
+| Risks | (1) Ahmedabad is not Rajkot. (2) DMart's shelf price includes DMart's own discounting (e.g. LED bulb Rs45 against MRP Rs160), which is a real shelf price but moves independently of MRPs. (3) A WAF/ToS change can end the feed. The dmart.in terms of use were not reviewed in detail. (4) The official item indices are the yardstick and, for these items, the stand-in until the feed has history, so accuracy against MoSPI cannot be judged yet. |
+
+**Independent share after this sweep (plan weight): 55.1%** = 18.0% direct (tariff/spot/PNG, not gated) + 12.8% gated and passing (DoCA, NECC, mandi) + 24.3% pending validation (DMart 16.6%, mandi 7.7%). Before: 38.5%. Observed-in-August share is unchanged at 29.6% because DMart starts in October.
+
+Other leads probed this sweep and rejected: Open Prices (Open Food Facts price database): only 404 INR prices worldwide, none in Rajkot or Gujarat, and its country filter is ignored. Tyre makers' 2026 price rises: only blogs, no dated MRP list. JioFiber/Airtel broadband: blogs only (already in section K), no operator archive.

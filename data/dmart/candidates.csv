@@ -1,0 +1,504 @@
+item,cat,brand,pname,pid,sku,name,mrp,sale,inv,buy,var,harvested_on
+F007,240277,Tirupati,Tirupati Cotton Seed Oil,690249,689168,Tirupati Cotton Seed Oil : 15 kg,3251.0,3016.0,2,true,15 kg,2026-10-02
+F007,240277,Gulab,Gulab Cotton Seed Oil,690266,689174,Gulab Cotton Seed Oil : 15 kg,4125.0,2987.0,2,true,15 kg,2026-10-02
+F007,240277,Gulab,Gulab Cotton Seed Oil,714645,713109,Gulab Cotton Seed Oil : 4.35 kg,1305.0,940.0,2,true,4.35 kg,2026-10-02
+F007,240277,Gulab,Gulab Cotton Seed Oil,714645,689176,Gulab Cotton Seed Oil : 870 g,265.0,180.0,2,true,870 g,2026-10-02
+F007,240277,Tirupati,Tirupati Refined Cotton Seed Oil 5 L,690250,689169,Tirupati Refined Cotton Seed Oil : 4.55 kg,1139.0,952.0,2,true,4.55 kg,2026-10-02
+F007,240277,Tirupati,Tirupati Refined Cotton Seed Oil 5 L,690250,689170,Tirupati Cotton Seed Oil : 910 g,262.0,183.0,2,true,910 g,2026-10-02
+F007,240277,Fortune,Fortune Cotton Seed Oil,690297,689184,Fortune Cotton Seed Oil : 15 kg,3500.0,2912.0,2,true,15 kg,2026-10-02
+F007,240277,Vimal,Vimal Refined Cottonseed Oil Tin,690283,689180,Vimal Refined Cottonseed Oil Tin : 15 kg,3574.0,2978.0,2,true,15 kg,2026-10-02
+F007,240277,Vimal,Vimal Refined Cottonseed Oil Jar,690284,689181,Vimal Refined Cottonseed Oil Jar : 4.350 kg,1212.0,920.0,2,true,4.35 kg,2026-10-02
+F007,240277,Vimal,Vimal Refined Cottonseed Oil Jar,690284,689182,Vimal Cotton Seed Oil : 870 g,234.0,179.0,2,true,870 g,2026-10-02
+F007,240277,Ankur,Ankur Cotton Seed Oil,690273,689177,Ankur Cotton Seed Oil : 4.350 kg,1300.0,920.0,2,true,4.350 kg,2026-10-02
+F007,240277,Ankur,Ankur Cotton Seed Oil,690273,689178,Ankur Cotton Seed Oil : 870 g,260.0,181.0,2,true,870 g,2026-10-02
+F007,240277,Ankur,Ankur Cotton Seed Oil,690270,689175,Ankur Cotton Seed Oil : 15 kg,3600.0,3000.0,2,true,15 kg,2026-10-02
+F010,240892,Milky Mist,Milky Mist Curd,748002,743339,Milky Mist Curd : 1 kg,145.0,109.0,0,true,1 kg,2026-10-02
+F010,240892,Amul,Amul Masti Dahi,237515,727088,Amul Masti Dahi : 200 g,25.0,24.0,0,true,200 g,2026-10-02
+F010,240892,Milky Mist,Milky Mist Pro Biotic Curd,1676784,1675524,Milky Mist Pro Biotic Curd : 1 kg,150.0,111.0,2,true,1 kg,2026-10-02
+F010,240892,Amul,Amul Masti Curd,1642660,1642067,Amul Masti Curd : 1 kg,115.0,114.0,0,true,1 kg,2026-10-02
+F010,240892,Milky Mist,Milky Mist Mishti Doi,1397031,1396520,Milky Mist Mishti Doi : 100 g,35.0,18.0,2,true,100 g,2026-10-02
+F010,240892,Milky Mist,Milky Mist Greek Yogurt Honey & Fig,1676785,1675525,Milky Mist Greek Yogurt Honey & Fig : 100 g,60.0,38.0,2,true,100 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Pure Cow Ghee Pouch,14210,713053,Gowardhan Ghee Pouch : 452.5 g,455.0,394.0,2,true,452.5 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Pure Cow Ghee Pouch,14210,11071,Gowardhan Pure Cow Ghee Pouch : 905 g,870.0,798.0,2,true,905 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Pure Cow Ghee Pouch,14210,772501,Gowardhan Pure Cow Ghee Pouch (2x1) : 1.81 kg,1730.0,1490.0,2,true,1.81 kg,2026-10-02
+F012,240287,Amul,Amul Cow Ghee Pouch,14220,11063,Amul Cow Ghee Pouch : 905 g,695.0,662.0,0,true,905 g,2026-10-02
+F012,240287,Amul,Amul Cow Ghee Pouch,14220,689007,Amul Pure Cow Ghee Pouch : 452 g,350.0,335.0,0,true,452 g,2026-10-02
+F012,240287,Milky Mist,Milky Mist Ghee Pouch,850690,848001,Milky Mist Ghee Pouch : 910 g,920.0,676.0,2,true,910 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Pure Cow Ghee Jar (500 ml),14224,11068,Gowardhan Pure Cow Ghee : 181 g,205.0,187.0,2,true,181 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Pure Cow Ghee Jar (500 ml),14224,11069,Gowardhan Pure Cow Ghee Jar : 452.5 g,460.0,399.0,2,true,452.5 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Pure Cow Ghee Jar (500 ml),14224,11070,Gowardhan Pure Cow Ghee : 905 g,890.0,788.0,2,true,905 g,2026-10-02
+F012,240287,Patanjali,Patanjali Cow Ghee (1 L),14219,99522,Patanjali Cow Ghee : 452.5 g,438.0,403.0,2,true,452.5 g,2026-10-02
+F012,240287,Patanjali,Patanjali Cow Ghee (1 L),14219,11066,Patanjali Cow Ghee : 814.5 g,825.0,799.0,2,true,814.5 g,2026-10-02
+F012,240287,Gowardhan,Gowardhan Cow Ghee Tin (5 L),380502,31504,Gowardhan Cow Ghee Tin : 4.525 kg,4400.0,3813.0,2,true,4.525 kg,2026-10-02
+F012,240287,Amul,Amul Cow Ghee Tin,14221,11065,Amul Cow Ghee Tin : 905 g,705.0,672.0,2,true,905 g,2026-10-02
+F012,240287,Dynamix,Dynamix Cow Ghee Pouch,14222,11064,Dynamix Cow Ghee Pouch : 902 g,790.0,706.0,2,true,902 g,2026-10-02
+F012,240287,Dynamix,Dynamix Cow Ghee Pouch,14222,796140,Dynamix Cow Ghee Pouch : 451 g,385.0,338.0,0,true,451 g,2026-10-02
+F012,240287,Amul,Amul Cow Ghee Box,690623,691001,Amul Cow Ghee Box : 905 g,705.0,675.0,0,true,905 g,2026-10-02
+F012,240287,Dynamix,Dynamix Cow Ghee Jar (1 L),14223,11062,Dynamix Cow Ghee Jar : 902 g,800.0,716.0,2,true,902 g,2026-10-02
+F012,240287,Dynamix,Dynamix Cow Ghee Jar (1 L),14223,11061,Dynamix Cow Ghee Jar : 451 g,390.0,343.0,0,true,451 g,2026-10-02
+F012,240287,Patanjali,Patanjali Cow's Ghee Tin,1314022,1281592,Patanjali Cow's Ghee Tin : 4.525 kg,3843.0,3579.0,2,true,4.525 kg,2026-10-02
+F012,240287,Milky Mist,Milky Mist Ghee Jar,1298025,1294501,Milky Mist Ghee Jar : 182 g,210.0,161.0,2,true,182 g,2026-10-02
+F012,240287,Haribol,Haribol A2 Desi Gir Cow Ghee - 1 L,1225517,1684028,Haribol A2 Desi Gir Cow Ghee : 225 g,590.0,480.0,0,true,225 g,2026-10-02
+F012,240287,Haribol,Haribol A2 Desi Gir Cow Ghee - 1 L,1225517,1222002,Haribol A2 Desi Gir Cow Ghee : 450 g,1140.0,889.0,2,true,450 g,2026-10-02
+F012,240287,Gits,Gits Cow Ghee Jar,1595161,1596021,Gits Cow Ghee Jar : 181 g,190.0,145.0,2,true,181 g,2026-10-02
+F012,240264,Amul,Amul Pure Ghee Pouch (500 ml),14053,31001,Amul Pure Ghee Pouch : 452 g,325.0,315.0,0,true,452 g,2026-10-02
+F012,240264,Amul,Amul Pure Ghee Pouch (500 ml),14053,11072,Amul Pure Ghee Pouch : 905 g,640.0,627.0,0,true,905 g,2026-10-02
+F012,240264,Amul,Amul Pure Ghee,14054,11075,Amul Pure Ghee Tin : 905 g,650.0,640.0,2,true,905 g,2026-10-02
+F012,240264,Sagar,Sagar Pure Ghee Pouch,14211,11074,Sagar Pure Ghee Pouch : 905 g,640.0,627.0,0,true,905 g,2026-10-02
+F012,240264,Amul,Amul Ghee Refill,690620,691002,Amul Ghee Refill : 905 g,660.0,645.0,0,true,905 g,2026-10-02
+F012,240264,Haldiram's,Haldiram's Deshi Ghee (1 L),1195504,1193001,Haldiram's Deshi Ghee : 905 g,730.0,625.0,0,true,905 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premium Leaf Tea,14243,87529,Wagh Bakri Premium Leaf Tea Pouch : 250 g,150.0,144.0,2,true,250 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premium Leaf Tea,14243,12047,Wagh Bakri Premium Leaf Tea Pouch : 500 g,295.0,280.0,2,true,500 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premium Leaf Tea,14243,12050,Wagh Bakri Premium Leaf Tea Pouch : 1 kg,580.0,545.0,2,true,1 kg,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Dust Tea,690257,689360,Wagh Bakri Dust Tea : 250 g,135.0,131.0,2,true,250 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Dust Tea,690257,689361,Wagh Bakri Dust Tea : 500 g,265.0,255.0,2,true,500 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Dust Tea,690257,689362,Wagh Bakri Dust Tea : 1 kg,520.0,495.0,2,true,1 kg,2026-10-02
+F014,240879,Tata Agni,Tata Tea Agni,14241,633002,Tata Tea Agni : 1.5 kgs,375.0,302.0,2,true,1.5 kg,2026-10-02
+F014,240879,Tata Agni,Tata Tea Agni,14241,12068,Tata Tea Agni : 1 kg,260.0,237.0,2,true,1 kg,2026-10-02
+F014,240879,Tata Agni,Tata Tea Agni,14241,12063,Tata Tea Agni : 500 g,140.0,128.0,2,true,500 g,2026-10-02
+F014,240879,Tata Agni,Tata Tea Agni,14241,12062,Tata Tea Agni : 250 g,70.0,65.0,2,true,250 g,2026-10-02
+F014,240879,Josh,Josh Kadak Tea,1595221,1597027,Josh Kadak Tea : 1 kg,225.0,196.0,2,true,1 kg,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Navchetan Tea,96547,689397,Wagh Bakri Navchetan Tea : 500 g,110.0,103.0,2,true,500 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Navchetan Tea,96547,98514,Wagh Bakri Navchetan Tea : 1 kg,220.0,201.0,2,true,1 kg,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Spiced Tea,690511,689396,Wagh Bakri Spiced Tea : 500 g,320.0,285.0,2,true,500 g,2026-10-02
+F014,240879,Tata Gold,Tata Tea Gold,14242,12066,Tata Tea Gold : 250 g,155.0,143.0,2,true,250 g,2026-10-02
+F014,240879,Tata Gold,Tata Tea Gold,14242,12067,Tata Tea Gold : 500 g,310.0,279.0,2,true,500 g,2026-10-02
+F014,240879,Tata Gold,Tata Tea Gold,14242,102502,Tata Tea Gold : 1 kg,590.0,441.0,2,true,1 kg,2026-10-02
+F014,240879,Mili,Mili Leaf Tea,690258,689363,Mili Leaf Tea : 1 kg,440.0,402.0,2,true,1 kg,2026-10-02
+F014,240879,Brooke Bond,Brooke Bond Taaza Tea,690265,689364,Brooke Bond Taaza Tea : 1 kg,250.0,208.0,2,true,1 kg,2026-10-02
+F014,240879,Brooke Bond Red Label,Brooke Bond Red Label Natural Care Tea,14368,94012,Brooke Bond Red Label Natural Care Tea : 1 kg,570.0,454.0,2,true,1 kg,2026-10-02
+F014,240879,Brooke Bond Red Label,Brooke Bond Red Label Natural Care Tea,14368,12027,Brooke Bond Red Label Natural Care Tea : 500 g,290.0,247.0,2,true,500 g,2026-10-02
+F014,240879,Brooke Bond Red Label,Brooke Bond Red Label Natural Care Tea,14368,12026,Brooke Bond Red Label Natural Care Tea : 250 g,145.0,135.0,2,true,250 g,2026-10-02
+F014,240879,Tata Tea,Tata Tea Elaichi Chai,690563,689406,Tata Tea Elaichi Chai : 1 kg,340.0,282.0,2,true,1 kg,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premium Masala Chai,714623,713671,Wagh Bakri Premium Masala Chai : 250 g,160.0,145.0,2,true,250 g,2026-10-02
+F014,240879,Brooke Bond,Brooke Bond Taaza Masala Chaska Elachi,1781702,1773026,Brooke Bond Taaza Masala Chaska Elachi : 1 kg,300.0,282.0,2,true,1 kg,2026-10-02
+F014,240879,DMart Premia,DMart Premia Tea Masala (Cha Masala),615020,614502,DMart Premia Tea Masala (Cha Masala) : 50 g,75.0,53.0,2,true,50 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Mili Leaf Tea,775006,771529,Wagh Bakri Mili Leaf Tea : 250 g,110.0,99.0,2,true,250 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Navchetan Dust Tea Pouch,932006,910511,Wagh Bakri Navchetan Dust Tea Pouch : 1 kg,280.0,250.0,2,true,1 kg,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Good Morning,850985,799762,Wagh Bakri Good Morning : 500 g,320.0,295.0,2,true,500 g,2026-10-02
+F014,240879,Tulsi,Tulsi Tea,690524,689398,Tulsi Tea : 1 kg,440.0,399.0,0,true,1 kg,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premix Masala Instant Tea,714622,713670,Wagh Bakri Premix Masala Instant Tea : 140 g,135.0,94.0,2,true,140 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premix Elaichi Instant Tea,714620,713668,Wagh Bakri Premix Elaichi Instant Tea : 140 g,135.0,100.0,2,true,140 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premix Ginger Instant Tea,714621,713669,Wagh Bakri Premix Ginger Instant Tea : 140 g,135.0,94.0,2,true,140 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Premix Instant Tea,714619,713667,Wagh Bakri Premix Instant Tea : 168 g,150.0,115.0,2,true,168 g,2026-10-02
+F014,240879,Wagh Bakri,Wagh Bakri Ice Lemon Tea,1294009,799761,Wagh Bakri Ice Lemon Tea : 250 g,120.0,100.0,2,true,250 g,2026-10-02
+F014,240879,Tata Tea,Tata Tea Lal Ghoda Assam Leaf Tea,1644522,1643064,Tata Tea Lal Ghoda Assam Leaf Tea : 1.25 kg,430.0,325.0,2,true,1.25 kg,2026-10-02
+F014,240879,Double Chabi,Double Chabi Royal Basmati Rice,1817062,1815521,Double Chabi Royal Basmati Rice : 5 kg,1000.0,890.0,2,true,5 kg,2026-10-02
+F015,240235,Tata,Tata Salt,690194,11340,Tata Salt : 1 kg,32.0,29.0,2,true,1 kg,2026-10-02
+F015,240235,Tata,Tata Salt,690194,689262,Tata Salt : 2 kgs,62.0,57.0,2,true,2 kg,2026-10-02
+F015,240235,Puro,Puro Healthy Salt,302576,307001,Puro Healthy Salt : 1 kg,99.0,74.0,2,true,1 kg,2026-10-02
+F015,240235,Tata,Tata Rock Salt Powder Pouch,627677,796004,Tata Rock Salt : 1 kg,120.0,79.0,2,true,1 kg,2026-10-02
+F015,240235,Tata,Tata Salt Lite,14156,11339,Tata Salt Lite - Low Sodium Iodised : 1 kg,55.0,50.0,2,true,1 kg,2026-10-02
+F015,240235,Tasva,Tasva Sendha Rock Salt,712205,713263,Tasva Sendha Rock Salt : 1 kg,130.0,65.0,2,true,1 kg,2026-10-02
+F015,240235,Heem Rock Salt,Heem Rock Salt (Sendha Namak),1315068,1299018,Heem Rock Salt (Sendha Namak) : 1 kg,90.0,45.0,2,true,1 kg,2026-10-02
+F015,240235,,Rock Salt,989501,982501,Rock Salt : 1 kg,78.0,45.0,2,true,1 kg,2026-10-02
+F015,240235,Aashirvaad,Aashirvaad Iodized Salt,14155,11338,Aashirvaad Iodized Salt : 1 kg,32.0,22.0,2,true,1 kg,2026-10-02
+F015,240235,Tata,Tata Salt - Iron Health,1339546,1339547,Tata Salt - Iron Health : 1 kg,35.0,30.0,2,true,1 kg,2026-10-02
+F015,240235,Five Star,Five Star Sanchal Powder,712485,713265,Five Star Sanchal Powder : 100 g,15.0,14.0,2,true,100 g,2026-10-02
+F015,240235,Five Star,Five Star Sindhav Powder,712486,713266,Five Star Sindhav Powder : 100 g,18.0,17.0,2,true,100 g,2026-10-02
+F016,240272,Ramdev,Ramdev Turmeric Powder,14116,11222,Ramdev Turmeric Powder : 200 g,104.0,98.0,2,true,200 g,2026-10-02
+F016,240272,Ramdev,Ramdev Turmeric Powder,14116,689221,Ramdev Turmeric Powder : 500 g,250.0,226.0,2,true,500 g,2026-10-02
+F016,240272,Ramdev,Ramdev Turmeric Powder,14116,697039,Ramdev Turmeric Powder : 1 kg,495.0,464.0,2,true,1 kg,2026-10-02
+F016,240272,DMart Premia,DMart Premia Haldi Powder (Haldar Powder),1686050,1682523,DMart Premia Haldi Powder (Haldar Powder) : 1 kg,340.0,248.0,2,true,1 kg,2026-10-02
+F016,240272,EVEREST,Everest Turmeric Powder,14171,99516,Everest Turmeric Powder : 500 g,240.0,188.0,2,true,500 g,2026-10-02
+F016,240272,DMart Premia,DMart Premia Haldi Powder (Haldar Powder),15119,11196,DMart Premia Haldi Powder (Haldar Powder) : 100 g,45.0,31.0,0,true,100 g,2026-10-02
+F016,240272,DMart Premia,DMart Premia Haldi Powder (Haldar Powder),15119,22001,DMart Premia Haldi Powder (Haldar Powder) : 200 g,82.0,58.0,2,true,200 g,2026-10-02
+F016,240272,Khetika,Khetika Turmeric Powder,1786737,1784524,Khetika Turmeric Powder : 100 g,60.0,40.0,2,true,100 g,2026-10-02
+F016,240272,Khetika,Khetika Turmeric Powder,1786737,1787022,Khetika Turmeric Powder : 400 g,249.0,149.0,2,true,400 g,2026-10-02
+F017,240329,Parle-G,Parle-G Gold Biscuits,88522,134002,Parle-G Gold Biscuits : 475 g,75.0,69.0,2,true,475 g,2026-10-02
+F017,240329,Parle-G,Parle-G Gold Biscuits,88522,338505,Parle-G Gold Biscuits : 1 kg,160.0,133.0,2,true,1 kg,2026-10-02
+F017,240329,Parle-G,Parle-G Original Gluco Biscuits,13833,87506,Parle-G Original Gluco Biscuits : 90 g,10.0,10.0,2,true,90 g,2026-10-02
+F017,240329,Parle-G,Parle-G Original Gluco Biscuits,13833,11457,Parle-G Original Gluco Biscuits : 200 g,30.0,28.0,2,true,200 g,2026-10-02
+F017,240329,Parle-G,Parle-G Original Gluco Biscuits,13833,11459,Parle-G Original Gluco Biscuits : 800 g,100.0,83.0,2,true,800 g,2026-10-02
+F017,240329,Patanjali,Patanjali Doodh Biscuits,1179008,713308,Patanjali Doodh Biscuits : 70 g,10.0,9.0,2,true,70 g,2026-10-02
+F017,240329,Patanjali,Patanjali Doodh Biscuits,1179008,438501,Patanjali Doodh Biscuits : 255 g,40.0,36.0,2,true,255 g,2026-10-02
+F017,240329,Patanjali,Patanjali Doodh Biscuits,1179008,1161568,Patanjali Doodh Biscuits : 800 g,125.0,98.0,2,true,800 g,2026-10-02
+F017,240329,Britannia Milk Bikis,Britannia Milk Bikis Biscuits,96512,689292,Britannia Milk Bikis Biscuits : 435 g,75.0,61.0,2,true,435 g,2026-10-02
+F017,240329,Britannia Milk Bikis,Britannia Milk Bikis Biscuits,96512,1745524,Britannia Milk Bikis Biscuits : 710 g,120.0,76.0,2,true,710 g ,2026-10-02
+F017,240329,Parle,Parle-G Oats & Berries Biscuits,1786636,1784539,Parle-G Oats & Berries Biscuits : 800 g,125.0,95.0,2,true,800 g,2026-10-02
+F017,240331,Britannia Marie Gold,Britannia Marie Gold Biscuits,494114,11410,Britannia Marie Gold Biscuits : 250 g,40.0,38.0,2,true,250 g,2026-10-02
+F017,240331,Britannia Marie Gold,Britannia Marie Gold Biscuits,494114,512502,Britannia Marie Gold Biscuits : 1 kg,150.0,118.0,2,true,1 kg,2026-10-02
+F017,240331,Britannia Vita Marie,Britannia Vita Marie Gold Biscuits,13763,781508,Britannia Vita Marie Gold Biscuits : 900 g,160.0,131.0,2,true,900 g,2026-10-02
+F017,240331,Britannia Vita Marie,Britannia Vita Marie Gold Biscuits,13763,11412,Britannia Vita Marie Gold Biscuits : 248 g,45.0,43.0,2,true,248 g,2026-10-02
+F017,240331,Parle,Parle Marie Biscuits,794560,795517,Parle Marie Biscuits : 800 g,205.0,102.0,2,true,800 g,2026-10-02
+F017,240331,Parle,Parle Marie Biscuits,794560,11414,Parle Marie Biscuits : 239.7 g,40.0,33.0,2,true,239.7 g,2026-10-02
+F017,240331,Sunfeast Marie,Sunfeast Marie Light Biscuit,627640,629503,Sunfeast Marie Light Biscuit : 924 g,150.0,96.0,2,true,924 g,2026-10-02
+F017,240332,Karachi Bakery,Karachi Fruit Biscuits,13789,11392,Karachi Fruit Biscuits : 400 g,190.0,130.0,2,true,400 g,2026-10-02
+F017,240332,Britannia Little Hearts,Britannia Little Hearts Classic Biscuits,13514,409001,Britannia Little Hearts Classic Biscuits : 70 g,30.0,22.0,2,true,70 g,2026-10-02
+F017,240332,Dukes,Dukes Nice Sugar Sprinkled Coconut Biscuits,13539,11402,Dukes Nice Sugar Sprinkled Coconut Biscuits : 145 g,35.0,17.0,2,true,145 g,2026-10-02
+F017,240332,Britannia,Britannia Tiger Krunch Chocochips Biscuits,882151,883504,Britannia Tiger Krunch Chocochips Biscuits : 4x100 g,130.0,66.0,2,true,100 g x 4 U,2026-10-02
+F017,240332,Lotte,Lotte Pepero Original Biscuit Sticks,1753035,1752022,Lotte Pepero Original Biscuit Sticks : 30 g,50.0,35.0,2,true,30 g,2026-10-02
+F017,240332,Lotte,Lotte Pepero Crunchy Biscuit Sticks,1753036,1752023,Lotte Pepero Crunchy Biscuit Sticks : 39 g,62.0,41.0,2,true,39 g,2026-10-02
+F018,240324,Maggi,Maggi Masala Noodles,13807,11594,Maggi 2-Minute Masala Noodles : 70 g,15.0,15.0,2,true,70 g,2026-10-02
+F018,240324,Maggi,Maggi Masala Noodles,13807,92504,Maggi Masala Noodles : 140 g,30.0,28.0,2,true,140 g,2026-10-02
+F018,240324,Maggi,Maggi Masala Noodles,13807,508002,Maggi Masala Noodles : 280 g,60.0,56.0,2,true,280 g,2026-10-02
+F018,240324,Maggi,Maggi Masala Noodles,13807,84001,Maggi 2-Minute Masala Noodles : 420 g,90.0,80.0,2,true,420 g,2026-10-02
+F018,240324,Maggi,Maggi Masala Noodles,13807,82001,Maggi 2 Minute Masala Noodles : 560 g,120.0,100.0,2,true,560 g,2026-10-02
+F018,240324,Maggi,Maggi Veg Atta Noodles,49041,788514,Maggi Masala Veg Atta Noodles : 435 g,180.0,145.0,2,true,435 g,2026-10-02
+F018,240324,Maggi,Maggi Veg Atta Noodles,49041,46537,Maggi Masala Veg Atta Noodles : 290 g,116.0,95.0,2,true,290 g,2026-10-02
+F018,240324,Nissin,Nissin Geki Hot & Spicy Korean Veg Flavour Noodles,1235502,929002,Nissin Geki Hot & Spicy Korean Veg Flavour Noodles : 80 g,60.0,30.0,2,true,80 g,2026-10-02
+F018,240324,Maggi,Maggi No Onion No Garlic Masala Noodles,78028,81007,Maggi No Onion No Garlic Masala Noodles : 70 g,20.0,19.0,2,true,70 g,2026-10-02
+F018,240324,Sunfeast Yippee,Sunfeast Yippee Magic Masala Noodles,13852,11598,Sunfeast Yippee Noodles Magic Masala : 280 g,60.0,55.0,2,true,280 g,2026-10-02
+F018,240324,Sunfeast Yippee,Sunfeast Yippee Magic Masala Noodles,13852,389502,Sunfeast Yippee Magic Masala Noodles : 420 g,90.0,77.0,2,true,420 g,2026-10-02
+F018,240324,Sunfeast Yippee,Sunfeast Yippee Magic Masala Noodles,13852,893508,Sunfeast Yippee Magic Masala Noodles : 560 g,120.0,96.0,2,true,560 g,2026-10-02
+F018,240324,Maggi,Maggi 2-Minute Spicy Garlic Noodles,1336019,1316510,Maggi 2-Minute Spicy Garlic Noodles : 248 g,100.0,86.0,2,true,248 g,2026-10-02
+F018,240324,Nissin,Top Ramen Curry Noodles,714812,713366,Top Ramen Curry Noodles : 280 g,103.0,79.0,2,true,280 g,2026-10-02
+F018,240324,Sunfeast Yippee,Sunfeast Yippee Power Up Masala Atta Noodles,736720,735079,Sunfeast Yippee Power Up Masala Atta Noodles : 280 g,116.0,86.0,2,true,280 g,2026-10-02
+F018,240324,Maggi,Maggi Spicy Cheesy Noodles,1744030,1741541,Maggi Spicy Cheesy Noodles : 304 g,100.0,82.0,2,true,304 g,2026-10-02
+F018,240324,Ching's,Ching's Hot Garlic Instant Noodles,13644,11587,Ching's Hot Garlic Instant Noodles : 240 g,80.0,53.0,2,true,240 g,2026-10-02
+F018,240324,Nissin,Nissin Geki Hot & Spicy Korean Chicken Flavour Noodles,1235501,929003,Nissin Geki Hot & Spicy Korean Chicken Flavour Noodles : 80 g,60.0,40.0,2,true,80 g,2026-10-02
+F018,240324,Masterchow,Masterchow Whole Wheat Noodles,1686103,1684034,Masterchow Whole Wheat Noodles : 300 g,165.0,110.0,0,true,300 g,2026-10-02
+F018,240324,Top Ramen,Top Ramen Masala Noodles,165010,164501,Top Ramen Masala Noodles : 480 g,112.0,66.0,2,true,480 g,2026-10-02
+F018,240324,Maggi,Maggi 2-Minute Spicy Manchurian Noodles,1336017,1316508,Maggi 2-Minute Spicy Manchurian Noodles :  61 g,25.0,23.0,0,true,61 g,2026-10-02
+F018,240324,Slurrp Farm,Slurrp Farm Instant Millet Noodles Magic Masala,1443011,1440504,Slurrp Farm Instant Millet Noodles Magic Masala : 57 g,45.0,41.0,0,true,57 g,2026-10-02
+F018,240324,Ching's,Ching's Schezwan Instant Noodles,13628,11589,Ching's Schezwan Instant Noodles : 240 g,80.0,52.0,2,true,240 g,2026-10-02
+F018,240324,Maggi,Maggi 2-Minute Spicy Manchurian Noodles,1336020,1316511,Maggi 2-Minute Spicy Manchurian Noodles : 244 g,100.0,93.0,2,true,244 g,2026-10-02
+F018,240324,Slurrp Farm,Slurrp Farm Little Millet Mild Masala Noodles,1102011,1101502,Slurrp Farm Little Millet Mild Masala Noodles : 192 g,121.0,112.0,0,true,192 g,2026-10-02
+F018,240324,Inchi,Inchi Veg Chow Mein Noodles,962001,837009,Inchi Veg Chow Mein Noodles : 150 g,47.0,37.0,0,true,150 g,2026-10-02
+F019,240318,Super,Super Crustless Sandwich Bread,714893,713588,Super Crustless Sandwich Bread : 550 g,90.0,80.0,0,true,550 g,2026-10-02
+F019,240318,Super,Super Crustless White Bread,1545613,799708,Super Crustless White Bread : 300 g,55.0,48.0,2,true,300 g,2026-10-02
+F019,240318,Super,Super White Bread,1545616,799711,Super White Bread : 800 g,85.0,76.0,2,true,800 g,2026-10-02
+F019,240318,Super,Super Atta Bread,714891,713586,Super Atta Bread : 400 g,60.0,50.0,0,true,400 g,2026-10-02
+F019,240318,Super,Super Brown Bread,714892,713587,Super Brown Bread : 400 g,60.0,53.0,0,true,400 g,2026-10-02
+F019,240318,Super,Super White Bread,1545614,799709,Super White Bread : 400 g,55.0,49.0,2,true,400 g,2026-10-02
+F019,240318,Super,Super Garlic Bread,1545615,799710,Super Garlic Bread : 300 g,55.0,50.0,0,true,300 g,2026-10-02
+F019,240318,Super,Super Pav (12 Piece),1545612,799707,Super Pav (12 Piece) : 1 Unit,55.0,49.0,2,true,400 g,2026-10-02
+H001,240857,Surf Excel,Surf Excel Easy Wash Detergent Powder,15017,1708545,Surf Excel Easy Wash Detergent Powder : 7 kg,880.0,737.0,2,true,7 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Easy Wash Detergent Powder,15017,923501,Surf Excel Easy Wash Detergent Powder : 5 kgs,780.0,657.0,2,true,5 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Easy Wash Detergent Powder,15017,87534,Surf Excel Easy Wash Detergent Powder : 1 kg,167.0,157.0,2,true,1 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Easy Wash Detergent Powder,15017,12953,Surf Excel Easy Wash Detergent Powder : 1.5 kgs,242.0,210.0,2,true,1.5 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Easy Wash Detergent Powder,15017,664008,Surf Excel Easy Wash Detergent Powder : 500 g,85.0,79.0,2,true,500 g,2026-10-02
+H001,240857,Ariel,Ariel Matic Top Load Detergent Washing Powder,49030,48504,Ariel Matic Detergent Washing Powder - Top Load : 1 kg,290.0,275.0,0,true,1 kg,2026-10-02
+H001,240857,Ariel,Ariel Matic Top Load Detergent Washing Powder,49030,1831526,Ariel Matic Detergent Washing Powder - Top Load : 4 kg,1449.0,1096.0,2,true,4 kg,2026-10-02
+H001,240857,Rin,Rin Advanced Detergent Powder,15505,12948,Rin Detergent Powder : 1 kg,120.0,111.0,2,true,1 kg,2026-10-02
+H001,240857,Rin,Rin Advanced Detergent Powder,15505,46601,Rin Detergent Powder : 2 kgs,205.0,190.0,2,true,2 kg,2026-10-02
+H001,240857,Rin,Rin Advanced Detergent Powder,15505,12947,Rin Detergent Powder : 4 kgs,440.0,409.0,0,true,4 kg,2026-10-02
+H001,240857,Rin,Rin Advanced Detergent Powder,15505,344501,Rin Advanced Detergent Powder : 7 kgs,760.0,556.0,2,true,7 kg,2026-10-02
+H001,240857,Star Bright,Star Bright Detergent Powder,908537,908022,Star Bright Detergent Powder : 5 kgs,500.0,328.0,2,true,5 kg,2026-10-02
+H001,240857,Wheel,Wheel Active 2 In 1 Detergent Powder Green,748386,689428,Wheel Active 2 In 1 Detergent Powder Green 4 Kg,280.0,263.0,2,true,4 kg,2026-10-02
+H001,240857,Wheel,Wheel Active 2 In 1 Detergent Powder Green,748386,713810,Wheel Active 2 In 1 Detergent Powder Green 2 kg,156.0,145.0,2,true,2 kg,2026-10-02
+H001,240857,Wheel,Wheel Active 2 In 1 Detergent Powder Green,748386,12969,Wheel Active 2 In 1 Detergent Powder Green : 1 kg,88.0,79.0,2,true,1 kg,2026-10-02
+H001,240857,Tide,Tide Double Power Detergent Powder - Lemon & Mint,15506,12960,Tide Double Power Detergent Powder - Lemon & Mint : 970 g,140.0,130.0,2,true,970 g,2026-10-02
+H001,240857,Tide,Tide Double Power Detergent Powder - Lemon & Mint,15506,102511,Tide Double Power Detergent Powder - Lemon & Mint : 2.2 kg,299.0,284.0,2,true,2.2 kg,2026-10-02
+H001,240857,Tide,Tide Double Power Detergent Powder - Lemon & Mint,15506,1826030,Tide Double Power Detergent Powder - Lemon & Mint : 7 kg,720.0,657.0,2,true,7 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Matic Top Load Powder,1607524,1606021,Surf Excel Matic Top Load Powder : 6 kg,1375.0,921.0,2,true,6 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Matic Front Load Powder,1607525,1606022,Surf Excel Matic Front Load Powder : 6 kg,1575.0,1115.0,2,true,6 kg,2026-10-02
+H001,240857,Ariel,Ariel Perfect Wash Detergent Powder,1762169,1698558,Ariel Perfect Wash Detergent Powder : 1 kg,180.0,167.0,2,true,1 kg,2026-10-02
+H001,240857,Ariel,Ariel Perfect Wash Detergent Powder,1762169,1762170,Ariel Perfect Wash Detergent Powder : 5 kg,799.0,504.0,2,true,5 kg,2026-10-02
+H001,240857,Ariel,Ariel Matic Detergent Washing Powder - Front Load,49029,1831525,Ariel Matic Detergent Washing Powder - Front Load : 4 kg,1579.0,1099.0,2,true,4 kg,2026-10-02
+H001,240857,Tide,Tide Double Power Detergent Powder - Jasmine & Rose,1824101,1826031,Tide Double Power Detergent Powder - Jasmine & Rose : 7 kg,720.0,657.0,2,true,7 kg,2026-10-02
+H001,240857,Tide,Tide Detergent Powder - Lavender Fresh,1781633,1835541,Tide Detergent Powder - Lavender Fresh : 7 kg,720.0,657.0,2,true,7 kg,2026-10-02
+H001,240857,Ghadi,Ghadi Detergent Powder,102001,100006,Ghadi Detergent Powder : 3 kgs,235.0,187.0,2,true,3 kg,2026-10-02
+H001,240857,Tide,Tide Naturals Lemon & Chandan Detergent,1674243,12959,Tide Naturals Lemon & Chandan Detergent : 1 Kg,105.0,98.0,2,true,1 kg,2026-10-02
+H001,240857,Tide,Tide Naturals Lemon & Chandan Detergent,1674243,1675087,Tide Naturals Detergent Powder - Lemon & Chandan : 3 kg,260.0,250.0,2,true,3 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Quick Wash Detergent Powder,72202,46600,Surf Excel Quick Wash Detergent Powder : 1 kg,235.0,220.0,2,true,1 kg,2026-10-02
+H001,240857,Surf Excel,Surf Excel Quick Wash Detergent Powder,72202,12957,Surf Excel Quick Wash Detergent Powder : 2 kgs,450.0,379.0,2,true,2 kg,2026-10-02
+H001,240857,Tide,Tide Plus Detergent Powder - Jasmine & Rose,15059,12963,Tide Plus Detergent Powder - Jasmine & Rose : 970 g,140.0,131.0,2,true,970 g,2026-10-02
+H001,240857,Vanish,Vanish Oxi Action Stain Removal Powder,15061,13001,Vanish Oxi Action Stain Remover : 400 g,260.0,239.0,2,true,400 g,2026-10-02
+H001,240857,Ariel,Ariel Machine Expert Powder Detergent Top Load,1910787,1912540,Ariel Machine Expert Powder Detergent Top Load : 3 kg,595.0,550.0,2,true,3 kg,2026-10-02
+H001,240857,More Light,More Light Detergent Powder,912003,910517,More Light Detergent Powder : 4 kg,540.0,273.0,2,true,4 kg,2026-10-02
+H001,240857,Mr. White,Mr. White Detergent Powder,15048,284003,Mr. White Detergent Powder : 7 kg,680.0,554.0,2,true,7 kg,2026-10-02
+H001,240857,Ariel,Ariel Machine Expert Powder Detergent Front Load,1910786,1912539,Ariel Machine Expert Powder Detergent Front Load : 3 kg,660.0,612.0,2,true,3 kg,2026-10-02
+H002,240855,Vim,Vim Dishwash Liquid Gel - Lemon (Pouch),15062,925017,Vim Dishwash Liquid Gel - Lemon Refill (Pouch) : 2 L,445.0,311.0,2,true,2 L,2026-10-02
+H002,240855,Vim,Vim Dishwash Liquid Gel - Lemon (Pouch),15062,13137,Vim Dishwash Liquid Gel - Lemon Refill (Pouch) : 900 ml,190.0,157.0,2,true,900 ml,2026-10-02
+H002,240855,Vim,Vim Dishwash Liquid Gel - Lemon (Pouch),15062,93013,Vim Dishwash Liquid Gel - Lemon Refill (Pouch) : 115 ml,20.0,19.0,2,true,115 ml,2026-10-02
+H002,240855,Reflect,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch),15055,861533,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch) : 500 ml,95.0,70.0,2,true,500 ml,2026-10-02
+H002,240855,Reflect,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch),15055,13136,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch) : 1 L,175.0,120.0,2,true,1 L,2026-10-02
+H002,240855,Reflect,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch),15055,1357503,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch) : 2 L,325.0,227.0,2,true,2 L,2026-10-02
+H002,240855,Reflect,Reflect Concentrated Dishwash Gel,1793078,1796592,Reflect Concentrated Dishwash Gel : 200 ml,42.0,32.0,2,true,200 ml,2026-10-02
+H002,240855,Klin n Care,Flash All Purpose Liquid,696272,697137,Flash All Purpose Liquid : 5 L,297.0,148.0,2,true,5 L,2026-10-02
+H002,240855,Vim,Vim Dishwash Liquid Gel - Lemon (Bottle),15063,13138,Vim Dishwash Liquid Gel - Lemon Bottle : 500 ml,140.0,130.0,2,true,500 ml,2026-10-02
+H002,240855,Vim,Vim Dishwash Liquid Gel - Lemon (Bottle),15063,13139,Vim Dishwash Liquid Gel - Lemon Bottle : 750 ml,199.0,177.0,2,true,750 ml,2026-10-02
+H002,240855,Reflect,Reflect Concentrated Gel Dishwash Liquid (Bottle),1616049,491508,Reflect Concentrated Gel Dishwash Liquid (Bottle)  : 750 ml,150.0,100.0,2,true,750 ml,2026-10-02
+H002,240855,Reflect,Reflect Concentrated Gel Dishwash Liquid (Bottle),1616049,1616588,Reflect Concentrated Gel Dishwash Liquid (Bottle) : 250 ml,50.0,40.0,2,true,250 ml,2026-10-02
+H002,240855,Giffy,Giffy Dishwash Gel With Active Salt & Lemon,715225,1488008,Giffy Dishwash Gel With Active Salt & Lemon : 2 L,445.0,225.0,2,true,2 L,2026-10-02
+H002,240855,Giffy,Giffy Dishwash Gel With Active Salt & Lemon,715225,713865,Giffy Lemon & Active Salt Dish Wash Gel : 900 ml,190.0,131.0,0,true,900 ml,2026-10-02
+H002,240855,Beco,Beco Natural Dishwash Liquid,1616035,1615539,Beco Natural Dishwash Liquid : 2 L,299.0,165.0,2,true,2 L,2026-10-02
+H002,240855,Giffy,Giffy Concentrated Dish Wash Gel,367782,814504,Giffy Concentrated Dish Wash Gel : 750 ml,199.0,140.0,2,true,750 ml,2026-10-02
+H002,240855,Beco,BECO Natural Dishwash Liquid,1463012,1461021,BECO Natural Dishwash Liquid : 750 ml,199.0,119.0,2,true,750 ml,2026-10-02
+H003,241183,Nippo,Nippo B22 LED Bulb,1573539,1565532,Nippo B22 LED Bulb : 9 W,160.0,45.0,2,true,9 W,2026-10-02
+H003,241183,Eveready,Eveready Cool Day Light White LED B22 Bulb : 14 W,829607,815501,Eveready Cool Day Light White LED B22 Bulb : 14 W,239.0,99.0,2,true,14 W,2026-10-02
+H003,241183,Eveready,Eveready White LED Bulb B22 6500k,829594,819007,Eveready White LED Bulb B22 6500k : 18 W,325.0,149.0,0,true,18 W,2026-10-02
+H003,241183,NIPPO,Nippo White LED Bulb,1383009,1383010,Nippo White LED Bulb : 12 W,300.0,99.0,2,true,12 W,2026-10-02
+H003,241183,DesiDiya,DesiDiya Rope LED Strip Lights (Warm White) - 5 Mtr,1772559,1772076,DesiDiya Rope LED Strip Lights (Warm White) - 5 Mtr : 1 Unit,999.0,299.0,2,true,1 U,2026-10-02
+H003,241183,Crompton Greaves,Crompton Greaves Ecoglo B22 CDL White LED Bulb,552081,546503,Crompton Greaves Ecoglo B22 CDL White LED Bulb : 9 W,150.0,45.0,0,true,9 W,2026-10-02
+H003,241183,DesiDiya,DesiDiya Rose Flower 14 LED string Light (Warm White) - 3 Mtr,1772558,1772075,DesiDiya Rose Flower 14 LED string Light (Warm White) - 3 Mtr : 1 unit,499.0,199.0,2,true,1 U,2026-10-02
+H003,241183,DesiDiya,DesiDiya 16 Snowflakes LED Light (Warm White),1772565,1772082,DesiDiya 16 Snowflakes LED Light (Warm White) : 1 Unit,499.0,179.0,2,true,1 U,2026-10-02
+H003,241183,DesiDiya,DesiDiya 16 Snowball LED String Lights (Warm White),1772566,1772083,DesiDiya 16 Snowball LED String Lights (Warm White) : 1 unit,499.0,199.0,2,true,1 U,2026-10-02
+H003,241183,Philips,Philips White LED Bulb B22 6500K,787020,781515,Philips White LED Bulb B22 6500K : 18 W,365.0,199.0,2,true,18 W,2026-10-02
+H003,241183,Eveready,Eveready Cool Day Light White LED Bulb - 9 W,72085,65585,Eveready Cool Day Light White LED Bulb - 9 W : 1 Unit,140.0,49.0,2,true,1 U,2026-10-02
+H003,241183,DesiDiya,DesiDiya LED Tea Light Candles (Warm White) - 3 Pcs,1772567,1772084,DesiDiya LED Tea Light Candles (Warm White) - 3 Pcs : 1 Unit,999.0,299.0,2,true,1 U,2026-10-02
+H003,241183,Crompton Greaves,Crompton Greaves DynaRay LED Bulb B22 CDL,552080,546501,Crompton Greaves DynaRay LED Bulb B22 CDL : 7 W,145.0,39.0,0,true,7 W,2026-10-02
+H003,241183,DesiDiya,DesiDiya 14LED Happy Diwali String Lights (Warm White) - 5 Mtr,1772556,1772073,DesiDiya 14LED Happy Diwali String Lights (Warm White) - 5 Mtr : 1 Unit,499.0,229.0,2,true,1 U,2026-10-02
+H003,241183,DesiDiya,DesiDiya 12 Curtain Star Lights (Multicolor),1772564,1772081,DesiDiya 12 Curtain Star Lights (Multicolor) : 1 Unit,1999.0,399.0,2,true,1 U,2026-10-02
+H003,241183,DesiDiya,DesiDiya Traditional Diya Light (Golden),1772571,1772088,DesiDiya Traditional Diya Light (Golden) : 1 Unit,299.0,179.0,2,true,1 U,2026-10-02
+H003,241183,DesiDiya,DesiDiya Flameless Candle (Golden),1772563,1772080,DesiDiya Flameless Candle (Golden) : 1 Unit,499.0,249.0,2,true,1 U,2026-10-02
+H003,241175,Eveready,Eveready Led Bulb 12W,1751587,1752042,Eveready Led Bulb 12W : 1 Unit,199.0,69.0,2,true,1 U,2026-10-02
+H003,241175,Eveready,Eveready Emergency Inverter Led Bulb 12 W,1751590,1752045,Eveready Emergency Inverter Led Bulb 12 W : 1 Unit,649.0,299.0,2,true,1 U,2026-10-02
+H003,241175,Nippo,Nippo B22 LED Bulb,1573539,1565532,Nippo B22 LED Bulb : 9 W,160.0,45.0,2,true,9 W,2026-10-02
+H003,241175,Eveready,Eveready Cool Day Light White LED B22 Bulb : 14 W,829607,815501,Eveready Cool Day Light White LED B22 Bulb : 14 W,239.0,99.0,2,true,14 W,2026-10-02
+H003,241175,Eveready,Eveready White LED Bulb B22 6500k,829594,819007,Eveready White LED Bulb B22 6500k : 18 W,325.0,149.0,0,true,18 W,2026-10-02
+H003,241175,Philips,Philips Ujjwal White LED Batten - 20 W,797541,781516,Philips Ujjwal White LED Batten - 20 W : 1 Unit,500.0,179.0,0,true,1 U,2026-10-02
+H003,241175,NIPPO,Nippo White LED Bulb,1383009,1383010,Nippo White LED Bulb : 12 W,300.0,99.0,2,true,12 W,2026-10-02
+H003,241175,Philips,Philips Stellar Bright White T-Bulb : 18 W,647542,646014,Philips Stellar Bright White T-Bulb : 18 W,500.0,349.0,2,true,18 W,2026-10-02
+H003,241175,Crompton Greaves,Crompton Greaves Ecoglo B22 CDL White LED Bulb,552081,546503,Crompton Greaves Ecoglo B22 CDL White LED Bulb : 9 W,150.0,45.0,0,true,9 W,2026-10-02
+H003,241175,Philips,Philips White Led Emergency Inverter Bulb - 10 Watts,917124,912546,Philips White Led Emergency Inverter Bulb - 10 Watts : 1 Unit,599.0,349.0,2,true,10 W,2026-10-02
+H003,241175,Philips,Philips White LED Bulb B22 6500K,787020,781515,Philips White LED Bulb B22 6500K : 18 W,365.0,199.0,2,true,18 W,2026-10-02
+H003,241175,Eveready,Eveready Cool Day Light White LED Bulb - 9 W,72085,65585,Eveready Cool Day Light White LED Bulb - 9 W : 1 Unit,140.0,49.0,2,true,1 U,2026-10-02
+H003,241175,Pigeon,Pigeon Emergency White LED Bulb,751537,752014,Pigeon Emergency White LED Bulb : 9 W,549.0,299.0,2,true,9 W,2026-10-02
+H003,241175,Philips,Philips Stellar Bright White LED T-Bulb - 10 W,484138,414001,Philips Stellar Bright White LED T-Bulb - 10 W : 1 Unit,299.0,159.0,2,true,10 W,2026-10-02
+H003,241175,Eveready,Eveready Instacharge Emergency Inverter Led Blub 10 W,1751589,1752044,Eveready Instacharge Emergency Inverter Led Blub 10 W : 1 Unit,650.0,289.0,2,true,1 U,2026-10-02
+H003,241175,Crompton Greaves,Crompton Greaves DynaRay LED Bulb B22 CDL,552080,546501,Crompton Greaves DynaRay LED Bulb B22 CDL : 7 W,145.0,39.0,0,true,7 W,2026-10-02
+H004,241246,Butterfly,Butterfly Stainless Outer Lid Steel Cooker (Curve),787040,371505,Butterfly Stainless Outer Lid Steel Cooker (Curve) - 5.5 L : 1 Unit,5010.0,2249.0,0,true,5.5 L,2026-10-02
+H004,241246,Butterfly,Butterfly Stainless Outer Lid Steel Cooker (Curve),787040,371506,Butterfly Stainless Outer Lid Steel Cooker (Curve) - 3 L : 1 Unit,3450.0,1599.0,0,true,3 L,2026-10-02
+H004,241246,Surya,Surya Intech Pressure Cooker Combo Outer Lid,367547,430001,Surya Intech Pressure Cooker Combo Outer Lid - Set Of 3  : 1 Unit,2395.0,1649.0,2,true,1 U,2026-10-02
+H004,241246,Surya,Surya Intech Pressure Cooker Combo Outer Lid,367547,370501,Surya Intech Pressure Cooker Combo Outer Lid - 3 L(Cooker) + 2 L(Pan) : 1 Unit,1455.0,999.0,2,true,1 U,2026-10-02
+H004,241246,Prestige,Prestige Deluxe Alpha Svachh Outer Lid Pressure Cooker Handi - 3 L,850977,846502,Prestige Deluxe Alpha Svachh Outer Lid Pressure Cooker Handi - 3 L : 1 Unit,2890.0,2299.0,0,true,1 U,2026-10-02
+H004,241246,Hawkins,Hawkins Classic Outer Lid Pressure Cooker,571504,565504,Hawkins Classic Inner Lid Pressure Cooker (CL15) - 1.5 L : 1 Unit,1250.0,1149.0,2,true,1.5 L,2026-10-02
+H004,241246,Hawkins,Hawkins Contura Black Hard Inner Lid Anodised Cooker CB30 - 3 L,14008,12871,Hawkins Contura Black Hard Inner Lid Anodised Cooker CB30 - 3 L : 1 Unit,2300.0,1999.0,2,true,3 L,2026-10-02
+H004,241246,Hawkins,Hawkins Contura Hard Anodised Inner Lid Pressure Cooker (CB20) - 2 L,14015,12875,Hawkins Contura Hard Anodised Inner Lid Pressure Cooker (CB20) - 2 L : 1 Unit,2000.0,1749.0,2,true,2 L,2026-10-02
+H004,241246,Pigeon,Pigeon Titanium Hard Anodized Outer Lid Pressure Cooker,479013,478501,Pigeon Titanium Hard Anodized Outer Lid Pressure Cooker - 3 L : 1 Unit,2195.0,1199.0,0,true,3 L,2026-10-02
+H004,241246,Pigeon,Pigeon Aluminium Pressure Induction Outer Lid Base Cooker,787033,768001,Pigeon Aluminium Pressure Induction Outer Lid Base Cooker - 3 L : 1 Unit,1395.0,819.0,0,true,1 U,2026-10-02
+H004,241246,Hawkins,Hawkins Miss Mary Outer Lid Pressure Cooker,571513,570001,Hawkins Miss Mary Inner Lid Pressure Cooker (MM30) - 3 L : 1 Unit,1325.0,1140.0,2,true,3 L,2026-10-02
+H004,241246,Prestige,Prestige Deluxe Plus Hard Outer Lid Anodised Pressure Handi Cooker - 3 L,850978,846503,Prestige Deluxe Plus Hard Outer Lid Anodised Pressure Handi Cooker - 3 L : 1 Unit,3025.0,2160.0,2,true,1 U,2026-10-02
+H004,241246,Pigeon,Pigeon Favourite Aluminium Outer Lid Pressure Cooker (2 L+ 3 L+ 5 L),1410512,1163023,Pigeon Favourite Aluminium Outer Lid Pressure Cooker (2 L+ 3 L+ 5 L) : 1 Unit,3195.0,2299.0,0,true,1 U,2026-10-02
+P001,241101,Pears,Pears Pure & Gentle Bathing Bar,14449,12576,Pears Pure & Gentle Bathing Bar : 3x125 g,211.0,179.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Pears,Pears Pure & Gentle Bathing Bar,14449,115001,Pears Pure & Gentle Bathing Bar : 4x125 g,401.0,289.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Mild & Clear,Mild & Clear Soap With Glycerine & Natural Oils,14795,12560,Mild & Clear Soap With Glycerine & Natural Oils : 3x125 g,219.0,111.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Mild & Clear,Mild & Clear Soap With Glycerine & Natural Oils,14795,12562,Mild & Clear Soap With Glycerine & Natural Oils : 5x100 g,249.0,134.0,2,true,100 g x 5 U,2026-10-02
+P001,241101,Dove,Dove Deep Nourish Serum Bar,18505,12516,Dove Deep Nourish Serum Bar : 100 g,62.0,57.0,2,true,100 g,2026-10-02
+P001,241101,Dove,Dove Deep Nourish Serum Bar,18505,12518,Dove Deep Nourish Serum Bar : 3x125 g,272.0,231.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Dove,Dove Deep Nourish Serum Bar,18505,12515,Dove Deep Nourish Serum Bar : 4x125 g,519.0,373.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Medimix,Medimix Ayurvedic Classic 18 Herbs Soap,14447,12558,Medimix Ayurvedic Classic 18 Herbs Soap : 3x125 g,155.0,135.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Medimix,Medimix Ayurvedic Classic 18 Herbs Soap,14447,12559,Medimix Ayurvedic Classic 18 Herbs Soap : 4x125 g,220.0,201.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Santoor,Santoor Sandal & Turmeric Soap,14453,12579,Santoor Sandal & Turmeric Soap : 4x75 g,110.0,99.0,2,true,75 g x 4 U,2026-10-02
+P001,241101,Santoor,Santoor Sandal & Turmeric Soap,14453,12581,Santoor Sandal & Turmeric Soap : 4x100 g,146.0,136.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Santoor,Santoor Sandal & Turmeric Soap,14453,94018,Santoor Sandal & Turmeric Soap : 4x125 g,209.0,157.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Santoor,Santoor Sandal & Turmeric Soap,14453,12580,Santoor Sandal & Turmeric Soap : 4x150 g,240.0,181.0,2,true,150 g x 4 U,2026-10-02
+P001,241101,Chandan Sparsh,Chandan Sparsh Soap,1479507,1411017,Chandan Sparsh Soap : 4x125 g,190.0,96.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Mysore Sandal,Mysore Sandal Soap,14798,12566,Mysore Sandal Soap : 150 g,82.0,71.0,2,true,150 g,2026-10-02
+P001,241101,Mysore Sandal,Mysore Sandal Soap,14798,12567,Mysore Sandal Soap : 3x150 g,245.0,227.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Chandan Sparsh,Chandan Sparsh Gold Soap,1375004,1372016,Chandan Sparsh Gold Soap : 3x150 g,200.0,130.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Chandan Sparsh,Chandan Sparsh Gold Soap,1375004,1372017,Chandan Sparsh Gold Soap : 150 g,66.0,44.0,2,true,150 g,2026-10-02
+P001,241101,Fiama,Fiama Celebration Pack Gel Bars,1268515,1263503,Fiama Celebration Pack Gel Bars : 4x125 g,445.0,288.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Pears,Pears Variety Pack 5 Bathing Bars,1728720,1711545,Pears Variety Pack 5 Bathing Bars : 625 g,475.0,240.0,2,true,625 g,2026-10-02
+P001,241101,Mild & Clear,Mild & Clear The Happy Pack Bathing Bars,1746080,1745038,Mild & Clear The Happy Pack Bathing Bars : 5Ux125 g,360.0,182.0,2,true,5Ux125 g,2026-10-02
+P001,241101,Dove,Dove Serum Bar Collection,1793206,1797527,Dove Serum Bar Collection : 5 x 125 g,600.0,454.0,2,true,5  x 125 g,2026-10-02
+P001,241101,Lux,Lux Soft Touch with Silk Essence & Rose Water Soap,14444,12552,Lux Radiant Glow Rose & Vitamin C+E Beauty Soap : 3X150 g,185.0,140.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Grace,Grace Gentle Touch Beauty Soap Rose Oil & Moisturiser,787084,788516,Grace Gentle Touch Beauty Soap Rose Oil & Moisturiser : 3x150 g,171.0,86.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Jo,Jo Lime Soap,96508,93008,Jo Lime Soap : 4x150 g,175.0,106.0,2,true,150 g x 4 U,2026-10-02
+P001,241101,Grace,Grace Lime Fresh Beauty Soap,787085,788517,Grace Lime Fresh Beauty Soap : 3x150 g,150.0,75.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Lux,Lux Velvet Touch with Jasmine & Almond Oil Soap,14443,12550,Lux Flaw-Less Glow Jasmine & Vitamin C+E Beauty Soap : 3x150 g,185.0,145.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Grace,Grace Smooth Caress Soap Mesmerizing Fragrance & Moisturizing,237588,254002,Grace Smooth Caress Soap Mesmerizing Fragrance & Moisturizing : 3x150 g,171.0,86.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Cinthol,Cinthol Lime Refreshing Deo Soap,658898,673523,Cinthol Lime Refreshing Deo Soap : 4x150 g,205.0,158.0,2,true,600 g,2026-10-02
+P001,241101,Godrej No.1,Godrej No. 1 Lime & Aloe Vera Soap,14433,12531,Godrej No. 1 Lime & Aloe Vera Soap : 4 X 100 g,125.0,118.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Godrej No.1,Godrej No. 1 Lime & Aloe Vera Soap,14433,12522,Godrej No.1 Lime & Aloe Vera Soap : 3x150 g,190.0,147.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Pears,Pears Soft & Fresh Bathing Bar,14448,12573,Pears Soft & Fresh Bathing Bar : 125 g,88.0,80.0,2,true,125 g,2026-10-02
+P001,241101,Pears,Pears Soft & Fresh Bathing Bar,14448,12575,Pears Soft & Fresh Bathing Bar : 4x125 g,380.0,274.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Mild & Clear,Mild & Clear Pure & Fresh Bathing Bar with Glycerine & Mint,1463007,1459009,Mild & Clear Pure & Fresh Bathing Bar with Glycerine & Mint : 4x125 g,290.0,146.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Godrej No.1,Godrej No. 1 Sandal & Turmeric Soap,18506,12527,Godrej No.1 Sandal Turmeric Soap : 4x100 g,125.0,114.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Godrej No.1,Godrej No. 1 Sandal & Turmeric Soap,18506,12523,Godrej No. 1 Sandal & Turmeric Soap : 3x150 g,190.0,134.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Vivel,Vivel Aloe Vera Soap,690600,12586,Vivel Aloe Vera Soap : 4x150 g,320.0,160.0,0,true,150 g x 4 U,2026-10-02
+P001,241101,Cinthol,Cinthol Lime Refreshing Deo Soap,14685,797024,Godrej Cinthol Lime Soap : 4x100 g,180.0,151.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Cinthol,Cinthol Lime Refreshing Deo Soap,14685,12502,Cinthol Lime Refreshing Deo Soap : 4x75 g,110.0,102.0,2,true,75 g x 4 U,2026-10-02
+P001,241101,Medimix,Medimix Ayurvedic Natural Glycerine Soap,14445,12556,Medimix Ayurvedic Natural Glycerine Soap : 4x125 g,320.0,272.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Dettol,Dettol Original Soap,1458004,1456003,Dettol Original Soap : 4x100 g,178.0,162.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Fiama,Fiama Japanese Hokkaido Milk Non Sticky Nousrished Skin Moisturizing Bar,1768071,1768556,Fiama Japanese Hokkaido Milk Non Sticky Nousrished Skin Moisturizing Bar : 125 g x 5,560.0,283.0,2,true,125 g x 5,2026-10-02
+P001,241101,Santoor,Santoor Sandal Almond Soap,14855,689416,Santoor Sandal Almond Soap : 3x150 g,179.0,106.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Santoor,Santoor Sandal Almond Soap,14855,12582,Santoor Sandal and Almond Milk Soap : 4x125 g,209.0,170.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Liril,Liril Lime Rush Soap,14441,12543,Liril Lime Soap : 4x125 g,225.0,154.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Lifebuoy,Lifebuoy Total 10 Soap,14780,12534,Lifebuoy Germ Guard+ Soap : 4x125 g,155.0,146.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Dettol,Dettol Skincare Soap,1458005,1456004,Dettol Skincare Soap : 4x150 g,217.0,201.0,2,true,150 g x 4 U,2026-10-02
+P001,241101,Jo,Jo Almond & Cream Soap,535505,533001,Jo Almond & Cream Soap : 4x150 g,175.0,106.0,2,true,150 g x 4 U,2026-10-02
+P001,241101,Lux,Lux Fresh Splash with Cooling Mint & Sea Minerals Soap,14442,12548,Lux Fresh Splash Water Lily & Cooling Mint Soap : 3x150 g,193.0,181.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Cinthol,Godrej Cinthol Cool Deo Soap,715213,713735,Godrej Cinthol Cool Deo Soap : 4x100 g,210.0,178.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Fiama,Fiama Blackcurrant & Bearberry Bar,729483,731311,Fiama Blackcurrant & Bearberry Bar : 3x125 g,285.0,171.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Dettol,Dettol Icy Cool Soap,1458002,1456001,Dettol Icy Cool Soap : 4x100 g,178.0,161.0,2,true,100 g x 4 U,2026-10-02
+P001,241101,Dove,Dove Sandal Soap Moisturizing Cream,1728803,1719577,Dove Sandal Glow Serum Bar : 3x125 g,330.0,288.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Lifebuoy,Lifebuoy Lemon Fresh Soap,446513,446001,Lifebuoy Lemon Aloe Fresh Soap : 7x125 g,375.0,255.0,2,true,7 x 125 g,2026-10-02
+P001,241101,Hand Aid,Hand Aid Lemon Blast Soap,1738570,1734028,Hand Aid Lemon Blast Soap : 7x125 g,300.0,151.0,2,true,7x125 g,2026-10-02
+P001,241101,Godrej No.1,Godrej No. 1 Kesar & Milk Cream Soap,14432,12521,Godrej No.1 Kesar & Milk Cream Soap : 3x150 g,200.0,172.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Dettol,Dettol Icy Cool Bathing Soap Bar,14427,1334001,Dettol Icy Cool Bathing Soap Bar : 3 U X 150 g,217.0,201.0,2,true,3 x 150 g,2026-10-02
+P001,241101,Santoor,Santoor Aloe Vera & Lime Soap,715216,713738,Santoor Aloe Vera & Lime Soap : 4x125 g,209.0,190.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Khadi Natural,Khadi Natural Rosewater Soap,817520,800148,Khadi Natural Rosewater Soap : 125 g,99.0,50.0,2,true,125 g,2026-10-02
+P001,241101,Khadi Natural,Khadi Natural Aloevera Soap,279528,285004,Khadi Natural Aloevera Soap : 125 g,99.0,50.0,2,true,125 g,2026-10-02
+P001,241101,Khadi Natural,Khadi Natural Sandalwood Soap,817521,800149,Khadi Natural Sandalwood Soap : 125 g,99.0,50.0,2,true,125 g,2026-10-02
+P001,241101,Khadi Natural,Khadi Natural Chandan Haldi Soap,817517,800145,Khadi Natural Chandan Haldi Soap : 125 g,99.0,50.0,2,true,125 g,2026-10-02
+P001,241101,Cinthol,Godrej Cinthol Cool Deo Soap,1892542,1894531,Godrej Cinthol Cool Deo Soap : 4 x 150 g,225.0,200.0,2,true,4 x 150 g,2026-10-02
+P001,241101,Godrej,Godrej Shikakai 3-In-1 Soap,14760,12532,Godrej Shikakai 3-In-1 Soap : 75 g,35.0,33.0,2,true,75 g,2026-10-02
+P001,241101,Khadi Natural,Khadi Natural Neem Tulsi Soap,817519,800147,Khadi Natural Neem Tulsi Soap : 125 g,99.0,50.0,2,true,125 g,2026-10-02
+P001,241101,Patanjali,Patanjali Haldi Chandan Kanti Body Cleanser,1463005,1457509,Patanjali Haldi Chandan Kanti Body Cleanser : 4x150 g,147.0,124.0,2,true,150 g x 4 U,2026-10-02
+P001,241101,Dove,Dove Pink Radiance Bathing Bar,45776,731307,Dove Pink Radiance Bathing Bar : 100 g,70.0,65.0,2,true,100 g,2026-10-02
+P001,241101,Santoor,Santoor Royal Sandal Soap,748270,743679,Santoor Royal Sandal Soap : 3x125 g,243.0,190.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Santoor,Santoor Pureglo Bathing Bar,1665563,1658022,Santoor Pureglo Bathing Bar : 4x125 g,405.0,205.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Medimix,Medimix Vetiver & Grape Seed Soap,1192057,1161648,Medimix Vetiver & Grape Seed Soap : 4x125 g,220.0,187.0,2,true,125 g x 4 U,2026-10-02
+P001,241101,Khadi Natural,Khadi Natural Lemon Soap,817518,800146,Khadi Natural Lemon Soap : 125 g,99.0,50.0,2,true,125 g,2026-10-02
+P001,241101,Dermi Cool,Dermi Cool Soap,1728801,1724027,Dermi Cool Soap : 3 x 125 g,188.0,95.0,2,true,125 g x 3 U,2026-10-02
+P001,241101,Lux,Lux Creamy Perfection Soap,734803,733185,Lux Creamy Perfection Soap : 125 g,87.0,80.0,2,true,125 g,2026-10-02
+P001,241101,Jo,Jo Sandal & Turmeric Soap,1292516,1281931,Jo Sandal & Turmeric Soap : 3x150 g,175.0,106.0,2,true,150 g x 3 U,2026-10-02
+P001,241101,Dettol,Dettol Original Bathing Soap Bar,14428,725061,Dettol Original Bathing Soap Bar : 150 g,67.0,65.0,2,true,150 g,2026-10-02
+P001,241101,Godrej No.1,Godrej No.1 Lime Aloe Vera Soap,864064,799835,Godrej No.1 Lime Aloe Vera Soap : 43 g,10.0,9.0,2,true,43 g,2026-10-02
+P001,241101,Dettol,Dettol Skincare Soap,14429,743672,Dettol Skincare Soap : 120 g,72.0,65.0,2,true,120 g,2026-10-02
+P002,241106,Dove,Dove Hair Fall Rescue Shampoo,14390,645013,Dove Hairfall Rescue Shampoo : 180 ml,189.0,175.0,2,true,180 ml,2026-10-02
+P002,241106,Dove,Dove Hair Fall Rescue Shampoo,14390,12343,Dove Hair Fall Rescue Shampoo : 340 ml,435.0,295.0,2,true,340 ml,2026-10-02
+P002,241106,Dove,Dove Hair Fall Rescue Shampoo,14390,12344,Dove Hair Fall Rescue Shampoo : 650 ml,1082.0,541.0,2,true,650 ml,2026-10-02
+P002,241106,Dove,Dove Hair Fall Rescue Shampoo,14390,482502,Dove Hair Fall Rescue Shampoo : 1 L,1370.0,692.0,2,true,1 L,2026-10-02
+P002,241106,L'Oreal,L'Oreal Paris Hyaluron Moisture Filling Shampoo,1545550,1150003,L'Oreal Paris Hyaluron Moisture Filling Shampoo : 340 ml,519.0,487.0,2,true,340 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Paris Hyaluron Moisture Filling Shampoo,1545550,1491508,L'Oreal Paris Hyaluron Moisture Filling Shampoo : 650 ml,1055.0,527.0,2,true,650 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Total Repair 5 Shampoo,14611,12381,L'Oreal Paris Total Repair 5 Shampoo : 640 ml,1030.0,520.0,2,true,640 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Total Repair 5 Shampoo,14611,12371,L'Oreal Paris Total Repair 5 Shampoo : 340 ml,450.0,415.0,2,true,340 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Total Repair 5 Shampoo,14611,103501,L'Oreal Paris Total Repair 5 Shampoo : 175 ml,190.0,175.0,2,true,175 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Total Repair 5 Shampoo,14611,819517,L'Oreal Total Repair 5 Shampoo : 1 L,1499.0,749.0,2,true,1 L,2026-10-02
+P002,241106,Tresemme,TRESemme Keratin Smooth Shampoo,14416,482504,TRESemme Keratin Smooth Shampoo : 1 L,1370.0,685.0,2,true,1 L,2026-10-02
+P002,241106,Tresemme,TRESemme Keratin Smooth Shampoo,14416,735232,TRESemme Keratin Smooth Shampoo : 340 ml,435.0,300.0,2,true,340 ml,2026-10-02
+P002,241106,Tresemme,TRESemme Keratin Smooth Shampoo,14416,12411,TRESemme Keratin Smooth Shampoo : 180 ml,189.0,177.0,2,true,180 ml,2026-10-02
+P002,241106,Tresemme,TRESemme Keratin Smooth Shampoo,14416,12412,TRESemme Keratin Smooth Shampoo : 580 ml,966.0,483.0,2,true,580 ml,2026-10-02
+P002,241106,Dove,Dove Daily Shine Shampoo,14401,731240,Dove Daily Shine Hair Therapy Shampoo : 180 ml,189.0,177.0,2,true,180 ml,2026-10-02
+P002,241106,Dove,Dove Daily Shine Shampoo,14401,12339,Dove Daily Shine Shampoo : 340 ml,435.0,409.0,2,true,340 ml,2026-10-02
+P002,241106,Dove,Dove Daily Shine Shampoo,14401,12340,Dove Daily Shine Shampoo : 650 ml,1082.0,546.0,2,true,650 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Health Shampoo,14399,713717,Clinic Plus Strong & Long Health Shampoo : 175 ml,153.0,142.0,2,true,175 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Health Shampoo,14399,12335,Clinic Plus Strong & Long Health Shampoo : 340 ml,350.0,242.0,2,true,340 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Health Shampoo,14399,12337,Clinic Plus Strong & Long Health Shampoo : 650 ml,840.0,420.0,2,true,650 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Shampoo,864025,860501,Clinic Plus Strong & Long Shampoo : 1 L,1075.0,537.0,2,true,1 L,2026-10-02
+P002,241106,Dove,Dove Intense Repair Shampoo,18528,645014,Dove Intense Repair Shampoo : 180 ml,189.0,175.0,2,true,180 ml,2026-10-02
+P002,241106,Dove,Dove Intense Repair Shampoo,18528,12345,Dove Intense Repair Shampoo : 340 ml,435.0,298.0,2,true,340 ml,2026-10-02
+P002,241106,Dove,Dove Intense Repair Shampoo,18528,12346,Dove Intense Repair Shampoo : 650 ml,1082.0,541.0,2,true,650 ml,2026-10-02
+P002,241106,Dove,Dove Intense Repair Shampoo,18528,482501,Dove Intense Repair Shampoo : 1 L,1370.0,692.0,2,true,1 L,2026-10-02
+P002,241106,Sunsilk,Sunsilk Lusciously Thick & Long Shampoo,14412,735224,Sunsilk Luscious Thick & Long Shampoo : 180 ml,173.0,160.0,2,true,180 ml,2026-10-02
+P002,241106,Sunsilk,Sunsilk Lusciously Thick & Long Shampoo,14412,12406,Sunsilk Lusciously Thick & Long Shampoo : 340 ml,385.0,273.0,2,true,340 ml,2026-10-02
+P002,241106,Sunsilk,Sunsilk Lusciously Thick & Long Shampoo,14412,12401,Sunsilk Lusciously Thick & Long Shampoo : 650 ml,890.0,445.0,2,true,650 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Paris 6 Oil Nourish Shampoo,14469,12378,L'Oreal Paris 6 Oil Nourish Shampoo : 640 ml,1030.0,520.0,2,true,640 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Paris 6 Oil Nourish Shampoo,14469,819518,L'Oreal 6 Oil Nourish Shampoo : 1 L,1250.0,631.0,2,true,1 L,2026-10-02
+P002,241106,L'Oreal,L'Oreal Paris 6 Oil Nourish Shampoo,14469,12377,L'Oreal Paris 6 Oil Nourish Shampoo : 340 ml,450.0,425.0,2,true,340 ml,2026-10-02
+P002,241106,Sunsilk,Sunsilk Stunning Black Shine Shampoo,14414,12410,Sunsilk Stunning Black Shine Shampoo : 340 ml,385.0,254.0,2,true,340 ml,2026-10-02
+P002,241106,Sunsilk,Sunsilk Stunning Black Shine Shampoo,14414,12404,Sunsilk Stunning Black Shine Shampoo : 650 ml,890.0,445.0,2,true,650 ml,2026-10-02
+P002,241106,Tresemme,TRESemme Hair Fall Defence Shampoo,552071,482503,TRESemme Hair Fall Defence Shampoo : 1 L,1370.0,692.0,2,true,1 L,2026-10-02
+P002,241106,Tresemme,TRESemme Hair Fall Defence Shampoo,552071,12415,TRESemme Hair Fall Defense Shampoo : 180 ml,189.0,178.0,2,true,180 ml,2026-10-02
+P002,241106,Tresemme,TRESemme Hair Fall Defence Shampoo,552071,12416,TRESemme Hair Fall Defense Shampoo : 580 ml,920.0,465.0,2,true,580 ml,2026-10-02
+P002,241106,Tresemme,TRESemme Hair Fall Defence Shampoo,552071,735231,TRESemme Hair Fall Defense Shampoo : 340 ml,490.0,349.0,0,true,340 ml,2026-10-02
+P002,241106,Dove,Dove Daily Shine Shampoo,864026,860502,Dove Daily Shine Shampoo : 1 L,1370.0,692.0,2,true,1 L,2026-10-02
+P002,241106,Tresemme,TRESemme Smooth & Shine Shampoo,885055,796443,TRESemme Smooth & Shine Shampoo : 1 L,1370.0,692.0,2,true,1 L,2026-10-02
+P002,241106,mamaearth,Mamaearth Onion & Plant Keratin Shampoo,1288008,857010,Mamaearth Onion & Plant Keratin Shampoo : 250 ml,349.0,187.0,2,true,250 ml,2026-10-02
+P002,241106,mamaearth,Mamaearth Onion & Plant Keratin Shampoo,1288008,1281951,Mamaearth Onion & Plant Keratin Shampoo : 600 ml,899.0,448.0,2,true,600 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Anti-Dandruff Smooth & Silky Shampoo,14396,102506,Head & Shoulders Smooth & Silky Shampoo : 180 ml,218.0,199.0,2,true,180 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Anti-Dandruff Smooth & Silky Shampoo,14396,12356,Head & Shoulders Anti-Dandruff Smooth & Silky Shampoo : 300 ml,352.0,255.0,2,true,300 ml,2026-10-02
+P002,241106,Indulekha,Indulekha Bringha Hairfall Control Shampoo,315507,473001,Indulekha Bringha Hairfall Control Shampoo : 340 ml,441.0,299.0,2,true,340 ml,2026-10-02
+P002,241106,Indulekha,Indulekha Bringha Hairfall Control Shampoo,315507,1061501,Indulekha Bringha Hairfall Control Shampoo : 580 ml,972.0,491.0,2,true,580 ml,2026-10-02
+P002,241106,L'Oréal,L'Oréal Paris Fall Resist 3X Anti-Hair Fall Shampoo,14470,12379,L'Oreal Paris Fall Resist 3X Anti-Hair Fall Shampoo : 340 ml,450.0,415.0,2,true,340 ml,2026-10-02
+P002,241106,L'Oréal,L'Oréal Paris Fall Resist 3X Anti-Hair Fall Shampoo,14470,12380,L'Oreal Paris Fall Resist 3X Anti-Hair Fall Shampoo : 640 ml,1030.0,515.0,2,true,640 ml,2026-10-02
+P002,241106,Nyle,Nyle Naturals Anti-Hairfall Shampoo,14406,12384,Nyle Naturals Anti-Hairfall Shampoo : 800 ml,525.0,262.0,2,true,800 ml,2026-10-02
+P002,241106,L'Oreal,Loreal Paris Hyaluron Pure 72H Purifying Shampoo,1730378,1729541,Loreal Paris Hyaluron Pure 72H Purifying Shampoo : 340 ml,519.0,469.0,2,true,340 ml,2026-10-02
+P002,241106,Nyle,Nyle Naturals Dryness Hydration Shampoo,14404,12382,Nyle Natural Dryness Hydration Hair Shampoo : 800 ml,630.0,318.0,2,true,800 ml,2026-10-02
+P002,241106,Kesh King,Emami Kesh King Anti-Hairfall Shampoo,755535,757001,Emami Kesh King Anti-Hairfall Shampoo : 600 ml,849.0,424.0,2,true,600 ml,2026-10-02
+P002,241106,Himalaya,Himalaya Anti Hair Fall Shampoo,715083,12367,Himalaya Anti-Hairfall Shampoo : 340 ml,335.0,201.0,2,true,340 ml,2026-10-02
+P002,241106,Himalaya,Himalaya Anti Hair Fall Shampoo,715083,731259,Himalaya Anti-Hairfall Shampoo : 650 ml,779.0,389.0,2,true,650 ml,2026-10-02
+P002,241106,Himalaya,Himalaya Anti Hair Fall Shampoo,715083,713711,Himalaya Anti-Hairfall Shampoo : 180 ml,159.0,140.0,2,true,180 ml,2026-10-02
+P002,241106,Tresemme,TRESemmé Smooth & Shine Shampoo,14420,12418,TRESemme Smooth & Shine Shampoo : 580 ml,920.0,465.0,2,true,580 ml,2026-10-02
+P002,241106,Pantene,Pantene Pro-V Hairfall Control Shampoo + Conditioner,808522,796439,Pantene Pro-V Hairfall Control Shampoo + Conditioner : 650 ml,1234.0,673.0,2,true,650 ml,2026-10-02
+P002,241106,Dabur Vatika,Dabur Vatika Ayurvedic Shampoo,804564,796406,Dabur Vatika Ayurvedic Shampoo : 640 ml,699.0,349.0,2,true,640 ml,2026-10-02
+P002,241106,Chik,Chik Thick & Glossy Shampoo,864066,796398,Chik Thick & Glossy Shampoo : 325 ml,340.0,172.0,2,true,325 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Thick Shampoo,49052,731235,Clinic Plus Strong & Thick Shampoo : 175 ml,169.0,157.0,2,true,175 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Thick Shampoo,49052,46553,Clinic Plus Strong & Thick Shampoo : 340 ml,385.0,250.0,2,true,340 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Thick Shampoo,49052,46554,Clinic Plus Strong & Thick Shampoo : 650 ml,880.0,444.0,2,true,650 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shulders Anti Dandruff & Anti Hairfall Shampoo,715082,713710,Head & Shoulders Anti Dandruff & Anti Hairfall Shampoo : 170 ml,218.0,205.0,2,true,170 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shulders Anti Dandruff & Anti Hairfall Shampoo,715082,12358,Head & Shulders Anti Dandruff & Anti Hairfall Shampoo : 300 ml,352.0,290.0,2,true,300 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shulders Anti Dandruff & Anti Hairfall Shampoo,715082,1835538,Head & Shoulders Anti Dandruff & Anti Hairfall Shampoo : 625 ml,510.0,462.0,2,true,625 ml,2026-10-02
+P002,241106,Nyle,Nyle Naturals Volume Enhance Shampoo,14405,12383,Nyle Naturals Volume Enhance Shampoo : 800 ml,630.0,315.0,2,true,800 ml,2026-10-02
+P002,241106,Sunsilk,Sunsilk Lusciously Thick & Long Shampoo,1205522,1150002,Sunsilk Lusciously Thick & Long Shampoo : 1 L,1192.0,602.0,2,true,1 L,2026-10-02
+P002,241106,Sunsilk,Sunsilk Stunning Black Shine Shampoo,878513,796442,Sunsilk Stunning Black Shine Shampoo : 1 L,1192.0,602.0,2,true,1 L,2026-10-02
+P002,241106,Sunsilk,Sunsilk - Stunning Black Shine Shampoo,715093,713720,Sunsilk - Stunning Black Shine Shampoo : 180 ml,173.0,160.0,2,true,180 ml,2026-10-02
+P002,241106,Pantene,Pantene Pro-V Hairfall Control Shampoo,18521,12390,Pantene Pro-V Hair Fall Control Shampoo : 340 ml,429.0,334.0,2,true,340 ml,2026-10-02
+P002,241106,L'Oreal,Loreal Paris Hyaluron Pure 72H Rehydrating Conditioner,1730379,1729542,Loreal Paris Hyaluron Pure 72H Rehydrating Conditioner : 175 ml,345.0,229.0,2,true,175 ml,2026-10-02
+P002,241106,Johnson's,Johnson's Baby Shampoo,15384,46615,Johnson's Baby Shampoo : 100 ml,111.0,102.0,2,true,100 ml,2026-10-02
+P002,241106,Johnson's,Johnson's Baby Shampoo,15384,13310,Johnson's Baby Shampoo : 200 ml,213.0,195.0,2,true,200 ml,2026-10-02
+P002,241106,Johnson's,Johnson's Baby Shampoo,15384,13311,Johnson's Baby Shampoo : 500 ml,467.0,424.0,2,true,500 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Anti Dandruff Shampoo,729334,731236,Clinic Plus Strong & Long Anti Dandruff Shampoo : 175 ml,169.0,157.0,2,true,175 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Anti-Dandruff Cool Menthol Shampoo,14394,102505,Head & Shoulders Cool Menthol Shampoo : 180 ml,199.0,191.0,2,true,180 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Anti-Dandruff Cool Menthol Shampoo,14394,12357,Head & Shoulders Cool Menthol Shampoo : 300 ml,352.0,251.0,2,true,300 ml,2026-10-02
+P002,241106,Nyle,Nyle Naturals Damage Repair Shampoo,14821,12385,Nyle Naturals Damage Repair Shampoo : 800 ml,630.0,315.0,2,true,800 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Cool Menthol Anti Dandruff Shampoo,1836176,1835539,Head & Shoulders Cool Menthol Anti Dandruff Shampoo : 625 ml,510.0,479.0,2,true,625 ml,2026-10-02
+P002,241106,L'Oreal,L'Oreal Paris Colour Protect Shampoo,14609,12370,L'Oreal Paris Colour Protect Shampoo : 340 ml,450.0,425.0,2,true,340 ml,2026-10-02
+P002,241106,Pantene,Pantene Pro-V Silky Smooth 2 In 1 Shampoo Conditioner,808521,799867,Pantene Pro-V Silky Smooth 2 In 1 Shampoo Conditioner : 650 ml,1234.0,680.0,2,true,650 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Anti Dandruff Shampoo With Oxygenated Charcoal,1836177,1835540,Head & Shoulders Anti Dandruff Shampoo With Oxygenated Charcoal : 625 ml,561.0,521.0,2,true,625 ml,2026-10-02
+P002,241106,Himalaya,Himalaya Anti-Dandruff Shampoo,14402,12366,Himalaya Anti-Dandruff Shampoo : 340 ml,335.0,201.0,2,true,340 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Health Shampoo,1209523,1161655,Clinic Plus Strong & Long Health Shampoo : 650 ml,880.0,444.0,0,true,650 ml,2026-10-02
+P002,241106,Patanjali,Patanjali Kesh Kanti Shikakai Hair Cleanser,45777,46565,Patanjali Kesh Kanti Shikakai Hair Cleanser : 180 ml,110.0,95.0,2,true,180 ml,2026-10-02
+P002,241106,Dove,Dove Dandruff Therapy Shampoo,729404,731241,Dove Dandruff Therapy Shampoo : 180 ml,189.0,177.0,2,true,180 ml,2026-10-02
+P002,241106,Scalpe Pro,Scalpe Pro Daily Anti Dandruff Shampoo,1400007,1396525,Scalpe Pro Daily Anti Dandruff Shampoo : 200 ml,338.0,304.0,2,true,200 ml,2026-10-02
+P002,241106,Scalpe Pro,Scalpe Pro Daily Anti Dandruff Shampoo,1400007,1675058,Scalpe Pro Daily Anti Dandruff Shampoo : 400 ml,660.0,340.0,2,true,400 ml,2026-10-02
+P002,241106,Clinic Plus,Clinic Plus Strong & Long Natural Shampoo,14919,12336,Clinic Plus Strong & Long Natural Shampoo : 340 ml,365.0,249.0,2,true,340 ml,2026-10-02
+P002,241106,Dabur Vatika,Dabur Vatika Henna & Olive Shampoo,91506,12338,Dabur Vatika Henna & Olive Shampoo : 340 ml,320.0,160.0,2,true,340 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Silky Black Anti Dandruff Shampoo,732582,731253,Head & Shoulders Silky Black Anti Dandruff Shampoo : 170 ml,218.0,205.0,2,true,170 ml,2026-10-02
+P002,241106,Livon,Livon Intense Hydration Hyaluron Protein Smooth Shampoo,1879551,1880030,Livon Intense Hydration Hyaluron Protein Smooth Shampoo : 340 ml,299.0,199.0,2,true,340 ml,2026-10-02
+P002,241106,WOW SKIN SCIENCE,WOW Apple Cider Vinegar Shampoo,1069576,1065003,WOW Apple Cider Vinegar Shampoo : 500 ml,605.0,302.0,0,true,500 ml,2026-10-02
+P002,241106,Green Leaf,Greenleaf Nourishing Shampoo With Aloe Vera & Hibiscus,1558527,1558528,Greenleaf Nourishing Shampoo With Aloe Vera & Hibiscus : 220 ml,160.0,112.0,0,true,220 ml,2026-10-02
+P002,241106,Head & Shoulders,Head & Shoulders Neem Anti Dandruff Shampoo,875003,832002,Head & Shoulders Neem Anti Dandruff Shampoo : 650 ml,1120.0,509.0,0,true,650 ml,2026-10-02
+P003,241125,Colgate,Colgate Strong Teeth Calci-Lock Toothpaste,14586,12736,Colgate Strong Teeth Calci-Lock Toothpaste : 100 g,73.0,69.0,2,true,100 g,2026-10-02
+P003,241125,Colgate,Colgate Strong Teeth Calci-Lock Toothpaste,14586,100002,Colgate Strong Teeth Calci-Lock Toothpaste : 150 g,103.0,94.0,2,true,150 g,2026-10-02
+P003,241125,Colgate,Colgate Strong Teeth Calci-Lock Toothpaste,14586,716511,Colgate Strong Teeth Toothpaste : 200 g,135.0,126.0,2,true,200 g,2026-10-02
+P003,241125,Colgate,Colgate Strong Teeth Calci-Lock Toothpaste,14586,12737,Colgate Strong Teeth Calci-Lock Toothpaste : 300 g,208.0,181.0,2,true,300 g,2026-10-02
+P003,241125,Colgate,Colgate Strong Teeth Calci-Lock Toothpaste,14586,68502,Colgate Dental Cream Strong Teeth Toothpaste : 500 g,325.0,229.0,2,true,500 g,2026-10-02
+P003,241125,Patanjali,Patanjali Dant Kanti Dental Cream,14913,12778,Patanjali Dant Kanti Dental Cream : 100 g,60.0,56.0,2,true,100 g,2026-10-02
+P003,241125,Patanjali,Patanjali Dant Kanti Dental Cream,14913,46570,Patanjali Dant Kanti Dental Cream : 200 g,110.0,100.0,2,true,200 g,2026-10-02
+P003,241125,Patanjali,Patanjali Dant Kanti Dental Cream,14913,126508,Patanjali Dant Kanti Dental Cream : 300 g,174.0,158.0,2,true,300 g,2026-10-02
+P003,241125,Patanjali,Patanjali Dant Kanti Dental Cream,14913,664007,Patanjali Dant Kanti Tooth Paste : 500 g,249.0,212.0,2,true,500 g,2026-10-02
+P003,241125,Colgate,Colgate MaxFresh Spicy Fresh Toothpaste,14654,100003,Colgate MaxFresh Spicy Fresh Toothpaste : 70 g,73.0,69.0,2,true,70 g,2026-10-02
+P003,241125,Colgate,Colgate MaxFresh Spicy Fresh Toothpaste,14654,12743,Colgate MaxFresh Spicy Fresh Toothpaste : 150 g,144.0,134.0,2,true,150 g,2026-10-02
+P003,241125,Colgate,Colgate MaxFresh Spicy Fresh Toothpaste,14654,12741,Colgate MaxFresh Spicy Fresh Toothpaste : 300 g,280.0,180.0,2,true,300 g,2026-10-02
+P003,241125,Colgate,Colgate Total Advanced Health Toothpaste,878511,877010,Colgate Total Advanced Health Toothpaste : 280 g,390.0,302.0,2,true,280 g,2026-10-02
+P003,241125,Close Up,Closeup Ever Fresh Red Hot Gel Toothpaste,14615,12726,Closeup Deep Action Red Hot Gel Toothpaste : 150 g,129.0,119.0,2,true,150 g,2026-10-02
+P003,241125,Close Up,Closeup Ever Fresh Red Hot Gel Toothpaste,14615,12727,Closeup Everfresh+ Anti-Germ Gel Red Hot Toothpaste : 2x150 g,235.0,172.0,2,true,150 g x 2 U,2026-10-02
+P003,241125,Sensodyne,Sensodyne Repair & Protect Toothpaste,437518,12774,Sensodyne Repair & Protect Toothpaste : 70 g,215.0,197.0,2,true,70 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Repair & Protect Toothpaste,437518,437018,Sensodyne Repair & Protect Toothpaste : 100 g,255.0,228.0,2,true,100 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Repair & Protect Toothpaste,437518,1725024,Sensodyne Repair & Protect Toothpaste : 2x100 g,495.0,409.0,2,true,100 g x 2 U,2026-10-02
+P003,241125,Dabur,Dabur Red Ayurvedic Toothpaste,658668,664006,Dabur Red Ayurvedic Toothpaste : 3x150 g,369.0,282.0,2,true,150 g x 3 U,2026-10-02
+P003,241125,Colgate,Colgate Max Fresh Peppermint Ice Toothpaste,14589,673519,Colgate Max Fresh Peppermint Ice Toothpaste : 300 g,299.0,187.0,2,true,300 g,2026-10-02
+P003,241125,Colgate,Colgate Max Fresh Peppermint Ice Toothpaste,14589,12742,Colgate MaxFresh Peppermint Ice Toothpaste : 150 g,160.0,149.0,2,true,150 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Fresh Toothpaste Gel,14637,485505,Sensodyne Fresh Gel Toothpaste : 75 g,135.0,125.0,2,true,75 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Fresh Toothpaste Gel,14637,12772,Sensodyne Fresh Gel Toothpaste : 150 g,245.0,220.0,2,true,150 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Fresh Toothpaste Gel,14637,755011,Sensodyne Fresh Gel Toothpaste : 2x150 g,470.0,430.0,2,true,150 g x 2 U,2026-10-02
+P003,241125,Dabur,Dabur Red Toothpaste,14582,713797,Dabur Red Tooth Paste : 100 g,75.0,69.0,2,true,100 g,2026-10-02
+P003,241125,Dabur,Dabur Red Toothpaste,14582,12756,Dabur Red Toothpaste : 200 g,145.0,134.0,2,true,200 g,2026-10-02
+P003,241125,Dabur,Dabur Red Toothpaste,14582,94019,Dabur Red Toothpaste : 2x200 g,272.0,225.0,2,true,200 g x 2 U,2026-10-02
+P003,241125,Colgate,Colgate Visible White Purple Toothpaste,1669022,1665046,Colgate Visible White Purple Toothpaste : 240 g,395.0,242.0,2,true,240 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Rapid Relief Toothpaste,111018,12759,Sensodyne Rapid Relief Toothpaste : 80 g,200.0,180.0,2,true,80 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Rapid Relief Toothpaste,111018,1725025,Sensodyne Rapid Relief Toothpaste : 2x80 g,385.0,320.0,2,true,80 g x 2 U,2026-10-02
+P003,241125,Dabur,Dabur Meswak Toothpaste,479001,477007,Dabur Meswak Toothpaste : 400 g,267.0,200.0,2,true,400 g,2026-10-02
+P003,241125,Colgate,Colgate Visible White Toothpaste,14657,12755,Colgate Visible White Toothpaste : 200 g,390.0,262.0,2,true,200 g,2026-10-02
+P003,241125,Pepsodent,Pepsodent Germicheck Toothpaste,18514,12766,Pepsodent Germi Check Cavity Protection : 2x150 g,208.0,146.0,0,true,300 g,2026-10-02
+P003,241125,Pepsodent,Pepsodent Germicheck Toothpaste,18514,735304,Pepsodent Germi Check Toothpaste : 2x230 g,410.0,222.0,2,true,2 x 230 g,2026-10-02
+P003,241125,Close Up,Closeup Twin Saver Pack 18 Hours Fresh Breath,1781701,1773029,Closeup Twin Saver Pack 18 Hours Fresh Breath : 2 x 200 g,311.0,233.0,2,true,2 x 200 g,2026-10-02
+P003,241125,Vicco,Vicco Vajradanti - Ayurvedic Medicine For Gum & Teeth,14888,12775,Vicco Vajradanti - Ayurvedic Medicine For Gums & Teeth : 200 g,150.0,135.0,2,true,200 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Fresh Mint Toothpaste,14638,12758,Sensodyne Fresh Mint Toothpaste : 75 g,140.0,130.0,2,true,75 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Fresh Mint Toothpaste,14638,12773,Sensodyne Fresh Mint Toothpaste : 150 g,245.0,220.0,2,true,150 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Fresh Mint Toothpaste,14638,755010,Sensodyne Fresh Mint Toothpaste : 2x150 g,470.0,430.0,2,true,150 g x 2 U,2026-10-02
+P003,241125,Colgate,Colgate Active Salt Toothpaste,14617,12733,Colgate Active Salt Toothpaste : 300 g,228.0,194.0,2,true,300 g,2026-10-02
+P003,241125,Pepsodent,Pepsodent 2-In-1 Toothpaste,14633,12765,Pepsodent 2-In-1 Toothpaste : 150 g,118.0,94.0,2,true,150 g,2026-10-02
+P003,241125,Colgate,Colgate Swarna Vedshakti Toothpaste,237587,670513,Colgate Swarna Vedshakti Toothpaste : 2x200 g,365.0,201.0,2,true,400 g,2026-10-02
+P003,241125,Colgate,Colgate Charcoal Clean Bamboo & Mint Toothpaste,729340,731362,Colgate Charcoal Clean Bamboo & Mint Toothpaste : 240 g,420.0,212.0,2,true,240 g,2026-10-02
+P003,241125,Colgate,Colgate Charcoal Clean Bamboo & Mint Toothpaste,729340,664501,Colgate Bamboo Charcoal & Mint Toothpaste : 120 g,198.0,177.0,2,true,120 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Pronamel Daily Protection Toothpaste,1896579,1895524,Sensodyne Pronamel Daily Protection Toothpaste : 70 g,140.0,110.0,2,true,70 g,2026-10-02
+P003,241125,Himalaya,Himalaya Complete Care Herbal Toothpaste,14768,12760,Himalaya Complete Care Herbal Toothpaste : 300 g,177.0,120.0,2,true,300 g,2026-10-02
+P003,241125,Colgate,Colgate Kids Toothpaste - Strawberry,14656,12748,Colgate Kids Toothpaste - Strawberry : 80 g,190.0,142.0,2,true,80 g,2026-10-02
+P003,241125,Dabur,Dabur Meswak Toothpaste,1881562,1882024,Dabur Meswak Toothpaste : 3 U x 150 g,423.0,278.0,2,true,3 U x 150 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Deep Clean Toothpaste,746306,743803,Sensodyne Deep Clean Toothpaste : 70 g,145.0,131.0,2,true,70 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Pronamel Fresh Breath Toothpaste,1896578,1895523,Sensodyne Pronamel Fresh Breath Toothpaste : 70 g,140.0,110.0,2,true,70 g,2026-10-02
+P003,241125,Chicco,Chicco Kids Toothpaste Strawberry (12mn-6yr ),1730247,1731052,Chicco Kids Toothpaste Strawberry (12mn-6yr ) : 50 g,159.0,148.0,2,true,50 g,2026-10-02
+P003,241125,Colgate,Colgate Strawberry Flavour Toothpaste,746077,743798,Colgate Strawberry Flavour Toothpaste : 40 g,99.0,93.0,2,true,40 g,2026-10-02
+P003,241125,Sensodyne,Sensodyne Whitening Fluoride Toothpaste,746304,743802,Sensodyne Whitening Fluoride Toothpaste : 70 g,155.0,144.0,2,true,70 g,2026-10-02
+P003,241125,Colgate,Colgate Bubble Fruit Flavour Toothpaste,715149,713796,Colgate Bubble Fruit Flavour Toothpaste : 40 g,99.0,92.0,2,true,40 g,2026-10-02
+P003,241125,Colgate,Colgate Cibaca Toothpaste,14687,12735,Colgate Cibaca Toothpaste : 2x175 g,123.0,113.0,0,true,175 g x 2 U,2026-10-02
+M002,240864,Dettol,Dettol Antiseptic Liquid,1008001,998004,Dettol Antiseptic Liquid : 250 ml,167.34,155.0,2,true,250 ml,2026-10-02
+M002,240864,Dettol,Dettol Antiseptic Liquid,1008001,998005,Dettol Antiseptic Liquid : 550 ml,293.79,276.0,2,true,550 ml,2026-10-02
+M002,240864,Dettol,Dettol Antiseptic Liquid,1008001,998006,Dettol Antiseptic Liquid : 1 L,454.87,439.0,2,true,1 L,2026-10-02
+M002,240864,Dettol,Dettol Disinfectant Liquid Lime Fresh,45758,689423,Dettol Disinfectant Liquid Lime Fresh : 1 L,485.21,398.0,2,true,1 L,2026-10-02
+M002,240864,Dettol,Dettol Disinfectant Liquid Lime Fresh,45758,33501,Dettol Disinfectant Multi-Use Hygiene Liquid : 200 ml,170.04,165.0,2,true,200 ml,2026-10-02
+M002,240864,Dettol,Dettol Disinfectant Liquid Lime Fresh,45758,33502,Dettol Disinfectant Multi-Use Hygiene Liquid : 500 ml,284.9,267.0,2,true,500 ml,2026-10-02
+M002,240864,Dettol,Dettol Menthol Cool Disinfectant Liquid,494015,496501,Dettol Menthol Cool Disinfectant Liquid : 500 ml,284.9,269.0,2,true,500 ml,2026-10-02
+E003,240915,Doms,Doms Single Line A4 Size Notebook - 200 Pages,302519,300501,Doms Single Line A4 Size Notebook - 200 Pages : 1 Unit,70.0,59.0,0,true,1 U,2026-10-02
+E003,240915,Tru Note,Tru Note Longbook Ruled A4 ( Assorted) - 284 Pages,478001,476501,Tru Note Longbook Ruled A4 ( Assorted) - 284 Pages: 1 Unit,125.0,94.0,0,true,1 U,2026-10-02
+E003,240915,Freedom,Freedom Longbook Regular - 172 Pages,732719,678502,Freedom Longbook Regular - 172 Pages : 1 Unit,50.0,37.0,2,true,1 U,2026-10-02
+E003,240915,Freedom,Freedom A4 Longbook Ruled - 140 Pages,732718,678501,Freedom A4 Longbook Ruled - 140 Pages : 1 Unit,50.0,37.0,0,true,1 U,2026-10-02
+E003,240915,Tru Note,Tru Note Longbook Regular (Assorted)- 172 Pages,113066,125502,Tru Note Longbook Regular (Assorted)- 172 Pages: 1 Unit,50.0,37.0,0,true,1 U,2026-10-02
+E003,240915,Doms,Doms Single Line A4 Size Notebook - 140 Pages,302518,300502,Doms Single Line A4 Size Notebook - 140 Pages : 1 Unit,50.0,42.0,2,true,1 U,2026-10-02
+E003,240915,Tru note,Tru Note Longbook A4 - 140 Pages,113065,125501,Tru Note Longbook A4 - 140 Pages : 1 Unit,50.0,37.0,2,true,1 U,2026-10-02

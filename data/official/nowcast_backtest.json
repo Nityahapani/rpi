@@ -27,25 +27,25 @@
     "own_trend_independents_exact": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.145,
-        "bias_pp": -0.052
+        "rmse_pp": 0.091,
+        "bias_pp": -0.039
       },
       "h2": {
         "n": 10,
-        "rmse_pp": 0.282,
-        "bias_pp": -0.121
+        "rmse_pp": 0.177,
+        "bias_pp": -0.094
       }
     },
     "old_division_peer_fill": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.482,
-        "bias_pp": 0.229
+        "rmse_pp": 0.136,
+        "bias_pp": 0.035
       },
       "h2": {
         "n": 10,
-        "rmse_pp": 0.794,
-        "bias_pp": 0.428
+        "rmse_pp": 0.187,
+        "bias_pp": 0.07
       }
     }
   },

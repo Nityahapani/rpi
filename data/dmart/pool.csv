@@ -1,0 +1,67 @@
+item_id,sku,cat,brand,name,mrp_at_selection,sale_at_selection,selected_on
+F007,689176,240277,Gulab,Gulab Cotton Seed Oil : 870 g,265.0,180.0,2026-10-02
+F007,689182,240277,Vimal,Vimal Cotton Seed Oil : 870 g,234.0,179.0,2026-10-02
+F007,689178,240277,Ankur,Ankur Cotton Seed Oil : 870 g,260.0,181.0,2026-10-02
+F007,689170,240277,Tirupati,Tirupati Cotton Seed Oil : 910 g,262.0,183.0,2026-10-02
+F012,11071,240287,Gowardhan,Gowardhan Pure Cow Ghee Pouch : 905 g,870.0,798.0,2026-10-02
+F012,848001,240287,Milky Mist,Milky Mist Ghee Pouch : 910 g,920.0,676.0,2026-10-02
+F012,11065,240287,Amul,Amul Cow Ghee Tin : 905 g,705.0,672.0,2026-10-02
+F012,11075,240264,Amul,Amul Pure Ghee Tin : 905 g,650.0,640.0,2026-10-02
+F012,11064,240287,Dynamix,Dynamix Cow Ghee Pouch : 902 g,790.0,706.0,2026-10-02
+F014,87529,240879,Wagh Bakri,Wagh Bakri Premium Leaf Tea Pouch : 250 g,150.0,144.0,2026-10-02
+F014,12066,240879,Tata Gold,Tata Tea Gold : 250 g,155.0,143.0,2026-10-02
+F014,12026,240879,Brooke Bond Red Label,Brooke Bond Red Label Natural Care Tea : 250 g,145.0,135.0,2026-10-02
+F014,12062,240879,Tata Agni,Tata Tea Agni : 250 g,70.0,65.0,2026-10-02
+F014,689360,240879,Wagh Bakri,Wagh Bakri Dust Tea : 250 g,135.0,131.0,2026-10-02
+F015,11340,240235,Tata,Tata Salt : 1 kg,32.0,29.0,2026-10-02
+F015,11338,240235,Aashirvaad,Aashirvaad Iodized Salt : 1 kg,32.0,22.0,2026-10-02
+F016,11222,240272,Ramdev,Ramdev Turmeric Powder : 200 g,104.0,98.0,2026-10-02
+F016,22001,240272,DMart Premia,DMart Premia Haldi Powder (Haldar Powder) : 200 g,82.0,58.0,2026-10-02
+F016,99516,240272,EVEREST,Everest Turmeric Powder : 500 g,240.0,188.0,2026-10-02
+F017,11457,240329,Parle-G,Parle-G Original Gluco Biscuits : 200 g,30.0,28.0,2026-10-02
+F017,11410,240331,Britannia Marie Gold,Britannia Marie Gold Biscuits : 250 g,40.0,38.0,2026-10-02
+F017,11414,240331,Parle,Parle Marie Biscuits : 239.7 g,40.0,33.0,2026-10-02
+F017,11412,240331,Britannia Vita Marie,Britannia Vita Marie Gold Biscuits : 248 g,45.0,43.0,2026-10-02
+F017,438501,240329,Patanjali,Patanjali Doodh Biscuits : 255 g,40.0,36.0,2026-10-02
+F018,508002,240324,Maggi,Maggi Masala Noodles : 280 g,60.0,56.0,2026-10-02
+F018,11598,240324,Sunfeast Yippee,Sunfeast Yippee Noodles Magic Masala : 280 g,60.0,55.0,2026-10-02
+F018,713366,240324,Nissin,Top Ramen Curry Noodles : 280 g,103.0,79.0,2026-10-02
+F019,799709,240318,Super,Super White Bread : 400 g,55.0,49.0,2026-10-02
+F019,799708,240318,Super,Super Crustless White Bread : 300 g,55.0,48.0,2026-10-02
+F019,799711,240318,Super,Super White Bread : 800 g,85.0,76.0,2026-10-02
+H001,87534,240857,Surf Excel,Surf Excel Easy Wash Detergent Powder : 1 kg,167.0,157.0,2026-10-02
+H001,12948,240857,Rin,Rin Detergent Powder : 1 kg,120.0,111.0,2026-10-02
+H001,12969,240857,Wheel,Wheel Active 2 In 1 Detergent Powder Green : 1 kg,88.0,79.0,2026-10-02
+H001,1698558,240857,Ariel,Ariel Perfect Wash Detergent Powder : 1 kg,180.0,167.0,2026-10-02
+H001,12960,240857,Tide,Tide Double Power Detergent Powder - Lemon & Mint : 970 g,140.0,130.0,2026-10-02
+H002,13138,240855,Vim,Vim Dishwash Liquid Gel - Lemon Bottle : 500 ml,140.0,130.0,2026-10-02
+H002,861533,240855,Reflect,Reflect Concentrated Gel Dishwash Liquid Refill (Pouch) : 500 ml,95.0,70.0,2026-10-02
+H002,814504,240855,Giffy,Giffy Concentrated Dish Wash Gel : 750 ml,199.0,140.0,2026-10-02
+H002,1461021,240855,Beco,BECO Natural Dishwash Liquid : 750 ml,199.0,119.0,2026-10-02
+H003,1565532,241183,Nippo,Nippo B22 LED Bulb : 9 W,160.0,45.0,2026-10-02
+H003,65585,241183,Eveready,Eveready Cool Day Light White LED Bulb - 9 W : 1 Unit,140.0,49.0,2026-10-02
+H003,546503,241183,Crompton Greaves,Crompton Greaves Ecoglo B22 CDL White LED Bulb : 9 W,150.0,45.0,2026-10-02
+H004,12871,241246,Hawkins,Hawkins Contura Black Hard Inner Lid Anodised Cooker CB30 - 3 L : 1 Unit,2300.0,1999.0,2026-10-02
+H004,570001,241246,Hawkins,Hawkins Miss Mary Inner Lid Pressure Cooker (MM30) - 3 L : 1 Unit,1325.0,1140.0,2026-10-02
+H004,846503,241246,Prestige,Prestige Deluxe Plus Hard Outer Lid Anodised Pressure Handi Cooker - 3 L : 1 Unit,3025.0,2160.0,2026-10-02
+P001,733185,241101,Lux,Lux Creamy Perfection Soap : 125 g,87.0,80.0,2026-10-02
+P001,12573,241101,Pears,Pears Soft & Fresh Bathing Bar : 125 g,88.0,80.0,2026-10-02
+P001,731307,241101,Dove,Dove Pink Radiance Bathing Bar : 100 g,70.0,65.0,2026-10-02
+P001,1456003,241101,Dettol,Dettol Original Soap : 4x100 g,178.0,162.0,2026-10-02
+P001,12534,241101,Lifebuoy,Lifebuoy Germ Guard+ Soap : 4x125 g,155.0,146.0,2026-10-02
+P002,12343,241106,Dove,Dove Hair Fall Rescue Shampoo : 340 ml,435.0,295.0,2026-10-02
+P002,12335,241106,Clinic Plus,Clinic Plus Strong & Long Health Shampoo : 340 ml,350.0,242.0,2026-10-02
+P002,12406,241106,Sunsilk,Sunsilk Lusciously Thick & Long Shampoo : 340 ml,385.0,273.0,2026-10-02
+P002,735232,241106,Tresemme,TRESemme Keratin Smooth Shampoo : 340 ml,435.0,300.0,2026-10-02
+P002,12390,241106,Pantene,Pantene Pro-V Hair Fall Control Shampoo : 340 ml,429.0,334.0,2026-10-02
+P003,716511,241125,Colgate,Colgate Strong Teeth Toothpaste : 200 g,135.0,126.0,2026-10-02
+P003,46570,241125,Patanjali,Patanjali Dant Kanti Dental Cream : 200 g,110.0,100.0,2026-10-02
+P003,12756,241125,Dabur,Dabur Red Toothpaste : 200 g,145.0,134.0,2026-10-02
+P003,12726,241125,Close Up,Closeup Deep Action Red Hot Gel Toothpaste : 150 g,129.0,119.0,2026-10-02
+M002,998005,240864,Dettol,Dettol Antiseptic Liquid : 550 ml,293.79,276.0,2026-10-02
+M002,998006,240864,Dettol,Dettol Antiseptic Liquid : 1 L,454.87,439.0,2026-10-02
+M002,998004,240864,Dettol,Dettol Antiseptic Liquid : 250 ml,167.34,155.0,2026-10-02
+E003,678502,240915,Freedom,Freedom Longbook Regular - 172 Pages : 1 Unit,50.0,37.0,2026-10-02
+E003,125502,240915,Tru Note,Tru Note Longbook Regular (Assorted)- 172 Pages: 1 Unit,50.0,37.0,2026-10-02
+E003,300502,240915,Doms,Doms Single Line A4 Size Notebook - 140 Pages : 1 Unit,50.0,42.0,2026-10-02
+E003,125501,240915,Tru note,Tru Note Longbook A4 - 140 Pages : 1 Unit,50.0,37.0,2026-10-02

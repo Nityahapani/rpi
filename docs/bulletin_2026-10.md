@@ -2,15 +2,15 @@
 
 
 - Reference month 2026-08: index **107.67**, YoY **5.75%**
-- Latest month 2026-10 (nowcast): index **109.41**  (bootstrap CI withheld: hybrid index)
+- Latest month 2026-10 (nowcast): index **109.41**  (95% CI 107.69-110.62)
 - Nowcast 90% band for 2026-10: **107.15 - 111.73** (split-conformal from a rolling-origin back-test on official data; conservative)
 - Month-on-month: **0.48%**
 - Year-on-year: **7.6%**
 - Directly observed share of CPI weight: **17%** (remainder imputed)
 
 ## What is independent vs official-linked
-- Official-linked stand-ins (MoSPI Gujarat-urban item indices) fill items with no independent source yet; they run to 2026-08. Their plan weight: 59.9%.
-- Independently observed items: 38.5% of weight (observed in latest month 2026-10: 38.5%). Months after 2026-08 are a nowcast: those items are observed; every other item carries its own 12-month mean drift (back-tested one-month-ahead error about 0.6 pp).
+- Official-linked stand-ins (MoSPI Gujarat-urban item indices) fill items with no independent source yet; they run to 2026-08. Their plan weight: 43.3%.
+- Independently observed items: 55.1% of weight (observed in latest month 2026-10: 55.1%). Months after 2026-08 are a nowcast: those items are observed; every other item carries its own 12-month mean drift (back-tested one-month-ahead error about 0.6 pp).
 - No data at all: 1.6% of weight.
 
 ## Robustness variants (latest index level)
@@ -35,4 +35,4 @@
 | Recreation & culture | 2.66 |
 | Health | 2.36 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261002T165218434905Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261002T172451213417Z._

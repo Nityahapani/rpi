@@ -20,7 +20,9 @@ import pandas as pd
 
 # doca_national = all-India balanced panel of DoCA retail quotes (rpi/collectors/doca.py): observed retail prices, but not Rajkot -> proxy bucket.
 from .superseded import sql_clause
-PROXY_SOURCES = ("mandi_gondal", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "necc_ahmedabad", "doca_national")
+PROXY_SOURCES = ("mandi_gondal", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "necc_ahmedabad", "doca_national", "dmart_ahmedabad")
+# Multi-SKU pools: the monthly level is the matched-model Jevons chain of the SKUs, not the mean of price levels (a SKU going out of stock must not move it).
+MULTI_SKU_SOURCES = ("dmart_ahmedabad",)
 # Retail quotes reported by DoCA for the Rajkot centre (rpi/collectors/doca.py): a genuine retail price of a standard local variety,
 # gated against the official item index like a proxy, but reported in its own bucket (it is not wholesale).
 RETAIL_SOURCES = ("doca_rajkot",)
@@ -47,6 +49,15 @@ def judge(proxy: pd.Series, official: pd.Series) -> dict:
     return out
 
 
+def chain_series(piv: pd.DataFrame) -> pd.Series:
+    """months x SKUs unit-price table -> matched-model Jevons level series (first month = 100)."""
+    lg = np.log(piv.astype(float).where(piv > 0))
+    step = lg.diff().mean(axis=1, skipna=True)
+    lvl = 100.0 * np.exp(step.fillna(0.0).cumsum())
+    lvl[step.isna() & (lvl.index != lvl.index[0])] = np.nan
+    return lvl
+
+
 def validate_proxies(conn, official_csv, mapping_csv, plan_csv) -> list[dict]:
     plan = pd.read_csv(plan_csv, dtype=str, keep_default_na=False)
     mp = pd.read_csv(mapping_csv, dtype=str, keep_default_na=False).set_index("item_id")
@@ -61,6 +72,12 @@ def validate_proxies(conn, official_csv, mapping_csv, plan_csv) -> list[dict]:
                WHERE p.item_id=? AND p.source_id IN ({}) AND {} GROUP BY 1""".format(",".join("?" * len(GATED_SOURCES)), sql_clause("p")),
             conn, params=[it, *GATED_SOURCES])
         proxy = q.set_index("m")["v"] if len(q) else pd.Series(dtype=float)
+        if plan.set_index("item_id").loc[it, "primary_source"] in MULTI_SKU_SOURCES:
+            sk = pd.read_sql_query(
+                """SELECT o.sku_id AS sku, substr(o.obs_date,1,7) AS m, AVG(o.unit_price) AS v FROM observations o JOIN products p ON p.sku_id=o.sku_id
+                   WHERE p.item_id=? AND p.source_id IN ({})  GROUP BY 1,2""".format(",".join("?" * len(MULTI_SKU_SOURCES))),
+                conn, params=[it, *MULTI_SKU_SOURCES])
+            proxy = chain_series(sk.pivot(index="m", columns="sku", values="v").sort_index()) if len(sk) else pd.Series(dtype=float)
         o = off[code].dropna() if code in off.columns else pd.Series(dtype=float)
         res.append({"item_id": it, **judge(proxy, o), "proxy_months": int(len(proxy)),
                     "official_months_after_proxy_start": int(sum(1 for m in o.index if len(proxy) and m >= proxy.index.min()))})
