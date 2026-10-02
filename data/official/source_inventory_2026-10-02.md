@@ -272,3 +272,27 @@ F020 eggs cross-check (monthly means, 20 overlapping months, Jan 2025 - Aug 2026
 | DoCA national vs NECC Ahmedabad | each other | 0.60 | 0.008 | pass |
 
 Reading: two separately sourced series agree with each other and with the official index on level and seasonality (December peak, March-April trough). That supports keeping DoCA national as the F020 feed, and it removes the worry that F020 rests on one civic mirror. DoCA stays primary because its correlation with the official index is higher and it is retail. No weight or plan change. The same archive's retail.json covers six metros only (not Rajkot) and BigBasket/Zepto scrapes there are failing.
+
+## U. Sixteenth look, part 2 (2026-10-02): other categories swept (transport, civic, education, food-away, health, rent, handsets)
+
+| Area | What was found | Result |
+|---|---|---|
+| RMC water (R004) and garbage | Draft FY26-27 hike (water Rs1,500 -> 2,400; garbage Rs365 -> 800) was scrapped by the standing committee (TOI 10 Feb 2026, DeshGujarat 11 Feb 2026) | Already wired as a flat register (R004). Re-confirmed, no change. |
+| GSRTC fares | +25% 1 Aug 2023, +10% 29 Mar 2025, +3% 1 Jan 2026 (no rise up to 9 km, +Rs1 for 10-60 km). The official Gujarat-urban bus-fare index moved +2.7% (Mar -> Apr 2025) and +1.2% (Dec 2025 -> Jan 2026), so the official series tracks the effective rise, not the 10% / 3% headline | Not an input: statewide intercity tariff, not the city bus item (T003). A nominal-tariff register would overstate by about 4x. |
+| School fees (E001) | Gujarat FRC caps (Rs15,000 / 25,000 / 27,000, science 30,000) were set in 2017-18 and have not moved; most Rajkot private schools charge above the caps and are approved school by school | No cap path to register. School pages already held as corroboration only. |
+| Thali (D001) | Only Ahmedabad (Rajwadu, Rs518 sale / 575 list). No Rajkot restaurant with a dated price history | Unwired. |
+| Hospital ward (M004), two-wheeler service (T005) | Aggregator ranges (Rs3,000-6,000 per day; labour Rs350-500) with no dates | Unwired. |
+| Cinema (S001) | Rajkot has Cinepolis, PVR, INOX and Cosmoplex, but prices come only from live booking pages | Unwired. |
+| Packaged tea (F014) | Wagh Bakri and Tata price-hike stories are 2012-2024; nothing for 2025-26 | Unwired. |
+| Rent (R001) | Magicbricks and 99acres "rates and trends" pages are JavaScript shells (empty table) or sale prices per sq ft; rent history is not published. Their terms bar scraping. | Unwired. `rent_listings.csv` stays a diagnostic. |
+| Handsets (K002) | Large dated MRP rises in 2026 from the memory-chip shortage: Samsung A56 +Rs2,000 (5 Jan), A36 +Rs1,500 (5 Jan), then +Rs3,000 (24 Sep); A17/A27/F17/A07 (2 Sep); iPhone 16 128 GB Rs69,900 -> 89,900 (10 Sep, Apple repriced the whole older line-up after the iPhone 18 launch). Samsung quotes mix MRP, "list", "offer" and with/without-charger prices. | **No register.** A single-model Apple path (79,900 -> 69,900 on 9 Sep 2025 -> 89,900 on 10 Sep 2026) fails the gate against the official handset index: corr 0.43, drift 0.161 over 20 months. The official index is quality-adjusted, so a fixed-model list price is a different quantity. Three events added to `event_checks.csv` instead (`scripts/add_k002_events.py`). |
+
+K002 event checks (diagnostic only):
+
+| Event | Expected | Official handset index | Ratio | Verdict |
+|---|---|---|---|---|
+| iPhone 16 128 GB 79,900 -> 69,900, 9 Sep 2025 | -12.52% | -1.76% (Aug -> Oct 2025) | 0.14 | official_muted |
+| Galaxy A56 8/128 38,999 -> 40,999, 5 Jan 2026 | +5.13% | +0.27% (Dec 2025 -> Feb 2026) | 0.05 | official_muted |
+| iPhone 16 128 GB 69,900 -> 89,900, 10 Sep 2026 | +28.61% | not yet published (Oct 2026 index due mid-Nov) | n/a | pending |
+
+Reading: the official handset index barely moves when fixed-model list prices move. That is expected for a hedonic index, but it means K002 (weight 0.80) rests on a stand-in that may understate the 2026 handset rise. This is flagged, not adjusted. Sep and Oct 2026 handset prices in the nowcast carry upside risk (Samsung 2 and 24 Sep, Apple 10 Sep).
