@@ -234,3 +234,5 @@ A further sweep of brand stores, open price trackers and Rajkot administered-pri
 * **Fix:** register a self-hosted runner on a machine with an Indian IP (Settings -> Actions -> Runners -> New self-hosted runner), then set the repository variable
   `RPI_RUNNER` to `self-hosted` (Settings -> Secrets and variables -> Actions -> Variables). No code change needed.
 * Raw HTTP snapshots (`data/sources_raw/`, `data/raw/`) are git-ignored; everything the index needs is in `data/` and `docs/`.
+
+- **Historical reference back-test (sweep 16c):** WFP/HDX Rajkot retail (2010–2023) and NECC Ahmedabad eggs (2009–2026) are stored under `data/reference/` as reference-only data. A pre-registered test of a seasonal term for the nowcast (`scripts/seasonal_backtest.py`) found no item that met the bar, so nowcasts stay `own_trend`. See inventory section V.

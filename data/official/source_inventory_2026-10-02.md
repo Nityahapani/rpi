@@ -296,3 +296,21 @@ K002 event checks (diagnostic only):
 | iPhone 16 128 GB 69,900 -> 89,900, 10 Sep 2026 | +28.61% | not yet published (Oct 2026 index due mid-Nov) | n/a | pending |
 
 Reading: the official handset index barely moves when fixed-model list prices move. That is expected for a hedonic index, but it means K002 (weight 0.80) rests on a stand-in that may understate the 2026 handset rise. This is flagged, not adjusted. Sep and Oct 2026 handset prices in the nowcast carry upside risk (Samsung 2 and 24 Sep, Apple 10 Sep).
+
+## V. Historical reference datasets — seasonal back-test of the nowcast (sweep 16c)
+
+**Datasets ingested as reference only (not index inputs; `data/reference/`, fetched by `scripts/fetch_reference_history.py`):**
+- WFP/HDX "India – Food Prices", Rajkot + Ahmedabad retail rows (`wfp_gujarat_retail.csv`). Rajkot 2010-04 → 2023-07 (Gujarat reporting stops upstream). Cannot feed 2025+.
+- NECC Ahmedabad daily "Suggested" egg rate 2009-01 → 2026-10, reduced to monthly means (`necc_ahmedabad_monthly.csv`). Same data as the F020 cross-check (section T).
+
+**Question:** does a calendar-month seasonal term learned from this history improve the `own_trend` fill used for nowcast months?
+Rule: `forecast = mean(last 12 log relatives) + s_m`, with `s_m` = mean historical own_trend error for that calendar month.
+Pre-registered adoption rule: out-of-sample RMSE gain ≥ 10% on the reference test (2018–2023, expanding window), AND no worsening on the official Gujarat-urban item indices (2025-02 → 2026-08, `s_m` learned on reference years only). Result in `data/reference/seasonal_backtest.csv`; script `scripts/seasonal_backtest.py`.
+
+**Result: negative. No item adopted; the nowcast stays `own_trend`.** 14 mapped items (wheat flour, rice, moong, groundnut oil, sunflower oil, milk, sugar, tea, salt, potato, onion, tomato, jaggery, eggs):
+- Reference test: seasonal term helped only potato (+3.9%, below the 10% bar), eggs (+18.9%), milk/salt (≈ +0.5–0.8%). It hurt 9 of 14 items (sugar −28%, onion −21%, jaggery −18%, moong −13%).
+- Official overlap: it worsened 13 of 14 items; only potato (+21%) and onion (+8%) improved. Eggs, which passed the reference test, worsened 2.2× on the official data.
+- Reading: after the 12-month own-trend, month-of-year residuals in WFP data are mostly noise (single-market monthly quotes, reporting jumps), so a learned seasonal term adds variance. The apparent aggregate improvement (0.650 → 0.602 pp, potato-only, 1.3% weight, n = 11) is not credible and was not adopted.
+- Caveats: WFP "Rice", "Wheat flour", "Oil (groundnut)" are generic grades, not the basket specs; WFP has no matching ghee, banana, brinjal or tur/chana dal series, so F003/F005/F007/F012/F024/F025 were not tested.
+
+**Effect on the index:** none. Published Aug 107.666, Sep 108.885 (nowcast), Oct 109.413 (nowcast), independent share 38.5% — all unchanged.
