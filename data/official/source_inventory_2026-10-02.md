@@ -255,3 +255,20 @@ Local feeds still ingest but are filtered out of the index by `rpi/superseded.py
 | Telecom (K001) | Re-checked: Airtel withdrew Rs299 and four other plans on 12 Aug 2026; Jio kept Rs299 and added Jio Prime (Rs300/yr) | Already in `tariff_events.csv` (Airtel Rs299 -> 349 on 2026-08-12; Jio Rs299 re-confirmed 2026-08-21). Analysts expect a headline hike Oct-Dec 2026; none announced yet. |
 | OTT (S002) | JioHotstar hike of 28 Jan 2026 and Prime Rs1,499 re-confirmed | Already in `tariff_events.csv`. Netflix India Rs149-649 unchanged. |
 | cpi.reclaimchennai.city OpenAPI | Checked `/api/openapi.json` for undocumented datasets | Only the 10 endpoints already used. |
+
+## T. Sixteenth look (2026-10-02): Amul MRP register re-tested (rejected); NECC egg archive found (corroboration only)
+
+| Lead | Finding | Result |
+|---|---|---|
+| Amul / GCMMF butter and ghee administered-MRP register (F011, F012, maybe F010) | The 22 Sep 2025 GST cut is verified by about ten outlets (butter 100 g 62 -> 58, ghee 1 L carton 650 -> 610, butter 500 g 305 -> 285, ghee 5 L tin 3,275 -> 3,075). The dates on which butter reached Rs62 and ghee Rs650 were not found, and no butter or ghee change after Sep 2025 was found (only milk +Rs2/L on 14 May 2026). Retail listings mix tin, carton and tetra packs and cannot confirm an MRP. | **Not wired.** A single dated step is not a path. The two cuts stay in `event_checks.csv` as event tests (pass-through 0.46, official_muted). Official butter and ghee indices rose about 3.5% after Oct 2025, so a flat register after the cut would be wrong. |
+| NECC egg price archive (eggs.reclaimchennai.city/data/egg_prices_daily.csv, publisher e2necc.com) | Primary NECC "Suggested" and "Prevailing" daily rates for about 34 zones. Ahmedabad: 6,480 daily rows, 2009-01-01 to 2026-10-01. Reachable from the sandbox. | **Corroboration only.** NECC Ahmedabad is wholesale and one zone. `scripts/crosscheck_eggs_necc.py` writes `data/official/egg_crosscheck.csv`. |
+
+F020 eggs cross-check (monthly means, 20 overlapping months, Jan 2025 - Aug 2026):
+
+| Series | Compared with | corr (m/m) | drift | Verdict |
+|---|---|---|---|---|
+| DoCA all-India retail (wired) | Official Gujarat-urban eggs | 0.89 | 0.025 | pass |
+| NECC Ahmedabad wholesale (not wired) | Official Gujarat-urban eggs | 0.55 | 0.017 | pass |
+| DoCA national vs NECC Ahmedabad | each other | 0.60 | 0.008 | pass |
+
+Reading: two separately sourced series agree with each other and with the official index on level and seasonality (December peak, March-April trough). That supports keeping DoCA national as the F020 feed, and it removes the worry that F020 rests on one civic mirror. DoCA stays primary because its correlation with the official index is higher and it is retail. No weight or plan change. The same archive's retail.json covers six metros only (not Rajkot) and BigBasket/Zepto scrapes there are failing.

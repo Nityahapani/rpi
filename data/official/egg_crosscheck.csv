@@ -1,0 +1,4 @@
+series,vs,n_overlap,corr,drift,verdict
+DoCA national retail (wired),official Gujarat-urban eggs index,20,0.89,0.025,pass
+NECC Ahmedabad wholesale (not wired),official Gujarat-urban eggs index,20,0.55,0.017,pass
+DoCA national vs NECC Ahmedabad,each other,20,0.6,0.008,pass
