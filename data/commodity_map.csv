@@ -1,0 +1,7 @@
+commodity,variety_regex,item_id,note
+Potato,.*,F021,Verify exact Agmarknet commodity names against live data
+Onion,.*,F022,
+Tomato,.*,F023,
+Banana,.*,F024,
+Brinjal,.*,F025,
+Gur(Jaggery),.*,F026,

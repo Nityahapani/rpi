@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.cache/
+*.egg-info/
+# raw HTTP snapshots: provenance copies, 22 MB and growing daily; the pipeline rewrites them each run
+data/sources_raw/
+data/raw/
+.DS_Store

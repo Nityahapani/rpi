@@ -1,0 +1,40 @@
+{
+  "latest_period": "2026-10",
+  "index": 109.41,
+  "mom_pct": 0.48,
+  "yoy_pct": 7.6,
+  "ci_95": null,
+  "ci_note": "bootstrap CI withheld: <50% of weight is independently sampled (hybrid index), so a quote-resampling CI would be false precision",
+  "reference_period": "2026-08",
+  "nowcast_periods": [
+    "2026-09",
+    "2026-10"
+  ],
+  "reference_index": 107.67,
+  "reference_yoy_pct": 5.75,
+  "nowcast_band_90": [
+    107.15,
+    111.73
+  ],
+  "observed_weight_share": 0.167,
+  "run_id": "20261002T124401394577Z",
+  "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices",
+  "demo": false,
+  "coverage_split": {
+    "plan_weight_pct": {
+      "independent": 38.5,
+      "linked": 59.9,
+      "none": 1.6
+    },
+    "independent_split_pct": {
+      "direct (administered tariff / spot / PNG)": 12.9,
+      "retail quotes (DoCA Rajkot centre reports; gated vs official)": 3.8,
+      "proxy (wholesale mandi / NECC / regulated ceiling; see proxy_validation)": 21.8
+    },
+    "ref_period": "2026-08",
+    "latest_period": "2026-10",
+    "observed_weight_pct_ref": 98.4,
+    "independent_weight_pct_ref": 29.6,
+    "independent_weight_pct_latest": 38.5
+  }
+}

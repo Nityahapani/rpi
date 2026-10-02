@@ -1,0 +1,52 @@
+# Rajkot Price Index (RPI) - settings
+[project]
+name = "Rajkot Price Index"
+city = "Rajkot"
+base_period = "2025-01"        # official-linked history starts Jan 2025
+
+[paths]
+db = "data/rpi.sqlite"
+raw = "data/raw"
+out = "docs"
+basket = "data/basket.csv"
+weights = "data/weights_cpi2024_gujarat_urban.csv"   # APPROX official-derived weights (see data/official/weights_*.csv); demo mode forces weights_demo.csv
+commodity_map = "data/commodity_map.csv"
+tariff_events = "data/tariff_events.csv"
+
+[index]
+min_matched = 2             # default min matched quotes for an item to give a relative
+max_abs_log_change = 0.7    # monthly log-relative clip per quote (~2x). Documented robustness rule.
+min_days_per_month = 1      # min observation days for a quote-month to count
+bootstrap_reps = 200
+geks_window = 13
+impute = "own_trend"        # missing item relatives (e.g. nowcast months before an official index is out): item's own 12-month mean drift (back-tested), not division peers
+
+[index.min_days_by_source]   # volatile daily feeds: a month needs >=5 days (partial months are imputed, not trusted)
+mandi_gondal = 5
+mandi_rajkot_apmc = 5
+yard_rajkot_board = 5
+mandi_rajkot_district = 5
+mandi_rajkot_veg = 5
+necc_ahmedabad = 5
+gr_metals = 5
+doca_rajkot = 5
+doca_national = 5
+
+[index.min_matched_by_tier]
+C = 1                       # administered prices (tariffs) have ONE legitimate quote by design
+B = 1                       # benchmark series (e.g. gold) may be single-quote
+
+[collectors]
+user_agent = "RajkotPriceIndex/0.1 (student research project; contact: you@example.com)"
+min_delay_seconds = 2.0
+# City pincodes used for pincode-specific retail sources (VERIFY before use)
+pincodes = ["360001", "360002", "360003", "360004", "360005"]
+
+[agmarknet]
+state = "Gujarat"
+markets = ["Rajkot", "Gondal", "Jamnagar", "Morbi"]   # APMC market names - verify against live data
+resource_id = "9ef84268-d588-465a-a308-a864a43d0070"  # data.gov.in daily mandi price resource (verify)
+api_key_env = "DATA_GOV_API_KEY"
+
+[health]
+stale_days = { A = 3, B = 3, C = 45, D = 9999 }

@@ -1,0 +1,68 @@
+item_id,name,division,tier,base_unit,spec
+F001,Wheat flour (atta) packaged,01,A,kg,Fixed brand; 5 kg pack
+F002,Rice (basmati) packaged,01,A,kg,Fixed brand; 1-5 kg pack
+F003,Tur dal packaged,01,B,kg,"DoCA all-India retail panel level, Tur/arhar dal (proxy)"
+F004,Moong dal packaged,01,A,kg,Fixed brand; 1 kg
+F005,Chana dal packaged,01,B,kg,"DoCA all-India retail panel level, Gram dal (proxy)"
+F006,Groundnut oil,01,A,L,Fixed brand; 1 L pouch
+F007,Cottonseed oil,01,A,L,Fixed brand; 1 L pouch
+F008,Sunflower oil,01,A,L,Fixed brand; 1 L pouch
+F009,Milk (pouch),01,A,L,Fixed brand; 500 ml
+F010,Curd,01,A,kg,Fixed brand; 400 g
+F011,Butter,01,A,kg,Fixed brand; 100 g
+F012,Ghee,01,A,kg,Fixed brand; 1 L
+F013,Sugar,01,A,kg,Fixed brand; 1 kg
+F014,Tea,01,A,kg,Fixed brand; 250 g
+F015,Salt,01,A,kg,Fixed brand; 1 kg
+F016,Turmeric powder,01,A,kg,Fixed brand; 200 g
+F017,Biscuits,01,A,kg,Fixed brand; fixed variety
+F018,Instant noodles,01,A,kg,Fixed brand; 4-pack
+F019,Bread,01,A,kg,Fixed brand; 400 g
+F020,Eggs,01,B,pc,"DoCA all-India retail panel level, Eggs (per dozen -> per egg) (proxy)"
+F021,Potato,01,B,kg,Agmarknet wholesale proxy + markup
+F022,Onion,01,B,kg,Agmarknet wholesale proxy + markup
+F023,Tomato,01,B,kg,Agmarknet wholesale proxy + markup
+F024,Banana,01,B,kg,"DoCA all-India retail panel level, Banana (proxy)"
+F025,Brinjal,01,B,kg,Agmarknet wholesale proxy + markup
+F026,Jaggery,01,B,kg,Agmarknet wholesale proxy + markup
+C001,Men's cotton shirt,03,A,pc,Fixed brand/style/size
+C002,Jeans,03,A,pc,Fixed brand/style/size
+C003,Sandals/footwear,03,A,pc,Fixed model
+R001,Rent (residential),04,D,month,Listings hedonic index (not yet built)
+R002,Electricity (residential tariff),04,C,pc,Effective cost for fixed 200 kWh/month bill
+R003,LPG cylinder 14.2 kg,04,C,pc,Official city price
+R004,Municipal water charge,04,C,pc,RMC tariff
+R005,Piped natural gas (PNG),04,C,pc,City gas distributor tariff
+H001,Detergent powder,05,A,kg,Fixed brand; 1 kg
+H002,Dishwash liquid,05,A,L,Fixed brand; 500 ml
+H003,LED bulb 9W,05,A,pc,Fixed brand
+H004,Pressure cooker 3L,05,A,pc,Fixed model
+M001,Paracetamol 500mg strip,06,A,pc,NPPA price-controlled; strip of 10
+M002,Antiseptic liquid,06,A,L,Fixed brand; 500 ml
+M003,Doctor consultation (GP),06,D,pc,Not observable online
+M004,Hospital general ward charge,06,D,pc,Not observable online
+T001,Petrol,07,C,L,Official city pump price
+T002,Diesel,07,C,L,Official city pump price
+T003,City bus fare (fixed route),07,C,pc,Transport authority fare table
+T004,Auto-rickshaw fare,07,C,pc,Fixed 3 km in-city day trip at the statutory tariff
+T005,Two-wheeler service,07,D,pc,Not observable online
+T006,Two-wheeler tyre,07,A,pc,Fixed model
+K001,Prepaid mobile plan (fixed),08,C,pc,Operator plan page
+K002,Smartphone (fixed model),08,A,pc,Fixed model; hedonic for replacement
+K003,Broadband plan,08,C,pc,Operator plan page
+S001,Cinema ticket,09,D,pc,Same hall/slot; booking sites restrict scraping
+S002,OTT subscription,08,C,pc,Plan page
+S003,Newspaper subscription,09,C,pc,Publisher rate card
+E001,School fee (private),10,C,pc,Regulator-approved fee orders
+E002,Tuition fee,10,D,pc,Not observable online
+E003,Notebook,09,A,pc,Fixed brand; 172 pages
+E004,Photocopy,10,D,pc,Not observable online
+D001,Veg thali,11,D,pc,Same restaurant; not yet observable
+D002,Cutting chai,11,C,pc,"Rajkot tea-hotel association rate card, half cup (cutting)"
+D003,Street snack plate,11,D,pc,Not observable online
+P001,Bath soap,13,A,pc,Fixed brand; 100 g
+P002,Shampoo,13,A,L,Fixed brand; 340 ml
+P003,Toothpaste,13,A,kg,Fixed brand; 200 g
+P004,Haircut (gents),13,D,pc,Not observable online
+P005,Gold 22k,13,B,g,IBJA benchmark + local jeweller spread
+P006,Silver,13,B,g,IBJA benchmark

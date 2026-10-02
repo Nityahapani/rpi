@@ -1,0 +1,31 @@
+{
+  "latest_period": "2026-09",
+  "index": 107.27,
+  "mom_pct": 1.18,
+  "yoy_pct": null,
+  "ci_95": [
+    106.95,
+    107.56
+  ],
+  "ci_note": null,
+  "reference_period": null,
+  "nowcast_periods": [],
+  "reference_index": null,
+  "reference_yoy_pct": null,
+  "observed_weight_share": 0.836,
+  "run_id": "20261002T050148791240Z",
+  "weights_source": "DEMO_ILLUSTRATIVE",
+  "demo": true,
+  "coverage_split": {
+    "plan_weight_pct": {
+      "independent": 15.3,
+      "linked": 79.9,
+      "none": 4.8
+    },
+    "ref_period": null,
+    "latest_period": "2026-09",
+    "observed_weight_pct_ref": null,
+    "independent_weight_pct_ref": null,
+    "independent_weight_pct_latest": 83.6
+  }
+}

@@ -1,0 +1,68 @@
+item_id,primary_source,class,note
+F001,mandi_rajkot_apmc,independent,Rajkot yard modal (AgMarkNet via acrop.app) + Gondal/Jetpur/Jasdan yards as extra quotes (equal-weight Jevons); Tier B proxy for retail packaged item - validation pending vs official item index
+F002,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate for this item; the national panel passes it (re-gated every run vs official item index)"
+F003,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), Tur/arhar dal, via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate; the national panel passes (re-gated every run). Superseded local feed (kept as diagnostic only, rpi/superseded.py): had about 1 month of history and could not be gated."
+F004,mandi_rajkot_apmc,independent,Rajkot yard modal (AgMarkNet via acrop.app) + Gondal/Jetpur/Jasdan yards as extra quotes (equal-weight Jevons); Tier B proxy for retail packaged item - validation pending vs official item index
+F005,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), Gram dal, via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate; the national panel passes (re-gated every run). Superseded local feed (kept as diagnostic only, rpi/superseded.py): had about 1 month of history and could not be gated."
+F006,doca_rajkot,independent,"DoCA (Dept of Consumer Affairs) daily RETAIL price at the Rajkot centre, standard local variety, via an open mirror verified against the DoCA home page each run; gated vs official item index (groundnut oil packed, Rs/L)"
+F007,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F008,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate for this item; the national panel passes it (re-gated every run vs official item index)"
+F009,tariff,independent,Amul Gold 500ml Gujarat price steps (GCMMF release via press); cross-checked vs official milk index
+F010,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F011,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate for this item; the national panel passes it (re-gated every run vs official item index)"
+F012,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F013,doca_rajkot,independent,"DoCA (Dept of Consumer Affairs) daily RETAIL price at the Rajkot centre, standard local variety, via an open mirror verified against the DoCA home page each run; gated vs official item index (sugar, Rs/kg)"
+F014,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F015,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F016,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F017,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F018,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F019,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+F020,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), Eggs (per dozen -> per egg), via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate; the national panel passes (re-gated every run). Superseded local feed (kept as diagnostic only, rpi/superseded.py): had about 1 month of history and could not be gated."
+F021,mandi_gondal,independent,Gondal Veg. Market wholesale modal (Agmarknet mirror) ; second quote: Rajkot Veg Sub Yard APMC (mandi_rajkot_veg)
+F022,mandi_gondal,independent,Gondal Veg. Market wholesale modal (Agmarknet mirror) ; second quote: Rajkot Veg Sub Yard APMC (mandi_rajkot_veg)
+F023,mandi_gondal,independent,Gondal Veg. Market wholesale modal (Agmarknet mirror) ; second quote: Rajkot Veg Sub Yard APMC (mandi_rajkot_veg)
+F024,doca_national,independent,"DoCA daily RETAIL price, ALL-INDIA balanced panel of ~500 centres (Jevons), Banana, via the open mirror verified against the DoCA home page each run; NOT a Rajkot price and not our fixed brand: PROXY bucket. Rajkot centre fails the gate; the national panel passes (re-gated every run). Superseded local feed (kept as diagnostic only, rpi/superseded.py): had about 1 month of history and could not be gated."
+F025,mandi_gondal,independent,Gondal Veg. Market wholesale modal (Agmarknet mirror) ; second quote: Rajkot Veg Sub Yard APMC (mandi_rajkot_veg)
+F026,doca_rajkot,independent,"DoCA (Dept of Consumer Affairs) daily RETAIL price at the Rajkot centre, standard local variety, via an open mirror verified against the DoCA home page each run; gated vs official item index (gur (jaggery), Rs/kg)"
+C001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+C002,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+C003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+R001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+R002,tariff,independent,GERC slabs + FPPAS schedule (govt release + press) modelled as a 200 kWh bill; see rpi/electricity.py
+R003,tariff,independent,dated tariff events (news-of-record + audited vs official)
+R004,tariff,independent,"RMC residential water Rs1,500/yr flat since FY23-24 (draft hike to 2,400 scrapped Feb 2026); register with re-confirmation rows"
+R005,gr_png,independent,Domestic PNG Rajkot monthly (goodreturns); no back-fill before Dec 2025 - official item is an LPG+PNG blend and would double-count LPG
+H001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+H002,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+H003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+H004,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+M001,tariff,independent,NPPA ceiling price (DPCO 2013) incl. GST for paracetamol 500 mg: regulated cap = proxy (counted in the PROXY share); official Medicine index is the broad stand-in and under-reacted to the Sep-2025 GST cut
+M002,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+M003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+M004,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+T001,tariff,independent,dated tariff events (news-of-record + audited vs official)
+T002,tariff,independent,dated tariff events (news-of-record + audited vs official)
+T003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+T004,tariff,independent,Gujarat statutory auto-rickshaw tariff (MV Act s.67 notification; fixed 3 km trip: Rs47 -> Rs61 from 7 Aug 2026): a legal MAXIMUM fare = proxy (counted in the PROXY share); official Gujarat-urban item index had moved only ~3% by Aug 2026
+T005,none,none,no official item and no independent source
+T006,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+K001,tariff,independent,Jevons of Jio Rs299 fixed plan and Airtel entry unlimited plan (299->349 on 12 Aug 2026); operator listings + 4-outlet press
+K002,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+K003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+S001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+S002,tariff,independent,"Jevons of JioHotstar Super annual (899->1099, 28 Jan 2026) and Amazon Prime annual (1499 flat); new-subscriber list prices"
+S003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+E001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+E002,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+E003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+E004,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+D001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+D002,tariff,independent,"Rajkot District Tea Hotel Association rate card, half cup: Rs13 -> Rs15 from 1 Sep 2026 (new level reported by 5 outlets; prior level disputed 10/12/13, the conservative Rs13 is used = +15.4%, a lower bound). A trade-association RATE CARD, not an observed paid price = PROXY bucket; checked against official 'Tea: cups' when Sep 2026 is published"
+D003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+P001,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+P002,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+P003,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+P004,official_link,linked,no independent source yet; official MoSPI Gujarat-urban item index used as flagged stand-in
+P005,gr_metals,independent,goodreturns Rajkot gold 22K / silver daily
+P006,gr_metals,independent,goodreturns Rajkot gold 22K / silver daily

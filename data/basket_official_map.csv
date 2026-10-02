@@ -1,0 +1,68 @@
+item_id,official_item_code,official_item_name,match_quality,weight_group
+F001,01.1.1.2.1.01,Wheat atta,exact,01.1
+F002,01.1.1.1.1.01,Rice,proxy,01.1
+F003,01.1.7.6.1.01,"Arhar, tur",exact,01.1
+F004,01.1.7.6.1.02,Moong,exact,01.1
+F005,01.1.7.6.1.05,Gram: split,proxy,01.1
+F006,01.1.5.1.1.03,Groundnut oil,exact,01.1
+F007,01.1.5.1.1.05,Edible oil,proxy,01.1
+F008,01.1.5.1.1.01,Refined oil,proxy,01.1
+F009,01.1.4.1.1.01,Milk: liquid,exact,01.1
+F010,01.1.4.6.1.01,"Curd, yogurt",exact,01.1
+F011,01.1.5.2.1.02,Butter,exact,01.1
+F012,01.1.5.2.1.01,Ghee,exact,01.1
+F013,01.1.8.1.1.01,Sugar,exact,01.1
+F014,01.2.3.0.1.01,Tea: leaf,exact,01.2
+F015,01.1.9.3.1.01,Salt,exact,01.1
+F016,01.1.9.4.1.05,Turmeric,exact,01.1
+F017,01.1.1.3.1.01,Biscuits,exact,01.1
+F018,01.1.1.5.1.01,Noodles,exact,01.1
+F019,01.1.1.3.1.04,Bread (bakery),exact,01.1
+F020,01.1.4.8.1.01,Eggs,exact,01.1
+F021,01.1.7.5.1.01,Potato,exact,01.1
+F022,01.1.7.4.1.01,Onion,exact,01.1
+F023,01.1.7.2.1.01,Tomato,exact,01.1
+F024,01.1.6.1.1.01,Banana,exact,01.1
+F025,01.1.7.2.1.03,Brinjal,exact,01.1
+F026,01.1.8.1.1.02,Jaggery (gur),exact,01.1
+C001,03.1.2.1.1.01,"Shirts, T-shirts, Kurta (gents)",exact,03.1
+C002,03.1.2.1.1.02,"Trousers, jeans, track pant, shorts (gents)",exact,03.1
+C003,03.2.1.1.1.01,Footwear for men,exact,03.2
+R001,04.1.1.0.2.01,House Rent,exact,04.1
+R002,04.5.1.0.2.01,Electricity charges,exact,04.5
+R003,04.5.2.2.1.01,LPG cylinder and piped natural gas,blend,04.5
+R004,04.4.1.1.2.01,Water charges,exact,04.4
+R005,04.5.2.2.1.01,LPG cylinder and piped natural gas,blend,04.5
+H001,05.6.1.1.1.01,Washing soap/soda/powder/liquid detergent,exact,05.6
+H002,05.6.1.1.1.03,Other washing requisites,proxy,05.6
+H003,05.5.2.2.1.01,"LED bulb, CFL bulbs",exact,05.5
+H004,05.4.0.3.1.07,Pressure cooker/ pressure pan,exact,05.4
+M001,06.1.1.1.1.01,Medicine,exact,06.1
+M002,06.1.1.1.1.01,Medicine,proxy,06.1
+M003,06.2.3.1.2.01,Doctor's/surgeon's fee,exact,06.2
+M004,06.3.1.0.2.01,Hospital and nursing home charges,exact,06.3
+T001,07.2.2.2.1.01,Petrol,exact,07.2
+T002,07.2.2.1.1.01,Diesel,exact,07.2
+T003,07.3.1.2.2.01,Bus/tram fare: occasional,proxy,07.3
+T004,07.3.2.9.2.01,Auto-rickshaw/e-rickshaw fare,exact,07.3
+T005,,,none,07.2
+T006,07.2.1.1.1.01,Tyres and tubes,exact,07.2
+K001,08.3.4.0.2.01,Telephone charges: mobile,exact,08.3
+K002,08.1.2.0.1.01,Mobile handset,exact,08.1
+K003,08.3.3.0.2.01,Internet expenses,exact,08.3
+S001,09.6.1.0.2.01,"Cinema, theatre",exact,09.6
+S002,08.3.9.2.2.02,Online media service provider/streaming services,exact,08.3
+S003,09.7.2.1.1.01,Newspapers and periodicals,exact,09.7
+E001,10.1.0.2.2.01,Tuition fees (Primary/Upper Primary class),proxy,10.1
+E002,10.5.0.1.2.01,Private tutor/ coaching centre,exact,10.5
+E003,09.7.4.0.1.01,Stationery,proxy,09.7
+E004,13.9.0.9.2.01,Photocopying charges,exact,13.9
+D001,11.1.1.1.1.01,Cooked meals,exact,11.1
+D002,01.1.4.7.1.01,Tea: cups,proxy,11.1
+D003,11.1.1.2.1.01,Cooked snacks,exact,11.1
+P001,13.1.2.0.1.01,"Toilet soap, body-wash, hand-wash, shower gel and face-wash",exact,13.1
+P002,13.1.2.0.1.06,"Shampoo, conditioner, hair serum/gel and hair cream",exact,13.1
+P003,13.1.2.0.1.04,"Toothpaste, mouthwash and toothbrush",exact,13.1
+P004,13.1.3.2.2.01,"Barber, beautician and spas",exact,13.1
+P005,13.2.1.1.1.01,Gold /diamond /platinum jewellery,proxy,13.2
+P006,13.2.1.1.1.02,Silver jewellery,proxy,13.2

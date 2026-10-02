@@ -1,0 +1,68 @@
+item_id,name,tier,weight_group,match_quality,weight
+F001,Wheat flour (atta) packaged,A,01.1,exact,1.27913
+F002,Rice (basmati) packaged,A,01.1,proxy,1.27913
+F003,Tur dal packaged,A,01.1,exact,1.27913
+F004,Moong dal packaged,A,01.1,exact,1.27913
+F005,Chana dal packaged,A,01.1,proxy,1.27913
+F006,Groundnut oil,A,01.1,exact,1.27913
+F007,Cottonseed oil,A,01.1,proxy,1.27913
+F008,Sunflower oil,A,01.1,proxy,1.27913
+F009,Milk (pouch),A,01.1,exact,1.27913
+F010,Curd,A,01.1,exact,1.27913
+F011,Butter,A,01.1,exact,1.27913
+F012,Ghee,A,01.1,exact,1.27913
+F013,Sugar,A,01.1,exact,1.27913
+F014,Tea,A,01.2,exact,1.97312
+F015,Salt,A,01.1,exact,1.27913
+F016,Turmeric powder,A,01.1,exact,1.27913
+F017,Biscuits,A,01.1,exact,1.27913
+F018,Instant noodles,A,01.1,exact,1.27913
+F019,Bread,A,01.1,exact,1.27913
+F020,Eggs,B,01.1,exact,1.27913
+F021,Potato,B,01.1,exact,1.27913
+F022,Onion,B,01.1,exact,1.27913
+F023,Tomato,B,01.1,exact,1.27913
+F024,Banana,B,01.1,exact,1.27913
+F025,Brinjal,B,01.1,exact,1.27913
+F026,Jaggery,B,01.1,exact,1.27913
+C001,Men's cotton shirt,A,03.1,exact,3.16806
+C002,Jeans,A,03.1,exact,3.16806
+C003,Sandals/footwear,A,03.2,exact,1.0078
+R001,Rent (residential),D,04.1,exact,19.66589
+R002,Electricity (residential tariff),C,04.5,exact,1.64627
+R003,LPG cylinder 14.2 kg,C,04.5,blend,1.64627
+R004,Municipal water charge,C,04.4,exact,0.37352
+R005,Piped natural gas (PNG),C,04.5,blend,1.64627
+H001,Detergent powder,A,05.6,exact,0.54732
+H002,Dishwash liquid,A,05.6,proxy,0.54732
+H003,LED bulb 9W,A,05.5,exact,0.08784
+H004,Pressure cooker 3L,A,05.4,exact,0.23728
+M001,Paracetamol 500mg strip,A,06.1,exact,1.67141
+M002,Antiseptic liquid,A,06.1,proxy,1.67141
+M003,Doctor consultation (GP),D,06.2,exact,1.0151
+M004,Hospital general ward charge,D,06.3,exact,0.46791
+T001,Petrol,C,07.2,exact,1.60208
+T002,Diesel,C,07.2,exact,1.60208
+T003,City bus fare (fixed route),C,07.3,proxy,1.5098
+T004,Auto-rickshaw fare,D,07.3,exact,1.5098
+T005,Two-wheeler service,D,07.2,none,1.60208
+T006,Two-wheeler tyre,A,07.2,exact,1.60208
+K001,Prepaid mobile plan (fixed),C,08.3,exact,0.8959
+K002,Smartphone (fixed model),A,08.1,exact,0.79611
+K003,Broadband plan,C,08.3,exact,0.8959
+S001,Cinema ticket,D,09.6,exact,0.18143
+S002,OTT subscription,C,08.3,exact,0.8959
+S003,Newspaper subscription,C,09.7,exact,0.29931
+E001,School fee (private),C,10.1,proxy,2.50111
+E002,Tuition fee,D,10.5,exact,0.7919
+E003,Notebook,A,09.7,proxy,0.29931
+E004,Photocopy,D,13.9,exact,0.14923
+D001,Veg thali,D,11.1,exact,1.99243
+D002,Cutting chai,D,11.1,proxy,1.99243
+D003,Street snack plate,D,11.1,exact,1.99243
+P001,Bath soap,A,13.1,exact,0.77307
+P002,Shampoo,A,13.1,exact,0.77307
+P003,Toothpaste,A,13.1,exact,0.77307
+P004,Haircut (gents),D,13.1,exact,0.77307
+P005,Gold 22k,B,13.2,proxy,0.63862
+P006,Silver,B,13.2,proxy,0.63862

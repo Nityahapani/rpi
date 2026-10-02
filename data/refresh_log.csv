@@ -1,0 +1,723 @@
+step,status,seconds,detail,at
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T04:54:48+00:00
+official:labour_bureau,error,0.7,RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed,2026-10-02T04:54:48+00:00
+tariff:fuel_lpg_update,ok,4.3,"T001: replaced 1 estimated monthly-mean row(s) with real daily data; T001: +4 daily price-change event(s), latest 102.16 on 2026-10-01; T002: replaced 1 estimated monthly-mean row(s) with real daily data; T002: +4 daily price-change event(s), latest 98.29 on 2026-10-01",2026-10-02T04:54:48+00:00
+ingest:tariff,ok,0.2,"{'source': 'tariff', 'status': 'ok', 'records': 42, 'accepted': 42, 'rejected': 0, 'message': ''}",2026-10-02T04:54:48+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1100, 'accepted': 1100, 'rejected': 0, 'message': ''}",2026-10-02T04:54:48+00:00
+ingest:gr_metals,ok,3.6,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T04:54:48+00:00
+ingest:mandi_gondal,ok,9.6,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T04:54:48+00:00
+build,ok,0.0,run 20261002T045437880577Z,2026-10-02T04:54:48+00:00
+audit,ok,0.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T04:54:48+00:00
+publish,blocked,0.0,only 16.4% of basket weight has observations in the reference period 2026-08 (minimum 60%). Refusing to publish a partial basket as the Rajkot index.,2026-10-02T04:54:48+00:00
+official:mospi_cpi,ok,1.4,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T04:56:11+00:00
+official:labour_bureau,error,10.4,RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed,2026-10-02T04:56:11+00:00
+tariff:fuel_lpg_update,ok,4.2,no price changes,2026-10-02T04:56:11+00:00
+ingest:tariff,ok,0.2,"{'source': 'tariff', 'status': 'ok', 'records': 42, 'accepted': 42, 'rejected': 0, 'message': ''}",2026-10-02T04:56:11+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1100, 'accepted': 1100, 'rejected': 0, 'message': ''}",2026-10-02T04:56:11+00:00
+ingest:gr_metals,ok,3.7,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T04:56:11+00:00
+ingest:mandi_gondal,ok,9.9,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T04:56:11+00:00
+build,ok,0.0,run 20261002T045559796261Z,2026-10-02T04:56:11+00:00
+audit,ok,0.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T04:56:11+00:00
+publish,ok,0.0,docs,2026-10-02T04:56:11+00:00
+official:mospi_cpi,ok,1.2,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T04:58:17+00:00
+official:labour_bureau,ok,11.5,2026-08 already loaded,2026-10-02T04:58:17+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T04:58:17+00:00
+ingest:tariff,ok,0.2,"{'source': 'tariff', 'status': 'ok', 'records': 42, 'accepted': 42, 'rejected': 0, 'message': ''}",2026-10-02T04:58:17+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1100, 'accepted': 1100, 'rejected': 0, 'message': ''}",2026-10-02T04:58:17+00:00
+ingest:gr_metals,ok,3.7,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T04:58:17+00:00
+ingest:mandi_gondal,ok,9.7,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T04:58:17+00:00
+build,ok,0.0,run 20261002T045804970454Z,2026-10-02T04:58:17+00:00
+audit,ok,0.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T04:58:17+00:00
+publish,ok,0.0,docs,2026-10-02T04:58:17+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T04:59:30+00:00
+official:labour_bureau,ok,14.0,2026-08 already loaded,2026-10-02T04:59:30+00:00
+tariff:fuel_lpg_update,ok,4.2,no price changes,2026-10-02T04:59:30+00:00
+ingest:tariff,ok,0.2,"{'source': 'tariff', 'status': 'ok', 'records': 42, 'accepted': 42, 'rejected': 0, 'message': ''}",2026-10-02T04:59:30+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1240, 'accepted': 1240, 'rejected': 0, 'message': ''}",2026-10-02T04:59:30+00:00
+ingest:gr_metals,ok,3.7,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T04:59:30+00:00
+ingest:mandi_gondal,ok,10.6,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T04:59:30+00:00
+build,ok,0.0,run 20261002T045919856677Z,2026-10-02T04:59:30+00:00
+audit,ok,0.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T04:59:30+00:00
+publish,ok,0.0,docs,2026-10-02T04:59:30+00:00
+ingest:tariff,ok,0.2,"{'source': 'tariff', 'status': 'ok', 'records': 42, 'accepted': 42, 'rejected': 0, 'message': ''}",2026-10-02T05:02:29+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1240, 'accepted': 1240, 'rejected': 0, 'message': ''}",2026-10-02T05:02:29+00:00
+build,ok,0.0,run 20261002T050219327938Z,2026-10-02T05:02:29+00:00
+audit,ok,0.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:02:29+00:00
+publish,ok,0.0,docs,2026-10-02T05:02:29+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T05:03:49+00:00
+official:labour_bureau,ok,12.8,2026-08 already loaded,2026-10-02T05:03:49+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T05:03:49+00:00
+ingest:tariff,ok,0.2,"{'source': 'tariff', 'status': 'ok', 'records': 42, 'accepted': 42, 'rejected': 0, 'message': ''}",2026-10-02T05:03:49+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1240, 'accepted': 1240, 'rejected': 0, 'message': ''}",2026-10-02T05:03:49+00:00
+ingest:gr_metals,ok,3.8,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T05:03:49+00:00
+ingest:mandi_gondal,ok,10.1,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:03:49+00:00
+build,ok,0.0,run 20261002T050338085143Z,2026-10-02T05:03:49+00:00
+audit,ok,0.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:03:49+00:00
+publish,ok,0.0,docs,2026-10-02T05:03:49+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T05:23:26+00:00
+official:labour_bureau,ok,12.1,2026-08 already loaded,2026-10-02T05:23:26+00:00
+tariff:fuel_lpg_update,ok,5.0,no price changes,2026-10-02T05:23:26+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T05:23:26+00:00
+prune:official_link,ok,0.0,pruned 2 stale official-linked SKU(s),2026-10-02T05:23:26+00:00
+ingest:tariff,ok,0.4,"{'source': 'tariff', 'status': 'ok', 'records': 89, 'accepted': 89, 'rejected': 0, 'message': ''}",2026-10-02T05:23:26+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1200, 'accepted': 1200, 'rejected': 0, 'message': ''}",2026-10-02T05:23:26+00:00
+ingest:gr_metals,ok,3.7,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T05:23:26+00:00
+ingest:mandi_gondal,ok,9.9,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:23:26+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T05:23:26+00:00
+ingest:necc_ahmedabad,ok,1.5,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T05:23:26+00:00
+build,ok,0.0,run 20261002T052314046967Z,2026-10-02T05:23:26+00:00
+audit,ok,0.4,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:23:26+00:00
+publish,ok,0.0,docs,2026-10-02T05:23:26+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T05:24:55+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T05:24:55+00:00
+ingest:tariff,ok,0.3,"{'source': 'tariff', 'status': 'ok', 'records': 89, 'accepted': 89, 'rejected': 0, 'message': ''}",2026-10-02T05:24:55+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 1200, 'accepted': 1200, 'rejected': 0, 'message': ''}",2026-10-02T05:24:55+00:00
+build,ok,0.0,run 20261002T052443821309Z,2026-10-02T05:24:55+00:00
+audit,ok,0.4,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:24:55+00:00
+publish,ok,0.0,docs,2026-10-02T05:24:55+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T05:44:13+00:00
+official:labour_bureau,ok,11.7,2026-08 already loaded,2026-10-02T05:44:13+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T05:44:13+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T05:44:13+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T05:44:13+00:00
+ingest:tariff,ok,0.4,"{'source': 'tariff', 'status': 'ok', 'records': 89, 'accepted': 89, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:gr_metals,ok,5.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:mandi_gondal,ok,11.8,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:mandi_rajkot_apmc,ok,7.7,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:mandi_rajkot_veg,ok,13.1,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:necc_ahmedabad,ok,1.6,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1200, 'accepted': 1200, 'rejected': 0, 'message': ''}",2026-10-02T05:44:13+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T05:44:13+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T05:44:13+00:00
+build,ok,0.0,run 20261002T054257059011Z,2026-10-02T05:44:13+00:00
+audit,ok,0.5,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:44:13+00:00
+publish,ok,0.0,docs,2026-10-02T05:44:13+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T05:46:12+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T05:46:12+00:00
+ingest:tariff,ok,0.4,"{'source': 'tariff', 'status': 'ok', 'records': 89, 'accepted': 89, 'rejected': 0, 'message': ''}",2026-10-02T05:46:12+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1200, 'accepted': 1200, 'rejected': 0, 'message': ''}",2026-10-02T05:46:12+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T05:46:12+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T05:46:12+00:00
+build,ok,0.0,run 20261002T054456261434Z,2026-10-02T05:46:12+00:00
+audit,ok,0.5,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:46:12+00:00
+publish,ok,0.0,docs,2026-10-02T05:46:12+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T05:48:50+00:00
+official:labour_bureau,ok,13.2,2026-08 already loaded,2026-10-02T05:48:50+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T05:48:50+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T05:48:50+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T05:48:50+00:00
+ingest:tariff,ok,0.4,"{'source': 'tariff', 'status': 'ok', 'records': 89, 'accepted': 89, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:gr_metals,ok,3.6,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:mandi_gondal,ok,9.9,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:mandi_rajkot_apmc,ok,7.3,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:mandi_rajkot_veg,ok,12.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:gr_png,ok,1.9,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:necc_ahmedabad,ok,1.7,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1200, 'accepted': 1200, 'rejected': 0, 'message': ''}",2026-10-02T05:48:50+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T05:48:50+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T05:48:50+00:00
+build,ok,0.0,run 20261002T054736476662Z,2026-10-02T05:48:50+00:00
+audit,ok,0.5,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T05:48:50+00:00
+publish,ok,0.0,docs,2026-10-02T05:48:50+00:00
+tariff:registers,ok,0.1,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T06:27:56+00:00
+prune:official_link,ok,0.0,pruned 3 stale official-linked SKU(s),2026-10-02T06:27:56+00:00
+ingest:tariff,ok,0.9,"{'source': 'tariff', 'status': 'ok', 'records': 232, 'accepted': 232, 'rejected': 0, 'message': ''}",2026-10-02T06:27:56+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T06:27:56+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T06:27:56+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T06:27:56+00:00
+build,ok,0.0,run 20261002T062621405726Z,2026-10-02T06:27:56+00:00
+audit,ok,1.0,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T06:27:56+00:00
+publish,ok,0.0,docs,2026-10-02T06:27:56+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T06:32:48+00:00
+official:labour_bureau,ok,11.8,2026-08 already loaded,2026-10-02T06:32:48+00:00
+tariff:fuel_lpg_update,ok,4.9,no price changes,2026-10-02T06:32:48+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T06:32:48+00:00
+prune:official_link,ok,0.0,pruned 1 stale/retired SKU(s),2026-10-02T06:32:48+00:00
+ingest:tariff,ok,0.9,"{'source': 'tariff', 'status': 'ok', 'records': 232, 'accepted': 232, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:gr_metals,ok,3.3,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:mandi_gondal,ok,34.0,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:mandi_rajkot_apmc,ok,5.7,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:mandi_rajkot_veg,ok,7.9,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:yard_rajkot_board,ok,1.9,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:necc_ahmedabad,ok,1.0,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T06:32:48+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T06:32:48+00:00
+crosscheck:apmc,ok,0.8,"F001:agree, F003:agree, F004:agree, F005:no_acrop_row_for_date",2026-10-02T06:32:48+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T06:32:48+00:00
+build,ok,0.0,run 20261002T063110994126Z,2026-10-02T06:32:48+00:00
+audit,ok,1.1,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T06:32:48+00:00
+publish,ok,0.0,docs,2026-10-02T06:32:48+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T06:36:11+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T06:36:11+00:00
+ingest:tariff,ok,0.8,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T06:36:11+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T06:36:11+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T06:36:11+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T06:36:11+00:00
+build,ok,0.0,run 20261002T063436868654Z,2026-10-02T06:36:11+00:00
+audit,ok,0.8,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T06:36:11+00:00
+publish,ok,0.0,docs,2026-10-02T06:36:11+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T06:38:30+00:00
+official:labour_bureau,ok,13.8,2026-08 already loaded,2026-10-02T06:38:30+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T06:38:30+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T06:38:30+00:00
+reset:tariff_series,ok,0.0,cleared 232 tariff observation(s) for rebuild from registers,2026-10-02T06:38:30+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T06:38:30+00:00
+ingest:tariff,ok,0.8,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:gr_metals,ok,3.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:mandi_gondal,ok,10.8,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:mandi_rajkot_apmc,ok,5.4,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:mandi_rajkot_veg,ok,7.9,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:yard_rajkot_board,ok,2.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:necc_ahmedabad,ok,1.0,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T06:38:30+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T06:38:30+00:00
+crosscheck:apmc,ok,1.0,"F001:agree, F003:agree, F004:agree",2026-10-02T06:38:30+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T06:38:30+00:00
+build,ok,0.0,run 20261002T063727705422Z,2026-10-02T06:38:30+00:00
+audit,ok,0.7,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T06:38:30+00:00
+publish,ok,0.0,docs,2026-10-02T06:38:30+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T06:52:55+00:00
+official:labour_bureau,ok,12.0,2026-08 already loaded,2026-10-02T06:52:55+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T06:52:55+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T06:52:55+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T06:52:55+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T06:52:55+00:00
+ingest:tariff,ok,1.1,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:gr_metals,ok,2.9,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:mandi_gondal,ok,11.1,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:mandi_rajkot_apmc,ok,5.4,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:mandi_rajkot_district,ok,22.5,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:yard_rajkot_board,ok,2.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:necc_ahmedabad,ok,1.3,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T06:52:55+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T06:52:55+00:00
+crosscheck:apmc,ok,2.9,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=no_acrop_row_for_date, Gondal:F003=no_acrop_row_for_date, Gondal:F004=no_acrop_row_for_date, Gondal:F005=no_acrop_row_for_date",2026-10-02T06:52:55+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T06:52:55+00:00
+build,ok,0.0,run 20261002T065130941531Z,2026-10-02T06:52:55+00:00
+audit,ok,1.1,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T06:52:55+00:00
+publish,ok,0.0,docs,2026-10-02T06:52:55+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T06:56:35+00:00
+official:labour_bureau,ok,12.4,2026-08 already loaded,2026-10-02T06:56:35+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T06:56:35+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T06:56:35+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T06:56:35+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T06:56:35+00:00
+ingest:tariff,ok,1.2,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:gr_metals,ok,2.8,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:mandi_gondal,ok,10.5,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:mandi_rajkot_apmc,ok,5.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:mandi_rajkot_veg,ok,8.2,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:mandi_rajkot_district,ok,21.4,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:yard_rajkot_board,ok,3.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:gr_png,ok,0.8,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:necc_ahmedabad,ok,1.7,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T06:56:35+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T06:56:35+00:00
+crosscheck:apmc,ok,3.7,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T06:56:35+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T06:56:35+00:00
+build,ok,0.0,run 20261002T065508887402Z,2026-10-02T06:56:35+00:00
+audit,ok,1.0,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T06:56:35+00:00
+publish,ok,0.0,docs,2026-10-02T06:56:35+00:00
+official:mospi_cpi,ok,1.6,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T07:08:08+00:00
+official:labour_bureau,ok,13.9,2026-08 already loaded,2026-10-02T07:08:08+00:00
+tariff:fuel_lpg_update,ok,6.9,no price changes,2026-10-02T07:08:08+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T07:08:08+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T07:08:08+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T07:08:08+00:00
+ingest:tariff,ok,1.3,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:gr_metals,ok,3.9,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:mandi_gondal,ok,10.4,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:mandi_rajkot_apmc,ok,5.9,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:mandi_rajkot_veg,ok,7.4,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:mandi_rajkot_district,ok,22.5,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:yard_rajkot_board,ok,2.3,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:necc_ahmedabad,ok,1.0,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T07:08:08+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T07:08:08+00:00
+crosscheck:apmc,ok,3.1,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T07:08:08+00:00
+crosscheck:ibja,ok,2.4,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T07:08:08+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T07:08:08+00:00
+build,ok,0.0,run 20261002T070644845738Z,2026-10-02T07:08:08+00:00
+audit,ok,1.0,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T07:08:08+00:00
+publish,ok,0.0,docs,2026-10-02T07:08:08+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T07:27:19+00:00
+official:labour_bureau,ok,12.8,2026-08 already loaded,2026-10-02T07:27:19+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T07:27:19+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T07:27:19+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T07:27:19+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T07:27:19+00:00
+ingest:tariff,ok,0.9,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:gr_metals,ok,3.1,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:mandi_gondal,ok,10.9,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:mandi_rajkot_apmc,ok,5.5,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:mandi_rajkot_veg,ok,8.1,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:mandi_rajkot_district,ok,22.8,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:yard_rajkot_board,ok,1.4,"{'source': 'yard_rajkot_board', 'status': 'empty', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'collector returned no records'}",2026-10-02T07:27:19+00:00
+ingest:gr_png,ok,1.6,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:necc_ahmedabad,ok,1.5,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T07:27:19+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T07:27:19+00:00
+crosscheck:apmc,ok,2.7,"Rajkot:F001=no_data, Rajkot:F003=no_data, Rajkot:F004=no_data, Gondal:F001=no_data, Gondal:F003=no_data, Gondal:F004=no_data, Gondal:F005=no_data",2026-10-02T07:27:19+00:00
+crosscheck:ibja,ok,1.7,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T07:27:19+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T07:27:19+00:00
+build,ok,0.0,run 20261002T072602595320Z,2026-10-02T07:27:19+00:00
+audit,ok,0.9,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T07:27:19+00:00
+publish,ok,0.0,docs,2026-10-02T07:27:19+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T07:30:03+00:00
+official:labour_bureau,ok,12.3,2026-08 already loaded,2026-10-02T07:30:03+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T07:30:03+00:00
+tariff:registers,error,0.0,RuntimeError: STALE REGISTER: R005: NO events recorded - Gujarat Gas domestic PNG tariff SMS/press; add a row to data/png_events.csv (prices tax-inclusive Rs/SCM); overlay retires itself once goodreturns shows the new price,2026-10-02T07:30:03+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T07:30:03+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T07:30:03+00:00
+ingest:tariff,ok,0.9,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:gr_metals,ok,3.0,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:mandi_gondal,ok,10.0,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:mandi_rajkot_apmc,ok,5.4,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:mandi_rajkot_veg,ok,8.3,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:mandi_rajkot_district,ok,22.4,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:yard_rajkot_board,ok,1.4,"{'source': 'yard_rajkot_board', 'status': 'empty', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'collector returned no records'}",2026-10-02T07:30:03+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:necc_ahmedabad,ok,0.6,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T07:30:03+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T07:30:03+00:00
+crosscheck:apmc,ok,3.2,"Rajkot:F001=no_data, Rajkot:F003=no_data, Rajkot:F004=no_data, Gondal:F001=no_data, Gondal:F003=no_data, Gondal:F004=no_data, Gondal:F005=no_data",2026-10-02T07:30:03+00:00
+crosscheck:ibja,ok,1.8,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T07:30:03+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T07:30:03+00:00
+build,ok,0.0,run 20261002T072845898299Z,2026-10-02T07:30:03+00:00
+audit,ok,1.0,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T07:30:03+00:00
+publish,ok,0.0,docs,2026-10-02T07:30:03+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T07:33:43+00:00
+official:labour_bureau,ok,13.8,2026-08 already loaded,2026-10-02T07:33:43+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T07:33:43+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T07:33:43+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T07:33:43+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T07:33:43+00:00
+ingest:tariff,ok,1.0,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:gr_metals,ok,3.0,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:mandi_gondal,ok,9.5,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:mandi_rajkot_apmc,ok,6.0,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:mandi_rajkot_district,ok,22.0,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:yard_rajkot_board,ok,1.4,"{'source': 'yard_rajkot_board', 'status': 'empty', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'collector returned no records'}",2026-10-02T07:33:43+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:necc_ahmedabad,ok,1.6,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T07:33:43+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T07:33:43+00:00
+crosscheck:apmc,ok,2.7,"Rajkot:F001=no_data, Rajkot:F003=no_data, Rajkot:F004=no_data, Gondal:F001=no_data, Gondal:F003=no_data, Gondal:F004=no_data, Gondal:F005=no_data",2026-10-02T07:33:43+00:00
+crosscheck:ibja,ok,1.7,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T07:33:43+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T07:33:43+00:00
+build,ok,0.0,run 20261002T073206853759Z,2026-10-02T07:33:43+00:00
+audit,ok,1.0,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T07:33:43+00:00
+publish,ok,0.0,docs,2026-10-02T07:33:43+00:00
+official:mospi_cpi,ok,1.2,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T07:37:39+00:00
+official:labour_bureau,ok,12.5,2026-08 already loaded,2026-10-02T07:37:39+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T07:37:39+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T07:37:39+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T07:37:39+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T07:37:39+00:00
+ingest:tariff,ok,1.0,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:gr_metals,ok,3.0,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:mandi_gondal,ok,10.2,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:mandi_rajkot_apmc,ok,9.3,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:mandi_rajkot_veg,ok,7.7,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:mandi_rajkot_district,ok,22.6,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:yard_rajkot_board,ok,1.3,"{'source': 'yard_rajkot_board', 'status': 'empty', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'collector returned no records'}",2026-10-02T07:37:39+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:necc_ahmedabad,ok,1.0,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T07:37:39+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T07:37:39+00:00
+crosscheck:apmc,ok,2.7,"Rajkot:F001=no_data, Rajkot:F003=no_data, Rajkot:F004=no_data, Gondal:F001=no_data, Gondal:F003=no_data, Gondal:F004=no_data, Gondal:F005=no_data",2026-10-02T07:37:39+00:00
+crosscheck:ibja,ok,2.9,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T07:37:39+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T07:37:39+00:00
+build,ok,0.0,run 20261002T073559374622Z,2026-10-02T07:37:39+00:00
+audit,ok,0.9,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T07:37:39+00:00
+publish,ok,0.0,docs,2026-10-02T07:37:39+00:00
+official:mospi_cpi,ok,1.2,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T07:41:39+00:00
+official:labour_bureau,ok,11.9,2026-08 already loaded,2026-10-02T07:41:39+00:00
+tariff:fuel_lpg_update,ok,4.7,no price changes,2026-10-02T07:41:39+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T07:41:39+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T07:41:39+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T07:41:39+00:00
+ingest:tariff,ok,0.9,"{'source': 'tariff', 'status': 'ok', 'records': 199, 'accepted': 199, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:gr_metals,ok,4.3,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:mandi_gondal,ok,9.8,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:mandi_rajkot_apmc,ok,5.0,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:mandi_rajkot_district,ok,22.0,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:yard_rajkot_board,ok,1.4,"{'source': 'yard_rajkot_board', 'status': 'empty', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'collector returned no records'}",2026-10-02T07:41:39+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:necc_ahmedabad,ok,0.9,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1140, 'accepted': 1140, 'rejected': 0, 'message': ''}",2026-10-02T07:41:39+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T07:41:39+00:00
+crosscheck:apmc,ok,2.8,"Rajkot:F001=no_data, Rajkot:F003=no_data, Rajkot:F004=no_data, Gondal:F001=no_data, Gondal:F003=no_data, Gondal:F004=no_data, Gondal:F005=no_data",2026-10-02T07:41:39+00:00
+crosscheck:ibja,ok,2.1,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T07:41:39+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T07:41:39+00:00
+build,ok,0.0,run 20261002T074001775507Z,2026-10-02T07:41:39+00:00
+audit,ok,0.9,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T07:41:39+00:00
+publish,ok,0.0,docs,2026-10-02T07:41:39+00:00
+official:mospi_cpi,ok,1.2,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T08:43:19+00:00
+official:labour_bureau,ok,12.2,2026-08 already loaded,2026-10-02T08:43:19+00:00
+official:cpi_iw_centres,ok,2.0,0 centre-month value(s) added/changed; Rajkot series +13 month(s) in official_series.csv; latest 2026-08,2026-10-02T08:43:19+00:00
+tariff:fuel_lpg_update,ok,4.9,no price changes,2026-10-02T08:43:19+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T08:43:19+00:00
+reset:tariff_series,ok,0.0,cleared 199 tariff observation(s) for rebuild from registers,2026-10-02T08:43:19+00:00
+prune:official_link,ok,0.0,pruned 1 stale/retired SKU(s),2026-10-02T08:43:19+00:00
+ingest:tariff,ok,1.1,"{'source': 'tariff', 'status': 'ok', 'records': 221, 'accepted': 221, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:gr_metals,ok,6.1,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:mandi_gondal,ok,9.6,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:mandi_rajkot_apmc,ok,10.8,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:mandi_rajkot_veg,ok,12.6,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:mandi_rajkot_district,ok,27.2,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:yard_rajkot_board,ok,2.4,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:gr_png,ok,0.5,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:necc_ahmedabad,ok,1.1,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1120, 'accepted': 1120, 'rejected': 0, 'message': ''}",2026-10-02T08:43:19+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T08:43:19+00:00
+crosscheck:apmc,ok,2.8,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T08:43:19+00:00
+crosscheck:ibja,ok,1.8,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T08:43:19+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T08:43:19+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 1.028); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T08:43:19+00:00
+build,ok,0.0,run 20261002T084149440930Z,2026-10-02T08:43:19+00:00
+audit,ok,1.1,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T08:43:19+00:00
+publish,ok,0.0,docs,2026-10-02T08:43:19+00:00
+benchmark:cpi_iw,error,0.0,AttributeError: 'DataFrame' object has no attribute 'series_id',2026-10-02T08:43:19+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted),2026-10-02T08:43:19+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T08:43:19+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T08:46:28+00:00
+official:labour_bureau,ok,12.4,2026-08 already loaded,2026-10-02T08:46:28+00:00
+official:cpi_iw_centres,ok,2.0,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T08:46:28+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T08:46:28+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T08:46:28+00:00
+reset:tariff_series,ok,0.0,cleared 221 tariff observation(s) for rebuild from registers,2026-10-02T08:46:28+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T08:46:28+00:00
+ingest:tariff,ok,1.1,"{'source': 'tariff', 'status': 'ok', 'records': 221, 'accepted': 221, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:gr_metals,ok,2.9,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:mandi_gondal,ok,9.6,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:mandi_rajkot_apmc,ok,5.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:mandi_rajkot_district,ok,21.7,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:yard_rajkot_board,ok,2.1,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:necc_ahmedabad,ok,1.7,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1120, 'accepted': 1120, 'rejected': 0, 'message': ''}",2026-10-02T08:46:28+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T08:46:28+00:00
+crosscheck:apmc,ok,2.8,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T08:46:28+00:00
+crosscheck:ibja,ok,1.6,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T08:46:28+00:00
+validate:proxies,ok,0.1,"0 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T08:46:28+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 1.028); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T08:46:28+00:00
+build,ok,0.0,run 20261002T084500106326Z,2026-10-02T08:46:28+00:00
+audit,ok,1.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T08:46:28+00:00
+publish,ok,0.0,docs,2026-10-02T08:46:28+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.34), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.16",2026-10-02T08:46:28+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted),2026-10-02T08:46:28+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T08:46:28+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T09:13:21+00:00
+official:labour_bureau,ok,13.1,2026-08 already loaded,2026-10-02T09:13:21+00:00
+official:cpi_iw_centres,ok,2.1,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T09:13:21+00:00
+tariff:fuel_lpg_update,ok,5.6,no price changes,2026-10-02T09:13:21+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T09:13:21+00:00
+reset:tariff_series,ok,0.0,cleared 221 tariff observation(s) for rebuild from registers,2026-10-02T09:13:21+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T09:13:21+00:00
+check:doca_mirror,ok,12.0,41/41 commodities identical to DoCA home page (2026-10-01),2026-10-02T09:13:21+00:00
+ingest:tariff,ok,1.1,"{'source': 'tariff', 'status': 'ok', 'records': 221, 'accepted': 221, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:gr_metals,ok,2.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:mandi_gondal,ok,9.6,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:mandi_rajkot_apmc,ok,5.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:mandi_rajkot_district,ok,22.8,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:yard_rajkot_board,ok,3.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:necc_ahmedabad,ok,1.3,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1060, 'accepted': 1060, 'rejected': 0, 'message': ''}",2026-10-02T09:13:21+00:00
+trim:official_overlap,ok,0.0,trimmed 60 official stand-in obs overlapping independent months,2026-10-02T09:13:21+00:00
+crosscheck:apmc,ok,3.0,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T09:13:21+00:00
+crosscheck:ibja,ok,1.6,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T09:13:21+00:00
+validate:proxies,ok,0.1,"3 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T09:13:21+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T09:13:21+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.781); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T09:13:21+00:00
+build,ok,0.0,run 20261002T091156859829Z,2026-10-02T09:13:21+00:00
+audit,ok,1.1,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T09:13:21+00:00
+publish,ok,0.0,docs,2026-10-02T09:13:21+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.03), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.19",2026-10-02T09:13:21+00:00
+check:regulatory_events,ok,0.1,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted),2026-10-02T09:13:21+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T09:13:21+00:00
+official:mospi_cpi,ok,3.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T09:18:02+00:00
+official:labour_bureau,ok,12.9,2026-08 already loaded,2026-10-02T09:18:02+00:00
+official:cpi_iw_centres,ok,2.0,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T09:18:02+00:00
+tariff:fuel_lpg_update,ok,5.2,no price changes,2026-10-02T09:18:02+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T09:18:02+00:00
+reset:tariff_series,ok,0.0,cleared 221 tariff observation(s) for rebuild from registers,2026-10-02T09:18:02+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T09:18:02+00:00
+check:doca_mirror,ok,13.0,41/41 commodities identical to DoCA home page (2026-10-01),2026-10-02T09:18:02+00:00
+ingest:tariff,ok,1.0,"{'source': 'tariff', 'status': 'ok', 'records': 221, 'accepted': 221, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:gr_metals,ok,3.0,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:mandi_gondal,ok,9.8,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:mandi_rajkot_apmc,ok,7.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:mandi_rajkot_district,ok,22.1,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:yard_rajkot_board,ok,2.1,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:gr_png,ok,1.5,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:necc_ahmedabad,ok,1.1,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1060, 'accepted': 1060, 'rejected': 0, 'message': ''}",2026-10-02T09:18:02+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T09:18:02+00:00
+crosscheck:apmc,ok,2.9,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T09:18:02+00:00
+crosscheck:ibja,ok,2.0,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T09:18:02+00:00
+validate:proxies,ok,0.1,"3 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T09:18:02+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T09:18:02+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.781); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T09:18:02+00:00
+build,ok,0.0,run 20261002T091640458843Z,2026-10-02T09:18:02+00:00
+audit,ok,1.1,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T09:18:02+00:00
+publish,ok,0.0,docs,2026-10-02T09:18:02+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.29), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.2",2026-10-02T09:18:02+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted),2026-10-02T09:18:02+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T09:18:02+00:00
+official:mospi_cpi,ok,1.6,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T09:49:28+00:00
+official:labour_bureau,ok,12.4,2026-08 already loaded,2026-10-02T09:49:28+00:00
+official:cpi_iw_centres,ok,2.2,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T09:49:28+00:00
+tariff:fuel_lpg_update,ok,4.6,no price changes,2026-10-02T09:49:28+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T09:49:28+00:00
+reset:tariff_series,ok,0.0,cleared 221 tariff observation(s) for rebuild from registers,2026-10-02T09:49:28+00:00
+prune:official_link,ok,0.0,pruned 1 stale/retired SKU(s),2026-10-02T09:49:28+00:00
+check:doca_mirror,ok,8.3,41/41 commodities identical to DoCA home page (2026-10-01),2026-10-02T09:49:28+00:00
+ingest:tariff,ok,1.3,"{'source': 'tariff', 'status': 'ok', 'records': 243, 'accepted': 243, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:gr_metals,ok,2.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:mandi_gondal,ok,81.3,"{'source': 'mandi_gondal', 'status': 'error', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': ""RuntimeError: GET failed after 3 attempts: HTTPSConnectionPool(host='www.commodityonline.com', port=443): Read timed out. (read timeout=20.0)""}",2026-10-02T09:49:28+00:00
+ingest:mandi_rajkot_apmc,ok,11.3,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:mandi_rajkot_veg,ok,10.7,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:mandi_rajkot_district,ok,33.5,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:yard_rajkot_board,ok,2.2,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:gr_png,ok,0.5,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:necc_ahmedabad,ok,1.2,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1040, 'accepted': 1040, 'rejected': 0, 'message': ''}",2026-10-02T09:49:28+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T09:49:28+00:00
+crosscheck:apmc,ok,3.2,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T09:49:28+00:00
+crosscheck:ibja,ok,1.7,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T09:49:28+00:00
+validate:proxies,ok,0.1,"3 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T09:49:28+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T09:49:28+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.754); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T09:49:28+00:00
+build,ok,0.0,run 20261002T094801249871Z,2026-10-02T09:49:28+00:00
+audit,ok,1.3,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T09:49:28+00:00
+publish,ok,0.0,docs,2026-10-02T09:49:28+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.68), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.15",2026-10-02T09:49:28+00:00
+check:regulatory_events,ok,0.1,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published),2026-10-02T09:49:28+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T09:49:28+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T09:53:41+00:00
+official:labour_bureau,ok,12.9,2026-08 already loaded,2026-10-02T09:53:41+00:00
+official:cpi_iw_centres,ok,2.2,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T09:53:41+00:00
+tariff:fuel_lpg_update,ok,4.9,no price changes,2026-10-02T09:53:41+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T09:53:41+00:00
+reset:tariff_series,ok,0.0,cleared 243 tariff observation(s) for rebuild from registers,2026-10-02T09:53:41+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T09:53:41+00:00
+check:doca_mirror,ok,8.2,41/41 commodities identical to DoCA home page (2026-10-01),2026-10-02T09:53:41+00:00
+ingest:tariff,ok,1.2,"{'source': 'tariff', 'status': 'ok', 'records': 243, 'accepted': 243, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:gr_metals,ok,3.8,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:mandi_gondal,ok,9.4,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:mandi_rajkot_apmc,ok,5.5,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:mandi_rajkot_veg,ok,7.7,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:mandi_rajkot_district,ok,22.3,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:yard_rajkot_board,ok,2.2,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:necc_ahmedabad,ok,1.1,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1040, 'accepted': 1040, 'rejected': 0, 'message': ''}",2026-10-02T09:53:41+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T09:53:41+00:00
+crosscheck:apmc,ok,3.3,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=agree",2026-10-02T09:53:41+00:00
+crosscheck:ibja,ok,1.7,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T09:53:41+00:00
+validate:proxies,ok,0.1,"3 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T09:53:41+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T09:53:41+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.754); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T09:53:41+00:00
+build,ok,0.0,run 20261002T095208717900Z,2026-10-02T09:53:41+00:00
+audit,ok,1.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T09:53:41+00:00
+publish,ok,0.0,docs,2026-10-02T09:53:41+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.68), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.15",2026-10-02T09:53:41+00:00
+check:regulatory_events,ok,0.1,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published),2026-10-02T09:53:41+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T09:53:41+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T11:38:10+00:00
+official:labour_bureau,ok,13.1,2026-08 already loaded,2026-10-02T11:38:10+00:00
+official:cpi_iw_centres,ok,1.9,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T11:38:10+00:00
+tariff:fuel_lpg_update,ok,5.2,no price changes,2026-10-02T11:38:10+00:00
+tariff:mrp_live,ok,32.4,3814 products read; 0 price change(s); 0 pool SKU(s) missing from feed; promoted into index: none,2026-10-02T11:38:10+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T11:38:10+00:00
+reset:tariff_series,ok,0.0,cleared 243 tariff observation(s) for rebuild from registers,2026-10-02T11:38:10+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T11:38:10+00:00
+check:doca_mirror,ok,8.3,41/41 commodities identical to DoCA home page (2026-10-02),2026-10-02T11:38:10+00:00
+ingest:tariff,ok,1.2,"{'source': 'tariff', 'status': 'ok', 'records': 243, 'accepted': 243, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:gr_metals,ok,2.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:mandi_gondal,ok,9.5,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:mandi_rajkot_apmc,ok,7.4,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:mandi_rajkot_veg,ok,10.4,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:mandi_rajkot_district,ok,23.3,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:yard_rajkot_board,ok,2.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:gr_png,ok,0.8,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:necc_ahmedabad,ok,1.2,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1040, 'accepted': 1040, 'rejected': 0, 'message': ''}",2026-10-02T11:38:10+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T11:38:10+00:00
+crosscheck:apmc,ok,2.8,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date",2026-10-02T11:38:10+00:00
+crosscheck:ibja,ok,1.9,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T11:38:10+00:00
+validate:proxies,ok,0.1,"3 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T11:38:10+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T11:38:10+00:00
+screen:jockey_mrp,ok,4.1,"C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)",2026-10-02T11:38:10+00:00
+accrue:rent_listings,ok,8.5,0 new listing(s); 2 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only),2026-10-02T11:38:10+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.754); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T11:38:10+00:00
+build,ok,0.0,run 20261002T113641159313Z,2026-10-02T11:38:10+00:00
+audit,ok,1.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T11:38:10+00:00
+publish,ok,0.0,docs,2026-10-02T11:38:10+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.68), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.15",2026-10-02T11:38:10+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published),2026-10-02T11:38:10+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T11:38:10+00:00
+official:mospi_cpi,ok,1.4,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T11:58:56+00:00
+official:labour_bureau,ok,12.0,2026-08 already loaded,2026-10-02T11:58:56+00:00
+official:cpi_iw_centres,ok,2.0,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T11:58:56+00:00
+tariff:fuel_lpg_update,ok,4.3,no price changes,2026-10-02T11:58:56+00:00
+tariff:mrp_live,ok,32.4,3814 products read; 0 price change(s); 0 pool SKU(s) missing from feed; promoted into index: none,2026-10-02T11:58:56+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T11:58:56+00:00
+reset:tariff_series,ok,0.0,cleared 243 tariff observation(s) for rebuild from registers,2026-10-02T11:58:56+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T11:58:56+00:00
+check:doca_mirror,ok,7.8,41/41 commodities identical to DoCA home page (2026-10-02),2026-10-02T11:58:56+00:00
+ingest:tariff,ok,1.2,"{'source': 'tariff', 'status': 'ok', 'records': 243, 'accepted': 243, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:gr_metals,ok,3.8,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:mandi_gondal,ok,9.5,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:mandi_rajkot_apmc,ok,5.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:mandi_rajkot_veg,ok,8.2,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:mandi_rajkot_district,ok,22.2,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:yard_rajkot_board,ok,2.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:gr_png,ok,0.1,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:necc_ahmedabad,ok,1.4,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 1040, 'accepted': 1040, 'rejected': 0, 'message': ''}",2026-10-02T11:58:56+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T11:58:56+00:00
+crosscheck:apmc,ok,3.0,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date",2026-10-02T11:58:56+00:00
+crosscheck:ibja,ok,1.8,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T11:58:56+00:00
+validate:proxies,ok,0.1,"3 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T11:58:56+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T11:58:56+00:00
+screen:jockey_mrp,ok,3.8,"C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)",2026-10-02T11:58:56+00:00
+accrue:rent_listings,ok,8.7,0 new listing(s); 2 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only),2026-10-02T11:58:56+00:00
+accrue:mrp_diary,ok,6.3,"8 SKU quote(s) today; 8 SKUs, 3 month(s) with a price (2025-08..2026-10), mean Rs 152, 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)",2026-10-02T11:58:56+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.754); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T11:58:56+00:00
+build,ok,0.0,run 20261002T115727597139Z,2026-10-02T11:58:56+00:00
+audit,ok,1.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T11:58:56+00:00
+publish,ok,0.0,docs,2026-10-02T11:58:56+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.68), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.15",2026-10-02T11:58:56+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published),2026-10-02T11:58:56+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T11:58:56+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T12:11:18+00:00
+official:labour_bureau,ok,11.9,2026-08 already loaded,2026-10-02T12:11:18+00:00
+official:cpi_iw_centres,ok,2.2,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T12:11:18+00:00
+tariff:fuel_lpg_update,ok,6.1,no price changes,2026-10-02T12:11:18+00:00
+tariff:mrp_live,ok,32.3,3814 products read; 0 price change(s); 0 pool SKU(s) missing from feed; promoted into index: none,2026-10-02T12:11:18+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T12:11:18+00:00
+reset:tariff_series,ok,0.0,cleared 243 tariff observation(s) for rebuild from registers,2026-10-02T12:11:18+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T12:11:18+00:00
+check:doca_mirror,ok,8.2,41/41 commodities identical to DoCA home page (2026-10-02),2026-10-02T12:11:18+00:00
+ingest:tariff,ok,1.5,"{'source': 'tariff', 'status': 'ok', 'records': 243, 'accepted': 243, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:gr_metals,ok,2.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:mandi_gondal,ok,9.4,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:mandi_rajkot_apmc,ok,5.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:mandi_rajkot_veg,ok,7.7,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:mandi_rajkot_district,ok,22.4,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:yard_rajkot_board,ok,2.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:gr_png,ok,0.8,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:necc_ahmedabad,ok,1.2,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:doca_national,ok,8.1,"{'source': 'doca_national', 'status': 'ok', 'records': 1920, 'accepted': 1920, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 980, 'accepted': 980, 'rejected': 0, 'message': ''}",2026-10-02T12:11:18+00:00
+trim:official_overlap,ok,0.0,trimmed 60 official stand-in obs overlapping independent months,2026-10-02T12:11:18+00:00
+crosscheck:apmc,ok,3.0,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date",2026-10-02T12:11:18+00:00
+crosscheck:ibja,ok,1.7,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T12:11:18+00:00
+validate:proxies,ok,0.1,"6 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T12:11:18+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T12:11:18+00:00
+screen:doca_national,ok,10.9,"F012 fail (corr=0.37, drift=0.055); F014 fail (corr=0.25, drift=0.011); F015 fail (corr=0.12, drift=0.032); F016 fail (corr=0.35, drift=0.152); eligible to wire: none",2026-10-02T12:11:18+00:00
+screen:jockey_mrp,ok,3.9,"C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)",2026-10-02T12:11:18+00:00
+accrue:rent_listings,ok,9.7,1 new listing(s); 2 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only),2026-10-02T12:11:18+00:00
+accrue:mrp_diary,ok,6.3,"8 SKU quote(s) today; 8 SKUs, 3 month(s) with a price (2025-08..2026-10), mean Rs 152, 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)",2026-10-02T12:11:18+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.574); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T12:11:18+00:00
+build,ok,0.0,run 20261002T120950104758Z,2026-10-02T12:11:18+00:00
+audit,ok,1.2,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T12:11:18+00:00
+publish,ok,0.0,docs,2026-10-02T12:11:18+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.72), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.15",2026-10-02T12:11:18+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published),2026-10-02T12:11:18+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T12:11:18+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T12:33:01+00:00
+official:labour_bureau,ok,12.1,2026-08 already loaded,2026-10-02T12:33:01+00:00
+official:cpi_iw_centres,ok,1.7,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T12:33:01+00:00
+tariff:fuel_lpg_update,ok,4.4,no price changes,2026-10-02T12:33:01+00:00
+tariff:mrp_live,ok,32.4,3813 products read; 0 price change(s); 0 pool SKU(s) missing from feed; promoted into index: none,2026-10-02T12:33:01+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T12:33:01+00:00
+reset:tariff_series,ok,0.0,cleared 243 tariff observation(s) for rebuild from registers,2026-10-02T12:33:01+00:00
+prune:official_link,ok,0.0,pruned 1 stale/retired SKU(s),2026-10-02T12:33:01+00:00
+check:doca_mirror,ok,8.0,41/41 commodities identical to DoCA home page (2026-10-02),2026-10-02T12:33:01+00:00
+ingest:tariff,ok,1.3,"{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:gr_metals,ok,3.8,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:mandi_gondal,ok,9.8,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:mandi_rajkot_apmc,ok,5.5,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:mandi_rajkot_veg,ok,8.1,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:mandi_rajkot_district,ok,31.5,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:yard_rajkot_board,ok,2.1,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:gr_png,ok,0.2,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:necc_ahmedabad,ok,0.8,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:doca_national,ok,8.7,"{'source': 'doca_national', 'status': 'ok', 'records': 1920, 'accepted': 1920, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 960, 'accepted': 960, 'rejected': 0, 'message': ''}",2026-10-02T12:33:01+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-02T12:33:01+00:00
+crosscheck:apmc,ok,4.1,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date",2026-10-02T12:33:01+00:00
+crosscheck:ibja,ok,3.2,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T12:33:01+00:00
+validate:proxies,ok,0.1,"6 pass, 10 pending (<6 overlapping months), 0 fail",2026-10-02T12:33:01+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T12:33:01+00:00
+screen:doca_national,ok,10.3,"F012 fail (corr=0.37, drift=0.055); F014 fail (corr=0.25, drift=0.011); F015 fail (corr=0.12, drift=0.032); F016 fail (corr=0.35, drift=0.152); eligible to wire: none",2026-10-02T12:33:01+00:00
+screen:jockey_mrp,ok,4.1,"C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)",2026-10-02T12:33:01+00:00
+accrue:rent_listings,ok,8.9,0 new listing(s); 2 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only),2026-10-02T12:33:01+00:00
+accrue:mrp_diary,ok,18.6,"15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)",2026-10-02T12:33:01+00:00
+evaluate:nowcast,ok,0.3,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.482); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T12:33:01+00:00
+build,ok,0.0,run 20261002T123131398256Z,2026-10-02T12:33:01+00:00
+audit,ok,1.4,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T12:33:01+00:00
+publish,ok,0.0,docs,2026-10-02T12:33:01+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.68), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.15",2026-10-02T12:33:01+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published); D002 pass-through None (official_not_yet_published),2026-10-02T12:33:01+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T12:33:01+00:00
+official:mospi_cpi,ok,1.5,up to date (5144 rows for 2026); latest 2026-08,2026-10-02T12:45:10+00:00
+official:labour_bureau,ok,12.0,2026-08 already loaded,2026-10-02T12:45:10+00:00
+official:cpi_iw_centres,ok,2.1,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-02T12:45:10+00:00
+tariff:fuel_lpg_update,ok,4.9,no price changes,2026-10-02T12:45:10+00:00
+tariff:mrp_live,ok,32.4,3813 products read; 0 price change(s); 0 pool SKU(s) missing from feed; promoted into index: none,2026-10-02T12:45:10+00:00
+tariff:registers,ok,0.0,"R002: 4 bill-model event(s), latest 1503.83 from 2026-07-01",2026-10-02T12:45:10+00:00
+reset:tariff_series,ok,0.0,cleared 265 tariff observation(s) for rebuild from registers,2026-10-02T12:45:10+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-02T12:45:10+00:00
+check:doca_mirror,ok,8.0,41/41 commodities identical to DoCA home page (2026-10-02),2026-10-02T12:45:10+00:00
+ingest:tariff,ok,1.0,"{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:gr_metals,ok,2.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:mandi_gondal,ok,33.6,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:mandi_rajkot_apmc,ok,5.4,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:mandi_rajkot_veg,ok,8.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:mandi_rajkot_district,ok,22.7,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:yard_rajkot_board,ok,2.1,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:gr_png,ok,0.8,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:necc_ahmedabad,ok,1.0,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:doca_rajkot,ok,4.3,"{'source': 'doca_rajkot', 'status': 'ok', 'records': 1513, 'accepted': 1513, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:doca_national,ok,18.3,"{'source': 'doca_national', 'status': 'ok', 'records': 4480, 'accepted': 4480, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 880, 'accepted': 880, 'rejected': 0, 'message': ''}",2026-10-02T12:45:10+00:00
+trim:official_overlap,ok,0.0,trimmed 80 official stand-in obs overlapping independent months,2026-10-02T12:45:10+00:00
+crosscheck:apmc,ok,3.0,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date",2026-10-02T12:45:10+00:00
+crosscheck:ibja,ok,1.7,"IBJA:P005=agree (premium +0.7%..+1.6%, n=4), IBJA:P006=agree (premium +6.2%..+8.4%, n=4)",2026-10-02T12:45:10+00:00
+validate:proxies,ok,0.1,"10 pass, 6 pending (<6 overlapping months), 0 fail",2026-10-02T12:45:10+00:00
+screen:doca_retail,ok,32.3,17 unwired DoCA series screened; eligible to wire: none,2026-10-02T12:45:10+00:00
+screen:doca_national,ok,10.2,"F012 fail (corr=0.37, drift=0.055); F014 fail (corr=0.25, drift=0.011); F015 fail (corr=0.12, drift=0.032); F016 fail (corr=0.35, drift=0.152); eligible to wire: none",2026-10-02T12:45:10+00:00
+screen:jockey_mrp,ok,3.1,"C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)",2026-10-02T12:45:10+00:00
+accrue:rent_listings,ok,9.3,0 new listing(s); 2 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only),2026-10-02T12:45:10+00:00
+accrue:mrp_diary,ok,19.7,"15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)",2026-10-02T12:45:10+00:00
+evaluate:nowcast,ok,1.1,"own-trend h1 RMSE 0.65pp (zero 0.772, old peer-fill 0.482); 90% band +/-1.23% (h1), +/-2.09% (h2)",2026-10-02T12:45:10+00:00
+build,ok,0.0,run 20261002T124401394577Z,2026-10-02T12:45:10+00:00
+audit,ok,1.1,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 98.3979188785432, ""rmse"": 0.46671088235492464, ""max_abs_error"": 0.854737811852587, ""cum_change_replicated_pct""",2026-10-02T12:45:10+00:00
+publish,ok,0.0,docs,2026-10-02T12:45:10+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.75), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.12",2026-10-02T12:45:10+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published); D002 pass-through None (official_not_yet_published),2026-10-02T12:45:10+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-02T12:45:10+00:00
