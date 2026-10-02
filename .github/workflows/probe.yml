@@ -1,0 +1,28 @@
+# Manual: shows which data hosts answer from GitHub's runners (cloud IPs, outside India).
+name: probe-runner-network
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Runner egress
+        run: curl -s -m 15 https://ipinfo.io/json | head -c 400 || true
+      - name: Probe hosts
+        run: |
+          for u in \
+            https://cpi.reclaimchennai.city/api/health \
+            https://fcainfoweb.nic.in/reports/report_menu_web.aspx \
+            https://www.labourbureau.gov.in/robots.txt \
+            https://api.mospi.gov.in/api/cpi/getCPIData \
+            https://ppac.gov.in/ \
+            https://ibjarates.com/ \
+            https://acrop.app/ \
+            https://www.goodreturns.in/ \
+            https://www.divyabhaskar.co.in/ \
+            https://www.jiomart.com/ \
+            https://digital.dmart.in/api/v1/pincodes/380001 ; do
+            printf '%s ' "$u"; curl -s -o /dev/null -m 20 -A "Mozilla/5.0" -w '%{http_code} %{size_download}\n' "$u" || echo "fail"
+          done
