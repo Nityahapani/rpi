@@ -236,3 +236,4 @@ A further sweep of brand stores, open price trackers and Rajkot administered-pri
 * Raw HTTP snapshots (`data/sources_raw/`, `data/raw/`) are git-ignored; everything the index needs is in `data/` and `docs/`.
 
 - **Historical reference back-test (sweep 16c):** WFP/HDX Rajkot retail (2010–2023) and NECC Ahmedabad eggs (2009–2026) are stored under `data/reference/` as reference-only data. A pre-registered test of a seasonal term for the nowcast (`scripts/seasonal_backtest.py`) found no item that met the bar, so nowcasts stay `own_trend`. See inventory section V.
+- **Replay back-test (`python3 scripts/replay_backtest.py`):** reruns the production engine for past cut-offs with the official-linked data hidden after each one, then compares the nowcast with the index later published and with the MoSPI Gujarat-urban general index. Output: `data/official/replay_backtest.md` / `.csv`.

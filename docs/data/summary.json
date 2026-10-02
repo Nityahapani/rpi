@@ -17,7 +17,7 @@
     111.73
   ],
   "observed_weight_share": 0.167,
-  "run_id": "20261002T142115410488Z",
+  "run_id": "20261002T165218434905Z",
   "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices",
   "demo": false,
   "coverage_split": {
