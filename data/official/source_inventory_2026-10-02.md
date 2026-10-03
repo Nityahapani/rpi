@@ -349,3 +349,24 @@ Other leads probed this sweep and rejected: Open Prices (Open Food Facts price d
 - Gujarat DES retail prices (salt monthly, agricultural fortnightly): listed in MoSPI table 11.4, no reachable live feed found. CEIC mirrors of DoCA Rajkot atta, maida and sugar stop at March 2023.
 
 **Conclusion.** The remaining uncovered weight (rent 19.67%, clothing about 7.35%, services such as haircuts, doctor fees, school fees and city bus fares) has no authentic direct dated source that can be scraped. The panel screen leaves F001, F004, F012, F014, F015, F016, F022, F023 and F025 failing all three DoCA panels.
+
+## Y. Nineteenth look (2026-10-03): manufacturer e-store prices rebuilt from Wayback captures (CEAT tyres, T006) - near miss, not wired
+
+**Idea.** Some manufacturers publish their own e-store prices as schema.org `Product` JSON-LD on public pages, and the Internet Archive holds dated captures of those pages. That gives a history without waiting months for accrual. CEAT (`ceat.com`, robots `Allow: /`, `llms.txt` allows crawlers) is the first such source found for T006 (two-wheeler tyre, official item "Tyres and tubes", weight 1.60%).
+
+**What was built.** `scripts/ceat_cdx.py` lists captures (193 model pages, 620 captures, one per page per month, Jul 2025 - Sep 2026). `scripts/ceat_fetch.py` reads them from the Archive (4 parallel requests, about 3 minutes) and parses the JSON-LD. Result: 1,809 SKU-price rows, 141 distinct SKUs, 13.5% listed at price 0 (excluded). Captures before about Sep 2025 carry no JSON-LD prices, so history starts Sep 2025. Only 1.1% of SKU-months have conflicting prices inside a month. `scripts/ceat_screen.py` chains the SKUs (matched-model Jevons, `rpi.proxy_check.chain_series`) and applies the unchanged gate. Rules were fixed before the verdict was seen. Data: `data/ceat/`, result: `data/official/ceat_tyre_screen.csv`.
+
+| Month | CEAT chain | Official tyres (rebased) |
+|---|---|---|
+| 2025-09 | 100.0 | 100.0 |
+| 2025-11 | 96.6 | 99.5 |
+| 2026-03 | 96.6 | 98.8 |
+| 2026-05 | 99.4 | 99.7 |
+| 2026-07 | 103.8 | 102.1 |
+| 2026-08 | 103.8 | 102.7 |
+
+**Verdict: FAIL (corr 0.46 against the 0.5 threshold, drift 0.011 against the 0.10 limit, 12 overlapping months).** The level agrees closely (drift 1.1%) and the shape is right: both show the September 2025 GST-cut dip and the 2026 rise. The correlation of monthly changes misses because the Archive captures are sparse, so CEAT's chain moves in a few steps while the official series moves a little every month. The threshold was not tuned and the series is not wired. T006 stays on the official stand-in.
+
+**Why this is worth keeping.** (1) It shows the Wayback + JSON-LD route works for manufacturers that publish prices in markup. (2) A live CEAT feed, polled monthly, would remove the sparse-capture problem and could be re-gated after about six months. That would be a fixed-pool national e-store price, so it would sit in the proxy bucket, not a Rajkot price. It is not built yet.
+
+**Probed and closed this sweep.** Urban Company (robots: "crawling prohibited unless express written permission"), TyrePlex (robots `Disallow: /*`), Swiggy menus (bot challenge), Zomato (robots disallow). MRF and Apollo Tyres allow crawling but were not checked for price markup.

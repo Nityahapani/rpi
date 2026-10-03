@@ -56,3 +56,16 @@ def test_chain_series_is_immune_to_a_sku_dropping_out():
     piv = pd.DataFrame({"a": [100.0, 110.0, 121.0], "b": [1000.0, np.nan, 1210.0]}, index=["2026-10", "2026-11", "2026-12"])
     s = chain_series(piv)
     assert np.allclose(s.values, [100.0, 110.0, 121.0], rtol=1e-6)
+
+
+def test_ceat_tyre_screen_is_recorded_and_not_wired():
+    import pandas as pd
+    from rpi.proxy_check import judge
+    s = pd.read_csv("data/official/ceat_tyre_screen.csv", index_col=0)
+    assert len(s) == 12 and s.n_skus.min() >= 40
+    off = pd.read_csv("data/official/mospi_cpi2024_gujarat_urban.csv", dtype={"code": str})
+    o = off[(off.level == "item") & (off.code == "07.2.1.1.1.01")].set_index("period").index_value
+    j = judge(s.ceat_chain, o)
+    assert j["verdict"] == "fail" and j["drift"] < 0.05           # near miss on correlation only
+    plan = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
+    assert plan.loc["T006", "primary_source"] == "official_link"   # not wired: the gate decides
