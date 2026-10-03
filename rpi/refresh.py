@@ -390,6 +390,18 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             return f"{n} SKU quote(s) today; {msg}"
         _step("accrue:mrp_diary", _mrp_diary, results)
 
+    ceat_screen: list[dict] = []
+    if (root / "data/ceat/sku_prices.csv").exists():
+        def _ceat_tyres():
+            from .collectors import ceat_tyres
+            msg = "offline: archive history only"
+            if not offline:
+                n, msg = ceat_tyres.accrue(root / "data/ceat/live_prices.csv", root / "data/ceat/pool.csv", client)
+            ceat_screen.append(ceat_tyres.gate(root / "data/ceat/sku_prices.csv", root / "data/ceat/live_prices.csv", root / OFFICIAL_CSV))
+            g = ceat_screen[0]
+            return f"{msg}; T006 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} SKUs); diagnostic only, not wired"
+        _step("screen:ceat_tyres", _ceat_tyres, results)
+
     def _nowcast_eval():
         from .nowcast_eval import run_backtest
         r = run_backtest(root)
@@ -425,6 +437,7 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     out["doca_screen"] = doca_screen
     out["rent_listings_monthly"] = rent_stats
     out["mrp_screen"] = mrp_screen
+    out["ceat_screen"] = ceat_screen
     log = pd.DataFrame(results).assign(at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"))
     lp = root / "data/refresh_log.csv"
     log.to_csv(lp, mode="a", header=not lp.exists(), index=False)

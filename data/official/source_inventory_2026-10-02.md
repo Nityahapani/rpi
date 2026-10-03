@@ -370,3 +370,21 @@ Other leads probed this sweep and rejected: Open Prices (Open Food Facts price d
 **Why this is worth keeping.** (1) It shows the Wayback + JSON-LD route works for manufacturers that publish prices in markup. (2) A live CEAT feed, polled monthly, would remove the sparse-capture problem and could be re-gated after about six months. That would be a fixed-pool national e-store price, so it would sit in the proxy bucket, not a Rajkot price. It is not built yet.
 
 **Probed and closed this sweep.** Urban Company (robots: "crawling prohibited unless express written permission"), TyrePlex (robots `Disallow: /*`), Swiggy menus (bot challenge), Zomato (robots disallow). MRF and Apollo Tyres allow crawling but were not checked for price markup.
+
+## Z. Twentieth look (2026-10-03): CEAT live accrual built; footwear brands and Amul curd tested
+
+**1. CEAT live accrual (built, diagnostic).** `rpi/collectors/ceat_tyres.py`, refresh step `screen:ceat_tyres`. A fixed pool (`data/ceat/pool.csv`, rule in `scripts/build_ceat_pool.py`: SKUs listed in at least 6 of the archive months) of 47 SKUs on 12 pages is read live at 2 s spacing (robots allow it) and appended to `data/ceat/live_prices.csv`. The gate then runs on archive history with live months replacing the archive quote for the same month. First live quote (2026-10-03): 47 of 47 SKUs. Matched SKUs are up about 2.8% on August and about 8.0% on June (official tyres index: roughly +1.7% from June to August), so the live feed shows the post-August rise that the archive could not. Gate today: **fail, corr 0.46, drift 0.011, 12 months** (unchanged: the live month is beyond the official index, which ends in August 2026). The step logs the verdict every run; it is not wired and T006 stays on the official stand-in. Re-gate when the September and October official indices arrive (mid-Oct and mid-Nov): the extra months will use live quotes.
+
+**2. Other manufacturers on the same archive + JSON-LD route.** `scripts/brand_wayback.py` (rules fixed beforehand: men's footwear slugs, URLs with captures in at least 5 months, first 200 by months, one capture per URL-month, unchanged gate against "Footwear for men", C003).
+
+| Source | Robots | Archive history | Verdict |
+|---|---|---|---|
+| Campus (`campusshoes.com`, Shopify) | allow | 71 men's product URLs, 363 captures, but 1-2 captures in Jan and Feb 2026 | **fail**: corr -0.07, drift 0.132, only 9 usable months. Selling prices drift up (+12% over the year, promotion-driven) while the official men's footwear index is down 1.7%. |
+| Bata India (`bata.com/in`) | allow | only 5 men's URLs with 5+ months; JSON-LD price is a flat list price (Rs 1,499 in every capture) | **fail** (no variation; correlation undefined, drift 0.017). Uninformative. |
+| Woodland | allow | not tested (large archive, JS-heavy pages) | open |
+| Amul shop (`shop.amul.com`, F010 curd) | allow product pages | live product API answers 401 without a session token that the page script generates; only a handful of archived API responses | **closed**: using it would mean reproducing the site's token logic, which is evasion. No history to gate. |
+| Mother Dairy | allow | 6 archive captures | closed |
+
+Both footwear screens are saved as `data/official/campus_footwear_screen.csv` and `bata_footwear_screen.csv` (raw prices in `data/brands/`). C003 stays on the official stand-in.
+
+**What this tells us.** The route works where a manufacturer lists a stable price in markup and the archive has monthly captures (CEAT). It fails for retailers whose price is a promotion-driven selling price (Campus) or a never-changing list price (Bata, Jockey earlier). Clothing and footwear remain without an authentic direct source.
