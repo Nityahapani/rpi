@@ -6,13 +6,15 @@ Selection rules, fixed on 2026-10-02 BEFORE any price history existed (so the po
   * in stock on the selection date; at least 2 distinct SKUs per item (matched-model Jevons needs >= 2);
   * brand diversity preferred (max 1 pack of the same product line, except where DMart lists a single brand);
   * the pool is never changed silently: a delisted SKU simply stops reporting, and replacing SKUs is a dated, committed edit of pool.csv.
-NOT built for F010 curd (only one in-stock curd SKU at selection) and F003/F005/etc. (other sources).
+F010 curd was added on 2026-10-03 (dated, committed edit): at the 2026-10-02 selection only one curd SKU was in stock; on 2026-10-03 two plain curds were (Amul Masti Curd 1 kg, Amul Masti Dahi 200 g). The probiotic / flavoured curds and the out-of-stock Milky Mist plain curd were left out by the same rules.
+Not built for F003/F005/etc. (other sources).
 Run: python3 scripts/build_dmart_pool.py
 """
 import pandas as pd
 
 PICKS = {
     "F007": [689176, 689182, 689178, 689170],                 # Gulab 870 g, Vimal 870 g, Ankur 870 g, Tirupati 910 g
+    "F010": [1642067, 727088],                                # Amul Masti Curd 1 kg, Amul Masti Dahi 200 g (added 2026-10-03: the Ahmedabad store now lists two in-stock plain curds; see below)
     "F012": [11071, 848001, 11065, 11075, 11064],             # Gowardhan 905 g, Milky Mist 910 g, Amul cow ghee tin 905 g, Amul pure ghee tin 905 g, Dynamix 902 g
     "F014": [87529, 12066, 12026, 12062, 689360],             # Wagh Bakri Premium, Tata Gold, Red Label, Tata Agni, Wagh Bakri Dust (all 250 g)
     "F015": [11340, 11338],                                   # Tata Salt 1 kg, Aashirvaad iodised 1 kg
@@ -37,6 +39,6 @@ for it, skus in PICKS.items():
     for s in skus:
         r = c[(c.item == it) & (c.sku == s)].iloc[0]
         rows.append(dict(item_id=it, sku=int(s), cat=int(r["cat"]), brand=r.brand, name=r["name"], mrp_at_selection=r.mrp,
-                         sale_at_selection=r.sale, selected_on="2026-10-02"))
+                         sale_at_selection=r.sale, selected_on="2026-10-03" if it == "F010" else "2026-10-02"))
 pd.DataFrame(rows).to_csv("data/dmart/pool.csv", index=False)
 print(len(rows), "SKUs;", pd.DataFrame(rows).groupby("item_id").size().to_dict())

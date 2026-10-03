@@ -388,3 +388,13 @@ Other leads probed this sweep and rejected: Open Prices (Open Food Facts price d
 Both footwear screens are saved as `data/official/campus_footwear_screen.csv` and `bata_footwear_screen.csv` (raw prices in `data/brands/`). C003 stays on the official stand-in.
 
 **What this tells us.** The route works where a manufacturer lists a stable price in markup and the archive has monthly captures (CEAT). It fails for retailers whose price is a promotion-driven selling price (Campus) or a never-changing list price (Bata, Jockey earlier). Clothing and footwear remain without an authentic direct source.
+
+## AA. Twenty-first look (2026-10-03): DMart pool extended to curd (F010); DMart clothing, footwear and vegetables checked; official mandi and state sites unreachable
+
+**Wired.** F010 curd now has a fixed DMart Ready Ahmedabad pool of 2 plain Amul curds (Masti Curd 1 kg, shelf Rs114 against MRP Rs115; Masti Dahi 200 g, Rs24 against Rs25). At the 2026-10-02 selection only one curd SKU was in stock (section W), so it was left out; on 2026-10-03 two were. Same rules as the rest of the pool (plain mainstream variant, in stock, at least two SKUs, probiotic/flavoured and out-of-stock SKUs excluded), recorded as a dated edit in `scripts/build_dmart_pool.py`; `scripts/dmart_harvest.py` now takes item names to refresh part of the candidates file. The pool is 68 SKUs on 18 items; 66 were quoted on the refresh (2 out of stock). Plan independent share: **56.4%** (+1.28 points, all pending the 6-month gate: proxy gate 11 pass, 23 pending, 0 fail). The Sep and Oct 2026 index levels do not change from this edit (the series starts in October and the splice month is imputed, as for the other DMart items).
+
+**Checked and not wired.**
+- DMart Ready "Clothing & Accessories - Men's" (35 SKUs at the Ahmedabad store): only vests, trunks, briefs, socks, handkerchiefs and one T-shirt. No shirts or jeans, so C001 and C002 have no match. "Footwear" holds only shoe polish and sponges, so C003 has none either.
+- DMart "Fruits & Vegetables": the online store lists fruit and frozen vegetables only. No loose potato, onion, tomato or brinjal, so F022, F023 and F025 get nothing.
+- Agmarknet (`agmarknet.gov.in`): HTTP 403; its API host answers 503. `api.data.gov.in`: no connection. Gujarat DES and `gujaratindia.gov.in`: no connection. These government sites do not answer from this network (probably geo-restricted), and the GitHub runners are outside India as well, so they cannot be wired from here.
+- acrop.app and commodityonline Rajkot mandi pages: no Internet Archive captures at all, so the 10-day windows cannot be backfilled to give the mandi items a history.
