@@ -31,6 +31,7 @@ necc_ahmedabad = 5
 gr_metals = 5
 doca_rajkot = 5
 doca_national = 5
+doca_gujarat = 5
 dmart_ahmedabad = 1          # shelf prices are sticky (changes are weeks apart) and the feed is refreshed on demand, so one observation day is a valid month
 
 [index.min_matched_by_tier]

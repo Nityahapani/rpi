@@ -64,13 +64,14 @@ def test_chai_is_proxy_with_conservative_step():
 def test_superseded_local_feeds_stay_out_of_the_index():
     import sqlite3
     from rpi.superseded import sql_clause, SUPERSEDED_ITEMS
-    assert set(SUPERSEDED_ITEMS) == {"F003", "F005", "F020", "F024"}
+    assert set(SUPERSEDED_ITEMS) == {"F003", "F005", "F020", "F021", "F024"}
     c = sqlite3.connect(":memory:")
     c.executescript("CREATE TABLE products(sku_id, item_id, source_id);"
                     "INSERT INTO products VALUES('a','F003','mandi_rajkot_apmc'),('b','F003','doca_national'),"
-                    "('c','F006','doca_rajkot'),('d','F020','necc_ahmedabad');")
+                    "('c','F006','doca_rajkot'),('d','F020','necc_ahmedabad'),"
+                    "('e','F021','mandi_gondal'),('f','F021','doca_gujarat');")
     got = {r[0] for r in c.execute("SELECT sku_id FROM products p WHERE " + sql_clause("p"))}
-    assert got == {"b", "c"}
+    assert got == {"b", "c", "f"}
 
 
 def test_four_national_items_are_wired_and_proxy():
@@ -79,3 +80,13 @@ def test_four_national_items_are_wired_and_proxy():
     assert {v[0] for v in NATIONAL_WIRED.values()} >= {"F003", "F005", "F020", "F024"}
     p = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
     assert all(p.loc[i, "primary_source"] == "doca_national" for i in ("F003", "F005", "F020", "F024"))
+
+
+def test_potato_is_wired_to_the_gujarat_panel():
+    import pandas as pd
+    from rpi.collectors.doca import GUJARAT_WIRED
+    assert {v[0] for v in GUJARAT_WIRED.values()} == {"F021"}
+    p = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
+    assert p.loc["F021", "primary_source"] == "doca_gujarat"
+    s = pd.read_csv("data/official/doca_panel_screen.csv", dtype={"doca_commodity": str}).set_index("item_id")
+    assert s.loc["F021", "wire_to"] == "gujarat" and s.loc["F021", "rajkot_verdict"] != "pass"      # most local passing panel wins

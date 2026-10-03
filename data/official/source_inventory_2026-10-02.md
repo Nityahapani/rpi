@@ -334,3 +334,18 @@ Pre-registered adoption rule: out-of-sample RMSE gain ≥ 10% on the reference t
 **Independent share after this sweep (plan weight): 55.1%** = 18.0% direct (tariff/spot/PNG, not gated) + 12.8% gated and passing (DoCA, NECC, mandi) + 24.3% pending validation (DMart 16.6%, mandi 7.7%). Before: 38.5%. Observed-in-August share is unchanged at 29.6% because DMart starts in October.
 
 Other leads probed this sweep and rejected: Open Prices (Open Food Facts price database): only 404 INR prices worldwide, none in Rajkot or Gujarat, and its country filter is ignored. Tyre makers' 2026 price rises: only blogs, no dated MRP list. JioFiber/Airtel broadband: blogs only (already in section K), no operator archive.
+
+## X. Eighteenth look (2026-10-03): direct-source hunt; potato rewired to the Gujarat DoCA panel; delivery apps closed
+
+**Wired.** F021 (potato) moved from two wholesale mandi quotes (Gondal, Rajkot Veg yard; short history, `pending`) to the DoCA **Gujarat-centres balanced panel** (`doca_gujarat`, `DocaGujaratCollector`). The rule was fixed before this sweep (geography hierarchy in `rpi/collectors/doca.py`: the most local panel that passes the gate wins) and `data/official/doca_panel_screen.csv` already said `wire_to=gujarat` for F021 (Rajkot centre fails; Gujarat panel corr 0.64, drift 0.035; all-India panel fails). Live gate result after the refresh: `validate:proxies` 11 pass, 22 pending, 0 fail. The 640 daily points start 2025-01-01, so the item is gated now rather than after six months of accrual. It is a Gujarat state retail panel, not a Rajkot price, so it stays in the proxy bucket. The old wholesale F021 feeds are kept as diagnostics (`rpi/superseded.py`). Weight moved: gated-and-passing 12.8 -> 14.1 points, pending 24.3 -> 23.0; plan independent share unchanged at 55.1%.
+
+**Probed and closed (nothing wired).**
+- Swiggy: the restaurant listing (`/dapi/restaurants/list/v5`) answers for Rajkot, but every menu endpoint returns an empty 202 or a 403 bot challenge. Menu prices (thali, snacks, tea) are therefore out of reach without evading the WAF, which this project does not do.
+- Zomato: `robots.txt` says `Disallow: /` for all agents. Not used.
+- PVR cinemas API (S001): 403 Access Denied.
+- magicpin Rajkot: 404 on the city page; no menu data.
+- Rajkot city bus (T003): only unofficial fare matrices (rmts.somee.com, a Scribd upload) and a 2023-09 BRTS hike; no dated 2025-26 revision, so there is no event to check and no series.
+- Salon, photocopy, doctor-fee, thali and clothing price searches: no dated authoritative Rajkot series. Practo gives a current snapshot only.
+- Gujarat DES retail prices (salt monthly, agricultural fortnightly): listed in MoSPI table 11.4, no reachable live feed found. CEIC mirrors of DoCA Rajkot atta, maida and sugar stop at March 2023.
+
+**Conclusion.** The remaining uncovered weight (rent 19.67%, clothing about 7.35%, services such as haircuts, doctor fees, school fees and city bus fares) has no authentic direct dated source that can be scraped. The panel screen leaves F001, F004, F012, F014, F015, F016, F022, F023 and F025 failing all three DoCA panels.

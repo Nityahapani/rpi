@@ -3,10 +3,10 @@ but are kept out of the index, the proxy gate and the independent-start cut-offs
 
 Reason: F003/F005/F020/F024 were fed by short local wholesale feeds (Rajkot/Gondal yards, NECC) that had about one month of
 history and could not be gated against the official item index (proxy_validation: 'pending'). The DoCA all-India retail panel
-has 22 months and passes the gate (see data/official/doca_panel_screen.csv), so it is the primary series. Mixing the two
+has 22 months and passes the gate (F021 potato: the Gujarat-centres panel, the most local panel that passes) (see data/official/doca_panel_screen.csv), so it is the primary series. Mixing the two
 price levels inside one Jevons item would be wrong, hence this exclusion."""
-SUPERSEDED_ITEMS = ("F003", "F005", "F020", "F024")
-KEEP_SOURCES = ("doca_national", "official_link", "tariff")
+SUPERSEDED_ITEMS = ("F003", "F005", "F020", "F021", "F024")
+KEEP_SOURCES = ("doca_national", "doca_gujarat", "official_link", "tariff")
 
 
 def sql_clause(alias: str = "p") -> str:

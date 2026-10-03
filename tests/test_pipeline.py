@@ -32,7 +32,8 @@ def test_recovers_true_index(built):
     conn, run, basket, w, truth, months = built
     wt = w.set_index("item_id")["weight"]
     div = basket.set_index("item_id")["division"]
-    lp = pd.DataFrame({i: truth[i] - truth[i][0] for i in truth}, index=months)
+    from rpi.superseded import SUPERSEDED_ITEMS      # synthetic quotes of superseded items are (by design) kept out of the index -> unobserved here
+    lp = pd.DataFrame({i: truth[i] - truth[i][0] for i in truth if i not in SUPERSEDED_ITEMS}, index=months)
     obs_items = list(lp.columns)
     overall = (lp * wt[obs_items]).sum(axis=1) / wt[obs_items].sum()
     paths = {}

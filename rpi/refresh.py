@@ -309,6 +309,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             collectors.append(("doca_rajkot", DocaRetailCollector(client, store)))
             from .collectors.doca import DocaNationalCollector
             collectors.append(("doca_national", DocaNationalCollector(client, store)))
+            from .collectors.doca import DocaGujaratCollector
+            collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
     _step("ingest:official_link", lambda: ingest.run_collector(conn, OfficialLinkCollector(

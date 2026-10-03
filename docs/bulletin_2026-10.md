@@ -1,11 +1,11 @@
 # Rajkot Price Index - 2026-10
 
 
-- Reference month 2026-08: index **107.67**, YoY **5.75%**
-- Latest month 2026-10 (nowcast): index **109.41**  (95% CI 107.69-110.62)
-- Nowcast 90% band for 2026-10: **107.15 - 111.73** (split-conformal from a rolling-origin back-test on official data; conservative)
-- Month-on-month: **0.48%**
-- Year-on-year: **7.6%**
+- Reference month 2026-08: index **107.63**, YoY **5.58%**
+- Latest month 2026-10 (nowcast): index **109.4**  (95% CI 107.45-110.49)
+- Nowcast 90% band for 2026-10: **107.13 - 111.71** (split-conformal from a rolling-origin back-test on official data; conservative)
+- Month-on-month: **0.47%**
+- Year-on-year: **7.63%**
 - Directly observed share of CPI weight: **17%** (remainder imputed)
 
 ## What is independent vs official-linked
@@ -16,15 +16,15 @@
 ## Robustness variants (latest index level)
 | item | level |
 |---|---|
-| geks_jevons | 109.4 |
-| jevons_chain | 109.41 |
-| regular_price | 109.41 |
+| geks_jevons | 109.38 |
+| jevons_chain | 109.4 |
+| regular_price | 109.4 |
 
 ## Divisions (change since base)
 | item | % change |
 |---|---|
 | Personal care & misc. | 41.9 |
-| Transport | 13.03 |
+| Transport | 12.83 |
 | Restaurants & accommodation | 11.56 |
 | Education | 10.27 |
 | Food & non-alcoholic beverages | 9.17 |
@@ -35,4 +35,4 @@
 | Recreation & culture | 2.66 |
 | Health | 2.36 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261002T172451213417Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261003T025949446054Z._

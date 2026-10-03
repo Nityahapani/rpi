@@ -54,6 +54,9 @@ def parse_history(text: str) -> list[tuple[dt.date, float]]:
 NATIONAL_WIRED = {1: ("F002", "kg"), 20: ("F008", "L"), 35: ("F011", "100g"),
                   11: ("F003", "kg"), 10: ("F005", "kg"), 36: ("F020", "dozen"), 41: ("F024", "kg")}
 NATIONAL_CANDIDATES = {34: "F012", 39: "F014", 40: "F015", 32: "F016"}      # not independent through any other feed; screened every run
+# GUJARAT panel: the same balanced-panel rule restricted to the Gujarat centres of the feed (state field of /api/meta). Wired only where the Rajkot
+# centre fails, the Gujarat panel passes the gate (data/official/doca_panel_screen.csv, wire_to == gujarat) -> most local passing panel wins.
+GUJARAT_WIRED = {22: ("F021", "kg")}
 SERIES_LIMIT = 1200                                                                 # API maximum; the default (400 days) silently truncates
 
 
@@ -148,6 +151,26 @@ class DocaNationalCollector(_WebCollector):
                 if d.date() <= on_date:
                     yield Observation(d.date(), self.source_id, f"doca{cid}|India", f"DoCA all-India balanced-panel retail Jevons level, commodity {cid} (Rs/{unit})",
                                       item, "DOCA:India", float(p), qty_base=qty, base_unit=base)
+
+
+class DocaGujaratCollector(_WebCollector):
+    """Gujarat-centres balanced-panel DoCA retail level for the items whose Rajkot centre fails the gate but whose Gujarat panel passes."""
+    source_id = "doca_gujarat"
+    MAX_AGE_DAYS = 7
+
+    def collect(self, on_date):
+        meta = json.loads(self._get(f"{MIRROR}/api/meta", self.source_id))
+        centres = [str(c["id"]) for c in meta["centres"] if c.get("state") == "Gujarat"]
+        for cid, (item, unit) in GUJARAT_WIRED.items():
+            url = f"{MIRROR}/api/mapseries?commodity={cid}&start={START}&end={on_date.isoformat()}&limit={SERIES_LIMIT}"
+            lvl = panel_level(parse_mapseries(self._get(url, self.source_id)), centres)
+            last = lvl.index.max().date()
+            if (on_date - last).days > self.MAX_AGE_DAYS:
+                raise RuntimeError(f"DoCA Gujarat panel for commodity {cid} is stale: last day {last}")
+            for d, p in lvl.items():
+                if d.date() <= on_date:
+                    yield Observation(d.date(), self.source_id, f"doca{cid}|Gujarat", f"DoCA Gujarat-centres balanced-panel retail Jevons level, commodity {cid} (Rs/{unit})",
+                                      item, "DOCA:Gujarat", float(p), qty_base=1000.0, base_unit="g")
 
 
 def screen_national(client, official_csv, mapping_csv, store=None, start: str = "2025-01-01") -> list[dict]:
