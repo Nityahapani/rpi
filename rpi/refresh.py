@@ -402,6 +402,17 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             return f"{msg}; T006 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} SKUs); diagnostic only, not wired"
         _step("screen:ceat_tyres", _ceat_tyres, results)
 
+    vishal_screen: list[dict] = []
+    if (root / "data/vishal/pool.csv").exists():
+        def _vishal():
+            from .collectors import vishal_diary
+            msg = "offline: archive history only"
+            if not offline:
+                n, msg = vishal_diary.accrue(root / "data/vishal/live_prices.csv", root / "data/vishal/pool.csv", client)
+            vishal_screen.extend(vishal_diary.gate(root / "data/vishal/prices.csv", root / "data/vishal/live_prices.csv", root / "data/vishal/pool.csv", root / OFFICIAL_CSV))
+            return msg + "; " + "; ".join(f"{g['item_id']} {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} SKUs)" for g in vishal_screen) + "; diagnostic only, not wired"
+        _step("screen:vishal_clothing", _vishal, results)
+
     def _nowcast_eval():
         from .nowcast_eval import run_backtest
         r = run_backtest(root)
@@ -438,6 +449,7 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     out["rent_listings_monthly"] = rent_stats
     out["mrp_screen"] = mrp_screen
     out["ceat_screen"] = ceat_screen
+    out["vishal_screen"] = vishal_screen
     log = pd.DataFrame(results).assign(at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"))
     lp = root / "data/refresh_log.csv"
     log.to_csv(lp, mode="a", header=not lp.exists(), index=False)

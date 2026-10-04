@@ -1,0 +1,4 @@
+item,group,n_urls,months,chain_chg_pct,official_chg_pct,n_overlap,corr,drift,verdict
+C001,topwear,90,3,0.0,0.2,3,,,pending
+C002,bottomwear,52,5,4.7,2.1,5,,,pending
+C003,footwear,73,5,-6.1,-1.8,5,,,pending
