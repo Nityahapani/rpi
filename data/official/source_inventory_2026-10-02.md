@@ -398,3 +398,19 @@ Both footwear screens are saved as `data/official/campus_footwear_screen.csv` an
 - DMart "Fruits & Vegetables": the online store lists fruit and frozen vegetables only. No loose potato, onion, tomato or brinjal, so F022, F023 and F025 get nothing.
 - Agmarknet (`agmarknet.gov.in`): HTTP 403; its API host answers 503. `api.data.gov.in`: no connection. Gujarat DES and `gujaratindia.gov.in`: no connection. These government sites do not answer from this network (probably geo-restricted), and the GitHub runners are outside India as well, so they cannot be wired from here.
 - acrop.app and commodityonline Rajkot mandi pages: no Internet Archive captures at all, so the 10-day windows cannot be backfilled to give the mandi items a history.
+
+## AB. Twenty-second look (2026-10-03): rent (R001, weight 19.67%) - every route re-tested, still no authentic direct series
+
+**What the stand-in is.** R001 uses the MoSPI Gujarat-urban "House Rent" item index (04.1.1.0.2.01), which comes from MoSPI's own rent survey: +2.2% to +2.5% year on year through 2026 (Aug 2026: 104.50, +2.46%), rising about 0.2-0.3% every month. It is official data and the best authentic rent series that exists for this geography. It is not independent of the official family, so R001 stays in the `linked` bucket.
+
+| Route | Result |
+|---|---|
+| Portal rent indices (Magicbricks Rental Index, Housewise, Anarock) | National or metro asking-rent figures only (Magicbricks: +14% YoY in Q1 2026, +29-30% in 2025). No Rajkot series. Asking rents on new listings run about five times faster than the official rent index, which confirms they measure a different thing (flow of new asking rents, not the rented stock). |
+| Other classified portals | Quikr: `robots.txt` says automated access without express permission is prohibited, and the page served was Bangalore. OLX: no connection from here. Sulekha: empty response. CommonFloor, IndiaProperty: 403. NoBroker: 410. Proptiger, Roofandfloor, RealEstateIndia: 404 for Rajkot. |
+| Common Crawl (monthly open web archive) | The 5 Magicbricks Rajkot rent list pages were looked up across the 2024-2026 crawls. The index answered 43 of 155 queries (the rest timed out) and none of the 43 had a capture. The latest crawl holds Magicbricks Rajkot sale pages only. `scripts/cc_rent_probe.py`. Not usable. |
+| Internet Archive (earlier, section N) | 2 list-page captures and 62 detail captures (Feb and May 2026 only). Not enough points for a trend. |
+| Government | Agmarknet-style government sites do not answer from this network (section AA). The Gujarat registration (leave-and-license) data and the RMC annual letting values are not published as series; letting values are administrative. |
+
+**Power check on the accruing Magicbricks diagnostic** (`data/rent_listings.csv`, 127 usable listings so far). After adjusting for BHK, the residual standard deviation of log asking rent is 0.48, so the standard error of a monthly mean at n=127 is 4.2%. If each month brings about 127 fresh listings, the standard error of the fitted yearly trend is about 12% after 6 months, 4.3% after 12 and 1.5% after 24. The official rent index drifts about 2.5% a year. So the listings could only confirm or contradict the official rent trend after roughly two years of accrual, and never give a monthly signal. This is why `rent_listings.csv` stays a diagnostic and R001 stays linked.
+
+**Conclusion.** There is no authentic, direct, dated rent series for Rajkot that can be scraped from here. What would work, in order of cost: (1) a small primary survey of the same landlords or flats every quarter (you asked to defer this); (2) a paid data feed with city-level rent indices; (3) two more years of the free listing accrual. Until then, R001 uses the official MoSPI rent index and is reported as linked.
