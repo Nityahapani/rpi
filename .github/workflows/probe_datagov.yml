@@ -1,0 +1,31 @@
+# Manual, one-off: does the Agmarknet daily-price API on data.gov.in answer from GitHub's runners with YOUR key?
+# Needs the repository secret DATA_GOV_IN_KEY (Settings > Secrets and variables > Actions). The key is never printed.
+name: probe-datagov-agmarknet
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+    steps:
+      - name: Key present?
+        run: test -n "$KEY" && echo "secret is set (${#KEY} characters)" || { echo "secret DATA_GOV_IN_KEY is NOT set"; exit 1; }
+      - name: Gujarat rows for today
+        run: |
+          RES=9ef84268-d588-465a-a308-a864a43d0070
+          curl -s -m 60 -o out.json -w 'HTTP %{http_code}, %{size_download} bytes\n' \
+            "https://api.data.gov.in/resource/$RES?api-key=$KEY&format=json&limit=500&offset=0&filters%5Bstate.keyword%5D=Gujarat" || echo "request failed"
+          python3 - <<'PY'
+          import json
+          try:
+              j = json.load(open("out.json"))
+          except Exception as e:
+              print("not JSON:", e); raise SystemExit(1)
+          rec = j.get("records", [])
+          print("total available:", j.get("total"), "| returned:", len(rec), "| count:", j.get("count"), "| limit:", j.get("limit"))
+          print("districts in this page:", sorted({r.get("district") for r in rec})[:12])
+          print("sample:", {k: rec[0].get(k) for k in ("state", "district", "market", "commodity", "arrival_date", "modal_price")} if rec else None)
+          PY

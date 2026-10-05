@@ -1,0 +1,12 @@
+item,n_states,n_obs,reliab_official,ci_official,reliab_doca,ci_doca,reliab_wholesale,ci_wholesale,passthrough_corrected,passthrough_ci,note
+Potato,20.0,172.0,0.86,0.81-0.93,0.78,0.65-0.91,0.65,0.50-0.82,0.88,0.77-1.04,
+Onion,17.0,153.0,0.99,0.86-0.99,0.5,0.29-0.74,0.61,0.50-0.72,0.8,0.69-0.85,
+Tomato,19.0,157.0,0.94,0.90-0.97,0.84,0.77-0.92,0.85,0.78-0.90,0.83,0.77-0.91,
+Brinjal,17.0,150.0,,0.79-0.99,0.46,0.25-0.70,0.5,0.37-0.63,,0.61-0.84,a:Heywood case
+Banana,16.0,130.0,0.41,0.20-0.79,0.37,0.10-0.67,0.29,0.12-0.47,0.78,0.58-1.23,
+Wheat atta,11.0,90.0,,0.00-0.23,,0.04-0.97,,0.01-0.20,,0.07-0.99,a:Heywood case; c:Heywood case
+Moong,9.0,68.0,,,0.04,0.01-0.42,,,,,
+Tur,9.0,69.0,,0.67-0.98,0.28,0.05-0.76,0.03,0.00-0.27,,0.67-2.53,a:Heywood case
+Gram split,10.0,90.0,0.56,0.09-0.93,0.53,0.23-0.90,0.06,0.01-0.19,1.35,0.61-2.56,
+Rice,,,,,,,,,,,only 7 states with all three series
+Jaggery,,,,,,,,,,,only 0 states with all three series

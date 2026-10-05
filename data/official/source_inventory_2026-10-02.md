@@ -455,3 +455,54 @@ Both footwear screens are saved as `data/official/campus_footwear_screen.csv` an
 - **Price-history aggregators closed.** pricehistory.app, pricehistoryapp.com and buyhatke serve chart data only through `/api/`, which their robots files disallow; the HTML carries only the lowest, average, highest and current price.
 - **Urban Company (haircut, P004) closed.** robots.txt: "Crawling UrbanCompany is prohibited unless you have express written permission"; 2 Wayback captures in total.
 - **Clothing brand sites**: Wrangler India disallows most crawlers; Levi's, Spykar, Peter England and Allen Solly redirect without usable feeds; Max, Lifestyle, Bewakoof, Reliance Trends and BSNL block this network (403 or no connection). Earlier sweeps already rejected the Shopify brands for discount-driven prices.
+
+## AE. Pooled accuracy tests (sweep 25, 2026-10-05): pass-through borrowed from other states, three-cornered hat, forecast scoring
+
+**What was built.** `rpi/pooled_checks.py` (pure functions, 6 tests), `scripts/pooled_accuracy.py` (runner), and three fetch scripts: `mospi_all_states.py` (official urban item indices, every state, 2025), `ceda_all_states.py` (Agmarknet district monthly modal prices, 26 states) and `doca_state_panels.py` (DoCA balanced-panel retail level per state, 24 states). Rules were fixed before any result was seen: monthly log changes, no intercept, lag 0 or 0+1 chosen by leave-one-state-out RMSE **excluding Gujarat**, state wholesale change = matched-district Jevons mean, Gujarat held out and only then scored with the unchanged gate. Outputs: `data/official/pooled_passthrough.csv`, `pooled_triad.csv`, `forecast_scoring.json`. Nothing was wired into the index.
+
+**1. Pooled pass-through (wholesale change -> official retail change, other states only).**
+
+| Item | States / obs | beta (90% CI) | Leave-one-state-out RMSE: pooled / beta=1 / beta=0 | Beats beta=1 in |
+|---|---|---|---|---|
+| Potato | 23 / 196 | 0.66 (0.49-0.83) | 0.051 / 0.066 / 0.086 | 16 of 21 states |
+| Onion | 20 / 180 | 0.70 (0.59-0.80) | 0.048 / 0.083 / 0.101 | 18 of 20 |
+| Tomato | 22 / 181 | 0.76 (0.66-0.85) | 0.092 / 0.131 / 0.232 | 16 of 20 |
+| Brinjal | 20 / 176 | 0.55 (0.44-0.69) | 0.070 / 0.123 / 0.102 | 17 of 20 |
+| Banana | 18 / 147 | 0.44 (0.21-0.73) | 0.039 / 0.052 / 0.041 | 13 of 16 |
+| Gram split | 9 / 80 | 0.34 (0.20-0.49) | 0.015 / 0.032 / 0.017 | 8 of 9 |
+| Wheat | 12 / 91 | -0.01 (-0.04-0.02) | 0.007 / 0.044 / 0.007 | no signal |
+| Moong | 9 / 59 | 0.08 (0.03-0.12) | 0.007 / 0.043 / 0.008 | no signal |
+| Tur | 8 / 57 | 0.67 (0.46-0.96) | 0.031 / 0.050 / 0.035 | thin |
+| Rice, jaggery | 9 / 8 states | 0.09, 0.08 | ~ beta=0 | no signal |
+
+Reading: for vegetables, wholesale moves about 0.55-0.76 as far as the official retail index, and using that instead of 1 cuts held-out error by 25-45%. For wheat, moong, rice and jaggery, wholesale carries essentially no month-to-month information about the official retail index in any state, so these should not be wholesale-proxied at all.
+
+**Held-out Gujarat, unchanged gate (corr >= 0.5, drift <= 0.10, 9 months).**
+
+| Item | Gujarat-wide wholesale, pooled beta | Gujarat-wide, beta = 1 | Rajkot district alone, pooled beta | Rajkot alone, beta = 1 |
+|---|---|---|---|---|
+| Potato | pass (drift 0.007) | fail (0.18) | pass (0.056) | fail (0.27) |
+| Onion | pass (**0.098**) | fail (0.30) | fail (0.21) | fail (0.45) |
+| Tomato | pass (**0.098**) | fail (0.37) | fail (0.29) | fail (0.65) |
+| Brinjal | pass (0.028) | fail (0.31) | fail (0.15) | pass (0.079) |
+| Gram split | pass (0.018) | fail (0.03 drift but corr 0.75: fail on other grounds) | fail (corr 0.40) | fail |
+| Banana, wheat, moong, tur | fail | fail | fail | fail |
+
+Caveats: onion and tomato pass by 0.002 under a 0.10 limit, which is within noise; 9 months only; and the gate compares with the Gujarat-urban official index, so a state-wide wholesale average passing says nothing about Rajkot specifically. The Rajkot yards alone (what the live feeds are) fail for onion, tomato and brinjal even after the correction.
+
+**2. Three-cornered hat (official CPI survey, DoCA retail reporters, Agmarknet wholesale; one-factor model, pooled over states, 90% state-bootstrap intervals).**
+
+| Item | States | Official: share of signal | DoCA retail | Wholesale | Corrected pass-through (official / wholesale loading) |
+|---|---|---|---|---|---|
+| Potato | 20 | 0.86 (0.81-0.93) | 0.78 (0.65-0.91) | 0.65 (0.50-0.82) | 0.88 (0.77-1.04) |
+| Onion | 17 | 0.99 (0.86-0.99) | 0.50 (0.29-0.74) | 0.61 (0.50-0.72) | 0.80 (0.69-0.85) |
+| Tomato | 19 | 0.94 (0.90-0.97) | 0.84 (0.77-0.92) | 0.85 (0.78-0.90) | 0.83 (0.77-0.91) |
+| Brinjal | 17 | not identified (>= 1; CI 0.79-0.99) | 0.46 (0.25-0.70) | 0.50 (0.37-0.63) | CI 0.61-0.84 |
+| Banana | 16 | 0.41 (0.20-0.79) | 0.37 (0.10-0.67) | 0.29 (0.12-0.47) | 0.78 (0.58-1.23) |
+| Wheat, moong, tur, gram | 9-11 | Heywood cases or very wide | | | not identified |
+
+Reading: "share of signal" is the fraction of a source's month-to-month variance that the three sources have in common, estimated without any ground truth. The official vegetable indices come out as the most reliable of the three (0.86-0.99), which supports using them as the benchmark. DoCA's retail reporter is the noisiest for onion and brinjal (0.46-0.50, consistent with its sticky one-quote-a-day design). Wholesale is about as good as DoCA. Correcting for measurement noise raises pass-through from 0.55-0.76 (the regression numbers above, which are the right ones for prediction) to 0.8-0.9 (the right ones for structure). Assumes the three systems' errors are independent; the factor is "price change all three track", and wholesale-specific margin movements count as wholesale error.
+
+**3. Forecast scoring (14 one-month and 13 two-month replay nowcasts).** Engine RMSE 0.49% against 0.60% (own-trend) and 0.75% (zero change) at h=1. Diebold-Mariano (small-sample corrected): p = 0.19 and 0.13; at h=2 p = 0.18 and 0.15. **The engine's edge over simple rules is not statistically significant with this much data.** Leave-one-out coverage of the conformal 90% band: 92.9% (h=1) and 92.3% (h=2), so the published band is well calibrated.
+
+**Consequences (not applied).** (a) The five pending mandi items should be treated differently: wheat and moong have no usable wholesale signal, so the wholesale route should be dropped for them. (b) Onion, tomato, brinjal and potato could be proxied by a Gujarat-wide matched-market wholesale change times the pooled pass-through, but that needs a live Gujarat-wide feed; the data.gov.in route (guide: `data/official/data_access_guide.md`) is the only one. (c) CEDA ends in Oct 2025, so none of this back-test covers 2026.
