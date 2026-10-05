@@ -485,7 +485,7 @@ Reading: for vegetables, wholesale moves about 0.55-0.76 as far as the official 
 | Onion | pass (**0.098**) | fail (0.30) | fail (0.21) | fail (0.45) |
 | Tomato | pass (**0.098**) | fail (0.37) | fail (0.29) | fail (0.65) |
 | Brinjal | pass (0.028) | fail (0.31) | fail (0.15) | pass (0.079) |
-| Gram split | pass (0.018) | fail (0.03 drift but corr 0.75: fail on other grounds) | fail (corr 0.40) | fail |
+| Gram split | pass (0.018; corr 0.75) | fail (corr 0.14; the lag term lifts it to 0.75, so this one is a timing effect, not amplitude) | fail (corr 0.40) | fail (corr -0.29) |
 | Banana, wheat, moong, tur | fail | fail | fail | fail |
 
 Caveats: onion and tomato pass by 0.002 under a 0.10 limit, which is within noise; 9 months only; and the gate compares with the Gujarat-urban official index, so a state-wide wholesale average passing says nothing about Rajkot specifically. The Rajkot yards alone (what the live feeds are) fail for onion, tomato and brinjal even after the correction.

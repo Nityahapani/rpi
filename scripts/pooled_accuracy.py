@@ -92,7 +92,7 @@ for it in ITEMS:
         lv_pool = pd.Series(100 * np.exp(np.cumsum(pred)), index=w.index); lv_b1 = pd.Series(level_from(w.values, 1.0), index=w.index)
         jp, j1 = judge(lv_pool, o), judge(lv_b1, o)
         row.update({f"{geo}_pooled_corr": jp["corr"], f"{geo}_pooled_drift": jp["drift"], f"{geo}_pooled_verdict": jp["verdict"],
-                    f"{geo}_beta1_drift": j1["drift"], f"{geo}_beta1_verdict": j1["verdict"], f"{geo}_n": jp["n_overlap"]})
+                    f"{geo}_beta1_corr": j1["corr"], f"{geo}_beta1_drift": j1["drift"], f"{geo}_beta1_verdict": j1["verdict"], f"{geo}_n": jp["n_overlap"]})
     res1.append(row)
 r1 = pd.DataFrame(res1); r1.to_csv("data/official/pooled_passthrough.csv", index=False)
 

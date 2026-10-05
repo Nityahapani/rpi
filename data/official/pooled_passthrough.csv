@@ -1,12 +1,12 @@
-item,n_states,n_obs,spec,beta,beta_lo,beta_hi,loso_rmse_pool,loso_rmse_beta1,loso_rmse_beta0,loso_wins_vs_beta1,loso_wins_vs_beta0,loso_drift_pool,loso_drift_beta1,gujarat_state_pooled_corr,gujarat_state_pooled_drift,gujarat_state_pooled_verdict,gujarat_state_beta1_drift,gujarat_state_beta1_verdict,gujarat_state_n,rajkot_district_pooled_corr,rajkot_district_pooled_drift,rajkot_district_pooled_verdict,rajkot_district_beta1_drift,rajkot_district_beta1_verdict,rajkot_district_n,rajkot_district_note,gujarat_state_note
-Potato,23,196,lag0+lag1,0.66,0.49,0.83,0.0507,0.0664,0.0859,16/21,17/21,0.054,0.049,0.86,0.007,pass,0.18,fail,9.0,0.81,0.056,pass,0.265,fail,9.0,,
-Onion,20,180,lag0+lag1,0.7,0.59,0.8,0.0483,0.0831,0.1009,18/20,20/20,0.041,0.068,0.88,0.098,pass,0.299,fail,9.0,0.9,0.214,fail,0.451,fail,9.0,,
-Tomato,22,181,lag0+lag1,0.76,0.66,0.85,0.092,0.1306,0.2315,16/20,20/20,0.11,0.086,0.99,0.098,pass,0.368,fail,9.0,0.94,0.286,fail,0.65,fail,9.0,,
-Brinjal,20,176,lag0+lag1,0.55,0.44,0.69,0.07,0.1232,0.1019,17/20,16/20,0.109,0.09,0.95,0.028,pass,0.308,fail,9.0,0.71,0.148,fail,0.079,pass,9.0,,
-Banana,18,147,lag0+lag1,0.44,0.21,0.73,0.0385,0.0517,0.0405,13/16,10/16,0.052,0.075,0.8,0.104,fail,0.308,fail,9.0,,,,,,,no wholesale data,
-Wheat atta,12,91,lag0,-0.01,-0.04,0.02,0.0073,0.044,0.0073,10/10,5/10,0.016,0.102,-0.24,0.001,fail,0.116,fail,9.0,-0.14,0.001,fail,0.126,fail,9.0,,
-Moong,9,59,lag0+lag1,0.08,0.03,0.12,0.0069,0.0426,0.0079,5/5,5/5,0.023,0.07,-0.42,0.002,fail,0.074,fail,9.0,0.03,0.004,fail,0.079,fail,9.0,,
-Tur,8,57,lag0+lag1,0.67,0.46,0.96,0.0309,0.0504,0.0347,6/6,5/6,0.122,0.129,0.38,0.025,fail,0.012,fail,9.0,0.04,0.033,fail,0.017,fail,9.0,,
-Gram split,9,80,lag0+lag1,0.34,0.2,0.49,0.0148,0.0319,0.0167,8/9,6/9,0.07,0.026,0.75,0.018,pass,0.026,fail,9.0,0.4,0.041,fail,0.055,fail,9.0,,
-Rice,9,81,lag0+lag1,0.09,0.01,0.23,0.0076,0.0231,0.0074,8/9,4/9,0.012,0.044,0.02,0.017,fail,0.011,fail,9.0,,,,,,,no wholesale data,
-Jaggery,8,59,lag0+lag1,0.08,-0.01,0.18,0.0094,0.0412,0.0094,5/6,4/6,0.049,0.064,,,,,,,,,,,,,no wholesale data,no wholesale data
+item,n_states,n_obs,spec,beta,beta_lo,beta_hi,loso_rmse_pool,loso_rmse_beta1,loso_rmse_beta0,loso_wins_vs_beta1,loso_wins_vs_beta0,loso_drift_pool,loso_drift_beta1,gujarat_state_pooled_corr,gujarat_state_pooled_drift,gujarat_state_pooled_verdict,gujarat_state_beta1_corr,gujarat_state_beta1_drift,gujarat_state_beta1_verdict,gujarat_state_n,rajkot_district_pooled_corr,rajkot_district_pooled_drift,rajkot_district_pooled_verdict,rajkot_district_beta1_corr,rajkot_district_beta1_drift,rajkot_district_beta1_verdict,rajkot_district_n,rajkot_district_note,gujarat_state_note
+Potato,23,196,lag0+lag1,0.66,0.49,0.83,0.0507,0.0664,0.0859,16/21,17/21,0.054,0.049,0.86,0.007,pass,0.75,0.18,fail,9.0,0.81,0.056,pass,0.61,0.265,fail,9.0,,
+Onion,20,180,lag0+lag1,0.7,0.59,0.8,0.0483,0.0831,0.1009,18/20,20/20,0.041,0.068,0.88,0.098,pass,0.89,0.299,fail,9.0,0.9,0.214,fail,0.87,0.451,fail,9.0,,
+Tomato,22,181,lag0+lag1,0.76,0.66,0.85,0.092,0.1306,0.2315,16/20,20/20,0.11,0.086,0.99,0.098,pass,0.96,0.368,fail,9.0,0.94,0.286,fail,0.88,0.65,fail,9.0,,
+Brinjal,20,176,lag0+lag1,0.55,0.44,0.69,0.07,0.1232,0.1019,17/20,16/20,0.109,0.09,0.95,0.028,pass,0.87,0.308,fail,9.0,0.71,0.148,fail,0.71,0.079,pass,9.0,,
+Banana,18,147,lag0+lag1,0.44,0.21,0.73,0.0385,0.0517,0.0405,13/16,10/16,0.052,0.075,0.8,0.104,fail,0.56,0.308,fail,9.0,,,,,,,,no wholesale data,
+Wheat atta,12,91,lag0,-0.01,-0.04,0.02,0.0073,0.044,0.0073,10/10,5/10,0.016,0.102,-0.24,0.001,fail,0.24,0.116,fail,9.0,-0.14,0.001,fail,0.14,0.126,fail,9.0,,
+Moong,9,59,lag0+lag1,0.08,0.03,0.12,0.0069,0.0426,0.0079,5/5,5/5,0.023,0.07,-0.42,0.002,fail,-0.46,0.074,fail,9.0,0.03,0.004,fail,0.04,0.079,fail,9.0,,
+Tur,8,57,lag0+lag1,0.67,0.46,0.96,0.0309,0.0504,0.0347,6/6,5/6,0.122,0.129,0.38,0.025,fail,0.15,0.012,fail,9.0,0.04,0.033,fail,0.03,0.017,fail,9.0,,
+Gram split,9,80,lag0+lag1,0.34,0.2,0.49,0.0148,0.0319,0.0167,8/9,6/9,0.07,0.026,0.75,0.018,pass,0.14,0.026,fail,9.0,0.4,0.041,fail,-0.29,0.055,fail,9.0,,
+Rice,9,81,lag0+lag1,0.09,0.01,0.23,0.0076,0.0231,0.0074,8/9,4/9,0.012,0.044,0.02,0.017,fail,0.12,0.011,fail,9.0,,,,,,,,no wholesale data,
+Jaggery,8,59,lag0+lag1,0.08,-0.01,0.18,0.0094,0.0412,0.0094,5/6,4/6,0.049,0.064,,,,,,,,,,,,,,,no wholesale data,no wholesale data
