@@ -429,3 +429,21 @@ Both footwear screens are saved as `data/official/campus_footwear_screen.csv` an
 **Risks that stay open.** Promotions and sale-season markdowns can swamp the trend. SKU churn will shrink the pool over time, and any replacement is a dated, committed edit. GitHub runner reachability of vishalmegamart.com is unknown.
 
 **Also probed and not used.** BigBasket returns 403 to the site root. Zepto returns an empty 202. Starquik answers 200 but was not tested for prices or serviceability, and Swiggy Instamart disallows `/product`, so no second grocery cross-check was built this sweep.
+
+## AD. Vegetables (sweep 24, 2026-10-04): CEDA Agmarknet history as a back-test of the wholesale proxy
+
+**Source.** CEDA (Ashoka University) serves cleaned Agmarknet prices through the same public JSON API its own charts use (`agmarknet.ceda.ashoka.edu.in/api/prices`; states, districts, commodities, monthly and daily modes; district level for Rajkot). The bulk-download mode rate-limited me after one burst (429, 10 minutes), so only the plain monthly mode was used, at 1 s spacing. No robots file exists (404). The data end in **Oct 2025**: it is a history, not a live feed, and it cannot replace the live Gondal/Rajkot yard quotes.
+
+**Test (`scripts/ceda_screen.py`, rule fixed first).** Monthly modal price, geography hierarchy Rajkot district, then Gujarat, then all India, unchanged gate (6+ overlapping months, corr >= 0.5, drift <= 0.10) against the official Gujarat-urban item index. The overlap is Jan-Oct 2025, 10 months. Result in `data/official/ceda_screen.csv`, data in `data/ceda/monthly_modal.csv`.
+
+| Item | Rajkot district (corr / drift) | Gujarat | All India | Verdict |
+|---|---|---|---|---|
+| F021 potato | 0.84 / 0.07 pass | 0.90 / 0.03 pass | 0.90 / 0.14 fail | passes locally (already on the DoCA Gujarat panel) |
+| F022 onion | 0.86 / 0.34 fail | 0.85 / 0.13 fail | 0.93 / 0.22 fail | fails on drift |
+| F023 tomato | 0.91 / 0.41 fail | 0.97 / 0.21 fail | 0.84 / 0.06 pass | only the all-India panel passes |
+| F025 brinjal | 0.60 / 0.38 fail | 0.84 / 0.31 fail | 0.76 / 0.29 fail | fails on drift |
+| F024 banana, F026 jaggery | no Rajkot or Gujarat data (jaggery) | fails | fails | no use |
+
+**Reading.** Wholesale and the official index move together (monthly corr 0.84-0.97 for onion and tomato) but wholesale swings about 2-4 times as far in percent (Jan to Oct 2025 in Rajkot district: onion -48% against official -26%, tomato +95% against +30%, brinjal +115% against +46%). This is the usual shape of a retail price that adds a roughly fixed margin and averages across stalls, and the project has no margin term (the basket label says "+ markup" but no markup is applied). Fitting a margin or damping factor to the official series would be threshold tuning, so none was added.
+
+**Consequence.** The live wholesale feeds for F022, F023 and F025 (pending, about 2 months old) are likely to fail the same gate when six months have accrued (about Mar 2027), on amplitude and not on direction. Nothing was demoted, because the rule judges live data. The independent share stays 56.4%.
