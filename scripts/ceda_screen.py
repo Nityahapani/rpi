@@ -1,4 +1,4 @@
-"""CEDA (Ashoka University) cleaned Agmarknet price history as a back-test of the wholesale-mandi proxy type for F021-F026.
+"""CEDA (Ashoka University) cleaned Agmarknet price history as a back-test of the wholesale-mandi proxy type for F021-F026 and the pulse/wheat items F001, F003-F005.
 Source: agmarknet.ceda.ashoka.edu.in public JSON API (the same endpoint the site's own charts use; monthly mode, no bulk-download endpoint, one request per
 commodity x geography, 1 s spacing).  The API's data END in 2025-10 (checked 2026-10-04), so this is a historical validation, not a live feed.
 Rule fixed before any result was seen: monthly modal price (mean of daily district/state means, as served), geography hierarchy Rajkot district -> Gujarat state ->
@@ -8,7 +8,8 @@ import time, requests, pandas as pd
 from rpi.proxy_check import judge
 B = "https://agmarknet.ceda.ashoka.edu.in/api/prices"
 ITEMS = {"F021": (24, "01.1.7.5.1.01", "Potato"), "F022": (23, "01.1.7.4.1.01", "Onion"), "F023": (78, "01.1.7.2.1.01", "Tomato"),
-         "F025": (35, "01.1.7.2.1.03", "Brinjal"), "F024": (19, "01.1.6.1.1.01", "Banana"), "F026": (74, "01.1.8.1.1.02", "Jaggery")}
+         "F025": (35, "01.1.7.2.1.03", "Brinjal"), "F024": (19, "01.1.6.1.1.01", "Banana"), "F026": (74, "01.1.8.1.1.02", "Jaggery"),
+         "F001": (1, "01.1.1.2.1.01", "Wheat (atta)"), "F004": (9, "01.1.7.6.1.02", "Moong"), "F003": (49, "01.1.7.6.1.01", "Tur"), "F005": (6, "01.1.7.6.1.05", "Gram")}
 GEO = {"rajkot_district": (24, 476), "gujarat": (24, None), "india": (None, None)}
 S = requests.Session(); S.headers["User-Agent"] = "RajkotPriceIndex/0.1 (research; contact: you@example.com)"
 off = pd.read_csv("data/official/mospi_cpi2024_gujarat_urban.csv", dtype={"code": str})
