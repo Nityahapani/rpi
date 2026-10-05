@@ -2,11 +2,11 @@
 
 
 - Reference month 2026-08: index **107.63**, YoY **5.58%**
-- Latest month 2026-10 (nowcast): index **109.4**  (95% CI 107.55-110.42)
-- Nowcast 90% band for 2026-10: **107.13 - 111.71** (split-conformal from a rolling-origin back-test on official data; conservative)
-- Month-on-month: **0.47%**
-- Year-on-year: **7.63%**
-- Directly observed share of CPI weight: **17%** (remainder imputed)
+- Latest month 2026-10 (nowcast): index **109.17**  (95% CI 107.48-110.24)
+- Nowcast 90% band for 2026-10: **106.91 - 111.48** (split-conformal from a rolling-origin back-test on official data; conservative)
+- Month-on-month: **0.26%**
+- Year-on-year: **7.41%**
+- Directly observed share of CPI weight: **18%** (remainder imputed)
 
 ## What is independent vs official-linked
 - Official-linked stand-ins (MoSPI Gujarat-urban item indices) fill items with no independent source yet; they run to 2026-08. Their plan weight: 42.0%.
@@ -17,13 +17,13 @@
 | item | level |
 |---|---|
 | geks_jevons | 109.39 |
-| jevons_chain | 109.4 |
-| regular_price | 109.4 |
+| jevons_chain | 109.17 |
+| regular_price | 109.17 |
 
 ## Divisions (change since base)
 | item | % change |
 |---|---|
-| Personal care & misc. | 41.9 |
+| Personal care & misc. | 36.83 |
 | Transport | 12.88 |
 | Restaurants & accommodation | 11.56 |
 | Education | 10.27 |
@@ -35,4 +35,4 @@
 | Recreation & culture | 2.66 |
 | Health | 2.36 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261004T110814738901Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261005T121848174615Z._
