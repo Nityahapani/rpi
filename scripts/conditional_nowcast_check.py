@@ -4,7 +4,8 @@ For every origin month t (2019-01..2025-12) using ONLY data before t: item seaso
 priors' errors (Ledoit-Wolf shrunk, no tuning), then for month t the Gaussian conditional mean of the unobserved items' residuals given the
 observed items' residuals.  Observed set = the basket's independent items (optimistic: seen exactly).  Error = weighted log change of the
 UNOBSERVED part, aggregated with the production basket weights.  Selection window 2019-2021; untouched test 2022-2025 (rule fixed in advance).
-Run: PYTHONPATH=. python3 scripts/conditional_nowcast_test.py
+Needs scikit-learn (research script only, not part of the pipeline or CI).
+Run: PYTHONPATH=. python3 scripts/conditional_nowcast_check.py
 """
 import numpy as np, pandas as pd
 from sklearn.covariance import LedoitWolf
