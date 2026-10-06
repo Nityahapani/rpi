@@ -1,0 +1,6 @@
+model,rmse_all_centres,abs_err_rajkot
+E1 constant ratio,1.642,0.373
+E3 additive deviation,1.481,0.254
+"E4 additive, empirical-Bayes shrunk",1.375,0.153
+E5 pooled-parameter Kalman ratio,1.422,0.177
+all-India step as is,1.435,1.028

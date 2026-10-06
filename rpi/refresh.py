@@ -319,6 +319,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     collectors.append(("district_cinema", CinemaCollector(root)))
     from .collectors.fresha_salon import FreshaCollector      # PENDING-gate proxy (P004, Fresha Style Inc Rajkot menu); reads the CSV, no network
     collectors.append(("fresha_salon", FreshaCollector(root)))
+    from .collectors.rent_signal import RentSignalCollector   # MODELLED R001 rent (Labour Bureau housing, panel ensemble); trend-gated; reads CSVs, no network
+    collectors.append(("rent_signal", RentSignalCollector(root)))
     # Practo doctor fees (M003) are a SCREEN only (data/practo): the archive screen showed listed fees are stale and understate the official index (inventory AH), so no collector is registered.
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
@@ -465,6 +467,19 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
         pr = [r for r in rows if r["spec"] == "pre-registered"]
         return "; ".join(f"{r['item_id']} {r['verdict']} (n={r['n_overlap']}, corr={r['corr_mom']}, drift={r['drift']})" for r in pr) + "; MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)"
     _step("screen:costpush_model", _costpush, results)
+
+    def _rent_signal():
+        import json as _json
+        from . import rentsignal
+        r = rentsignal.screen(root)
+        (root / "data/official/rent_signal_screen.json").write_text(_json.dumps(r, indent=1))
+        rentsignal.compare_halves(root, r["beta"]["beta"]).to_csv(root / "data/official/rent_signal_halves.csv", index=False)
+        v = r["variants"]["pre-registered (Rajkot-calibrated)"]
+        v2 = r["variants"]["v2 (chosen after v1 failed): time-varying beta, Kalman"]
+        return (f"R001 signal v1 beta={r['beta']['beta']}: {v['verdict']} (n={v['n_overlap']}, corr={v['corr']}, drift={v['drift']}, yoy {v['yoy_signal_pct']}% vs official {v['yoy_official_pct']}%); "
+                f"v2 TVP beta={r['tvp']['beta']}: {v2['verdict']} (corr={v2['corr']}, drift={v2['drift']}, yoy {v2['yoy_signal_pct']}%); "
+                f"v3 panel ensemble: {r['v3']['verdict']['panel-selected ensemble (E4+E5)']['verdict']} (corr={r['v3']['verdict']['panel-selected ensemble (E4+E5)']['corr']}, yoy {r['v3']['verdict']['panel-selected ensemble (E4+E5)']['yoy_signal_pct']}%); SCREEN ONLY, not wired")
+    _step("screen:rent_signal", _rent_signal, results)
 
     def _nowcast_eval():
         from .nowcast_eval import run_backtest

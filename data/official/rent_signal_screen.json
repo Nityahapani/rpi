@@ -1,0 +1,403 @@
+{
+ "item_id": "R001",
+ "beta": {
+  "beta": 0.354,
+  "lo": 0.226,
+  "hi": 0.473,
+  "n_steps": 5
+ },
+ "variants": {
+  "pre-registered (Rajkot-calibrated)": {
+   "n_overlap": 20,
+   "corr": -0.22,
+   "drift": 0.014,
+   "verdict": "fail",
+   "beta": 0.354,
+   "yoy_signal_pct": 1.47,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 2.41,
+   "cum_official_pct": 3.85
+  },
+  "robustness: beta at 5th pct": {
+   "n_overlap": 20,
+   "corr": -0.22,
+   "drift": 0.023,
+   "verdict": "fail",
+   "beta": 0.226,
+   "yoy_signal_pct": 0.94,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 1.54,
+   "cum_official_pct": 3.85
+  },
+  "robustness: beta at 95th pct": {
+   "n_overlap": 20,
+   "corr": -0.22,
+   "drift": 0.006,
+   "verdict": "fail",
+   "beta": 0.473,
+   "yoy_signal_pct": 1.97,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 3.22,
+   "cum_official_pct": 3.85
+  },
+  "robustness: all-India housing as is (beta=1)": {
+   "n_overlap": 20,
+   "corr": -0.22,
+   "drift": 0.03,
+   "verdict": "fail",
+   "beta": 1.0,
+   "yoy_signal_pct": 4.17,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 6.8,
+   "cum_official_pct": 3.85
+  },
+  "v2 (chosen after v1 failed): time-varying beta, Kalman": {
+   "n_overlap": 20,
+   "corr": -0.22,
+   "drift": 0.002,
+   "verdict": "fail",
+   "beta": 0.539,
+   "yoy_signal_pct": 2.25,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 3.67,
+   "cum_official_pct": 3.85
+  },
+  "v2 band: beta - 1.645 se_forward": {
+   "n_overlap": 20,
+   "corr": null,
+   "drift": 0.039,
+   "verdict": "fail",
+   "beta": 0.0,
+   "yoy_signal_pct": 0.0,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 0.0,
+   "cum_official_pct": 3.85
+  },
+  "v2 band: beta + 1.645 se_forward": {
+   "n_overlap": 20,
+   "corr": -0.22,
+   "drift": 0.042,
+   "verdict": "fail",
+   "beta": 1.187,
+   "yoy_signal_pct": 4.95,
+   "yoy_official_pct": 2.43,
+   "cum_signal_pct": 8.08,
+   "cum_official_pct": 3.85
+  }
+ },
+ "tvp": {
+  "beta": 0.539,
+  "se": 0.047,
+  "se_forward": 0.394,
+  "s2": 0.0093,
+  "q_ratio": 3.0,
+  "path": [
+   0.276,
+   0.151,
+   0.245,
+   0.488,
+   0.539
+  ],
+  "one_step_pred_beta": [
+   0.5,
+   0.276,
+   0.151,
+   0.245,
+   0.488
+  ],
+  "loglik": {
+   "0.0": 5.46,
+   "0.01": 5.45,
+   "0.03": 5.45,
+   "0.1": 5.45,
+   "0.3": 5.53,
+   "1.0": 5.72,
+   "3.0": 5.89
+  }
+ },
+ "mospi_free_backtest": {
+  "constant_beta_pct": 0.417,
+  "tvp_beta_pct": 0.297,
+  "all_india_pct": 1.046
+ },
+ "v3": {
+  "verdict": {
+   "panel-selected ensemble (E4+E5)": {
+    "n_overlap": 20,
+    "corr": -0.21,
+    "drift": 0.003,
+    "verdict": "fail",
+    "yoy_signal_pct": 2.18,
+    "yoy_official_pct": 2.43,
+    "cum_signal_pct": 3.59,
+    "cum_official_pct": 3.85
+   },
+   "all-five equal-weight ensemble": {
+    "n_overlap": 20,
+    "corr": -0.21,
+    "drift": 0.005,
+    "verdict": "fail",
+    "yoy_signal_pct": 2.02,
+    "yoy_official_pct": 2.43,
+    "cum_signal_pct": 3.33,
+    "cum_official_pct": 3.85
+   }
+  },
+  "steps": [
+   {
+    "half": "2021H1",
+    "ai_step_pct": 1.49,
+    "E1": 0.53,
+    "E2": 0.8,
+    "E3": 0.41,
+    "E4": 0.6,
+    "E5": 0.7,
+    "ensemble_all_pct": 0.61,
+    "ensemble_pct": 0.65,
+    "model_sd_pct": 0.15
+   },
+   {
+    "half": "2021H2",
+    "ai_step_pct": 1.38,
+    "E1": 0.49,
+    "E2": 0.74,
+    "E3": 0.3,
+    "E4": 0.49,
+    "E5": 0.65,
+    "ensemble_all_pct": 0.53,
+    "ensemble_pct": 0.57,
+    "model_sd_pct": 0.17
+   },
+   {
+    "half": "2022H1",
+    "ai_step_pct": 1.78,
+    "E1": 0.63,
+    "E2": 0.96,
+    "E3": 0.7,
+    "E4": 0.9,
+    "E5": 0.84,
+    "ensemble_all_pct": 0.8,
+    "ensemble_pct": 0.87,
+    "model_sd_pct": 0.14
+   },
+   {
+    "half": "2022H2",
+    "ai_step_pct": 1.75,
+    "E1": 0.62,
+    "E2": 0.94,
+    "E3": 0.67,
+    "E4": 0.86,
+    "E5": 0.82,
+    "ensemble_all_pct": 0.78,
+    "ensemble_pct": 0.84,
+    "model_sd_pct": 0.14
+   },
+   {
+    "half": "2023H1",
+    "ai_step_pct": 1.96,
+    "E1": 0.7,
+    "E2": 1.06,
+    "E3": 0.88,
+    "E4": 1.08,
+    "E5": 0.92,
+    "ensemble_all_pct": 0.93,
+    "ensemble_pct": 1.0,
+    "model_sd_pct": 0.15
+   },
+   {
+    "half": "2023H2",
+    "ai_step_pct": 1.85,
+    "E1": 0.65,
+    "E2": 1.0,
+    "E3": 0.77,
+    "E4": 0.96,
+    "E5": 0.87,
+    "ensemble_all_pct": 0.85,
+    "ensemble_pct": 0.91,
+    "model_sd_pct": 0.14
+   },
+   {
+    "half": "2024H1",
+    "ai_step_pct": 2.13,
+    "E1": 0.75,
+    "E2": 1.15,
+    "E3": 1.04,
+    "E4": 1.24,
+    "E5": 1.0,
+    "ensemble_all_pct": 1.04,
+    "ensemble_pct": 1.12,
+    "model_sd_pct": 0.18
+   },
+   {
+    "half": "2024H2",
+    "ai_step_pct": 2.46,
+    "E1": 0.87,
+    "E2": 1.33,
+    "E3": 1.38,
+    "E4": 1.58,
+    "E5": 1.15,
+    "ensemble_all_pct": 1.26,
+    "ensemble_pct": 1.36,
+    "model_sd_pct": 0.26
+   },
+   {
+    "half": "2025H1",
+    "ai_step_pct": 2.25,
+    "E1": 0.8,
+    "E2": 1.21,
+    "E3": 1.17,
+    "E4": 1.37,
+    "E5": 1.06,
+    "ensemble_all_pct": 1.12,
+    "ensemble_pct": 1.21,
+    "model_sd_pct": 0.21
+   },
+   {
+    "half": "2025H2",
+    "ai_step_pct": 2.28,
+    "E1": 0.81,
+    "E2": 1.23,
+    "E3": 1.2,
+    "E4": 1.39,
+    "E5": 1.07,
+    "ensemble_all_pct": 1.14,
+    "ensemble_pct": 1.23,
+    "model_sd_pct": 0.22
+   },
+   {
+    "half": "2026H1",
+    "ai_step_pct": 2.08,
+    "E1": 0.74,
+    "E2": 1.12,
+    "E3": 1.0,
+    "E4": 1.2,
+    "E5": 0.98,
+    "ensemble_all_pct": 1.01,
+    "ensemble_pct": 1.09,
+    "model_sd_pct": 0.18
+   },
+   {
+    "half": "2026H2",
+    "ai_step_pct": 1.69,
+    "E1": 0.6,
+    "E2": 0.91,
+    "E3": 0.61,
+    "E4": 0.81,
+    "E5": 0.79,
+    "ensemble_all_pct": 0.74,
+    "ensemble_pct": 0.8,
+    "model_sd_pct": 0.14
+   }
+  ],
+  "params": {
+   "selected": [
+    "E4",
+    "E5"
+   ],
+   "beta_E1": 0.354,
+   "beta_E2": 0.539,
+   "dev_E3": -1.081,
+   "dev_E4": -0.886,
+   "lam": 0.791,
+   "beta_E5": 0.469,
+   "q": 0.1,
+   "s2": 1.0,
+   "P0": 0.5
+  },
+  "panel_backtest": [
+   {
+    "model": "E1 constant ratio",
+    "rmse_all_centres": 1.642,
+    "abs_err_rajkot": 0.373
+   },
+   {
+    "model": "E3 additive deviation",
+    "rmse_all_centres": 1.481,
+    "abs_err_rajkot": 0.254
+   },
+   {
+    "model": "E4 additive, empirical-Bayes shrunk",
+    "rmse_all_centres": 1.375,
+    "abs_err_rajkot": 0.153
+   },
+   {
+    "model": "E5 pooled-parameter Kalman ratio",
+    "rmse_all_centres": 1.422,
+    "abs_err_rajkot": 0.177
+   },
+   {
+    "model": "all-India step as is",
+    "rmse_all_centres": 1.435,
+    "abs_err_rajkot": 1.028
+   }
+  ],
+  "gate_ceiling": {
+   "n": 19,
+   "corr_staircase": -0.21,
+   "corr_interpolated": -0.3,
+   "corr_official_own_linear_trend_oracle": 0.24,
+   "official_mean_pct": 0.203,
+   "official_sd_pct": 0.071,
+   "official_lag1_autocorr": 0.1
+  }
+ },
+ "v4_trend_gate": {
+  "z": 1.645,
+  "variants": {
+   "flat (beta=0)": {
+    "n": 19,
+    "official_monthly_sd_pp": 0.071,
+    "gap_cum_pp": -3.85,
+    "tol_cum_pp": 0.51,
+    "gap_12m_pp": -2.43,
+    "tol_12m_pp": 0.41,
+    "verdict": "fail"
+   },
+   "v1 constant ratio": {
+    "n": 19,
+    "official_monthly_sd_pp": 0.071,
+    "gap_cum_pp": -1.44,
+    "tol_cum_pp": 0.51,
+    "gap_12m_pp": -0.96,
+    "tol_12m_pp": 0.41,
+    "verdict": "fail"
+   },
+   "v2 Kalman ratio": {
+    "n": 19,
+    "official_monthly_sd_pp": 0.071,
+    "gap_cum_pp": -0.19,
+    "tol_cum_pp": 0.51,
+    "gap_12m_pp": -0.19,
+    "tol_12m_pp": 0.41,
+    "verdict": "pass"
+   },
+   "v3 panel-selected (E4+E5)": {
+    "n": 19,
+    "official_monthly_sd_pp": 0.071,
+    "gap_cum_pp": -0.26,
+    "tol_cum_pp": 0.51,
+    "gap_12m_pp": -0.25,
+    "tol_12m_pp": 0.41,
+    "verdict": "pass"
+   },
+   "v3 all-five equal weight": {
+    "n": 19,
+    "official_monthly_sd_pp": 0.071,
+    "gap_cum_pp": -0.52,
+    "tol_cum_pp": 0.51,
+    "gap_12m_pp": -0.41,
+    "tol_12m_pp": 0.41,
+    "verdict": "fail"
+   },
+   "all-India housing as is": {
+    "n": 19,
+    "official_monthly_sd_pp": 0.071,
+    "gap_cum_pp": 2.95,
+    "tol_cum_pp": 0.51,
+    "gap_12m_pp": 1.74,
+    "tol_12m_pp": 0.41,
+    "verdict": "fail"
+   }
+  }
+ }
+}

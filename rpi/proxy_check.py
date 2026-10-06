@@ -26,7 +26,9 @@ MULTI_SKU_SOURCES = ("dmart_ahmedabad", "vishal_diary", "district_cinema", "fres
 # Retail quotes reported by DoCA for the Rajkot centre (rpi/collectors/doca.py): a genuine retail price of a standard local variety,
 # gated against the official item index like a proxy, but reported in its own bucket (it is not wholesale).
 RETAIL_SOURCES = ("doca_rajkot",)
-GATED_SOURCES = PROXY_SOURCES + RETAIL_SOURCES
+# MODELLED series (not observed prices): counted in their own bucket, gated by the calibrated trend gate (rentsignal.trend_gate) instead of the correlation gate.
+MODELLED_SOURCES = ("rent_signal",)
+GATED_SOURCES = PROXY_SOURCES + RETAIL_SOURCES + MODELLED_SOURCES
 # Items fed by a regulated CEILING (a cap, not an observed shelf price) are counted in the proxy share even though they use the
 # tariff machinery; M001 = NPPA ceiling for paracetamol 500 mg; T004 = statutory maximum auto-rickshaw fare; D002 = Rajkot tea-hotel association rate card (not an observed paid price).
 PROXY_ITEMS = ("M001", "T004", "D002")
@@ -79,6 +81,11 @@ def validate_proxies(conn, official_csv, mapping_csv, plan_csv) -> list[dict]:
                 conn, params=[it, *MULTI_SKU_SOURCES])
             proxy = chain_series(sk.pivot(index="m", columns="sku", values="v").sort_index()) if len(sk) else pd.Series(dtype=float)
         o = off[code].dropna() if code in off.columns else pd.Series(dtype=float)
+        if plan.set_index("item_id").loc[it, "primary_source"] in MODELLED_SOURCES:
+            from .rentsignal import judge_trend
+            res.append({"item_id": it, **judge_trend(proxy, o), "proxy_months": int(len(proxy)),
+                        "official_months_after_proxy_start": int(sum(1 for m in o.index if len(proxy) and m >= proxy.index.min()))})
+            continue
         res.append({"item_id": it, **judge(proxy, o), "proxy_months": int(len(proxy)),
                     "official_months_after_proxy_start": int(sum(1 for m in o.index if len(proxy) and m >= proxy.index.min()))})
     return res

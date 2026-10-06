@@ -42,13 +42,15 @@ def coverage_split(conn, plan_csv) -> dict:
         """SELECT p.item_id, p.source_id, substr(o.obs_date,1,7) AS period
            FROM observations o JOIN products p ON p.sku_id=o.sku_id GROUP BY 1,2,3""", conn)
     out = {"plan_weight_pct": by_plan}
-    from .proxy_check import PROXY_ITEMS, PROXY_SOURCES, RETAIL_SOURCES
+    from .proxy_check import MODELLED_SOURCES, PROXY_ITEMS, PROXY_SOURCES, RETAIL_SOURCES
     ind = w[w["class"] == "independent"]
     _is_proxy = ind.primary_source.isin(PROXY_SOURCES) | ind.item_id.isin(PROXY_ITEMS)
     _is_retail = ind.primary_source.isin(RETAIL_SOURCES)
+    _is_model = ind.primary_source.isin(MODELLED_SOURCES)
     out["independent_split_pct"] = {
-        "direct (administered tariff / spot / PNG)": round(float(ind.loc[~_is_proxy & ~_is_retail, "weight"].sum()) / tot * 100, 1),
+        "direct (administered tariff / spot / PNG)": round(float(ind.loc[~_is_proxy & ~_is_retail & ~_is_model, "weight"].sum()) / tot * 100, 1),
         "retail quotes (DoCA Rajkot centre reports; gated vs official)": round(float(ind.loc[_is_retail, "weight"].sum()) / tot * 100, 1),
+        "modelled (R001 rent: Labour Bureau housing-group model, trend-gated vs official; not an observed price)": round(float(ind.loc[_is_model, "weight"].sum()) / tot * 100, 1),
         "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": round(float(ind.loc[_is_proxy, "weight"].sum()) / tot * 100, 1)}
     if obs.empty:
         return out | {"ref_period": None, "latest_period": None}

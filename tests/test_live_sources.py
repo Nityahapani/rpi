@@ -118,7 +118,9 @@ def test_source_plan_covers_basket_once_and_weights_sum():
     wcol = [c for c in wts.columns if "weight" in c][0]
     m = plan.merge(wts, on="item_id")
     assert abs(m[wcol].sum() - 100) < 0.5
-    assert 20 < m[m["class"] == "independent"][wcol].sum() < 75      # honest cap (70.2% by plan after the district.in cinema and Fresha salon pending proxies; rent, ~20% of weight, is still unsourced); was: still a minority (55.1% by plan after DMart Ahmedabad, of which the DMart share is pending validation)
+    ind = m[m["class"] == "independent"]
+    # 89.2% by plan since 2026-10-06 (user decision): 70.2% observed/proxy sources + 19.0% MODELLED rent (R001, trend-gated, not an observed price).  Cap stays below 90.
+    assert 20 < ind[wcol].sum() < 90 and 65 < ind.loc[ind.primary_source != "rent_signal", wcol].sum() < 75
 
 
 def test_official_link_emits_index_series():

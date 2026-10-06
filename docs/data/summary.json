@@ -1,11 +1,11 @@
 {
   "latest_period": "2026-10",
-  "index": 108.58,
-  "mom_pct": 0.28,
-  "yoy_pct": 7.03,
+  "index": 108.36,
+  "mom_pct": 0.15,
+  "yoy_pct": 6.79,
   "ci_95": [
-    107.69,
-    109.22
+    107.47,
+    109.0
   ],
   "ci_note": null,
   "reference_period": "2026-08",
@@ -13,31 +13,32 @@
     "2026-09",
     "2026-10"
   ],
-  "reference_index": 107.37,
-  "reference_yoy_pct": 5.49,
+  "reference_index": 107.32,
+  "reference_yoy_pct": 5.44,
   "nowcast_band_90": [
-    107.11,
-    110.06
+    106.9,
+    109.85
   ],
-  "observed_weight_share": 0.466,
-  "run_id": "20261006T205627766956Z",
+  "observed_weight_share": 0.655,
+  "run_id": "20261006T221856254671Z",
   "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
   "demo": false,
   "coverage_split": {
     "plan_weight_pct": {
-      "independent": 70.2,
-      "linked": 29.8,
+      "independent": 89.2,
+      "linked": 10.8,
       "none": 0.0
     },
     "independent_split_pct": {
       "direct (administered tariff / spot / PNG)": 22.1,
       "retail quotes (DoCA Rajkot centre reports; gated vs official)": 2.1,
+      "modelled (R001 rent: Labour Bureau housing-group model, trend-gated vs official; not an observed price)": 19.0,
       "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 46.0
     },
     "ref_period": "2026-08",
     "latest_period": "2026-10",
     "observed_weight_pct_ref": 99.3,
-    "independent_weight_pct_ref": 41.2,
-    "independent_weight_pct_latest": 70.2
+    "independent_weight_pct_ref": 60.2,
+    "independent_weight_pct_latest": 89.2
   }
 }
