@@ -51,12 +51,12 @@
   },
   "band": {
     "alpha": 0.1,
-    "rule": "seasonal_trend (SEASC), 2018-2025 rolling-origin on official Gujarat-urban base-2012 item data; independent items add no information (conservative)",
-    "h1_abs_log": 0.0076,
-    "h1_n": 79,
+    "rule": "own_trend (conservative: independent items add no information)",
+    "h1_abs_log": 0.01234,
+    "h1_n": 11,
     "h1_valid": true,
-    "h2_abs_log": 0.01532,
-    "h2_n": 78,
+    "h2_abs_log": 0.02094,
+    "h2_n": 10,
     "h2_valid": true
   },
   "n_items": 66,
@@ -66,15 +66,5 @@
     "2026-08"
   ],
   "note": "The 'independents exact' row assumes our independent items equal their official counterparts; real proxies are noisier, so it is an optimistic floor. The published band uses the conservative rule.",
-  "band_short_sample": {
-    "alpha": 0.1,
-    "rule": "own_trend (conservative: independent items add no information)",
-    "h1_abs_log": 0.01234,
-    "h1_n": 11,
-    "h1_valid": true,
-    "h2_abs_log": 0.02094,
-    "h2_n": 10,
-    "h2_valid": true
-  },
   "generated": "2026-10-06"
 }
