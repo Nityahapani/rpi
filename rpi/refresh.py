@@ -313,6 +313,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
     from .collectors.vishal_diary import VishalCollector       # PENDING-gate proxy (live diary only); reads the CSV, no network
     collectors.append(("vishal_diary", VishalCollector(root)))
+    from .collectors.frc_fees import FrcSchoolFeeCollector    # regulator-approved Rajkot school fees (E001); reads data/frc/rajkot_fees.csv
+    collectors.append(("frc_rajkot", FrcSchoolFeeCollector(root)))
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
     _step("ingest:official_link", lambda: ingest.run_collector(conn, OfficialLinkCollector(

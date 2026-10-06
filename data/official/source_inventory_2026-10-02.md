@@ -628,3 +628,14 @@ Aug 2026 (official) unchanged at 107.629. Sep 108.888 to 108.766 (-0.12); Oct 10
 - Independent weight coverage is unchanged at 56.4%. This is better use of data, not new data.
 - The seasonal tables end at Dec 2025 and rest on 2012-base lines mapped to 2024-base items (4 approximate mappings). Rebuild with `scripts/build_seasonal_tables.py` when more history is added.
 - Real-time scoring continues through the vintage log: Sep's nowcast is scored when MoSPI publishes Sep 2026 (mid-Oct).
+
+
+### E001 school fees: Gujarat FRC approved fees (wired 2026-10-06)
+
+`scripts/frc_rajkot_fees.py` reads the Gujarat Fee Regulatory Committee's public search (GET `/Home/SearchSchool`, POST `/Home/GetFeesList`) for the "Rajkot Corporation" district: 120 school-medium entries, 111 with standard 1-8 fees, 3,483 school x standard x year rows (`data/frc/rajkot_fees.csv`). `rpi/frc_fees.py` builds a matched-panel (school x medium x standard 1-8, fee > 0 in both years) equal-weight geometric change per academic year. Approved fees step in June, so the yearly change is spread over the calendar year with the month profile of the official Gujarat-urban school-fee index in 2014-2019 (before the FRC data and before the gate window).
+
+Approved fee change by academic year: 2022-23 +4.9%, 2023-24 +6.5%, 2024-25 +5.2%, 2025-26 +5.3%, 2026-27 +5.2%. 2020-21 (-28.9%) and 2021-22 (+24.7%) are the Covid cut and rebound and are outside the gate window.
+
+Gate (unchanged: corr >= 0.5, |drift| <= 10%, >= 6 months): live window 2025-01..2026-08 n=20, corr 0.64, drift 0.6%, PASS. Out-of-sample window 2021-12..2025-12 against the 2012-series item, n=49, corr 0.87, drift 1.6%, PASS.
+
+Limits: only schools above the statutory fee cap are in the database (upper-fee segment); approved fee is a ceiling, not a price paid; the timing profile is borrowed from the official index's history, so the series is not independent of MoSPI's seasonal shape; Rajkot-city only. Re-harvest each June-August.
