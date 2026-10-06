@@ -315,8 +315,11 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     collectors.append(("vishal_diary", VishalCollector(root)))
     from .collectors.frc_fees import FrcSchoolFeeCollector    # regulator-approved Rajkot school fees (E001); reads data/frc/rajkot_fees.csv
     collectors.append(("frc_rajkot", FrcSchoolFeeCollector(root)))
-    from .collectors.practo_fees import PractoCollector      # PENDING-gate proxy (live diary only); reads the CSV, no network
-    collectors.append(("practo_rajkot", PractoCollector(root)))
+    from .collectors.cinema_diary import CinemaCollector      # PENDING-gate proxy (S001, district.in live diary); reads the CSV, no network
+    collectors.append(("district_cinema", CinemaCollector(root)))
+    from .collectors.fresha_salon import FreshaCollector      # PENDING-gate proxy (P004, Fresha Style Inc Rajkot menu); reads the CSV, no network
+    collectors.append(("fresha_salon", FreshaCollector(root)))
+    # Practo doctor fees (M003) are a SCREEN only (data/practo): the archive screen showed listed fees are stale and understate the official index (inventory AH), so no collector is registered.
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
     _step("ingest:official_link", lambda: ingest.run_collector(conn, OfficialLinkCollector(
@@ -428,8 +431,40 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
                 n, msg = practo_fees.accrue(root / "data/practo/live_fees.csv", root / "data/practo/pool.csv", client)
             g = practo_fees.gate(root / "data/practo/live_fees.csv", root / OFFICIAL_CSV)
             practo_screen.append(g)
-            return f"{msg}; M003 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} doctor-clinics); WIRED as a pending-gate proxy"
+            return f"{msg}; M003 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)"
         _step("screen:practo_doctor_fees", _practo, results)
+
+    thin_screen: list[dict] = []
+    if (root / "data/cinema/pool.csv").exists():
+        def _cinema():
+            from .collectors import cinema_diary
+            msg = "offline"
+            if not offline:
+                n, msg = cinema_diary.accrue(root / "data/cinema/live_prices.csv", root / "data/cinema/pool.csv", client)
+            g = cinema_diary.gate(root / "data/cinema/live_prices.csv", root / OFFICIAL_CSV)
+            thin_screen.append(g)
+            return f"{msg}; S001 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} theatres); WIRED as a pending-gate proxy"
+        _step("screen:district_cinema", _cinema, results)
+    if (root / "data/fresha/pool.csv").exists():
+        def _fresha():
+            from .collectors import fresha_salon
+            msg = "offline"
+            if not offline:
+                n, msg = fresha_salon.accrue(root / "data/fresha/prices.csv", root / "data/fresha/pool.csv", client)
+            g = fresha_salon.gate(root / "data/fresha/prices.csv", root / OFFICIAL_CSV)
+            thin_screen.append(g)
+            return f"{msg}; P004 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} services, ONE venue); WIRED as a pending-gate proxy"
+        _step("screen:fresha_salon", _fresha, results)
+
+    costpush_screen: list[dict] = []
+    def _costpush():
+        from . import costpush
+        rows = costpush.screen(conn, root, root / OFFICIAL_CSV)
+        pd.DataFrame(rows).to_csv(root / "data/official/costpush_screen.csv", index=False)
+        costpush_screen.extend(rows)
+        pr = [r for r in rows if r["spec"] == "pre-registered"]
+        return "; ".join(f"{r['item_id']} {r['verdict']} (n={r['n_overlap']}, corr={r['corr_mom']}, drift={r['drift']})" for r in pr) + "; MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)"
+    _step("screen:costpush_model", _costpush, results)
 
     def _nowcast_eval():
         from .nowcast_eval import run_backtest
@@ -469,6 +504,7 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     out["ceat_screen"] = ceat_screen
     out["vishal_screen"] = vishal_screen
     out["practo_screen"] = practo_screen
+    out["thin_screen"] = thin_screen
     log = pd.DataFrame(results).assign(at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"))
     lp = root / "data/refresh_log.csv"
     log.to_csv(lp, mode="a", header=not lp.exists(), index=False)

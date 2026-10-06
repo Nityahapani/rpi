@@ -20,7 +20,7 @@ SOURCE_ID = "official_link"
 # Sources whose own history is short (they only started collecting recently). For those items the official item index
 # BACK-FILLS the months before the independent feed begins, as a separate SKU; the independent SKU takes over afterwards
 # (the one splice month is imputed from division peers by the engine and disclosed as lower coverage).
-BACKFILL_SOURCES = ("gr_metals", "mandi_gondal", "necc_ahmedabad", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "doca_rajkot", "doca_national", "doca_gujarat", "dmart_ahmedabad", "vishal_diary", "frc_rajkot", "practo_rajkot")
+BACKFILL_SOURCES = ("gr_metals", "mandi_gondal", "necc_ahmedabad", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "doca_rajkot", "doca_national", "doca_gujarat", "dmart_ahmedabad", "vishal_diary", "frc_rajkot", "district_cinema", "fresha_salon")
 
 
 def linked_items(plan: pd.DataFrame) -> list[str]:

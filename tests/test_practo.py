@@ -26,15 +26,21 @@ def test_scan_stops_at_a_repeated_page():
     assert len(d) == 1 and c.n == 2
 
 
-def test_pool_diary_collector_and_plan_wiring():
+def test_practo_is_a_screen_only_and_not_wired():
     from rpi.collectors.official_link import BACKFILL_SOURCES
     from rpi.index.engine import SINGLE_SERIES_SOURCES
     from rpi.proxy_check import PROXY_SOURCES, MULTI_SKU_SOURCES
     pool = pd.read_csv(ROOT / "data/practo/pool.csv")
     assert len(pool) >= 150 and pool.key.is_unique and not pool.speciality.str.contains("dentist").any()
-    obs = list(P.PractoCollector(ROOT).collect(None))
-    assert len(obs) >= 150 and all(o.item_id == "M003" and o.price > 0 and o.source_id == "practo_rajkot" for o in obs)
     for tup in (BACKFILL_SOURCES, SINGLE_SERIES_SOURCES, PROXY_SOURCES, MULTI_SKU_SOURCES):
-        assert "practo_rajkot" in tup
+        assert "practo_rajkot" not in tup
     plan = pd.read_csv(ROOT / "data/source_plan.csv").set_index("item_id")
-    assert plan.loc["M003", "primary_source"] == "practo_rajkot"
+    assert plan.loc["M003", "primary_source"] == "official_link" and plan.loc["M003", "class"] == "linked"
+
+
+def test_archive_screen_shows_listed_fees_are_stale():
+    """Internet Archive captures of the same doctor-clinics: most never change the listed fee (the reason it is not wired)."""
+    a = pd.read_csv(ROOT / "data/practo/archive_fees.csv", dtype={"ts": str})
+    g = a.sort_values("ts").groupby("key").fee.agg(["first", "last", "size"])
+    g = g[g["size"] >= 2]
+    assert len(g) >= 40 and (g["first"] == g["last"]).mean() > 0.7

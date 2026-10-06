@@ -28,24 +28,24 @@
       "h1": {
         "n": 11,
         "rmse_pp": 0.058,
-        "bias_pp": -0.026
+        "bias_pp": -0.024
       },
       "h2": {
         "n": 10,
         "rmse_pp": 0.111,
-        "bias_pp": -0.06
+        "bias_pp": -0.055
       }
     },
     "old_division_peer_fill": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.074,
-        "bias_pp": -0.04
+        "rmse_pp": 0.071,
+        "bias_pp": -0.046
       },
       "h2": {
         "n": 10,
         "rmse_pp": 0.117,
-        "bias_pp": -0.082
+        "bias_pp": -0.092
       }
     }
   },

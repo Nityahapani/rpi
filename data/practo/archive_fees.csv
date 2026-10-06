@@ -1,0 +1,285 @@
+ts,speciality,key,name,clinic,locality,fee
+20220707164613,general-physician,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20220707164613,general-physician,dr-radhika-karia-ayurvedic-endocrinologist-internal-medicine-specialist:1337997,Dr. Radhika Karia,Om Clinic,Rajkot Raiya Road,150.0
+20220707164613,general-physician,dr-chirag-matravadia-general-physician:731283,Dr. Chirag Matravadia,Wockhardt Hospital,Rajkot Kalavad Road,1100.0
+20220707164613,general-physician,kirit-vora-general-physician-1:1109849,Dr. Kirit Vora,Amee Health Center,Rajkot Race Course Road,150.0
+20220707164613,general-physician,dr-mansukhlal-bavanjibhai-dadhania-general-practitioner:1286654,Dr. Mansukhlal Bavanjibhai Dadhania,Dadhania Clinic,Upleta,150.0
+20220707164613,general-physician,dr-54-general-physician:887785,Dr. Gajendra Mehta,Dr Gajendra Mehta,Rajkot,100.0
+20220707164613,general-physician,dr-t-r-vithalani-general-physician:907130,Dr. T. R Vithalani,Obesity Clinic,Rajkot,30.0
+20220707164613,general-physician,dr-subhash-sen-general-physician-1:1305797,Dr. Subhash Sen,Dr Sen's Clinic,Rajkot Race Course Road,500.0
+20220707164613,general-physician,dr-a-r-bhapal-general-physician:896577,Dr. A. R. Bhapal,Korgavkar Clinic,Rajkot,70.0
+20220707164613,general-physician,tejas-ramani-dermatologist:1208444,Dr. Tejas Ramani,White Ink Laser Skin Care Boutique,Jagnath Plot,500.0
+20231005023449,general-physician,karankumar-mandli-general-physician:1394473,Dr. Karankumar R Mandli,Om Clinic,Railnagar,80.0
+20231005023449,general-physician,dr-radhika-karia-ayurvedic-endocrinologist-internal-medicine-specialist:1337997,Dr. Radhika Karia,Om Clinic,Rajkot Raiya Road,150.0
+20231005023449,general-physician,dr-chirag-matravadia-general-physician:731283,Dr. Chirag Matravadia,Wockhardt Hospital,Rajkot Kalavad Road,1100.0
+20231005023449,general-physician,kirit-vora-general-physician-1:1109849,Dr. Kirit Vora,Amee Health Center,Rajkot Race Course Road,150.0
+20231005023449,general-physician,dr-mansukhlal-bavanjibhai-dadhania-general-practitioner:1286654,Dr. Mansukhlal Bavanjibhai Dadhania,Dadhania Clinic,Upleta,150.0
+20231005023449,general-physician,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20231005023449,general-physician,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20231005023449,general-physician,dr-t-r-vithalani-general-physician:907130,Dr. T. R Vithalani,Obesity Clinic,Rajkot,30.0
+20231005023449,general-physician,dr-54-general-physician:887785,Dr. Gajendra Mehta,Dr Gajendra Mehta,Rajkot,100.0
+20231005023449,general-physician,tejas-ramani-dermatologist:1208444,Dr. Tejas Ramani,White Ink Laser Skin Care Boutique,Jagnath Plot,500.0
+20240804050940,general-physician,kirit-vora-general-physician-1:1109849,Dr. Kirit Vora,Amee Health Center,Rajkot Race Course Road,150.0
+20240804050940,general-physician,dr-mansukhlal-bavanjibhai-dadhania-general-practitioner:1286654,Dr. Mansukhlal Bavanjibhai Dadhania,Dadhania Clinic,Upleta,150.0
+20240804050940,general-physician,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20240804050940,general-physician,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20240804050940,general-physician,dr-t-r-vithalani-general-physician:907130,Dr. T. R Vithalani,Obesity Clinic,Rajkot,30.0
+20240804050940,general-physician,dr-54-general-physician:887785,Dr. Gajendra Mehta,Dr Gajendra Mehta,Rajkot,100.0
+20240804050940,general-physician,tejas-ramani-dermatologist:1208444,Dr. Tejas Ramani,White Ink Laser Skin Care Boutique,Jagnath Plot,500.0
+20240804050940,general-physician,dr-a-r-bhapal-general-physician:896577,Dr. A. R. Bhapal,Korgavkar Clinic,Rajkot,70.0
+20240804050940,general-physician,dr-koshiya-general-physician:896598,Dr. R. D. Koshiya,Dr Koshia Clinic,Rajkot New Jagnath Plot,300.0
+20240804050940,general-physician,dr-subhash-sen-general-physician-1:1305797,Dr. Subhash Sen,Dr Sen's Clinic,Rajkot Race Course Road,500.0
+20240812200918,general-physician,kirit-vora-general-physician-1:1109849,Dr. Kirit Vora,Amee Health Center,Rajkot Race Course Road,150.0
+20240812200918,general-physician,dr-mansukhlal-bavanjibhai-dadhania-general-practitioner:1286654,Dr. Mansukhlal Bavanjibhai Dadhania,Dadhania Clinic,Upleta,150.0
+20240812200918,general-physician,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20240812200918,general-physician,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20240812200918,general-physician,dr-t-r-vithalani-general-physician:907130,Dr. T. R Vithalani,Obesity Clinic,Rajkot,30.0
+20240812200918,general-physician,dr-54-general-physician:887785,Dr. Gajendra Mehta,Dr Gajendra Mehta,Rajkot,100.0
+20240812200918,general-physician,tejas-ramani-dermatologist:1208444,Dr. Tejas Ramani,White Ink Laser Skin Care Boutique,Jagnath Plot,500.0
+20240812200918,general-physician,dr-a-r-bhapal-general-physician:896577,Dr. A. R. Bhapal,Korgavkar Clinic,Rajkot,70.0
+20240812200918,general-physician,dr-koshiya-general-physician:896598,Dr. R. D. Koshiya,Dr Koshia Clinic,Rajkot New Jagnath Plot,300.0
+20240812200918,general-physician,dr-subhash-sen-general-physician-1:1305797,Dr. Subhash Sen,Dr Sen's Clinic,Rajkot Race Course Road,500.0
+20250812181956,general-physician,dr-chirag-matravadia-general-physician:731283,Dr. Chirag Matravadia,Wockhardt Hospital,Rajkot Kalavad Road,1150.0
+20250812181956,general-physician,dr-vyas-dilipkumar-bhikhalal-general-physician:731283,Dr. Vyas Dilipkumar Bhikhalal,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20250812181956,general-physician,kirit-vora-general-physician-1:1109849,Dr. Kirit Vora,Amee Health Center,Rajkot Race Course Road,150.0
+20250812181956,general-physician,dr-mansukhlal-bavanjibhai-dadhania-general-practitioner:1286654,Dr. Mansukhlal Bavanjibhai Dadhania,Dadhania Clinic,Upleta,150.0
+20250812181956,general-physician,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20250812181956,general-physician,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20250812181956,general-physician,dr-t-r-vithalani-general-physician:907130,Dr. T. R Vithalani,Obesity Clinic,Rajkot,30.0
+20250812181956,general-physician,dr-54-general-physician:887785,Dr. Gajendra Mehta,Dr Gajendra Mehta,Rajkot,100.0
+20250812181956,general-physician,tejas-ramani-dermatologist:1208444,Dr. Tejas Ramani,White Ink Laser Skin Care Boutique,Jagnath Plot,500.0
+20250812181956,general-physician,dr-a-r-bhapal-general-physician:896577,Dr. A. R. Bhapal,Korgavkar Clinic,Rajkot New Jagnath Plot,70.0
+20260512155712,general-physician,harsh-babariya-general-physician:2095182,Dr. Harsh Babariya,Orient Hospital,Nana Mava Road,200.0
+20260512155712,general-physician,kirit-vora-general-physician-1:1109849,Dr. Kirit Vora,Amee Health Center,Rajkot Race Course Road,150.0
+20260512155712,general-physician,dr-mansukhlal-bavanjibhai-dadhania-general-practitioner:1286654,Dr. Mansukhlal Bavanjibhai Dadhania,Dadhania Clinic,Upleta,150.0
+20260512155712,general-physician,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20260512155712,general-physician,dr-chirag-matravadia-general-physician:898444,Dr. Chirag Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,800.0
+20260512155712,general-physician,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20260512155712,general-physician,dr-t-r-vithalani-general-physician:907130,Dr. T. R Vithalani,Obesity Clinic,Rajkot,30.0
+20260512155712,general-physician,dr-54-general-physician:887785,Dr. Gajendra Mehta,Dr Gajendra U Mehta,Rajkot Mochi Bazar,100.0
+20260512155712,general-physician,tejas-ramani-dermatologist:1208444,Dr. Tejas Ramani,White Ink Laser Skin Care Boutique,Jagnath Plot,500.0
+20260512155712,general-physician,dr-a-r-bhapal-general-physician:896577,Dr. A. R. Bhapal,Korgavkar Clinic,Rajkot New Jagnath Plot,70.0
+20230924233119,internal-medicine,dr-bhumi-dave-general-physician:731283,Dr. Bhumi P Bharatkumar,Wockhardt Hospital,Rajkot Kalavad Road,1000.0
+20230924233119,internal-medicine,dr-chirag-matravadia-general-physician:731283,Dr. Chirag Matravadia,Wockhardt Hospital,Rajkot Kalavad Road,1100.0
+20230924233119,internal-medicine,dr-nisarg-jagdishbhai-thakkar-internal-medicine:731283,Dr. Nisarg Jagdishbhai Thakkar,Wockhardt Hospital,Rajkot Kalavad Road,1150.0
+20230924233119,internal-medicine,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20230924233119,internal-medicine,dr-sankalp-m-vanzara-internal-medicine:898449,Dr. Sankalp M Vanzara,Consulting Clinic,Rajkot Manahar Plot,600.0
+20230924233119,internal-medicine,dr-ajay-parmar-general-medicine:1405433,Dr. Ajay Parmar,Lotus Hospital,Kotharia,300.0
+20230924233119,internal-medicine,dr-krutarth-kanjiya-infectious-diseases-physician:843037,Dr. Krutarth Kanjiya,Sterling Hospital,Raiya,1200.0
+20230924233119,internal-medicine,vaibhav-kamlesh-daftary-general-medicine:1393788,Dr. Vaibhav Kamlesh Daftary,Radhe Krishna Hospital,Morbi Shakti Plot,400.0
+20230924233119,internal-medicine,brijesh-makadia-internal-medicine:897819,Dr. Brijesh Makadia,Arpan Hospital,Rajkot,400.0
+20240619035144,internal-medicine,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20240619035144,internal-medicine,dr-chirag-matravadia-general-physician:898444,Dr. Chirag Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,800.0
+20240619035144,internal-medicine,dr-sankalp-m-vanzara-internal-medicine:898449,Dr. Sankalp M Vanzara,Consulting Clinic,Rajkot Manahar Plot,600.0
+20240619035144,internal-medicine,dr-bhumi-dave-general-physician:731283,Dr. Bhumi P Bharatkumar,Wockhardt Hospital,Rajkot Kalavad Road,1050.0
+20240619035144,internal-medicine,dr-ajay-parmar-general-medicine:1405433,Dr. Ajay Parmar,Lotus Hospital,Kotharia,300.0
+20240619035144,internal-medicine,dr-krutarth-kanjiya-infectious-diseases-physician:843037,Dr. Krutarth Kanjiya,Shiv hospital,Raiya,1200.0
+20240619035144,internal-medicine,vaibhav-kamlesh-daftary-general-medicine:1393788,Dr. Vaibhav Kamlesh Daftary,Radhe Krishna Hospital,Morbi Shakti Plot,400.0
+20240619035144,internal-medicine,dr-nisarg-jagdishbhai-thakkar-internal-medicine:731283,Dr. Nisarg Jagdishbhai Thakkar,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20240619035144,internal-medicine,brijesh-makadia-internal-medicine:897819,Dr. Brijesh Makadia,Arpan Hospital,Rajkot,400.0
+20250708142227,internal-medicine,dr-bhumi-dave-general-physician:731283,Dr. Bhumi P Bharatkumar,Wockhardt Hospital,Rajkot Kalavad Road,1050.0
+20250708142227,internal-medicine,dr-chirag-matravadia-general-physician:731283,Dr. Chirag Matravadia,Wockhardt Hospital,Rajkot Kalavad Road,1150.0
+20250708142227,internal-medicine,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20250708142227,internal-medicine,dr-sankalp-m-vanzara-internal-medicine:898449,Dr. Sankalp M Vanzara,Consulting Clinic,Rajkot Manahar Plot,600.0
+20250708142227,internal-medicine,dr-ajay-parmar-general-medicine:1405433,Dr. Ajay Parmar,Lotus Hospital,Kotharia,300.0
+20250708142227,internal-medicine,dr-krutarth-kanjiya-infectious-diseases-physician:843037,Dr. Krutarth Kanjiya,Shiv hospital,Raiya,1200.0
+20250708142227,internal-medicine,vaibhav-kamlesh-daftary-general-medicine:1393788,Dr. Vaibhav Kamlesh Daftary,Radhe Krishna Hospital,Morbi Shakti Plot,400.0
+20250708142227,internal-medicine,brijesh-makadia-internal-medicine:897819,Dr. Brijesh Makadia,Arpan Hospital,Rajkot,400.0
+20250811141608,internal-medicine,dr-chirag-matravadia-general-physician:731283,Dr. Chirag Matravadia,Wockhardt Hospital,Rajkot Kalavad Road,1150.0
+20250811141608,internal-medicine,dr-bhumi-dave-general-physician:731283,Dr. Bhumi P Bharatkumar,Wockhardt Hospital,Rajkot Kalavad Road,1050.0
+20250811141608,internal-medicine,siraj-vadhvaniya-general-physician:1376795,Dr. Siraj Vadhvaniya,Vadhvaniya General Hospital,Rajkot Jn. Plot,350.0
+20250811141608,internal-medicine,dr-sankalp-m-vanzara-internal-medicine:898449,Dr. Sankalp M Vanzara,Consulting Clinic,Rajkot Manahar Plot,600.0
+20250811141608,internal-medicine,dr-ajay-parmar-general-medicine:1405433,Dr. Ajay Parmar,Lotus Hospital,Kotharia,300.0
+20250811141608,internal-medicine,dr-krutarth-kanjiya-infectious-diseases-physician:843037,Dr. Krutarth Kanjiya,Shiv hospital,Raiya,1200.0
+20250811141608,internal-medicine,vaibhav-kamlesh-daftary-general-medicine:1393788,Dr. Vaibhav Kamlesh Daftary,Radhe Krishna Hospital,Morbi Shakti Plot,400.0
+20250811141608,internal-medicine,brijesh-makadia-internal-medicine:897819,Dr. Brijesh Makadia,Arpan Hospital,Rajkot,400.0
+20220523075219,pediatrician,dr-mehul-m-mitra-pediatrician:731283,Dr. Mehul M. Mitra,Wockhardt Hospital,Rajkot Kalavad Road,600.0
+20220523075219,pediatrician,trupati-vaishnani-pediatrician:731283,Dr. Trupati Vaishnani,Wockhardt Hospital,Rajkot Kalavad Road,600.0
+20220523075219,pediatrician,dr-meera-dhani-pediatrician:1117814,Dr. Meera Dhami,Sunrise Hospital,Rajkot Kalavad Road,600.0
+20220523075219,pediatrician,niraj-patel-1-pediatrician:895004,Dr. Niraj Patel,Shri Navjivan Children Hospital,Rajkot Bhaktinagar,300.0
+20220523075219,pediatrician,nirav-j-karmata-pediatrician:1112144,Dr. Nirav J Karmata,Akshar Child Care,Hari Nagar,400.0
+20220523075219,pediatrician,dr-bhargav-sorathia-pediatrician:1386234,Dr. Bhargav Sorathia,Killol Children Hospital,Sadhu Vaswani Road,400.0
+20220523075219,pediatrician,nishant-dharsandia-oncologist:898472,Dr. Nishant Dharsandia,Hem Onc Care Center,Rajkot Manahar Plot,800.0
+20220523075219,pediatrician,dr-atul-rathod-pediatrician:999784,Dr. Atul Rathod,Dr Atul Rathod Clinic,Rajkot Manahar Plot,600.0
+20220523075219,pediatrician,dr-divyang-bhimani-paediatric-intensivist:900872,Dr. Divyang Bhimani,Divine Child Care Clinic,Mavdi,300.0
+20220523075219,pediatrician,dr-devang-pandya-pediatrician:1156021,Dr. Devang Pandya,Dev Children's Hospital,Madhapar,400.0
+20230528122436,pediatrician,dr-mehul-m-mitra-pediatrician:731283,Dr. Mehul M. Mitra,Wockhardt Hospital,Rajkot Kalavad Road,600.0
+20230528122436,pediatrician,trupati-vaishnani-pediatrician:731283,Dr. Trupati Vaishnani,Wockhardt Hospital,Rajkot Kalavad Road,600.0
+20230528122436,pediatrician,dr-meera-dhani-pediatrician:1117814,Dr. Meera Dhami,Sunrise Hospital,Rajkot Kalavad Road,600.0
+20230528122436,pediatrician,niraj-patel-1-pediatrician:895004,Dr. Niraj Patel,Shri Navjivan Children Hospital,Rajkot Bhaktinagar,300.0
+20230528122436,pediatrician,nirav-j-karmata-pediatrician:1112144,Dr. Nirav J Karmata,Akshar Child Care,Hari Nagar,400.0
+20230528122436,pediatrician,nishant-dharsandia-oncologist:898472,Dr. Nishant Dharsandia,Hem Onc Care Center,Rajkot Manahar Plot,800.0
+20230528122436,pediatrician,dr-divyang-bhimani-paediatric-intensivist:900872,Dr. Divyang Bhimani,Divine Child Care Clinic,Mavdi,300.0
+20230528122436,pediatrician,dr-devang-pandya-pediatrician:1156021,Dr. Devang Pandya,Dev Children's Hospital,Madhapar,400.0
+20230528122436,pediatrician,dr-atul-rathod-pediatrician:999784,Dr. Atul Rathod,Dr Atul Rathod Clinic,Rajkot Manahar Plot,600.0
+20230528122436,pediatrician,dr-122-general-physician:898172,Dr. Tejas Trivedi,Trivedi Hospital,Nana Mava,300.0
+20240525230713,pediatrician,dr-meera-dhani-pediatrician:1117814,Dr. Meera Dhami,Sunrise Hospital,Rajkot Kalavad Road,600.0
+20240525230713,pediatrician,niraj-patel-1-pediatrician:895004,Dr. Niraj Patel,Shri Navjivan Children Hospital,Rajkot Bhaktinagar,300.0
+20240525230713,pediatrician,nirav-j-karmata-pediatrician:1112144,Dr. Nirav J Karmata,Akshar Child Care,Hari Nagar,400.0
+20240525230713,pediatrician,nishant-dharsandia-oncologist:898472,Dr. Nishant Dharsandia,Hem Onc Care Center,Rajkot Manahar Plot,800.0
+20240525230713,pediatrician,dr-divyang-bhimani-paediatric-intensivist:900872,Dr. Divyang Bhimani,Divine Child Care Clinic,Mavdi,300.0
+20240525230713,pediatrician,dr-atul-rathod-pediatrician:999784,Dr. Atul Rathod,Dr Atul Rathod Clinic,Rajkot Manahar Plot,600.0
+20240525230713,pediatrician,dr-122-general-physician:898172,Dr. Tejas Trivedi,Trivedi Hospital,Nana Mava,300.0
+20240525230713,pediatrician,dr-bhatt-vivek-prafulchandra-pediatrician:1403092,Dr. Bhatt Vivek Prafulchandra,Anish Hospital,Rajkot Race Course Road,400.0
+20240525230713,pediatrician,dr-devang-pandya-pediatrician:1156021,Dr. Devang Pandya,Dev Children's Hospital,Madhapar,2000.0
+20240525230713,pediatrician,dr-n-n-sankharava-dentist:898447,Dr. N. N. Sankharava,Child Care Centre,Rajkot New Jagnath Plot,400.0
+20250322115320,pediatrician,trupati-vaishnani-pediatrician:731283,Dr. Trupati Vaishnani,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20250322115320,pediatrician,rushi-suchak-paediatric-intensivist:1352440,Dr. Rushi Suchak,Sanidhya Child Care,Rajkot Collectorate,1000.0
+20250322115320,pediatrician,dr-meera-dhani-pediatrician:1117814,Dr. Meera Dhami,Sunrise Hospital,Rajkot Kalavad Road,600.0
+20250322115320,pediatrician,niraj-patel-1-pediatrician:895004,Dr. Niraj Patel,Shri Navjivan Children Hospital,Rajkot Bhaktinagar,300.0
+20250322115320,pediatrician,nirav-j-karmata-pediatrician:1112144,Dr. Nirav J Karmata,Akshar Child Care,Hari Nagar,400.0
+20250322115320,pediatrician,nishant-dharsandia-oncologist:898472,Dr. Nishant Dharsandia,Hem Onc Care Center,Rajkot Manahar Plot,800.0
+20250322115320,pediatrician,dr-divyang-bhimani-paediatric-intensivist:900872,Dr. Divyang Bhimani,Divine Child Care Clinic,Mavdi,300.0
+20250322115320,pediatrician,dr-atul-rathod-pediatrician:999784,Dr. Atul Rathod,Dr Atul Rathod Clinic,Rajkot Manahar Plot,600.0
+20250322115320,pediatrician,dr-122-general-physician:898172,Dr. Tejas Trivedi,Trivedi Hospital,Nana Mava,300.0
+20250322115320,pediatrician,dr-bhatt-vivek-prafulchandra-pediatrician:1403092,Dr. Bhatt Vivek Prafulchandra,Anish Hospital,Rajkot Race Course Road,400.0
+20260105081647,pediatrician,trupati-vaishnani-pediatrician:731283,Dr. Trupati Vaishnani,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20260105081647,pediatrician,bhavi-barchha-pediatric-cardiologist:731283,Dr. Bhavi Barchha,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20260105081647,pediatrician,dr-jayesh-sonvani-1-pediatrician:1045700,Dr. Jayesh Sonvani,Satnam Hospital,Kotecha Nagar,800.0
+20260105081647,pediatrician,rushi-suchak-paediatric-intensivist:1352440,Dr. Rushi Suchak,Sanidhya Child Care,Rajkot Collectorate,1000.0
+20260105081647,pediatrician,dr-murtaza-makati-allergist-immunologist:2069742,Dr. Murtaza Makati,Dr Makati’s Pediateric Clinic,Rajkot Road,800.0
+20260105081647,pediatrician,dr-meera-dhani-pediatrician:1117814,Dr. Meera Dhami,Sunrise Hospital,Rajkot Kalavad Road,600.0
+20260105081647,pediatrician,niraj-patel-1-pediatrician:895004,Dr. Niraj Patel,Shri Navjivan Children Hospital,Rajkot Bhaktinagar,300.0
+20260105081647,pediatrician,nirav-j-karmata-pediatrician:1112144,Dr. Nirav J Karmata,Akshar Child Care,Hari Nagar,400.0
+20260105081647,pediatrician,parth-mali-pediatrician:1691890,Dr. Parth Mali,Pulse+ Hospital,Railnagar,300.0
+20260105081647,pediatrician,nishant-dharsandia-oncologist:898472,Dr. Nishant Dharsandia,Hem Onc Care Center,Rajkot Manahar Plot,800.0
+20220524193715,gynecologist-obstetrician,dr-jigna-ganatra-gynecologist-obstetrician:731283,Dr. Jigna Ganatra,Wockhardt Hospital,Rajkot Kalavad Road,600.0
+20220524193715,gynecologist-obstetrician,dr-rajesh-p-gorasia-gynecologist-obstetrician:888787,Dr. Rajesh P Gorasia,Tejas Fertility Clinic,Rajkot Millpara,500.0
+20220524193715,gynecologist-obstetrician,dr-nila-mohile-gynecologist-obstetrician:902193,Dr. Nila Mohile,Mohile Hospital,Rajkot,600.0
+20220524193715,gynecologist-obstetrician,dr-64-gynecologist-obstetrician:887796,Dr. J. B. Monpara,Dr Monpara Hospital,Rajkot Millpara,100.0
+20220524193715,gynecologist-obstetrician,sanjay-desai-gynecologist-obstetrician:1065549,Dr. Sanjay Desai,Payal Maternity Home,Rajkot Raiya Road,400.0
+20220524193715,gynecologist-obstetrician,krushna-a-chag-gynecologist-obstetrician:1113505,Dr. Krushna A. Chag,Krishna Multispeciality Hospital,Morbi,300.0
+20220524193715,gynecologist-obstetrician,bhavin-kamani-gynecologist-obstetrician:1196096,Dr. Bhavin Kamani,Deverra Ivf And Center For Reproductive Medicine,Rajkot Kalavad Road,600.0
+20220524193715,gynecologist-obstetrician,dr-shilpi-sankhala-gynecologist-obstetrician:1375032,Dr. Shilpi Rathour,Sankhala Hospital,Rajkot Kalavad Road,400.0
+20230930193227,gynecologist-obstetrician,dr-jigna-ganatra-gynecologist-obstetrician:731283,Dr. Jigna Ganatra,Wockhardt Hospital,Rajkot Kalavad Road,600.0
+20230930193227,gynecologist-obstetrician,dr-rajesh-p-gorasia-gynecologist-obstetrician:888787,Dr. Rajesh P Gorasia,Tejas Fertility Clinic,Rajkot Millpara,500.0
+20230930193227,gynecologist-obstetrician,dr-nila-mohile-gynecologist-obstetrician:902193,Dr. Nila Mohile,Mohile Hospital,Rajkot,600.0
+20230930193227,gynecologist-obstetrician,dr-64-gynecologist-obstetrician:887796,Dr. J. B. Monpara,Dr Monpara Hospital,Rajkot Millpara,100.0
+20230930193227,gynecologist-obstetrician,sanjay-desai-gynecologist-obstetrician:1065549,Dr. Sanjay Desai,Payal Maternity Home,Rajkot Raiya Road,400.0
+20230930193227,gynecologist-obstetrician,krushna-a-chag-gynecologist-obstetrician:1113505,Dr. Krushna A. Chag,Krishna Multispeciality Hospital,Morbi,300.0
+20230930193227,gynecologist-obstetrician,bhavin-kamani-gynecologist-obstetrician:1196096,Dr. Bhavin Kamani,Deverra Ivf And Center For Reproductive Medicine,Rajkot Kalavad Road,600.0
+20230930193227,gynecologist-obstetrician,dr-shilpi-sankhala-gynecologist-obstetrician:1375032,Dr. Shilpi Rathour,Sankhala Hospital,Rajkot Kalavad Road,400.0
+20240713010139,gynecologist-obstetrician,dr-rajesh-p-gorasia-gynecologist-obstetrician:888787,Dr. Rajesh P Gorasia,Tejas Fertility Clinic,Rajkot Millpara,500.0
+20240713010139,gynecologist-obstetrician,dr-nila-mohile-gynecologist-obstetrician:902193,Dr. Nila Mohile,Mohile Hospital,Rajkot,600.0
+20240713010139,gynecologist-obstetrician,dr-64-gynecologist-obstetrician:887796,Dr. J. B. Monpara,Dr Monpara Hospital,Rajkot Millpara,100.0
+20240713010139,gynecologist-obstetrician,sanjay-desai-gynecologist-obstetrician:1065549,Dr. Sanjay Desai,Payal Maternity Home,Rajkot Raiya Road,400.0
+20240713010139,gynecologist-obstetrician,dr-anwar-sipai-gynecologist-obstetrician:1192451,Dr. Anwar Sipai,Christ Hospital,Madhapar,200.0
+20240713010139,gynecologist-obstetrician,dr-jigna-ganatra-gynecologist-obstetrician:731283,Dr. Jigna Ganatra,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20240713010139,gynecologist-obstetrician,krushna-a-chag-gynecologist-obstetrician:1113505,Dr. Krushna A. Chag,Krishna Multispeciality Hospital,Morbi,300.0
+20240713010139,gynecologist-obstetrician,bhavin-kamani-gynecologist-obstetrician:1196096,Dr. Bhavin Kamani,Deverra Ivf And Center For Reproductive Medicine,Rajkot Kalavad Road,600.0
+20240713010139,gynecologist-obstetrician,dr-shilpi-sankhala-gynecologist-obstetrician:1375032,Dr. Shilpi Rathour,Sankhala Hospital,Rajkot Kalavad Road,400.0
+20240715233949,gynecologist-obstetrician,dr-rajesh-p-gorasia-gynecologist-obstetrician:888787,Dr. Rajesh P Gorasia,Tejas Fertility Clinic,Rajkot Millpara,500.0
+20240715233949,gynecologist-obstetrician,dr-nila-mohile-gynecologist-obstetrician:902193,Dr. Nila Mohile,Mohile Hospital,Rajkot,600.0
+20240715233949,gynecologist-obstetrician,dr-64-gynecologist-obstetrician:887796,Dr. J. B. Monpara,Dr Monpara Hospital,Rajkot Millpara,100.0
+20240715233949,gynecologist-obstetrician,sanjay-desai-gynecologist-obstetrician:1065549,Dr. Sanjay Desai,Payal Maternity Home,Rajkot Raiya Road,400.0
+20240715233949,gynecologist-obstetrician,dr-anwar-sipai-gynecologist-obstetrician:1192451,Dr. Anwar Sipai,Christ Hospital,Madhapar,200.0
+20240715233949,gynecologist-obstetrician,dr-jigna-ganatra-gynecologist-obstetrician:731283,Dr. Jigna Ganatra,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20240715233949,gynecologist-obstetrician,krushna-a-chag-gynecologist-obstetrician:1113505,Dr. Krushna A. Chag,Krishna Multispeciality Hospital,Morbi,300.0
+20240715233949,gynecologist-obstetrician,bhavin-kamani-gynecologist-obstetrician:1196096,Dr. Bhavin Kamani,Deverra Ivf And Center For Reproductive Medicine,Rajkot Kalavad Road,600.0
+20240715233949,gynecologist-obstetrician,dr-shilpi-sankhala-gynecologist-obstetrician:1375032,Dr. Shilpi Rathour,Sankhala Hospital,Rajkot Kalavad Road,400.0
+20241214232928,gynecologist-obstetrician,dr-rajesh-p-gorasia-gynecologist-obstetrician:888787,Dr. Rajesh P Gorasia,Tejas Fertility Clinic,Rajkot Millpara,500.0
+20241214232928,gynecologist-obstetrician,dr-nila-mohile-gynecologist-obstetrician:902193,Dr. Nila Mohile,Mohile Hospital,Rajkot New Jagnath Plot,600.0
+20241214232928,gynecologist-obstetrician,dr-64-gynecologist-obstetrician:887796,Dr. J. B. Monpara,Dr Monpara Hospital,Rajkot Millpara,100.0
+20241214232928,gynecologist-obstetrician,sanjay-desai-gynecologist-obstetrician:1065549,Dr. Sanjay Desai,Payal Maternity Home,Rajkot Raiya Road,400.0
+20241214232928,gynecologist-obstetrician,dr-anwar-sipai-gynecologist-obstetrician:1192451,Dr. Anwar Sipai,Christ Hospital,Madhapar,200.0
+20241214232928,gynecologist-obstetrician,dr-jigna-ganatra-gynecologist-obstetrician:731283,Dr. Jigna Ganatra,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20241214232928,gynecologist-obstetrician,krushna-a-chag-gynecologist-obstetrician:1113505,Dr. Krushna A. Chag,Krishna Multispeciality Hospital,Morbi,300.0
+20241214232928,gynecologist-obstetrician,bhavin-kamani-gynecologist-obstetrician:1196096,Dr. Bhavin Kamani,Deverra Ivf And Center For Reproductive Medicine,Rajkot Kalavad Road,600.0
+20241214232928,gynecologist-obstetrician,dr-shilpi-sankhala-gynecologist-obstetrician:1375032,Dr. Shilpi Rathour,Sankhala Hospital,Rajkot Kalavad Road,400.0
+20260117102102,gynecologist-obstetrician,dr-jigna-ganatra-gynecologist-obstetrician:731283,Dr. Jigna Ganatra,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20260117102102,gynecologist-obstetrician,dr-rajesh-p-gorasia-gynecologist-obstetrician:888787,Dr. Rajesh P Gorasia,Tejas Fertility Clinic,Rajkot Millpara,500.0
+20260117102102,gynecologist-obstetrician,sanjay-desai-gynecologist-obstetrician:1065549,Dr. Sanjay Desai,Payal Maternity Home,Rajkot Raiya Road,400.0
+20260117102102,gynecologist-obstetrician,dr-nila-mohile-gynecologist-obstetrician:902193,Dr. Nila Mohile,Mohile Hospital,Rajkot New Jagnath Plot,600.0
+20260117102102,gynecologist-obstetrician,dr-64-gynecologist-obstetrician:887796,Dr. J. B. Monpara,Dr Monpara Hospital,Rajkot Millpara,100.0
+20260117102102,gynecologist-obstetrician,dr-anwar-sipai-gynecologist-obstetrician:1192451,Dr. Anwar Sipai,Christ Hospital,Madhapar,200.0
+20260117102102,gynecologist-obstetrician,dr-shilpi-sankhala-gynecologist-obstetrician:1375032,Dr. Shilpi Rathour,Sankhala Hospital,Rajkot Kalavad Road,400.0
+20260117102102,gynecologist-obstetrician,krushna-a-chag-gynecologist-obstetrician:1113505,Dr. Krushna A. Chag,Krishna Multispeciality Hospital,Morbi,300.0
+20260117102102,gynecologist-obstetrician,bhavin-kamani-gynecologist-obstetrician:1196096,Dr. Bhavin Kamani,Deverra Ivf And Center For Reproductive Medicine,Rajkot Kalavad Road,600.0
+20260216013208,orthopedist,dr-dharam-chandrani-orthopedist-1:731283,Dr. Dharam Chandrani,Wockhardt Hospital,Rajkot Kalavad Road,700.0
+20260216013208,orthopedist,dr-umangkumar-k-shihora-orthopedist:731283,Dr. UmangKumar K Shihora,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20260216013208,orthopedist,dr-dhamsania-hardik-jagdishbhai-orthopedist:731283,Dr. Dhamsania Hardik Jagdishbhai,Wockhardt Hospital,Rajkot Kalavad Road,550.0
+20260216013208,orthopedist,dr-abhishek-gol-orthopedist:1380414,Dr. Abhishek Gol,Gol Hospital,Derdi Kumbaji,500.0
+20260216013208,orthopedist,dr-s-r-rao-orthopedist:890813,Dr. S R Rao,Dr S R Clinic,Rajkot Bhaktinagar,500.0
+20260216013208,orthopedist,dr-amit-gandhi-orthopedist:898455,Dr. Amit Gandhi,Dr Amit Gandhi,Rajkot Manahar Plot,500.0
+20260216013208,orthopedist,dr-pareen-kantesaria-orthopedist-5:1237954,Dr. Pareen Kantesaria,Orthoplus Speciality Hospital,Rajkot Kalavad Road,500.0
+20260216013208,orthopedist,dr-parth-patel-2-ortho-surgeon:1382915,Dr. Parth Patel,Genesis Multi-Specialty Hospital,Rajkot Raiya Road,500.0
+20260216013208,orthopedist,malhar-oza-dentist:1363802,Dr. Malhar Oza,Rama Dental Clinic,Madhapar,200.0
+20260216013208,orthopedist,dr-vedant-n-shah-sports-medicine-surgeon:1597580,Dr. Vedant N Shah,Hospital for Joint Surgery,Rajkot Jn. Plot,800.0
+20220519131122,dermatologist,bhavesh-shah-1-dermatologist-cosmetologist:1026653,Dr. Bhavesh Shah,Advanced Skin Clinic,Rajkot New Jagnath Plot,500.0
+20220519131122,dermatologist,dr-priyanka-sutariya-dermatologist-cosmetologist-dermatologist-dermatologist:1041411,Dr. Priyanka Sutariya,"Skin Experts Advanced Skin, Laser & Cosmetology Clinic",Rajkot Kalavad Road,700.0
+20220519131122,dermatologist,harshit-ranpara-dermatologist:1114477,Dr. Harshit Ranpara,Adiva Centre For Skin & Hair,Rajkot Manahar Plot,600.0
+20220519131122,dermatologist,mukesh-ruparelia-1-cosmetologist:1112441,Dr. Mukesh Ruparelia,Devarsh Cosmetic Laser and Slimming Center,Rajkot Manahar Plot,500.0
+20220519131122,dermatologist,dr-asha-matravadia-dermatologist:898444,Dr. Asha Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,600.0
+20220519131122,dermatologist,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot,600.0
+20220519131122,dermatologist,dr-pooja-35-dermatologist:1275282,Dr. Pooja Mandalia,Skinbliss Clinic,Rajkot,400.0
+20220519131122,dermatologist,dr-62-venereologist:887106,Dr. Suresh Joshipura,Skin Center,Jagnath Plot,700.0
+20220519131122,dermatologist,bhavesh-patel-dermatologist:1236205,Dr. Bhavesh Sherasiya,skin clinic,Morbi,300.0
+20220810142227,dermatologist,bhavesh-shah-1-dermatologist-cosmetologist:1026653,Dr. Bhavesh Shah,Advanced Skin Clinic,Rajkot New Jagnath Plot,500.0
+20220810142227,dermatologist,dr-priyanka-sutariya-dermatologist-cosmetologist-dermatologist-dermatologist:1041411,Dr. Priyanka Sutariya,"Skin Experts Advanced Skin, Laser & Cosmetology Clinic",Rajkot Kalavad Road,700.0
+20220810142227,dermatologist,harshit-ranpara-dermatologist:1114477,Dr. Harshit Ranpara,Adiva Centre For Skin & Hair,Rajkot Manahar Plot,600.0
+20220810142227,dermatologist,mukesh-ruparelia-1-cosmetologist:1112441,Dr. Mukesh Ruparelia,Devarsh Cosmetic Laser and Slimming Center,Rajkot Manahar Plot,500.0
+20220810142227,dermatologist,dr-asha-matravadia-dermatologist:898444,Dr. Asha Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,600.0
+20220810142227,dermatologist,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20220810142227,dermatologist,dr-pooja-35-dermatologist:1275282,Dr. Pooja Mandalia,Skinbliss Clinic,Rajkot,400.0
+20220810142227,dermatologist,dr-62-venereologist:887106,Dr. Suresh Joshipura,Skin Center,Jagnath Plot,700.0
+20220810142227,dermatologist,bhavesh-patel-dermatologist:1236205,Dr. Bhavesh Sherasiya,skin clinic,Morbi,300.0
+20240225095307,dermatologist,bhavesh-shah-1-dermatologist-cosmetologist:1026653,Dr. Bhavesh Shah,Advanced Skin Clinic,Rajkot New Jagnath Plot,600.0
+20240225095307,dermatologist,dr-priyanka-sutariya-dermatologist-cosmetologist-dermatologist-dermatologist:1041411,Dr. Priyanka Sutariya,"Skin Experts Advanced Skin, Laser & Cosmetology Clinic",Rajkot Kalavad Road,700.0
+20240225095307,dermatologist,harshit-ranpara-dermatologist:1114477,Dr. Harshit Ranpara,Adiva Centre For Skin & Hair,Rajkot Manahar Plot,800.0
+20240225095307,dermatologist,mukesh-ruparelia-1-cosmetologist:1112441,Dr. Mukesh Ruparelia,Devarsh Cosmetic Laser and Slimming Center,Rajkot Manahar Plot,500.0
+20240225095307,dermatologist,dr-asha-matravadia-dermatologist:898444,Dr. Asha Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,600.0
+20240225095307,dermatologist,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20240225095307,dermatologist,dr-pooja-35-dermatologist:1275282,Dr. Pooja Mandalia,Skinbliss Clinic,Rajkot,400.0
+20240225095307,dermatologist,dr-62-venereologist:887106,Dr. Suresh Joshipura,Skin Center,Jagnath Plot,700.0
+20240225095307,dermatologist,bhavesh-patel-dermatologist:1236205,Dr. Bhavesh Sherasiya,skin clinic,Morbi,300.0
+20250326121738,dermatologist,omdevsinh-gohil-dermatologist:1474237,Dr. Omdevsinh Gohil,Aqify Derma,Nana Mava Main Road,600.0
+20250326121738,dermatologist,bhavesh-shah-1-dermatologist-cosmetologist:1026653,Dr. Bhavesh Shah,Advanced Skin Clinic,Rajkot New Jagnath Plot,600.0
+20250326121738,dermatologist,dr-priyanka-sutariya-dermatologist-cosmetologist-dermatologist-dermatologist:1041411,Dr. Priyanka Sutariya,"Skin Experts Advanced Skin, Laser & Cosmetology Clinic",Rajkot Kalavad Road,700.0
+20250326121738,dermatologist,harshit-ranpara-dermatologist:1114477,Dr. Harshit Ranpara,Adiva Centre For Skin & Hair,Rajkot Manahar Plot,800.0
+20250326121738,dermatologist,mukesh-ruparelia-1-cosmetologist:1112441,Dr. Mukesh Ruparelia,Devarsh Cosmetic Laser and Slimming Center,Rajkot Manahar Plot,500.0
+20250326121738,dermatologist,dr-asha-matravadia-dermatologist:898444,Dr. Asha Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,600.0
+20250326121738,dermatologist,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20250326121738,dermatologist,dr-62-venereologist:887106,Dr. Suresh Joshipura,Skin Center,Jagnath Plot,700.0
+20250326121738,dermatologist,bhavesh-patel-dermatologist:1236205,Dr. Bhavesh Sherasiya,skin clinic,Morbi,300.0
+20251206222944,dermatologist,omdevsinh-gohil-dermatologist:1474237,Dr. Omdevsinh Gohil,Aqify Derma,Nana Mava Main Road,600.0
+20251206222944,dermatologist,dr-priyanka-sutariya-dermatologist-cosmetologist-dermatologist-dermatologist:1041411,Dr. Priyanka Sutariya,"Skin Experts Advanced Skin, Laser & Cosmetology Clinic",Rajkot Kalavad Road,700.0
+20251206222944,dermatologist,bhavesh-shah-1-dermatologist-cosmetologist:1026653,Dr. Bhavesh Shah,Advanced Skin Clinic,Rajkot New Jagnath Plot,600.0
+20251206222944,dermatologist,harshit-ranpara-dermatologist:1114477,Dr. Harshit Ranpara,Adiva Centre For Skin & Hair,Rajkot Manahar Plot,800.0
+20251206222944,dermatologist,mukesh-ruparelia-1-cosmetologist:1112441,Dr. Mukesh Ruparelia,Devarsh Cosmetic Laser and Slimming Center,Rajkot Manahar Plot,500.0
+20251206222944,dermatologist,dr-asha-matravadia-dermatologist:898444,Dr. Asha Matravadia,Bliss Consulting Rooms,Rajkot Manahar Plot,600.0
+20251206222944,dermatologist,dr-k-b-pandya-dermatologist-cosmetologist:886783,Dr. K.B Pandya,The Rejuvene Beauty Clinic,Rajkot Collectorate,900.0
+20251206222944,dermatologist,dr-62-venereologist:887106,Dr. Suresh Joshipura,Skin Center,Jagnath Plot,700.0
+20251206222944,dermatologist,bhavesh-patel-dermatologist:1236205,Dr. Bhavesh Sherasiya,skin clinic,Morbi,300.0
+20250913173022,cardiologist,dr-dharmesh-solanki-cardiologist:731283,Dr. Dharmesh Solanki,Wockhardt Hospital,Rajkot Kalavad Road,1450.0
+20250913173022,cardiologist,dr-kapil-virpariya-cardiologist:731283,Dr. Kapil Virpariya,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20250913173022,cardiologist,dr-jaydeep-desai-cardiologist:731283,Dr. Jaydeep Desai,Wockhardt Hospital,Rajkot Kalavad Road,1450.0
+20250913173022,cardiologist,dr-abhishek-raval-cardiologist:731283,Dr. Abhishek Raval,Wockhardt Hospital,Rajkot Kalavad Road,1150.0
+20250913173022,cardiologist,dr-mehta-chintan-nilesh-cardiologist:731283,Dr. Mehta Chintan Nilesh,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20250913173022,cardiologist,dr-hathi-varshit-dineshchandra-general-physician:731283,Dr. Hathi Varshit Dineshchandra,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20220521123804,ear-nose-throat-ent-specialist,dr-jitendra-patel-ear-nose-throat-ent-specialist-1:935434,Dr. Jitendra Patel,OM ENT Superspeciality Hospital,Rajkot Collectorate,300.0
+20220521123804,ear-nose-throat-ent-specialist,dr-umang-shukla-ear-nose-throat-ent-specialist-1:1065987,Dr. Umang Shukla,Sinus Hospital,Rajkot New Jagnath Plot,300.0
+20220521123804,ear-nose-throat-ent-specialist,dr-53-ear-nose-throat-ent-specialist:887824,Dr. Bharat Shah,Prarthna Clinic,Rajkot Millpara,400.0
+20220521123804,ear-nose-throat-ent-specialist,dr-vaibhav-b-hapalia-ear-nose-throat-ent-specialist-1:1369852,Dr. Vaibhav B Hapalia,Dr B D Hapalia Surgical Hospital,Rajkot D H College,1000.0
+20260510195843,psychiatrist,milankumar-jivrajbhai-rokad-psychiatrist:777675,Dr. Milankumar Jivrajbhai Rokad,Shantvan Neuropsychiatry Hospital,Rajkot Manahar Plot,700.0
+20260510195843,psychiatrist,dr-paresh-shah-psychiatrist:885743,Dr. Paresh Shah,Dr. Paresh Shah Clinic,Rajkot,600.0
+20260510195843,psychiatrist,ankit-patel-3-psychiatrist-1:2096573,Dr. Ankit Patel,Neuron Hospital,Nana Mava,700.0
+20260510195843,psychiatrist,parth-dharmesh-shah-psychiatrist:1262428,Dr. Parth Dharmesh Shah,Rathod Hospital,Jagnath Plot,600.0
+20260510195843,psychiatrist,hiren-mor-psychiatrist:1397277,Dr. Hiren Mor,Sattvam Psychiatry and Neuropsychiatry Clinic,Rajkot Collectorate,500.0
+20260510195843,psychiatrist,bhavya-s-bhalodia-psychiatrist:1465152,Dr. Bhavya S. Bhalodia,Sattva Hospital,Morbi,600.0
+20260510195843,psychiatrist,swati-braroo-psychiatrist:1187206,Dr. Swati Braroo,Asha Neuro Psychiatric Clinic,Rajkot D H College,800.0
+20260510195843,psychiatrist,drrajesh-ram-psychiatrist:1261978,Dr. Rajesh Ram,Mind Care Deaddiction & Neuropsychiatry Centre,Rajkot Raiya Road,500.0
+20260510195843,psychiatrist,bhavesh-patel-ayurvedic-endocrinologist-internal-medicine-specialist:1403351,Dr. Bhavesh Patel,Manshree Neuropsychiatry Hospital,Morbi,400.0
+20220629151358,neurologist,ketankumar-p-chudasama-neurologist:731283,Dr. Ketankumar P Chudasama,Wockhardt Hospital,Rajkot Kalavad Road,1150.0
+20240519102851,neurologist,ketankumar-p-chudasama-neurologist:731283,Dr. Ketankumar P Chudasama,Wockhardt Hospital,Rajkot Kalavad Road,1200.0
+20260606202231,gastroenterologist,rishikesh-kalaria-gastroenterologist-1:2188586,Dr. Rishikesh Kalaria,Sterling Hospital,Raiya Road,1050.0
+20260606202231,gastroenterologist,gajendra-2-general-physician:1071648,Dr. Gajendra Odedra,Bless Multispeciality Clinic,Rajkot Kalavad Road,800.0
+20260606202231,gastroenterologist,chintan-kansagra-gastroenterologist:1112578,Dr. Chintan Kansagra,Prime Institute of Digestive Sciences,Rajkot Bhaktinagar,1000.0
+20260606202231,gastroenterologist,dr-kamani-praful-manjibhai-gastroenterologist:731283,Dr. Kamani Praful Manjibhai,Wockhardt Hospital,Rajkot Kalavad Road,1700.0
+20260606202231,gastroenterologist,dr-ankit-makadia-gastroenterologist:765375,Dr. Ankit Makadia,Gokul Super Speciality Hospital,Rajkot Manahar Plot,800.0
+20260606202231,gastroenterologist,dr-darshan-patel-gastroenterologist:731283,Dr. Darshan Patel,Wockhardt Hospital,Rajkot Kalavad Road,1400.0
+20260606202231,gastroenterologist,dr-parth-mahesh-vadhadia-gastroenterologist:731283,Dr. Parth Mahesh Vadhadia,Wockhardt Hospital,Rajkot Kalavad Road,1700.0
+20240716165136,diabetologist,dr-pankaj-patel-endocrinologist:684248,Dr. Pankaj Patel,Apex Endocrine Hospital and Dental Clinic,Rajkot Jn. Plot,1200.0
+20240716165136,diabetologist,dr-chirag-aghara-diabetologist:1249612,Dr. Chirag Aghara,Uma Diabetes Center,Morbi,400.0
+20240716165136,diabetologist,dr-birju-mori-endocrinologist-diabetologist:1119210,Dr. Birju Mori,Mori Diabetes Centre,Rajkot New Jagnath Plot,500.0
+20240716165136,diabetologist,dr-simit-jadia-diabetologist:1402895,Dr. Simit Jadia,Jadia Clinic,Palace Road,500.0
+20240716165136,diabetologist,dr-kalpesh-s-kavar-diabetologist:937918,Dr. Kalpesh S. Kavar,Lifespan Diabetes And Cardiometabolic Clinics,Rajkot Kalavad Road,700.0

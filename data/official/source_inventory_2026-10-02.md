@@ -641,11 +641,20 @@ Gate (unchanged: corr >= 0.5, |drift| <= 10%, >= 6 months): live window 2025-01.
 Limits: only schools above the statutory fee cap are in the database (upper-fee segment); approved fee is a ceiling, not a price paid; the timing profile is borrowed from the official index's history, so the series is not independent of MoSPI's seasonal shape; Rajkot-city only. Re-harvest each June-August.
 
 
-### M003 doctor's fee: Practo Rajkot listings (wired 2026-10-06, pending gate)
+### M003 doctor's fee: Practo Rajkot listings (wired and then demoted, 2026-10-06)
 
-`rpi/collectors/practo_fees.py` reads Practo's server-rendered listing pages for Rajkot (`practo.com/rajkot/<speciality>?page=n`) in 16 allopathic specialities (dentists and AYUSH excluded). Each card gives the doctor's profile slug, practice id, clinic and the "consultation fee at clinic" the doctor lists. The fixed pool on the selection date is 180 doctor-clinics (`data/practo/pool.csv`; general physician 53, paediatrician 20, orthopaedist 16, cardiologist 15, psychiatrist 13 ...; median fee Rs 300 for GPs, Rs 1,150 for cardiologists). Matched-model Jevons chain, same as the Vishal diary. robots.txt (`User-agent: *`) disallows searches, the appointment flow and APIs, not listing pages; reading is at 2 s spacing, about 3 minutes per refresh.
+`rpi/collectors/practo_fees.py` reads Practo's server-rendered Rajkot listing pages (`practo.com/rajkot/<speciality>?page=n`, 16 allopathic specialities; dentists and AYUSH excluded; robots.txt allows listing pages). Each card gives the doctor's profile slug, practice id, clinic and the "consultation fee at clinic". Fixed pool on 2026-10-06: 180 doctor-clinics (`data/practo/pool.csv`), live diary in `data/practo/live_fees.csv`.
 
-Gate: history starts 2026-10-06, so the unchanged gate (>= 6 overlapping months) cannot be judged before about Apr 2027: the item is `pending`. Fees change about once a year per doctor, so even then the monthly correlation may be low; a fail demotes it. Limits: listed, not billed, fees; self-selected doctors; Wayback was offline when checked, so there is no back-history.
+It was first wired as a pending-gate proxy (commit `0d70e03`), because the gate cannot be judged before about Apr 2027. The same day the Internet Archive came back online and I pulled every capture of the listing pages of the same specialities (`data/practo/archive_fees.csv`, 284 doctor-clinic quotes, 101 distinct doctor-clinics, 2022-2026; page 1 only). Matched screen, 66 doctor-clinics with at least 300 days between first and last capture:
+
+| Cohort (first capture) | n | Practo listed fee, cumulative | Official doctor-fee index, same dates |
+|---|---|---|---|
+| 2022 | 41 | +7.0% | +15.1% |
+| 2023 | 7 | +0.7% | +9.5% |
+| 2024 | 10 | 0.0% | +8.0% |
+| 2025 | 8 | +0.5% | +5.1% |
+
+Only 15% of the 66 ever changed their listed fee; 2024 to 2026 shows no change at all for 50 doctor-clinics, while the official index rose about 7% over 2025-01..2026-08. Listed fees are stale, so the series would understate and pull the index down. **Demoted:** M003 is back on the official stand-in, no collector is registered, and the diary and archive stay in `data/practo` as a screen (`screen:practo_doctor_fees`). Independent share back to 69.3%.
 
 ### Sweep results, 2026-10-06 (no new wiring)
 
@@ -658,3 +667,26 @@ Gate: history starts 2026-10-06, so the unchanged gate (>= 6 overlapping months)
 | RMTS / BRTS city bus fare (T003) | Unofficial fare pages and a Scribd matrix only; GSRTC (intercity) nominal hikes (+10% Mar 2025, +3% Jan 2026) overstate the official bus-fare index (+2.7%, +1.2%). | Not wired (a nominal register would be a poor proxy) |
 | Broadband (K003) | Entry plan prices (Jio Fiber Rs 399, Airtel Rs 499, BSNL Rs 449) come only from blog sites; no dated history. | Not wired |
 | Newspapers (S003) | No static rate card; only 2005-2019 articles on cover prices. | Not wired |
+
+## AI. Independent share above 70%: two thin pending diaries wired, cost-push model fails its gate (2026-10-06)
+
+Request: raise the independent plan share above 70% from new sources (it was 69.26%). Gates were not changed.
+
+**Wired as pending-gate proxies (independent plan share 69.26% -> 70.2%).**
+
+| Item | Source | Design | Why it is thin |
+|---|---|---|---|
+| S001 cinema (0.24) | district.in theatre pages, 8 Rajkot theatres (`rpi/collectors/cinema_diary.py`, `data/cinema/`) | per theatre-day, the cheapest 2D seat among shows starting 18:00-22:59, Mon-Thu only; monthly median per theatre; Jevons across theatres | each page shows one day, so the diary grows one theatre-day per refresh; no archive; film mix can lift the cheapest evening seat |
+| P004 haircut (0.69) | Fresha price list of **one** Rajkot venue, Style Inc with Prayag, 103 services (`rpi/collectors/fresha_salon.py`, `data/fresha/`) | matched-model Jevons over services priced in both months; two Internet Archive captures (2025-03-27, 2026-04-11) plus live | one premium salon (haircut Rs 1,000); Fresha lists three Rajkot venues and only this page ships its menu in the HTML; the archive shows +8.3% mean log change over 83 matched services, 23% of them re-priced |
+
+Neither can be judged by the gate yet (needs >= 6 overlapping months; first possible about Apr 2027). Months before the new feeds stay on the official stand-in. Rejected on the way: Bewtee (robots.txt carries `Content-Signal: ai-input=no`), Eklipz Men's/Ladies on Fresha (menu not in server HTML).
+
+**Cost-push model for D003 snack plate (4.5) and D001 veg thali (1.26): FAILED the unchanged gate, not wired** (`rpi/costpush.py`, `data/official/costpush_screen.csv`).
+Design: pre-registered cost shares (ingredients and LPG from DoCA / tariff series, labour-rent-margin block anchored to Labour Bureau CPI-IW Rajkot), log-linear cost aggregate, Calvo partial adjustment (lambda 0.35). No parameter was fitted to the official index, so all 20 overlapping months are out of sample.
+
+| Item | n | corr of monthly changes (gate >= 0.5) | drift (gate <= 0.10) | verdict |
+|---|---|---|---|---|
+| D003 | 20 | 0.15 | 0.077 | fail |
+| D001 | 20 | 0.24 | 0.074 | fail |
+
+Robustness (never adopted): lambda 0.15 / 0.60 / 1.00 gives corr 0.27 / 0.10 / 0.06 (D003) and 0.37 / 0.15 / 0.13 (D001); no variant passes. The model gets the trend roughly right (drift under 0.10, 3-month-change correlation 0.40 / 0.50 at the pre-registered lambda) but not the month-to-month timing: official restaurant prices move in steps and the noisy ingredient series do not predict the steps. A model fitted to the official series would pass more easily but would be the rejected conditional nowcast under another name, so it was not built.

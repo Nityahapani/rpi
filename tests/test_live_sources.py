@@ -118,7 +118,7 @@ def test_source_plan_covers_basket_once_and_weights_sum():
     wcol = [c for c in wts.columns if "weight" in c][0]
     m = plan.merge(wts, on="item_id")
     assert abs(m[wcol].sum() - 100) < 0.5
-    assert 20 < m[m["class"] == "independent"][wcol].sum() < 75      # honest cap (raised 70 -> 75 with the Practo M003 wiring, 70.5% by plan; rent, ~20% of weight, is still unsourced); was a minority (55.1% by plan after DMart Ahmedabad, of which the DMart share is pending validation)
+    assert 20 < m[m["class"] == "independent"][wcol].sum() < 75      # honest cap (70.2% by plan after the district.in cinema and Fresha salon pending proxies; rent, ~20% of weight, is still unsourced); was: still a minority (55.1% by plan after DMart Ahmedabad, of which the DMart share is pending validation)
 
 
 def test_official_link_emits_index_series():
