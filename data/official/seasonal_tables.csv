@@ -1,0 +1,793 @@
+item_id,line,month,clim,seas,n_years
+F001,Wheat/ Atta – Other Sources,1,0.003819,0.003237,11
+F001,Wheat/ Atta – Other Sources,2,0.003819,0.00086,12
+F001,Wheat/ Atta – Other Sources,3,0.003819,-0.003369,11
+F001,Wheat/ Atta – Other Sources,4,0.003819,-0.007852,11
+F001,Wheat/ Atta – Other Sources,5,0.003819,-0.005737,11
+F001,Wheat/ Atta – Other Sources,6,0.003819,-0.003229,11
+F001,Wheat/ Atta – Other Sources,7,0.003819,-0.000411,12
+F001,Wheat/ Atta – Other Sources,8,0.003819,0.003331,12
+F001,Wheat/ Atta – Other Sources,9,0.003819,0.00148,12
+F001,Wheat/ Atta – Other Sources,10,0.003819,0.002426,12
+F001,Wheat/ Atta – Other Sources,11,0.003819,0.005247,12
+F001,Wheat/ Atta – Other Sources,12,0.003819,0.003654,12
+F002,Rice – Other Sources,1,0.002989,-0.000957,11
+F002,Rice – Other Sources,2,0.002989,1.8e-05,12
+F002,Rice – Other Sources,3,0.002989,-0.000739,11
+F002,Rice – Other Sources,4,0.002989,1.3e-05,11
+F002,Rice – Other Sources,5,0.002989,0.000252,11
+F002,Rice – Other Sources,6,0.002989,0.001118,11
+F002,Rice – Other Sources,7,0.002989,0.000848,12
+F002,Rice – Other Sources,8,0.002989,0.001731,12
+F002,Rice – Other Sources,9,0.002989,0.000679,12
+F002,Rice – Other Sources,10,0.002989,-0.000138,12
+F002,Rice – Other Sources,11,0.002989,-0.001066,12
+F002,Rice – Other Sources,12,0.002989,-0.001872,12
+F003,"Arhar, Tur",1,0.003206,-0.016507,11
+F003,"Arhar, Tur",2,0.003206,-0.016208,12
+F003,"Arhar, Tur",3,0.003206,-0.010421,11
+F003,"Arhar, Tur",4,0.003206,0.002391,11
+F003,"Arhar, Tur",5,0.003206,0.007309,11
+F003,"Arhar, Tur",6,0.003206,0.010832,11
+F003,"Arhar, Tur",7,0.003206,0.000774,12
+F003,"Arhar, Tur",8,0.003206,0.003096,12
+F003,"Arhar, Tur",9,0.003206,0.00501,12
+F003,"Arhar, Tur",10,0.003206,0.007802,12
+F003,"Arhar, Tur",11,0.003206,0.003969,12
+F003,"Arhar, Tur",12,0.003206,-0.005761,12
+F004,Moong,1,0.002286,-0.000153,11
+F004,Moong,2,0.002286,0.000169,12
+F004,Moong,3,0.002286,-0.001333,11
+F004,Moong,4,0.002286,0.004829,11
+F004,Moong,5,0.002286,0.005648,11
+F004,Moong,6,0.002286,0.000687,11
+F004,Moong,7,0.002286,-0.002723,12
+F004,Moong,8,0.002286,-0.003153,12
+F004,Moong,9,0.002286,-0.002457,12
+F004,Moong,10,0.002286,-0.000371,12
+F004,Moong,11,0.002286,0.003747,12
+F004,Moong,12,0.002286,-0.002647,12
+F005,Gram: Split,1,0.003563,-0.013495,11
+F005,Gram: Split,2,0.003563,-0.014808,12
+F005,Gram: Split,3,0.003563,-0.012207,11
+F005,Gram: Split,4,0.003563,-0.002329,11
+F005,Gram: Split,5,0.003563,0.003971,11
+F005,Gram: Split,6,0.003563,0.005058,11
+F005,Gram: Split,7,0.003563,0.003219,12
+F005,Gram: Split,8,0.003563,0.006338,12
+F005,Gram: Split,9,0.003563,0.008323,12
+F005,Gram: Split,10,0.003563,0.011052,12
+F005,Gram: Split,11,0.003563,0.005999,12
+F005,Gram: Split,12,0.003563,-0.002931,12
+F006,Groundnut Oil,1,0.003488,-0.000632,11
+F006,Groundnut Oil,2,0.003488,-0.000833,12
+F006,Groundnut Oil,3,0.003488,0.000439,11
+F006,Groundnut Oil,4,0.003488,0.000489,11
+F006,Groundnut Oil,5,0.003488,0.000903,11
+F006,Groundnut Oil,6,0.003488,0.000405,11
+F006,Groundnut Oil,7,0.003488,-0.000125,12
+F006,Groundnut Oil,8,0.003488,0.000624,12
+F006,Groundnut Oil,9,0.003488,9.5e-05,12
+F006,Groundnut Oil,10,0.003488,-0.000608,12
+F006,Groundnut Oil,11,0.003488,-0.001212,12
+F006,Groundnut Oil,12,0.003488,-0.000658,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",1,0.003614,0.000117,11
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",2,0.003614,-0.000791,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",3,0.003614,0.000245,11
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",4,0.003614,0.000334,11
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",5,0.003614,0.000102,11
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",6,0.003614,-0.000789,11
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",7,0.003614,-0.00103,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",8,0.003614,-0.000778,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",9,0.003614,-0.000276,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",10,0.003614,0.000134,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",11,0.003614,0.00021,12
+F007,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",12,0.003614,0.000103,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",1,0.003614,0.000117,11
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",2,0.003614,-0.000791,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",3,0.003614,0.000245,11
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",4,0.003614,0.000334,11
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",5,0.003614,0.000102,11
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",6,0.003614,-0.000789,11
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",7,0.003614,-0.00103,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",8,0.003614,-0.000778,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",9,0.003614,-0.000276,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",10,0.003614,0.000134,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",11,0.003614,0.00021,12
+F008,"Refined Oil [sunflower, Soyabean, Saffola, Etc.]",12,0.003614,0.000103,12
+F009,Milk: Liquid (litre),1,0.003627,3e-05,11
+F009,Milk: Liquid (litre),2,0.003627,-8.7e-05,12
+F009,Milk: Liquid (litre),3,0.003627,-8e-05,11
+F009,Milk: Liquid (litre),4,0.003627,0.000365,11
+F009,Milk: Liquid (litre),5,0.003627,0.00063,11
+F009,Milk: Liquid (litre),6,0.003627,0.000443,11
+F009,Milk: Liquid (litre),7,0.003627,0.000121,12
+F009,Milk: Liquid (litre),8,0.003627,0.00015,12
+F009,Milk: Liquid (litre),9,0.003627,-0.000121,12
+F009,Milk: Liquid (litre),10,0.003627,-0.000387,12
+F009,Milk: Liquid (litre),11,0.003627,-0.000634,12
+F009,Milk: Liquid (litre),12,0.003627,-0.000186,12
+F010,Curd,1,0.003548,-0.000442,11
+F010,Curd,2,0.003548,-0.000492,12
+F010,Curd,3,0.003548,-0.000334,11
+F010,Curd,4,0.003548,0.00092,11
+F010,Curd,5,0.003548,0.000746,11
+F010,Curd,6,0.003548,0.000743,11
+F010,Curd,7,0.003548,-0.00055,12
+F010,Curd,8,0.003548,5.3e-05,12
+F010,Curd,9,0.003548,-0.000464,12
+F010,Curd,10,0.003548,-0.000453,12
+F010,Curd,11,0.003548,0.00015,12
+F010,Curd,12,0.003548,0.000104,12
+F011,Butter,1,0.004242,7e-06,11
+F011,Butter,2,0.004242,6e-06,12
+F011,Butter,3,0.004242,-7e-06,11
+F011,Butter,4,0.004242,-4e-06,11
+F011,Butter,5,0.004242,1e-06,11
+F011,Butter,6,0.004242,-9e-06,11
+F011,Butter,7,0.004242,-2e-06,12
+F011,Butter,8,0.004242,-5e-06,12
+F011,Butter,9,0.004242,-1.2e-05,12
+F011,Butter,10,0.004242,-4e-06,12
+F011,Butter,11,0.004242,4e-06,12
+F011,Butter,12,0.004242,2e-06,12
+F012,Ghee,1,0.004046,-1e-06,11
+F012,Ghee,2,0.004046,-4e-06,12
+F012,Ghee,3,0.004046,-9e-06,11
+F012,Ghee,4,0.004046,1.1e-05,11
+F012,Ghee,5,0.004046,3.9e-05,11
+F012,Ghee,6,0.004046,7e-06,11
+F012,Ghee,7,0.004046,7e-06,12
+F012,Ghee,8,0.004046,-1.5e-05,12
+F012,Ghee,9,0.004046,-3e-06,12
+F012,Ghee,10,0.004046,0.0,12
+F012,Ghee,11,0.004046,3e-06,12
+F012,Ghee,12,0.004046,-1.3e-05,12
+F013,Sugar - Other Sources,1,0.001944,-0.000508,11
+F013,Sugar - Other Sources,2,0.001944,-0.000463,12
+F013,Sugar - Other Sources,3,0.001944,-0.000272,11
+F013,Sugar - Other Sources,4,0.001944,0.000175,11
+F013,Sugar - Other Sources,5,0.001944,0.000123,11
+F013,Sugar - Other Sources,6,0.001944,0.000133,11
+F013,Sugar - Other Sources,7,0.001944,-2e-06,12
+F013,Sugar - Other Sources,8,0.001944,0.001013,12
+F013,Sugar - Other Sources,9,0.001944,0.000278,12
+F013,Sugar - Other Sources,10,0.001944,0.000149,12
+F013,Sugar - Other Sources,11,0.001944,-2.1e-05,12
+F013,Sugar - Other Sources,12,0.001944,-0.000562,12
+F014,Tea: Leaf (gm),1,0.00355,-1e-06,11
+F014,Tea: Leaf (gm),2,0.00355,-7e-06,12
+F014,Tea: Leaf (gm),3,0.00355,-2.4e-05,11
+F014,Tea: Leaf (gm),4,0.00355,3.2e-05,11
+F014,Tea: Leaf (gm),5,0.00355,2.5e-05,11
+F014,Tea: Leaf (gm),6,0.00355,-6e-06,11
+F014,Tea: Leaf (gm),7,0.00355,1e-06,12
+F014,Tea: Leaf (gm),8,0.00355,1.7e-05,12
+F014,Tea: Leaf (gm),9,0.00355,-7e-06,12
+F014,Tea: Leaf (gm),10,0.00355,-1e-06,12
+F014,Tea: Leaf (gm),11,0.00355,7e-06,12
+F014,Tea: Leaf (gm),12,0.00355,-2e-06,12
+F015,Salt,1,0.004424,-2e-06,11
+F015,Salt,2,0.004424,-7e-06,12
+F015,Salt,3,0.004424,-4e-06,11
+F015,Salt,4,0.004424,-4e-06,11
+F015,Salt,5,0.004424,4e-06,11
+F015,Salt,6,0.004424,4e-06,11
+F015,Salt,7,0.004424,8e-06,12
+F015,Salt,8,0.004424,-6e-06,12
+F015,Salt,9,0.004424,1.3e-05,12
+F015,Salt,10,0.004424,3e-06,12
+F015,Salt,11,0.004424,-7e-06,12
+F015,Salt,12,0.004424,-3e-06,12
+F016,Turmeric (gm),1,0.004908,-0.001729,11
+F016,Turmeric (gm),2,0.004908,-0.001275,12
+F016,Turmeric (gm),3,0.004908,-0.001931,11
+F016,Turmeric (gm),4,0.004908,0.000295,11
+F016,Turmeric (gm),5,0.004908,0.001072,11
+F016,Turmeric (gm),6,0.004908,0.000548,11
+F016,Turmeric (gm),7,0.004908,0.00037,12
+F016,Turmeric (gm),8,0.004908,0.000705,12
+F016,Turmeric (gm),9,0.004908,0.000997,12
+F016,Turmeric (gm),10,0.004908,-0.000677,12
+F016,Turmeric (gm),11,0.004908,-0.000562,12
+F016,Turmeric (gm),12,0.004908,-0.001644,12
+F017,"Biscuits, Chocolates, etc.",1,0.002982,-1e-05,11
+F017,"Biscuits, Chocolates, etc.",2,0.002982,4e-06,12
+F017,"Biscuits, Chocolates, etc.",3,0.002982,-6e-06,11
+F017,"Biscuits, Chocolates, etc.",4,0.002982,-4e-06,11
+F017,"Biscuits, Chocolates, etc.",5,0.002982,1.3e-05,11
+F017,"Biscuits, Chocolates, etc.",6,0.002982,7e-06,11
+F017,"Biscuits, Chocolates, etc.",7,0.002982,1.6e-05,12
+F017,"Biscuits, Chocolates, etc.",8,0.002982,2.7e-05,12
+F017,"Biscuits, Chocolates, etc.",9,0.002982,6e-06,12
+F017,"Biscuits, Chocolates, etc.",10,0.002982,2e-06,12
+F017,"Biscuits, Chocolates, etc.",11,0.002982,-1.6e-05,12
+F017,"Biscuits, Chocolates, etc.",12,0.002982,-2.8e-05,12
+F018,"Sewai, Noodles",1,0.00339,-4e-06,11
+F018,"Sewai, Noodles",2,0.00339,1.2e-05,12
+F018,"Sewai, Noodles",3,0.00339,-1e-05,11
+F018,"Sewai, Noodles",4,0.00339,3e-06,11
+F018,"Sewai, Noodles",5,0.00339,6e-06,11
+F018,"Sewai, Noodles",6,0.00339,-5e-06,11
+F018,"Sewai, Noodles",7,0.00339,4e-06,12
+F018,"Sewai, Noodles",8,0.00339,6e-06,12
+F018,"Sewai, Noodles",9,0.00339,-1.7e-05,12
+F018,"Sewai, Noodles",10,0.00339,-3e-06,12
+F018,"Sewai, Noodles",11,0.00339,-1.2e-05,12
+F018,"Sewai, Noodles",12,0.00339,-1e-06,12
+F019,Bread (bakery),1,0.004533,-2.7e-05,11
+F019,Bread (bakery),2,0.004533,0.0002,12
+F019,Bread (bakery),3,0.004533,-0.000288,11
+F019,Bread (bakery),4,0.004533,-0.000227,11
+F019,Bread (bakery),5,0.004533,-0.000205,11
+F019,Bread (bakery),6,0.004533,-6.4e-05,11
+F019,Bread (bakery),7,0.004533,-0.000283,12
+F019,Bread (bakery),8,0.004533,0.000437,12
+F019,Bread (bakery),9,0.004533,0.000172,12
+F019,Bread (bakery),10,0.004533,0.000107,12
+F019,Bread (bakery),11,0.004533,2.5e-05,12
+F019,Bread (bakery),12,0.004533,-8.5e-05,12
+F020,Eggs (no.),1,0.004213,0.002891,11
+F020,Eggs (no.),2,0.004213,-0.025121,12
+F020,Eggs (no.),3,0.004213,-0.031248,11
+F020,Eggs (no.),4,0.004213,-0.028351,11
+F020,Eggs (no.),5,0.004213,0.007101,11
+F020,Eggs (no.),6,0.004213,0.025556,11
+F020,Eggs (no.),7,0.004213,0.008346,12
+F020,Eggs (no.),8,0.004213,-0.017842,12
+F020,Eggs (no.),9,0.004213,0.000412,12
+F020,Eggs (no.),10,0.004213,0.008049,12
+F020,Eggs (no.),11,0.004213,0.024249,12
+F020,Eggs (no.),12,0.004213,0.021989,12
+F021,Potato,1,0.001204,-0.148535,11
+F021,Potato,2,0.001204,-0.116285,12
+F021,Potato,3,0.001204,0.001529,11
+F021,Potato,4,0.001204,0.069254,11
+F021,Potato,5,0.001204,0.094128,11
+F021,Potato,6,0.001204,0.074655,11
+F021,Potato,7,0.001204,0.074769,12
+F021,Potato,8,0.001204,0.024042,12
+F021,Potato,9,0.001204,-0.003033,12
+F021,Potato,10,0.001204,0.029806,12
+F021,Potato,11,0.001204,0.030609,12
+F021,Potato,12,0.001204,-0.094866,12
+F022,Onion,1,0.005602,-0.10241,11
+F022,Onion,2,0.005602,-0.094532,12
+F022,Onion,3,0.005602,-0.088758,11
+F022,Onion,4,0.005602,-0.105726,11
+F022,Onion,5,0.005602,-0.040877,11
+F022,Onion,6,0.005602,0.06339,11
+F022,Onion,7,0.005602,0.095816,12
+F022,Onion,8,0.005602,0.084874,12
+F022,Onion,9,0.005602,0.059978,12
+F022,Onion,10,0.005602,0.069914,12
+F022,Onion,11,0.005602,0.072434,12
+F022,Onion,12,0.005602,-0.047533,12
+F023,Tomato,1,0.005533,-0.161009,11
+F023,Tomato,2,0.005533,-0.118228,12
+F023,Tomato,3,0.005533,-0.044893,11
+F023,Tomato,4,0.005533,0.039765,11
+F023,Tomato,5,0.005533,0.116604,11
+F023,Tomato,6,0.005533,0.210032,11
+F023,Tomato,7,0.005533,0.210996,12
+F023,Tomato,8,0.005533,-0.071412,12
+F023,Tomato,9,0.005533,-0.139147,12
+F023,Tomato,10,0.005533,0.040422,12
+F023,Tomato,11,0.005533,0.006493,12
+F023,Tomato,12,0.005533,-0.147494,12
+F024,Banana (no.),1,0.002264,-0.013538,11
+F024,Banana (no.),2,0.002264,0.009848,12
+F024,Banana (no.),3,0.002264,0.019631,11
+F024,Banana (no.),4,0.002264,0.023337,11
+F024,Banana (no.),5,0.002264,0.009034,11
+F024,Banana (no.),6,0.002264,0.004532,11
+F024,Banana (no.),7,0.002264,0.005223,12
+F024,Banana (no.),8,0.002264,0.009096,12
+F024,Banana (no.),9,0.002264,-0.013323,12
+F024,Banana (no.),10,0.002264,-0.010008,12
+F024,Banana (no.),11,0.002264,-0.019357,12
+F024,Banana (no.),12,0.002264,-0.024735,12
+F025,Brinjal,1,0.006501,-0.045863,11
+F025,Brinjal,2,0.006501,-0.045494,12
+F025,Brinjal,3,0.006501,-0.005188,11
+F025,Brinjal,4,0.006501,0.023451,11
+F025,Brinjal,5,0.006501,0.032852,11
+F025,Brinjal,6,0.006501,0.068272,11
+F025,Brinjal,7,0.006501,0.083874,12
+F025,Brinjal,8,0.006501,0.014909,12
+F025,Brinjal,9,0.006501,-0.027031,12
+F025,Brinjal,10,0.006501,0.038148,12
+F025,Brinjal,11,0.006501,-0.049603,12
+F025,Brinjal,12,0.006501,-0.071172,12
+F026,Gur,1,0.003127,-0.009592,11
+F026,Gur,2,0.003127,-0.009425,12
+F026,Gur,3,0.003127,-0.005293,11
+F026,Gur,4,0.003127,0.002836,11
+F026,Gur,5,0.003127,0.007726,11
+F026,Gur,6,0.003127,0.009127,11
+F026,Gur,7,0.003127,0.008427,12
+F026,Gur,8,0.003127,0.00982,12
+F026,Gur,9,0.003127,0.007242,12
+F026,Gur,10,0.003127,0.001497,12
+F026,Gur,11,0.003127,-0.007913,12
+F026,Gur,12,0.003127,-0.013243,12
+C001,"Shirts, T-shirts (no.)",1,0.003585,-0.00092,11
+C001,"Shirts, T-shirts (no.)",2,0.003585,-0.000437,12
+C001,"Shirts, T-shirts (no.)",3,0.003585,0.000668,11
+C001,"Shirts, T-shirts (no.)",4,0.003585,0.000679,11
+C001,"Shirts, T-shirts (no.)",5,0.003585,0.000732,11
+C001,"Shirts, T-shirts (no.)",6,0.003585,9.1e-05,11
+C001,"Shirts, T-shirts (no.)",7,0.003585,-0.000162,12
+C001,"Shirts, T-shirts (no.)",8,0.003585,0.000182,12
+C001,"Shirts, T-shirts (no.)",9,0.003585,0.000264,12
+C001,"Shirts, T-shirts (no.)",10,0.003585,-0.000173,12
+C001,"Shirts, T-shirts (no.)",11,0.003585,-0.000747,12
+C001,"Shirts, T-shirts (no.)",12,0.003585,-0.001416,12
+C002,"Shorts, Trousers, Bermudas (no.)",1,0.003458,-0.000216,11
+C002,"Shorts, Trousers, Bermudas (no.)",2,0.003458,-8.6e-05,12
+C002,"Shorts, Trousers, Bermudas (no.)",3,0.003458,-0.000109,11
+C002,"Shorts, Trousers, Bermudas (no.)",4,0.003458,0.000219,11
+C002,"Shorts, Trousers, Bermudas (no.)",5,0.003458,6.6e-05,11
+C002,"Shorts, Trousers, Bermudas (no.)",6,0.003458,-8.1e-05,11
+C002,"Shorts, Trousers, Bermudas (no.)",7,0.003458,-4e-05,12
+C002,"Shorts, Trousers, Bermudas (no.)",8,0.003458,-4.6e-05,12
+C002,"Shorts, Trousers, Bermudas (no.)",9,0.003458,0.000145,12
+C002,"Shorts, Trousers, Bermudas (no.)",10,0.003458,0.000143,12
+C002,"Shorts, Trousers, Bermudas (no.)",11,0.003458,4.3e-05,12
+C002,"Shorts, Trousers, Bermudas (no.)",12,0.003458,-0.000173,12
+C003,"Leather Sandals, Chappals, etc.",1,0.003386,3.3e-05,11
+C003,"Leather Sandals, Chappals, etc.",2,0.003386,0.000193,12
+C003,"Leather Sandals, Chappals, etc.",3,0.003386,-0.000105,11
+C003,"Leather Sandals, Chappals, etc.",4,0.003386,-3.3e-05,11
+C003,"Leather Sandals, Chappals, etc.",5,0.003386,0.000124,11
+C003,"Leather Sandals, Chappals, etc.",6,0.003386,-0.00013,11
+C003,"Leather Sandals, Chappals, etc.",7,0.003386,0.000185,12
+C003,"Leather Sandals, Chappals, etc.",8,0.003386,0.000247,12
+C003,"Leather Sandals, Chappals, etc.",9,0.003386,-2.8e-05,12
+C003,"Leather Sandals, Chappals, etc.",10,0.003386,-0.000212,12
+C003,"Leather Sandals, Chappals, etc.",11,0.003386,0.000116,12
+C003,"Leather Sandals, Chappals, etc.",12,0.003386,-0.000541,12
+R001,"House Rent, Garage Rent",1,0.00371,0.003438,11
+R001,"House Rent, Garage Rent",2,0.00371,0.00296,12
+R001,"House Rent, Garage Rent",3,0.00371,-0.001355,11
+R001,"House Rent, Garage Rent",4,0.00371,0.00359,11
+R001,"House Rent, Garage Rent",5,0.00371,-0.001159,11
+R001,"House Rent, Garage Rent",6,0.00371,-0.00941,11
+R001,"House Rent, Garage Rent",7,0.00371,0.003278,12
+R001,"House Rent, Garage Rent",8,0.00371,0.003492,12
+R001,"House Rent, Garage Rent",9,0.00371,-0.001137,12
+R001,"House Rent, Garage Rent",10,0.00371,0.004659,12
+R001,"House Rent, Garage Rent",11,0.00371,-0.000493,12
+R001,"House Rent, Garage Rent",12,0.00371,-0.008401,12
+R002,Electricity (std. Unit),1,0.002676,-0.001106,11
+R002,Electricity (std. Unit),2,0.002676,-0.001085,12
+R002,Electricity (std. Unit),3,0.002676,-0.001909,11
+R002,Electricity (std. Unit),4,0.002676,0.000329,11
+R002,Electricity (std. Unit),5,0.002676,0.003017,11
+R002,Electricity (std. Unit),6,0.002676,-0.000342,11
+R002,Electricity (std. Unit),7,0.002676,0.000815,12
+R002,Electricity (std. Unit),8,0.002676,-0.000155,12
+R002,Electricity (std. Unit),9,0.002676,-0.000276,12
+R002,Electricity (std. Unit),10,0.002676,-0.000187,12
+R002,Electricity (std. Unit),11,0.002676,-0.001932,12
+R002,Electricity (std. Unit),12,0.002676,-0.00017,12
+R003,LPG [excl. Conveyance],1,0.004859,-0.0,11
+R003,LPG [excl. Conveyance],2,0.004859,1e-06,12
+R003,LPG [excl. Conveyance],3,0.004859,0.0,11
+R003,LPG [excl. Conveyance],4,0.004859,-0.0,11
+R003,LPG [excl. Conveyance],5,0.004859,-1e-06,11
+R003,LPG [excl. Conveyance],6,0.004859,0.0,11
+R003,LPG [excl. Conveyance],7,0.004859,-1e-06,12
+R003,LPG [excl. Conveyance],8,0.004859,-3e-06,12
+R003,LPG [excl. Conveyance],9,0.004859,-1e-06,12
+R003,LPG [excl. Conveyance],10,0.004859,2e-06,12
+R003,LPG [excl. Conveyance],11,0.004859,2e-06,12
+R003,LPG [excl. Conveyance],12,0.004859,0.0,12
+R004,Water Charges,1,0.002551,-1.4e-05,11
+R004,Water Charges,2,0.002551,3e-06,12
+R004,Water Charges,3,0.002551,1e-06,11
+R004,Water Charges,4,0.002551,9e-06,11
+R004,Water Charges,5,0.002551,4e-06,11
+R004,Water Charges,6,0.002551,-9e-06,11
+R004,Water Charges,7,0.002551,-1.7e-05,12
+R004,Water Charges,8,0.002551,-1.8e-05,12
+R004,Water Charges,9,0.002551,-1e-05,12
+R004,Water Charges,10,0.002551,4e-06,12
+R004,Water Charges,11,0.002551,2e-06,12
+R004,Water Charges,12,0.002551,-4e-06,12
+R005,LPG [excl. Conveyance],1,0.004859,-0.0,11
+R005,LPG [excl. Conveyance],2,0.004859,1e-06,12
+R005,LPG [excl. Conveyance],3,0.004859,0.0,11
+R005,LPG [excl. Conveyance],4,0.004859,-0.0,11
+R005,LPG [excl. Conveyance],5,0.004859,-1e-06,11
+R005,LPG [excl. Conveyance],6,0.004859,0.0,11
+R005,LPG [excl. Conveyance],7,0.004859,-1e-06,12
+R005,LPG [excl. Conveyance],8,0.004859,-3e-06,12
+R005,LPG [excl. Conveyance],9,0.004859,-1e-06,12
+R005,LPG [excl. Conveyance],10,0.004859,2e-06,12
+R005,LPG [excl. Conveyance],11,0.004859,2e-06,12
+R005,LPG [excl. Conveyance],12,0.004859,0.0,12
+T001,Petrol for Vehicle,1,0.001608,-0.0,11
+T001,Petrol for Vehicle,2,0.001608,-1e-06,12
+T001,Petrol for Vehicle,3,0.001608,2e-06,11
+T001,Petrol for Vehicle,4,0.001608,1e-06,11
+T001,Petrol for Vehicle,5,0.001608,1e-06,11
+T001,Petrol for Vehicle,6,0.001608,0.0,11
+T001,Petrol for Vehicle,7,0.001608,1e-06,12
+T001,Petrol for Vehicle,8,0.001608,-2e-06,12
+T001,Petrol for Vehicle,9,0.001608,1e-06,12
+T001,Petrol for Vehicle,10,0.001608,1e-06,12
+T001,Petrol for Vehicle,11,0.001608,-3e-06,12
+T001,Petrol for Vehicle,12,0.001608,-2e-06,12
+T002,Diesel for Vehicle,1,0.002848,0.000115,11
+T002,Diesel for Vehicle,2,0.002848,-2.8e-05,12
+T002,Diesel for Vehicle,3,0.002848,0.001035,11
+T002,Diesel for Vehicle,4,0.002848,0.000118,11
+T002,Diesel for Vehicle,5,0.002848,0.000644,11
+T002,Diesel for Vehicle,6,0.002848,0.000109,11
+T002,Diesel for Vehicle,7,0.002848,0.000256,12
+T002,Diesel for Vehicle,8,0.002848,-0.000447,12
+T002,Diesel for Vehicle,9,0.002848,0.000298,12
+T002,Diesel for Vehicle,10,0.002848,5.1e-05,12
+T002,Diesel for Vehicle,11,0.002848,-0.00053,12
+T002,Diesel for Vehicle,12,0.002848,-0.00039,12
+T003,Bus/tram Fare,1,0.003624,-0.000143,11
+T003,Bus/tram Fare,2,0.003624,8.3e-05,12
+T003,Bus/tram Fare,3,0.003624,0.000173,11
+T003,Bus/tram Fare,4,0.003624,-0.000139,11
+T003,Bus/tram Fare,5,0.003624,0.000221,11
+T003,Bus/tram Fare,6,0.003624,-4.2e-05,11
+T003,Bus/tram Fare,7,0.003624,0.000633,12
+T003,Bus/tram Fare,8,0.003624,-0.000209,12
+T003,Bus/tram Fare,9,0.003624,6e-05,12
+T003,Bus/tram Fare,10,0.003624,-0.000587,12
+T003,Bus/tram Fare,11,0.003624,-0.000696,12
+T003,Bus/tram Fare,12,0.003624,-0.000592,12
+T004,"Taxi, Auto-rickshaw Fare",1,0.003606,-0.000682,11
+T004,"Taxi, Auto-rickshaw Fare",2,0.003606,-3.2e-05,12
+T004,"Taxi, Auto-rickshaw Fare",3,0.003606,-0.000818,11
+T004,"Taxi, Auto-rickshaw Fare",4,0.003606,-0.000104,11
+T004,"Taxi, Auto-rickshaw Fare",5,0.003606,0.000292,11
+T004,"Taxi, Auto-rickshaw Fare",6,0.003606,0.000261,11
+T004,"Taxi, Auto-rickshaw Fare",7,0.003606,0.000402,12
+T004,"Taxi, Auto-rickshaw Fare",8,0.003606,-0.000595,12
+T004,"Taxi, Auto-rickshaw Fare",9,0.003606,0.000144,12
+T004,"Taxi, Auto-rickshaw Fare",10,0.003606,9.6e-05,12
+T004,"Taxi, Auto-rickshaw Fare",11,0.003606,0.000366,12
+T004,"Taxi, Auto-rickshaw Fare",12,0.003606,-0.000235,12
+T006,Tyres & Tubes,1,0.002025,9.8e-05,11
+T006,Tyres & Tubes,2,0.002025,-0.000151,12
+T006,Tyres & Tubes,3,0.002025,-5.2e-05,11
+T006,Tyres & Tubes,4,0.002025,0.000866,11
+T006,Tyres & Tubes,5,0.002025,0.000875,11
+T006,Tyres & Tubes,6,0.002025,0.000247,11
+T006,Tyres & Tubes,7,0.002025,0.000487,12
+T006,Tyres & Tubes,8,0.002025,0.000535,12
+T006,Tyres & Tubes,9,0.002025,0.000266,12
+T006,Tyres & Tubes,10,0.002025,-0.000734,12
+T006,Tyres & Tubes,11,0.002025,-0.000557,12
+T006,Tyres & Tubes,12,0.002025,-0.000684,12
+M001,Medicine (non-institutional),1,0.004359,-1.2e-05,11
+M001,Medicine (non-institutional),2,0.004359,-6e-06,12
+M001,Medicine (non-institutional),3,0.004359,-1.3e-05,11
+M001,Medicine (non-institutional),4,0.004359,-5.9e-05,11
+M001,Medicine (non-institutional),5,0.004359,3e-06,11
+M001,Medicine (non-institutional),6,0.004359,-2.2e-05,11
+M001,Medicine (non-institutional),7,0.004359,-3e-06,12
+M001,Medicine (non-institutional),8,0.004359,-9e-06,12
+M001,Medicine (non-institutional),9,0.004359,-3.5e-05,12
+M001,Medicine (non-institutional),10,0.004359,5e-06,12
+M001,Medicine (non-institutional),11,0.004359,2e-05,12
+M001,Medicine (non-institutional),12,0.004359,6e-06,12
+M002,Medicine (non-institutional),1,0.004359,-1.2e-05,11
+M002,Medicine (non-institutional),2,0.004359,-6e-06,12
+M002,Medicine (non-institutional),3,0.004359,-1.3e-05,11
+M002,Medicine (non-institutional),4,0.004359,-5.9e-05,11
+M002,Medicine (non-institutional),5,0.004359,3e-06,11
+M002,Medicine (non-institutional),6,0.004359,-2.2e-05,11
+M002,Medicine (non-institutional),7,0.004359,-3e-06,12
+M002,Medicine (non-institutional),8,0.004359,-9e-06,12
+M002,Medicine (non-institutional),9,0.004359,-3.5e-05,12
+M002,Medicine (non-institutional),10,0.004359,5e-06,12
+M002,Medicine (non-institutional),11,0.004359,2e-05,12
+M002,Medicine (non-institutional),12,0.004359,6e-06,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),1,0.004422,4e-06,11
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),2,0.004422,2.1e-05,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),3,0.004422,-1.8e-05,11
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),4,0.004422,-1e-05,11
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),5,0.004422,1e-05,11
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),6,0.004422,5e-06,11
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),7,0.004422,-1.2e-05,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),8,0.004422,1e-06,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),9,0.004422,7e-06,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),10,0.004422,7e-06,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),11,0.004422,-0.0,12
+M003,Doctor’s/ Surgeon’s Fee-first Consultation (non-institutional),12,0.004422,-1.3e-05,12
+M004,Hospital & Nursing Home Charges,1,0.005277,-1e-05,11
+M004,Hospital & Nursing Home Charges,2,0.005277,-9.5e-05,12
+M004,Hospital & Nursing Home Charges,3,0.005277,-0.000112,11
+M004,Hospital & Nursing Home Charges,4,0.005277,-9.4e-05,11
+M004,Hospital & Nursing Home Charges,5,0.005277,8.9e-05,11
+M004,Hospital & Nursing Home Charges,6,0.005277,-0.000415,11
+M004,Hospital & Nursing Home Charges,7,0.005277,-0.000155,12
+M004,Hospital & Nursing Home Charges,8,0.005277,0.000169,12
+M004,Hospital & Nursing Home Charges,9,0.005277,-0.000146,12
+M004,Hospital & Nursing Home Charges,10,0.005277,0.00013,12
+M004,Hospital & Nursing Home Charges,11,0.005277,2.7e-05,12
+M004,Hospital & Nursing Home Charges,12,0.005277,8.6e-05,12
+E001,"Tuition and Other Fees (school, College, Etc.)",1,0.004336,-0.002472,11
+E001,"Tuition and Other Fees (school, College, Etc.)",2,0.004336,-0.003037,12
+E001,"Tuition and Other Fees (school, College, Etc.)",3,0.004336,-0.00212,11
+E001,"Tuition and Other Fees (school, College, Etc.)",4,0.004336,0.002232,11
+E001,"Tuition and Other Fees (school, College, Etc.)",5,0.004336,-0.000476,11
+E001,"Tuition and Other Fees (school, College, Etc.)",6,0.004336,0.004617,11
+E001,"Tuition and Other Fees (school, College, Etc.)",7,0.004336,0.008463,12
+E001,"Tuition and Other Fees (school, College, Etc.)",8,0.004336,0.000755,12
+E001,"Tuition and Other Fees (school, College, Etc.)",9,0.004336,-0.001675,12
+E001,"Tuition and Other Fees (school, College, Etc.)",10,0.004336,-0.002438,12
+E001,"Tuition and Other Fees (school, College, Etc.)",11,0.004336,-0.001788,12
+E001,"Tuition and Other Fees (school, College, Etc.)",12,0.004336,-0.002757,12
+E002,Private Tutor/ Coaching Centre,1,0.003871,-0.000889,11
+E002,Private Tutor/ Coaching Centre,2,0.003871,-0.001357,12
+E002,Private Tutor/ Coaching Centre,3,0.003871,-0.000342,11
+E002,Private Tutor/ Coaching Centre,4,0.003871,0.000113,11
+E002,Private Tutor/ Coaching Centre,5,0.003871,0.000326,11
+E002,Private Tutor/ Coaching Centre,6,0.003871,4e-06,11
+E002,Private Tutor/ Coaching Centre,7,0.003871,0.000874,12
+E002,Private Tutor/ Coaching Centre,8,0.003871,-0.000127,12
+E002,Private Tutor/ Coaching Centre,9,0.003871,-0.000121,12
+E002,Private Tutor/ Coaching Centre,10,0.003871,-0.001201,12
+E002,Private Tutor/ Coaching Centre,11,0.003871,6.7e-05,12
+E002,Private Tutor/ Coaching Centre,12,0.003871,-0.000141,12
+E003,"Books, Journals: First Hand",1,0.0032,-0.000345,11
+E003,"Books, Journals: First Hand",2,0.0032,-0.000662,12
+E003,"Books, Journals: First Hand",3,0.0032,-0.001171,11
+E003,"Books, Journals: First Hand",4,0.0032,0.000166,11
+E003,"Books, Journals: First Hand",5,0.0032,0.000228,11
+E003,"Books, Journals: First Hand",6,0.0032,0.00034,11
+E003,"Books, Journals: First Hand",7,0.0032,0.000334,12
+E003,"Books, Journals: First Hand",8,0.0032,0.000556,12
+E003,"Books, Journals: First Hand",9,0.0032,-0.000338,12
+E003,"Books, Journals: First Hand",10,0.0032,-0.000609,12
+E003,"Books, Journals: First Hand",11,0.0032,-5.8e-05,12
+E003,"Books, Journals: First Hand",12,0.0032,3.2e-05,12
+E004,"Stationery, Photocopying Charges",1,0.003274,-0.000417,11
+E004,"Stationery, Photocopying Charges",2,0.003274,6.6e-05,12
+E004,"Stationery, Photocopying Charges",3,0.003274,5.4e-05,11
+E004,"Stationery, Photocopying Charges",4,0.003274,-1.8e-05,11
+E004,"Stationery, Photocopying Charges",5,0.003274,0.00015,11
+E004,"Stationery, Photocopying Charges",6,0.003274,0.000104,11
+E004,"Stationery, Photocopying Charges",7,0.003274,0.000479,12
+E004,"Stationery, Photocopying Charges",8,0.003274,0.000616,12
+E004,"Stationery, Photocopying Charges",9,0.003274,-0.000289,12
+E004,"Stationery, Photocopying Charges",10,0.003274,-0.000442,12
+E004,"Stationery, Photocopying Charges",11,0.003274,-5.6e-05,12
+E004,"Stationery, Photocopying Charges",12,0.003274,-0.000441,12
+D001,Cooked Meals Purchased (no.),1,0.004372,1.8e-05,11
+D001,Cooked Meals Purchased (no.),2,0.004372,9.3e-05,12
+D001,Cooked Meals Purchased (no.),3,0.004372,0.000203,11
+D001,Cooked Meals Purchased (no.),4,0.004372,-0.000129,11
+D001,Cooked Meals Purchased (no.),5,0.004372,-0.000155,11
+D001,Cooked Meals Purchased (no.),6,0.004372,6.3e-05,11
+D001,Cooked Meals Purchased (no.),7,0.004372,-5.2e-05,12
+D001,Cooked Meals Purchased (no.),8,0.004372,0.00024,12
+D001,Cooked Meals Purchased (no.),9,0.004372,-7.5e-05,12
+D001,Cooked Meals Purchased (no.),10,0.004372,-9.2e-05,12
+D001,Cooked Meals Purchased (no.),11,0.004372,8.7e-05,12
+D001,Cooked Meals Purchased (no.),12,0.004372,-9.7e-05,12
+D002,Tea: Cups (no.),1,0.003247,1.6e-05,11
+D002,Tea: Cups (no.),2,0.003247,1.4e-05,12
+D002,Tea: Cups (no.),3,0.003247,-9e-06,11
+D002,Tea: Cups (no.),4,0.003247,-2.5e-05,11
+D002,Tea: Cups (no.),5,0.003247,6e-06,11
+D002,Tea: Cups (no.),6,0.003247,1.8e-05,11
+D002,Tea: Cups (no.),7,0.003247,-1e-05,12
+D002,Tea: Cups (no.),8,0.003247,4e-06,12
+D002,Tea: Cups (no.),9,0.003247,-6e-06,12
+D002,Tea: Cups (no.),10,0.003247,-3.1e-05,12
+D002,Tea: Cups (no.),11,0.003247,-5e-06,12
+D002,Tea: Cups (no.),12,0.003247,-7e-06,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",1,0.00418,-4.4e-05,11
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",2,0.00418,-3.2e-05,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",3,0.00418,1e-06,11
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",4,0.00418,-7e-06,11
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",5,0.00418,1.7e-05,11
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",6,0.00418,5e-06,11
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",7,0.00418,2.6e-05,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",8,0.00418,6e-05,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",9,0.00418,3.2e-05,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",10,0.00418,3e-06,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",11,0.00418,2.6e-05,12
+D003,"Cooked Snacks Purchased [samosa, Puri, Paratha, Burger, Chowmein, Idli, Dosa, Vada, Chops, Pakoras, Pao Bhaji, Etc.]",12,0.00418,-3.5e-05,12
+K001,Telephone Charges: Mobile,1,0.003636,-0.000269,11
+K001,Telephone Charges: Mobile,2,0.003636,-0.00043,12
+K001,Telephone Charges: Mobile,3,0.003636,-0.0017,11
+K001,Telephone Charges: Mobile,4,0.003636,-0.001216,11
+K001,Telephone Charges: Mobile,5,0.003636,-8e-06,11
+K001,Telephone Charges: Mobile,6,0.003636,-0.00124,11
+K001,Telephone Charges: Mobile,7,0.003636,0.000509,12
+K001,Telephone Charges: Mobile,8,0.003636,-0.000554,12
+K001,Telephone Charges: Mobile,9,0.003636,-0.001284,12
+K001,Telephone Charges: Mobile,10,0.003636,-0.002182,12
+K001,Telephone Charges: Mobile,11,0.003636,-0.002349,12
+K001,Telephone Charges: Mobile,12,0.003636,0.000624,12
+K002,Mobile Handset,1,0.001299,-0.00012,11
+K002,Mobile Handset,2,0.001299,-9.2e-05,12
+K002,Mobile Handset,3,0.001299,1.4e-05,11
+K002,Mobile Handset,4,0.001299,-9.1e-05,11
+K002,Mobile Handset,5,0.001299,0.000288,11
+K002,Mobile Handset,6,0.001299,-0.000245,11
+K002,Mobile Handset,7,0.001299,-9e-06,12
+K002,Mobile Handset,8,0.001299,0.000231,12
+K002,Mobile Handset,9,0.001299,-6.1e-05,12
+K002,Mobile Handset,10,0.001299,-0.000177,12
+K002,Mobile Handset,11,0.001299,0.000332,12
+K002,Mobile Handset,12,0.001299,-0.000178,12
+K003,Internet Expenses,1,0.00237,-1e-06,11
+K003,Internet Expenses,2,0.00237,-2e-06,12
+K003,Internet Expenses,3,0.00237,2e-06,11
+K003,Internet Expenses,4,0.00237,1.5e-05,11
+K003,Internet Expenses,5,0.00237,3e-06,11
+K003,Internet Expenses,6,0.00237,1.8e-05,11
+K003,Internet Expenses,7,0.00237,-3e-06,12
+K003,Internet Expenses,8,0.00237,1.8e-05,12
+K003,Internet Expenses,9,0.00237,7e-06,12
+K003,Internet Expenses,10,0.00237,-8e-06,12
+K003,Internet Expenses,11,0.00237,-7e-06,12
+K003,Internet Expenses,12,0.00237,-4e-06,12
+S001,Cinema: New Release(normal Day),1,0.005158,1e-06,11
+S001,Cinema: New Release(normal Day),2,0.005158,-2e-06,12
+S001,Cinema: New Release(normal Day),3,0.005158,4e-06,11
+S001,Cinema: New Release(normal Day),4,0.005158,2e-06,11
+S001,Cinema: New Release(normal Day),5,0.005158,-5e-06,11
+S001,Cinema: New Release(normal Day),6,0.005158,1e-06,11
+S001,Cinema: New Release(normal Day),7,0.005158,-1e-06,11
+S001,Cinema: New Release(normal Day),8,0.005158,8e-06,11
+S001,Cinema: New Release(normal Day),9,0.005158,-4e-06,11
+S001,Cinema: New Release(normal Day),10,0.005158,2e-06,11
+S001,Cinema: New Release(normal Day),11,0.005158,-2e-06,12
+S001,Cinema: New Release(normal Day),12,0.005158,0.0,12
+S002,Other Entertainment,1,0.002361,-5e-06,11
+S002,Other Entertainment,2,0.002361,3e-06,12
+S002,Other Entertainment,3,0.002361,4e-06,11
+S002,Other Entertainment,4,0.002361,-1.3e-05,11
+S002,Other Entertainment,5,0.002361,-1e-06,11
+S002,Other Entertainment,6,0.002361,-1e-05,11
+S002,Other Entertainment,7,0.002361,-1e-06,12
+S002,Other Entertainment,8,0.002361,2e-06,12
+S002,Other Entertainment,9,0.002361,8e-06,12
+S002,Other Entertainment,10,0.002361,4e-06,12
+S002,Other Entertainment,11,0.002361,1e-06,12
+S002,Other Entertainment,12,0.002361,-3e-06,12
+S003,"Newspapers, Periodicals",1,0.003619,3e-06,11
+S003,"Newspapers, Periodicals",2,0.003619,1.3e-05,12
+S003,"Newspapers, Periodicals",3,0.003619,-3e-06,11
+S003,"Newspapers, Periodicals",4,0.003619,2.8e-05,11
+S003,"Newspapers, Periodicals",5,0.003619,-1.1e-05,11
+S003,"Newspapers, Periodicals",6,0.003619,-1.1e-05,11
+S003,"Newspapers, Periodicals",7,0.003619,3e-06,12
+S003,"Newspapers, Periodicals",8,0.003619,2e-05,12
+S003,"Newspapers, Periodicals",9,0.003619,-2.8e-05,12
+S003,"Newspapers, Periodicals",10,0.003619,-3.7e-05,12
+S003,"Newspapers, Periodicals",11,0.003619,-2e-06,12
+S003,"Newspapers, Periodicals",12,0.003619,4e-06,12
+P001,Toilet Soap,1,0.003906,-0.000553,11
+P001,Toilet Soap,2,0.003906,-0.000891,12
+P001,Toilet Soap,3,0.003906,-0.000872,11
+P001,Toilet Soap,4,0.003906,0.000473,11
+P001,Toilet Soap,5,0.003906,0.000925,11
+P001,Toilet Soap,6,0.003906,0.000481,11
+P001,Toilet Soap,7,0.003906,0.001579,12
+P001,Toilet Soap,8,0.003906,0.001133,12
+P001,Toilet Soap,9,0.003906,0.000457,12
+P001,Toilet Soap,10,0.003906,-0.000367,12
+P001,Toilet Soap,11,0.003906,-0.001319,12
+P001,Toilet Soap,12,0.003906,-0.000986,12
+P002,"Hair Oil, Shampoo, Hair Cream",1,0.002868,-0.000703,11
+P002,"Hair Oil, Shampoo, Hair Cream",2,0.002868,-0.00031,12
+P002,"Hair Oil, Shampoo, Hair Cream",3,0.002868,-0.000583,11
+P002,"Hair Oil, Shampoo, Hair Cream",4,0.002868,-0.000531,11
+P002,"Hair Oil, Shampoo, Hair Cream",5,0.002868,0.000274,11
+P002,"Hair Oil, Shampoo, Hair Cream",6,0.002868,6.4e-05,11
+P002,"Hair Oil, Shampoo, Hair Cream",7,0.002868,0.000364,12
+P002,"Hair Oil, Shampoo, Hair Cream",8,0.002868,0.000663,12
+P002,"Hair Oil, Shampoo, Hair Cream",9,0.002868,6.2e-05,12
+P002,"Hair Oil, Shampoo, Hair Cream",10,0.002868,0.000202,12
+P002,"Hair Oil, Shampoo, Hair Cream",11,0.002868,-0.000132,12
+P002,"Hair Oil, Shampoo, Hair Cream",12,0.002868,-0.000596,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",1,0.003235,-0.000118,11
+P003,"Toothpaste, Toothbrush, Comb, etc.",2,0.003235,-0.000108,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",3,0.003235,-0.000287,11
+P003,"Toothpaste, Toothbrush, Comb, etc.",4,0.003235,-7.5e-05,11
+P003,"Toothpaste, Toothbrush, Comb, etc.",5,0.003235,0.000211,11
+P003,"Toothpaste, Toothbrush, Comb, etc.",6,0.003235,0.000165,11
+P003,"Toothpaste, Toothbrush, Comb, etc.",7,0.003235,0.000299,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",8,0.003235,0.000391,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",9,0.003235,0.000527,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",10,0.003235,-6e-06,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",11,0.003235,-0.000359,12
+P003,"Toothpaste, Toothbrush, Comb, etc.",12,0.003235,-0.000442,12
+P004,"Barber, Beautician, etc.",1,0.004725,-0.000152,11
+P004,"Barber, Beautician, etc.",2,0.004725,0.000177,12
+P004,"Barber, Beautician, etc.",3,0.004725,-1.6e-05,11
+P004,"Barber, Beautician, etc.",4,0.004725,0.000245,11
+P004,"Barber, Beautician, etc.",5,0.004725,8.4e-05,11
+P004,"Barber, Beautician, etc.",6,0.004725,-8.3e-05,11
+P004,"Barber, Beautician, etc.",7,0.004725,7e-06,12
+P004,"Barber, Beautician, etc.",8,0.004725,0.000111,12
+P004,"Barber, Beautician, etc.",9,0.004725,0.000183,12
+P004,"Barber, Beautician, etc.",10,0.004725,0.000206,12
+P004,"Barber, Beautician, etc.",11,0.004725,-5.7e-05,12
+P004,"Barber, Beautician, etc.",12,0.004725,-9.5e-05,12
+P005,Gold,1,0.009497,0.003745,11
+P005,Gold,2,0.009497,0.002545,12
+P005,Gold,3,0.009497,-0.00135,11
+P005,Gold,4,0.009497,0.003639,11
+P005,Gold,5,0.009497,-0.000246,11
+P005,Gold,6,0.009497,-0.005386,11
+P005,Gold,7,0.009497,-0.001739,12
+P005,Gold,8,0.009497,0.000732,12
+P005,Gold,9,0.009497,-0.000175,12
+P005,Gold,10,0.009497,0.00132,12
+P005,Gold,11,0.009497,-0.003974,12
+P005,Gold,12,0.009497,-0.001872,12
+P006,Silver,1,0.010085,-0.0,11
+P006,Silver,2,0.010085,1e-06,12
+P006,Silver,3,0.010085,-0.0,11
+P006,Silver,4,0.010085,0.0,11
+P006,Silver,5,0.010085,-0.0,11
+P006,Silver,6,0.010085,-1e-06,11
+P006,Silver,7,0.010085,0.0,12
+P006,Silver,8,0.010085,0.0,12
+P006,Silver,9,0.010085,-0.0,12
+P006,Silver,10,0.010085,0.0,12
+P006,Silver,11,0.010085,-2e-06,12
+P006,Silver,12,0.010085,-0.0,12
+H001,Washing Soap/soda/powder,1,0.002983,-1.1e-05,11
+H001,Washing Soap/soda/powder,2,0.002983,-3e-06,12
+H001,Washing Soap/soda/powder,3,0.002983,-0.0,11
+H001,Washing Soap/soda/powder,4,0.002983,-2.3e-05,11
+H001,Washing Soap/soda/powder,5,0.002983,6e-06,11
+H001,Washing Soap/soda/powder,6,0.002983,1.1e-05,11
+H001,Washing Soap/soda/powder,7,0.002983,1e-05,12
+H001,Washing Soap/soda/powder,8,0.002983,2e-06,12
+H001,Washing Soap/soda/powder,9,0.002983,4e-06,12
+H001,Washing Soap/soda/powder,10,0.002983,-9e-06,12
+H001,Washing Soap/soda/powder,11,0.002983,9e-06,12
+H001,Washing Soap/soda/powder,12,0.002983,-1.1e-05,12
+H002,Other Washing Requisites,1,0.002945,-1.1e-05,11
+H002,Other Washing Requisites,2,0.002945,4e-06,12
+H002,Other Washing Requisites,3,0.002945,-1.4e-05,11
+H002,Other Washing Requisites,4,0.002945,-1.6e-05,11
+H002,Other Washing Requisites,5,0.002945,3e-06,11
+H002,Other Washing Requisites,6,0.002945,8e-06,11
+H002,Other Washing Requisites,7,0.002945,3.3e-05,12
+H002,Other Washing Requisites,8,0.002945,-8.4e-05,12
+H002,Other Washing Requisites,9,0.002945,-2.8e-05,12
+H002,Other Washing Requisites,10,0.002945,1.1e-05,12
+H002,Other Washing Requisites,11,0.002945,1e-06,12
+H002,Other Washing Requisites,12,0.002945,-7e-06,12
+H003,"Electric Bulb, Tubelight",1,0.00211,-0.000145,11
+H003,"Electric Bulb, Tubelight",2,0.00211,-0.000286,12
+H003,"Electric Bulb, Tubelight",3,0.00211,-6e-05,11
+H003,"Electric Bulb, Tubelight",4,0.00211,-2.2e-05,11
+H003,"Electric Bulb, Tubelight",5,0.00211,8.6e-05,11
+H003,"Electric Bulb, Tubelight",6,0.00211,-5.5e-05,11
+H003,"Electric Bulb, Tubelight",7,0.00211,5.3e-05,12
+H003,"Electric Bulb, Tubelight",8,0.00211,0.000268,12
+H003,"Electric Bulb, Tubelight",9,0.00211,2.9e-05,12
+H003,"Electric Bulb, Tubelight",10,0.00211,5.6e-05,12
+H003,"Electric Bulb, Tubelight",11,0.00211,-3e-05,12
+H003,"Electric Bulb, Tubelight",12,0.00211,3.4e-05,12
+H004,Pressure Cooker/ Pressure Pan,1,0.004074,-0.000372,11
+H004,Pressure Cooker/ Pressure Pan,2,0.004074,0.000661,12
+H004,Pressure Cooker/ Pressure Pan,3,0.004074,-0.00221,11
+H004,Pressure Cooker/ Pressure Pan,4,0.004074,0.000671,11
+H004,Pressure Cooker/ Pressure Pan,5,0.004074,-0.000539,11
+H004,Pressure Cooker/ Pressure Pan,6,0.004074,-0.000737,11
+H004,Pressure Cooker/ Pressure Pan,7,0.004074,-0.000117,12
+H004,Pressure Cooker/ Pressure Pan,8,0.004074,0.000658,12
+H004,Pressure Cooker/ Pressure Pan,9,0.004074,-0.000641,12
+H004,Pressure Cooker/ Pressure Pan,10,0.004074,0.001749,12
+H004,Pressure Cooker/ Pressure Pan,11,0.004074,0.000342,12
+H004,Pressure Cooker/ Pressure Pan,12,0.004074,0.000378,12

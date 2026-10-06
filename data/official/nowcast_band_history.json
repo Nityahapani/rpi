@@ -1,0 +1,24 @@
+{
+ "alpha": 0.1,
+ "rule": "seasonal_trend (SEASC), 2018-2025 rolling-origin on official Gujarat-urban base-2012 item data; independent items add no information (conservative)",
+ "h1_abs_log": 0.0076,
+ "h1_n": 79,
+ "h1_valid": true,
+ "h1_check": {
+  "q_select_only": 0.00828,
+  "n_select": 45,
+  "coverage_on_untouched_test": 0.912,
+  "n_test": 34,
+  "old_rule_q_all": 0.01122
+ },
+ "h2_abs_log": 0.01532,
+ "h2_n": 78,
+ "h2_valid": true,
+ "h2_check": {
+  "q_select_only": 0.01241,
+  "n_select": 44,
+  "coverage_on_untouched_test": 0.824,
+  "n_test": 34,
+  "old_rule_q_all": 0.02122
+ }
+}

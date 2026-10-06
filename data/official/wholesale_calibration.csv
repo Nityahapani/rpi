@@ -1,0 +1,6 @@
+item_id,b0,sigma_wb,sigma_prior,basis
+F001,-0.002,0.0082,0.0098,Wheat atta
+F004,0.018,0.0064,0.0102,Moong
+F022,0.3,0.0753,0.1305,Onion
+F023,0.597,0.1385,0.2512,Tomato
+F025,0.282,0.0898,0.057,Brinjal

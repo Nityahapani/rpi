@@ -10,7 +10,7 @@ import pandas as pd
 
 
 def impute_relatives(rel: pd.DataFrame, observed: pd.DataFrame, items: pd.DataFrame, w: pd.Series,
-                     method: str = "division", trend_window: int = 12, min_history: int = 3):
+                     method: str = "division", trend_window: int = 12, min_history: int = 3, seasonal: dict | None = None):
     """rel/observed: (periods x items). Returns (rel_filled, imputed_flags).
 
     method="division": a missing relative takes the weighted mean relative of observed items in its division.
@@ -21,6 +21,10 @@ def impute_relatives(rel: pd.DataFrame, observed: pd.DataFrame, items: pd.DataFr
         This stops a discrete
         administered step in one item (e.g. a PNG tariff hike) from being smeared onto unrelated items such as rent
         in months where the official index has not been published yet (nowcast months).
+
+    method="seasonal_trend": like own_trend, but a TRAILING gap (nowcast month) of an item that has a seasonal table (rpi/seasonal.py: long-run mean monthly change plus EB-shrunk
+        calendar-month deviation from 11 years of official Gujarat-urban data) is filled with that prior; other items fall back to own_trend.
+        Pseudo-real-time test (2023-2025, untouched): index RMSE 0.61 vs 0.85 pp (1 month), 0.95 vs 1.43 pp (2 months), DM p <= 0.001.
     """
     div = items.set_index("item_id")["division"].reindex(rel.columns)
     filled = rel.copy()
@@ -37,9 +41,15 @@ def impute_relatives(rel: pd.DataFrame, observed: pd.DataFrame, items: pd.DataFr
             miss = cols[~o.values]
             filled.loc[t, miss] = val
             imputed.loc[t, miss] = True
-            if method == "own_trend":
+            if method in ("own_trend", "seasonal_trend"):
                 pos = rel.index.get_loc(t)
                 for c in miss:
+                    # Only TRAILING gaps (no observation of the item in any later month) are forecasts, which is what the prior was tested for;
+                    # an interior gap (e.g. the splice month where an independent feed starts) has later data and keeps the own-trend rule.
+                    if method == "seasonal_trend" and seasonal and c in seasonal and not observed[c].iloc[pos + 1:].any():
+                        clim, seas = seasonal[c]
+                        filled.loc[t, c] = clim + float(seas[t.month - 1])
+                        continue
                     hist = rel[c].iloc[1:pos][observed[c].iloc[1:pos].to_numpy()].dropna()
                     if len(hist) >= min_history:
                         filled.loc[t, c] = float(np.mean(hist.iloc[-trend_window:]))
@@ -47,7 +57,7 @@ def impute_relatives(rel: pd.DataFrame, observed: pd.DataFrame, items: pd.DataFr
 
 
 def aggregate(rel: pd.DataFrame, n: pd.DataFrame, items: pd.DataFrame, weights: pd.Series,
-              min_matched=2, impute: str = "division"):
+              min_matched=2, impute: str = "division", seasonal: dict | None = None):
     """rel, n: (periods x items) log relatives and matched counts.
     Returns dict(total, divisions, items, coverage, coverage_by_tier, imputed)."""
     cols = [c for c in weights.index if c in set(items["item_id"])]
@@ -58,7 +68,7 @@ def aggregate(rel: pd.DataFrame, n: pd.DataFrame, items: pd.DataFrame, weights: 
     mm = mm.reindex(cols).fillna(2)
     observed = n.ge(mm, axis=1) & rel.notna()
     observed.iloc[0] = n.iloc[0].ge(1) & rel.iloc[0].notna()      # base period: need >=1 quote
-    filled, imputed = impute_relatives(rel, observed, items, w, method=impute)
+    filled, imputed = impute_relatives(rel, observed, items, w, method=impute, seasonal=seasonal)
     filled.iloc[0] = 0.0
     levels = 100.0 * np.exp(filled.cumsum())
     div = items.set_index("item_id")["division"].reindex(cols)

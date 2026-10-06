@@ -37,6 +37,7 @@ class IndexRun:
     is_demo: bool
     weights_source: str
     variants: dict = field(default_factory=dict)
+    calibration_log: list = field(default_factory=list)
 
 
 def _load_ref(conn):
@@ -101,6 +102,15 @@ def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
         _lk = [i for i in _p.loc[_p["primary_source"].isin(SINGLE_SERIES_SOURCES), "item_id"] if i in min_m.index]
         min_m.loc[_lk] = 1
 
+    # sweep 27: seasonal-trend imputation prior and wholesale-feed calibration (rpi/seasonal.py); both are switched by settings and fully disclosed
+    seasonal_tables, wcal, cutoffs = {}, {}, {}
+    if cfg.get("impute") == "seasonal_trend" or cfg.get("calibrate_wholesale"):
+        from .. import seasonal as _sea
+        seasonal_tables = {} if run.is_demo else _sea.load_tables(_ROOT)      # demo/synthetic data must not borrow the real Gujarat seasonal priors
+        if cfg.get("calibrate_wholesale") and not run.is_demo:
+            from ..collectors.official_link import independent_cutoffs
+            wcal, cutoffs = _sea.load_calibration(_ROOT), independent_cutoffs(conn)
+    run.calibration_log = []
     for name, v in VARIANTS.items():
         q = load_quotes(conn, v["field"], cfg["min_days_per_month"], cfg.get("min_days_by_source"))
         # Quotes before the configured base month (e.g. register events dated 2024-10) would stretch the panel with leading
@@ -121,7 +131,12 @@ def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
             else:
                 r, k = geks_rel(lp, cfg["geks_window"], int(min_m[it]))
             rel[it], n[it] = r, k
-        agg = aggregate(rel, n, items, weights, min_m, impute=cfg.get("impute", "division"))
+        if wcal:
+            from .. import seasonal as _sea
+            rel, _clog = _sea.calibrate_wholesale(rel, n, cutoffs, wcal, seasonal_tables)
+            if name == "jevons_chain":
+                run.calibration_log = _clog
+        agg = aggregate(rel, n, items, weights, min_m, impute=cfg.get("impute", "division"), seasonal=seasonal_tables)
         _cfg_base = settings["project"].get("base_period")
         # demo/synthetic data has its own timeline; real runs must hit the configured base month (error if absent)
         base = pd.Period(_cfg_base, "M") if (_cfg_base and not (run.is_demo and pd.Period(_cfg_base, "M") not in periods)) \
@@ -132,7 +147,7 @@ def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
             coverage_by_tier=agg["coverage_by_tier"], imputed=agg["imputed"])
         if name == "jevons_chain":
             lo, hi = bootstrap_total(arrays, periods, items, weights, cfg["bootstrap_reps"],
-                                     min_matched=min_m, clip=clip, impute=cfg.get("impute", "division"))
+                                     min_matched=min_m, clip=clip, impute=cfg.get("impute", "division"), seasonal=seasonal_tables)
             lo, hi = lo / agg["total"].loc[base] * 100, hi / agg["total"].loc[base] * 100
             res.lo, res.hi = lo, hi
         run.variants[name] = res

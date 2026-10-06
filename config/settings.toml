@@ -19,7 +19,8 @@ max_abs_log_change = 0.7    # monthly log-relative clip per quote (~2x). Documen
 min_days_per_month = 1      # min observation days for a quote-month to count
 bootstrap_reps = 200
 geks_window = 13
-impute = "own_trend"        # missing item relatives (e.g. nowcast months before an official index is out): item's own 12-month mean drift (back-tested), not division peers
+impute = "seasonal_trend"   # missing item relatives (nowcast months, splice months): long-run mean change + EB calendar-month deviation from 11 yrs of official data (rpi/seasonal.py; untouched-test RMSE -28%/-33%); falls back to the item's own 12-month drift
+calibrate_wholesale = true  # mandi-fed items (F001 F004 F022 F023 F025): wholesale change is shrunk with a pooled beta and fused with the seasonal prior (data/official/wholesale_calibration.csv) instead of being used one-for-one
 
 [index.min_days_by_source]   # volatile daily feeds: a month needs >=5 days (partial months are imputed, not trusted)
 mandi_gondal = 5

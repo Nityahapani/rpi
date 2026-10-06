@@ -506,3 +506,125 @@ Reading: "share of signal" is the fraction of a source's month-to-month variance
 **3. Forecast scoring (14 one-month and 13 two-month replay nowcasts).** Engine RMSE 0.49% against 0.60% (own-trend) and 0.75% (zero change) at h=1. Diebold-Mariano (small-sample corrected): p = 0.19 and 0.13; at h=2 p = 0.18 and 0.15. **The engine's edge over simple rules is not statistically significant with this much data.** Leave-one-out coverage of the conformal 90% band: 92.9% (h=1) and 92.3% (h=2), so the published band is well calibrated.
 
 **Consequences (not applied).** (a) The five pending mandi items should be treated differently: wheat and moong have no usable wholesale signal, so the wholesale route should be dropped for them. (b) Onion, tomato, brinjal and potato could be proxied by a Gujarat-wide matched-market wholesale change times the pooled pass-through, but that needs a live Gujarat-wide feed; the data.gov.in route (guide: `data/official/data_access_guide.md`) is the only one. (c) CEDA ends in Oct 2025, so none of this back-test covers 2026.
+
+## AF. Sweep 26: new direct-source hunt for the items with no independent source (2026-10-05)
+
+Scope: T005 two-wheeler service (1.60%), T006 tyres (1.60%), T003 city bus fare (1.51%), K003 broadband (0.90%), K002 smartphone (0.80%), S003 newspaper, S001 cinema, E003 notebook, and a second grocery retailer to validate DMart. Standing bar applies (provenance, proxy stays proxy, robots/ToS respected, no tuning). Nothing from this sweep is wired into the index.
+
+**Result: no new source passes the bar. Nothing was added.**
+
+| Item | Lead checked | What was found | Verdict |
+|---|---|---|---|
+| T005 service | Honda `/services/maintenance`; Hero/Bajaj/TVS/RE/Suzuki sitemaps | Honda page has no prices (0 rupee amounts in 1.3 MB). No OEM publishes a labour or service-package price list. TVS and Suzuki have per-city *vehicle* price pages only. Third-party blogs give ranges only. | Dead end. Still `none`. |
+| T006 tyre | Apollo bike/scooter PDP; MRF sitemap | Apollo PDP shows no price. MRF site is a brochure (no price pages). JK Tyre unreachable (502). | Dead end. CEAT stays the only tyre price source and it failed the gate (corr 0.46, n=12). |
+| K003 broadband | GTPL `/broadband/buy-new-plan`; Excitel | GTPL plan page is a pincode form with plans loaded from `webapi.gtpl.net` at runtime. No static price, no Wayback history, and I did not probe the undocumented API. Excitel has no Rajkot page. ACT unreachable. | Not usable. |
+| Grocery #2 | JioMart | robots allows crawling, but the product page has an empty `offers.price` in the server HTML. Price is pincode and JS dependent. Wayback has 1 capture year in 2022 and 139 in 2026, so no history. | Dead end. |
+| Grocery #2 | Starquik (Shopify `products.json`) | Open JSON with prices, but it is Tata's metro-only quick-commerce service, not Rajkot. | Not Rajkot-relevant. |
+| S001 cinema | INOX 403; Cinepolis, Cosmoplex 502 | Blocked or down from the sandbox. | Dead end. |
+| E003 notebook | Navneet sitemaps | WordPress corporate site. I found no price pages. Classmate shop robots carries content-signal restrictions and was not used. | Not usable. |
+| S003 newspaper | Divya Bhaskar robots | Crawlable, but I found no static subscription or cover-price page. | Unresolved (not examined in depth). |
+| T003 bus fare | Web search; Mobility Database | See below. | Partial lead, not a price series. |
+
+### T003 bus fare: what the evidence supports
+- The Rajkot city bus fare (RMTS) is an administered fare. It changes by decision, not continuously.
+- Press records of earlier changes: RMC cut fares and rounded them in 2014 (daily pass ₹25 introduced June 2014, TOI), and RMTS and BRTS were merged under Rajkot Rajpath Ltd.
+- The current matrix (₹5 up to 2 km, up to ₹30 beyond 36 km) comes only from an unofficial Scribd copy of a "Fare matrix 2025" and an unofficial app. Neither is citable.
+- Mobility Database GTFS for Rajkot would need an API token, and GTFS fares are optional and rarely maintained.
+- What could work: an event-check like T004, with a press-and-notification search for fare-revision events and a flat series between them. It needs the official RMC fare notification, which is RTI draft 3 in `data_access_guide.md`. Until then T003 stays as it is.
+
+### Takeaway
+Remaining gaps are structural: either nobody publishes the price (service labour, broadband in Rajkot), or the price sits behind JS or pincode state with no history (JioMart, GTPL). The only routes left are RTI requests, a data.gov.in key, or a self-collected panel started now (which builds history but passes no gate for a year or more).
+
+## AG. Sweep 27: can independent coverage reach 80%? Weight arithmetic, 11-year back-test, information coverage (2026-10-06)
+
+**Request.** Raise independent coverage from 56.4% to above 80% with authentic data, and if data is not enough, use advanced techniques to make the index more reliable.
+
+### 1. Weight coverage cannot reach 80% from authentic data
+- Independent 56.4%, linked 42.0% (rent 19.67%, clothing 7.35%, school fee 2.50%, others 12.5%), none 1.6% (T005).
+- Rent is 19.67%. Without rent the ceiling is 56.4 + (42.0 + 1.6 - 19.7) = **80.3%**, and that needs every other linked item and T005 to be covered. Every route to those items has been tested and closed (inventory sections N, U, AB, AF).
+- So >80% needs rent (a primary survey or a paid feed) plus almost everything else. Relabelling linked items as independent, or counting a model output as an independent observation, would be tuning the metric, so the headline weight coverage stays 56.4%.
+
+### 2. New authentic data: 11 years of official item history
+MoSPI base-2012 item indices for Gujarat urban, Jan 2014 to Dec 2025, 299 items (`getCPIData`, `level=Item`, Back + Current series; they agree exactly on the overlap; Mar-May 2020 were never published). Saved as `data/official/mospi_cpi2012_gujarat_urban_items.csv` (`scripts/mospi_2012_items_gujarat.py`). Basket items are mapped to the nearest 2012 line in `basket_to_cpi2012_map.csv` (4 are nearest-line approximations: cottonseed oil, PNG, OTT, antiseptic). Before this the nowcast back-test had 19 months; it now has 115 origins.
+
+### 3. Where the nowcast risk actually sits (`scripts/information_coverage.py`, `information_coverage.json`)
+Baseline rule = the engine's own 12-month drift, applied to every item, 111 origins (2016-2025). Each item's share of the variance of the index nowcast error is w_i Cov(e_i, E)/Var(E) (additive).
+
+| Horizon | Weight with an independent source | Share of nowcast-error variance in those items | In items without one |
+|---|---|---|---|
+| 1 month | 57.3% (of mapped weight) | 95.5% | 4.5% |
+| 2 months | 57.3% | 97.2% | 2.8% |
+
+- The unobserved 42.7% of weight is rent, clothing, fees and fares. They move slowly (monthly sd of the log change: rent 0.5%, tuition 0.5%, shirts 0.4%, milk 0.3%, against tomato 26%, onion 16%, potato 11%, brinjal 7%), so together they carry under 5% of the risk. Rent alone is 2.4% (h=1) and 0.7% (h=2).
+- **About 80% of the baseline nowcast risk is four vegetables**: tomato 41%, onion 14%, potato 13%, brinjal 11% (h=1). Together they are 5.1% of weight.
+- Those four are covered by wholesale/DoCA proxies, and three of them (onion, tomato, brinjal) are still gate-pending.
+
+**Upper bound vs realistic.** If every covered item's independent source equalled the official item, 95-97% of the nowcast-error variance would be removed. That is an upper bound. Using the gates (q = corr² for passing proxies, q = 1 for administered tariffs, pending items unknown) the realistic figure is **17-18% if pending proxies add nothing and about 51% if they remove half their item's variance**. The realistic number is dominated by whether the tomato/onion/potato/brinjal proxies work. The pooled pass-through result (section AE) is the relevant evidence: it passes the gate for these four only with a Gujarat-wide wholesale feed, which we do not yet have live.
+
+### 4. Advanced nowcast rules for the items without an independent source
+Eight rules fixed in advance: zero, own 12-month drift (engine), 6- and 24-month drift, OLS line through the last 12 levels, local-linear-trend Kalman filter (72-month window), empirical-Bayes shrinkage of own drift toward the cross-item median, and zero/drift average. Selection origins <= 2022-12, untouched test origins >= 2023-01. Block error = weighted RMSE of the 18 linked items, in % of the block.
+
+| h | Rule | Selection (n=80/79) | Test (n=35/34) |
+|---|---|---|---|
+| 1 | zero | 0.483 | 0.354 |
+| 1 | **own 12-m drift (engine)** | **0.265** | 0.271 |
+| 1 | 6-m drift | 0.265 | 0.263 |
+| 1 | Kalman LLT | 0.278 | 0.249 |
+| 1 | EB shrinkage | 0.272 | 0.273 |
+| 2 | own 12-m drift (engine) | **0.379** | 0.351 |
+| 2 | 6-m drift | 0.384 | 0.328 |
+| 2 | Kalman LLT | 0.387 | 0.311 |
+| 2 | EB shrinkage | 0.386 | 0.359 |
+
+- No rule beats the engine's own-trend rule in the selection window. Kalman LLT looks better on the test window (p = 0.05 at h=1, 0.02 at h=2) but is not better on the full sample (p = 0.82, 0.80) and was worse on the selection window, so it is **not adopted** (selecting it after seeing the test would be tuning).
+- Consequence: for the linked block the engine's rule is already near the best available. Its whole contribution to index error is about 0.11 pp (h=1) and 0.16 pp (h=2) against a total of 0.71 pp and 1.22 pp. Advanced models cannot create the missing independent observation and do not materially help here.
+
+### 5. Reading
+- The question "how much of the basket has independent data?" and "how much of the index risk has independent data?" have very different answers (56% vs about 95% upper bound), but the second is only as good as the vegetable proxies.
+- The highest-value reliability work is the four vegetables (a live Gujarat-wide wholesale feed with the pooled pass-through), not rent. The highest-value coverage work is a rent survey. Neither is wired in this sweep.
+- Nothing changed in the index. No engine file was modified.
+
+## AH. Sweep 27, part 2: advanced nowcasting wired into the engine (2026-10-06)
+
+**Trigger.** Section AG showed ~80% of the index's nowcast-error variance sits in four vegetables and that the unobserved 42% of weight is nearly harmless. No new primary data is possible, so this part improves how the existing data is used. Everything below was fixed in advance, scored in pseudo-real time (each fit sees only months up to its origin) on official data, with selection origins 2018-2022 and untouched test origins 2023-2025.
+
+### 1. Seasonal-trend prior for months the index has to forecast (`rpi/seasonal.py`, `scripts/panel_nowcast_rules.py`)
+11 years (2014-2025) of official Gujarat-urban item series, 66 basket items mapped to their nearest 2012-base line. Rules: the engine's old 12-month drift (T12), T12 plus calendar-month deviations, long-run mean change plus calendar-month deviations (SEASC), mean reversion, a pooled ridge panel, and an ensemble. Calendar-month deviations are empirical-Bayes shrunk (a month with no real seasonality is pulled to zero).
+
+| Index-level RMSE (pp) | T12 (old) | SEASC (new) | Pooled ridge panel |
+|---|---|---|---|
+| 1 month, selection (n=45) | 0.582 | **0.433** | 0.547 |
+| 1 month, untouched test (n=34) | 0.848 | **0.606** | 0.598 |
+| 2 months, selection (n=44) | 0.994 | **0.729** | 0.933 |
+| 2 months, untouched test (n=34) | 1.426 | **0.951** | 0.936 |
+
+SEASC was best on the selection window at both horizons, so it was chosen then confirmed on the test (Diebold-Mariano on squared index errors: p = 0.007 and 0.003 selection, 0.001 and < 0.001 test). The ridge panel is marginally better on test only, and was not chosen (that would be picking after seeing the test). The linked-item block alone also improves (0.111 to 0.065 pp at h=1 on selection).
+
+**Wired:** `index.impute = "seasonal_trend"`. It applies only to TRAILING gaps (nowcast months with no later observation of the item). Interior gaps such as the splice month where an independent feed starts keep the old own-trend rule; applying the prior there would have revised published history (tested: it moved Jul/Aug 2026 by +0.07 and was reverted). Published history is unchanged. Demo/synthetic runs do not load the real tables.
+
+### 2. Wholesale yard calibration for the mandi-fed items (`scripts/yard_calibration.py`)
+The index treats one wholesale yard as if its change equalled the retail change. Calibration uses pooled data from every OTHER state (single district series against the state's official item change, lag-0 coefficient b0, residual sd) and fuses `b0*dw` with the seasonal prior by precision weights. Test: every Gujarat district series, Jan-Oct 2025, 136-180 test pairs per item.
+
+| RMSE of the monthly change (pp) | Trailing 12m | Seasonal prior | Raw wholesale (what the index did) | Calibrated fusion |
+|---|---|---|---|---|
+| Four vegetables | 16.4 | 12.1 | **24.4** | **8.8** |
+| Wheat | 0.60 | 0.50 | 4.75 | 0.41 |
+| Moong | 0.71 | 0.95 | 8.31 | 0.75 |
+
+- Raw one-for-one wholesale is the worst of all rules for vegetables (worse than doing nothing) and is 8 to 12 times worse than the trailing mean for wheat and moong. Fusion cuts the vegetable error by about two thirds.
+- Fitted b0: onion 0.30, tomato 0.60, brinjal 0.28; wheat -0.002 and moong 0.018 (no signal, so the fusion falls back on the prior). Potato (F021) is DoCA retail and is not touched.
+- **Wired:** `index.calibrate_wholesale = true` for F001, F004, F022, F023, F025 (`data/official/wholesale_calibration.csv`). **It is not yet active in the published numbers**: those items still have fewer than 5 observation days in the months involved, so they are imputed. It switches on automatically when a month qualifies, so the one-for-one feed can no longer enter the index. Calibration log is empty today.
+- Caveat: effective n is about 10 months (districts share monthly shocks). The pooled coefficient itself rests on ~23 other states and was validated leave-one-state-out in section AE (calibrated beats one-for-one in 16/21, 18/20, 16/20, 17/20 states for potato, onion, tomato, brinjal).
+- The earlier Gujarat-wide fusion test (`scripts/veg_fusion_test.py`, matched-district wholesale) gives 4.4 pp for pooled-beta wholesale alone vs 16.0 pp one-for-one, consistent.
+
+### 3. Re-calibrated 90% nowcast band (`scripts/build_nowcast_band.py`)
+Conformal band from 79/78 pseudo-real-time index errors (previously 11/10): **+/-0.76% at 1 month (was 1.23%) and +/-1.53% at 2 months (was 2.09%)**. Validity check: the selection-only quantile covers 91.2% of untouched 1-month test errors (target 90%) and 82.4% of 2-month errors (undercover; 2023-2025 was more volatile, e.g. tomato). The published band therefore uses the full sample, and the 2-month band should be read as slightly optimistic. The band assumes the independent items add no information (conservative on that side).
+
+### 4. Effect on published numbers (local, offline rebuild)
+Aug 2026 (official) unchanged at 107.629. Sep 108.888 to 108.766 (-0.12); Oct 109.399 to 109.383 (-0.02). Bands: Sep 107.94-109.60, Oct 107.72-111.07. 149 tests pass (8 new, `tests/test_seasonal.py`).
+
+### 5. What this does and does not do
+- Reduces the expected nowcast error of the index by about 28% (1 month) and 33% (2 months) versus the old rule on untouched data, and removes a failure mode (one-for-one wholesale) before it ever enters the published series.
+- Independent weight coverage is unchanged at 56.4%. This is better use of data, not new data.
+- The seasonal tables end at Dec 2025 and rest on 2012-base lines mapped to 2024-base items (4 approximate mappings). Rebuild with `scripts/build_seasonal_tables.py` when more history is added.
+- Real-time scoring continues through the vintage log: Sep's nowcast is scored when MoSPI publishes Sep 2026 (mid-Oct).

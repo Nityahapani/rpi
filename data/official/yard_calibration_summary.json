@@ -1,0 +1,190 @@
+{
+ "pairs": {
+  "Wheat atta": {
+   "n_train": 1798,
+   "n_states": 13,
+   "n_test": 180,
+   "n_test_districts": 21
+  },
+  "Moong": {
+   "n_train": 669,
+   "n_states": 11,
+   "n_test": 101,
+   "n_test_districts": 14
+  },
+  "Potato": {
+   "n_train": 2795,
+   "n_states": 26,
+   "n_test": 136,
+   "n_test_districts": 16
+  },
+  "Onion": {
+   "n_train": 2786,
+   "n_states": 24,
+   "n_test": 149,
+   "n_test_districts": 17
+  },
+  "Tomato": {
+   "n_train": 2797,
+   "n_states": 23,
+   "n_test": 153,
+   "n_test_districts": 17
+  },
+  "Brinjal": {
+   "n_train": 2590,
+   "n_states": 22,
+   "n_test": 142,
+   "n_test_districts": 17
+  }
+ },
+ "rmse_pp": {
+  "Brinjal": {
+   "T12": 15.31,
+   "SEAS": 13.84,
+   "SEASC": 13.66,
+   "W1": 38.07,
+   "WB": 10.17,
+   "FUSE": 11.2,
+   "WB0": 11.05,
+   "FUSE0": 11.33
+  },
+  "Moong": {
+   "T12": 0.71,
+   "SEAS": 0.94,
+   "SEASC": 0.95,
+   "W1": 8.31,
+   "WB": 0.71,
+   "FUSE": 0.76,
+   "WB0": 0.7,
+   "FUSE0": 0.75
+  },
+  "Onion": {
+   "T12": 9.71,
+   "SEAS": 5.77,
+   "SEASC": 7.27,
+   "W1": 15.76,
+   "WB": 5.36,
+   "FUSE": 4.85,
+   "WB0": 5.46,
+   "FUSE0": 4.86
+  },
+  "Potato": {
+   "T12": 11.05,
+   "SEAS": 8.32,
+   "SEASC": 7.43,
+   "W1": 10.34,
+   "WB": 4.35,
+   "FUSE": 5.23,
+   "WB0": 5.63,
+   "FUSE0": 6.05
+  },
+  "Tomato": {
+   "T12": 24.6,
+   "SEAS": 18.04,
+   "SEASC": 16.68,
+   "W1": 24.09,
+   "WB": 10.78,
+   "FUSE": 9.47,
+   "WB0": 12.51,
+   "FUSE0": 11.02
+  },
+  "Wheat atta": {
+   "T12": 0.6,
+   "SEAS": 0.49,
+   "SEASC": 0.5,
+   "W1": 4.75,
+   "WB": 0.47,
+   "FUSE": 0.41,
+   "WB0": 0.42,
+   "FUSE0": 0.41
+  },
+  "ALL": {
+   "T12": 13.49,
+   "SEAS": 10.31,
+   "SEASC": 9.91,
+   "W1": 20.37,
+   "WB": 6.76,
+   "FUSE": 6.72,
+   "WB0": 7.63,
+   "FUSE0": 7.26
+  },
+  "VEG4": {
+   "T12": 16.43,
+   "SEAS": 12.55,
+   "SEASC": 12.07,
+   "W1": 24.43,
+   "WB": 8.23,
+   "FUSE": 8.18,
+   "WB0": 9.29,
+   "FUSE0": 8.84
+  }
+ },
+ "coef": {
+  "Wheat atta": {
+   "b0": -0.004,
+   "b1": 0.07,
+   "sigma_wb": 0.0073,
+   "sigma_seas": 0.0096,
+   "b0_lag0only": -0.002,
+   "sigma_wb_lag0only": 0.0082,
+   "sigma_seasc": 0.0098,
+   "sigma_zero_wholesale": 0.0082,
+   "weight_on_wholesale": 0.63
+  },
+  "Moong": {
+   "b0": 0.019,
+   "b1": 0.005,
+   "sigma_wb": 0.0064,
+   "sigma_seas": 0.0089,
+   "b0_lag0only": 0.018,
+   "sigma_wb_lag0only": 0.0064,
+   "sigma_seasc": 0.0102,
+   "sigma_zero_wholesale": 0.0066,
+   "weight_on_wholesale": 0.659
+  },
+  "Potato": {
+   "b0": 0.306,
+   "b1": 0.214,
+   "sigma_wb": 0.0568,
+   "sigma_seas": 0.0683,
+   "b0_lag0only": 0.399,
+   "sigma_wb_lag0only": 0.0662,
+   "sigma_seasc": 0.0629,
+   "sigma_zero_wholesale": 0.0864,
+   "weight_on_wholesale": 0.591
+  },
+  "Onion": {
+   "b0": 0.291,
+   "b1": 0.19,
+   "sigma_wb": 0.0682,
+   "sigma_seas": 0.139,
+   "b0_lag0only": 0.3,
+   "sigma_wb_lag0only": 0.0753,
+   "sigma_seasc": 0.1305,
+   "sigma_zero_wholesale": 0.0907,
+   "weight_on_wholesale": 0.806
+  },
+  "Tomato": {
+   "b0": 0.546,
+   "b1": 0.13,
+   "sigma_wb": 0.1282,
+   "sigma_seas": 0.2671,
+   "b0_lag0only": 0.597,
+   "sigma_wb_lag0only": 0.1385,
+   "sigma_seasc": 0.2512,
+   "sigma_zero_wholesale": 0.2503,
+   "weight_on_wholesale": 0.813
+  },
+  "Brinjal": {
+   "b0": 0.294,
+   "b1": 0.098,
+   "sigma_wb": 0.087,
+   "sigma_seas": 0.0611,
+   "b0_lag0only": 0.282,
+   "sigma_wb_lag0only": 0.0898,
+   "sigma_seasc": 0.057,
+   "sigma_zero_wholesale": 0.1093,
+   "weight_on_wholesale": 0.331
+  }
+ }
+}

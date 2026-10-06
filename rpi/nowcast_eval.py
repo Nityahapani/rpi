@@ -117,6 +117,11 @@ def run_backtest(root: Path) -> dict:
     root = Path(root)
     lr, ww, indep, div = official_panel(root)
     res = backtest(lr, ww, indep, div)
+    hb = root / "data/official/nowcast_band_history.json"      # sweep 27: band from 11 years of seasonal-trend errors (n=79/78 origins) replaces the 11-origin band
+    if hb.exists():
+        h = json.loads(hb.read_text())
+        res["band_short_sample"] = res["band"]
+        res["band"] = {k: h[k] for k in ("alpha", "rule", "h1_abs_log", "h1_n", "h1_valid", "h2_abs_log", "h2_n", "h2_valid")}
     res["generated"] = dt.date.today().isoformat()
     (root / BAND_FILE).write_text(json.dumps(res, indent=2))
     return res

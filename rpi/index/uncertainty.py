@@ -9,7 +9,7 @@ from .elementary import rel_from_lp
 from .aggregate import aggregate
 
 
-def bootstrap_total(arrays: dict, periods, items, weights, reps=200, seed=7, min_matched=2, clip=0.7, impute="division"):
+def bootstrap_total(arrays: dict, periods, items, weights, reps=200, seed=7, min_matched=2, clip=0.7, impute="division", seasonal=None):
     rng = np.random.default_rng(seed)
     out = []
     for _ in range(reps):
@@ -21,7 +21,7 @@ def bootstrap_total(arrays: dict, periods, items, weights, reps=200, seed=7, min
             mm_i = int(min_matched[it]) if isinstance(min_matched, pd.Series) else min_matched
             r, k = rel_from_lp(lp[:, cols] if Q else lp, mm_i, clip)
             rel[it], n[it] = r, k
-        out.append(aggregate(rel, n, items, weights, min_matched, impute=impute)["total"].to_numpy())
+        out.append(aggregate(rel, n, items, weights, min_matched, impute=impute, seasonal=seasonal)["total"].to_numpy())
     arr = np.array(out)
     return (pd.Series(np.nanpercentile(arr, 2.5, axis=0), index=periods),
             pd.Series(np.nanpercentile(arr, 97.5, axis=0), index=periods))
