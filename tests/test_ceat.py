@@ -45,4 +45,4 @@ def test_ceat_pool_and_real_gate_recorded():
     g = c.gate(Path("data/ceat/sku_prices.csv"), Path("data/ceat/live_prices.csv"), Path("data/official/mospi_cpi2024_gujarat_urban.csv"))
     assert g["verdict"] in ("fail", "pass", "pending") and g["item_id"] == "T006"
     plan = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
-    assert plan.loc["T006", "primary_source"] == "official_link" and plan.loc["C003", "primary_source"] == "official_link"
+    assert plan.loc["T006", "primary_source"] == "official_link" and plan.loc["C003", "primary_source"] == "vishal_diary"   # wired 2026-10-06 as a pending-gate proxy by explicit user decision

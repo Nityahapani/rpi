@@ -21,8 +21,14 @@
     {
       "step": "ingest:tariff",
       "status": "ok",
-      "seconds": 0.9,
+      "seconds": 1.3,
       "detail": "{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}"
+    },
+    {
+      "step": "ingest:vishal_diary",
+      "status": "ok",
+      "seconds": 0.0,
+      "detail": "{'source': 'vishal_diary', 'status': 'ok', 'records': 44, 'accepted': 44, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:official_link",
@@ -39,13 +45,13 @@
     {
       "step": "validate:proxies",
       "status": "ok",
-      "seconds": 0.2,
-      "detail": "11 pass, 23 pending (<6 overlapping months), 0 fail"
+      "seconds": 0.3,
+      "detail": "11 pass, 26 pending (<6 overlapping months), 0 fail"
     },
     {
       "step": "screen:jockey_mrp",
       "status": "ok",
-      "seconds": 2.7,
+      "seconds": 3.9,
       "detail": "C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)"
     },
     {
@@ -57,25 +63,25 @@
     {
       "step": "screen:vishal_clothing",
       "status": "ok",
-      "seconds": 0.0,
-      "detail": "offline: archive history only; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); diagnostic only, not wired"
+      "seconds": 0.1,
+      "detail": "offline: archive history only; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
     },
     {
       "step": "evaluate:nowcast",
       "status": "ok",
-      "seconds": 0.2,
-      "detail": "own-trend h1 RMSE 0.617pp (zero 0.736, old peer-fill 0.084); 90% band +/-0.82% (h1), +/-1.36% (h2)"
+      "seconds": 0.4,
+      "detail": "own-trend h1 RMSE 0.617pp (zero 0.736, old peer-fill 0.069); 90% band +/-0.82% (h1), +/-1.36% (h2)"
     },
     {
       "step": "build",
       "status": "ok",
       "seconds": 0,
-      "detail": "run 20261006T185539475356Z"
+      "detail": "run 20261006T190921775504Z"
     },
     {
       "step": "audit",
       "status": "ok",
-      "seconds": 0.8,
+      "seconds": 1.3,
       "detail": "{\"n_months\": 20, \"items_with_official_index\": 64, \"weight_share_with_official_index_pct\": 99.99657, \"rmse\": 0.21130132980666544, \"max_abs_error\": 0.4525808025215099, \"cum_change_replicated_pct\": 6.844"
     },
     {
@@ -103,15 +109,15 @@
       "detail": "logged 2 nowcast(s); 0 month(s) scored against later official data"
     }
   ],
-  "run_id": "20261006T185539475356Z",
+  "run_id": "20261006T190921775504Z",
   "publish": {
     "latest_period": "2026-10",
     "index": 108.72,
     "mom_pct": 0.44,
     "yoy_pct": 7.23,
     "ci_95": [
-      107.96,
-      109.29
+      108.08,
+      109.25
     ],
     "ci_note": null,
     "reference_period": "2026-08",
@@ -126,25 +132,25 @@
       110.2
     ],
     "observed_weight_share": 0.31,
-    "run_id": "20261006T185539475356Z",
+    "run_id": "20261006T190921775504Z",
     "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
     "demo": false,
     "coverage_split": {
       "plan_weight_pct": {
-        "independent": 58.7,
-        "linked": 41.3,
+        "independent": 65.6,
+        "linked": 34.4,
         "none": 0.0
       },
       "independent_split_pct": {
         "direct (administered tariff / spot / PNG)": 22.1,
         "retail quotes (DoCA Rajkot centre reports; gated vs official)": 2.1,
-        "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 34.5
+        "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 41.5
       },
       "ref_period": "2026-08",
       "latest_period": "2026-10",
       "observed_weight_pct_ref": 100.0,
       "independent_weight_pct_ref": 37.6,
-      "independent_weight_pct_latest": 58.7
+      "independent_weight_pct_latest": 65.6
     }
   },
   "benchmarks": {
@@ -277,20 +283,20 @@
   },
   "coverage": {
     "plan_weight_pct": {
-      "independent": 58.7,
-      "linked": 41.3,
+      "independent": 65.6,
+      "linked": 34.4,
       "none": 0.0
     },
     "independent_split_pct": {
       "direct (administered tariff / spot / PNG)": 22.1,
       "retail quotes (DoCA Rajkot centre reports; gated vs official)": 2.1,
-      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 34.5
+      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 41.5
     },
     "ref_period": "2026-08",
     "latest_period": "2026-10",
     "observed_weight_pct_ref": 100.0,
     "independent_weight_pct_ref": 37.6,
-    "independent_weight_pct_latest": 58.7
+    "independent_weight_pct_latest": 65.6
   },
   "proxy_validation": [
     {
@@ -517,6 +523,33 @@
       "verdict": "pass",
       "proxy_months": 22,
       "official_months_after_proxy_start": 20
+    },
+    {
+      "item_id": "C001",
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending",
+      "proxy_months": 1,
+      "official_months_after_proxy_start": 0
+    },
+    {
+      "item_id": "C002",
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending",
+      "proxy_months": 1,
+      "official_months_after_proxy_start": 0
+    },
+    {
+      "item_id": "C003",
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending",
+      "proxy_months": 1,
+      "official_months_after_proxy_start": 0
     },
     {
       "item_id": "H001",

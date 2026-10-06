@@ -311,6 +311,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             collectors.append(("doca_national", DocaNationalCollector(client, store)))
             from .collectors.doca import DocaGujaratCollector
             collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
+    from .collectors.vishal_diary import VishalCollector       # PENDING-gate proxy (live diary only); reads the CSV, no network
+    collectors.append(("vishal_diary", VishalCollector(root)))
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
     _step("ingest:official_link", lambda: ingest.run_collector(conn, OfficialLinkCollector(
@@ -410,7 +412,7 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             if not offline:
                 n, msg = vishal_diary.accrue(root / "data/vishal/live_prices.csv", root / "data/vishal/pool.csv", client)
             vishal_screen.extend(vishal_diary.gate(root / "data/vishal/prices.csv", root / "data/vishal/live_prices.csv", root / "data/vishal/pool.csv", root / OFFICIAL_CSV))
-            return msg + "; " + "; ".join(f"{g['item_id']} {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} SKUs)" for g in vishal_screen) + "; diagnostic only, not wired"
+            return msg + "; " + "; ".join(f"{g['item_id']} {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} SKUs)" for g in vishal_screen) + "; WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
         _step("screen:vishal_clothing", _vishal, results)
 
     def _nowcast_eval():

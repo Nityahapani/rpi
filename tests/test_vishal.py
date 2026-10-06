@@ -43,3 +43,17 @@ def test_live_replaces_archive_month(tmp_path):
     pd.DataFrame({"date": ["2026-09-05"], "item_id": ["C002"], "url": ["u1"], "price": [120.0], "in_stock": [0]}).to_csv(lv, index=False)
     p = v.monthly_panel(a, lv, pool, "C002")
     assert p.loc["2026-09", "u1"] == 120.0 and p.loc["2026-09", "u2"] == 200.0
+
+
+def test_vishal_live_collector_and_plan_wiring():
+    """C001-C003 are wired as PENDING-gate proxies (explicit decision 2026-10-06): live diary only, multi-SKU, official backfill before the feed."""
+    from pathlib import Path as _P
+    from rpi.collectors.vishal_diary import VishalCollector
+    from rpi.collectors.official_link import BACKFILL_SOURCES
+    from rpi.proxy_check import PROXY_SOURCES, MULTI_SKU_SOURCES
+    root = _P(__file__).resolve().parents[1]
+    obs = list(VishalCollector(root).collect(None))
+    assert len(obs) >= 44 and {o.item_id for o in obs} == {"C001", "C002", "C003"} and all(o.price > 0 and o.source_id == "vishal_diary" for o in obs)
+    assert "vishal_diary" in BACKFILL_SOURCES and "vishal_diary" in PROXY_SOURCES and "vishal_diary" in MULTI_SKU_SOURCES
+    plan = pd.read_csv(root / "data/source_plan.csv", dtype=str).set_index("item_id")
+    assert all("PENDING GATE" in plan.loc[i, "note"] and plan.loc[i, "class"] == "independent" for i in ("C001", "C002", "C003"))

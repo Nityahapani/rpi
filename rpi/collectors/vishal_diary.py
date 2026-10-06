@@ -65,6 +65,31 @@ def accrue(path: Path, pool_csv: Path, client, today: dt.date | None = None) -> 
     return len(rows), f"{len(rows)}/{len(pool)} pool products priced" + (f"; {bad} unreadable" if bad else "")
 
 
+class VishalCollector:
+    """Wires the live diary (data/vishal/live_prices.csv) into the index as a PENDING-GATE proxy for C001-C003.
+
+    Only LIVE diary quotes are emitted (fixed pool, one SKU per product URL).  The sparse Internet-Archive history is NOT used: it has 3-5 usable
+    months and different URLs.  Earlier months stay on the official stand-in (BACKFILL_SOURCES); the item index is the matched-model Jevons chain.
+    The gate (>= 6 overlapping months) cannot be judged before about Apr 2027, so these items are reported as `pending`, not validated.
+    """
+    source_id = "vishal_diary"
+    last_snapshot_id = None
+
+    def __init__(self, root: Path):
+        self.live = Path(root) / "data/vishal/live_prices.csv"
+
+    def collect(self, on_date):
+        from .base import Observation
+        if not self.live.exists():
+            return
+        d = pd.read_csv(self.live)
+        d = d[(d.price > 0) & d.item_id.isin(GROUPS)]
+        for r in d.itertuples():
+            y, m, dd = (int(x) for x in r.date.split("-"))
+            yield Observation(dt.date(y, m, dd), self.source_id, "VISHAL:" + r.url.rstrip("/").rsplit("/", 1)[-1][:80],
+                              r.url, r.item_id, "IN-ESTORE", float(r.price), qty_base=1.0, base_unit="pc")
+
+
 def monthly_panel(archive_csv: Path, live_csv: Path, pool_csv: Path, item: str) -> pd.DataFrame:
     """months x URL: median archive price per month for pool URLs; a live quote for the same URL and month replaces the archive value."""
     pool = pd.read_csv(pool_csv, dtype=str)
