@@ -315,6 +315,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     collectors.append(("vishal_diary", VishalCollector(root)))
     from .collectors.frc_fees import FrcSchoolFeeCollector    # regulator-approved Rajkot school fees (E001); reads data/frc/rajkot_fees.csv
     collectors.append(("frc_rajkot", FrcSchoolFeeCollector(root)))
+    from .collectors.practo_fees import PractoCollector      # PENDING-gate proxy (live diary only); reads the CSV, no network
+    collectors.append(("practo_rajkot", PractoCollector(root)))
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
     _step("ingest:official_link", lambda: ingest.run_collector(conn, OfficialLinkCollector(
@@ -417,6 +419,18 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             return msg + "; " + "; ".join(f"{g['item_id']} {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} SKUs)" for g in vishal_screen) + "; WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
         _step("screen:vishal_clothing", _vishal, results)
 
+    practo_screen: list[dict] = []
+    if (root / "data/practo/pool.csv").exists():
+        def _practo():
+            from .collectors import practo_fees
+            msg = "offline"
+            if not offline:
+                n, msg = practo_fees.accrue(root / "data/practo/live_fees.csv", root / "data/practo/pool.csv", client)
+            g = practo_fees.gate(root / "data/practo/live_fees.csv", root / OFFICIAL_CSV)
+            practo_screen.append(g)
+            return f"{msg}; M003 {g['verdict']} (n={g['n_overlap']}, corr={g['corr']}, drift={g['drift']}, {g['n_skus']} doctor-clinics); WIRED as a pending-gate proxy"
+        _step("screen:practo_doctor_fees", _practo, results)
+
     def _nowcast_eval():
         from .nowcast_eval import run_backtest
         r = run_backtest(root)
@@ -454,6 +468,7 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     out["mrp_screen"] = mrp_screen
     out["ceat_screen"] = ceat_screen
     out["vishal_screen"] = vishal_screen
+    out["practo_screen"] = practo_screen
     log = pd.DataFrame(results).assign(at=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"))
     lp = root / "data/refresh_log.csv"
     log.to_csv(lp, mode="a", header=not lp.exists(), index=False)

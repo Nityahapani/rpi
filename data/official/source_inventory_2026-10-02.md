@@ -639,3 +639,22 @@ Approved fee change by academic year: 2022-23 +4.9%, 2023-24 +6.5%, 2024-25 +5.2
 Gate (unchanged: corr >= 0.5, |drift| <= 10%, >= 6 months): live window 2025-01..2026-08 n=20, corr 0.64, drift 0.6%, PASS. Out-of-sample window 2021-12..2025-12 against the 2012-series item, n=49, corr 0.87, drift 1.6%, PASS.
 
 Limits: only schools above the statutory fee cap are in the database (upper-fee segment); approved fee is a ceiling, not a price paid; the timing profile is borrowed from the official index's history, so the series is not independent of MoSPI's seasonal shape; Rajkot-city only. Re-harvest each June-August.
+
+
+### M003 doctor's fee: Practo Rajkot listings (wired 2026-10-06, pending gate)
+
+`rpi/collectors/practo_fees.py` reads Practo's server-rendered listing pages for Rajkot (`practo.com/rajkot/<speciality>?page=n`) in 16 allopathic specialities (dentists and AYUSH excluded). Each card gives the doctor's profile slug, practice id, clinic and the "consultation fee at clinic" the doctor lists. The fixed pool on the selection date is 180 doctor-clinics (`data/practo/pool.csv`; general physician 53, paediatrician 20, orthopaedist 16, cardiologist 15, psychiatrist 13 ...; median fee Rs 300 for GPs, Rs 1,150 for cardiologists). Matched-model Jevons chain, same as the Vishal diary. robots.txt (`User-agent: *`) disallows searches, the appointment flow and APIs, not listing pages; reading is at 2 s spacing, about 3 minutes per refresh.
+
+Gate: history starts 2026-10-06, so the unchanged gate (>= 6 overlapping months) cannot be judged before about Apr 2027: the item is `pending`. Fees change about once a year per doctor, so even then the monthly correlation may be low; a fail demotes it. Limits: listed, not billed, fees; self-selected doctors; Wayback was offline when checked, so there is no back-history.
+
+### Sweep results, 2026-10-06 (no new wiring)
+
+| Candidate | Finding | Verdict |
+|---|---|---|
+| Zomato / Swiggy menus (D001, D003) | Zomato robots.txt: `User-agent: *  Disallow: /`. Swiggy menus are JS-rendered. Delivery-menu prices also carry platform mark-ups. | Not used (robots) |
+| Justdial (restaurants, salons) | 403 to the sandbox | Dead end |
+| district.in cinema pages (S001) | Static JSON-LD with a price per show for Cosmoplex, PVR/INOX and Cinepolis Rajkot; robots allows pages without a query string. Price depends on film, format, tier and slot; a matched design needs a fixed hall x format x slot rule and the weight is 0.24%. | Feasible, not wired (small weight, needs a design) |
+| Allen / Aakash fee pages (E002) | allen.in returns 202 empty (JS), aakash.ac.in 403. Press quotes only: Aakash regular one-year NEET Rs 1,36,526, Allen Nurture 1st year Rs 1,57,000 for 2026-27 (India Today, 29 Mar 2026). | Dead end for a series |
+| RMTS / BRTS city bus fare (T003) | Unofficial fare pages and a Scribd matrix only; GSRTC (intercity) nominal hikes (+10% Mar 2025, +3% Jan 2026) overstate the official bus-fare index (+2.7%, +1.2%). | Not wired (a nominal register would be a poor proxy) |
+| Broadband (K003) | Entry plan prices (Jio Fiber Rs 399, Airtel Rs 499, BSNL Rs 449) come only from blog sites; no dated history. | Not wired |
+| Newspapers (S003) | No static rate card; only 2005-2019 articles on cover prices. | Not wired |
