@@ -3,59 +3,59 @@
     "zero_change": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.772,
-        "bias_pp": -0.43
+        "rmse_pp": 0.736,
+        "bias_pp": -0.422
       },
       "h2": {
         "n": 10,
-        "rmse_pp": 1.408,
-        "bias_pp": -0.855
+        "rmse_pp": 1.378,
+        "bias_pp": -0.87
       }
     },
     "own_trend": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.65,
-        "bias_pp": -0.187
+        "rmse_pp": 0.617,
+        "bias_pp": -0.213
       },
       "h2": {
         "n": 10,
-        "rmse_pp": 1.149,
-        "bias_pp": -0.383
+        "rmse_pp": 1.134,
+        "bias_pp": -0.474
       }
     },
     "own_trend_independents_exact": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.087,
-        "bias_pp": -0.038
+        "rmse_pp": 0.095,
+        "bias_pp": -0.042
       },
       "h2": {
         "n": 10,
-        "rmse_pp": 0.168,
-        "bias_pp": -0.091
+        "rmse_pp": 0.185,
+        "bias_pp": -0.099
       }
     },
     "old_division_peer_fill": {
       "h1": {
         "n": 11,
-        "rmse_pp": 0.124,
-        "bias_pp": 0.032
+        "rmse_pp": 0.084,
+        "bias_pp": -0.032
       },
       "h2": {
         "n": 10,
-        "rmse_pp": 0.163,
-        "bias_pp": 0.064
+        "rmse_pp": 0.14,
+        "bias_pp": -0.067
       }
     }
   },
   "band": {
     "alpha": 0.1,
     "rule": "seasonal_trend (SEASC), 2018-2025 rolling-origin on official Gujarat-urban base-2012 item data; independent items add no information (conservative)",
-    "h1_abs_log": 0.0076,
+    "h1_abs_log": 0.00817,
     "h1_n": 79,
     "h1_valid": true,
-    "h2_abs_log": 0.01532,
+    "h2_abs_log": 0.01359,
     "h2_n": 78,
     "h2_valid": true
   },
@@ -69,10 +69,10 @@
   "band_short_sample": {
     "alpha": 0.1,
     "rule": "own_trend (conservative: independent items add no information)",
-    "h1_abs_log": 0.01234,
+    "h1_abs_log": 0.01374,
     "h1_n": 11,
     "h1_valid": true,
-    "h2_abs_log": 0.02094,
+    "h2_abs_log": 0.02442,
     "h2_n": 10,
     "h2_valid": true
   },

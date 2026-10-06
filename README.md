@@ -72,7 +72,7 @@ Not written on purpose: BigBasket/Blinkit/Zepto-type scrapers (ToS/robots risk).
 2. Source a primary FPPPA + electricity-duty notice (GUVNL/PGVCL) -> electricity; RMC water bill; GSRTC/RMC bus fare; telecom tariff pages; school fee committee order.
 3. **Rent (19.7% of weight):** MoSPI rent index is the only official proxy; build a listings-based hedonic index (ToS review first) or use HCES-calibrated rent from the official item index as an explicit, flagged stand-in.
 4. Automate monthly refresh of the MoSPI series (`make official`) and Labour Bureau Rajkot CPI-IW; load older Labour Bureau letters.
-5. Tighten weights: HCES 2023-24 unit-level data to replace the equal split within groups.
+5. Weights: item weights are now recovered from the official index tree (rpi/hierweights.py); HCES 2023-24 unit-level data could still replace them with surveyed expenditure shares.
 6. First retail adapter (ToS-reviewed) with parser contract tests + canary alerts; SKU matching queue; offline calibration panel.
 
 ## Why independent weight is 18.4% (and not 40%)

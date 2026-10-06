@@ -9,7 +9,8 @@ What is official and what is estimated (be honest about it - this goes in the ou
             solution toward the all-India urban weights. Lambda is chosen by hold-out RMSE.
             (12 division series over ~20 months are nearly collinear - an unpenalised fit is unstable.)
   APPROX    group weight within a division = all-India urban group share (Gujarat group shares unknown)
-  APPROX    a group's weight is split equally among the basket items mapped to it
+  ESTIMATED item weights: recovered node by node from the published official index tree (rpi/hierweights.py); the legacy equal split
+            is kept in the column weight_equal_split_old for comparison
   NOT COVERED  groups with no basket item. Weights are renormalised over covered groups; coverage is reported.
 """
 from __future__ import annotations
@@ -126,10 +127,23 @@ def run(root: Path) -> dict:
     mapping = pd.read_csv(root / "data/basket_official_map.csv", dtype=str, keep_default_na=False)
     basket = pd.read_csv(root / "data/basket.csv", dtype={"division": str})
     items, cov = build_item_weights(imp["gujarat_urban_implied"], grp_ai, mapping, basket)
+    # ---- hierarchical item weights (rpi/hierweights.py): replaces the equal split of a group's weight among its mapped items.
+    from . import hierweights as HW
+    first = sorted(official.period.unique())[0]
+    tree = HW.fit_tree(official, {k: v[1] for k, v in grp_ai.items()}, imp["gujarat_urban_implied"], cv=True)
+    lv0 = official[official.period == first]
+    lv0 = lv0.set_index(lv0["code"].fillna(""))["index_value"].to_dict()
+    node = {r.item_id: (r.official_item_code or HW.UNMAPPED_NODE.get(r.item_id, "")) for r in mapping.itertuples()}
+    hw = HW.basket_weights(tree, node, lv0)
+    items = items.rename(columns={"weight": "weight_equal_split_old"})
+    items["weight"] = items["item_id"].map(hw)
+    assert items["weight"].notna().all() and abs(items["weight"].sum() - 100) < 1e-6, items[items.weight.isna()]
+    tree.round(6).to_csv(root / "data/official/hier_weights_tree.csv", index=False)
 
     src = (f"APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices "
            f"(ridge lambda={diag['lambda']:g}, hold-out RMSE {diag['grid'].holdout_rmse.min():.3f} idx pts vs {diag['all_india_holdout_rmse']:.3f} "
            f"for all-India weights); equal split within group; covers {cov.attrs['total_coverage']*100:.1f}% of basket")
+    src = src.replace("equal split within group", "within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches)")
     out = items[["item_id", "weight"]].copy()
     out["weight"] = out["weight"].round(5)
     out["weight_source"] = src

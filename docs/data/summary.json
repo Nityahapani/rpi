@@ -1,11 +1,11 @@
 {
   "latest_period": "2026-10",
-  "index": 109.5,
-  "mom_pct": 0.52,
-  "yoy_pct": 7.73,
+  "index": 108.72,
+  "mom_pct": 0.44,
+  "yoy_pct": 7.23,
   "ci_95": [
-    108.07,
-    110.23
+    107.96,
+    109.29
   ],
   "ci_note": null,
   "reference_period": "2026-08",
@@ -13,31 +13,31 @@
     "2026-09",
     "2026-10"
   ],
-  "reference_index": 107.63,
-  "reference_yoy_pct": 5.58,
+  "reference_index": 107.33,
+  "reference_yoy_pct": 5.49,
   "nowcast_band_90": [
-    107.83,
-    111.19
+    107.25,
+    110.2
   ],
-  "observed_weight_share": 0.238,
-  "run_id": "20261006T183230295952Z",
-  "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); equal split within group; covers 92.8% of basket | price-updated to 2025-01 with official item indices",
+  "observed_weight_share": 0.31,
+  "run_id": "20261006T185539475356Z",
+  "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
   "demo": false,
   "coverage_split": {
     "plan_weight_pct": {
-      "independent": 56.4,
-      "linked": 42.0,
-      "none": 1.6
+      "independent": 58.7,
+      "linked": 41.3,
+      "none": 0.0
     },
     "independent_split_pct": {
-      "direct (administered tariff / spot / PNG)": 12.9,
-      "retail quotes (DoCA Rajkot centre reports; gated vs official)": 3.8,
-      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 39.7
+      "direct (administered tariff / spot / PNG)": 22.1,
+      "retail quotes (DoCA Rajkot centre reports; gated vs official)": 2.1,
+      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 34.5
     },
     "ref_period": "2026-08",
     "latest_period": "2026-10",
-    "observed_weight_pct_ref": 98.4,
-    "independent_weight_pct_ref": 30.8,
-    "independent_weight_pct_latest": 56.4
+    "observed_weight_pct_ref": 100.0,
+    "independent_weight_pct_ref": 37.6,
+    "independent_weight_pct_latest": 58.7
   }
 }
