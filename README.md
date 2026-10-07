@@ -54,6 +54,11 @@ Sep and Oct 2026 are partly a **nowcast** (MoSPI lags about 12 days after month 
 
 **Independent plan share: 89.2%** = 70.2% observed or proxy + 19.0% modelled rent. It was 18.4% at the first sweep and 70.2% before rent was modelled.
 
+## Methods round, 2026-10-07 (inventory section AK)
+- **Pre-registered live scoring** (`rpi/prereg.py`, refresh step `log:prereg`): each refresh date-stamps every gated item's forecast of the next official change before the official figure is seen, then scores it when MoSPI publishes; per-item CUSUM flag (does not demote automatically; `[prereg] auto_demote` is off). First scores: MoSPI Sep 2026, mid-Oct.
+- **Fused best-estimate series** (`docs/data/rpi_fused.csv`, `rpi/fusion.py`, `scripts/fusion_backtest.py`): seasonal prior + calibrated proxy, with an 80% band. A nowcast of the **official basis**, not independent, not counted in any share. In a 14-origin backtest it beats the seasonal prior (index RMSE 0.33 vs 0.47 pp) but is **not better than the plain beta = 1 rule (0.30 pp)**; its value is the band.
+- **Negative results:** cross-state partial pooling of the national proxy's pass-through does not beat beta = 1 (loss ratio 1.00-1.02); the national panel is only 5-16% better than predicting zero for chana, banana and tur, and no better for rice. Weather, festival-timing and AR drivers do not beat the seasonal prior for potato, onion, tomato, brinjal.
+
 ## The gate
 `rpi/proxy_check.py`. For each gated item over the months it overlaps the official Gujarat-urban item index:
 - `corr`: correlation of month-on-month log changes, must be >= 0.5;

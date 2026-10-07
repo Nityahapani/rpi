@@ -1,0 +1,114 @@
+{
+ "n_states": 36,
+ "n_pairs": 1562,
+ "summary": [
+  {
+   "item": "Banana",
+   "n": 216,
+   "rmse_ZERO": 3.854,
+   "rmse_BETA1": 3.624,
+   "rmse_OWN": 4.304,
+   "rmse_POOL": 3.699,
+   "rmse_PP": 3.682,
+   "pp_vs_beta1": 1.016,
+   "pp_wins_vs_beta1": 0.444
+  },
+  {
+   "item": "Chana dal",
+   "n": 210,
+   "rmse_ZERO": 1.472,
+   "rmse_BETA1": 1.4,
+   "rmse_OWN": 1.428,
+   "rmse_POOL": 1.401,
+   "rmse_PP": 1.4,
+   "pp_vs_beta1": 1.0,
+   "pp_wins_vs_beta1": 0.49
+  },
+  {
+   "item": "Rice",
+   "n": 216,
+   "rmse_ZERO": 0.766,
+   "rmse_BETA1": 0.778,
+   "rmse_OWN": 0.916,
+   "rmse_POOL": 0.765,
+   "rmse_PP": 0.794,
+   "pp_vs_beta1": 1.021,
+   "pp_wins_vs_beta1": 0.505
+  },
+  {
+   "item": "Tur dal",
+   "n": 210,
+   "rmse_ZERO": 2.288,
+   "rmse_BETA1": 1.923,
+   "rmse_OWN": 1.972,
+   "rmse_POOL": 1.945,
+   "rmse_PP": 1.943,
+   "pp_vs_beta1": 1.01,
+   "pp_wins_vs_beta1": 0.567
+  }
+ ],
+ "gujarat_only": [
+  {
+   "item": "Banana",
+   "n": 6,
+   "rmse_ZERO": 2.619,
+   "rmse_BETA1": 1.561,
+   "rmse_OWN": 2.361,
+   "rmse_POOL": 1.473,
+   "rmse_PP": 1.537,
+   "pp_vs_beta1": 0.985,
+   "pp_wins_vs_beta1": 0.833
+  },
+  {
+   "item": "Chana dal",
+   "n": 6,
+   "rmse_ZERO": 0.479,
+   "rmse_BETA1": 0.414,
+   "rmse_OWN": 0.607,
+   "rmse_POOL": 0.388,
+   "rmse_PP": 0.584,
+   "pp_vs_beta1": 1.411,
+   "pp_wins_vs_beta1": 0.333
+  },
+  {
+   "item": "Rice",
+   "n": 6,
+   "rmse_ZERO": 0.606,
+   "rmse_BETA1": 0.605,
+   "rmse_OWN": 0.607,
+   "rmse_POOL": 0.604,
+   "rmse_PP": 0.605,
+   "pp_vs_beta1": 1.0,
+   "pp_wins_vs_beta1": 0.5
+  },
+  {
+   "item": "Tur dal",
+   "n": 6,
+   "rmse_ZERO": 1.545,
+   "rmse_BETA1": 1.016,
+   "rmse_OWN": 1.002,
+   "rmse_POOL": 1.029,
+   "rmse_PP": 1.003,
+   "pp_vs_beta1": 0.987,
+   "pp_wins_vs_beta1": 0.5
+  }
+ ],
+ "pooled_b_all_states": {
+  "Rice": 0.114,
+  "Tur dal": 0.69,
+  "Chana dal": 0.889,
+  "Banana": 1.102
+ },
+ "gujarat_own_b": {
+  "Rice": 0.207,
+  "Tur dal": 0.777,
+  "Chana dal": 1.457,
+  "Banana": 2.126
+ },
+ "tau2": {
+  "Rice": 0.0001,
+  "Tur dal": 0.1633,
+  "Chana dal": 0.2756,
+  "Banana": 0.2571
+ }
+}

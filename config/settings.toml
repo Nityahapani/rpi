@@ -53,3 +53,6 @@ api_key_env = "DATA_GOV_API_KEY"
 
 [health]
 stale_days = { A = 3, B = 3, C = 45, D = 9999 }
+
+[prereg]   # pre-registered live scoring of every gated series (rpi/prereg.py)
+auto_demote = false   # true: a series flagged by the CUSUM is reverted to official_link automatically

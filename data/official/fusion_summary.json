@@ -1,0 +1,117 @@
+{
+ "coverage_80_in_sample_scaled": 0.786,
+ "coverage_80_unscaled": 0.786,
+ "n_origins": 14,
+ "origins": [
+  "2025-07",
+  "2026-08"
+ ],
+ "rmse_index_pp": {
+  "PRIOR": 0.473,
+  "RAW": 0.303,
+  "CAL": 0.291,
+  "FUSE": 0.329,
+  "FUSE_A5": 0.329
+ },
+ "dm": {
+  "RAW_vs_PRIOR": {
+   "loss_ratio": 0.639,
+   "t": 2.09,
+   "p_two_sided": 0.056
+  },
+  "CAL_vs_PRIOR": {
+   "loss_ratio": 0.615,
+   "t": 2.17,
+   "p_two_sided": 0.049
+  },
+  "FUSE_vs_PRIOR": {
+   "loss_ratio": 0.694,
+   "t": 2.07,
+   "p_two_sided": 0.059
+  },
+  "FUSE_A5_vs_PRIOR": {
+   "loss_ratio": 0.695,
+   "t": 2.07,
+   "p_two_sided": 0.059
+  },
+  "FUSE_vs_RAW": {
+   "loss_ratio": 1.086,
+   "t": -1.34,
+   "p_two_sided": 0.204
+  },
+  "FUSE_vs_CAL": {
+   "loss_ratio": 1.128,
+   "t": -1.71,
+   "p_two_sided": 0.111
+  },
+  "FUSE_A5_vs_FUSE": {
+   "loss_ratio": 1.002,
+   "t": -0.79,
+   "p_two_sided": 0.443
+  }
+ },
+ "by_class_rmse_pp": {
+  "direct": {
+   "PRIOR": 1.532,
+   "RAW": 2.226,
+   "CAL": 2.11,
+   "FUSE": 2.226,
+   "FUSE_A5": 2.226,
+   "weight_share": 0.266
+  },
+  "gated": {
+   "PRIOR": 3.276,
+   "RAW": 3.237,
+   "CAL": 3.247,
+   "FUSE": 3.227,
+   "FUSE_A5": 3.228,
+   "weight_share": 0.626
+  },
+  "prior": {
+   "PRIOR": 0.578,
+   "RAW": 0.578,
+   "CAL": 0.578,
+   "FUSE": 0.578,
+   "FUSE_A5": 0.578,
+   "weight_share": 0.108
+  }
+ },
+ "top_error_share": {
+  "RAW_se": {
+   "F023": 0.303,
+   "F025": 0.173,
+   "F022": 0.157,
+   "T004": 0.155,
+   "F024": 0.071,
+   "R002": 0.046,
+   "F021": 0.02,
+   "D003": 0.011
+  },
+  "FUSE_se": {
+   "F023": 0.293,
+   "F025": 0.167,
+   "F022": 0.152,
+   "T004": 0.149,
+   "F024": 0.072,
+   "R002": 0.045,
+   "F021": 0.012,
+   "D003": 0.01
+  }
+ },
+ "band_scale": 0.898,
+ "mean_sd_model_pp": 0.366,
+ "mean_abs_truth_pp": 0.478,
+ "corr_truth_vs_official_general": 0.906,
+ "complete_through": "2026-09",
+ "nowcast_months": [
+  {
+   "period": "2026-09",
+   "index": 107.194,
+   "kind": "nowcast",
+   "band80_lo": 106.778,
+   "band80_hi": 107.613,
+   "mom_pct": 0.503,
+   "yoy_pct": 4.87
+  }
+ ]
+}

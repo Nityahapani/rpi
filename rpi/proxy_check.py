@@ -60,7 +60,7 @@ def chain_series(piv: pd.DataFrame) -> pd.Series:
     return lvl
 
 
-def validate_proxies(conn, official_csv, mapping_csv, plan_csv) -> list[dict]:
+def validate_proxies(conn, official_csv, mapping_csv, plan_csv, series_out: dict | None = None) -> list[dict]:
     plan = pd.read_csv(plan_csv, dtype=str, keep_default_na=False)
     mp = pd.read_csv(mapping_csv, dtype=str, keep_default_na=False).set_index("item_id")
     off = pd.read_csv(official_csv, dtype={"code": str})
@@ -81,6 +81,8 @@ def validate_proxies(conn, official_csv, mapping_csv, plan_csv) -> list[dict]:
                 conn, params=[it, *MULTI_SKU_SOURCES])
             proxy = chain_series(sk.pivot(index="m", columns="sku", values="v").sort_index()) if len(sk) else pd.Series(dtype=float)
         o = off[code].dropna() if code in off.columns else pd.Series(dtype=float)
+        if series_out is not None:
+            series_out[it] = (proxy, o, plan.set_index("item_id").loc[it, "primary_source"])
         if plan.set_index("item_id").loc[it, "primary_source"] in MODELLED_SOURCES:
             from .rentsignal import judge_trend
             res.append({"item_id": it, **judge_trend(proxy, o), "proxy_months": int(len(proxy)),

@@ -2,7 +2,7 @@
 
 The sections below are the README's running sweep log up to 2026-10-06, kept verbatim for the record. Numbers in them (independent share, test counts, source states)
 were true when written and are **superseded** by the current README and by `data/official/source_inventory_2026-10-02.md` (sections A-AJ). Later work (sweeps 28-30: hierarchical
-item weights, Vishal clothing, FRC school fees, cinema and salon diaries, the rent signal) is documented in that inventory, sections AF-AJ.
+item weights, Vishal clothing, FRC school fees, cinema and salon diaries, the rent signal) is documented in that inventory, sections AF-AJ. The 2026-10-07 methods round (pre-registered scoring, fused series, pooling, vegetable drivers) is section AK.
 
 ## Status as of 2026-10-02 (superseded)
 

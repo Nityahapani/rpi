@@ -354,6 +354,25 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
         return f"{sum(p['verdict'] == 'pass' for p in proxies)} pass, {pend} pending (<6 overlapping months), 0 fail"
     _step("validate:proxies", _proxy_step, results)
 
+    def _prereg():
+        from . import prereg
+        from .proxy_check import validate_proxies as _vp
+        ser: dict = {}
+        _vp(conn, root / OFFICIAL_CSV, root / "data/basket_official_map.csv", root / "data/source_plan.csv", series_out=ser)
+        n_new = prereg.log_predictions(root, ser)
+        n_seen = prereg.log_official_arrivals(root, {k: v[1] for k, v in ser.items()})
+        sc = prereg.score(root, {k: v[1] for k, v in ser.items()})
+        card = prereg.scorecard(sc)
+        card.to_csv(root / prereg.SCORECARD, index=False)
+        sc.to_csv(root / "data/official/prereg_scored_targets.csv", index=False)
+        flagged = card.loc[card["flag"].astype(bool), "item_id"].tolist() if len(card) else []
+        done = prereg.apply_demotions(root, flagged, bool(settings.get("prereg", {}).get("auto_demote", False)))
+        msg = f"logged {n_new} new prediction(s), {n_seen} official item-month(s) stamped; {len(sc)} target(s) scored over {len(card)} item(s); flagged {flagged or 'none'}" + (f"; DEMOTED {done}" if done else "")
+        if flagged:
+            raise RuntimeError("PREREG CUSUM FLAG: " + msg)
+        return msg
+    _step("log:prereg", _prereg, results)
+
     doca_screen: list[dict] = []
     if not offline:
         def _doca_screen():
