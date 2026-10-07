@@ -2,7 +2,7 @@
 
 
 - Reference month 2026-08: index **107.32**, YoY **5.44%**
-- Latest month 2026-10 (nowcast): index **108.36**  (95% CI 107.47-109.0)
+- Latest month 2026-10 (nowcast): index **108.36**  (95% CI 107.48-109.06)
 - Nowcast 90% band for 2026-10: **106.9 - 109.85** (split-conformal from a rolling-origin back-test on official data; conservative)
 - Month-on-month: **0.15%**
 - Year-on-year: **6.79%**
@@ -24,10 +24,10 @@
 | item | % change |
 |---|---|
 | Personal care & misc. | 22.93 |
-| Transport | 13.03 |
+| Transport | 12.97 |
 | Restaurants & accommodation | 10.63 |
 | Education | 10.34 |
-| Food & non-alcoholic beverages | 9.13 |
+| Food & non-alcoholic beverages | 9.16 |
 | Information & communication | 7.56 |
 | Clothing & footwear | 5.18 |
 | Household goods & services | 5.11 |
@@ -35,4 +35,4 @@
 | Health | 3.33 |
 | Recreation & culture | 2.67 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261006T221856254671Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261007T114807776719Z._
