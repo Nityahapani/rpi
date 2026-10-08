@@ -1,13 +1,17 @@
 """Nowcast evaluation: rolling-origin back-test, conformal bands and a real-time vintage log.
 
-Months after the last official release are NOT observed for most of the basket (72.7% of weight is official-linked), so the
-published level for those months is a nowcast. This module answers, with data rather than opinion, "how wrong are such
-nowcasts, and which fill rule is least wrong?":
+Months after the last official release are not fully observed, so the published level for those months is a nowcast: every
+item with no independent feed falls back to a fill rule, and the back-test below measures how wrong such fills are and which
+rule is least wrong.  Which items those are is read LIVE from data/source_plan.csv (everything whose `class` is not
+`independent` - a small and shrinking set, 10.8% of weight today, all flagged official stand-ins); this module hard-codes no
+split, so the numbers here cannot drift from the wiring:
 
 * the 20 months of official Gujarat-urban item indices are replayed in a rolling-origin (expanding window) pseudo-real-time
   exercise: at every origin t the fill rule only sees months < t, and its 1- and 2-month-ahead total log change is compared
   with what the official item indices then did;
-* the rules compared are: zero change, the item's own 12-month mean drift (what the index uses), the item's own drift while
+* the rules compared are: zero change, the item's own 12-month mean drift (the engine's fallback rule - it fills INTERIOR gaps, e.g. the splice month
+  where an independent feed starts, and any item without a seasonal table; TRAILING nowcast gaps instead use the seasonal-trend prior where one exists,
+  see rpi/seasonal.py and rpi/index/aggregate.py::impute_relatives), the item's own drift while
   our independently observed items are assumed to be seen EXACTLY (an optimistic floor), and the old rule that filled
   unobserved items with the weighted mean relative of observed peers in the same division (shown to be harmful);
 * a split-conformal band (distribution-free, finite-sample corrected) is built from the absolute errors of the conservative

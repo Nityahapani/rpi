@@ -1,5 +1,6 @@
 """Official MoSPI CPI (base 2024) item indices for every state/UT, urban sector, calendar 2025, for the basket's food items.
-Used only to estimate wholesale->retail pass-through from the pooled panel (scripts/passthrough_pooled.py); Gujarat is held out there.
+Used only to estimate wholesale->retail pass-through from the pooled panel; the rules are fixed in rpi/pooled_checks.py and run by
+scripts/pooled_accuracy.py (and scripts/veg_fusion_test.py), with Gujarat held out there.
 Run: PYTHONPATH=. python3 scripts/mospi_all_states.py   (about 10-15 minutes; 4 threads, same endpoint and paging as rpi/collectors/mospi_cpi.py)"""
 import time
 import pandas as pd

@@ -6,7 +6,9 @@ pages are allowed and are read at 2 s spacing.  Fees are what the doctor lists, 
 (a self-selected, mostly private-practice set); Rajkot-specific.
 Pool: every doctor x clinic (practice_id) found on the selection date in the specialities below with fee > 0 (data/practo/pool.csv, never edited silently).
 Index: matched-model Jevons over pool members seen in both months (rpi/proxy_check.chain_series).  Fees change roughly once a year per doctor, so a short
-history can look flat; the unchanged gate (>= 6 overlapping months, corr >= 0.5, drift <= 0.10) decides.  Wired as a PENDING-GATE proxy for M003.
+history can look flat; the unchanged gate (>= 6 overlapping months, corr >= 0.5, drift <= 0.10) is what would decide.
+Status (2026-10-08): SCREEN ONLY, not an index input.  M003 remains on the official MoSPI stand-in (data/source_plan.csv: primary_source=official_link,
+class=linked): listed fees are stale and understate the official index, so the diary is kept as evidence and re-screened, but nothing here is fed to the index.
 """
 from __future__ import annotations
 
@@ -84,7 +86,8 @@ def accrue(path: Path, pool_csv: Path, client, today: dt.date | None = None) -> 
 
 
 class PractoCollector:
-    """Wires the live diary (data/practo/live_fees.csv) into the index as a PENDING-GATE proxy for M003 (one SKU per doctor x clinic)."""
+    """Collects the live diary (data/practo/live_fees.csv) for M003 (one SKU per doctor x clinic).  SCREEN ONLY: it does not feed the index
+    while M003 stays on the official stand-in (data/source_plan.csv), so ingestion is a no-op for the aggregate."""
     source_id = "practo_rajkot"
     last_snapshot_id = None
 

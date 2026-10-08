@@ -58,9 +58,11 @@ def _split_lines(cs):
     return ["", "## What is independent vs official-linked",
             f"- Official-linked stand-ins (MoSPI Gujarat-urban item indices) fill items with no independent source yet; "
             f"they run to {cs['ref_period']}. Their plan weight: {cs['plan_weight_pct'].get('linked', 0)}%.",
-            f"- Independently observed items: {cs['plan_weight_pct'].get('independent', 0)}% of weight "
-            f"(observed in latest month {cs['latest_period']}: {cs['independent_weight_pct_latest']}%). "
-            f"Months after {cs['ref_period']} are a nowcast: those items are observed; every other item carries its own 12-month mean drift (back-tested one-month-ahead error about 0.6 pp).",
+            f"- Independent of MoSPI (observed, proxied or modelled): {cs['plan_weight_pct'].get('independent', 0)}% of plan weight "
+            f"(in the latest month {cs['latest_period']}: {cs['independent_weight_pct_latest']}%). "
+            f"Months after {cs['ref_period']} are a nowcast: a trailing gap with no observation is filled by the seasonal-trend prior "
+            f"(long-run mean monthly change plus an empirical-Bayes-shrunk calendar-month deviation from 11 years of official Gujarat-urban data), while interior gaps "
+            f"and items without a seasonal table fall back to the item's own 12-month mean drift. Back-tested one-month-ahead error about 0.6 pp.",
             f"- No data at all: {cs['plan_weight_pct'].get('none', 0)}% of weight."]
 
 
@@ -183,7 +185,7 @@ def publish(conn, out_dir: Path, official_id: str | None = None, allow_demo: boo
     ax.set_xlabel(f"% change {infl.index[0]} to {last}"); ax.grid(axis="x", alpha=.3); c2 = _png(fig)
     fig, ax = plt.subplots(figsize=(8, 2.8))
     cov_t.mul(100).set_axis([p.to_timestamp() for p in cov_t.index]).plot.area(ax=ax, alpha=.8, linewidth=0)
-    ax.set_ylabel("% of CPI weight directly observed"); ax.legend(title="Tier", fontsize=8, frameon=False)
+    ax.set_ylabel("% of CPI weight with a quote"); ax.legend(title="Tier", fontsize=8, frameon=False)
     c3 = _png(fig)
 
     _cs = summary.get("coverage_split") or {}
@@ -203,10 +205,11 @@ def publish(conn, out_dir: Path, official_id: str | None = None, allow_demo: boo
 <div><small>YoY (reference)</small><b>{summary['reference_yoy_pct'] if summary['reference_yoy_pct'] is not None else (summary['yoy_pct'] if summary['yoy_pct'] is not None else 'n/a')}%</b></div>
 <div><small>Latest (nowcast) {last}</small><b>{summary['index']}</b></div>
 <div><small>95% CI</small><b>{(str(summary['ci_95'][0]) + '-' + str(summary['ci_95'][1])) if summary['ci_95'] else 'n/a'}</b></div>
-<div><small>Weight observed</small><b>{summary['observed_weight_share']*100:.0f}%</b></div></div>
+<div><small>Weight priced (not imputed)</small><b>{summary['observed_weight_share']*100:.1f}%</b></div></div>
 <img src='data:image/png;base64,{c1}'><img src='data:image/png;base64,{c2}'><img src='data:image/png;base64,{c3}'>
 <h3>Method (summary)</h3><p><small>Matched-model Jevons elementary indices on unit prices, monthly chain;
-fixed-weight Young aggregation; missing items imputed from their own 12-month mean drift and disclosed as coverage;
+fixed-weight Young aggregation; a missing relative is filled by the seasonal-trend prior where a seasonal table exists (trailing nowcast gaps), otherwise by the
+item's own 12-month mean drift or its division peers, and every fill is disclosed as a weight-coverage diagnostic;
 bootstrap CI over quotes only (excludes item-selection and weight error). Weights: {meta['weights_source']}.
 Run {meta['run_id']}. Data: <a href='data/rpi_total.csv'>CSV</a> | <a href='data/summary.json'>JSON</a>
 </small></p></body></html>"""
@@ -218,7 +221,8 @@ Run {meta['run_id']}. Data: <a href='data/rpi_total.csv'>CSV</a> | <a href='data
             f"- Nowcast 90% band for {last}: **{summary['nowcast_band_90'][0]} - {summary['nowcast_band_90'][1]}** (split-conformal from a rolling-origin back-test on official data; conservative)" if summary.get("nowcast_band_90") else "",
             f"- Month-on-month: **{summary['mom_pct']}%**" if summary["mom_pct"] is not None else "",
             f"- Year-on-year: **{summary['yoy_pct']}%**" if summary["yoy_pct"] is not None else "- Year-on-year: n/a (needs 13 months of data)",
-            f"- Directly observed share of CPI weight: **{summary['observed_weight_share']*100:.0f}%** (remainder imputed)",
+            f"- Weight with a real quote in this vintage, before any imputation: **{summary['observed_weight_share']*100:.1f}%** "
+            f"(the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)",
             *(_split_lines(summary.get("coverage_split"))),
             "", "## Robustness variants (latest index level)", _md(variants.iloc[-1].round(2), "level"),
             "", "## Divisions (change since base)", _md(chg.sort_values(ascending=False).round(2).rename(index=DIVISIONS), "% change"),

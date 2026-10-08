@@ -1,4 +1,10 @@
-"""R001 residential rent: independent multi-source SIGNAL, screened against the official rent index (NOT wired).
+"""R001 residential rent: MODELLED independent series from Labour Bureau CPI-IW housing data (WIRED).
+
+Status: this is R001's primary source (data/source_plan.csv: primary_source=rent_signal, class `independent`, bucket `modelled`), wired by explicit
+user decision on 2026-10-06.  It is a model, NOT an observed price, and it carries 19.0% of basket weight - the largest single independent contributor.
+The monthly series is emitted by rpi/collectors/rent_signal.py; this module builds and screens it.  It is gated against the official Gujarat-urban
+rent item index by the calibrated TREND gate (see `trend_gate`), because the monthly-correlation gate is structurally unpassable by any trend-type
+signal - `gate_ceiling` shows why, including that the official series' own best linear trend scores far below the 0.5 bar.
 
 Why a signal and not a series.  No public dated Rajkot rent series exists (inventory AB).  What does exist, from a different agency and a different
 survey than MoSPI, is the Labour Bureau CPI-IW housing group (Labour Bureau's own rent survey for industrial-worker households), which is revised in
@@ -11,11 +17,14 @@ Components considered (all independent of the MoSPI rent survey):
   2. Magicbricks listing diary (data/rent_listings.csv): a single cross-section of asking rents (no growth information; asking rents also run about five
      times faster than the stock of rents), so its weight on the trend is zero by construction; it is kept as a level cross-check only.
   3. Rajkot CPI-IW general index and the Gujarat wage orders: tested as drivers in the screen, no incremental information on housing (see inventory AJ).
-Fusion is therefore a single bridge, not a Kalman filter: with one informative measurement and no second one to disagree with it, a filter only adds a smoother.
+Fusion.  v3 is a panel-validated ensemble: five models are estimated and the 78-centre Labour Bureau panel picks the combination (the panel-selected
+ensemble is the mean of E4, an additive deviation shrunk to the all-centre mean by empirical Bayes, and E5, a pooled-parameter Kalman ratio).  E2 is the
+v2 time-varying (Kalman) ratio; E1 is a constant ratio.  Overfitting is controlled by fixing the selection rule on the panel before any comparison with
+MoSPI; see `ensemble_steps` and the checked-in output data/official/rent_signal_steps_v3.csv.
 Pre-registration.  beta_R is computed from Labour Bureau data alone, before looking at the MoSPI rent index; nothing is fitted to the official series.
-Monthly signal: in every half-year the monthly log growth is beta_R x (that half's all-India step) / 6 (run-rate; the step is taken as known for its own
-half, which flatters the signal).  The unchanged proxy gate (>= 6 overlapping months, corr of monthly log changes >= 0.5, |drift| <= 0.10) decides whether
-it may count; `compare_halves` reports the half-year accuracy against MoSPI Gujarat-urban rent for 2021-2026 as context.
+Monthly signal: in every half-year the monthly log growth is the half's selected step / 6 (run-rate; the step is taken as known for its own half, which
+flatters the signal).  The TREND gate decides whether it may count; `compare_halves` reports the half-year accuracy against MoSPI Gujarat-urban rent for
+2021-2026 as context.
 """
 from __future__ import annotations
 
@@ -332,7 +341,8 @@ def gate_ceiling(root) -> dict:
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------
-# v4: a calibrated TREND gate for half-yearly modelled signals (candidate replacement for the monthly-correlation test for R001 ONLY; not adopted).
+# v4: the calibrated TREND gate for half-yearly modelled signals.  ADOPTED for R001 ONLY, by explicit user decision on 2026-10-06, after the
+# monthly-correlation test failed; it replaces that test for R001 and nothing else (rpi/proxy_check.py: MODELLED_SOURCES -> judge_trend).
 # Why: the corr test cannot be passed by any trend-type signal (gate_ceiling), and the existing drift cap (0.10 log points = 10 pp) is far looser than the
 # whole 19-month rent change (about 3.9 pp), so "corr dropped, drift kept" would pass a FLAT signal and the all-India index.  The tolerance is therefore
 # derived from the official series' own noise rather than chosen: its monthly changes have sd s (sampling/rotation noise that no independent signal can

@@ -57,7 +57,7 @@ def loso(df: pd.DataFrame, lag: bool, exclude=("gujarat",)) -> dict:
     for s in sorted(set(df.state) - set(exclude)):
         tr, te = df[(df.state != s) & ~df.state.isin(exclude)], df[df.state == s]
         if len(te) < 6 or len(tr) < 20: continue
-        b = _ols(*design(tr, lag)[:1], tr["do"].values) if False else _ols(design(tr, lag)[0], tr["do"].values)
+        b = _ols(design(tr, lag)[0], tr["do"].values)
         Xte = design(te, lag)[0]
         pred = Xte @ b
         base1 = te["dw"].values

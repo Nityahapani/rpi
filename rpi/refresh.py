@@ -493,11 +493,17 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
         r = rentsignal.screen(root)
         (root / "data/official/rent_signal_screen.json").write_text(_json.dumps(r, indent=1))
         rentsignal.compare_halves(root, r["beta"]["beta"]).to_csv(root / "data/official/rent_signal_halves.csv", index=False)
+        # v3 ensemble output table (the model behind R001, 19.0% of weight): regenerated every refresh so the checked-in
+        # data/official/rent_signal_steps_v3.csv cannot drift from the code that produces it.
+        pd.DataFrame(r["v3"]["steps"]).to_csv(root / "data/official/rent_signal_steps_v3.csv", index=False)
         v = r["variants"]["pre-registered (Rajkot-calibrated)"]
         v2 = r["variants"]["v2 (chosen after v1 failed): time-varying beta, Kalman"]
-        return (f"R001 signal v1 beta={r['beta']['beta']}: {v['verdict']} (n={v['n_overlap']}, corr={v['corr']}, drift={v['drift']}, yoy {v['yoy_signal_pct']}% vs official {v['yoy_official_pct']}%); "
-                f"v2 TVP beta={r['tvp']['beta']}: {v2['verdict']} (corr={v2['corr']}, drift={v2['drift']}, yoy {v2['yoy_signal_pct']}%); "
-                f"v3 panel ensemble: {r['v3']['verdict']['panel-selected ensemble (E4+E5)']['verdict']} (corr={r['v3']['verdict']['panel-selected ensemble (E4+E5)']['corr']}, yoy {r['v3']['verdict']['panel-selected ensemble (E4+E5)']['yoy_signal_pct']}%); SCREEN ONLY, not wired")
+        v3 = r["v3"]["verdict"]["panel-selected ensemble (E4+E5)"]
+        tg = r["v4_trend_gate"]["variants"]["v3 panel-selected (E4+E5)"]
+        # NB: _step truncates detail at 300 chars, so the verdicts come first and the v1/v2/v3 correlation detail is compressed.
+        return (f"R001 WIRED (independent MODELLED, primary_source=rent_signal). Trend gate z={r['v4_trend_gate']['z']}: {tg['verdict']} "
+                f"(cum gap {tg['gap_cum_pp']} vs tol {tg['tol_cum_pp']}pp, 12m {tg['gap_12m_pp']} vs {tg['tol_12m_pp']}pp); "
+                f"the monthly-correlation gate fails for every trend-type signal (v1 {v['corr']}, v2 {v2['corr']}, v3 {v3['corr']}), which is why R001 uses the trend gate.")
     _step("screen:rent_signal", _rent_signal, results)
 
     def _nowcast_eval():

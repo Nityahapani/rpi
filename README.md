@@ -7,7 +7,7 @@ Everything the index uses is in this repo: collectors, a warehouse, the index en
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q            # 188 tests (1 skipped), incl. an end-to-end "does it recover the true index?" test
+python -m pytest -q            # 207 tests (one skips without pdfplumber), incl. an end-to-end "does it recover the true index?" test
 python -m rpi refresh          # collect every source -> gate -> build -> audit -> publish (docs/)
 python -m rpi refresh --offline   # rebuild from data already in the repo (no network)
 python -m rpi demo             # synthetic run -> docs_demo/index.html (watermarked DEMO)
@@ -35,9 +35,9 @@ collectors (API / HTTP / tariff events / CSV / model)
 - **Immutable vintages**, polite scraping (robots.txt, rate limits, honest User-Agent, no evasion), a demo guard that cannot publish synthetic data without a red watermark.
 - **Staleness alarms** on hand-curated registers (electricity FPPAS, milk, LPG, PNG, ...): a refresh errors visibly if the newest entry is older than its normal revision cycle.
 
-## Current status (2026-10-06)
+## Current status (2026-10-08)
 
-**Headline (2025-01 = 100):** Oct 2026 **108.36** (MoM 0.15%, YoY 6.79%); last fully official-covered month Aug 2026 **107.32** (YoY 5.44% vs MoSPI Gujarat-urban general 4.68%, CPI-IW Rajkot 3.54%).
+**Headline (2025-01 = 100):** Oct 2026 **108.38** (MoM 0.16%, YoY 6.80%); last fully official-covered month Aug 2026 **107.32** (YoY 5.44% vs MoSPI Gujarat-urban general 4.68%, CPI-IW Rajkot 3.54%).
 Sep and Oct 2026 are partly a **nowcast** (MoSPI lags about 12 days after month end); nowcast months carry a back-tested 90% band. Weights are **approximate**, recovered from the official index tree (MoSPI publishes no Gujarat item weights).
 
 **Where the weight comes from (67 items, plan weights):**
@@ -91,7 +91,7 @@ Inputs are public Labour Bureau CPI-IW housing-group indices: all-India half-yea
 
 ## Open items
 1. Refresh when MoSPI's Sep 2026 data lands (mid-October): the rent trend gate gains a 21st month, and the mandi, cost-push and event checks re-run.
-2. Pending proxies mature over 2026-27; the five pending mandi items (F001, F004, F022, F023, F025; about 6% of weight) are expected to fail (inventory AD).
+2. Pending proxies mature over 2026-27; the five pending mandi items (F001, F004, F022, F023, F025; 4.9% of weight) are expected to fail (inventory AD).
 3. Rent needs a Labour Bureau housing row each half-year (next: January 2027).
 4. R003 (LPG) register is at its 120-day staleness limit and needs review.
 5. Sources with no history-checkable independent series remain official-linked: see the table above and the inventory.

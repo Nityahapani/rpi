@@ -1,7 +1,9 @@
 """Back-test of nowcast rules on 11 years (2014-2025) of OFFICIAL Gujarat-urban item indices (CPI base 2012), mapped to the basket.
 
 Question 1 (information coverage): which share of the index's no-information nowcast-error variance sits in items that have an
-  independent source, and which share sits in items that do not?  (Baseline rule = the engine's: own 12-month mean drift.)
+  independent source, and which share sits in items that do not?  (Baseline rule = the engine's fallback for interior gaps and items without a seasonal
+  table: own 12-month mean drift.  Note the engine's live rule for TRAILING nowcast gaps is the seasonal-trend prior, rpi/seasonal.py, so this script's
+  own_trend baseline is the conservative one, not the live one.)
 Question 2 (method): for the items WITHOUT an independent source (linked + none), does any better nowcast rule beat the engine's
   own-trend rule out of sample?  Rules are fixed in advance; selection data = origins <= 2022-12, untouched test = origins >= 2023-01.
 Rules: zero | T12 (engine) | T6 | T24 | LinReg12 (extrapolate OLS line through last 12 log levels) | LLT (local-linear-trend Kalman filter,

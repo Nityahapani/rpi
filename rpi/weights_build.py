@@ -119,7 +119,18 @@ def build_item_weights(div_weights: pd.Series, grp_urban: dict[str, tuple[str, f
 
 
 def run(root: Path) -> dict:
-    annex = json.loads((root / "data/sources_raw/expert_report_annex_text.json").read_text())
+    annex_path = Path(root) / "data/sources_raw/expert_report_annex_text.json"
+    if not annex_path.exists():
+        raise SystemExit(
+            f"weights_build: required input is missing: {annex_path}\n"
+            "  That file is the extracted text of the MoSPI Expert-Group report annexure (Annexure 5.3a/5.3b: all-India urban\n"
+            "  division and group weights).  data/sources_raw/ is git-ignored (.gitignore line 8) - raw fetched sources are not\n"
+            "  committed - so this step cannot run from a clean clone and needs a local extraction of that document first.\n"
+            "  It is NOT needed to run the index: the weights in use are checked in and read directly by the pipeline:\n"
+            "      data/weights_cpi2024_gujarat_urban.csv   (67 items, weights summing to 100)\n"
+            "  Only re-deriving the weights from the official annexure requires the file above."
+        )
+    annex = json.loads(annex_path.read_text())
     div_ai, grp_ai = parse_annex_weights(annex)
     assert len(div_ai) == 12 and len(grp_ai) == 43, (len(div_ai), len(grp_ai))
     official = pd.read_csv(root / "data/official/mospi_cpi2024_gujarat_urban.csv", dtype={"code": str})

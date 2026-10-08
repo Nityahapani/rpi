@@ -4,7 +4,9 @@ Source: public product pages of vishalmegamart.com carry schema.org Product JSON
 account paths).  Prices are national e-store prices of a value retailer that has stores in Gujarat: a PROXY, not a Rajkot price.
 A fixed pool (data/vishal/pool.csv, built by scripts/build_vishal_pool.py on its selection date) is read each refresh at 2 s spacing and appended to
 data/vishal/live_prices.csv.  Archived captures of the same product URLs (data/vishal/prices.csv, Internet Archive) are merged into the monthly panel where they exist.
-It is a SCREEN, not an index input: the archive-only history is far too sparse to gate (3-5 overlapping months; inventory section AC).  It can be wired by an explicit
+Status (2026-10-08): WIRED, by explicit user decision on 2026-10-06, as the primary source for C001/C002/C003 (data/source_plan.csv: class=independent,
+proxy bucket, gate pending).  The archive-only history was far too sparse to gate on its own (3-5 overlapping months; inventory section AC), so the plan
+note flags it for review/demotion if the unchanged gate fails once ~6 months of live history accumulate (~Apr 2027).  It can be demoted by an explicit
 decision once the gate (>= 6 overlapping months, corr >= 0.5, drift <= 0.10) passes - flat or promotion-driven series are exactly what the gate is there to catch."""
 from __future__ import annotations
 
