@@ -3,38 +3,38 @@
     {
       "step": "official:mospi_cpi",
       "status": "ok",
-      "seconds": 1.7,
+      "seconds": 1.9,
       "detail": "up to date (5144 rows for 2026); latest 2026-08"
     },
     {
       "step": "official:labour_bureau",
       "status": "error",
-      "seconds": 1.1,
+      "seconds": 0.9,
       "detail": "RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed"
     },
     {
       "step": "official:cpi_iw_centres",
       "status": "error",
-      "seconds": 0.8,
+      "seconds": 1.0,
       "detail": "RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed"
     },
     {
       "step": "tariff:fuel_lpg_update",
       "status": "ok",
-      "seconds": 4.3,
-      "detail": "T001: +1 daily price-change event(s), latest 102.26 on 2026-10-07; T002: +1 daily price-change event(s), latest 98.4 on 2026-10-07"
+      "seconds": 5.1,
+      "detail": "T001: +1 daily price-change event(s), latest 101.57 on 2026-10-08; T002: +1 daily price-change event(s), latest 97.71 on 2026-10-08"
     },
     {
       "step": "tariff:mrp_live",
       "status": "ok",
-      "seconds": 30.4,
-      "detail": "3748 products read; 0 price change(s); 4 pool SKU(s) missing from feed; promoted into index: none"
+      "seconds": 30.6,
+      "detail": "3740 products read; 0 price change(s); 4 pool SKU(s) missing from feed; promoted into index: none"
     },
     {
       "step": "tariff:registers",
       "status": "error",
       "seconds": 0.0,
-      "detail": "RuntimeError: STALE REGISTER: R003: last change 2026-06-07 (123 d ago, review cycle 120 d) - LPG monthly revision (auto-checked from goodreturns)"
+      "detail": "RuntimeError: STALE REGISTER: R003: last change 2026-06-07 (124 d ago, review cycle 120 d) - LPG monthly revision (auto-checked from goodreturns)"
     },
     {
       "step": "reset:tariff_series",
@@ -51,13 +51,13 @@
     {
       "step": "check:doca_mirror",
       "status": "error",
-      "seconds": 7.3,
+      "seconds": 8.0,
       "detail": "RuntimeError: DoCA mirror NOT verified, DoCA feed skipped: mirror unreachable; [{'commodity': '*', 'verdict': 'mirror_unreachable'}]"
     },
     {
       "step": "ingest:tariff",
       "status": "ok",
-      "seconds": 2.4,
+      "seconds": 1.0,
       "detail": "{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}"
     },
     {
@@ -69,37 +69,37 @@
     {
       "step": "ingest:mandi_gondal",
       "status": "ok",
-      "seconds": 34.7,
+      "seconds": 9.5,
       "detail": "{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_rajkot_apmc",
       "status": "ok",
-      "seconds": 12.3,
+      "seconds": 11.1,
       "detail": "{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_rajkot_veg",
       "status": "ok",
-      "seconds": 17.5,
+      "seconds": 12.7,
       "detail": "{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_rajkot_district",
       "status": "ok",
-      "seconds": 38.6,
-      "detail": "{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 105, 'accepted': 105, 'rejected': 0, 'message': ''}"
+      "seconds": 40.4,
+      "detail": "{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:yard_rajkot_board",
       "status": "ok",
-      "seconds": 2.0,
+      "seconds": 2.3,
       "detail": "{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:gr_png",
       "status": "ok",
-      "seconds": 0.7,
+      "seconds": 0.9,
       "detail": "{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}"
     },
     {
@@ -111,7 +111,7 @@
     {
       "step": "ingest:dmart_ahmedabad",
       "status": "ok",
-      "seconds": 2.1,
+      "seconds": 0.9,
       "detail": "{'source': 'dmart_ahmedabad', 'status': 'error', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'DmartBlocked: HTTP 403 from digital.dmart.in for category 240235 (rate-limit/WAF or unreachable from this network); DMart skipped'}"
     },
     {
@@ -123,7 +123,7 @@
     {
       "step": "ingest:frc_rajkot",
       "status": "ok",
-      "seconds": 0.1,
+      "seconds": 0.0,
       "detail": "{'source': 'frc_rajkot', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}"
     },
     {
@@ -141,13 +141,13 @@
     {
       "step": "ingest:rent_signal",
       "status": "ok",
-      "seconds": 4.8,
+      "seconds": 1.9,
       "detail": "{'source': 'rent_signal', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:official_link",
       "status": "ok",
-      "seconds": 0.1,
+      "seconds": 0.0,
       "detail": "{'source': 'official_link', 'status': 'ok', 'records': 802, 'accepted': 802, 'rejected': 0, 'message': ''}"
     },
     {
@@ -159,25 +159,25 @@
     {
       "step": "crosscheck:apmc",
       "status": "ok",
-      "seconds": 2.8,
-      "detail": "Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=no_acrop_row_for_date, Gondal:F004=no_acrop_row_for_date, Gondal:F005=no_acrop_row_for_date"
+      "seconds": 3.0,
+      "detail": "Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date"
     },
     {
       "step": "crosscheck:ibja",
       "status": "ok",
-      "seconds": 2.1,
-      "detail": "IBJA:P005=agree (premium +0.7%..+1.7%, n=4), IBJA:P006=agree (premium +5.1%..+6.2%, n=4)"
+      "seconds": 1.9,
+      "detail": "IBJA:P005=agree (premium +0.9%..+1.7%, n=4), IBJA:P006=agree (premium +5.1%..+8.0%, n=4)"
     },
     {
       "step": "validate:proxies",
       "status": "ok",
-      "seconds": 0.4,
+      "seconds": 0.2,
       "detail": "13 pass, 28 pending (<6 overlapping months), 0 fail"
     },
     {
       "step": "log:prereg",
       "status": "ok",
-      "seconds": 0.4,
+      "seconds": 0.2,
       "detail": "logged 26 new prediction(s), 0 official item-month(s) stamped; 0 target(s) scored over 0 item(s); flagged none"
     },
     {
@@ -195,79 +195,79 @@
     {
       "step": "screen:jockey_mrp",
       "status": "ok",
-      "seconds": 5.7,
+      "seconds": 2.6,
       "detail": "C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)"
     },
     {
       "step": "accrue:rent_listings",
       "status": "ok",
-      "seconds": 8.9,
-      "detail": "2 new listing(s); 3 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only)"
+      "seconds": 9.2,
+      "detail": "5 new listing(s); 3 month(s) with >=25 kept listings (rule: >=2 consecutive + gate before R001 can use it; diagnostic only)"
     },
     {
       "step": "accrue:mrp_diary",
       "status": "ok",
-      "seconds": 18.6,
+      "seconds": 19.0,
       "detail": "15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)"
     },
     {
       "step": "screen:ceat_tyres",
       "status": "ok",
-      "seconds": 25.3,
+      "seconds": 24.0,
       "detail": "47/47 pool SKUs quoted; T006 fail (n=12, corr=0.46, drift=0.011, 116 SKUs); diagnostic only, not wired"
     },
     {
       "step": "screen:vishal_clothing",
       "status": "ok",
-      "seconds": 87.2,
+      "seconds": 86.9,
       "detail": "44/44 pool products priced; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
     },
     {
       "step": "screen:practo_doctor_fees",
       "status": "ok",
-      "seconds": 104.6,
+      "seconds": 99.0,
       "detail": "180/180 pool doctor-clinics priced; M003 pending (n=0, corr=None, drift=None, 0 doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)"
     },
     {
       "step": "screen:district_cinema",
       "status": "ok",
-      "seconds": 14.1,
+      "seconds": 14.3,
       "detail": "0/8 theatres priced (8 skipped: weekend page, <3 evening 2D shows, or unreadable); S001 pending (n=0, corr=None, drift=None, 0 theatres); WIRED as a pending-gate proxy"
     },
     {
       "step": "screen:fresha_salon",
       "status": "ok",
-      "seconds": 0.2,
+      "seconds": 0.8,
       "detail": "103/103 pool services priced; P004 pending (n=2, corr=None, drift=None, 88 services, ONE venue); WIRED as a pending-gate proxy"
     },
     {
       "step": "screen:costpush_model",
       "status": "ok",
-      "seconds": 0.5,
+      "seconds": 0.3,
       "detail": "D003 fail (n=20, corr=0.15, drift=0.077); D001 fail (n=20, corr=0.24, drift=0.074); MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)"
     },
     {
       "step": "screen:rent_signal",
       "status": "ok",
-      "seconds": 16.2,
-      "detail": "R001 signal v1 beta=0.354: fail (n=20, corr=-0.22, drift=0.014, yoy 1.47% vs official 2.43%); v2 TVP beta=0.539: fail (corr=-0.22, drift=0.002, yoy 2.25%); v3 panel ensemble: fail (corr=-0.21, yoy 2.18%); SCREEN ONLY, not wired"
+      "seconds": 6.3,
+      "detail": "R001 WIRED (independent MODELLED, primary_source=rent_signal). Trend gate z=1.645: pass (cum gap -0.26 vs tol 0.51pp, 12m -0.25 vs 0.41pp); the monthly-correlation gate fails for every trend-type signal (v1 -0.22, v2 -0.22, v3 -0.21), which is why R001 uses the trend gate."
     },
     {
       "step": "evaluate:nowcast",
       "status": "ok",
-      "seconds": 0.5,
+      "seconds": 0.2,
       "detail": "own-trend h1 RMSE 0.617pp (zero 0.736, old peer-fill 0.046); 90% band +/-0.82% (h1), +/-1.36% (h2)"
     },
     {
       "step": "build",
       "status": "ok",
       "seconds": 0,
-      "detail": "run 20261008T120331648388Z"
+      "detail": "run 20261009T115407483813Z"
     },
     {
       "step": "audit",
       "status": "ok",
-      "seconds": 2.3,
+      "seconds": 1.1,
       "detail": "{\"n_months\": 20, \"items_with_official_index\": 64, \"weight_share_with_official_index_pct\": 99.99657, \"rmse\": 0.21130132980666544, \"max_abs_error\": 0.4525808025215099, \"cum_change_replicated_pct\": 6.844"
     },
     {
@@ -295,15 +295,15 @@
       "detail": "logged 2 nowcast(s); 0 month(s) scored against later official data"
     }
   ],
-  "run_id": "20261008T120331648388Z",
+  "run_id": "20261009T115407483813Z",
   "publish": {
     "latest_period": "2026-10",
-    "index": 108.38,
-    "mom_pct": 0.16,
-    "yoy_pct": 6.8,
+    "index": 108.37,
+    "mom_pct": 0.15,
+    "yoy_pct": 6.79,
     "ci_95": [
-      107.46,
-      109.08
+      107.57,
+      109.12
     ],
     "ci_note": null,
     "reference_period": "2026-08",
@@ -315,10 +315,10 @@
     "reference_yoy_pct": 5.44,
     "nowcast_band_90": [
       106.91,
-      109.86
+      109.85
     ],
     "observed_weight_share": 0.655,
-    "run_id": "20261008T120331648388Z",
+    "run_id": "20261009T115407483813Z",
     "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
     "demo": false,
     "coverage_split": {
@@ -867,43 +867,43 @@
       "board": "Rajkot",
       "item_id": "F001",
       "crop": "\u0a98\u0a89\u0a82 \u0ab2\u0acb\u0a95\u0ab5\u0aa8",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "verdict": "agree",
-      "yard_low_per20kg": 545.0,
-      "yard_high_per20kg": 611.0,
-      "acrop_modal_per20kg": 567.2,
-      "acrop_date": "2026-10-08"
+      "yard_low_per20kg": 547.0,
+      "yard_high_per20kg": 600.0,
+      "acrop_modal_per20kg": 571.4,
+      "acrop_date": "2026-10-09"
     },
     {
       "board": "Rajkot",
       "item_id": "F003",
       "crop": "\u0aa4\u0ac1\u0ab5\u0ac7\u0ab0",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "verdict": "agree",
-      "yard_low_per20kg": 1450.0,
-      "yard_high_per20kg": 1935.0,
-      "acrop_modal_per20kg": 1751.0,
-      "acrop_date": "2026-10-08"
+      "yard_low_per20kg": 1460.0,
+      "yard_high_per20kg": 1950.0,
+      "acrop_modal_per20kg": 1750.0,
+      "acrop_date": "2026-10-09"
     },
     {
       "board": "Rajkot",
       "item_id": "F004",
       "crop": "\u0aae\u0a97",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "verdict": "agree",
-      "yard_low_per20kg": 1235.0,
-      "yard_high_per20kg": 1690.0,
-      "acrop_modal_per20kg": 1500.0,
-      "acrop_date": "2026-10-08"
+      "yard_low_per20kg": 1152.0,
+      "yard_high_per20kg": 1815.0,
+      "acrop_modal_per20kg": 1540.0,
+      "acrop_date": "2026-10-09"
     },
     {
       "board": "Gondal",
       "item_id": "F001",
       "crop": "\u0a98\u0a89\u0a82 \u0ab2\u0acb\u0a95\u0ab5\u0aa8",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "verdict": "agree",
-      "yard_low_per20kg": 530.0,
-      "yard_high_per20kg": 600.0,
+      "yard_low_per20kg": 536.0,
+      "yard_high_per20kg": 594.0,
       "acrop_modal_per20kg": 586.0,
       "acrop_date": "2026-10-07"
     },
@@ -911,28 +911,32 @@
       "board": "Gondal",
       "item_id": "F003",
       "crop": "\u0aa4\u0ac1\u0ab5\u0ac7\u0ab0",
-      "date": "2026-10-08",
-      "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 900.0,
-      "yard_high_per20kg": 1951.0
+      "date": "2026-10-09",
+      "verdict": "agree",
+      "yard_low_per20kg": 1300.0,
+      "yard_high_per20kg": 1991.0,
+      "acrop_modal_per20kg": 1671.0,
+      "acrop_date": "2026-10-07"
     },
     {
       "board": "Gondal",
       "item_id": "F004",
       "crop": "\u0aae\u0a97",
-      "date": "2026-10-08",
-      "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 701.0,
-      "yard_high_per20kg": 1741.0
+      "date": "2026-10-09",
+      "verdict": "agree",
+      "yard_low_per20kg": 1151.0,
+      "yard_high_per20kg": 1801.0,
+      "acrop_modal_per20kg": 1551.0,
+      "acrop_date": "2026-10-07"
     },
     {
       "board": "Gondal",
       "item_id": "F005",
       "crop": "\u0a9a\u0aa3\u0abe",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 1111.0,
-      "yard_high_per20kg": 1506.0
+      "yard_low_per20kg": 1161.0,
+      "yard_high_per20kg": 1516.0
     },
     {
       "board": "IBJA",
@@ -940,14 +944,14 @@
       "verdict": "agree",
       "tolerance": 0.03,
       "n_days": 4,
-      "date": "2026-10-07",
-      "premium_min": 0.0067,
+      "date": "2026-10-08",
+      "premium_min": 0.0091,
       "premium_max": 0.017,
       "premium_by_day": {
-        "2026-10-01": 0.0067,
         "2026-10-05": 0.0091,
         "2026-10-06": 0.017,
-        "2026-10-07": 0.0125
+        "2026-10-07": 0.0125,
+        "2026-10-08": 0.0147
       }
     },
     {
@@ -956,14 +960,14 @@
       "verdict": "agree",
       "tolerance": 0.1,
       "n_days": 4,
-      "date": "2026-10-07",
+      "date": "2026-10-08",
       "premium_min": 0.0512,
-      "premium_max": 0.0623,
+      "premium_max": 0.0801,
       "premium_by_day": {
-        "2026-10-01": 0.0615,
         "2026-10-05": 0.0512,
         "2026-10-06": 0.059,
-        "2026-10-07": 0.0623
+        "2026-10-07": 0.0623,
+        "2026-10-08": 0.0801
       }
     }
   ],
@@ -1113,13 +1117,13 @@
     },
     {
       "month": "2026-10",
-      "n_listings": 27,
-      "n_kept": 27,
-      "median_rent_psf": 16.7,
+      "n_listings": 32,
+      "n_kept": 32,
+      "median_rent_psf": 16.3,
       "median_rent_2bhk": 14100.0,
-      "n_2bhk": 13,
-      "median_rent_3bhk": 19000.0,
-      "n_3bhk": 6
+      "n_2bhk": 15,
+      "median_rent_3bhk": 20000.0,
+      "n_3bhk": 7
     }
   ],
   "mrp_screen": [
