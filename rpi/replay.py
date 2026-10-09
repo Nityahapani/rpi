@@ -26,22 +26,27 @@ from .index.engine import _load_ref, price_update_weights, run_index
 
 
 def _run(db_path: Path, settings: dict, cut: str | None):
-    tmp = Path(tempfile.mkdtemp()) / "replay.sqlite"
-    shutil.copy(db_path, tmp)
-    conn = sqlite3.connect(tmp)
-    if cut:
-        conn.execute("""DELETE FROM observations WHERE sku_id IN (SELECT sku_id FROM products WHERE source_id='official_link')
-                        AND substr(obs_date,1,7) > ?""", (cut,))
-        conn.commit()
-    s = {**settings, "index": {**settings["index"], "bootstrap_reps": 2}}
-    run = run_index(conn, s, store=False)
-    wts = None
-    if cut is None:
-        items, w, wsrc = _load_ref(conn)
-        bp = settings.get("project", {}).get("base_period", "")
-        w, _ = price_update_weights(w, wsrc, bp)
-        wts = w
-    conn.close()
+    # The DB copy is ~45 MB; the temp directory MUST be removed even when run_index raises, or repeated replays
+    # (e.g. the test suite) fill up the filesystem. (It did.)
+    with tempfile.TemporaryDirectory(prefix="rpi_replay_") as td:
+        tmp = Path(td) / "replay.sqlite"
+        shutil.copy(db_path, tmp)
+        conn = sqlite3.connect(tmp)
+        try:
+            if cut:
+                conn.execute("""DELETE FROM observations WHERE sku_id IN (SELECT sku_id FROM products WHERE source_id='official_link')
+                                AND substr(obs_date,1,7) > ?""", (cut,))
+                conn.commit()
+            s = {**settings, "index": {**settings["index"], "bootstrap_reps": 2}}
+            run = run_index(conn, s, store=False)
+            wts = None
+            if cut is None:
+                items, w, wsrc = _load_ref(conn)
+                bp = settings.get("project", {}).get("base_period", "")
+                w, _ = price_update_weights(w, wsrc, bp)
+                wts = w
+        finally:
+            conn.close()
     return run.variants["jevons_chain"], wts
 
 
