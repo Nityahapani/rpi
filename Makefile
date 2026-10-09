@@ -1,4 +1,4 @@
-.PHONY: test demo init daily refresh refresh-offline weights audit probe official eval diag uncertainty lock replicate
+.PHONY: test demo init daily refresh refresh-offline weights audit probe official eval diag uncertainty lock replicate shadow
 test:     ; python3 -m pytest -q
 demo:     ; python3 -m rpi demo
 init:     ; python3 -m rpi init
@@ -14,3 +14,4 @@ diag:     ; python3 -m rpi diag
 uncertainty: ; python3 -m rpi uncertainty
 lock:     ; python3 -m pip freeze | grep -iE '^(pandas|numpy|scipy|matplotlib|requests|beautifulsoup4|lxml|pytest|pdfplumber)==' > requirements.lock.txt && cat requirements.lock.txt
 replicate: ; python3 -m pytest -q && python3 -m rpi eval && python3 -m rpi diag
+shadow:   ; python3 -m rpi shadow

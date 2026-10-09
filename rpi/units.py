@@ -15,8 +15,8 @@ _UNITS = {
     "unit": ("pc", 1), "units": ("pc", 1), "dozen": ("pc", 12),
 }
 _NUM = r"(\d+(?:\.\d+)?)"
-_MULTI = re.compile(rf"{_NUM}\s*[x×*]\s*{_NUM}\s*([a-z]+)")
-_SINGLE = re.compile(rf"{_NUM}\s*([a-z]+)")
+_MULTI = re.compile(rf"{_NUM}\s*[x×*]\s*{_NUM}\s*-?\s*([a-z]+)")
+_SINGLE = re.compile(rf"{_NUM}\s*-?\s*([a-z]+)")          # '-?' : storefront pack labels such as '15-Ltr Tin', '1-Ltr Pouch', '15-Kg Tin'
 _PACK_OF = re.compile(r"(?:pack|set|box) of (\d+)")
 
 

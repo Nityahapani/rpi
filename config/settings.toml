@@ -42,6 +42,7 @@ B = 1                       # benchmark series (e.g. gold) may be single-quote
 
 [collectors]
 user_agent = "RajkotPriceIndex/0.1 (student research project; contact: you@example.com)"
+rent_crawl_budget = 18      # rent list URLs fetched per refresh (rotating; rpi/collectors/rent_listings.py), ~2 s apart
 min_delay_seconds = 2.0
 # City pincodes used for pincode-specific retail sources (VERIFY before use)
 pincodes = ["360001", "360002", "360003", "360004", "360005"]

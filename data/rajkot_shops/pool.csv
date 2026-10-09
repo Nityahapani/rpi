@@ -1,0 +1,41 @@
+item_id,store,product_id,variant_id,product_title,variant_title,qty_base,base_unit,price_at_selection,regular_at_selection,selected_on,why
+F016,hathi_masala,6944720486470,40184615895110,Super Turmeric Powder (Haldi Powder),200g,200.0,g,79.0,,2026-10-09,"Rajkot spice maker, two mainstream turmeric lines"
+F016,hathi_masala,6944720486470,40146842746950,Super Turmeric Powder (Haldi Powder),500g,500.0,g,195.0,,2026-10-09,"Rajkot spice maker, two mainstream turmeric lines"
+F016,hathi_masala,6944720486470,40146842779718,Super Turmeric Powder (Haldi Powder),1kg,1000.0,g,385.0,,2026-10-09,"Rajkot spice maker, two mainstream turmeric lines"
+F016,hathi_masala,6944717897798,40146834948166,Rajapuri Turmeric Powder (Rajapuri Haldi Powder),1kg,1000.0,g,425.0,,2026-10-09,
+F016,hathi_masala,6944717897798,40146834915398,Rajapuri Turmeric Powder (Rajapuri Haldi Powder),500g,500.0,g,215.0,,2026-10-09,
+F016,hathi_masala,6944717897798,40184563400774,Rajapuri Turmeric Powder (Rajapuri Haldi Powder),200g,200.0,g,87.0,,2026-10-09,
+F008,rani_oil,1234,1234,Refined Sunflower Oil 1-Ltr Bottle,,1000.0,ml,187.0,187.0,2026-10-09,"Rajkot oil brand; pouch, bottle, jar and the 15 L tin households buy"
+F008,rani_oil,653,653,Refined Sunflower Oil 15-Ltr Tin,,15000.0,ml,2620.0,2620.0,2026-10-09,"Rajkot oil brand; pouch, bottle, jar and the 15 L tin households buy"
+F008,rani_oil,648,648,Refined Sunflower Oil 1-Ltr Pouch,,1000.0,ml,184.0,184.0,2026-10-09,"Rajkot oil brand; pouch, bottle, jar and the 15 L tin households buy"
+F008,rani_oil,87,87,Refined Sunflower Oil 5-Ltr Jar,,5000.0,ml,890.0,890.0,2026-10-09,"Rajkot oil brand; pouch, bottle, jar and the 15 L tin households buy"
+F007,rani_oil,646,646,Refined Cottonseed Oil 15-Kg Tin,,15000.0,g,2690.0,2690.0,2026-10-09,
+F007,rani_oil,638,638,Refined Cottonseed Oil 5-Ltr Jar,,5000.0,ml,860.0,860.0,2026-10-09,
+F007,rani_oil,633,633,Refined Cottonseed Oil 1-Ltr Pouch,,1000.0,ml,184.0,184.0,2026-10-09,
+F007,rani_oil,626,626,Refined Cottonseed Oil 1-Ltr Bottle,,1000.0,ml,187.0,187.0,2026-10-09,
+F006,rani_oil,610,610,Double Filtered Groundnut Oil 15-Kg Tin,,15000.0,g,2990.0,2990.0,2026-10-09,second Rajkot source next to DoCA Rajkot
+F006,rani_oil,598,598,Double Filtered Groundnut Oil 1-Ltr Pouch,,1000.0,ml,194.0,194.0,2026-10-09,second Rajkot source next to DoCA Rajkot
+F006,rani_oil,596,596,Double Filtered Groundnut Oil 1-Ltr Bottle,,1000.0,ml,197.0,197.0,2026-10-09,second Rajkot source next to DoCA Rajkot
+F006,rani_oil,92,92,Double Filtered Groundnut Oil 5 Ltr Jar,,5000.0,ml,940.0,940.0,2026-10-09,second Rajkot source next to DoCA Rajkot
+F002,green_force,9048148377839,46802545934575,Basmati Rice (બાસમતી ચોખા) - Long Grain & Naturally Fragrant,1 Kg,1000.0,g,111.0,,2026-10-09,"Rajkot staples store (marketing yard, Morbi Road)"
+F002,green_force,9048148377839,46802545967343,Basmati Rice (બાસમતી ચોખા) - Long Grain & Naturally Fragrant,2 Kg,2000.0,g,218.0,,2026-10-09,"Rajkot staples store (marketing yard, Morbi Road)"
+F002,green_force,9048148377839,46802546000111,Basmati Rice (બાસમતી ચોખા) - Long Grain & Naturally Fragrant,5 Kg,5000.0,g,546.0,,2026-10-09,"Rajkot staples store (marketing yard, Morbi Road)"
+F002,green_force,9048154308847,46802553340143,"Premium Basmati Rice (પ્રીમિયમ બાસમતી ચોખા) - Extra Long Grain, Finest Aroma",1 Kg,1000.0,g,160.0,,2026-10-09,
+F002,green_force,9048154308847,46802553372911,"Premium Basmati Rice (પ્રીમિયમ બાસમતી ચોખા) - Extra Long Grain, Finest Aroma",2 Kg,2000.0,g,317.0,,2026-10-09,
+F002,green_force,9048154308847,46802553405679,"Premium Basmati Rice (પ્રીમિયમ બાસમતી ચોખા) - Extra Long Grain, Finest Aroma",5 Kg,5000.0,g,787.0,,2026-10-09,
+F003,green_force,9046873440495,46796883886319,Toor Dal Oil (તુવેર દાળ-તેલ વાળી) | Protein Rich - Unpolished,500 Gm,500.0,g,94.0,,2026-10-09,oiled and unoiled tur dal
+F003,green_force,9046873440495,46796883919087,Toor Dal Oil (તુવેર દાળ-તેલ વાળી) | Protein Rich - Unpolished,1 Kg,1000.0,g,182.0,,2026-10-09,oiled and unoiled tur dal
+F003,green_force,9046873112815,46796876284143,Toor Dal (તુવેર દાળ-તેલ વગર) | Protein Rich - Unpolished,500 Gm,500.0,g,81.0,,2026-10-09,oiled and unoiled tur dal
+F003,green_force,9046873112815,46796876316911,Toor Dal (તુવેર દાળ-તેલ વગર) | Protein Rich - Unpolished,1 Kg,1000.0,g,156.0,,2026-10-09,oiled and unoiled tur dal
+F005,green_force,9046930718959,46797100351727,Chana Dal (ચણાદાળ) | Protein Rich | Unpolished,500 Gm,500.0,g,72.0,,2026-10-09,
+F005,green_force,9046930718959,46797100384495,Chana Dal (ચણાદાળ) | Protein Rich | Unpolished,1 Kg,1000.0,g,138.0,,2026-10-09,
+F004,green_force,9046923673839,46797084262639,Moong Dal (મગછ્ડી) | Protein Rich - Unpolished,500 Gram,500.0,g,92.0,,2026-10-09,replaces a wholesale APMC proxy with a retail price
+F004,green_force,9046923673839,46797084295407,Moong Dal (મગછ્ડી) | Protein Rich - Unpolished,1 Kg,1000.0,g,181.0,,2026-10-09,replaces a wholesale APMC proxy with a retail price
+F004,green_force,9046874783983,46796899483887,Moong Dal (મગ ફાડા દેશી-દાળ) | Protein Rich | Unpolished,500 Gram,500.0,g,73.0,,2026-10-09,replaces a wholesale APMC proxy with a retail price
+F004,green_force,9046874783983,46796899516655,Moong Dal (મગ ફાડા દેશી-દાળ) | Protein Rich | Unpolished,1 Kg,1000.0,g,140.0,,2026-10-09,replaces a wholesale APMC proxy with a retail price
+F001,green_force,9009335206127,46606844494063,Wheat Flour / Gehu Atta  (ઘઉંનો લોટ) –  Stone-Free Grinding | Pure & Fresh,5 Kg,5000.0,g,247.0,,2026-10-09,replaces a wholesale APMC proxy with a retail price
+F001,green_force,9009335206127,46606844723439,Wheat Flour / Gehu Atta  (ઘઉંનો લોટ) –  Stone-Free Grinding | Pure & Fresh,1 Kg,1000.0,g,52.0,,2026-10-09,replaces a wholesale APMC proxy with a retail price
+F013,green_force,9049168183535,46806715826415,Sugar (ખાંડ) - Everyday Sweetener for All Recipes,1 Kg,1000.0,g,88.0,,2026-10-09,second Rajkot source next to DoCA Rajkot
+F013,green_force,9049168183535,46806715859183,Sugar (ખાંડ) - Everyday Sweetener for All Recipes,2 Kg,2000.0,g,174.0,,2026-10-09,second Rajkot source next to DoCA Rajkot
+F013,green_force,9049168183535,46806715891951,Sugar (ખાંડ) - Everyday Sweetener for All Recipes,5 Kg,5000.0,g,429.0,,2026-10-09,second Rajkot source next to DoCA Rajkot
+F026,green_force,9049180242159,46806738993391,Parasmani Jaggery (પારસમણી ગોળ) - Premium Quality & Authentic Taste,1 Kg,1000.0,g,127.0,,2026-10-09,second Rajkot source next to DoCA Rajkot

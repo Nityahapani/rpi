@@ -321,6 +321,21 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     collectors.append(("fresha_salon", FreshaCollector(root)))
     from .collectors.rent_signal import RentSignalCollector   # MODELLED R001 rent (Labour Bureau housing, panel ensemble); trend-gated; reads CSVs, no network
     collectors.append(("rent_signal", RentSignalCollector(root)))
+    # SHADOW candidate sources (rpi/shadow.py): they accrue and are screened every run, and reach the index only for items switched to them in
+    # data/source_plan.csv - their collectors are registered only then, so an unswitched source adds nothing (not even an empty ingest).
+    if not offline and (root / "data/rajkot_shops/pool.csv").exists():
+        def _shops():
+            from .collectors import rajkot_shops
+            n, msg = rajkot_shops.accrue(PoliteClient(ua, min_delay=4.0, retries=1, session=session()), root)
+            sw = rajkot_shops.switched_items(root)
+            return f"{n} quotes; {msg}; " + (f"WIRED for {sw}" if sw else "SHADOW: no item switched, nothing reaches the index")
+        _step("accrue:rajkot_shops", _shops, results)
+    from .collectors.rajkot_shops import RajkotShopsCollector, switched_items
+    from .collectors.field_diary import FieldDiaryCollector
+    from .collectors.rent_listings import RentListingsCollector
+    for _src, _col in (("rajkot_shops", RajkotShopsCollector), ("field_diary", FieldDiaryCollector), ("rent_listings", RentListingsCollector)):
+        if switched_items(root, _src):
+            collectors.append((_src, _col(root)))
     # Practo doctor fees (M003) are a SCREEN only (data/practo): the archive screen showed listed fees are stale and understate the official index (inventory AH), so no collector is registered.
     for name, col in collectors:
         _step(f"ingest:{name}", lambda col=col: ingest.run_collector(conn, col), results)
@@ -353,6 +368,18 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             raise RuntimeError(f"PROXY FAILS VALIDATION vs official item index: {bad}")
         return f"{sum(p['verdict'] == 'pass' for p in proxies)} pass, {pend} pending (<6 overlapping months), 0 fail"
     _step("validate:proxies", _proxy_step, results)
+
+    shadow_summary: dict = {}
+
+    def _shadow():
+        from . import shadow
+        r = shadow.screen(root, conn)
+        for src, c in r["candidates"].items():
+            shadow_summary[src] = {"items": len(c["items"]), "weight_pct": c["weight_pct_covered"], "last_quote": c["last_quote"],
+                                   "gate": {v: sum(1 for x in c["items"] if x["gate_vs_official"]["verdict"] == v) for v in ("pass", "fail", "pending")}}
+        return "; ".join(f"{k}: {v['items']} items ({v['weight_pct']}% of weight), last quote {v['last_quote']}, gate {v['gate']}"
+                         for k, v in shadow_summary.items()) or "no candidate quotes yet"
+    _step("screen:shadow_sources", _shadow, results)
 
     def _prereg():
         from . import prereg
@@ -403,14 +430,14 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     rent_stats: list[dict] = []
     if not offline:
         def _rent_accrue():
-            from .collectors.rent_listings import LIST_URLS, monthly_stats, qualifying_months, update_file
-            tot_new = 0
-            for u in LIST_URLS:
-                n, new = update_file(root / "data/rent_listings.csv", client.get(u).text, u)
-                tot_new += new
-            rent_stats.extend(monthly_stats(root / "data/rent_listings.csv"))
-            return (f"{tot_new} new listing(s); {qualifying_months(rent_stats)} month(s) with >=25 kept listings "
-                    f"(rule: >=2 consecutive + gate before R001 can use it; diagnostic only)")
+            from .collectors import rent_listings as rl
+            st = rl.accrue(client, root, budget=int(settings["collectors"].get("rent_crawl_budget", rl.DEFAULT_BUDGET)))
+            rent_stats.extend(rl.monthly_stats(root / "data/rent_listings.csv"))
+            msg = (f"{st['new']} new listing(s)/revision(s) from {st['pages']} page(s) of {st['urls_fetched']} list URL(s) "
+                   f"({st['urls_known']} known, {st['discovered']} newly discovered); {rl.qualifying_months(rent_stats)} month(s) with >=25 kept listings")
+            if st["blocked"]:
+                raise RuntimeError(f"{msg}; crawl STOPPED (never retried around a block): {st['blocked']}")
+            return msg + "; the panel feeds the SHADOW R001 candidate (screen:rent_listings_index)"
         _step("accrue:rent_listings", _rent_accrue, results)
 
     if not offline:
@@ -506,6 +533,17 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
                 f"the monthly-correlation gate fails for every trend-type signal (v1 {v['corr']}, v2 {v2['corr']}, v3 {v3['corr']}), which is why R001 uses the trend gate.")
     _step("screen:rent_signal", _rent_signal, results)
 
+    rent_index: dict = {}
+
+    def _rent_index():
+        from . import rentlistings
+        r = rentlistings.screen(root)
+        rent_index.update({k: r.get(k) for k in ("n_listings_used", "usable_months", "qualified_consecutive", "usable_consecutive",
+                                                 "listing_share_latest", "gate_vs_official", "verdict")})
+        return (f"{r.get('n_listings_used', 0)} listings; listing share of the 12-month window {r.get('listing_share_latest', 0):.0%}; "
+                f"trend gate {r.get('gate_vs_official', {}).get('verdict')}; {r['verdict']}")
+    _step("screen:rent_listings_index", _rent_index, results)
+
     def _nowcast_eval():
         from .nowcast_eval import run_backtest
         r = run_backtest(root)
@@ -540,6 +578,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     out["doca_mirror_check"] = doca_state["check"]
     out["doca_screen"] = doca_screen
     out["rent_listings_monthly"] = rent_stats
+    out["rent_listings_index"] = rent_index
+    out["shadow_sources"] = shadow_summary
     out["mrp_screen"] = mrp_screen
     out["ceat_screen"] = ceat_screen
     out["vishal_screen"] = vishal_screen

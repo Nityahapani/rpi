@@ -22,12 +22,16 @@ import pandas as pd
 from .superseded import sql_clause
 PROXY_SOURCES = ("mandi_gondal", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "necc_ahmedabad", "doca_national", "doca_gujarat", "dmart_ahmedabad", "vishal_diary", "frc_rajkot", "district_cinema", "fresha_salon")
 # Multi-SKU pools: the monthly level is the matched-model Jevons chain of the SKUs, not the mean of price levels (a SKU going out of stock must not move it).
-MULTI_SKU_SOURCES = ("dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon")
+MULTI_SKU_SOURCES = ("dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon", "rajkot_shops", "field_diary")
 # Retail quotes reported by DoCA for the Rajkot centre (rpi/collectors/doca.py): a genuine retail price of a standard local variety,
 # gated against the official item index like a proxy, but reported in its own bucket (it is not wholesale).
-RETAIL_SOURCES = ("doca_rajkot",)
+# Rajkot web shops (rpi/collectors/rajkot_shops.py) and the Rajkot field diary (field_diary.py) are Rajkot shelf prices: same bucket and gate.
+# Both are SHADOW sources: they appear here so that switching an item is a data edit (source_plan.csv), but no item uses them yet.
+RETAIL_SOURCES = ("doca_rajkot", "rajkot_shops", "field_diary")
 # MODELLED series (not observed prices): counted in their own bucket, gated by the calibrated trend gate (rentsignal.trend_gate) instead of the correlation gate.
-MODELLED_SOURCES = ("rent_signal",)
+# rent_listings = listings-based stock-rent candidate for R001 (rpi/rentlistings.py): built on observed asking rents but through a stock model
+# and with the modelled signal as stand-in before the listings, so it is gated and bucketed like the model it would replace (SHADOW, unused).
+MODELLED_SOURCES = ("rent_signal", "rent_listings")
 GATED_SOURCES = PROXY_SOURCES + RETAIL_SOURCES + MODELLED_SOURCES
 # Items fed by a regulated CEILING (a cap, not an observed shelf price) are counted in the proxy share even though they use the
 # tariff machinery; M001 = NPPA ceiling for paracetamol 500 mg; T004 = statutory maximum auto-rickshaw fare; D002 = Rajkot tea-hotel association rate card (not an observed paid price).
