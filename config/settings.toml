@@ -17,7 +17,8 @@ tariff_events = "data/tariff_events.csv"
 min_matched = 2             # default min matched quotes for an item to give a relative
 max_abs_log_change = 0.7    # monthly log-relative clip per quote (~2x). Documented robustness rule.
 min_days_per_month = 1      # min observation days for a quote-month to count
-bootstrap_reps = 200
+bootstrap_reps = 2000        # Monte-Carlo reps for the published 95% CI (rpi/index/uncertainty.py); the numpy
+                             # impute path makes this cost less than the old 200-rep run. Lower it with `rpi refresh --reps N`.
 geks_window = 13
 impute = "seasonal_trend"   # missing item relatives (nowcast months, splice months): long-run mean change + EB calendar-month deviation from 11 yrs of official data (rpi/seasonal.py; untouched-test RMSE -28%/-33%); falls back to the item's own 12-month drift
 calibrate_wholesale = true  # mandi-fed items (F001 F004 F022 F023 F025): wholesale change is shrunk with a pooled beta and fused with the seasonal prior (data/official/wholesale_calibration.csv) instead of being used one-for-one
@@ -52,7 +53,15 @@ resource_id = "9ef84268-d588-465a-a308-a864a43d0070"  # data.gov.in daily mandi 
 api_key_env = "DATA_GOV_API_KEY"
 
 [health]
+item_stale_days = 90        # an item whose quotes have not CHANGED for this many days is reported as stale (see `rpi health`)
+item_stale_obs_days = 30     # an item whose newest quote is older than this many days is reported as a quiet feed
 stale_days = { A = 3, B = 3, C = 45, D = 9999 }
 
 [prereg]   # pre-registered live scoring of every gated series (rpi/prereg.py)
 auto_demote = false   # true: a series flagged by the CUSUM is reverted to official_link automatically
+
+[gates]
+# Publication gates. The coverage gate (50% independent weight) is always on. The freshness gate is OFF unless
+# `max_stale_weight_pct` is set here: refuse to publish when more than this share of basket weight has had no price
+# change for longer than [health] item_stale_days days.
+# max_stale_weight_pct = 25.0

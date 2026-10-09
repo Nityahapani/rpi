@@ -170,6 +170,72 @@ def log_vintages(root: Path, total: pd.Series, ref_period: str | None, run_id: s
     return len(new)
 
 
+def revisions(conn, variant: str = "jevons_chain", min_vintages: int = 2, triangle_periods: int = 8,
+              triangle_vintages: int = 12) -> dict:
+    """Revision analysis of the published series itself, from `index_results` (every build stores its full series).
+
+    Revisions are expected: a month first published as a nowcast is later carried by real quotes, prices get
+    corrected, the seasonal prior moves. The point is to PUBLISH the revision distribution - a standard
+    statistical-agency credibility artifact - not to eliminate it.
+
+    Builds are grouped into REGIMES by `index_runs.weights_source` (the recorded methodology label). A change of
+    weights_source is a methodology break, and revisions computed across one mix a data update with an engine
+    change; so revisions are computed WITHIN a regime and the breaks are reported separately.
+    """
+    q = pd.read_sql_query(
+        "SELECT i.run_id, i.period, i.value, r.built_at, r.weights_source "
+        "FROM index_results i JOIN index_runs r USING(run_id) "
+        "WHERE i.variant=? AND i.level='total' AND i.key='ALL' ORDER BY i.run_id", conn, params=(variant,))
+    if q.empty:
+        return {"n_periods": 0, "note": "no index_results rows"}
+    order = list(dict.fromkeys(q.sort_values("run_id").weights_source))
+    q["regime"] = q.weights_source.map({s: i for i, s in enumerate(order)})
+    out = {"variant": variant, "n_runs": int(q.run_id.nunique()),
+           "run_span": [str(q.run_id.min()), str(q.run_id.max())], "regimes": [], "breaks": []}
+    prev = None
+    for i, src in enumerate(order):
+        g = q[q.regime == i]
+        rows = []
+        for per, gp in g.groupby("period"):
+            if len(gp) < min_vintages:
+                continue
+            gp = gp.sort_values("run_id")
+            first, last = float(gp.value.iloc[0]), float(gp.value.iloc[-1])
+            rows.append({"period": per, "n_vintages": int(len(gp)), "first": round(first, 4), "last": round(last, 4),
+                         "revision": round(last - first, 4), "revision_pct": round((last / first - 1) * 100, 4)})
+        df = pd.DataFrame(rows).sort_values("period") if rows else pd.DataFrame()
+        lab = f"R{i + 1}"
+        regime = {"label": lab, "n_runs": int(g.run_id.nunique()), "first_run": str(g.run_id.min()),
+                  "last_run": str(g.run_id.max()), "method_label": str(src)[-160:],
+                  "n_periods_with_vintages": int(len(df)),
+                  "mean_abs_revision": round(float(df.revision.abs().mean()), 4) if len(df) else None,
+                  "mean_abs_revision_pct": round(float(df.revision_pct.abs().mean()), 4) if len(df) else None,
+                  "max_abs_revision_pct": round(float(df.revision_pct.abs().max()), 4) if len(df) else None}
+        out["regimes"].append(regime)
+        if prev is not None and len(df):
+            a = q[q.regime == prev].groupby("period").value.median()
+            b = g.groupby("period").value.median()
+            common = a.index.intersection(b.index)
+            if len(common):
+                jump = ((b[common] / a[common] - 1) * 100).abs()
+                out["breaks"].append({"from": f"R{prev + 1}", "to": lab, "n_overlapping_periods": int(len(common)),
+                                      "median_abs_jump_pct": round(float(jump.median()), 4),
+                                      "max_abs_jump_pct": round(float(jump.max()), 4)})
+        prev = i
+    last = q[q.regime == order.index(order[-1])]
+    if len(last):
+        df = pd.DataFrame([{"period": p, "value": v} for p, v in last.groupby("period").value.last().items()])
+        tri_v = sorted(last.run_id.unique())[-triangle_vintages:]
+        tri = last[last.run_id.isin(tri_v)].pivot_table(index="period", columns="run_id", values="value")
+        keep = tri.tail(triangle_periods)
+        out["triangle"] = {str(p): {str(c)[:15]: (None if pd.isna(v) else round(float(v), 3)) for c, v in row.items()}
+                           for p, row in keep.iterrows()}
+    out["note"] = ("revisions within a regime are data updates (new quotes, corrections, official data arriving); "
+                   "`breaks` are methodology changes, which are NOT data revisions and dwarf them - compare only "
+                   "like-for-like runs when judging the revision record")
+    return out
+
+
 def score_vintages(root: Path, realised: pd.Series) -> dict:
     """Compare logged nowcasts with the index level later published for the same month once official data exist.
 

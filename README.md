@@ -79,6 +79,9 @@ Inputs are public Labour Bureau CPI-IW housing-group indices: all-India half-yea
 
 ## Repo map
 - `rpi/` engine, collectors (`rpi/collectors/`), gates (`proxy_check.py`), nowcast (`nowcast_eval.py`), rent model (`rentsignal.py`), electricity model, registers/staleness (`registry.py`), publishing.
+- `rpi/panel_eval.py` the deep replay: ten nowcast rules replayed over 76-80 origins per horizon (2018-01 to 2025-11, untouched test window from 2023-01) on the 2014-2025 official item panel, with DM(HLN) / Mincer-Zarnowitz / Clark-West tests and walk-forward calibration (`make eval`). `rpi/evalstats.py` and `rpi/tsdiag.py` (ADF/KPSS/Ljung-Box/seasonal decomposition) are the statistics layer; `rpi/index/uncertainty.py` bootstraps quotes, item availability and weights separately and reports their variance shares (`make uncertainty`).
+- `make eval` → `data/official/evaluation.json`; `make diag` → `data/official/ts_diagnostics.json` + the seasonally adjusted series; `make uncertainty` → `data/official/uncertainty_decomposition.json`; `make replicate` runs the test suite plus both reports. Pinned deps: `requirements.lock.txt` (`make lock`). Cite via `CITATION.cff`.
+- `rpi health` also prints item *freshness*: basket weight whose quotes have not changed for longer than `[health] item_stale_days`. The optional publication gate for it (`[gates] max_stale_weight_pct`) is OFF by default.
 - `data/source_plan.csv` one row per item: source, class, and the written reason. `data/official/` MoSPI series, audits, screens, back-tests, and the dated source inventory.
 - `data/official/source_inventory_2026-10-02.md` every source looked at, wired or not, with credibility ratings and evidence (sections A-AJ). `data/official/data_access_guide.md` for the data.gov.in key and RTI requests.
 - `scripts/` one-off builders and back-tests (coverage ceiling, replay back-test, seasonal tests, pooled accuracy, CEDA/Agmarknet screens).

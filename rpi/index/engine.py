@@ -2,10 +2,12 @@
 from __future__ import annotations
 import datetime as dt
 from dataclasses import dataclass, field
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
+from ..config import ROOT as _ROOT
 from .panel import load_quotes, quotes_to_arrays
 from .elementary import rel_from_lp
 from .geks import geks_rel
@@ -81,6 +83,57 @@ def _is_demo(conn, weights_source: str) -> bool:
     return weights_source.upper().startswith("DEMO") or any(s.startswith("synthetic") for s in src)
 
 
+def min_matched_series(items, cfg: dict, is_demo: bool, plan_csv=None) -> pd.Series:
+    """Per-item minimum matched quotes for an item-month to count as observed.
+
+    Tier default from `[index] min_matched` / `min_matched_by_tier`, except items fed by ONE series per month by
+    design (official-linked stand-ins, administered tariffs, PNG, daily single-feed sources): those legitimately have
+    a single quote, so min_matched=1. Synthetic/demo runs keep the strict per-tier rule.
+
+    Shared by run_index and `rpi uncertainty` so the published CI and the decomposition use the same definition of
+    an observed month.
+    """
+    by_tier = cfg.get("min_matched_by_tier", {})
+    min_m = items.set_index("item_id")["tier"].map(lambda t: by_tier.get(t, cfg["min_matched"])).astype(int)
+    _plan = Path(plan_csv) if plan_csv else _ROOT / "data" / "source_plan.csv"
+    if _plan.exists() and not is_demo:
+        _p = pd.read_csv(_plan, dtype=str, keep_default_na=False)
+        _lk = [i for i in _p.loc[_p["primary_source"].isin(SINGLE_SERIES_SOURCES), "item_id"] if i in min_m.index]
+        min_m.loc[_lk] = 1
+    return min_m
+
+
+def published_band_inputs(conn, settings: dict) -> dict:
+    """Inputs of the published 95% band, prepared exactly as run_index prepares them for the jevons_chain variant.
+
+    Weights price-updated to the base month, quotes from the base month on (real runs), the seasonal-trend prior for
+    trailing gaps, per-item min_matched. `rpi uncertainty` builds on this so that its quotes-only component IS the
+    published band (identical draws at equal reps, pinned by tests/test_uncertainty.py) and its levels are on the
+    published base. Keep in step with run_index.
+    """
+    cfg = settings["index"]
+    items, weights, wsrc = _load_ref(conn)
+    bp = settings.get("project", {}).get("base_period", "")
+    if bp and not wsrc.upper().startswith("DEMO"):
+        weights, wsrc = price_update_weights(weights, wsrc, bp)
+    is_demo = _is_demo(conn, wsrc)
+    seasonal_tables = {}
+    if cfg.get("impute") == "seasonal_trend" or cfg.get("calibrate_wholesale"):
+        from .. import seasonal as _sea
+        seasonal_tables = {} if is_demo else _sea.load_tables(_ROOT)
+    q = load_quotes(conn, VARIANTS["jevons_chain"]["field"], cfg["min_days_per_month"], cfg.get("min_days_by_source"))
+    if bp and not is_demo and not q.empty:
+        q = q[q["period"] >= pd.Period(bp, "M")]
+    if q.empty:
+        raise RuntimeError("no observations in database")
+    periods = pd.period_range(q["period"].min(), q["period"].max(), freq="M")
+    base = pd.Period(bp, "M") if (bp and not (is_demo and pd.Period(bp, "M") not in periods)) else periods[0]
+    return {"arrays": quotes_to_arrays(q, periods), "periods": periods, "items": items, "weights": weights,
+            "weights_source": wsrc, "is_demo": is_demo, "min_matched": min_matched_series(items, cfg, is_demo),
+            "clip": cfg["max_abs_log_change"], "impute": cfg.get("impute", "division"), "seasonal": seasonal_tables,
+            "base": base}
+
+
 def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
     cfg = settings["index"]
     items, weights, wsrc = _load_ref(conn)
@@ -90,17 +143,7 @@ def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
     run = IndexRun(run_id=dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"),
                    is_demo=_is_demo(conn, wsrc), weights_source=wsrc)
     clip = cfg["max_abs_log_change"]
-    by_tier = cfg.get("min_matched_by_tier", {})
-    min_m = items.set_index("item_id")["tier"].map(lambda t: by_tier.get(t, cfg["min_matched"])).astype(int)
-    # Items fed by ONE series per month by design (official-linked stand-ins, administered tariffs, PNG, daily single-feed
-    # sources) legitimately have a single quote: min_matched=1. Synthetic/demo runs keep the strict per-tier rule.
-    from ..config import ROOT as _ROOT
-    _plan = _ROOT / "data" / "source_plan.csv"
-    if _plan.exists() and not run.is_demo:
-        import pandas as _pd
-        _p = _pd.read_csv(_plan, dtype=str, keep_default_na=False)
-        _lk = [i for i in _p.loc[_p["primary_source"].isin(SINGLE_SERIES_SOURCES), "item_id"] if i in min_m.index]
-        min_m.loc[_lk] = 1
+    min_m = min_matched_series(items, cfg, run.is_demo)
 
     # sweep 27: seasonal-trend imputation prior and wholesale-feed calibration (rpi/seasonal.py); both are switched by settings and fully disclosed
     seasonal_tables, wcal, cutoffs = {}, {}, {}

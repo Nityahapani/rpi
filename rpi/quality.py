@@ -69,3 +69,70 @@ def coverage_split(conn, plan_csv) -> dict:
                 "independent_weight_pct_ref": share(ref, True) if isinstance(ref, str) else None,
                 "independent_weight_pct_latest": share(latest, True)})
     return out
+
+
+def freshness_report(conn, settings: dict, today: dt.date | None = None) -> tuple[pd.DataFrame, dict]:
+    """Per-ITEM freshness of the EVIDENCE, weighted: which heavy items are carried by fill rules and for how long.
+
+    Two ages per item, because they catch different failures:
+
+    * age_obs  - days since the item's newest quote. Answers "is the feed alive".
+    * age_change - days since the newest quote that was DIFFERENT from that SKU's previous quote ("no change yet"
+      is not evidence a price is current). A register or a fixed-fee item can be observed daily and still be
+      unchanged for months; the monthly relative is then carried by the last step, and nothing else flags it.
+      Typical case: an administered tariff register such as R003 (LPG cylinder), quoted every day but unchanged
+      for ~100 days at the time of writing (Oct 2026).
+
+    Thresholds: settings [health] item_stale_days (default 90) on age_change; item_stale_obs_days (default 30) on
+    age_obs. Returns (frame sorted by weight, summary); summary['stale_weight_pct'] is the basket-weight share with
+    age_change over the threshold - the number a publication gate should look at.
+    """
+    today = today or dt.date.today()
+    limit = int(settings.get("health", {}).get("item_stale_days", 90))
+    limit_obs = int(settings.get("health", {}).get("item_stale_obs_days", 30))
+    df = pd.read_sql_query(
+        """SELECT i.item_id, i.division, i.tier, w.weight,
+                  MAX(o.obs_date) AS last_obs, COUNT(*) AS n_obs
+           FROM items i JOIN weights w ON w.item_id=i.item_id
+           LEFT JOIN products p ON p.item_id=i.item_id
+           LEFT JOIN observations o ON o.sku_id=p.sku_id
+           GROUP BY i.item_id""", conn)
+    obs = pd.read_sql_query(
+        """SELECT p.item_id, o.sku_id, o.obs_date, o.unit_price FROM observations o
+           JOIN products p ON p.sku_id=o.sku_id ORDER BY o.sku_id, o.obs_date""", conn)
+    last_change = {}
+    if len(obs):
+        obs = obs.dropna(subset=["unit_price"])
+        obs["prev"] = obs.groupby("sku_id")["unit_price"].shift()
+        ch = obs[(obs.prev.isna()) | (obs.unit_price != obs.prev)]
+        last_change = ch.groupby("item_id")["obs_date"].max().to_dict()
+    df["last_change"] = df.item_id.map(last_change)
+    df["age_obs"] = [None if not r.last_obs else (today - dt.date.fromisoformat(r.last_obs)).days for r in df.itertuples()]
+    df["age_change"] = [None if not isinstance(r.last_change, str) else (today - dt.date.fromisoformat(r.last_change)).days
+                        for r in df.itertuples()]
+    df["stale"] = [bool(a is not None and a > limit) for a in df.age_change]
+    df["stale_feed"] = [bool(a is not None and a > limit_obs) for a in df.age_obs]
+    df = df.sort_values(["stale", "weight"], ascending=[False, False]).reset_index(drop=True)
+    tot = float(df.weight.sum()) or 1.0
+    summ = {"stale_change_days_threshold": limit, "stale_obs_days_threshold": limit_obs, "n_items": int(len(df)),
+            "n_stale": int(df.stale.sum()), "n_stale_feed": int(df.stale_feed.sum()),
+            "stale_weight_pct": round(100.0 * float(df.loc[df.stale, "weight"].sum()) / tot, 2),
+            "stale_feed_weight_pct": round(100.0 * float(df.loc[df.stale_feed, "weight"].sum()) / tot, 2),
+            "heaviest_stale": df.loc[df.stale, ["item_id", "weight", "age_change", "last_change"]].head(5).to_dict("records")}
+    return df[["item_id", "division", "tier", "weight", "last_change", "age_change", "last_obs", "age_obs", "stale", "stale_feed"]], summ
+
+
+def freshness_gate(conn, settings: dict, today: dt.date | None = None) -> tuple[bool, str]:
+    """Publication gate on stale evidence, OFF unless configured.
+
+    `[gates] max_stale_weight_pct` in settings.toml = the largest share of basket weight allowed to have no price
+    change for longer than `[health] item_stale_days`. Absent -> no enforcement (v1 ships as a report only, so the
+    daily bot cannot start failing on a warning it never saw).
+    """
+    lim = settings.get("gates", {}).get("max_stale_weight_pct")
+    _, summ = freshness_report(conn, settings, today=today)
+    if lim is None:
+        return True, f"freshness gate off (report only): stale weight {summ['stale_weight_pct']}%"
+    ok = summ["stale_weight_pct"] <= float(lim)
+    return ok, (f"stale weight {summ['stale_weight_pct']}% vs limit {lim}% "
+                f"(no price change for >{summ['stale_change_days_threshold']} days; heaviest: {summ['heaviest_stale'][:3]})")

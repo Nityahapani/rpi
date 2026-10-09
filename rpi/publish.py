@@ -70,6 +70,14 @@ class CoverageGuard(RuntimeError):
     """Raised when too little of the basket weight has real observations to call the result an index."""
 
 
+class FreshnessGuard(RuntimeError):
+    """Raised when too much basket weight has gone too long without a price change - OFF unless configured.
+
+    Configured by [gates] max_stale_weight_pct in settings.toml (see rpi/quality.py::freshness_gate). Default absent,
+    so the report in `rpi health` is informational and the daily run cannot start failing on it unannounced.
+    """
+
+
 MIN_PUBLISH_COVERAGE = 0.60
 
 
@@ -94,6 +102,17 @@ def publish(conn, out_dir: Path, official_id: str | None = None, allow_demo: boo
     if not demo and _gate_cov < min_coverage:
         raise CoverageGuard(f"only {_gate_cov:.1%} of basket weight has observations in the reference period "
                             f"{_ref or 'latest'} (minimum {min_coverage:.0%}). Refusing to publish a partial basket as the Rajkot index.")
+    if not demo:
+        try:
+            from .config import load_settings
+            from .quality import freshness_gate
+            _ok, _why = freshness_gate(conn, load_settings())
+            if not _ok:
+                raise FreshnessGuard(f"too much basket weight has stale prices - {_why}")
+        except FreshnessGuard:
+            raise
+        except Exception:  # noqa: BLE001 - a broken freshness check must never block a publish by itself
+            pass
     out = Path(out_dir)
     (out / "data").mkdir(parents=True, exist_ok=True)
 

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use the Rajkot Price Index or its methods, please cite this repository."
+title: "Rajkot Price Index (RPI): an independent web-scraped consumer price index for Rajkot, Gujarat"
+abstract: >-
+  A daily-updating consumer price index for Rajkot (Gujarat, India), base 2025-01 = 100, built from web-scraped
+  prices, administered tariffs and official MoSPI item indices, and validated month-on-month against MoSPI's
+  Gujarat-urban CPI. The repository publishes the index series, the weights recovered from MoSPI's published index
+  tree, the pseudo-real-time evaluation harness, and the uncertainty decomposition.
+authors:
+  - alias: Nityahapani
+    name: "Nityahapani"
+    website: "https://github.com/Nityahapani"
+type: software
+repository-code: "https://github.com/Nityahapani/rpi"
+keywords:
+  - consumer price index
+  - nowcasting
+  - web scraping
+  - India
+  - Gujarat
+  - Rajkot
+  - seasonal adjustment
+  - forecast evaluation

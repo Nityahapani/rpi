@@ -26,34 +26,68 @@ def impute_relatives(rel: pd.DataFrame, observed: pd.DataFrame, items: pd.DataFr
         calendar-month deviation from 11 years of official Gujarat-urban data) is filled with that prior; other items fall back to own_trend.
         Pseudo-real-time test (2023-2025, untouched): index RMSE 0.61 vs 0.85 pp (1 month), 0.95 vs 1.43 pp (2 months), DM p <= 0.001.
     """
-    div = items.set_index("item_id")["division"].reindex(rel.columns)
-    filled = rel.copy()
-    imputed = pd.DataFrame(False, index=rel.index, columns=rel.columns)
-    for t in rel.index:
-        obs = observed.loc[t] & rel.loc[t].notna()
+    cols = list(rel.columns)
+    n_p = len(rel.index)
+    rel_np = rel.to_numpy(dtype=float)
+    obs_np = observed.reindex(columns=cols).to_numpy(dtype=bool)
+    w_np = w.reindex(cols).to_numpy(dtype=float)
+    div_np = items.set_index("item_id")["division"].reindex(cols).to_numpy(dtype=object)
+
+    filled = rel_np.copy()
+    imp_np = np.zeros(rel_np.shape, dtype=bool)
+    # A cell with a NaN division belonged to no `div == d` group in the scalar loop and so was never filled; keep that.
+    groups = [np.flatnonzero(div_np == d) for d in pd.unique(div_np) if d == d]
+
+    kcount = tmean = has_seas = seas_val = last_obs = None
+    if method in ("own_trend", "seasonal_trend"):
+        # Per item: count and mean of the last `trend_window` OBSERVED relatives strictly before t (excluding row 0),
+        # precomputed with prefix sums; the scalar loop below then needs no pandas slicing.
+        kcount = np.zeros((n_p, len(cols)), dtype=int)
+        tmean = np.full((n_p, len(cols)), np.nan)
+        for j in range(len(cols)):
+            ok = obs_np[1:, j] & ~np.isnan(rel_np[1:, j])
+            pos_c = np.flatnonzero(ok) + 1
+            vals = rel_np[pos_c, j]
+            k = np.searchsorted(pos_c, np.arange(n_p))
+            kcount[:, j] = k
+            lo = np.maximum(0, k - trend_window)
+            if len(vals):
+                cs = np.concatenate([[0.0], np.cumsum(vals)])
+                tmean[:, j] = np.where(k > 0, (cs[k] - cs[lo]) / np.maximum(k - lo, 1), np.nan)
+        last_obs = np.where(obs_np.any(axis=0), n_p - 1 - np.argmax(obs_np[::-1, :], axis=0), -1)
+        has_seas = np.zeros((n_p, len(cols)), dtype=bool)
+        seas_val = np.full((n_p, len(cols)), np.nan)
+        if method == "seasonal_trend" and seasonal:
+            months = np.array([p.month for p in rel.index])
+            for j, c in enumerate(cols):
+                if c in seasonal:
+                    clim, seas = seasonal[c]
+                    has_seas[:, j] = True
+                    seas_val[:, j] = clim + seas[months - 1]
+
+    for t in range(n_p):
+        obs = obs_np[t] & ~np.isnan(rel_np[t])
         if obs.all():
             continue
-        overall = np.average(rel.loc[t][obs], weights=w[obs]) if obs.any() else 0.0
-        for d in div.unique():
-            cols = div.index[div == d]
-            o = obs[cols]
-            val = np.average(rel.loc[t, cols][o], weights=w[cols][o]) if o.any() else overall
-            miss = cols[~o.values]
-            filled.loc[t, miss] = val
-            imputed.loc[t, miss] = True
-            if method in ("own_trend", "seasonal_trend"):
-                pos = rel.index.get_loc(t)
-                for c in miss:
+        pos_all = np.flatnonzero(obs)
+        overall = float(np.average(rel_np[t, pos_all], weights=w_np[pos_all])) if len(pos_all) else 0.0
+        for g in groups:
+            o = obs[g]
+            val = float(np.average(rel_np[t, g[o]], weights=w_np[g[o]])) if o.any() else overall
+            miss = g[~o]
+            if len(miss) == 0:
+                continue
+            filled[t, miss] = val
+            imp_np[t, miss] = True
+            if kcount is not None:
+                for j in miss:
                     # Only TRAILING gaps (no observation of the item in any later month) are forecasts, which is what the prior was tested for;
                     # an interior gap (e.g. the splice month where an independent feed starts) has later data and keeps the own-trend rule.
-                    if method == "seasonal_trend" and seasonal and c in seasonal and not observed[c].iloc[pos + 1:].any():
-                        clim, seas = seasonal[c]
-                        filled.loc[t, c] = clim + float(seas[t.month - 1])
-                        continue
-                    hist = rel[c].iloc[1:pos][observed[c].iloc[1:pos].to_numpy()].dropna()
-                    if len(hist) >= min_history:
-                        filled.loc[t, c] = float(np.mean(hist.iloc[-trend_window:]))
-    return filled, imputed
+                    if has_seas[t, j] and last_obs[j] <= t:
+                        filled[t, j] = seas_val[t, j]
+                    elif kcount[t, j] >= min_history:
+                        filled[t, j] = tmean[t, j]
+    return pd.DataFrame(filled, index=rel.index, columns=cols), pd.DataFrame(imp_np, index=rel.index, columns=cols)
 
 
 def aggregate(rel: pd.DataFrame, n: pd.DataFrame, items: pd.DataFrame, weights: pd.Series,

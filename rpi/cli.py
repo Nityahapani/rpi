@@ -6,6 +6,7 @@ import shutil
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 from . import db, ingest
@@ -96,7 +97,15 @@ def cmd_publish(args, s):
 
 
 def cmd_health(args, s):
-    print(health_report(_conn(args, s), s).to_string(index=False))
+    conn = _conn(args, s)
+    print(health_report(conn, s).to_string(index=False))
+    from .quality import freshness_report
+    fresh, summ = freshness_report(conn, s)
+    print("\nitem freshness (stalest heavy items first):")
+    print(fresh.head(8).to_string(index=False))
+    print(f"no price change for >{summ['stale_change_days_threshold']}d: {summ['stale_weight_pct']}% of weight "
+          f"({summ['n_stale']}/{summ['n_items']} items); feeds quiet >{summ['stale_obs_days_threshold']}d: "
+          f"{summ['stale_feed_weight_pct']}% of weight")
 
 
 def cmd_daily(args, s):
@@ -152,6 +161,137 @@ def cmd_probe(args, s):
     print(run_probe(ROOT).to_string(index=False))
 
 
+def cmd_eval(args, s):
+    """Deep pseudo-real-time replay of the nowcast rules + statistical tests + calibration -> evaluation.json."""
+    import pandas as pd
+    from . import panel_eval
+    horizons = tuple(int(h) for h in str(args.horizons).split(","))
+    first = pd.Period(args.first, "M") if args.first else panel_eval.SELECT_FIRST
+    res = panel_eval.run_and_write(ROOT, horizons=horizons, first=first, conn=_conn(args, s))
+    for line in panel_eval.summary_lines(res):
+        print(line)
+    print("report: data/official/evaluation.json, data/official/replay_index_errors.csv")
+
+
+def cmd_diag(args, s):
+    """Unit roots / autocorrelation / seasonality of the published series -> ts_diagnostics.json (+ SA series).
+
+    Series covered: the published RPI, the official Gujarat-urban general index, the MoM gap between them, and - for
+    the unit-root/seasonality battery, which needs decades not months - the basket-weighted official 2012 panel over
+    its full 144-month span (the long-horizon analogue of the RPI built from the same items and weights).
+    """
+    import datetime as _dt
+    import json
+    from .tsdiag import report, classical_decompose
+    from . import panel_eval
+    conn = _conn(args, s)
+    from .publish import load_run
+    _, res, _ = load_run(conn)
+    mine = res[(res.variant == "jevons_chain") & (res.level == "total")].set_index("period")["value"]
+    mine.index = pd.PeriodIndex(mine.index, freq="M")
+    out = {"generated": _dt.date.today().isoformat(), "series": {}}
+
+    # long-horizon official analogue: basket weights applied to the 2012-base official item indices, averaged over
+    # the lines that report in each month (same handling as the engine: missing lines do not enter the average)
+    panel = panel_eval.load_panel(ROOT)
+    lv = np.exp(panel["L"][panel["lines"]])
+    ww = panel["line_w"].reindex(panel["lines"]).fillna(0.0)
+    den = (lv.notna() * ww).sum(axis=1)
+    long_series = (lv.fillna(0.0) * ww).sum(axis=1) / den.replace(0.0, np.nan)
+    long_series = long_series.dropna()
+    long_series = long_series / long_series.iloc[0] * 100
+
+    series = {"rpi_total": mine, "panel_official_long": long_series}
+    from .validate import official_series as _off
+    if "CPI2024_GUJARAT_URBAN_GENERAL" in [r[0] for r in conn.execute("SELECT DISTINCT series_id FROM official_series")]:
+        series["official_gujarat_urban"] = _off(conn, "CPI2024_GUJARAT_URBAN_GENERAL")
+    for key, sr in series.items():
+        out["series"][key] = report(sr)
+    off = series.get("official_gujarat_urban")
+    if off is not None:
+        common = mine.index.intersection(off.index)
+        if len(common) > 12:
+            gap = (mine[common].pct_change() - off[common].pct_change()).dropna() * 100
+            out["series"]["gap_mom_rpi_minus_official"] = report(gap)
+    dec = classical_decompose(mine).round(4)
+    dec.index.name = "period"
+    dec.to_csv(ROOT / "data/official/rpi_total_sa.csv")
+    (ROOT / "data/official/ts_diagnostics.json").write_text(json.dumps(out, indent=1, default=str))
+
+    def fmt(r):
+        if "adf" not in r or r["adf"].get("stat") != r["adf"].get("stat"):
+            return f"n={r.get('n', 0):3d}  (unit-root/seasonality battery needs >= 36 obs)"
+        ss = r["seasonal_strength"].get("seasonal_strength")
+        ss = f"{ss:.2f}" if isinstance(ss, float) and ss == ss else "n/a"
+        return (f"n={r['n']:3d}  ADF {r['adf']['stat']:8.2f} (5% {r['adf']['crit_5pct']}: "
+                f"{'stationary' if r['adf']['reject_unit_root_5pct'] else 'unit root'})  "
+                f"KPSS {r['kpss']['stat']:6.3f} ({'stationary' if not r['kpss']['reject_stationary_5pct'] else 'unit root'})  "
+                f"LB(12) on changes p={r['ljung_box_diff']['p']:.3f}  seasonal strength {ss}")
+    for key, r in out["series"].items():
+        print(f"{key:32s} {fmt(r)}")
+    print("seasonally adjusted series: data/official/rpi_total_sa.csv; report: data/official/ts_diagnostics.json")
+
+
+def cmd_uncertainty(args, s):
+    """Three-component bootstrap decomposition of the published CI -> uncertainty_decomposition.json.
+
+    Inputs come from engine.published_band_inputs - exactly what run_index feeds the published band (price-updated
+    weights, quotes from the base month, the seasonal-trend prior) - so the quotes-only component IS the published
+    band at equal reps, and all levels are on the published scale (base month = 100).
+    """
+    import json
+    import pandas as pd
+    from .index.engine import published_band_inputs
+    from .index.uncertainty import bootstrap_replicates, quantiles, mc_quantile_error, variance_decomposition
+    conn = _conn(args, s)
+    b = published_band_inputs(conn, s)
+    periods = b["periods"]
+    if b["base"] != periods[0]:
+        # aggregate() chains from 100 at the first month; the published band is rebased to the base month
+        raise SystemExit(f"rpi uncertainty: the quote panel starts {periods[0]}, not at the base month {b['base']}; "
+                         "levels would not be on the published scale")
+    from .publish import _ref_period
+    ref = _ref_period(conn)
+    tail = pd.Period(ref, "M") + 1 if ref else None      # items are genuinely unobserved only after the last official month
+    reps = int(args.reps or 500)
+    runs = {}
+    plan = (("quotes", ("quotes",), None), ("items_all", ("items",), None), ("items_tail", ("items",), tail),
+            ("weights", ("weights",), None), ("all_tail", ("quotes", "items", "weights"), tail))
+    for name, comps, mfrom in plan:
+        print(f"  bootstrap {name:9s} reps={reps}{'' if mfrom is None else ' (mask from ' + str(mfrom) + ')'} ...", flush=True)
+        runs[name] = bootstrap_replicates(b["arrays"], periods, b["items"], b["weights"], reps, components=comps,
+                                          min_matched=b["min_matched"], clip=b["clip"], impute=b["impute"],
+                                          seasonal=b["seasonal"], weight_sigma=args.weight_sigma, mask_from=mfrom)
+    dec = variance_decomposition({"quotes": runs["quotes"], "items": runs["items_tail"],
+                                  "weights": runs["weights"], "all": runs["all_tail"]}, period_index=-1)
+    lo_all, hi_all = quantiles(runs["all_tail"], (2.5, 97.5))
+    lo90, hi90 = quantiles(runs["all_tail"], (5.0, 95.0))
+    lo_q, hi_q = quantiles(runs["quotes"], (2.5, 97.5))   # the historical (quotes-only) band, for comparison
+    mc = mc_quantile_error(runs["all_tail"], splits=100)
+    var_all_months = float(np.nanvar(runs["items_all"][:, -1]))
+    var_tail = float(np.nanvar(runs["items_tail"][:, -1]))
+    out = {"generated": pd.Timestamp.utcnow().date().isoformat(), "reps": reps, "weight_sigma": args.weight_sigma,
+           "latest_period": str(periods[-1]), "base_period": str(b["base"]),
+           "mask_from": str(tail),
+           "items_variance_all_months_vs_tail": {"all_months": round(var_all_months, 4), "tail_only": round(var_tail, 4)},
+           "ci_95_all_components": [round(float(lo_all[-1]), 4), round(float(hi_all[-1]), 4)],
+           "ci_95_quotes_only": [round(float(lo_q[-1]), 4), round(float(hi_q[-1]), 4)],
+           "ci_90_all_components": [round(float(lo90[-1]), 4), round(float(hi90[-1]), 4)],
+           "mc_error_of_quantiles": {"2.5pct": round(float(mc["2.5"][-1]), 5), "97.5pct": round(float(mc["97.5"][-1]), 5)},
+           "decomposition": {k: (round(v, 6) if isinstance(v, float) else v) for k, v in dec["var"].items()},
+           "shares_pct": {k: (None if v != v else round(v, 1)) for k, v in dec["shares_pct"].items()},
+           "additivity_gap_pct": round(float(dec["additivity_gap_pct"]), 1),
+           "note": dec["note"]}
+    (ROOT / "data/official/uncertainty_decomposition.json").write_text(json.dumps(out, indent=1))
+    print(f"latest {out['latest_period']}: CI95 all components {out['ci_95_all_components']} "
+          f"(width {float(hi_all[-1] - lo_all[-1]):.3f})  vs quotes only {out['ci_95_quotes_only']} "
+          f"(width {float(hi_q[-1] - lo_q[-1]):.3f})")
+    print("component shares of the marginal variance:", out["shares_pct"], f"(additivity gap {out['additivity_gap_pct']}%)")
+    print("MC error of the 2.5% quantile:", out['mc_error_of_quantiles']['2.5pct'])
+    print(f"items component, all months vs tail only: var {var_all_months:.3f} vs {var_tail:.3f}")
+    print("report: data/official/uncertainty_decomposition.json")
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="rpi")
     ap.add_argument("--db"); ap.add_argument("--settings")
@@ -172,6 +312,11 @@ def main(argv=None):
     p = sub.add_parser("daily"); p.add_argument("--out"); p.add_argument("--official", default="CPIIW_RAJKOT")
     p.add_argument("--demo", action="store_true"); p.set_defaults(f=cmd_daily)
     p = sub.add_parser("demo"); p.add_argument("--seed", type=int, default=11); p.set_defaults(f=cmd_demo)
+    p = sub.add_parser("eval"); p.add_argument("--first", help="first origin, YYYY-MM (default 2018-01)")
+    p.add_argument("--horizons", default="1,2,3"); p.set_defaults(f=cmd_eval)
+    sub.add_parser("diag").set_defaults(f=cmd_diag)
+    p = sub.add_parser("uncertainty"); p.add_argument("--reps", type=int, default=500)
+    p.add_argument("--weight-sigma", type=float, default=0.10, dest="weight_sigma"); p.set_defaults(f=cmd_uncertainty)
     args = ap.parse_args(argv)
     args.f(args, load_settings(args.settings))
 
