@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rajkot Price Index: dashboard</title>
+<style>
+  :root { --ink:#1d2330; --mute:#667085; --line:#e4e7ec; --bg:#f7f8fa; --card:#fff;
+          --accent:#1f6feb; --band:#cfe0fb; --up:#b42318; --down:#067647; --amber:#b54708; }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); }
+  header { background:#fff; border-bottom:1px solid var(--line); padding:12px 20px; display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; justify-content:space-between; }
+  header h1 { font-size:17px; margin:0; }
+  nav a { color:var(--mute); text-decoration:none; margin-right:14px; padding:4px 0; border-bottom:2px solid transparent; }
+  nav a.on { color:var(--ink); border-bottom-color:var(--accent); font-weight:600; }
+  main { max-width:1100px; margin:0 auto; padding:18px 16px 40px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; margin-bottom:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
+  .card .k { color:var(--mute); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  .card .v { font-size:22px; font-weight:650; margin-top:2px; }
+  .card .s { color:var(--mute); font-size:12px; }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:16px; overflow-x:auto; }
+  .panel h2 { font-size:15px; margin:0 0 8px; }
+  .note { color:var(--mute); font-size:12px; margin:6px 0 0; }
+  table { border-collapse:collapse; width:100%; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  th { color:var(--mute); font-weight:600; font-size:12px; cursor:pointer; user-select:none; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  tr.click { cursor:pointer; }
+  tr.click:hover td { background:#f2f6ff; }
+  tr.sel td { background:#eaf1ff; }
+  .up { color:var(--up); } .down { color:var(--down); }
+  .badge { display:inline-block; font-size:11px; padding:1px 7px; border-radius:999px; background:#eef2f6; color:#344054; }
+  .badge.independent { background:#dcfae6; color:#067647; }
+  .badge.linked { background:#fef0c7; color:#b54708; }
+  .badge.none { background:#fee4e2; color:#b42318; }
+  .controls { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; align-items:center; }
+  input, select { font:inherit; padding:6px 8px; border:1px solid #d0d5dd; border-radius:6px; background:#fff; }
+  input { min-width:220px; }
+  .bar { height:10px; background:var(--accent); border-radius:3px; display:inline-block; vertical-align:middle; }
+  .bars td { padding:4px 8px; }
+  .muted { color:var(--mute); }
+  .err { color:var(--up); }
+  svg text { font-family: inherit; }
+  .hidden { display:none; }
+  footer { color:var(--mute); font-size:12px; margin-top:24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Rajkot Price Index</h1>
+  <nav id="nav">
+    <a href="#/index" data-r="index">Index</a>
+    <a href="#/items" data-r="items">Items</a>
+    <a href="#/weights" data-r="weights">Weights</a>
+    <a href="#/history" data-r="history">History</a>
+  </nav>
+</header>
+<main>
+  <div id="status" class="note"></div>
+  <section id="v-index" class="view"></section>
+  <section id="v-items" class="view hidden"></section>
+  <section id="v-weights" class="view hidden"></section>
+  <section id="v-history" class="view hidden"></section>
+  <footer>
+    Built from this repo's own data files. Index and status files update with the daily refresh; the item and weight data are a snapshot
+    (see footer on each view). Sources, labels and methods: see README.
+  </footer>
+</main>
+<script>
+"use strict";
+const DATA = {
+  total: "../data/rpi_total.csv",
+  divisions: "../data/rpi_divisions.csv",
+  status: "../data/status.json",
+  items: "./data/items.json",
+};
+const state = { total:null, divisions:null, status:null, items:null, sel:null, sort:{key:"weight", dir:-1}, q:"", div:"" };
+
+// ---------- helpers ----------
+const $ = (id) => document.getElementById(id);
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const c of kids) if (c != null) n.append(c.nodeType ? c : document.createTextNode(String(c)));
+  return n;
+}
+function fmt(v, d = 2) { return (v == null || isNaN(v)) ? "–" : Number(v).toFixed(d); }
+function signed(v, d = 2) { if (v == null || isNaN(v)) return el("span", { class:"muted", text:"–" });
+  const n = el("span", { class: v > 0 ? "up" : v < 0 ? "down" : "", text: (v > 0 ? "+" : "") + Number(v).toFixed(d) + "%" }); return n; }
+async function getText(url) { const r = await fetch(url, { cache: "no-store" }); if (!r.ok) throw new Error(url + " " + r.status); return r.text(); }
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/); const head = lines.shift().split(",");
+  const conv = (v) => { if (v === "" || v == null) return null; if (v === "True") return true; if (v === "False") return false;
+    if (/^\d{4}-\d{2}$/.test(v)) return v; const n = Number(v); return isNaN(n) ? v : n; };
+  return lines.map((l) => { const c = l.split(","); const o = {}; head.forEach((h, i) => o[h] = conv(c[i])); return o; });
+}
+function pct(a, b) { return (a == null || b == null || !b) ? null : (a / b - 1) * 100; }
+function nameIndex(series, p) { const r = series.find((x) => x[0] === p); return r ? r[1] : null; }
+function lastPair(series) { const n = series.length; return n ? [series[n-1], series[n-2] || null] : [null, null]; }
+
+// ---------- SVG line chart ----------
+function lineChart(points, opts = {}) {
+  // points: [{x:label, y:number, lo?, hi?, est?:bool}]
+  const W = opts.w || 980, H = opts.h || 260, pl = 48, pr = 34, pt = 14, pb = 30;
+  const ys = points.flatMap((p) => [p.y, p.lo, p.hi]).filter((v) => v != null && !isNaN(v));
+  if (!ys.length) return el("div", { class:"muted", text:"No data" });
+  let min = Math.min(...ys), max = Math.max(...ys); const pad = (max - min) * 0.08 || 1; min -= pad; max += pad;
+  const n = points.length, xs = (i) => pl + (n <= 1 ? 0 : i * (W - pl - pr) / (n - 1));
+  const yv = (v) => pt + (1 - (v - min) / (max - min)) * (H - pt - pb);
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", "100%"); svg.setAttribute("role", "img");
+  const add = (tag, attrs, txt) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (txt != null) e.textContent = txt; svg.append(e); return e; };
+  // grid + y labels
+  for (let g = 0; g <= 4; g++) { const v = min + (max - min) * g / 4; const y = yv(v);
+    add("line", { x1:pl, x2:W-pr, y1:y, y2:y, stroke:"#eef0f3" });
+    add("text", { x:pl-6, y:y+4, "text-anchor":"end", "font-size":11, fill:"#667085" }, fmt(v, 1)); }
+  // confidence band
+  const withBand = points.map((p, i) => [i, p]).filter(([, p]) => p.lo != null && p.hi != null);
+  if (withBand.length > 1) {
+    const top = withBand.map(([i, p]) => `${xs(i)},${yv(p.hi)}`), bot = withBand.slice().reverse().map(([i, p]) => `${xs(i)},${yv(p.lo)}`);
+    add("polygon", { points: top.concat(bot).join(" "), fill:"#cfe0fb", opacity:.6 });
+  }
+  // lines: solid for observed, dashed for nowcast
+  const seg = (from, to, dashed) => { if (from.length < 2) return; add("polyline", { points: from.map(([i, p]) => `${xs(i)},${yv(p.y)}`).join(" "), fill:"none", stroke: opts.color || "#1f6feb", "stroke-width":2.2, "stroke-dasharray": dashed ? "5 4" : "" }); };
+  const obs = points.map((p, i) => [i, p]).filter(([, p]) => !p.est);
+  const est = points.map((p, i) => [i, p]).filter(([, p]) => p.est);
+  seg(obs, null, false);
+  if (est.length) { const join = obs.length ? [obs[obs.length-1], ...est] : est; seg(join, null, true); }
+  // x labels (about 8)
+  const step = Math.max(1, Math.ceil(n / 8));
+  points.forEach((p, i) => { if (i % step === 0 || i === n - 1) add("text", { x:xs(i), y:H-10, "text-anchor": i === n - 1 ? "end" : "middle", "font-size":11, fill:"#667085" }, p.x); });
+  const wrap = el("div"); wrap.append(svg); return wrap;
+}
+
+// ---------- Index view ----------
+function renderIndex() {
+  const root = $("v-index"); root.replaceChildren();
+  const tot = state.total, st = state.status, pub = st.publish;
+  const last = tot[tot.length - 1];
+  const obsRows = tot.filter((r) => !r.nowcast);
+  const lastObs = obsRows[obsRows.length - 1];
+  const nowRows = tot.filter((r) => r.nowcast);
+
+  const cards = el("div", { class:"cards" },
+    card("Index, latest", fmt(pub.index, 2), pub.latest_period + ((pub.nowcast_periods || []).includes(pub.latest_period) ? " (nowcast)" : " (observed)") + (pub.ci_95 ? ` · 95% CI ${fmt(pub.ci_95[0],1)}–${fmt(pub.ci_95[1],1)}` : "")),
+    card("Month on month", pub.mom_pct != null ? (pub.mom_pct > 0 ? "+" : "") + fmt(pub.mom_pct, 2) + "%" : "–", "vs previous period"),
+    card("Year on year", pub.yoy_pct != null ? (pub.yoy_pct > 0 ? "+" : "") + fmt(pub.yoy_pct, 2) + "%" : "–", "vs same month last year"),
+    card("Observed weight", pub.observed_weight_share != null ? fmt(pub.observed_weight_share * 100, 1) + "%" : "–", "share with real price data")
+  );
+  root.append(cards);
+
+  const series = tot.map((r) => ({ x: r.period, y: r.index, lo: r.ci_lo, hi: r.ci_hi, est: !!r.nowcast,
+    }));
+  // nowcast band for the last nowcast point
+  if (nowRows.length) {
+    const lastNow = nowRows[nowRows.length - 1];
+    const idx = series.findIndex((s) => s.x === lastNow.period);
+    if (idx >= 0) { series[idx].lo = lastNow.nowcast_lo; series[idx].hi = lastNow.nowcast_hi; }
+  }
+  const chartPanel = el("div", { class:"panel" }, el("h2", { text:"Index, base 2025-01 = 100" }), lineChart(series.slice(-43)),
+    el("p", { class:"note", text:"Solid line: observed months. Dashed: nowcast months (not yet published by MoSPI). Shaded band: interval (CI for observed months, nowcast band for the latest nowcast)." }));
+  root.append(chartPanel);
+
+  // recent table
+  const recent = tot.slice(-12).reverse();
+  const t = el("table", {}, el("thead", {}, el("tr", {}, ...["Period","Index","MoM","3-mo ann.","YoY","Type"].map((h,i)=>el("th",{class:i?"num":"",text:h})))));
+  const tb = el("tbody"); for (const r of recent) tb.append(el("tr", {},
+      el("td", { text: r.period }), el("td", { class:"num", text: fmt(r.index, 2) }),
+      el("td", { class:"num" }, signed(r.mom_pct)), el("td", { class:"num" }, signed(r.ann3m_pct, 2)),
+      el("td", { class:"num" }, signed(r.yoy_pct)), el("td", {}, r.nowcast ? el("span", { class:"badge", text:"nowcast" }) : el("span", { class:"badge independent", text:"observed" }))));
+  t.append(tb);
+  root.append(el("div", { class:"panel" }, el("h2", { text:"Latest months" }), t));
+
+  // divisions latest
+  const divs = state.divisions; const dl = divs[divs.length - 1], dp = divs[divs.length - 2] || null;
+  const dt = el("table", {}, el("thead", {}, el("tr", {}, ...["Division (COICOP code)","Index","MoM","YoY"].map((h,i)=>el("th",{class:i?"num":"",text:h})))));
+  const dtb = el("tbody");
+  const dyr = divs.find((r) => r.period === (pub.latest_period || "").replace(/^(\d{4})-(\d{2})$/, (m,y,mo)=>`${Number(y)-1}-${mo}`));
+  for (const k of Object.keys(dl).filter((k) => k !== "period")) {
+    dtb.append(el("tr", {}, el("td", { text: k }), el("td", { class:"num", text: fmt(dl[k], 2) }),
+      el("td", { class:"num" }, signed(pct(dl[k], dp && dp[k]))), el("td", { class:"num" }, signed(pct(dl[k], dyr && dyr[k])))));
+  }
+  dt.append(dtb);
+  root.append(el("div", { class:"panel" }, el("h2", { text:`Divisions, ${dl.period}` }), dt,
+    el("p", { class:"note", text:"Division indices from the daily bot's divisions file. Codes are COICOP-style groups, not labelled here." })));
+
+  // coverage
+  const cov = st.coverage || {}; const sp = (cov.plan_weight_pct || {}); const split = (cov.independent_split_pct || {});
+  const covTable = el("table", {}, el("tbody", {}, ...Object.entries(split).map(([k, v]) => el("tr", {}, el("td", { text:k }), el("td", { class:"num", text: fmt(v,1)+"%" })))));
+  root.append(el("div", { class:"panel" }, el("h2", { text:"How the index is built (plan weights)" }),
+    el("p", { class:"note", text:`Independent ${fmt(sp.independent,1)}%, linked ${fmt(sp.linked,1)}%, none ${fmt(sp.none,1)}% of plan weight.` }), covTable));
+
+  // refresh health
+  const errs = (st.steps || []).filter((s) => s.status === "error");
+  root.append(el("div", { class:"panel" }, el("h2", { text:"Latest refresh" }),
+    el("p", {}, `Run ${pub.run_id}. ${(st.steps || []).length} steps, ${errs.length} with errors.`),
+    errs.length ? el("ul", {}, ...errs.map((s) => el("li", { class:"err", text: s.step + ": " + s.detail }))) : el("p", { class:"muted", text:"No errors." }),
+    el("p", { class:"note", text:"Weights source: " + (pub.weights_source || "") })));
+}
+function card(k, v, s) { return el("div", { class:"card" }, el("div", { class:"k", text:k }), el("div", { class:"v", text:v }), el("div", { class:"s", text:s || "" })); }
+
+// ---------- Items view ----------
+function itemRow(it) {
+  const s = it.series, [last, prev] = lastPair(s);
+  const iv = last ? last[1] : null, pv = prev ? prev[1] : null;
+  const yoyRow = s.find((x) => last && x[0] === String(Number(last[0].slice(0,4)) - 1) + last[0].slice(4));
+  return { it, last: iv, mom: pct(iv, pv), yoy: pct(iv, yoyRow ? yoyRow[1] : null), period: last ? last[0] : null };
+}
+function renderItems() {
+  const root = $("v-items"); root.replaceChildren();
+  const items = state.items.items.map(itemRow);
+  const divs = [...new Set(items.map((r) => r.it.division))].sort();
+  const q = el("input", { type:"search", placeholder:"Search item name or ID", value: state.q });
+  const dsel = el("select", {}, el("option", { value:"", text:"All divisions" }), ...divs.map((d) => el("option", Object.assign({ value:d, text:"Division " + d }, d === state.div ? { selected:"selected" } : {}))));
+  q.addEventListener("input", () => { state.q = q.value; drawItems(); });
+  dsel.addEventListener("change", () => { state.div = dsel.value; drawItems(); });
+  root.append(el("div", { class:"controls" }, q, dsel, el("span", { class:"muted", id:"count" })));
+  const wrap = el("div", { class:"panel", id:"items-table" }); root.append(wrap);
+  const detail = el("div", { class:"panel", id:"items-detail" }); root.append(detail);
+  root.append(el("p", { class:"note", text: `Snapshot: run ${state.items.run_id}, generated ${state.items.generated_utc} (item index, ${state.items.variant}). Re-run scripts/export_app_data.py to refresh.` }));
+  drawItems();
+  function drawItems() {
+    const rows = items.filter((r) => (!state.div || r.it.division === state.div) &&
+      (!state.q || (r.it.name + " " + r.it.item_id).toLowerCase().includes(state.q.toLowerCase())));
+    const k = state.sort.key, dir = state.sort.dir;
+    rows.sort((a, b) => { const va = sortVal(a, k), vb = sortVal(b, k); return (va > vb ? 1 : va < vb ? -1 : 0) * dir; });
+    $("count").textContent = rows.length + " items";
+    const cols = [["item_id","ID",0],["name","Item",0],["division","Div",0],["weight","Weight %",1],["last","Index",1],["mom","MoM",1],["yoy","YoY",1],["plan_class","Source",0]];
+    const t = el("table", {}, el("thead", {}, el("tr", {}, ...cols.map(([key, label, num]) => {
+      const th = el("th", { class: num ? "num" : "", text: label + (state.sort.key === key ? (dir > 0 ? " ▲" : " ▼") : "") });
+      th.addEventListener("click", () => { state.sort = { key, dir: state.sort.key === key ? -dir : (key === "name" || key === "item_id" ? 1 : -1) }; drawItems(); });
+      return th; })))); 
+    const tb = el("tbody");
+    for (const r of rows) {
+      const tr = el("tr", { class:"click" + (state.sel === r.it.item_id ? " sel" : "") },
+        el("td", { text: r.it.item_id }), el("td", { text: r.it.name }), el("td", { text: r.it.division }),
+        el("td", { class:"num", text: fmt(r.it.weight, 2) }), el("td", { class:"num", text: fmt(r.last, 1) }),
+        el("td", { class:"num" }, signed(r.mom)), el("td", { class:"num" }, signed(r.yoy)),
+   
+        el("td", {}, el("span", { class:"badge " + (r.it.plan_class || ""), text: r.it.plan_class || "–" })));
+      tr.addEventListener("click", () => { state.sel = r.it.item_id; drawItems(); drawDetail(r); });
+      tb.append(tr);
+    }
+    t.append(tb); wrap.replaceChildren(t);
+    if (state.sel) { const r = items.find((x) => x.it.item_id === state.sel); if (r) drawDetail(r); }
+  }
+  function sortVal(r, k) { if (k === "name" || k === "item_id" || k === "division" || k === "plan_class") return (r.it[k] || "") + ""; if (k === "weight") return r.it.weight || 0; if (k === "last") return r.last || 0; return r[k] == null ? -1e9 : r[k]; }
+  function drawDetail(r) {
+    const pts = r.it.series.map(([p, v]) => ({ x: p, y: v }));
+    detail.replaceChildren(el("h2", { text: `${r.it.item_id} · ${r.it.name}` }),
+      el("p", { class:"note", text:`Division ${r.it.division} · tier ${r.it.tier || "–"} · unit ${r.it.unit || "–"} · spec ${r.it.spec || "–"} · match ${r.it.match_quality || "–"} · primary source ${r.it.source || "–"} · official item ${r.it.official_item || "–"}` }),
+      lineChart(pts, { h: 220 }));
+  }
+}
+
+// ---------- Weights view ----------
+function renderWeights() {
+  const root = $("v-weights"); root.replaceChildren();
+  const items = state.items.items;
+  const total = items.reduce((a, b) => a + (b.weight || 0), 0);
+  const byDiv = {}; for (const it of items) byDiv[it.division] = (byDiv[it.division] || 0) + (it.weight || 0);
+  const divRows = Object.entries(byDiv).sort((a, b) => b[1] - a[1]);
+  const maxDiv = Math.max(...divRows.map((r) => r[1]));
+  root.append(el("div", { class:"panel" }, el("h2", { text:"Division weight (% of basket)" }),
+    el("table", { class:"bars" }, el("tbody", {}, ...divRows.map(([d, w]) => el("tr", {},
+      el("td", { text: d }), el("td", {}, el("span", { class:"bar", style:`width:${(w / maxDiv * 300).toFixed(0)}px` })),
+      el("td", { class:"num", text: fmt(w, 2) + "%" }))))),
+    el("p", { class:"note", text:`Items: ${items.length}. Weights sum to ${fmt(total, 2)}%.` })));
+
+  const top = [...items].sort((a, b) => (b.weight || 0) - (a.weight || 0));
+  const t = el("table", {}, el("thead", {}, el("tr", {}, ...["ID","Item","Div","Weight %","Source"].map((h,i)=>el("th",{class:i===3?"num":"",text:h})))),
+    el("tbody", {}, ...top.map((it) => el("tr", {}, el("td", { text: it.item_id }), el("td", { text: it.name }), el("td", { text: it.division }),
+      el("td", { class:"num", text: fmt(it.weight, 3) }), el("td", {}, el("span", { class:"badge " + (it.plan_class || ""), text: it.plan_class || "–" }))))));
+  root.append(el("div", { class:"panel" }, el("h2", { text:"Items by weight" }), t));
+
+  const counts = {}; for (const it of items) counts[it.plan_class || "–"] = (counts[it.plan_class || "–"] || 0) + 1;
+  root.append(el("p", { class:"note", text: "Source classes: " + Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(" · ") + "." }));
+  root.append(el("p", { class:"note", text: "Weight method: " + (state.items.weight_source || "") }));
+}
+
+// ---------- History ----------
+// Index and divisions are monthly (no weekly or daily values exist for the index).
+// Items come from the exported snapshot; they carry the same monthly periods.
+function periodsAll() { return state.total.map((r) => r.period); }
+function totRow(p) { return state.total.find((r) => r.period === p) || null; }
+function divRow(p) { return state.divisions.find((r) => r.period === p) || null; }
+function itemAt(it, p) { const r = it.series.find((x) => x[0] === p); return r ? r[1] : null; }
+function shiftPeriod(p, n) { const ps = periodsAll(); const i = ps.indexOf(p); if (i < 0) return ps[0]; return ps[Math.max(0, Math.min(ps.length - 1, i + n))]; }
+
+function renderHistory() {
+  const root = $("v-history"); root.replaceChildren();
+  const ps = periodsAll(), latest = ps[ps.length - 1];
+  if (!state.hist) state.hist = { m: latest, c: shiftPeriod(latest, -12) };
+  const H = state.hist;
+  const desc = ps.slice().reverse();
+
+  const mSel = el("select", { "aria-label": "Month" }, ...desc.map((p) => el("option", Object.assign({ value: p, text: p + (totRow(p) && totRow(p).nowcast ? " (nowcast)" : "") }, p === H.m ? { selected: "selected" } : {}))));
+  const cSel = el("select", { "aria-label": "Compare with" }, ...desc.map((p) => el("option", Object.assign({ value: p, text: p }, p === H.c ? { selected: "selected" } : {}))));
+  mSel.addEventListener("change", () => { H.m = mSel.value; renderHistory(); });
+  cSel.addEventListener("change", () => { H.c = cSel.value; renderHistory(); });
+  const btn = (label, fn) => { const b = el("button", { type: "button", text: label }); b.addEventListener("click", fn); return b; };
+  const btnStyle = "font:inherit;padding:5px 10px;border:1px solid #d0d5dd;border-radius:6px;background:#fff;cursor:pointer;";
+  const quick = [1, 3, 6, 12].map((n) => { const b = btn(n + "M", () => { H.c = shiftPeriod(H.m, -n); renderHistory(); }); b.setAttribute("style", btnStyle); return b; });
+  const step = [btn("◀ earlier", () => { H.m = shiftPeriod(H.m, -1); H.c = shiftPeriod(H.c, -1); renderHistory(); }),
+    btn("later ▶", () => { H.m = shiftPeriod(H.m, 1); H.c = shiftPeriod(H.c, 1); renderHistory(); }),
+    btn("latest", () => { H.m = latest; H.c = shiftPeriod(latest, -12); renderHistory(); })];
+  for (const b of step) b.setAttribute("style", btnStyle);
+  root.append(el("div", { class: "controls" }, el("span", { class: "muted", text: "Month" }), mSel, el("span", { class: "muted", text: "vs" }), cSel,
+    el("span", { class: "muted", text: " · quick:" }), ...quick, el("span", { class: "muted", text: " · " }), ...step));
+
+  const m = totRow(H.m), c = totRow(H.c);
+  if (!m || !c) { root.append(el("p", { class: "err", text: "No index data for the selected months." })); return; }
+  const chg = pct(m.index, c.index);
+  const pts = m.index - c.index;
+  root.append(el("div", { class: "cards" },
+    card("Index at " + H.m, fmt(m.index, 2), m.nowcast ? "nowcast" : "observed"),
+    card("Change since " + H.c, (chg > 0 ? "+" : "") + fmt(chg, 2) + "%", (pts > 0 ? "+" : "") + fmt(pts, 2) + " points"),
+    card("Year on year at " + H.m, m.yoy_pct != null ? (m.yoy_pct > 0 ? "+" : "") + fmt(m.yoy_pct, 2) + "%" : "–", "vs same month last year"),
+    card("3-month annualised", m.ann3m_pct != null ? (m.ann3m_pct > 0 ? "+" : "") + fmt(m.ann3m_pct, 2) + "%" : "–", "to " + H.m)));
+
+  // index chart across the chosen span (earlier of the two months to the later one)
+  const i0 = ps.indexOf(H.c < H.m ? H.c : H.m), i1 = ps.indexOf(H.c < H.m ? H.m : H.c);
+  const span = ps.slice(Math.max(0, i0 - 1), Math.min(ps.length, i1 + 2)).map((p) => {
+    const r = totRow(p); return { x: p, y: r.index, lo: r.ci_lo, hi: r.ci_hi, est: !!r.nowcast };
+  });
+  root.append(el("div", { class: "panel" }, el("h2", { text: `Index, ${H.c < H.m ? H.c : H.m} to ${H.c < H.m ? H.m : H.c}` }),
+    lineChart(span, { h: 230 }),
+    el("p", { class: "note", text: "Monthly observations only. The chart includes one month either side of the span for context." })));
+
+  // divisions: at each month and the change
+  const dm = divRow(H.m) || {}, dc = divRow(H.c) || {};
+  const dt = el("table", {}, el("thead", {}, el("tr", {}, ...["Division", "At " + H.c, "At " + H.m, "Change"].map((h, i) => el("th", { class: i ? "num" : "", text: h })))));
+  const dtb = el("tbody");
+  for (const k of Object.keys(dm).filter((k) => k !== "period").sort()) {
+    dtb.append(el("tr", {}, el("td", { text: k }), el("td", { class: "num", text: fmt(dc[k], 2) }), el("td", { class: "num", text: fmt(dm[k], 2) }),
+      el("td", { class: "num" }, signed(pct(dm[k], dc[k])))));
+  }
+  dt.append(dtb);
+  root.append(el("div", { class: "panel" }, el("h2", { text: "Divisions" }), dt));
+
+  // items: change between the two months, sorted by weight
+  const rows = state.items.items.map((it) => {
+    const a = itemAt(it, H.c), b = itemAt(it, H.m);
+    return { it, a, b, ch: pct(b, a) };
+  }).filter((r) => r.a != null && r.b != null).sort((x, y) => (y.it.weight || 0) - (x.it.weight || 0));
+  const missing = state.items.items.length - rows.length;
+  const t = el("table", {}, el("thead", {}, el("tr", {}, ...["ID", "Item", "Weight %", H.c, H.m, "Change"].map((h, i) => el("th", { class: i >= 2 ? "num" : "", text: h })))),
+    el("tbody", {}, ...rows.map((r) => el("tr", {}, el("td", { text: r.it.item_id }), el("td", { text: r.it.name }),
+      el("td", { class: "num", text: fmt(r.it.weight, 2) }), el("td", { class: "num", text: fmt(r.a, 1) }), el("td", { class: "num", text: fmt(r.b, 1) }),
+      el("td", { class: "num" }, signed(r.ch))))));
+  root.append(el("div", { class: "panel" }, el("h2", { text: "Items" }), t,
+    el("p", { class: "note", text: `Item index, base 2025-01 = 100. ${missing ? missing + " items have no value at one of the two months and are left out." : ""}` })));
+}
+
+// ---------- routing ----------
+const VIEWS = ["index", "items", "weights", "history"];
+function route() {
+  const r = (location.hash.replace(/^#\/?/, "") || "index").split("?")[0];
+  const view = VIEWS.includes(r) ? r : "index";
+  for (const v of VIEWS) $("v-" + v).classList.toggle("hidden", v !== view);
+  for (const a of document.querySelectorAll("#nav a")) a.classList.toggle("on", a.dataset.r === view);
+  if (view === "items" && state.items && !$("v-items").childElementCount) renderItems();
+  if (view === "history" && state.total) renderHistory();
+}
+window.addEventListener("hashchange", route);
+
+// ---------- boot ----------
+(async function boot() {
+  try {
+    const [tot, div, st, items] = await Promise.all([
+      getText(DATA.total).then(parseCSV), getText(DATA.divisions).then(parseCSV),
+      getText(DATA.status).then(JSON.parse), getText(DATA.items).then(JSON.parse),
+    ]);
+    state.total = tot; state.divisions = div; state.status = st; state.items = items;
+    const pub = st.publish;
+    $("status").textContent = `Latest published period ${pub.latest_period} · run ${pub.run_id}`;
+    renderIndex(); renderWeights(); route();
+  } catch (e) {
+    $("status").innerHTML = ""; $("status").append(el("span", { class:"err", text: "Could not load data: " + e.message }));
+  }
+})();
+</script>
+</body>
+</html>
