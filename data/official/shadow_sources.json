@@ -1,0 +1,308 @@
+{
+ "generated": "2026-10-10",
+ "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
+ "candidates": {
+  "rajkot_shops": {
+   "last_quote": "2026-10-09",
+   "n_quotes": 40,
+   "items": [
+    {
+     "item_id": "F001",
+     "name": "Wheat flour (atta) packaged",
+     "weight_pct": 1.12,
+     "current_source": "mandi_rajkot_apmc",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 2,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F002",
+     "name": "Rice (basmati) packaged",
+     "weight_pct": 2.49,
+     "current_source": "doca_national",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 6,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F003",
+     "name": "Tur dal packaged",
+     "weight_pct": 0.88,
+     "current_source": "doca_national",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 4,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F004",
+     "name": "Moong dal packaged",
+     "weight_pct": 0.47,
+     "current_source": "mandi_rajkot_apmc",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 4,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F005",
+     "name": "Chana dal packaged",
+     "weight_pct": 0.19,
+     "current_source": "doca_national",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 2,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F006",
+     "name": "Groundnut oil",
+     "weight_pct": 0.76,
+     "current_source": "doca_rajkot",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 4,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F007",
+     "name": "Cottonseed oil",
+     "weight_pct": 0.07,
+     "current_source": "dmart_ahmedabad",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 4,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F008",
+     "name": "Sunflower oil",
+     "weight_pct": 1.98,
+     "current_source": "doca_national",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 4,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F013",
+     "name": "Sugar",
+     "weight_pct": 1.02,
+     "current_source": "doca_rajkot",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 3,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F016",
+     "name": "Turmeric powder",
+     "weight_pct": 3.13,
+     "current_source": "dmart_ahmedabad",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 6,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    },
+    {
+     "item_id": "F026",
+     "name": "Jaggery",
+     "weight_pct": 0.27,
+     "current_source": "doca_rajkot",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 1,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    }
+   ],
+   "weight_pct_covered": 12.38
+  },
+  "apple_store": {
+   "last_quote": "2026-10-10",
+   "n_quotes": 1,
+   "items": [
+    {
+     "item_id": "K002",
+     "name": "Smartphone (fixed model)",
+     "weight_pct": 0.59,
+     "current_source": "official_link",
+     "already_switched": false,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 1,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 0,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    }
+   ],
+   "weight_pct_covered": 0.59
+  }
+ }
+}

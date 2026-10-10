@@ -1,10 +1,10 @@
 {
   "latest_period": "2026-10",
   "index": 108.37,
-  "mom_pct": 0.15,
-  "yoy_pct": 6.79,
+  "mom_pct": 0.16,
+  "yoy_pct": 6.8,
   "ci_95": [
-    107.57,
+    107.67,
     109.12
   ],
   "ci_note": null,
@@ -20,7 +20,7 @@
     109.85
   ],
   "observed_weight_share": 0.655,
-  "run_id": "20261009T115407483813Z",
+  "run_id": "20261010T102623114440Z",
   "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
   "demo": false,
   "coverage_split": {
@@ -31,9 +31,9 @@
     },
     "independent_split_pct": {
       "direct (administered tariff / spot / PNG)": 22.1,
-      "retail quotes (DoCA Rajkot centre reports; gated vs official)": 2.1,
+      "retail quotes (DoCA Rajkot centre reports + Rajkot web shops; gated vs official)": 6.8,
       "modelled (R001 rent: Labour Bureau housing-group model, trend-gated vs official; not an observed price)": 19.0,
-      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 46.0
+      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 41.2
     },
     "ref_period": "2026-08",
     "latest_period": "2026-10",

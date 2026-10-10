@@ -1,0 +1,183 @@
+{
+ "generated": "2026-10-08",
+ "series": {
+  "rpi_total": {
+   "n": 22,
+   "adf": {
+    "n": 22,
+    "stat": NaN,
+    "note": "needs >= 36 observations for a meaningful unit-root test"
+   },
+   "kpss": {
+    "n": 22,
+    "lags": 2,
+    "stat": 0.6917730774258202,
+    "regression": "c",
+    "crit_1pct": 0.739,
+    "crit_5pct": 0.463,
+    "crit_10pct": 0.347,
+    "reject_stationary_5pct": true,
+    "note": "H0 = stationary; reject => unit root / stochastic trend"
+   },
+   "ljung_box_level": {
+    "n": 22,
+    "lags": 20,
+    "stat": 123.8796942134237,
+    "p": 5.428586324064347e-17,
+    "reject_no_autocorr_5pct": true
+   },
+   "ljung_box_diff": {
+    "n": 21,
+    "lags": 19,
+    "stat": 34.79215287652064,
+    "p": 0.014793643553638009,
+    "reject_no_autocorr_5pct": true
+   },
+   "seasonal_strength": {
+    "n": 11,
+    "note": "too short for a 12-month decomposition"
+   },
+   "residual_seasonality": {
+    "n": 22,
+    "note": "too short"
+   }
+  },
+  "panel_official_long": {
+   "n": 141,
+   "adf": {
+    "n": 133,
+    "lags": 7,
+    "stat": 0.8064850015375801,
+    "regression": "c",
+    "crit_1pct": -3.43,
+    "crit_5pct": -2.86,
+    "crit_10pct": -2.57,
+    "reject_unit_root_5pct": false,
+    "note": "H0 = unit root; reject => stationary (or at least trend-stationary)"
+   },
+   "kpss": {
+    "n": 141,
+    "lags": 4,
+    "stat": 2.865672733595435,
+    "regression": "c",
+    "crit_1pct": 0.739,
+    "crit_5pct": 0.463,
+    "crit_10pct": 0.347,
+    "reject_stationary_5pct": true,
+    "note": "H0 = stationary; reject => unit root / stochastic trend"
+   },
+   "ljung_box_level": {
+    "n": 141,
+    "lags": 24,
+    "stat": 2166.420358982414,
+    "p": 0.0,
+    "reject_no_autocorr_5pct": true
+   },
+   "ljung_box_diff": {
+    "n": 140,
+    "lags": 24,
+    "stat": 90.9497445665555,
+    "p": 1.0031891923421198e-09,
+    "reject_no_autocorr_5pct": true
+   },
+   "seasonal_strength": {
+    "n": 130,
+    "seasonal_strength": 0.5946233332394506,
+    "trend_strength": 0.9980534009187324
+   },
+   "residual_seasonality": {
+    "n": 141,
+    "F": 1.0857595648890903,
+    "df": [
+     11,
+     129
+    ],
+    "p": 0.3777337779819702,
+    "residual_seasonality_5pct": false,
+    "note": "H0: no remaining calendar pattern after trend removal; rejection flags a series that needs seasonal adjustment"
+   }
+  },
+  "official_gujarat_urban": {
+   "n": 20,
+   "adf": {
+    "n": 20,
+    "stat": NaN,
+    "note": "needs >= 36 observations for a meaningful unit-root test"
+   },
+   "kpss": {
+    "n": 20,
+    "lags": 2,
+    "stat": 0.664716917953657,
+    "regression": "c",
+    "crit_1pct": 0.739,
+    "crit_5pct": 0.463,
+    "crit_10pct": 0.347,
+    "reject_stationary_5pct": true,
+    "note": "H0 = stationary; reject => unit root / stochastic trend"
+   },
+   "ljung_box_level": {
+    "n": 20,
+    "lags": 18,
+    "stat": 104.98645423214845,
+    "p": 2.6787371361525652e-14,
+    "reject_no_autocorr_5pct": true
+   },
+   "ljung_box_diff": {
+    "n": 19,
+    "lags": 17,
+    "stat": 21.57798444618766,
+    "p": 0.20149802268182507,
+    "reject_no_autocorr_5pct": false
+   },
+   "seasonal_strength": {
+    "n": 9,
+    "note": "too short for a 12-month decomposition"
+   },
+   "residual_seasonality": {
+    "n": 20,
+    "note": "too short"
+   }
+  },
+  "gap_mom_rpi_minus_official": {
+   "n": 19,
+   "adf": {
+    "n": 19,
+    "stat": NaN,
+    "note": "needs >= 36 observations for a meaningful unit-root test"
+   },
+   "kpss": {
+    "n": 19,
+    "lags": 2,
+    "stat": 0.2979960725310614,
+    "regression": "c",
+    "crit_1pct": 0.739,
+    "crit_5pct": 0.463,
+    "crit_10pct": 0.347,
+    "reject_stationary_5pct": false,
+    "note": "H0 = stationary; reject => unit root / stochastic trend"
+   },
+   "ljung_box_level": {
+    "n": 19,
+    "lags": 17,
+    "stat": 12.689111453488357,
+    "p": 0.756736507979457,
+    "reject_no_autocorr_5pct": false
+   },
+   "ljung_box_diff": {
+    "n": 18,
+    "lags": 16,
+    "stat": 9.418509559509756,
+    "p": 0.8951831832774275,
+    "reject_no_autocorr_5pct": false
+   },
+   "seasonal_strength": {
+    "n": 8,
+    "note": "too short for a 12-month decomposition"
+   },
+   "residual_seasonality": {
+    "n": 19,
+    "note": "too short"
+   }
+  }
+ }
+}

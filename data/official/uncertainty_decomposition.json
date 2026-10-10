@@ -1,0 +1,41 @@
+{
+ "generated": "2026-10-09",
+ "reps": 500,
+ "weight_sigma": 0.1,
+ "latest_period": "2026-10",
+ "base_period": "2025-01",
+ "mask_from": "2026-09",
+ "items_variance_all_months_vs_tail": {
+  "all_months": 0.593,
+  "tail_only": 0.1554
+ },
+ "ci_95_all_components": [
+  107.5896,
+  109.1602
+ ],
+ "ci_95_quotes_only": [
+  107.5028,
+  109.0919
+ ],
+ "ci_90_all_components": [
+  107.7451,
+  109.0708
+ ],
+ "mc_error_of_quantiles": {
+  "2.5pct": 0.03742,
+  "97.5pct": 0.01817
+ },
+ "decomposition": {
+  "quotes": 0.156164,
+  "items": 0.155392,
+  "weights": 0.173595,
+  "all": 0.163079
+ },
+ "shares_pct": {
+  "quotes": 32.2,
+  "items": 32.0,
+  "weights": 35.8
+ },
+ "additivity_gap_pct": -66.4,
+ "note": "marginal single-component variances, normalised; sub-additive gaps are expected because item masking removes the cells the quotes component would resample"
+}

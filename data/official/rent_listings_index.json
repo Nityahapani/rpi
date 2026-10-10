@@ -1,0 +1,253 @@
+{
+ "generated": "2026-10-10",
+ "item_id": "R001",
+ "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
+ "n_panel_rows": 400,
+ "n_listings_used": 381,
+ "portals": {
+  "magicbricks": 380,
+  "squareyards": 1
+ },
+ "months": [
+  {
+   "month": "2026-07",
+   "n": 30,
+   "fresh_share": 0.0,
+   "survivor": true,
+   "complete": true,
+   "qualified": true,
+   "usable": false,
+   "index": 100.0,
+   "lo90": 100.0,
+   "hi90": 100.0
+  },
+  {
+   "month": "2026-08",
+   "n": 106,
+   "fresh_share": 0.0,
+   "survivor": true,
+   "complete": true,
+   "qualified": true,
+   "usable": false,
+   "index": 109.81,
+   "lo90": 94.14,
+   "hi90": 126.18
+  },
+  {
+   "month": "2026-09",
+   "n": 172,
+   "fresh_share": 0.413,
+   "survivor": true,
+   "complete": true,
+   "qualified": true,
+   "usable": false,
+   "index": 111.12,
+   "lo90": 96.79,
+   "hi90": 125.88
+  },
+  {
+   "month": "2026-10",
+   "n": 73,
+   "fresh_share": 1.0,
+   "survivor": false,
+   "complete": false,
+   "qualified": true,
+   "usable": false,
+   "index": 105.6,
+   "lo90": 90.69,
+   "hi90": 120.93
+  }
+ ],
+ "qualified_consecutive": 4,
+ "usable_consecutive": 0,
+ "usable_months": [],
+ "hedonic_coefficients": {
+  "const": 9.397,
+  "lsqft_c": 0.371,
+  "sqft_missing": 0.15,
+  "furnished_page": 0.136,
+  "bhk:0": -0.345,
+  "bhk:1": -0.53,
+  "bhk:3": 0.358,
+  "bhk:4": 0.762,
+  "type:house": -0.235,
+  "type:villa": -0.591,
+  "type:builder_floor": -0.089,
+  "type:room": -0.345,
+  "portal:squareyards": -0.1
+ },
+ "asking_rent_revisions": {
+  "listings_revised": 0,
+  "median_change_pct": null
+ },
+ "stock_candidate": [
+  {
+   "month": "2025-01",
+   "level": 100.20187,
+   "dlog": NaN,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-02",
+   "level": 100.404148,
+   "dlog": 0.002017,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-03",
+   "level": 100.606834,
+   "dlog": 0.002017,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-04",
+   "level": 100.809929,
+   "dlog": 0.002017,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-05",
+   "level": 101.013434,
+   "dlog": 0.002017,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-06",
+   "level": 101.21735,
+   "dlog": 0.002017,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-07",
+   "level": 101.425059,
+   "dlog": 0.00205,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-08",
+   "level": 101.633193,
+   "dlog": 0.00205,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-09",
+   "level": 101.841755,
+   "dlog": 0.00205,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-10",
+   "level": 102.050745,
+   "dlog": 0.00205,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-11",
+   "level": 102.260163,
+   "dlog": 0.00205,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2025-12",
+   "level": 102.470012,
+   "dlog": 0.00205,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-01",
+   "level": 102.656335,
+   "dlog": 0.001817,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-02",
+   "level": 102.842996,
+   "dlog": 0.001817,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-03",
+   "level": 103.029998,
+   "dlog": 0.001817,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-04",
+   "level": 103.217339,
+   "dlog": 0.001817,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-05",
+   "level": 103.405021,
+   "dlog": 0.001817,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-06",
+   "level": 103.593044,
+   "dlog": 0.001817,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-07",
+   "level": 103.73126,
+   "dlog": 0.001333,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-08",
+   "level": 103.869661,
+   "dlog": 0.001333,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-09",
+   "level": 104.008246,
+   "dlog": 0.001333,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  },
+  {
+   "month": "2026-10",
+   "level": 104.147016,
+   "dlog": 0.001333,
+   "listing_share": 0.0,
+   "from_listings_only": false
+  }
+ ],
+ "listing_share_latest": 0.0,
+ "gate_vs_official": {
+  "n_overlap": 20,
+  "corr": null,
+  "drift": 0.003,
+  "verdict": "pass",
+  "gate": "trend",
+  "gap_cum_pp": -0.26,
+  "tol_cum_pp": 0.51,
+  "gap_12m_pp": -0.25,
+  "tol_12m_pp": 0.41
+ },
+ "verdict": "accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)",
+ "note": "SHADOW: R001 stays on rent_signal (modelled) until the verdict says 'ready' and the switch is recorded in data/source_plan.csv"
+}
