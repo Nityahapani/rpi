@@ -1,4 +1,4 @@
-# Source shares and the independent share — finalised from the master table (2026-10-08)
+# Source shares and the independent share — finalised from the master table (2026-10-08; updated 2026-10-10, see section 9)
 
 Consolidated breakdown of what carries the index weight, computed directly from `registry/items.csv`
 (the 67-item master table, added 2026-10-07) using the live bucket rules in `rpi/proxy_check.py`
@@ -31,9 +31,9 @@ things that *do* drive the pipeline. It agrees exactly:
 | Bucket | Weight | Items |
 |---|---|---|
 | direct (administered tariff / spot / PNG) | **22.1%** | 11 |
-| retail quotes (DoCA Rajkot centre, gated) | **2.1%** | 3 |
+| retail quotes (DoCA Rajkot centre + Rajkot web shops, gated) | **6.8%** | 7 |
 | **modelled** (R001 rent, trend-gated) | **19.0%** | 1 |
-| proxy (wholesale / national panel / Ahmedabad shelf / regulated ceiling) | **46.0%** | 40 |
+| proxy (wholesale / national panel / Ahmedabad shelf / regulated ceiling) | **41.2%** | 36 |
 | | **89.2%** | 55 |
 
 ## 3. Gate status, weighted
@@ -55,14 +55,14 @@ Items passing: `F002 F003 F005 F006 F008 F011 F013 F020 F021 F024 F026 R001 E001
 |---|---|---|---|
 | `tariff` | 25.13% | 11 | administered registers: petrol, diesel, LPG, PNG, electricity, water, milk, telecom, OTT, NPPA ceiling, auto fare, chai |
 | `rent_signal` | 19.00% | 1 | **MODELLED** rent (Labour Bureau CPI-IW housing ensemble) |
-| `dmart_ahmedabad` | 15.42% | 18 | DMart Ready Ahmedabad shelf, fixed SKU pool |
+| `dmart_ahmedabad` | 12.22% | 16 | DMart Ready Ahmedabad shelf, fixed SKU pool |
 | `official_link` | 10.81% | 11 | **official MoSPI item index fed back in (not independent)** |
 | `doca_national` | 9.12% | 7 | DoCA all-India balanced retail panel |
 | `vishal_diary` | 6.95% | 3 | Vishal Mega Mart e-store diary |
+| `rajkot_shops` | 4.79% | 4 | Rajkot retailers' own web shops (Shopify / WooCommerce feeds); index input from Nov 2026 |
 | `frc_rajkot` | 3.62% | 1 | Gujarat FRC approved school fees (Rajkot) |
 | `mandi_gondal` | 3.30% | 3 | Gondal veg mandi, wholesale |
 | `doca_rajkot` | 2.06% | 3 | DoCA Rajkot-centre retail quotes |
-| `mandi_rajkot_apmc` | 1.59% | 2 | Rajkot APMC yard, wholesale |
 | `gr_metals` | 0.79% | 2 | goodreturns Rajkot gold/silver spot |
 | `fresha_salon` | 0.69% | 1 | Fresha salon menu (one venue) |
 | `gr_png` | 0.68% | 1 | goodreturns Rajkot PNG |
@@ -93,14 +93,14 @@ Sep 2026 onward, growing month by month as the diaries fill in.
 
 | Pending block | Weight | Note |
 |---|---|---|
-| `dmart_ahmedabad` | **15.42%** (18 items) | one Ahmedabad shelf-price pool — cannot be gated before ~Mar 2027 |
+| `dmart_ahmedabad` | **12.22%** (16 items) | one Ahmedabad shelf-price pool — cannot be gated before ~Mar 2027 |
 | `vishal_diary` | 6.95% (3 items) | clothing/footwear e-store |
 | `mandi_gondal` | 3.30% (3 items) | **expected to fail** its gate (CEDA back-test, inventory AD) |
-| `mandi_rajkot_apmc` | 1.59% (2 items) | same expectation |
+| `rajkot_shops` | 4.79% (4 items) | new 2026-10-10; index input from Nov 2026; gate pending until ~Apr 2027 |
 | `fresha_salon` / `district_cinema` | 0.93% | one venue / one city |
 
-`dmart_ahmedabad` alone is **15.4% of the index** resting on a single unvalidated proxy from a different
-city; the mandi-fed vegetables (4.9%) are expected to fail when their gate matures (about Mar 2027).
+`dmart_ahmedabad` alone is **12.2% of the index** resting on a single unvalidated proxy from a different
+city; the Gondal mandi vegetables (3.3%) are expected to fail when their gate matures (about Mar 2027).
 
 ## 6. The two adjustment columns in the master
 
@@ -150,9 +150,36 @@ its gate (corr 0.24 / 0.15), so 5.76 of that division's 6.65 points are official
 
 **89.2% independent (70.2% observed + 19.0% modelled), 10.8% official stand-in, 0.0% no source.**
 Of the 89.2%: **34.4% has passed a gate, 26.6% needs no gate, 28.2% is still pending/unvalidated** —
-with 15.4 of those 28.2 points in a single Ahmedabad DMart shelf-price pool and 4.9 points in mandi feeds
+with 12.2 of those 28.2 points in a single Ahmedabad DMart shelf-price pool and 3.3 points in the Gondal mandi feed
 the project's own back-test expects to fail. Realised independent coverage in the last official month
-(Aug 2026) was 60.2%, rising to the full 89.2% from Sep 2026 as the diaries accrue.
+(Aug 2026) was 60.2%, rising to the full 89.2% from Oct 2026 (nowcast) as the diaries accrue.
+
+## 9. Change log 2026-10-10: web-shop switch
+
+Four items now take their index input from the Rajkot web shops, from the November 2026 build (`config/settings.toml` `[index.switches]`, rule in `rpi/switches.py`). Their weight moved between buckets; the independent total did not change.
+
+| Item | Weight | Was | Now |
+|---|---|---|---|
+| F001 wheat atta | 1.12% | `mandi_rajkot_apmc` (2 months) | `rajkot_shops` |
+| F004 moong dal | 0.47% | `mandi_rajkot_apmc` (2 months) | `rajkot_shops` |
+| F007 cottonseed oil | 0.07% | `dmart_ahmedabad` (1 month) | `rajkot_shops` |
+| F016 turmeric | 3.13% | `dmart_ahmedabad` (1 month) | `rajkot_shops` |
+
+Kept on their gate-passing sources (no switch): F002, F003, F005, F008 on `doca_national` (22 months, passes the India gate); F006, F013, F026 on `doca_rajkot`.
+
+| Bucket | Before | After |
+|---|---|---|
+| independent | 89.2% | 89.2% |
+| direct | 22.1% | 22.1% |
+| retail | 2.1% | 6.8% |
+| modelled | 19.0% | 19.0% |
+| proxy | 46.0% | 41.2% |
+
+Gate totals are unchanged (pass 34.4%, pending 28.2%, n/a 26.6%): the four switched items were already pending. The new source needs about six overlapping months before its gate can be judged (first about Apr 2027); a fail reverts the switch.
+
+Shadow only (collected, screened, not in the index): the web-shop pool for F002/F003/F005/F008; the Apple India iPhone price for K002 (0.59%, still a stand-in); the rent-listings candidate for R001 (waiting for a 50% listing share, about May 2027).
+
+Index effect: the published October figure moved from 108.367 to 108.372 (+0.005), because the 10 Oct shop quotes enter that month's imputation. The first shop-driven month is November 2026.
 
 ## Reproduce
 
