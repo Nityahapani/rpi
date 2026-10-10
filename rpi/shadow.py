@@ -107,6 +107,10 @@ def candidate_frames(root: Path) -> dict[str, pd.DataFrame]:
     hb = hathway_broadband.live_frame(root)
     if len(hb):
         out["hathway_broadband"] = hb
+    from .collectors import green_mercado
+    gm = green_mercado.live_frame(root)
+    if len(gm):
+        out["green_mercado"] = gm
     return out
 
 
