@@ -103,3 +103,38 @@ def test_ewma_last_weights_recent_values_more():
     from econ import combine
     assert combine._ewma_last(np.array([0.0, 0.0, 10.0]), 1.0) > combine._ewma_last(np.array([10.0, 0.0, 0.0]), 1.0)
     assert combine._ewma_last(np.array([]), 3.0) == 0.0
+
+
+def test_ledger_refuses_to_refreeze(tmp_path, monkeypatch):
+    from econ import ledger
+    monkeypatch.setattr(ledger, "PARAMS", tmp_path / "frozen_params.json")
+    (tmp_path / "frozen_params.json").write_text("{}")
+    import pytest
+    with pytest.raises(SystemExit):
+        ledger.freeze()
+
+
+def test_ledger_score_applies_the_preregistered_rule(tmp_path, monkeypatch):
+    from econ import ledger
+    import pandas as pd
+    import numpy as np
+    fc = tmp_path / "forecasts.csv"
+    rng = np.random.default_rng(1)
+    periods = [f"2025-{m:02d}" for m in range(2, 13)] + ["2026-01", "2026-02"]
+    official = pd.Series(rng.normal(0.3, 0.5, len(periods)), index=periods)
+    cand = official + rng.normal(0, 0.1, len(periods))      # much better than baseline
+    base = official + rng.normal(0, 1.0, len(periods))
+    pd.DataFrame({"period": periods, "model": "calibrated_item", "forecast": cand, "baseline": base,
+                  "issued_at": "t", "params_fingerprint": "x", "input_fingerprint": "y"}).to_csv(fc, index=False)
+
+    class P:
+        official_mom = official
+    monkeypatch.setattr(ledger, "FORECASTS", fc)
+    monkeypatch.setattr(ledger, "load_panel", lambda: P())
+    res = ledger.score()
+    assert res["scored"] == len(periods)
+    assert res["status"].startswith("candidate beats") if len(periods) >= ledger.MIN_SCORED else res["status"].startswith("not decided")
+    # too few months: never decides, whatever the numbers say
+    pd.DataFrame({"period": periods[:3], "model": "calibrated_item", "forecast": cand[:3], "baseline": base[:3],
+                  "issued_at": "t", "params_fingerprint": "x", "input_fingerprint": "y"}).to_csv(fc, index=False)
+    assert ledger.score()["status"].startswith("not decided")

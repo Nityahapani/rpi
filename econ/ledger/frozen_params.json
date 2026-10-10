@@ -1,0 +1,9 @@
+{
+  "model": "calibrated_item",
+  "alpha": 0.07095949860055994,
+  "beta": 0.6281875892709414,
+  "fitted_on_clean_item_months": 412,
+  "fitted_through": "2026-08",
+  "frozen_at": "2026-10-10T11:11:36+00:00",
+  "fingerprint": "5affe61eb2cfb2f9"
+}

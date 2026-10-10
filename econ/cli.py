@@ -100,9 +100,21 @@ def cmd_report(p, out: Path) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python3 -m econ", description=__doc__.split("\n")[0])
-    ap.add_argument("command", choices=["fit", "compare", "breaks", "report"])
+    ap.add_argument("command", choices=["fit", "compare", "breaks", "report", "freeze", "log", "score"])
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT, help="output directory (default econ/outputs)")
     args = ap.parse_args(argv)
+    if args.command in ("freeze", "log", "score"):
+        from econ import ledger
+        if args.command == "freeze":
+            print(json.dumps(ledger.freeze(), indent=2))
+        elif args.command == "log":
+            rows = ledger.log_new()
+            print(f"logged {len(rows)} new forecast(s)")
+            for r in rows:
+                print(f"  {r['period']}: candidate {r['forecast']:+.3f}  baseline {r['baseline']:+.3f}  issued {r['issued_at']}")
+        else:
+            print(json.dumps(ledger.score(), indent=2, default=str))
+        return 0
     p = load_panel()
     out = _out(args.out)
     {"fit": cmd_fit, "compare": cmd_compare, "breaks": cmd_breaks, "report": cmd_report}[args.command](p, out)
