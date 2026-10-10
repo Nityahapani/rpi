@@ -1,6 +1,7 @@
 """Turn raw observations into a monthly quote panel (quote = SKU x pincode)."""
 from __future__ import annotations
 from ..superseded import sql_clause
+from ..switches import clause as switch_clause
 import numpy as np
 import pandas as pd
 
@@ -15,7 +16,7 @@ def load_quotes(conn, price_field: str = "unit_price", min_days: int = 1, min_da
         raise ValueError(f"price_field must be one of {_FIELDS}")
     q = f"""SELECT o.obs_date, o.sku_id, o.pincode, o.{price_field} AS p, p.item_id, p.source_id
             FROM observations o JOIN products p ON p.sku_id = o.sku_id
-            WHERE o.in_stock = 1 AND o.{price_field} > 0 AND {sql_clause('p')}"""
+            WHERE o.in_stock = 1 AND o.{price_field} > 0 AND {sql_clause('p')} AND {switch_clause('p', 'o')}"""
     df = pd.read_sql_query(q, conn, parse_dates=["obs_date"])
     if df.empty:
         return pd.DataFrame(columns=["item_id", "quote_id", "period", "lp", "n_days", "source_id"])

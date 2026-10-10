@@ -282,8 +282,9 @@ def test_plan_wires_new_sources_everywhere():
     from rpi.index.engine import SINGLE_SERIES_SOURCES
     from rpi.proxy_check import PROXY_SOURCES
     plan = pd.read_csv(ROOT / "data/source_plan.csv", dtype=str).set_index("item_id")
+    # F001, F004 were wired to the Rajkot web shops on 2026-10-10 (yard inputs before); F003, F005 keep the gate-passing DoCA national panel
     for it in ("F001", "F004"):
-        assert plan.loc[it, "primary_source"] == "mandi_rajkot_apmc" and plan.loc[it, "class"] == "independent"
+        assert plan.loc[it, "primary_source"] == "rajkot_shops" and plan.loc[it, "class"] == "independent"
     assert plan.loc["F003", "primary_source"] == "doca_national" and plan.loc["F003", "class"] == "independent"  # superseded
     assert plan.loc["F005", "primary_source"] == "doca_national" and plan.loc["F005", "class"] == "independent"  # yard board superseded
     for src in ("mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board"):

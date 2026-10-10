@@ -20,7 +20,7 @@ import pandas as pd
 
 # doca_national = all-India balanced panel of DoCA retail quotes (rpi/collectors/doca.py): observed retail prices, but not Rajkot -> proxy bucket.
 from .superseded import sql_clause
-PROXY_SOURCES = ("mandi_gondal", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "necc_ahmedabad", "doca_national", "doca_gujarat", "dmart_ahmedabad", "vishal_diary", "frc_rajkot", "district_cinema", "fresha_salon")
+PROXY_SOURCES = ("apple_store", "mandi_gondal", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "necc_ahmedabad", "doca_national", "doca_gujarat", "dmart_ahmedabad", "vishal_diary", "frc_rajkot", "district_cinema", "fresha_salon")
 # Multi-SKU pools: the monthly level is the matched-model Jevons chain of the SKUs, not the mean of price levels (a SKU going out of stock must not move it).
 MULTI_SKU_SOURCES = ("dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon", "rajkot_shops", "field_diary")
 # Retail quotes reported by DoCA for the Rajkot centre (rpi/collectors/doca.py): a genuine retail price of a standard local variety,

@@ -45,7 +45,10 @@ def test_collector_skips_out_of_stock_and_reports_blocking(tmp_path):
 def test_pool_is_consistent_with_the_plan():
     pool = pd.read_csv(ROOT / "data/dmart/pool.csv")
     plan = pd.read_csv(ROOT / "data/source_plan.csv", dtype=str, keep_default_na=False)
-    assert set(pool.item_id) == set(plan.loc[plan.primary_source == "dmart_ahmedabad", "item_id"])
+    dmart_plan = set(plan.loc[plan.primary_source == "dmart_ahmedabad", "item_id"])
+    # F007 and F016 were wired to the Rajkot web shops on 2026-10-10; their DMart pool keeps accruing for comparison
+    assert dmart_plan <= set(pool.item_id) and set(pool.item_id) - dmart_plan == {"F007", "F016"}
+    assert set(plan.set_index("item_id").loc[["F007", "F016"], "primary_source"]) == {"rajkot_shops"}
     assert (pool.groupby("item_id").size() >= 2).all() and pool.sku.is_unique
     assert "dmart_ahmedabad" in PROXY_SOURCES and "dmart_ahmedabad" in MULTI_SKU_SOURCES
     assert (plan.loc[plan.primary_source == "dmart_ahmedabad", "class"] == "independent").all()

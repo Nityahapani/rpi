@@ -14,6 +14,7 @@ This module only measures:
 Candidate sources (each provides a quote frame with date, item_id, sku, unit_price):
     rajkot_shops   Rajkot retailers' own web shops (rpi/collectors/rajkot_shops.py)
     field_diary    shelf prices recorded in Rajkot stores by hand (rpi/collectors/field_diary.py)
+    apple_store    apple.com/in fixed-SKU shelf price, iPhone 16 128 GB (rpi/collectors/apple_store.py)
 """
 from __future__ import annotations
 
@@ -98,8 +99,11 @@ def assess(item: str, panel: pd.DataFrame, official: pd.Series, current: pd.Seri
 
 
 def candidate_frames(root: Path) -> dict[str, pd.DataFrame]:
-    from .collectors import field_diary, rajkot_shops
+    from .collectors import apple_store, field_diary, rajkot_shops
     out = {"rajkot_shops": rajkot_shops.live_frame(root)}
+    ap = apple_store.live_frame(root)
+    if len(ap):
+        out["apple_store"] = ap
     fd = field_diary.quote_frame(root)
     if len(fd):
         out["field_diary"] = fd

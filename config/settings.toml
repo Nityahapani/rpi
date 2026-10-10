@@ -36,6 +36,15 @@ doca_national = 5
 doca_gujarat = 5
 dmart_ahmedabad = 1          # shelf prices are sticky (changes are weeks apart) and the feed is refreshed on demand, so one observation day is a valid month
 
+# Items whose index input moves to a new source (rpi/switches.py). Changing source_plan.csv alone does not do this.
+# Each: [new source, first month the new source drives the index]. Oct 2026 stays on the old source; Nov 2026 is the first month
+# the shop series is used, from matched Oct->Nov pairs. Gate for every row: pending until ~2027-04 (see source_plan.csv notes).
+[index.switches]
+F001 = ["rajkot_shops", "2026-11"]
+F004 = ["rajkot_shops", "2026-11"]
+F007 = ["rajkot_shops", "2026-11"]
+F016 = ["rajkot_shops", "2026-11"]
+
 [index.min_matched_by_tier]
 C = 1                       # administered prices (tariffs) have ONE legitimate quote by design
 B = 1                       # benchmark series (e.g. gold) may be single-quote

@@ -123,3 +123,17 @@ def test_the_committed_pool_is_rajkot_only_parseable_and_maps_to_basket_items():
     assert (pd.to_numeric(pool.qty_base) > 0).all() and set(pool.base_unit) <= {"g", "ml"}
     assert not pool.duplicated(["store", "variant_id"]).any() and len(pool) >= 30
     assert {"F016", "F002", "F008", "F003", "F005"} <= set(pool.item_id)                    # the out-of-city staples this source exists for
+
+
+def test_switched_items_are_exactly_the_non_rajkot_items_the_pool_covers():
+    """Wired 2026-10-10: the 4 pool items whose input was a short yard or Ahmedabad series (F001, F004 mandi; F007, F016 DMart) move to
+    the Rajkot web shops. F002, F003, F005, F008 keep the DoCA national panel (22 months, passes the India gate) - the shops stay a shadow
+    candidate for them. F006, F013, F026 stay on the Rajkot DoCA centre."""
+    from rpi.collectors.rajkot_shops import switched_items
+    sw = set(switched_items(ROOT))
+    pool_items = set(pd.read_csv(ROOT / "data/rajkot_shops/pool.csv", dtype=str).item_id)
+    assert sw == {"F001", "F004", "F007", "F016"}
+    assert sw <= pool_items
+    plan = pd.read_csv(ROOT / "data/source_plan.csv", dtype=str, keep_default_na=False).set_index("item_id")
+    assert set(plan.loc[["F002", "F003", "F005", "F008"], "primary_source"]) == {"doca_national"}
+    assert set(plan.loc[["F006", "F013", "F026"], "primary_source"]) == {"doca_rajkot"}

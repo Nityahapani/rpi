@@ -148,6 +148,8 @@ def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
 
     # sweep 27: seasonal-trend imputation prior and wholesale-feed calibration (rpi/seasonal.py); both are switched by settings and fully disclosed
     seasonal_tables, wcal, cutoffs = {}, {}, {}
+    from ..switches import load as _load_switches
+    switch_from = {k: v[1] for k, v in _load_switches().items()}     # wholesale beta stops at a switch month (rpi/switches.py)
     if cfg.get("impute") == "seasonal_trend" or cfg.get("calibrate_wholesale"):
         from .. import seasonal as _sea
         seasonal_tables = {} if run.is_demo else _sea.load_tables(_ROOT)      # demo/synthetic data must not borrow the real Gujarat seasonal priors
@@ -177,7 +179,7 @@ def run_index(conn, settings: dict, store: bool = True) -> IndexRun:
             rel[it], n[it] = r, k
         if wcal:
             from .. import seasonal as _sea
-            rel, _clog = _sea.calibrate_wholesale(rel, n, cutoffs, wcal, seasonal_tables)
+            rel, _clog = _sea.calibrate_wholesale(rel, n, cutoffs, wcal, seasonal_tables, switch_from=switch_from)
             if name == "jevons_chain":
                 run.calibration_log = _clog
         agg = aggregate(rel, n, items, weights, min_m, impute=cfg.get("impute", "division"), seasonal=seasonal_tables)

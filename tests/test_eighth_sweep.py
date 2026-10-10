@@ -118,5 +118,7 @@ def test_coverage_split_has_separate_retail_bucket(tmp_path):
     w.to_sql("weights", conn, if_exists="append", index=False)
     s = coverage_split(conn, ROOT / "data/source_plan.csv")["independent_split_pct"]
     retail = [v for k, v in s.items() if k.startswith("retail")]
-    assert len(retail) == 1 and abs(retail[0] - 3 / len(plan) * 100) < 0.1
+    from rpi.proxy_check import RETAIL_SOURCES
+    n_retail = int((plan.primary_source.isin(RETAIL_SOURCES) & (plan["class"] == "independent")).sum())
+    assert len(retail) == 1 and abs(retail[0] - n_retail / len(plan) * 100) < 0.1
     assert abs(sum(s.values()) - plan[plan["class"] == "independent"].shape[0] / len(plan) * 100) < 0.2

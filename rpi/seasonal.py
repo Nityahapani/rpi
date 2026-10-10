@@ -78,15 +78,19 @@ def fuse(prior_change: float, wholesale_change: float, b0: float, sigma_wb: floa
     return (wp * prior_change + ww * b0 * wholesale_change) / (wp + ww)
 
 
-def calibrate_wholesale(rel: pd.DataFrame, n: pd.DataFrame, cutoffs: dict, cal: dict, tables: dict, clip: float | None = None) -> tuple[pd.DataFrame, list]:
+def calibrate_wholesale(rel: pd.DataFrame, n: pd.DataFrame, cutoffs: dict, cal: dict, tables: dict, clip: float | None = None,
+                        switch_from: dict | None = None) -> tuple[pd.DataFrame, list]:
     """Replace an item's observed wholesale relative by the fused estimate, for months AFTER the item's first independent month (the splice
     month has no relative).  Returns (new_rel, log of (item, period, raw, fused))."""
     out = rel.copy(); log = []
+    switch_from = switch_from or {}
     for it, c in cal.items():
         if it not in out.columns or it not in cutoffs:
             continue
         for per in out.index:
             if str(per) <= cutoffs[it] or pd.isna(out.loc[per, it]) or n.loc[per, it] < 1:
+                continue
+            if it in switch_from and str(per) >= switch_from[it]:       # switched to a retail series from this month: no wholesale beta
                 continue
             pr = prior(tables, it, per)
             if pr is None:
