@@ -8,3 +8,6 @@ __pycache__/
 data/sources_raw/
 data/raw/
 .DS_Store
+
+# econ module outputs: generated, uncommitted by default
+econ/outputs/
