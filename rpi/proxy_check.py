@@ -22,12 +22,12 @@ import pandas as pd
 from .superseded import sql_clause
 PROXY_SOURCES = ("apple_store", "mandi_gondal", "mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board", "mandi_rajkot_district", "necc_ahmedabad", "doca_national", "doca_gujarat", "dmart_ahmedabad", "vishal_diary", "frc_rajkot", "district_cinema", "fresha_salon")
 # Multi-SKU pools: the monthly level is the matched-model Jevons chain of the SKUs, not the mean of price levels (a SKU going out of stock must not move it).
-MULTI_SKU_SOURCES = ("dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon", "rajkot_shops", "field_diary")
+MULTI_SKU_SOURCES = ("dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon", "rajkot_shops")
 # Retail quotes reported by DoCA for the Rajkot centre (rpi/collectors/doca.py): a genuine retail price of a standard local variety,
 # gated against the official item index like a proxy, but reported in its own bucket (it is not wholesale).
-# Rajkot web shops (rpi/collectors/rajkot_shops.py) and the Rajkot field diary (field_diary.py) are Rajkot shelf prices: same bucket and gate.
+# Rajkot web shops (rpi/collectors/rajkot_shops.py) are Rajkot shelf prices: same bucket and gate.
 # Both are SHADOW sources: they appear here so that switching an item is a data edit (source_plan.csv), but no item uses them yet.
-RETAIL_SOURCES = ("doca_rajkot", "rajkot_shops", "field_diary")
+RETAIL_SOURCES = ("doca_rajkot", "rajkot_shops")
 # MODELLED series (not observed prices): counted in their own bucket, gated by the calibrated trend gate (rentsignal.trend_gate) instead of the correlation gate.
 # rent_listings = listings-based stock-rent candidate for R001 (rpi/rentlistings.py): built on observed asking rents but through a stock model
 # and with the modelled signal as stand-in before the listings, so it is gated and bucketed like the model it would replace (SHADOW, unused).

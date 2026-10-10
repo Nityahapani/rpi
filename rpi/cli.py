@@ -293,19 +293,11 @@ def cmd_uncertainty(args, s):
 
 
 def cmd_shadow(args, s):
-    """SHADOW candidates - Rajkot web shops, the field diary, listings-based rent: what accrues, how it compares, what could be switched."""
+    """SHADOW candidates - Rajkot web shops, listings-based rent: what accrues, how it compares, what could be switched."""
     from . import rentlistings, shadow
-    from .collectors import field_diary
-    if args.sheet:
-        print("field-diary collection sheet:", field_diary.write_sheet(ROOT).relative_to(ROOT))
     conn = _conn(args, s)
     for line in shadow.summary_lines(shadow.screen(ROOT, conn)):
         print(line)
-    raw = field_diary.load(ROOT)
-    if len(raw):
-        items = set(pd.read_csv(ROOT / "registry/items.csv", dtype=str, usecols=["item_id"]).item_id)
-        ok, problems = field_diary.validate(raw, items)
-        print(f"field diary: {len(ok)}/{len(raw)} rows accepted" + "".join(f"\n  ! {p}" for p in problems[:25]))
     r = rentlistings.screen(ROOT)
     months = ", ".join(f"{m['month']} n={m['n']}{' survivor' if m['survivor'] else ''}{'' if m['complete'] else ' (in progress)'}"
                        for m in r.get("months", []))
@@ -338,8 +330,7 @@ def main(argv=None):
     p = sub.add_parser("eval"); p.add_argument("--first", help="first origin, YYYY-MM (default 2018-01)")
     p.add_argument("--horizons", default="1,2,3"); p.set_defaults(f=cmd_eval)
     sub.add_parser("diag").set_defaults(f=cmd_diag)
-    p = sub.add_parser("shadow"); p.add_argument("--sheet", action="store_true", help="rewrite data/field_diary/sheet.csv")
-    p.set_defaults(f=cmd_shadow)
+    sub.add_parser("shadow").set_defaults(f=cmd_shadow)
     p = sub.add_parser("uncertainty"); p.add_argument("--reps", type=int, default=500)
     p.add_argument("--weight-sigma", type=float, default=0.10, dest="weight_sigma"); p.set_defaults(f=cmd_uncertainty)
     args = ap.parse_args(argv)

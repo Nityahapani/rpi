@@ -111,7 +111,7 @@ def test_registries_know_the_shadow_sources_so_a_switch_needs_no_code_change():
     from rpi.collectors.official_link import BACKFILL_SOURCES
     from rpi.index.engine import SINGLE_SERIES_SOURCES
     from rpi.proxy_check import GATED_SOURCES, MULTI_SKU_SOURCES, PROXY_SOURCES, RETAIL_SOURCES
-    for src in ("rajkot_shops", "field_diary"):
+    for src in ("rajkot_shops",):
         assert src in RETAIL_SOURCES and src in MULTI_SKU_SOURCES and src in GATED_SOURCES
         assert src in BACKFILL_SOURCES and src in SINGLE_SERIES_SOURCES and src not in PROXY_SOURCES   # a Rajkot shelf price is not a proxy
 

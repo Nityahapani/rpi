@@ -338,10 +338,9 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             return f"{n} quotes; {msg}; " + (f"WIRED for {sw}" if sw else "SHADOW: no item switched, nothing reaches the index")
         _step("accrue:apple_store", _apple, results)
     from .collectors.rajkot_shops import RajkotShopsCollector, switched_items
-    from .collectors.field_diary import FieldDiaryCollector
     from .collectors.rent_listings import RentListingsCollector
     from .collectors.apple_store import AppleStoreCollector
-    for _src, _col in (("rajkot_shops", RajkotShopsCollector), ("field_diary", FieldDiaryCollector), ("rent_listings", RentListingsCollector), ("apple_store", AppleStoreCollector)):
+    for _src, _col in (("rajkot_shops", RajkotShopsCollector), ("rent_listings", RentListingsCollector), ("apple_store", AppleStoreCollector)):
         if switched_items(root, _src):
             collectors.append((_src, _col(root)))
     # Practo doctor fees (M003) are a SCREEN only (data/practo): the archive screen showed listed fees are stale and understate the official index (inventory AH), so no collector is registered.
