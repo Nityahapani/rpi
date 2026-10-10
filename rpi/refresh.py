@@ -337,10 +337,18 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             sw = apple_store.switched_items(root)
             return f"{n} quotes; {msg}; " + (f"WIRED for {sw}" if sw else "SHADOW: no item switched, nothing reaches the index")
         _step("accrue:apple_store", _apple, results)
+    if not offline and (root / "data/hathway_broadband/pool.csv").exists():
+        def _hathway():
+            from .collectors import hathway_broadband
+            n, msg = hathway_broadband.accrue(PoliteClient(ua, min_delay=2.0, retries=1, session=session()), root)
+            sw = hathway_broadband.switched_items(root)
+            return f"{n} quotes; {msg}; " + (f"WIRED for {sw}" if sw else "SHADOW: no item switched, nothing reaches the index")
+        _step("accrue:hathway_broadband", _hathway, results)
     from .collectors.rajkot_shops import RajkotShopsCollector, switched_items
     from .collectors.rent_listings import RentListingsCollector
     from .collectors.apple_store import AppleStoreCollector
-    for _src, _col in (("rajkot_shops", RajkotShopsCollector), ("rent_listings", RentListingsCollector), ("apple_store", AppleStoreCollector)):
+    from .collectors.hathway_broadband import HathwayBroadbandCollector
+    for _src, _col in (("rajkot_shops", RajkotShopsCollector), ("rent_listings", RentListingsCollector), ("apple_store", AppleStoreCollector), ("hathway_broadband", HathwayBroadbandCollector)):
         if switched_items(root, _src):
             collectors.append((_src, _col(root)))
     # Practo doctor fees (M003) are a SCREEN only (data/practo): the archive screen showed listed fees are stale and understate the official index (inventory AH), so no collector is registered.

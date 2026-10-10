@@ -71,7 +71,21 @@ def test_settings_switches_agree_with_the_plan():
     plan = pd.read_csv(ROOT / "data/source_plan.csv", dtype=str, keep_default_na=False)
     assert sw.check_against_plan(plan) == []
     rules = sw.load()
-    assert set(rules) == {"F001", "F004", "F007", "F016"}
+    # F001/F004/F007/F016: user decision 2026-10-10 (rajkot_shops). K003: Hathway Surat broadband proxy, user decision 2026-10-10.
+    assert set(rules) == {"F001", "F004", "F007", "F016", "K003"}
+    assert rules["K003"] == ("hathway_broadband", "2026-11")
+
+
+def test_hathway_parser_reads_printed_plan_and_refuses_bad_pages():
+    from rpi.collectors import hathway_broadband as hb
+    card = ('<div class="head"> Beginners Plan </div> <div class="planSpeed"> <h3>75 Mbps</h3> '
+            '<span>Effective Monthly Pricing</span> <div class="planPrice"> \u20b9500* </div>')
+    assert hb.parse_price(card, "Beginners Plan", "75") == 500.0
+    assert hb.parse_price(card, "Beginners Plan", "100") is None          # speed must match
+    assert hb.parse_price(card, "Premium Plan", "75") is None             # name must match
+    twice = card + card.replace("500", "600")                              # same plan at two prices: refuse
+    assert hb.parse_price(twice, "Beginners Plan", "75") is None
+    assert hb.parse_price(card.replace("500", "5"), "Beginners Plan", "75") is None   # outside the band
 
 
 def test_wholesale_calibration_stops_at_the_switch_month():

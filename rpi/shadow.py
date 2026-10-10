@@ -103,6 +103,10 @@ def candidate_frames(root: Path) -> dict[str, pd.DataFrame]:
     ap = apple_store.live_frame(root)
     if len(ap):
         out["apple_store"] = ap
+    from .collectors import hathway_broadband
+    hb = hathway_broadband.live_frame(root)
+    if len(hb):
+        out["hathway_broadband"] = hb
     return out
 
 
