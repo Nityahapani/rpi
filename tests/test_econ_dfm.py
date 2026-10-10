@@ -87,3 +87,19 @@ def test_real_panel_loads_and_aligns():
     assert abs(p.weights.sum() - 1.0) < 1e-9
     assert 0.0 < p.uncovered_weight < 0.05          # division 02 is the only official division not in rpi
     assert "2026-10" in p.periods and "2026-08" in p.official_mom.index
+
+
+def test_anchored_ridge_returns_weights_when_data_match_them():
+    from econ import combine
+    rng = np.random.default_rng(2)
+    w = np.array([0.5, 0.3, 0.2])
+    X = rng.normal(size=(12, 3))
+    y = X @ w + 0.01 * rng.normal(size=12)
+    pred, _ = combine._anchored_ridge(X, y, w, np.array([1.0, -1.0, 2.0]))
+    assert abs(pred - (np.array([1.0, -1.0, 2.0]) @ w)) < 0.05
+
+
+def test_ewma_last_weights_recent_values_more():
+    from econ import combine
+    assert combine._ewma_last(np.array([0.0, 0.0, 10.0]), 1.0) > combine._ewma_last(np.array([10.0, 0.0, 0.0]), 1.0)
+    assert combine._ewma_last(np.array([]), 3.0) == 0.0

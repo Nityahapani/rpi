@@ -53,18 +53,24 @@ def cmd_fit(p, out: Path) -> dict:
 
 
 def cmd_compare(p, out: Path) -> dict:
-    bt = evaluate.backtest(p)
-    bt.to_csv(out / "backtest.csv")
-    m = evaluate.metrics(bt)
-    print(f"rolling-origin backtest of official general MoM, {len(bt)} months "
-          f"({bt.index[0]} .. {bt.index[-1]}), each forecast uses data up to that month only\n")
-    print(f"{'benchmark':<20}{'n':>4}{'RMSE':>9}{'MAE':>9}")
-    for k, v in sorted(m.items(), key=lambda kv: kv[1]["rmse"]):
-        print(f"{k:<20}{v['n']:>4}{v['rmse']:>9.3f}{v['mae']:>9.3f}")
-    inside = ((bt.official_mom >= bt.dfm_band80_lo) & (bt.official_mom <= bt.dfm_band80_hi)).mean()
-    print(f"\nDFM 80% band coverage: {100*inside:.0f}% of months (target 80%)")
-    print(f"wrote {out/'backtest.csv'}")
-    return {"metrics": m, "band80_coverage": float(inside), "months": list(bt.index)}
+    from econ import combine
+    c = combine.candidates(p)
+    c.to_csv(out / "candidates.csv")
+    sc = combine.score(c)
+    sc.to_csv(out / "scores.csv", index=False)
+    print(f"rolling-origin backtest of the official general MoM, {len(c)} months "
+          f"({c.index[0]} .. {c.index[-1]}); each forecast uses only data before its month\n")
+    print(f"{'model':<20}{'n':>4}{'RMSE':>9}{'MAE':>9}{'bias':>9}{'RMSE gap vs fixed_weight [95% boot]':>40}")
+    for _, r in sc.iterrows():
+        if r.model == "fixed_weight":
+            gap = "(benchmark)"
+        else:
+            g, lo, hi = combine.paired_rmse_gap(c, r.model)
+            gap = f"{g:+.3f} [{lo:+.3f}, {hi:+.3f}]"
+        print(f"{r.model:<20}{r.n:>4}{r.rmse:>9.3f}{r.mae:>9.3f}{r.bias:>9.3f}{gap:>40}")
+    print("\nnot adopted unless a candidate beats fixed_weight with an interval clear of zero.")
+    print(f"wrote {out/'candidates.csv'} and {out/'scores.csv'}")
+    return {"scores": sc.to_dict("records")}
 
 
 def cmd_breaks(p, out: Path) -> dict:
