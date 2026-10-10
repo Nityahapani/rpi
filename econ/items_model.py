@@ -113,3 +113,53 @@ def evaluate(lag: int = 0) -> pd.DataFrame:
         out.append({"variant": v, "lag": lag, "n_dev": len(dev), "rmse_dev": rmse(dev),
                     "n_hold": len(hold), "rmse_hold": rmse(hold), "n_all": len(r), "rmse_all": rmse(r)})
     return pd.DataFrame(out)
+
+
+# ---- nested evaluation: the Huber threshold is chosen inside each training window only ----
+C_GRID = [0.8, 1.0, 1.345, 2.0, 3.0]
+MIN_INNER = 6   # first inner origin needs this many prior months
+
+
+def _fit_huber_c(tr: pd.DataFrame, c: float, iters: int = 50) -> tuple[float, float]:
+    X = np.column_stack([np.ones(len(tr)), tr.x.values])
+    y = tr.y.values
+    beta, *_ = np.linalg.lstsq(X, y, rcond=None)
+    for _ in range(iters):
+        r = y - X @ beta
+        s = np.median(np.abs(r)) / 0.6745 + 1e-9
+        u = np.abs(r) / s
+        w = np.where(u <= c, 1.0, c / u)
+        beta = np.linalg.lstsq(X * w[:, None], y * w, rcond=None)[0]
+    return float(beta[0]), float(beta[1])
+
+
+def choose_c(train: pd.DataFrame) -> tuple[float, dict]:
+    """Expanding-window inner validation inside the training months only."""
+    periods = sorted(train.period.unique())
+    scores = {}
+    for c in C_GRID:
+        errs = []
+        for k in periods[MIN_INNER:]:
+            inner_tr = train[train.period < k]
+            inner_te = train[train.period == k]
+            a, b = _fit_huber_c(inner_tr, c)
+            errs.append(((inner_te.y.values - (a + b * inner_te.x.values)) ** 2).mean())
+        scores[c] = float(np.mean(errs)) if errs else np.inf
+    best = min(scores, key=scores.get)
+    return best, scores
+
+
+def nested_eval() -> pd.DataFrame:
+    panel = clean_panel(0)
+    rows = []
+    for m in sorted(panel.period.unique()):
+        tr = panel[panel.period < m]
+        te = panel[panel.period == m]
+        if len(tr) < 30 or te.empty or tr.period.nunique() < MIN_INNER + 2:
+            continue
+        c, _ = choose_c(tr)
+        a, b = _fit_huber_c(tr, c)
+        rows.append(pd.DataFrame({"period": m, "item_id": te.item_id.values, "y": te.y.values,
+                                  "raw": te.x.values, "pooled": _fit_pooled(tr)[0] + _fit_pooled(tr)[1] * te.x.values,
+                                  "huber_nested": a + b * te.x.values, "c_chosen": c}))
+    return pd.concat(rows, ignore_index=True)
