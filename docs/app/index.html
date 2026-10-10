@@ -3,383 +3,572 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rajkot Price Index: dashboard</title>
+<title>Rajkot Price Index</title>
 <style>
-  :root { --ink:#1d2330; --mute:#667085; --line:#e4e7ec; --bg:#f7f8fa; --card:#fff;
-          --accent:#1f6feb; --band:#cfe0fb; --up:#b42318; --down:#067647; --amber:#b54708; }
-  * { box-sizing: border-box; }
-  body { margin:0; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); }
-  header { background:#fff; border-bottom:1px solid var(--line); padding:12px 20px; display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; justify-content:space-between; }
-  header h1 { font-size:17px; margin:0; }
-  nav a { color:var(--mute); text-decoration:none; margin-right:14px; padding:4px 0; border-bottom:2px solid transparent; }
-  nav a.on { color:var(--ink); border-bottom-color:var(--accent); font-weight:600; }
-  main { max-width:1100px; margin:0 auto; padding:18px 16px 40px; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; margin-bottom:16px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
-  .card .k { color:var(--mute); font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
-  .card .v { font-size:22px; font-weight:650; margin-top:2px; }
-  .card .s { color:var(--mute); font-size:12px; }
-  .panel { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:16px; overflow-x:auto; }
-  .panel h2 { font-size:15px; margin:0 0 8px; }
-  .note { color:var(--mute); font-size:12px; margin:6px 0 0; }
-  table { border-collapse:collapse; width:100%; }
-  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; }
-  th { color:var(--mute); font-weight:600; font-size:12px; cursor:pointer; user-select:none; }
-  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
-  tr.click { cursor:pointer; }
-  tr.click:hover td { background:#f2f6ff; }
-  tr.sel td { background:#eaf1ff; }
-  .up { color:var(--up); } .down { color:var(--down); }
-  .badge { display:inline-block; font-size:11px; padding:1px 7px; border-radius:999px; background:#eef2f6; color:#344054; }
-  .badge.independent { background:#dcfae6; color:#067647; }
-  .badge.linked { background:#fef0c7; color:#b54708; }
-  .badge.none { background:#fee4e2; color:#b42318; }
-  .controls { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; align-items:center; }
-  input, select { font:inherit; padding:6px 8px; border:1px solid #d0d5dd; border-radius:6px; background:#fff; }
-  input { min-width:220px; }
-  .bar { height:10px; background:var(--accent); border-radius:3px; display:inline-block; vertical-align:middle; }
-  .bars td { padding:4px 8px; }
+  :root {
+    --bg:#f4f6fb; --card:#ffffff; --ink:#0f172a; --mute:#64748b; --line:#e2e8f0; --soft:#f1f5f9;
+    --accent:#2563eb; --accent-soft:#dbeafe; --up:#dc2626; --up-soft:#fee2e2;
+    --down:#059669; --down-soft:#d1fae5; --warn:#b45309; --warn-soft:#fef3c7;
+    --shadow:0 1px 2px rgba(15,23,42,.05), 0 4px 16px rgba(15,23,42,.05);
+    color-scheme: light;
+  }
+  [data-theme="dark"] {
+    --bg:#0a0f1e; --card:#111a2e; --ink:#e6ebf5; --mute:#8b97ab; --line:#1f2c46; --soft:#16213a;
+    --accent:#60a5fa; --accent-soft:#1d3560; --up:#f87171; --up-soft:#3a1c23;
+    --down:#34d399; --down-soft:#0e3129; --warn:#fbbf24; --warn-soft:#3a2b0b;
+    --shadow:none; color-scheme: dark;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; }
+  body { background:var(--bg); color:var(--ink); font:14px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { margin:0; letter-spacing:-.01em; }
+  h2 { font-size:15px; font-weight:650; }
   .muted { color:var(--mute); }
-  .err { color:var(--up); }
-  svg text { font-family: inherit; }
-  .hidden { display:none; }
-  footer { color:var(--mute); font-size:12px; margin-top:24px; }
+  .small { font-size:12px; }
+  .up { color:var(--up); } .down { color:var(--down); }
+
+  /* header */
+  .top { position:sticky; top:0; z-index:30; background:color-mix(in srgb, var(--card) 90%, transparent); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .top-in { max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .brand { display:flex; align-items:center; gap:10px; min-width:0; }
+  .brand .logo { width:30px; height:30px; flex:0 0 30px; }
+  .brand b { font-size:15px; display:block; }
+  .brand span { font-size:12px; color:var(--mute); }
+  .tabs { display:flex; gap:4px; background:var(--soft); padding:4px; border-radius:10px; margin-left:auto; }
+  .tab { border:0; background:transparent; color:var(--mute); font:inherit; font-weight:550; padding:7px 14px; border-radius:7px; cursor:pointer; }
+  .tab.on { background:var(--card); color:var(--ink); box-shadow:var(--shadow); }
+  .icon-btn { border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:9px; padding:6px 10px; cursor:pointer; font:inherit; }
+
+  main { max-width:1200px; margin:0 auto; padding:22px 20px 56px; }
+  .view { display:none; } .view.on { display:block; }
+  .grid { display:grid; gap:16px; }
+  .g-kpi { grid-template-columns:repeat(4, minmax(0,1fr)); }
+  .g-2 { grid-template-columns:1.25fr 1fr; }
+  .g-split { grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr); align-items:start; }
+  @media (max-width: 920px) { .g-kpi { grid-template-columns:repeat(2, minmax(0,1fr)); } .g-2, .g-split { grid-template-columns:1fr; } }
+  @media (max-width: 560px) { .tabs { margin-left:0; width:100%; } .tab { flex:1; padding:7px 6px; font-size:13px; } }
+
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:18px; min-width:0; }
+  .card + .card { margin-top:0; }
+  .sec { margin-top:16px; }
+  .head { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+  .head .muted { font-size:12px; }
+
+  .eyebrow { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); font-weight:600; }
+  .kpi .label { font-size:12px; color:var(--mute); font-weight:550; }
+  .kpi .value { font-size:26px; font-weight:700; letter-spacing:-.02em; margin-top:4px; font-variant-numeric:tabular-nums; }
+  .kpi .sub { font-size:12px; color:var(--mute); margin-top:2px; }
+
+  .hero { padding:22px; }
+  .hero-top { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:flex-start; }
+  .big { font-size:46px; font-weight:750; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1.1; margin:6px 0 8px; }
+  .deltas { display:flex; gap:12px; flex-wrap:wrap; }
+  .dcell { background:var(--soft); border-radius:12px; padding:10px 14px; min-width:130px; }
+  .dcell .l { font-size:12px; color:var(--mute); }
+  .dcell .v { font-size:20px; font-weight:700; font-variant-numeric:tabular-nums; }
+
+  .seg { display:inline-flex; background:var(--soft); border-radius:9px; padding:3px; gap:2px; }
+  .seg button { border:0; background:transparent; color:var(--mute); font:inherit; font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:7px; cursor:pointer; }
+  .seg button.on { background:var(--card); color:var(--ink); box-shadow:var(--shadow); }
+
+  .badge { display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:600; padding:2px 9px; border-radius:999px; background:var(--soft); color:var(--mute); white-space:nowrap; }
+  .badge::before { content:""; width:6px; height:6px; border-radius:50%; background:currentColor; }
+  .b-ind { background:var(--down-soft); color:var(--down); }
+  .b-link { background:var(--warn-soft); color:var(--warn); }
+  .b-none { background:var(--up-soft); color:var(--up); }
+  .b-now { background:var(--accent-soft); color:var(--accent); }
+
+  .delta { font-variant-numeric:tabular-nums; font-weight:600; }
+  .delta.up { color:var(--up); } .delta.down { color:var(--down); }
+
+  table.t { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+  table.t th, table.t td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap; }
+  table.t th { font-size:12px; color:var(--mute); font-weight:600; position:sticky; top:0; background:var(--card); z-index:1; cursor:default; }
+  table.t th.sortable { cursor:pointer; }
+  table.t th.sortable:hover { color:var(--ink); }
+  table.t td.num, table.t th.num { text-align:right; }
+  table.t tr:last-child td { border-bottom:0; }
+  table.t tbody tr.row { cursor:pointer; }
+  table.t tbody tr.row:hover td { background:var(--soft); }
+  table.t tbody tr.row.sel td { background:var(--accent-soft); }
+  .scroll { max-height:560px; overflow:auto; border-radius:10px; }
+  .ip { font-weight:600; }
+
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { border:1px solid var(--line); background:var(--card); color:var(--mute); font:inherit; font-size:12.5px; font-weight:600; padding:5px 11px; border-radius:999px; cursor:pointer; }
+  .chip.on { background:var(--ink); color:var(--card); border-color:var(--ink); }
+  .search { position:relative; flex:1 1 260px; }
+  .search input { width:100%; font:inherit; padding:9px 12px 9px 34px; border:1px solid var(--line); border-radius:10px; background:var(--card); color:var(--ink); }
+  .search::before { content:"⌕"; position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--mute); font-size:16px; }
+  .toolbar { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin-bottom:14px; }
+  .toolbar .group { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+  select, .btn { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:9px; background:var(--card); color:var(--ink); }
+  .btn { cursor:pointer; font-weight:600; }
+  .btn:hover { border-color:var(--mute); }
+  .iconbtn { width:34px; padding:6px 0; text-align:center; }
+
+  .bar { height:8px; border-radius:99px; background:var(--soft); overflow:hidden; min-width:80px; }
+  .bar > i { display:block; height:100%; border-radius:99px; background:var(--accent); }
+  .bar.dn > i { background:var(--down); }
+  .bar.up > i { background:var(--up); }
+  .stack { display:flex; height:14px; border-radius:99px; overflow:hidden; background:var(--soft); }
+  .stack i { display:block; height:100%; }
+  .legend { display:flex; flex-wrap:wrap; gap:10px 16px; margin-top:10px; font-size:12.5px; color:var(--mute); }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+
+  .chartwrap { position:relative; }
+  .chart { width:100%; height:auto; display:block; overflow:visible; }
+  .chart .grid-l { stroke:var(--line); stroke-width:1; }
+  .chart .tx { fill:var(--mute); font-size:11px; }
+  .chart .ln { fill:none; stroke:var(--accent); stroke-width:2.4; stroke-linejoin:round; stroke-linecap:round; }
+  .chart .ln-est { fill:none; stroke:var(--accent); stroke-width:2.4; stroke-dasharray:5 5; stroke-linecap:round; }
+  .chart .band { fill:var(--accent); opacity:.13; }
+  .chart .area { fill:url(#gradArea); }
+  .chart .guide { stroke:var(--mute); stroke-dasharray:3 4; stroke-width:1; }
+  .chart .dot { fill:var(--card); stroke:var(--accent); stroke-width:2.5; }
+  .stop0 { stop-color:var(--accent); stop-opacity:.28; } .stop1 { stop-color:var(--accent); stop-opacity:0; }
+  .tip { position:absolute; pointer-events:none; display:none; background:var(--ink); color:var(--card); font-size:12px; padding:7px 10px; border-radius:9px; white-space:nowrap; box-shadow:var(--shadow); transform:translateY(-100%); margin-top:-6px; }
+  .tip b { font-weight:650; display:block; }
+  .tip .m { opacity:.7; }
+  .spark { width:84px; height:24px; display:block; }
+  .spark polyline { fill:none; stroke:var(--accent); stroke-width:1.6; stroke-linejoin:round; stroke-linecap:round; }
+
+  .kv { display:grid; grid-template-columns:auto 1fr; gap:6px 14px; font-size:13px; }
+  .kv dt { color:var(--mute); }
+  .kv dd { margin:0; }
+  .stats { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; margin:12px 0; }
+  .stat { background:var(--soft); border-radius:10px; padding:10px 12px; }
+  .stat .l { font-size:11.5px; color:var(--mute); }
+  .stat .v { font-size:16px; font-weight:700; font-variant-numeric:tabular-nums; margin-top:2px; }
+
+  .steps { display:flex; flex-direction:column; gap:6px; margin-top:10px; }
+  .step { display:flex; gap:10px; align-items:flex-start; font-size:13px; }
+  .dot-s { width:8px; height:8px; border-radius:50%; margin-top:6px; flex:0 0 8px; background:var(--down); }
+  .dot-s.error { background:var(--up); } .dot-s.warn { background:var(--warn); }
+  details summary { cursor:pointer; color:var(--mute); font-size:13px; font-weight:600; }
+  .note { font-size:12.5px; color:var(--mute); margin:10px 0 0; }
+  .empty { padding:30px; text-align:center; color:var(--mute); }
+  .banner { border-radius:12px; padding:10px 14px; font-size:13px; margin-bottom:16px; background:var(--accent-soft); color:var(--ink); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .banner.warn { background:var(--warn-soft); }
+  .skeleton { height:14px; border-radius:6px; background:linear-gradient(90deg,var(--soft),var(--line),var(--soft)); background-size:200% 100%; animation:sh 1.2s infinite; margin:10px 0; }
+  @keyframes sh { to { background-position:-200% 0; } }
+  footer { margin-top:28px; font-size:12px; color:var(--mute); line-height:1.6; }
+  @media print { .top, .tabs, .icon-btn, .toolbar { display:none; } body { background:#fff; } .card { box-shadow:none; } }
 </style>
 </head>
 <body>
-<header>
-  <h1>Rajkot Price Index</h1>
-  <nav id="nav">
-    <a href="#/index" data-r="index">Index</a>
-    <a href="#/items" data-r="items">Items</a>
-    <a href="#/weights" data-r="weights">Weights</a>
-    <a href="#/history" data-r="history">History</a>
-  </nav>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2563eb"/><path d="M6 22 L12 15 L17 19 L26 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="9" r="2.4" fill="#fff"/></svg>
+      <div><b>Rajkot Price Index</b><span id="sub">Loading…</span></div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab" data-v="overview">Overview</button>
+      <button class="tab" data-v="items">Items</button>
+      <button class="tab" data-v="weights">Weights</button>
+      <button class="tab" data-v="history">History</button>
+    </nav>
+    <button class="icon-btn" id="theme" title="Toggle theme" aria-label="Toggle theme">☾</button>
+  </div>
 </header>
+
 <main>
-  <div id="status" class="note"></div>
-  <section id="v-index" class="view"></section>
-  <section id="v-items" class="view hidden"></section>
-  <section id="v-weights" class="view hidden"></section>
-  <section id="v-history" class="view hidden"></section>
+  <div id="banner"></div>
+  <section id="v-overview" class="view"></section>
+  <section id="v-items" class="view"></section>
+  <section id="v-weights" class="view"></section>
+  <section id="v-history" class="view"></section>
   <footer>
-    Built from this repo's own data files. Index and status files update with the daily refresh; the item and weight data are a snapshot
-    (see footer on each view). Sources, labels and methods: see README.
+    Built from this repository's own data. The index, division and status files refresh with the daily run; the item and weight
+    views are a snapshot taken from the latest run. Colours: <span class="up">red = prices up</span>, <span class="down">green = prices down</span>.
+    Nowcast months are model estimates until MoSPI publishes them.
   </footer>
 </main>
+
 <script>
 "use strict";
-const DATA = {
-  total: "../data/rpi_total.csv",
-  divisions: "../data/rpi_divisions.csv",
-  status: "../data/status.json",
-  items: "./data/items.json",
-};
-const state = { total:null, divisions:null, status:null, items:null, sel:null, sort:{key:"weight", dir:-1}, q:"", div:"" };
-
-// ---------- helpers ----------
+const DATA = { total:"../data/rpi_total.csv", divisions:"../data/rpi_divisions.csv", status:"../data/status.json", items:"./data/items.json" };
+const S = { total:null, divisions:null, status:null, items:null, view:"overview", range:12, sel:null,
+  sort:{ key:"weight", dir:-1 }, q:"", div:"", src:"", hist:null, mover:false, uid:0 };
+const NS = "http://www.w3.org/2000/svg";
 const $ = (id) => document.getElementById(id);
-function el(tag, attrs = {}, ...kids) {
+
+// ---------- DOM + format helpers ----------
+function el(tag, attrs, ...kids) {
   const n = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs)) {
-    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === "class") n.className = v;
+    else if (k === "text") n.textContent = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v === true ? "" : v);
   }
-  for (const c of kids) if (c != null) n.append(c.nodeType ? c : document.createTextNode(String(c)));
+  for (const c of kids.flat()) { if (c == null || c === false) continue; n.append(c.nodeType ? c : document.createTextNode(String(c))); }
   return n;
 }
-function fmt(v, d = 2) { return (v == null || isNaN(v)) ? "–" : Number(v).toFixed(d); }
-function signed(v, d = 2) { if (v == null || isNaN(v)) return el("span", { class:"muted", text:"–" });
-  const n = el("span", { class: v > 0 ? "up" : v < 0 ? "down" : "", text: (v > 0 ? "+" : "") + Number(v).toFixed(d) + "%" }); return n; }
-async function getText(url) { const r = await fetch(url, { cache: "no-store" }); if (!r.ok) throw new Error(url + " " + r.status); return r.text(); }
+const f = (v, d = 2) => (v == null || isNaN(v)) ? "–" : Number(v).toFixed(d);
+const pctStr = (v, d = 2) => (v == null || isNaN(v)) ? "–" : (v > 0 ? "+" : "") + Number(v).toFixed(d) + "%";
+const cls = (v) => (v == null || isNaN(v) || Math.abs(v) < 0.005) ? "" : v > 0 ? "up" : "down";
+const delta = (v, d = 2) => el("span", { class: "delta " + cls(v), text: pctStr(v, d) });
+const pct = (a, b) => (a == null || b == null || !b) ? null : (a / b - 1) * 100;
+const badge = (text, kind) => el("span", { class: "badge " + (kind || ""), text });
+const planBadge = (p) => badge(p || "–", p === "independent" ? "b-ind" : p === "linked" ? "b-link" : p === "none" ? "b-none" : "");
+function kpi(label, value, sub, extra) { return el("div", { class: "card kpi" }, el("div", { class: "label", text: label }), el("div", { class: "value" }, value), el("div", { class: "sub" }, sub || "", extra || null)); }
+function skeleton() { return el("div", {}, el("div", { class: "skeleton", style: "width:40%" }), el("div", { class: "skeleton" }), el("div", { class: "skeleton", style: "width:70%" })); }
+
+async function getText(u) { const r = await fetch(u, { cache: "no-store" }); if (!r.ok) throw new Error(u + " → " + r.status); return r.text(); }
 function parseCSV(text) {
   const lines = text.trim().split(/\r?\n/); const head = lines.shift().split(",");
   const conv = (v) => { if (v === "" || v == null) return null; if (v === "True") return true; if (v === "False") return false;
     if (/^\d{4}-\d{2}$/.test(v)) return v; const n = Number(v); return isNaN(n) ? v : n; };
   return lines.map((l) => { const c = l.split(","); const o = {}; head.forEach((h, i) => o[h] = conv(c[i])); return o; });
 }
-function pct(a, b) { return (a == null || b == null || !b) ? null : (a / b - 1) * 100; }
-function nameIndex(series, p) { const r = series.find((x) => x[0] === p); return r ? r[1] : null; }
-function lastPair(series) { const n = series.length; return n ? [series[n-1], series[n-2] || null] : [null, null]; }
 
-// ---------- SVG line chart ----------
-function lineChart(points, opts = {}) {
-  // points: [{x:label, y:number, lo?, hi?, est?:bool}]
-  const W = opts.w || 980, H = opts.h || 260, pl = 48, pr = 34, pt = 14, pb = 30;
-  const ys = points.flatMap((p) => [p.y, p.lo, p.hi]).filter((v) => v != null && !isNaN(v));
-  if (!ys.length) return el("div", { class:"muted", text:"No data" });
-  let min = Math.min(...ys), max = Math.max(...ys); const pad = (max - min) * 0.08 || 1; min -= pad; max += pad;
-  const n = points.length, xs = (i) => pl + (n <= 1 ? 0 : i * (W - pl - pr) / (n - 1));
-  const yv = (v) => pt + (1 - (v - min) / (max - min)) * (H - pt - pb);
-  const NS = "http://www.w3.org/2000/svg";
-  const svg = document.createElementNS(NS, "svg"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", "100%"); svg.setAttribute("role", "img");
-  const add = (tag, attrs, txt) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (txt != null) e.textContent = txt; svg.append(e); return e; };
-  // grid + y labels
-  for (let g = 0; g <= 4; g++) { const v = min + (max - min) * g / 4; const y = yv(v);
-    add("line", { x1:pl, x2:W-pr, y1:y, y2:y, stroke:"#eef0f3" });
-    add("text", { x:pl-6, y:y+4, "text-anchor":"end", "font-size":11, fill:"#667085" }, fmt(v, 1)); }
-  // confidence band
+// ---------- charts ----------
+function chart(points, opts = {}) {
+  const W = opts.w || 900, H = opts.h || 280, pl = 50, pr = 16, pt = 14, pb = 30;
+  if (!points || !points.length) return el("div", { class: "empty", text: "No data for this range" });
+  const vals = points.flatMap((p) => [p.y, p.lo, p.hi]).filter((v) => v != null && !isNaN(v));
+  if (!vals.length) return el("div", { class: "empty", text: "No values" });
+  let min = Math.min(...vals), max = Math.max(...vals); const pad = (max - min) * 0.12 || 1; min -= pad; max += pad;
+  const n = points.length, step = n > 1 ? (W - pl - pr) / (n - 1) : 0;
+  const X = (i) => n <= 1 ? (pl + W - pr) / 2 : pl + i * step;
+  const Y = (v) => pt + (1 - (v - min) / (max - min)) * (H - pt - pb);
+  const id = "g" + (++S.uid);
+  const svg = document.createElementNS(NS, "svg"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("class", "chart"); svg.setAttribute("role", "img");
+  const mk = (t, a, txt, parent) => { const e = document.createElementNS(NS, t); for (const [k, v] of Object.entries(a || {})) e.setAttribute(k, v); if (txt != null) e.textContent = txt; (parent || svg).append(e); return e; };
+  const defs = mk("defs", {}); const lg = mk("linearGradient", { id: id + "a", x1: 0, y1: 0, x2: 0, y2: 1 }, null, defs);
+  mk("stop", { offset: 0, class: "stop0" }, null, lg); mk("stop", { offset: 1, class: "stop1" }, null, lg);
+  for (let g = 0; g <= 4; g++) { const v = min + (max - min) * g / 4, y = Y(v);
+    mk("line", { x1: pl, x2: W - pr, y1: y, y2: y, class: "grid-l" }); mk("text", { x: pl - 8, y: y + 4, "text-anchor": "end", class: "tx" }, f(v, 1)); }
   const withBand = points.map((p, i) => [i, p]).filter(([, p]) => p.lo != null && p.hi != null);
-  if (withBand.length > 1) {
-    const top = withBand.map(([i, p]) => `${xs(i)},${yv(p.hi)}`), bot = withBand.slice().reverse().map(([i, p]) => `${xs(i)},${yv(p.lo)}`);
-    add("polygon", { points: top.concat(bot).join(" "), fill:"#cfe0fb", opacity:.6 });
-  }
-  // lines: solid for observed, dashed for nowcast
-  const seg = (from, to, dashed) => { if (from.length < 2) return; add("polyline", { points: from.map(([i, p]) => `${xs(i)},${yv(p.y)}`).join(" "), fill:"none", stroke: opts.color || "#1f6feb", "stroke-width":2.2, "stroke-dasharray": dashed ? "5 4" : "" }); };
+  if (withBand.length > 1) mk("polygon", { class: "band", points: withBand.map(([i, p]) => `${X(i)},${Y(p.hi)}`).concat(withBand.slice().reverse().map(([i, p]) => `${X(i)},${Y(p.lo)}`)).join(" ") });
   const obs = points.map((p, i) => [i, p]).filter(([, p]) => !p.est);
   const est = points.map((p, i) => [i, p]).filter(([, p]) => p.est);
-  seg(obs, null, false);
-  if (est.length) { const join = obs.length ? [obs[obs.length-1], ...est] : est; seg(join, null, true); }
-  // x labels (about 8)
-  const step = Math.max(1, Math.ceil(n / 8));
-  points.forEach((p, i) => { if (i % step === 0 || i === n - 1) add("text", { x:xs(i), y:H-10, "text-anchor": i === n - 1 ? "end" : "middle", "font-size":11, fill:"#667085" }, p.x); });
-  const wrap = el("div"); wrap.append(svg); return wrap;
+  if (obs.length > 1) mk("polygon", { class: "area", points: obs.map(([i, p]) => `${X(i)},${Y(p.y)}`).concat([`${X(obs[obs.length - 1][0])},${H - pb}`, `${X(obs[0][0])},${H - pb}`]).join(" ") });
+  if (obs.length > 1) mk("polyline", { class: "ln", points: obs.map(([i, p]) => `${X(i)},${Y(p.y)}`).join(" ") });
+  const estPts = (obs.length ? [obs[obs.length - 1], ...est] : est);
+  if (estPts.length > 1) mk("polyline", { class: "ln-est", points: estPts.map(([i, p]) => `${X(i)},${Y(p.y)}`).join(" ") });
+  const every = Math.max(1, Math.ceil(n / 7));
+  points.forEach((p, i) => { if ((i % every === 0 && (n - 1 - i) >= every * 0.6) || i === n - 1) mk("text", { x: X(i), y: H - 8, "text-anchor": i === n - 1 ? "end" : (i === 0 ? "start" : "middle"), class: "tx" }, p.x); });
+  const guide = mk("line", { class: "guide", y1: pt, y2: H - pb, opacity: 0 });
+  const dot = mk("circle", { class: "dot", r: 5, opacity: 0 });
+  const ov = mk("rect", { x: pl, y: pt, width: W - pl - pr, height: H - pt - pb, fill: "transparent" });
+  const tip = el("div", { class: "tip" });
+  const wrap = el("div", { class: "chartwrap" }, svg, tip);
+  ov.addEventListener("pointermove", (e) => {
+    const r = svg.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width * W;
+    let i = n > 1 ? Math.round((x - pl) / step) : 0; i = Math.max(0, Math.min(n - 1, i));
+    const p = points[i], cx = X(i), cy = Y(p.y);
+    guide.setAttribute("x1", cx); guide.setAttribute("x2", cx); guide.setAttribute("opacity", 1);
+    dot.setAttribute("cx", cx); dot.setAttribute("cy", cy); dot.setAttribute("opacity", 1);
+    tip.replaceChildren(el("b", { text: p.x + (p.est ? "  · nowcast" : "") }), el("div", { text: "Index " + f(p.y, 2) }),
+      (p.lo != null && p.hi != null) ? el("div", { class: "m", text: `Range ${f(p.lo, 1)} – ${f(p.hi, 1)}` }) : null);
+    tip.style.display = "block";
+    tip.style.left = Math.max(0, Math.min(r.width - 170, cx / W * r.width - 70)) + "px";
+    tip.style.top = (cy / H * r.height) + "px";
+  });
+  ov.addEventListener("pointerleave", () => { guide.setAttribute("opacity", 0); dot.setAttribute("opacity", 0); tip.style.display = "none"; });
+  return wrap;
+}
+function spark(series) {
+  const pts = series.slice(-24); const v = pts.map((x) => x[1]); if (v.length < 2) return el("span", { class: "muted", text: "–" });
+  const min = Math.min(...v), max = Math.max(...v), W = 84, H = 24;
+  const svg = document.createElementNS(NS, "svg"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("class", "spark");
+  const pl = document.createElementNS(NS, "polyline");
+  pl.setAttribute("points", v.map((y, i) => `${(i / (v.length - 1)) * W},${H - 2 - ((y - min) / ((max - min) || 1)) * (H - 4)}`).join(" "));
+  svg.append(pl); return svg;
 }
 
-// ---------- Index view ----------
-function renderIndex() {
-  const root = $("v-index"); root.replaceChildren();
-  const tot = state.total, st = state.status, pub = st.publish;
-  const last = tot[tot.length - 1];
-  const obsRows = tot.filter((r) => !r.nowcast);
-  const lastObs = obsRows[obsRows.length - 1];
-  const nowRows = tot.filter((r) => r.nowcast);
+// ---------- theme ----------
+function applyTheme(t) { document.documentElement.setAttribute("data-theme", t); $("theme").textContent = t === "dark" ? "☀" : "☾"; try { localStorage.setItem("rpi-theme", t); } catch (e) {} }
+function initTheme() { let t = null; try { t = localStorage.getItem("rpi-theme"); } catch (e) {}
+  if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; applyTheme(t); }
+$("theme").addEventListener("click", () => applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"));
 
-  const cards = el("div", { class:"cards" },
-    card("Index, latest", fmt(pub.index, 2), pub.latest_period + ((pub.nowcast_periods || []).includes(pub.latest_period) ? " (nowcast)" : " (observed)") + (pub.ci_95 ? ` · 95% CI ${fmt(pub.ci_95[0],1)}–${fmt(pub.ci_95[1],1)}` : "")),
-    card("Month on month", pub.mom_pct != null ? (pub.mom_pct > 0 ? "+" : "") + fmt(pub.mom_pct, 2) + "%" : "–", "vs previous period"),
-    card("Year on year", pub.yoy_pct != null ? (pub.yoy_pct > 0 ? "+" : "") + fmt(pub.yoy_pct, 2) + "%" : "–", "vs same month last year"),
-    card("Observed weight", pub.observed_weight_share != null ? fmt(pub.observed_weight_share * 100, 1) + "%" : "–", "share with real price data")
-  );
-  root.append(cards);
+// ---------- data helpers ----------
+const periods = () => S.total.map((r) => r.period);
+const totRow = (p) => S.total.find((r) => r.period === p) || null;
+const divRow = (p) => S.divisions.find((r) => r.period === p) || null;
+const itemAt = (it, p) => { const r = it.series.find((x) => x[0] === p); return r ? r[1] : null; };
+function shift(p, n) { const ps = periods(), i = ps.indexOf(p); if (i < 0) return ps[0]; return ps[Math.max(0, Math.min(ps.length - 1, i + n))]; }
 
-  const series = tot.map((r) => ({ x: r.period, y: r.index, lo: r.ci_lo, hi: r.ci_hi, est: !!r.nowcast,
-    }));
-  // nowcast band for the last nowcast point
-  if (nowRows.length) {
-    const lastNow = nowRows[nowRows.length - 1];
-    const idx = series.findIndex((s) => s.x === lastNow.period);
-    if (idx >= 0) { series[idx].lo = lastNow.nowcast_lo; series[idx].hi = lastNow.nowcast_hi; }
-  }
-  const chartPanel = el("div", { class:"panel" }, el("h2", { text:"Index, base 2025-01 = 100" }), lineChart(series.slice(-43)),
-    el("p", { class:"note", text:"Solid line: observed months. Dashed: nowcast months (not yet published by MoSPI). Shaded band: interval (CI for observed months, nowcast band for the latest nowcast)." }));
-  root.append(chartPanel);
+// ---------- Overview ----------
+function renderOverview() {
+  const root = $("v-overview"); root.replaceChildren();
+  const pub = S.status.publish, tot = S.total, latest = tot[tot.length - 1];
+  const isNow = (pub.nowcast_periods || []).includes(pub.latest_period);
+  const rows = S.range ? tot.slice(-S.range) : tot;
+  const pts = rows.map((r) => ({ x: r.period, y: r.index, lo: r.ci_lo, hi: r.ci_hi, est: !!r.nowcast }));
+  const li = pts.findIndex((p) => p.x === pub.latest_period);
+  if (li >= 0 && pub.nowcast_band_90) { pts[li].lo = pub.nowcast_band_90[0]; pts[li].hi = pub.nowcast_band_90[1]; }
+  const seg = el("div", { class: "seg" }, ...[[6, "6M"], [12, "1Y"], [0, "All"]].map(([n, l]) => {
+    const b = el("button", { text: l, class: S.range === n ? "on" : "" }); b.addEventListener("click", () => { S.range = n; renderOverview(); }); return b; }));
+  const hero = el("section", { class: "card hero" },
+    el("div", { class: "hero-top" },
+      el("div", {}, el("div", { class: "eyebrow", text: "Index · " + pub.latest_period }),
+        el("div", { class: "big", text: f(pub.index, 2) }),
+        el("div", { class: "row" }, isNow ? badge("nowcast", "b-now") : badge("observed", "b-ind"),
+          el("span", { class: "muted small", text: `  95% CI ${f(pub.ci_95[0], 1)} – ${f(pub.ci_95[1], 1)}` }))),
+      el("div", { class: "deltas" },
+        el("div", { class: "dcell" }, el("div", { class: "l", text: "Month on month" }), el("div", { class: "v " + cls(pub.mom_pct), text: pctStr(pub.mom_pct) })),
+        el("div", { class: "dcell" }, el("div", { class: "l", text: "Year on year" }), el("div", { class: "v " + cls(pub.yoy_pct), text: pctStr(pub.yoy_pct) })))),
+    el("div", { class: "head", style: "margin:14px 0 6px" }, el("span", { class: "muted small", text: "Index, base 2025-01 = 100" }), seg),
+    chart(pts, { h: 300 }));
+  root.append(hero);
 
-  // recent table
-  const recent = tot.slice(-12).reverse();
-  const t = el("table", {}, el("thead", {}, el("tr", {}, ...["Period","Index","MoM","3-mo ann.","YoY","Type"].map((h,i)=>el("th",{class:i?"num":"",text:h})))));
-  const tb = el("tbody"); for (const r of recent) tb.append(el("tr", {},
-      el("td", { text: r.period }), el("td", { class:"num", text: fmt(r.index, 2) }),
-      el("td", { class:"num" }, signed(r.mom_pct)), el("td", { class:"num" }, signed(r.ann3m_pct, 2)),
-      el("td", { class:"num" }, signed(r.yoy_pct)), el("td", {}, r.nowcast ? el("span", { class:"badge", text:"nowcast" }) : el("span", { class:"badge independent", text:"observed" }))));
-  t.append(tb);
-  root.append(el("div", { class:"panel" }, el("h2", { text:"Latest months" }), t));
+  const cov = S.status.coverage || {};
+  const split = cov.independent_split_pct || {};
+  const kpis = el("div", { class: "grid g-kpi sec" },
+    kpi("3-month annualised", pctStr(latest.ann3m_pct), "to " + latest.period),
+    kpi("Observed weight", f(pub.observed_weight_share * 100, 1) + "%", "share priced from real observations"),
+    kpi("Independent weight", f((cov.plan_weight_pct || {}).independent, 1) + "%", "not copied from official indices"),
+    kpi("Items", String(S.items.items.length), "in the basket"));
+  root.append(kpis);
 
-  // divisions latest
-  const divs = state.divisions; const dl = divs[divs.length - 1], dp = divs[divs.length - 2] || null;
-  const dt = el("table", {}, el("thead", {}, el("tr", {}, ...["Division (COICOP code)","Index","MoM","YoY"].map((h,i)=>el("th",{class:i?"num":"",text:h})))));
-  const dtb = el("tbody");
-  const dyr = divs.find((r) => r.period === (pub.latest_period || "").replace(/^(\d{4})-(\d{2})$/, (m,y,mo)=>`${Number(y)-1}-${mo}`));
-  for (const k of Object.keys(dl).filter((k) => k !== "period")) {
-    dtb.append(el("tr", {}, el("td", { text: k }), el("td", { class:"num", text: fmt(dl[k], 2) }),
-      el("td", { class:"num" }, signed(pct(dl[k], dp && dp[k]))), el("td", { class:"num" }, signed(pct(dl[k], dyr && dyr[k])))));
-  }
-  dt.append(dtb);
-  root.append(el("div", { class:"panel" }, el("h2", { text:`Divisions, ${dl.period}` }), dt,
-    el("p", { class:"note", text:"Division indices from the daily bot's divisions file. Codes are COICOP-style groups, not labelled here." })));
+  // divisions
+  const dl = S.divisions[S.divisions.length - 1], dp = S.divisions[S.divisions.length - 2];
+  const dyr = divRow(shift(latest.period, -12));
+  const divs = Object.keys(dl).filter((k) => k !== "period").map((k) => ({ k, v: dl[k], mom: pct(dl[k], dp && dp[k]), yoy: pct(dl[k], dyr && dyr[k]) }));
+  const maxY = Math.max(1, ...divs.map((d) => Math.abs(d.yoy || 0)));
+  const divPanel = el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { text: "Divisions · YoY" }), el("span", { class: "muted", text: dl.period })),
+    el("div", {}, ...divs.map((d) => el("div", { style: "display:grid;grid-template-columns:44px 1fr 74px 74px;gap:12px;align-items:center;padding:6px 0" },
+      el("span", { class: "ip", text: d.k }),
+      el("div", { class: "bar " + cls(d.yoy) }, el("i", { style: `width:${Math.abs(d.yoy || 0) / maxY * 100}%` })),
+      el("span", { class: "num", style: "text-align:right", text: f(d.v, 1) }),
+      el("span", { style: "text-align:right" }, delta(d.yoy, 1))))),
+    el("p", { class: "note", text: "Division codes follow the bot's divisions file (COICOP-style groups)." }));
 
   // coverage
-  const cov = st.coverage || {}; const sp = (cov.plan_weight_pct || {}); const split = (cov.independent_split_pct || {});
-  const covTable = el("table", {}, el("tbody", {}, ...Object.entries(split).map(([k, v]) => el("tr", {}, el("td", { text:k }), el("td", { class:"num", text: fmt(v,1)+"%" })))));
-  root.append(el("div", { class:"panel" }, el("h2", { text:"How the index is built (plan weights)" }),
-    el("p", { class:"note", text:`Independent ${fmt(sp.independent,1)}%, linked ${fmt(sp.linked,1)}%, none ${fmt(sp.none,1)}% of plan weight.` }), covTable));
+  const colors = ["#2563eb", "#f59e0b", "#8b5cf6", "#10b981", "#94a3b8"];
+  const entries = Object.entries(split);
+  const short = (k) => k.split(" (")[0].split(";")[0];
+  const covPanel = el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { text: "How it's measured" }), el("span", { class: "muted", text: "share of plan weight" })),
+    el("div", { class: "stack" }, ...entries.map(([k, v], i) => el("i", { style: `width:${v}%;background:${colors[i % colors.length]}`, title: k }))),
+    el("div", { class: "legend" }, ...entries.map(([k, v], i) => el("span", {}, el("i", { style: `background:${colors[i % colors.length]}` }), `${short(k)} ${f(v, 1)}%`))),
+    el("p", { class: "note", text: "Direct = administered prices and spot tariffs. Retail = Rajkot shop and DoCA quotes. Modelled = rent (a model, not a price). Proxy = wholesale or national stand-ins." }));
+  root.append(el("div", { class: "grid g-2 sec" }, divPanel, covPanel));
+
+  // latest months
+  const recent = tot.slice(-12).reverse();
+  const tbl = el("table", { class: "t" },
+    el("thead", {}, el("tr", {}, ...["Period", "Index", "MoM", "3-mo ann.", "YoY", "Type"].map((h, i) => el("th", { class: i && i < 5 ? "num" : "", text: h })))),
+    el("tbody", {}, ...recent.map((r) => el("tr", {}, el("td", { class: "ip", text: r.period }), el("td", { class: "num", text: f(r.index, 2) }),
+      el("td", { class: "num" }, delta(r.mom_pct)), el("td", { class: "num" }, delta(r.ann3m_pct)), el("td", { class: "num" }, delta(r.yoy_pct)),
+      el("td", {}, r.nowcast ? badge("nowcast", "b-now") : badge("observed", "b-ind"))))));
+  root.append(el("div", { class: "card sec" }, el("div", { class: "head" }, el("h2", { text: "Latest months" })), el("div", { class: "scroll" }, tbl)));
 
   // refresh health
-  const errs = (st.steps || []).filter((s) => s.status === "error");
-  root.append(el("div", { class:"panel" }, el("h2", { text:"Latest refresh" }),
-    el("p", {}, `Run ${pub.run_id}. ${(st.steps || []).length} steps, ${errs.length} with errors.`),
-    errs.length ? el("ul", {}, ...errs.map((s) => el("li", { class:"err", text: s.step + ": " + s.detail }))) : el("p", { class:"muted", text:"No errors." }),
-    el("p", { class:"note", text:"Weights source: " + (pub.weights_source || "") })));
+  const steps = S.status.steps || [];
+  const errs = steps.filter((s) => s.status === "error");
+  const warn = steps.filter((s) => s.status === "warn" || s.status === "skipped");
+  root.append(el("div", { class: "card sec" }, el("div", { class: "head" }, el("h2", { text: "Refresh health" }),
+      el("span", { class: "muted", text: `${steps.length} steps · ${errs.length} errors · run ${pub.run_id}` })),
+    el("details", {}, el("summary", { text: "Show all steps" }),
+      el("div", { class: "steps" }, ...steps.map((s) => el("div", { class: "step" }, el("span", { class: "dot-s " + (s.status === "error" ? "error" : s.status === "ok" ? "" : "warn") }),
+        el("div", {}, el("b", { text: s.step }), el("div", { class: "muted small", text: s.detail || "" })))))),
+    el("p", { class: "note", text: "Weights: " + (pub.weights_source || "") })));
 }
-function card(k, v, s) { return el("div", { class:"card" }, el("div", { class:"k", text:k }), el("div", { class:"v", text:v }), el("div", { class:"s", text:s || "" })); }
 
-// ---------- Items view ----------
-function itemRow(it) {
-  const s = it.series, [last, prev] = lastPair(s);
-  const iv = last ? last[1] : null, pv = prev ? prev[1] : null;
-  const yoyRow = s.find((x) => last && x[0] === String(Number(last[0].slice(0,4)) - 1) + last[0].slice(4));
-  return { it, last: iv, mom: pct(iv, pv), yoy: pct(iv, yoyRow ? yoyRow[1] : null), period: last ? last[0] : null };
+// ---------- Items ----------
+function itemRows() {
+  return S.items.items.map((it) => {
+    const s = it.series, last = s[s.length - 1], prev = s[s.length - 2];
+    const yr = s.find((x) => last && x[0] === (Number(last[0].slice(0, 4)) - 1) + last[0].slice(4));
+    return { it, last: last ? last[1] : null, mom: pct(last && last[1], prev && prev[1]), yoy: pct(last && last[1], yr && yr[1]), period: last && last[0] };
+  });
 }
 function renderItems() {
   const root = $("v-items"); root.replaceChildren();
-  const items = state.items.items.map(itemRow);
-  const divs = [...new Set(items.map((r) => r.it.division))].sort();
-  const q = el("input", { type:"search", placeholder:"Search item name or ID", value: state.q });
-  const dsel = el("select", {}, el("option", { value:"", text:"All divisions" }), ...divs.map((d) => el("option", Object.assign({ value:d, text:"Division " + d }, d === state.div ? { selected:"selected" } : {}))));
-  q.addEventListener("input", () => { state.q = q.value; drawItems(); });
-  dsel.addEventListener("change", () => { state.div = dsel.value; drawItems(); });
-  root.append(el("div", { class:"controls" }, q, dsel, el("span", { class:"muted", id:"count" })));
-  const wrap = el("div", { class:"panel", id:"items-table" }); root.append(wrap);
-  const detail = el("div", { class:"panel", id:"items-detail" }); root.append(detail);
-  root.append(el("p", { class:"note", text: `Snapshot: run ${state.items.run_id}, generated ${state.items.generated_utc} (item index, ${state.items.variant}). Re-run scripts/export_app_data.py to refresh.` }));
-  drawItems();
-  function drawItems() {
-    const rows = items.filter((r) => (!state.div || r.it.division === state.div) &&
-      (!state.q || (r.it.name + " " + r.it.item_id).toLowerCase().includes(state.q.toLowerCase())));
-    const k = state.sort.key, dir = state.sort.dir;
-    rows.sort((a, b) => { const va = sortVal(a, k), vb = sortVal(b, k); return (va > vb ? 1 : va < vb ? -1 : 0) * dir; });
-    $("count").textContent = rows.length + " items";
-    const cols = [["item_id","ID",0],["name","Item",0],["division","Div",0],["weight","Weight %",1],["last","Index",1],["mom","MoM",1],["yoy","YoY",1],["plan_class","Source",0]];
-    const t = el("table", {}, el("thead", {}, el("tr", {}, ...cols.map(([key, label, num]) => {
-      const th = el("th", { class: num ? "num" : "", text: label + (state.sort.key === key ? (dir > 0 ? " ▲" : " ▼") : "") });
-      th.addEventListener("click", () => { state.sort = { key, dir: state.sort.key === key ? -dir : (key === "name" || key === "item_id" ? 1 : -1) }; drawItems(); });
-      return th; })))); 
-    const tb = el("tbody");
-    for (const r of rows) {
-      const tr = el("tr", { class:"click" + (state.sel === r.it.item_id ? " sel" : "") },
-        el("td", { text: r.it.item_id }), el("td", { text: r.it.name }), el("td", { text: r.it.division }),
-        el("td", { class:"num", text: fmt(r.it.weight, 2) }), el("td", { class:"num", text: fmt(r.last, 1) }),
-        el("td", { class:"num" }, signed(r.mom)), el("td", { class:"num" }, signed(r.yoy)),
-   
-        el("td", {}, el("span", { class:"badge " + (r.it.plan_class || ""), text: r.it.plan_class || "–" })));
-      tr.addEventListener("click", () => { state.sel = r.it.item_id; drawItems(); drawDetail(r); });
-      tb.append(tr);
-    }
-    t.append(tb); wrap.replaceChildren(t);
-    if (state.sel) { const r = items.find((x) => x.it.item_id === state.sel); if (r) drawDetail(r); }
+  const all = itemRows();
+  const divs = [...new Set(all.map((r) => r.it.division))].sort();
+  const search = el("input", { type: "search", placeholder: "Search items by name or ID", value: S.q });
+  search.addEventListener("input", () => { S.q = search.value; drawTable(); });
+  const divChips = el("div", { class: "chips" }, ...["", ...divs].map((d) => { const b = el("button", { class: "chip " + (S.div === d ? "on" : ""), text: d ? "Div " + d : "All divisions" });
+    b.addEventListener("click", () => { S.div = d; renderItems(); }); return b; }));
+  const srcChips = el("div", { class: "chips" }, ...[["", "All"], ["independent", "Independent"], ["linked", "Linked"], ["none", "None"]].map(([v, l]) => {
+    const b = el("button", { class: "chip " + (S.src === v ? "on" : ""), text: l }); b.addEventListener("click", () => { S.src = v; renderItems(); }); return b; }));
+  root.append(el("div", { class: "toolbar" }, el("div", { class: "search" }, search), el("div", { class: "group" }, divChips), el("div", { class: "group" }, srcChips)));
+  const tableCard = el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { id: "count" }), el("span", { class: "muted small", text: "Click a row for details" })), el("div", { class: "scroll", id: "tbl" }));
+  const detail = el("div", { class: "card", id: "detail", style: "position:sticky;top:84px" });
+  root.append(el("div", { class: "grid g-split" }, tableCard, detail));
+  root.append(el("p", { class: "note", text: `Snapshot of run ${S.items.run_id} (${S.items.variant}, base 2025-01 = 100), generated ${S.items.generated_utc}. Re-run scripts/export_app_data.py to refresh.` }));
+
+  function drawTable() {
+    const rows = all.filter((r) => (!S.div || r.it.division === S.div) && (!S.src || r.it.plan_class === S.src) &&
+      (!S.q || (r.it.name + " " + r.it.item_id).toLowerCase().includes(S.q.toLowerCase())));
+    const k = S.sort.key, d = S.sort.dir;
+    const val = (r) => k === "name" || k === "item_id" || k === "division" ? (r.it[k] || "") : k === "weight" ? (r.it.weight || 0) : k === "last" ? (r.last || 0) : (r[k] == null ? -1e9 : r[k]);
+    rows.sort((a, b) => { const x = val(a), y = val(b); return (x > y ? 1 : x < y ? -1 : 0) * d; });
+    $("count").textContent = `${rows.length} of ${all.length} items`;
+    const cols = [["item_id", "ID", 0], ["name", "Item", 0], ["division", "Div", 0], ["weight", "Weight", 1], ["last", "Index", 1], ["mom", "MoM", 1], ["yoy", "YoY", 1], [null, "Trend", 0]];
+    const thead = el("thead", {}, el("tr", {}, ...cols.map(([key, label, num]) => {
+      const active = key && S.sort.key === key;
+      const th = el("th", { class: (num ? "num " : "") + (key ? "sortable" : ""), text: label + (active ? (d > 0 ? " ↑" : " ↓") : "") });
+      if (key) th.addEventListener("click", () => { S.sort = { key, dir: active ? -d : (num ? -1 : 1) }; drawTable(); });
+      return th; })));
+    const tbody = el("tbody", {}, ...rows.map((r) => {
+      const tr = el("tr", { class: "row" + (S.sel === r.it.item_id ? " sel" : "") },
+        el("td", { class: "muted", text: r.it.item_id }), el("td", { class: "ip", text: r.it.name }), el("td", { text: r.it.division }),
+        el("td", { class: "num", text: f(r.it.weight, 2) + "%" }), el("td", { class: "num", text: f(r.last, 1) }),
+        el("td", { class: "num" }, delta(r.mom)), el("td", { class: "num" }, delta(r.yoy)), el("td", {}, spark(r.it.series)));
+      tr.addEventListener("click", () => { S.sel = r.it.item_id; drawTable(); drawDetail(r); });
+      return tr; }));
+    $("tbl").replaceChildren(el("table", { class: "t" }, thead, tbody));
+    const cur = S.sel ? all.find((x) => x.it.item_id === S.sel) : null;
+    drawDetail(cur || rows[0] || null);
   }
-  function sortVal(r, k) { if (k === "name" || k === "item_id" || k === "division" || k === "plan_class") return (r.it[k] || "") + ""; if (k === "weight") return r.it.weight || 0; if (k === "last") return r.last || 0; return r[k] == null ? -1e9 : r[k]; }
   function drawDetail(r) {
-    const pts = r.it.series.map(([p, v]) => ({ x: p, y: v }));
-    detail.replaceChildren(el("h2", { text: `${r.it.item_id} · ${r.it.name}` }),
-      el("p", { class:"note", text:`Division ${r.it.division} · tier ${r.it.tier || "–"} · unit ${r.it.unit || "–"} · spec ${r.it.spec || "–"} · match ${r.it.match_quality || "–"} · primary source ${r.it.source || "–"} · official item ${r.it.official_item || "–"}` }),
-      lineChart(pts, { h: 220 }));
+    const dt = $("detail"); dt.replaceChildren();
+    if (!r) { dt.append(el("div", { class: "empty", text: "No item selected" })); return; }
+    const s = r.it.series, vals = s.map((x) => x[1]);
+    const mn = Math.min(...vals), mx = Math.max(...vals), since = pct(r.last, vals[0]);
+    const pts = s.map(([p, v]) => ({ x: p, y: v }));
+    dt.append(el("div", { class: "eyebrow", text: r.it.item_id + " · Division " + r.it.division }),
+      el("h2", { style: "font-size:19px;margin:4px 0 8px", text: r.it.name }),
+      el("div", { class: "row", style: "display:flex;gap:6px;flex-wrap:wrap" }, planBadge(r.it.plan_class), badge("tier " + (r.it.tier || "–"), ""), badge("match: " + (r.it.match_quality || "–"), "")),
+      el("div", { class: "stats" },
+        el("div", { class: "stat" }, el("div", { class: "l", text: "Index" }), el("div", { class: "v", text: f(r.last, 1) })),
+        el("div", { class: "stat" }, el("div", { class: "l", text: "MoM" }), el("div", { class: "v " + cls(r.mom), text: pctStr(r.mom) })),
+        el("div", { class: "stat" }, el("div", { class: "l", text: "YoY" }), el("div", { class: "v " + cls(r.yoy), text: pctStr(r.yoy) })),
+        el("div", { class: "stat" }, el("div", { class: "l", text: "Since 2025-01" }), el("div", { class: "v " + cls(since), text: pctStr(since) })),
+        el("div", { class: "stat" }, el("div", { class: "l", text: "Low" }), el("div", { class: "v", text: f(mn, 1) })),
+        el("div", { class: "stat" }, el("div", { class: "l", text: "High" }), el("div", { class: "v", text: f(mx, 1) }))),
+      chart(pts, { h: 220 }),
+      el("dl", { class: "kv", style: "margin-top:14px" },
+        el("dt", { text: "Weight" }), el("dd", { text: f(r.it.weight, 3) + "% of basket" }),
+        el("dt", { text: "Spec" }), el("dd", { text: r.it.spec || "–" }),
+        el("dt", { text: "Unit" }), el("dd", { text: r.it.unit || "–" }),
+        el("dt", { text: "Primary source" }), el("dd", { text: r.it.source || "–" }),
+        el("dt", { text: "Official item" }), el("dd", { text: r.it.official_item || "–" })));
   }
+  drawTable();
 }
 
-// ---------- Weights view ----------
+// ---------- Weights ----------
 function renderWeights() {
   const root = $("v-weights"); root.replaceChildren();
-  const items = state.items.items;
-  const total = items.reduce((a, b) => a + (b.weight || 0), 0);
+  const items = S.items.items, total = items.reduce((a, b) => a + (b.weight || 0), 0);
   const byDiv = {}; for (const it of items) byDiv[it.division] = (byDiv[it.division] || 0) + (it.weight || 0);
-  const divRows = Object.entries(byDiv).sort((a, b) => b[1] - a[1]);
-  const maxDiv = Math.max(...divRows.map((r) => r[1]));
-  root.append(el("div", { class:"panel" }, el("h2", { text:"Division weight (% of basket)" }),
-    el("table", { class:"bars" }, el("tbody", {}, ...divRows.map(([d, w]) => el("tr", {},
-      el("td", { text: d }), el("td", {}, el("span", { class:"bar", style:`width:${(w / maxDiv * 300).toFixed(0)}px` })),
-      el("td", { class:"num", text: fmt(w, 2) + "%" }))))),
-    el("p", { class:"note", text:`Items: ${items.length}. Weights sum to ${fmt(total, 2)}%.` })));
-
-  const top = [...items].sort((a, b) => (b.weight || 0) - (a.weight || 0));
-  const t = el("table", {}, el("thead", {}, el("tr", {}, ...["ID","Item","Div","Weight %","Source"].map((h,i)=>el("th",{class:i===3?"num":"",text:h})))),
-    el("tbody", {}, ...top.map((it) => el("tr", {}, el("td", { text: it.item_id }), el("td", { text: it.name }), el("td", { text: it.division }),
-      el("td", { class:"num", text: fmt(it.weight, 3) }), el("td", {}, el("span", { class:"badge " + (it.plan_class || ""), text: it.plan_class || "–" }))))));
-  root.append(el("div", { class:"panel" }, el("h2", { text:"Items by weight" }), t));
-
+  const divRowsArr = Object.entries(byDiv).sort((a, b) => b[1] - a[1]); const maxD = Math.max(...divRowsArr.map((r) => r[1]));
+  const top = [...items].sort((a, b) => (b.weight || 0) - (a.weight || 0)).slice(0, 20); const maxI = top[0] ? top[0].weight : 1;
   const counts = {}; for (const it of items) counts[it.plan_class || "–"] = (counts[it.plan_class || "–"] || 0) + 1;
-  root.append(el("p", { class:"note", text: "Source classes: " + Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(" · ") + "." }));
-  root.append(el("p", { class:"note", text: "Weight method: " + (state.items.weight_source || "") }));
+  const cp = { independent: "#059669", linked: "#f59e0b", none: "#dc2626" };
+  root.append(el("div", { class: "grid g-kpi" },
+    kpi("Basket weight", f(total, 2) + "%", "sums to 100 across items"),
+    kpi("Items", String(items.length), "priced in the index"),
+    kpi("Divisions", String(divRowsArr.length), "COICOP-style groups"),
+    kpi("Independent items", String(counts.independent || 0), `${counts.linked || 0} linked · ${counts.none || 0} none`)));
+  root.append(el("div", { class: "grid g-2 sec" },
+    el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { text: "Weight by division" }), el("span", { class: "muted small", text: "% of basket" })),
+      el("div", {}, ...divRowsArr.map(([d, w]) => el("div", { style: "display:grid;grid-template-columns:44px 1fr 70px;gap:12px;align-items:center;padding:6px 0" },
+        el("span", { class: "ip", text: d }), el("div", { class: "bar" }, el("i", { style: `width:${w / maxD * 100}%` })), el("span", { style: "text-align:right", class: "num", text: f(w, 2) + "%" }))))),
+    el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { text: "Sources by weight" })),
+      el("div", { class: "stack" }, ...Object.keys(counts).map((k) => { const w = items.filter((i) => (i.plan_class || "–") === k).reduce((a, b) => a + (b.weight || 0), 0);
+        return el("i", { style: `width:${w / total * 100}%;background:${cp[k] || "#94a3b8"}`, title: k }); })),
+      el("div", { class: "legend" }, ...Object.keys(counts).map((k) => { const w = items.filter((i) => (i.plan_class || "–") === k).reduce((a, b) => a + (b.weight || 0), 0);
+        return el("span", {}, el("i", { style: `background:${cp[k] || "#94a3b8"}` }), `${k}: ${counts[k]} items · ${f(w, 1)}%`); })),
+      el("p", { class: "note", text: "Weight method: " + (S.items.weight_source || "") }))));
+  root.append(el("div", { class: "card sec" }, el("div", { class: "head" }, el("h2", { text: "Top 20 items by weight" })),
+    el("table", { class: "t" }, el("thead", {}, el("tr", {}, ...["Item", "Div", "Weight", "", "Source"].map((h, i) => el("th", { class: i === 2 ? "num" : "", text: h })))),
+      el("tbody", {}, ...top.map((it) => el("tr", {}, el("td", { class: "ip", text: it.name }), el("td", { text: it.division }),
+        el("td", { class: "num", text: f(it.weight, 2) + "%" }),
+        el("td", { style: "width:38%" }, el("div", { class: "bar" }, el("i", { style: `width:${(it.weight || 0) / maxI * 100}%` }))),
+        el("td", {}, planBadge(it.plan_class))))))));
 }
 
 // ---------- History ----------
-// Index and divisions are monthly (no weekly or daily values exist for the index).
-// Items come from the exported snapshot; they carry the same monthly periods.
-function periodsAll() { return state.total.map((r) => r.period); }
-function totRow(p) { return state.total.find((r) => r.period === p) || null; }
-function divRow(p) { return state.divisions.find((r) => r.period === p) || null; }
-function itemAt(it, p) { const r = it.series.find((x) => x[0] === p); return r ? r[1] : null; }
-function shiftPeriod(p, n) { const ps = periodsAll(); const i = ps.indexOf(p); if (i < 0) return ps[0]; return ps[Math.max(0, Math.min(ps.length - 1, i + n))]; }
-
 function renderHistory() {
   const root = $("v-history"); root.replaceChildren();
-  const ps = periodsAll(), latest = ps[ps.length - 1];
-  if (!state.hist) state.hist = { m: latest, c: shiftPeriod(latest, -12) };
-  const H = state.hist;
-  const desc = ps.slice().reverse();
-
-  const mSel = el("select", { "aria-label": "Month" }, ...desc.map((p) => el("option", Object.assign({ value: p, text: p + (totRow(p) && totRow(p).nowcast ? " (nowcast)" : "") }, p === H.m ? { selected: "selected" } : {}))));
-  const cSel = el("select", { "aria-label": "Compare with" }, ...desc.map((p) => el("option", Object.assign({ value: p, text: p }, p === H.c ? { selected: "selected" } : {}))));
+  const ps = periods(), latest = ps[ps.length - 1];
+  if (!S.hist) S.hist = { m: latest, c: shift(latest, -12) };
+  const H = S.hist, desc = ps.slice().reverse();
+  const opt = (p, sel) => el("option", { value: p, text: p + (totRow(p) && totRow(p).nowcast ? " (nowcast)" : ""), selected: p === sel ? "selected" : null });
+  const mSel = el("select", { "aria-label": "Month" }, ...desc.map((p) => opt(p, H.m)));
+  const cSel = el("select", { "aria-label": "Compare with" }, ...desc.map((p) => opt(p, H.c)));
   mSel.addEventListener("change", () => { H.m = mSel.value; renderHistory(); });
   cSel.addEventListener("change", () => { H.c = cSel.value; renderHistory(); });
-  const btn = (label, fn) => { const b = el("button", { type: "button", text: label }); b.addEventListener("click", fn); return b; };
-  const btnStyle = "font:inherit;padding:5px 10px;border:1px solid #d0d5dd;border-radius:6px;background:#fff;cursor:pointer;";
-  const quick = [1, 3, 6, 12].map((n) => { const b = btn(n + "M", () => { H.c = shiftPeriod(H.m, -n); renderHistory(); }); b.setAttribute("style", btnStyle); return b; });
-  const step = [btn("◀ earlier", () => { H.m = shiftPeriod(H.m, -1); H.c = shiftPeriod(H.c, -1); renderHistory(); }),
-    btn("later ▶", () => { H.m = shiftPeriod(H.m, 1); H.c = shiftPeriod(H.c, 1); renderHistory(); }),
-    btn("latest", () => { H.m = latest; H.c = shiftPeriod(latest, -12); renderHistory(); })];
-  for (const b of step) b.setAttribute("style", btnStyle);
-  root.append(el("div", { class: "controls" }, el("span", { class: "muted", text: "Month" }), mSel, el("span", { class: "muted", text: "vs" }), cSel,
-    el("span", { class: "muted", text: " · quick:" }), ...quick, el("span", { class: "muted", text: " · " }), ...step));
+  const quick = [1, 3, 6, 12].map((n) => el("button", { class: "chip " + (shift(H.m, -n) === H.c ? "on" : ""), text: n + "M", onclick: () => { H.c = shift(H.m, -n); renderHistory(); } }));
+  root.append(el("div", { class: "card" }, el("div", { class: "toolbar", style: "margin:0" },
+    el("div", { class: "group" }, el("button", { class: "btn iconbtn", text: "‹", onclick: () => { H.m = shift(H.m, -1); H.c = shift(H.c, -1); renderHistory(); } }),
+      mSel, el("span", { class: "muted", text: "vs" }), cSel,
+      el("button", { class: "btn iconbtn", text: "›", onclick: () => { H.m = shift(H.m, 1); H.c = shift(H.c, 1); renderHistory(); } })),
+    el("div", { class: "group" }, el("span", { class: "muted small", text: "Compare with" }), ...quick,
+      el("button", { class: "btn", text: "Latest", onclick: () => { H.m = latest; H.c = shift(latest, -12); renderHistory(); } })))));
 
   const m = totRow(H.m), c = totRow(H.c);
-  if (!m || !c) { root.append(el("p", { class: "err", text: "No index data for the selected months." })); return; }
-  const chg = pct(m.index, c.index);
-  const pts = m.index - c.index;
-  root.append(el("div", { class: "cards" },
-    card("Index at " + H.m, fmt(m.index, 2), m.nowcast ? "nowcast" : "observed"),
-    card("Change since " + H.c, (chg > 0 ? "+" : "") + fmt(chg, 2) + "%", (pts > 0 ? "+" : "") + fmt(pts, 2) + " points"),
-    card("Year on year at " + H.m, m.yoy_pct != null ? (m.yoy_pct > 0 ? "+" : "") + fmt(m.yoy_pct, 2) + "%" : "–", "vs same month last year"),
-    card("3-month annualised", m.ann3m_pct != null ? (m.ann3m_pct > 0 ? "+" : "") + fmt(m.ann3m_pct, 2) + "%" : "–", "to " + H.m)));
+  if (!m || !c) { root.append(el("div", { class: "card sec empty", text: "No index data for the selected months." })); return; }
+  const chg = pct(m.index, c.index), pts = m.index - c.index;
+  root.append(el("div", { class: "grid g-kpi sec" },
+    kpi("Index at " + H.m, f(m.index, 2), m.nowcast ? "nowcast" : "observed"),
+    kpi("Change since " + H.c, pctStr(chg), (pts > 0 ? "+" : "") + f(pts, 2) + " points"),
+    kpi("Year on year", pctStr(m.yoy_pct), "at " + H.m),
+    kpi("3-month annualised", pctStr(m.ann3m_pct), "at " + H.m)));
 
-  // index chart across the chosen span (earlier of the two months to the later one)
-  const i0 = ps.indexOf(H.c < H.m ? H.c : H.m), i1 = ps.indexOf(H.c < H.m ? H.m : H.c);
-  const span = ps.slice(Math.max(0, i0 - 1), Math.min(ps.length, i1 + 2)).map((p) => {
-    const r = totRow(p); return { x: p, y: r.index, lo: r.ci_lo, hi: r.ci_hi, est: !!r.nowcast };
-  });
-  root.append(el("div", { class: "panel" }, el("h2", { text: `Index, ${H.c < H.m ? H.c : H.m} to ${H.c < H.m ? H.m : H.c}` }),
-    lineChart(span, { h: 230 }),
-    el("p", { class: "note", text: "Monthly observations only. The chart includes one month either side of the span for context." })));
+  const a = H.c < H.m ? H.c : H.m, b = H.c < H.m ? H.m : H.c;
+  const i0 = ps.indexOf(a), i1 = ps.indexOf(b);
+  const span = ps.slice(Math.max(0, i0 - 1), Math.min(ps.length, i1 + 2)).map((p) => { const r = totRow(p); return { x: p, y: r.index, lo: r.ci_lo, hi: r.ci_hi, est: !!r.nowcast }; });
+  root.append(el("div", { class: "card sec" }, el("div", { class: "head" }, el("h2", { text: `Index, ${a} to ${b}` }), el("span", { class: "muted small", text: "one month of context either side" })), chart(span, { h: 260 })));
 
-  // divisions: at each month and the change
+  // divisions
   const dm = divRow(H.m) || {}, dc = divRow(H.c) || {};
-  const dt = el("table", {}, el("thead", {}, el("tr", {}, ...["Division", "At " + H.c, "At " + H.m, "Change"].map((h, i) => el("th", { class: i ? "num" : "", text: h })))));
-  const dtb = el("tbody");
-  for (const k of Object.keys(dm).filter((k) => k !== "period").sort()) {
-    dtb.append(el("tr", {}, el("td", { text: k }), el("td", { class: "num", text: fmt(dc[k], 2) }), el("td", { class: "num", text: fmt(dm[k], 2) }),
-      el("td", { class: "num" }, signed(pct(dm[k], dc[k])))));
-  }
-  dt.append(dtb);
-  root.append(el("div", { class: "panel" }, el("h2", { text: "Divisions" }), dt));
-
-  // items: change between the two months, sorted by weight
-  const rows = state.items.items.map((it) => {
-    const a = itemAt(it, H.c), b = itemAt(it, H.m);
-    return { it, a, b, ch: pct(b, a) };
-  }).filter((r) => r.a != null && r.b != null).sort((x, y) => (y.it.weight || 0) - (x.it.weight || 0));
-  const missing = state.items.items.length - rows.length;
-  const t = el("table", {}, el("thead", {}, el("tr", {}, ...["ID", "Item", "Weight %", H.c, H.m, "Change"].map((h, i) => el("th", { class: i >= 2 ? "num" : "", text: h })))),
-    el("tbody", {}, ...rows.map((r) => el("tr", {}, el("td", { text: r.it.item_id }), el("td", { text: r.it.name }),
-      el("td", { class: "num", text: fmt(r.it.weight, 2) }), el("td", { class: "num", text: fmt(r.a, 1) }), el("td", { class: "num", text: fmt(r.b, 1) }),
-      el("td", { class: "num" }, signed(r.ch))))));
-  root.append(el("div", { class: "panel" }, el("h2", { text: "Items" }), t,
-    el("p", { class: "note", text: `Item index, base 2025-01 = 100. ${missing ? missing + " items have no value at one of the two months and are left out." : ""}` })));
+  const dkeys = Object.keys(dm).filter((k) => k !== "period").sort();
+  const dch = dkeys.map((k) => ({ k, a: dc[k], b: dm[k], ch: pct(dm[k], dc[k]) }));
+  const maxC = Math.max(1, ...dch.map((r) => Math.abs(r.ch || 0)));
+  root.append(el("div", { class: "grid g-2 sec" },
+    el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { text: "Divisions" }), el("span", { class: "muted small", text: `${H.c} → ${H.m}` })),
+      el("div", {}, ...dch.map((r) => el("div", { style: "display:grid;grid-template-columns:44px 1fr 74px;gap:12px;align-items:center;padding:6px 0" },
+        el("span", { class: "ip", text: r.k }), el("div", { class: "bar " + cls(r.ch) }, el("i", { style: `width:${Math.abs(r.ch || 0) / maxC * 100}%` })),
+        el("span", { style: "text-align:right" }, delta(r.ch)))))),
+    el("div", { class: "card" }, el("div", { class: "head" }, el("h2", { text: "Items" }),
+      el("div", { class: "chips" },
+        el("button", { class: "chip " + (!S.mover ? "on" : ""), text: "By weight", onclick: () => { S.mover = false; renderHistory(); } }),
+        el("button", { class: "chip " + (S.mover ? "on" : ""), text: "Biggest moves", onclick: () => { S.mover = true; renderHistory(); } }))),
+      itemsTable(H.c, H.m))));
+}
+function itemsTable(c, m) {
+  const rows = S.items.items.map((it) => { const a = itemAt(it, c), b = itemAt(it, m); return { it, a, b, ch: pct(b, a) }; })
+    .filter((r) => r.a != null && r.b != null);
+  const missing = S.items.items.length - rows.length;
+  if (S.mover) rows.sort((x, y) => Math.abs(y.ch || 0) - Math.abs(x.ch || 0)); else rows.sort((x, y) => (y.it.weight || 0) - (x.it.weight || 0));
+  return el("div", { class: "scroll", style: "max-height:520px" }, el("table", { class: "t" },
+    el("thead", {}, el("tr", {}, el("th", { text: "Item" }), el("th", { class: "num", text: c }), el("th", { class: "num", text: m }), el("th", { class: "num", text: "Change" }))),
+    el("tbody", {}, ...rows.map((r) => el("tr", {}, el("td", {}, el("div", { class: "ip", text: r.it.name }), el("div", { class: "muted small", text: r.it.item_id + " · " + f(r.it.weight, 2) + "%" })),
+      el("td", { class: "num", text: f(r.a, 1) }), el("td", { class: "num", text: f(r.b, 1) }), el("td", { class: "num" }, delta(r.ch)))))),
+    missing ? el("p", { class: "note", text: `${missing} items have no value at one of the months and are left out.` }) : null);
 }
 
 // ---------- routing ----------
-const VIEWS = ["index", "items", "weights", "history"];
+const VIEWS = { overview: renderOverview, index: renderOverview, items: renderItems, weights: renderWeights, history: renderHistory };
 function route() {
-  const r = (location.hash.replace(/^#\/?/, "") || "index").split("?")[0];
-  const view = VIEWS.includes(r) ? r : "index";
-  for (const v of VIEWS) $("v-" + v).classList.toggle("hidden", v !== view);
-  for (const a of document.querySelectorAll("#nav a")) a.classList.toggle("on", a.dataset.r === view);
-  if (view === "items" && state.items && !$("v-items").childElementCount) renderItems();
-  if (view === "history" && state.total) renderHistory();
+  const r = (location.hash.replace(/^#\/?/, "") || "overview").split("?")[0];
+  const view = VIEWS[r] ? (r === "index" ? "overview" : r) : "overview";
+  S.view = view;
+  for (const v of ["overview", "items", "weights", "history"]) $("v-" + v).classList.toggle("on", v === view);
+  for (const t of document.querySelectorAll(".tab")) t.classList.toggle("on", t.dataset.v === view);
+  if (S.total) { VIEWS[view](); window.scrollTo({ top: 0 }); }
 }
 window.addEventListener("hashchange", route);
+document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => { location.hash = "#/" + t.dataset.v; }));
 
 // ---------- boot ----------
 (async function boot() {
+  initTheme();
+  for (const v of ["overview", "items", "weights", "history"]) $("v-" + v).replaceChildren(skeleton());
   try {
     const [tot, div, st, items] = await Promise.all([
       getText(DATA.total).then(parseCSV), getText(DATA.divisions).then(parseCSV),
-      getText(DATA.status).then(JSON.parse), getText(DATA.items).then(JSON.parse),
-    ]);
-    state.total = tot; state.divisions = div; state.status = st; state.items = items;
+      getText(DATA.status).then(JSON.parse), getText(DATA.items).then(JSON.parse)]);
+    Object.assign(S, { total: tot, divisions: div, status: st, items });
     const pub = st.publish;
-    $("status").textContent = `Latest published period ${pub.latest_period} · run ${pub.run_id}`;
-    renderIndex(); renderWeights(); route();
+    $("sub").textContent = `Latest ${pub.latest_period} · run ${pub.run_id}`;
+    const errs = (st.steps || []).filter((s) => s.status === "error").length;
+    if (errs) $("banner").replaceChildren(el("div", { class: "banner warn", text: `${errs} refresh step(s) reported errors in the latest run. Details under Overview → Refresh health.` }));
+    route();
   } catch (e) {
-    $("status").innerHTML = ""; $("status").append(el("span", { class:"err", text: "Could not load data: " + e.message }));
+    $("banner").replaceChildren(el("div", { class: "banner warn", text: "Could not load data: " + e.message }));
+    for (const v of ["overview", "items", "weights", "history"]) $("v-" + v).replaceChildren();
   }
 })();
 </script>
