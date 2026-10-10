@@ -1598,3 +1598,57 @@ publish,ok,0.0,docs,2026-10-10T10:26:39+00:00
 benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.44), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.31",2026-10-10T10:26:39+00:00
 check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published); D002 pass-through None (official_not_yet_published); K002 pass-through 0.14 (official_muted); K002 pass-through 0.05 (offici,2026-10-10T10:26:39+00:00
 log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-10T10:26:39+00:00
+official:mospi_cpi,ok,1.9,up to date (5144 rows for 2026); latest 2026-08,2026-10-10T11:12:55+00:00
+official:labour_bureau,error,1.0,RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed,2026-10-10T11:12:55+00:00
+official:cpi_iw_centres,error,0.8,RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed,2026-10-10T11:12:55+00:00
+tariff:fuel_lpg_update,ok,5.7,no price changes,2026-10-10T11:12:55+00:00
+tariff:mrp_live,ok,30.4,3739 products read; 0 price change(s); 4 pool SKU(s) missing from feed; promoted into index: none,2026-10-10T11:12:55+00:00
+tariff:registers,error,0.0,"RuntimeError: STALE REGISTER: R003: last change 2026-06-07 (125 d ago, review cycle 120 d) - LPG monthly revision (auto-checked from goodreturns)",2026-10-10T11:12:55+00:00
+reset:tariff_series,ok,0.0,cleared 265 tariff observation(s) for rebuild from registers,2026-10-10T11:12:55+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-10T11:12:55+00:00
+check:doca_mirror,error,7.6,"RuntimeError: DoCA mirror NOT verified, DoCA feed skipped: mirror unreachable; [{'commodity': '*', 'verdict': 'mirror_unreachable'}]",2026-10-10T11:12:55+00:00
+accrue:rajkot_shops,ok,6.8,"0 quotes; green_force: RuntimeError: GET failed after 1 attempts: HTTP 429; hathi_masala: RuntimeError: GET failed after 1 attempts: HTTP 429; rani_oil: HTTP 403 from https://www.ranioil.com (page 1); store skipped this run; WIRED for ['F001', 'F004', 'F007', 'F016']",2026-10-10T11:12:55+00:00
+accrue:apple_store,ok,0.2,"0 quotes; apple.com HTTP 403; SHADOW: no item switched, nothing reaches the index",2026-10-10T11:12:55+00:00
+ingest:tariff,ok,1.0,"{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:gr_metals,ok,3.5,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:mandi_gondal,ok,9.5,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:mandi_rajkot_apmc,ok,5.6,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:mandi_rajkot_veg,ok,7.9,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:mandi_rajkot_district,ok,22.0,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 104, 'accepted': 104, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:yard_rajkot_board,ok,2.1,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:gr_png,ok,0.8,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:necc_ahmedabad,ok,1.7,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:dmart_ahmedabad,ok,1.6,"{'source': 'dmart_ahmedabad', 'status': 'error', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'DmartBlocked: HTTP 403 from digital.dmart.in for category 240235 (rate-limit/WAF or unreachable from this network); DMart skipped'}",2026-10-10T11:12:55+00:00
+ingest:vishal_diary,ok,0.0,"{'source': 'vishal_diary', 'status': 'ok', 'records': 132, 'accepted': 132, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:frc_rajkot,ok,0.0,"{'source': 'frc_rajkot', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:district_cinema,ok,0.0,"{'source': 'district_cinema', 'status': 'ok', 'records': 7, 'accepted': 7, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:fresha_salon,ok,0.0,"{'source': 'fresha_salon', 'status': 'ok', 'records': 377, 'accepted': 377, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:rent_signal,ok,1.9,"{'source': 'rent_signal', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:rajkot_shops,ok,0.0,"{'source': 'rajkot_shops', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+ingest:official_link,ok,0.0,"{'source': 'official_link', 'status': 'ok', 'records': 802, 'accepted': 802, 'rejected': 0, 'message': ''}",2026-10-10T11:12:55+00:00
+trim:official_overlap,ok,0.0,no official/independent overlap,2026-10-10T11:12:55+00:00
+crosscheck:apmc,ok,3.0,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date",2026-10-10T11:12:55+00:00
+crosscheck:ibja,ok,1.8,"IBJA:P005=agree (premium +0.9%..+1.7%, n=4), IBJA:P006=agree (premium +5.9%..+8.0%, n=4)",2026-10-10T11:12:55+00:00
+validate:proxies,ok,0.2,"13 pass, 28 pending (<6 overlapping months), 0 fail",2026-10-10T11:12:55+00:00
+screen:shadow_sources,ok,0.1,"rajkot_shops: 11 items (12.38% of weight), last quote 2026-10-10, gate {'pass': 0, 'fail': 0, 'pending': 11}; apple_store: 1 items (0.59% of weight), last quote 2026-10-10, gate {'pass': 0, 'fail': 0, 'pending': 1}",2026-10-10T11:12:55+00:00
+log:prereg,ok,0.2,"logged 0 new prediction(s), 0 official item-month(s) stamped; 0 target(s) scored over 0 item(s); flagged none",2026-10-10T11:12:55+00:00
+screen:doca_retail,ok,32.1,17 unwired DoCA series screened; eligible to wire: none,2026-10-10T11:12:55+00:00
+screen:doca_national,ok,8.0,; eligible to wire: none,2026-10-10T11:12:55+00:00
+screen:jockey_mrp,ok,2.5,"C001 fail (n=20, corr=-0.45, drift=0.042, 25 SKUs); C002 fail (n=20, corr=0.2, drift=0.071, 13 SKUs)",2026-10-10T11:12:55+00:00
+accrue:rent_listings,ok,37.1,"3 new listing(s)/revision(s) from 15 page(s) of 18 list URL(s) (150 known, 0 newly discovered); 4 month(s) with >=25 kept listings; the panel feeds the SHADOW R001 candidate (screen:rent_listings_index)",2026-10-10T11:12:55+00:00
+accrue:mrp_diary,ok,18.7,"15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)",2026-10-10T11:12:55+00:00
+screen:ceat_tyres,ok,24.4,"45/47 pool SKUs quoted; T006 fail (n=12, corr=0.46, drift=0.011, 116 SKUs); diagnostic only, not wired",2026-10-10T11:12:55+00:00
+screen:vishal_clothing,ok,87.1,"44/44 pool products priced; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)",2026-10-10T11:12:55+00:00
+screen:practo_doctor_fees,ok,102.6,"180/180 pool doctor-clinics priced; M003 pending (n=0, corr=None, drift=None, 0 doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)",2026-10-10T11:12:55+00:00
+screen:district_cinema,ok,14.2,"0/8 theatres priced (8 skipped: weekend page, <3 evening 2D shows, or unreadable); S001 pending (n=0, corr=None, drift=None, 0 theatres); WIRED as a pending-gate proxy",2026-10-10T11:12:55+00:00
+screen:fresha_salon,ok,0.2,"103/103 pool services priced; P004 pending (n=2, corr=None, drift=None, 88 services, ONE venue); WIRED as a pending-gate proxy",2026-10-10T11:12:55+00:00
+screen:costpush_model,ok,0.3,"D003 fail (n=20, corr=0.15, drift=0.077); D001 fail (n=20, corr=0.24, drift=0.074); MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)",2026-10-10T11:12:55+00:00
+screen:rent_signal,ok,6.2,"R001 WIRED (independent MODELLED, primary_source=rent_signal). Trend gate z=1.645: pass (cum gap -0.26 vs tol 0.51pp, 12m -0.25 vs 0.41pp); the monthly-correlation gate fails for every trend-type signal (v1 -0.22, v2 -0.22, v3 -0.21), which is why R001 uses the trend gate.",2026-10-10T11:12:55+00:00
+screen:rent_listings_index,ok,4.0,"385 listings; listing share of the 12-month window 0%; trend gate pass; accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)",2026-10-10T11:12:55+00:00
+evaluate:nowcast,ok,0.2,"own-trend h1 RMSE 0.617pp (zero 0.736, old peer-fill 0.046); 90% band +/-0.82% (h1), +/-1.36% (h2)",2026-10-10T11:12:55+00:00
+build,ok,0.0,run 20261010T111152661891Z,2026-10-10T11:12:55+00:00
+audit,ok,1.0,"{""n_months"": 20, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 99.99657, ""rmse"": 0.21130132980666544, ""max_abs_error"": 0.4525808025215099, ""cum_change_replicated_pct"": 6.844",2026-10-10T11:12:55+00:00
+publish,ok,0.0,docs,2026-10-10T11:12:55+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.44), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.31",2026-10-10T11:12:55+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through None (official_not_yet_published); D002 pass-through None (official_not_yet_published); K002 pass-through 0.14 (official_muted); K002 pass-through 0.05 (offici,2026-10-10T11:12:55+00:00
+log:nowcast_vintages,ok,0.0,logged 2 nowcast(s); 0 month(s) scored against later official data,2026-10-10T11:12:55+00:00
