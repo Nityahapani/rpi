@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-10",
+ "generated": "2026-10-11",
  "item_id": "R001",
  "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
- "n_panel_rows": 404,
- "n_listings_used": 385,
+ "n_panel_rows": 410,
+ "n_listings_used": 391,
  "portals": {
-  "magicbricks": 384,
+  "magicbricks": 390,
   "squareyards": 1
  },
  "months": [
@@ -29,9 +29,9 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 109.63,
-   "lo90": 95.54,
-   "hi90": 124.2
+   "index": 110.19,
+   "lo90": 94.15,
+   "hi90": 124.32
   },
   {
    "month": "2026-09",
@@ -41,40 +41,40 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 110.72,
-   "lo90": 96.56,
-   "hi90": 124.91
+   "index": 110.75,
+   "lo90": 96.6,
+   "hi90": 123.69
   },
   {
    "month": "2026-10",
-   "n": 75,
+   "n": 81,
    "fresh_share": 1.0,
    "survivor": false,
    "complete": false,
    "qualified": true,
    "usable": false,
-   "index": 105.58,
-   "lo90": 90.65,
-   "hi90": 117.24
+   "index": 104.7,
+   "lo90": 90.58,
+   "hi90": 117.57
   }
  ],
  "qualified_consecutive": 4,
  "usable_consecutive": 0,
  "usable_months": [],
  "hedonic_coefficients": {
-  "const": 9.392,
-  "lsqft_c": 0.374,
-  "sqft_missing": 0.153,
+  "const": 9.387,
+  "lsqft_c": 0.36,
+  "sqft_missing": 0.162,
   "furnished_page": 0.139,
-  "bhk:0": -0.344,
-  "bhk:1": -0.531,
-  "bhk:3": 0.36,
-  "bhk:4": 0.764,
-  "type:house": -0.232,
-  "type:villa": -0.583,
-  "type:builder_floor": -0.085,
-  "type:room": -0.344,
-  "portal:squareyards": -0.092
+  "bhk:0": -0.346,
+  "bhk:1": -0.532,
+  "bhk:3": 0.357,
+  "bhk:4": 0.774,
+  "type:house": -0.243,
+  "type:villa": -0.606,
+  "type:builder_floor": -0.086,
+  "type:room": -0.346,
+  "portal:squareyards": -0.08
  },
  "asking_rent_revisions": {
   "listings_revised": 0,

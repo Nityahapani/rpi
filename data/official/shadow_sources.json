@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-10",
+ "generated": "2026-10-11",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
@@ -303,6 +303,37 @@
     }
    ],
    "weight_pct_covered": 0.59
+  },
+  "hathway_broadband": {
+   "last_quote": "2026-10-11",
+   "n_quotes": 2,
+   "items": [
+    {
+     "item_id": "K003",
+     "name": "Broadband plan",
+     "weight_pct": 0.12,
+     "current_source": "hathway_broadband",
+     "already_switched": true,
+     "months": 1,
+     "first_month": "2026-10",
+     "last_month": "2026-10",
+     "n_skus": 1,
+     "gate_vs_official": {
+      "n_overlap": 0,
+      "corr": null,
+      "drift": null,
+      "verdict": "pending"
+     },
+     "vs_current_input": {
+      "n_overlap": 1,
+      "corr_mom": null,
+      "cum_gap_pp": null
+     },
+     "judgeable_from": "2027-04",
+     "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
+    }
+   ],
+   "weight_pct_covered": 0.12
   }
  }
 }
