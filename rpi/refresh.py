@@ -123,7 +123,9 @@ def refresh_mospi(root: Path, sess=None) -> str:
         raise RuntimeError(f"unexpected MoSPI response: {str(j)[:150]}")
     remote = int(j["meta_data"]["totalRecords"])
     local = int((old["period"].astype(str).str[:4] == str(year)).sum()) if len(old) else 0
-    if remote == local:
+    # a file whose headline row is missing has bad level labels (see mospi_cpi._level): rewrite it even if the row count matches
+    labels_ok = bool(len(old)) and bool((old["level"] == "general").any())
+    if remote == local and labels_ok:
         return f"up to date ({local} rows for {year}); latest {old['period'].max()}"
     new = fetch_cpi(years=(year - 1, year), raw_dir=root / "data/sources_raw/mospi_cpi", sess=sess)
     new.to_csv(path, index=False)

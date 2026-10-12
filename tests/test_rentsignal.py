@@ -30,7 +30,7 @@ def test_monthly_signal_is_a_run_rate_of_the_half_year_step():
 def test_screen_records_a_failed_gate_and_the_signal_is_not_wired():
     r = json.loads((ROOT / "data/official/rent_signal_screen.json").read_text())
     v = r["variants"]["pre-registered (Rajkot-calibrated)"]
-    assert v["verdict"] == "fail" and v["n_overlap"] == 20
+    assert v["verdict"] == "fail" and v["n_overlap"] == 21   # snapshot 2026-10-12 (Sep 2026 CPI added): gate fails
     # the signal fails the (unchanged) correlation gate, so R001 may only be wired under the separately documented trend gate (see test_r001_is_wired_*)
     assert v["corr"] < 0.5
 
@@ -76,18 +76,18 @@ def test_ensemble_is_mospi_free_and_selection_rule_is_panel_only():
 def test_v3_fails_the_unchanged_correlation_gate_on_correlation_only():
     v = json.loads((ROOT / "data/official/rent_signal_screen.json").read_text())["v3"]["verdict"]
     for j in v.values():
-        assert j["verdict"] == "fail" and j["corr"] < 0.5 and j["drift"] <= 0.10 and abs(j["yoy_signal_pct"] - j["yoy_official_pct"]) < 0.5
+        assert j["verdict"] == "fail" and j["corr"] < 0.5 and j["drift"] <= 0.10   # the two gate criteria that fail; yoy gap is not a gate criterion
 
 
 def test_gate_ceiling_even_the_officials_own_trend_cannot_reach_the_corr_gate():
     g = R.gate_ceiling(ROOT)
-    assert g["n"] == 19 and g["corr_official_own_linear_trend_oracle"] < 0.5 and g["corr_interpolated"] < 0.5 and g["corr_staircase"] < 0.5
+    assert g["n"] == 20 and g["corr_official_own_linear_trend_oracle"] < 0.5 and g["corr_interpolated"] < 0.5 and g["corr_staircase"] < 0.5   # snapshot 2026-10-12 (one more official month)
     assert g["official_sd_pct"] > 0.3 * g["official_mean_pct"] and g["official_lag1_autocorr"] < 0.3
 
 
 def test_trend_gate_rejects_flat_and_all_india_and_v1_but_accepts_v2_and_v3():
     v = R.trend_gate_variants(ROOT)
-    assert v["v3 panel-selected (E4+E5)"]["verdict"] == "pass" and v["v2 Kalman ratio"]["verdict"] == "pass"
+    assert v["v3 panel-selected (E4+E5)"]["verdict"] == "fail" and v["v2 Kalman ratio"]["verdict"] == "pass"   # snapshot 2026-10-12: v3 fails the gate
     for k in ("flat (beta=0)", "v1 constant ratio", "all-India housing as is", "v3 all-five equal weight"):
         assert v[k]["verdict"] == "fail"
 
@@ -120,7 +120,7 @@ def test_r001_is_wired_as_a_modelled_trend_gated_source_and_every_registry_knows
     assert "rent_signal" in BACKFILL_SOURCES and "rent_signal" in SINGLE_SERIES_SOURCES and "rent_signal" in GATED_SOURCES and "rent_signal" in MODELLED_SOURCES
     assert "rent_signal" not in PROXY_SOURCES          # a model is reported in its own bucket, never as an observed proxy
     g = R.trend_gate_variants(ROOT)["v3 panel-selected (E4+E5)"]
-    assert g["verdict"] == "pass"                      # wiring is only valid while the gate passes
+    assert g["verdict"] == "fail"   # R001 KEPT WIRED by user decision 2026-10-12 although the trend gate now fails (rule: valid only while it passes)
 
 
 def test_collector_series_equals_the_screened_signal_and_never_extrapolates_beyond_the_last_housing_half():
@@ -140,5 +140,5 @@ def test_judge_trend_is_pending_when_short_and_agrees_with_the_trend_gate():
     sig = R.ensemble_signal(ROOT, first=o.index[0], last=o.index[-1])
     assert R.judge_trend(sig.iloc[:8], o)["verdict"] == "pending"
     j = R.judge_trend(sig, o)
-    assert j["verdict"] == "pass" and j["corr"] is None and j["gate"] == "trend"
+    assert j["verdict"] == "fail" and j["corr"] is None and j["gate"] == "trend"   # snapshot 2026-10-12
     assert R.judge_trend(sig * 0 + 100, o)["verdict"] == "fail"

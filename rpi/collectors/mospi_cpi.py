@@ -17,13 +17,23 @@ from ..http_compat import session
 BASE = "https://api.mospi.gov.in"
 
 
+def _text(r: dict, key: str) -> str:
+    """A field as text; blank, None and NaN all mean 'absent'. (NaN is truthy in Python, so `if r.get(key)` would
+    mislabel every row whenever the API omits a field for some rows: this collapsed the whole hierarchy to 'item'
+    in the 2026-10-12 pull.)"""
+    v = r.get(key)
+    if v is None or (isinstance(v, float) and v != v):
+        return ""
+    return str(v).strip()
+
+
 def _level(r: dict) -> tuple[str, str | None]:
-    if r.get("item"): return "item", r["item"]
-    if r.get("sub_class"): return "sub_class", r["sub_class"]
-    if r.get("class"): return "class", r["class"]
-    if r.get("group"): return "group", r["group"]
-    if (r.get("division") or "") == "CPI (General)": return "general", "CPI (General)"
-    return "division", r.get("division")
+    if _text(r, "item"): return "item", _text(r, "item")
+    if _text(r, "sub_class"): return "sub_class", _text(r, "sub_class")
+    if _text(r, "class"): return "class", _text(r, "class")
+    if _text(r, "group"): return "group", _text(r, "group")
+    if _text(r, "division") == "CPI (General)": return "general", "CPI (General)"
+    return "division", _text(r, "division") or None
 
 
 def fetch_cpi(state_code: int = 10, sector_code: int = 2, years=(2025, 2026), raw_dir: Path | None = None,
