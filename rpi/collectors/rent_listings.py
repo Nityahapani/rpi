@@ -39,11 +39,13 @@ COLS = ["first_seen", "listed", "bhk", "sqft", "rent", "title", "source_url"]
 PANEL_COLS = COLS + ["portal", "key", "last_seen", "ptype", "locality", "expires", "n_seen"]
 URLS_CSV = "data/rent_list_urls.csv"          # top-level data/*.csv: the only data files the daily workflow commits besides the DB
 URL_COLS = ["portal", "url", "discovered_on", "last_fetched", "last_n"]
-MAX_URLS, DEFAULT_BUDGET = 150, 18
+MAX_URLS, DEFAULT_BUDGET = 1500, 80   # widened 2026-10-12 (was 150 / 18; then 300 / 40): individual listing pages are now crawled too
+PORTALS_IN_USE = ("magicbricks",)       # SquareYards refuses robots.txt (HTTP 403, Akamai) since 2026-10-12: not used
 MIN_RENT, MAX_RENT = 1500, 100_000
 COMMERCIAL = re.compile(r"office|showroom|\bshop\b|warehouse|godown|industrial|\bland\b|\bplot\b|commercial|hostel|\bpg\b|paying guest|"
                         r"co-?working|hotel|restaurant|factory|\bshed\b|agricultur|farm ?house|retail", re.I)
 _MB_LIST = re.compile(r"https://www\.magicbricks\.com/[a-z0-9\-]+-for-rent-in-[a-z0-9\-]*rajkot[a-z0-9\-]*-pppfr")
+_MB_DETAIL = re.compile(r"https://www\.magicbricks\.com/propertyDetails/[A-Za-z0-9\-]*FOR-Rent-[A-Za-z0-9\-]*Rajkot&id=[0-9a-f]+")
 _SQ_LIST = re.compile(r"https://www\.squareyards\.com/rent/[a-z0-9\-]+-in-[a-z0-9\-]*rajkot")
 _NONRES_URL = re.compile(r"office|shop|showroom|warehouse|godown|plot|land|commercial|industrial|\bpg\b|hostel|co-?working|retail", re.I)
 
@@ -115,6 +117,71 @@ def parse_listings(html: str) -> list[dict]:
     return out
 
 
+_POSTED = re.compile(r"Posted on(?:<!-- -->)?:\s*(?:<!-- -->)?([A-Z][a-z]{2} \d{2}, \d{4})")
+_DETAIL_RENT = re.compile(r"monthly rent is (?:₹|Rs\.?)\s?([\d,]+)")
+
+
+def parse_detail(html: str, url: str = "") -> list[dict]:
+    """MagicBricks individual rental page -> at most one residential listing.
+
+    offers.price is 0 on these pages. The asking rent is in the schema description or, on some pages, in the meta description
+    ('The monthly rent is ₹6000'); the listing date is in the 'Posted on' line; BHK / area / locality come from the schema name and
+    address when present, else from the page title. The MagicBricks listing id (from the URL) keys pages without a schema name."""
+    html = html.replace("&amp;", "&")
+    rent, name, loc = None, None, ""
+    for d in _ld_blocks(html):
+        if not isinstance(d, dict):
+            continue
+        m = _DETAIL_RENT.search(str(d.get("description", "")))
+        if m and "Rajkot" in str(d.get("description", "")):
+            rent = float(m.group(1).replace(",", ""))
+            name = _norm(str(d.get("name", "")))
+            loc = str(((d.get("mainEntity") or {}).get("address") or {}).get("addressLocality") or "")
+    if rent is None:
+        m = _DETAIL_RENT.search(html)
+        if m and "Rajkot" in html:
+            rent = float(m.group(1).replace(",", ""))
+    if not name:
+        t = re.search(r"<title>(.*?)</title>", html, re.S)
+        name = _norm(t.group(1)) if t else ""
+    p = _POSTED.search(html)
+    try:
+        listed = dt.datetime.strptime(p.group(1), "%b %d, %Y").date().isoformat() if p else None
+    except ValueError:
+        listed = None
+    if rent is None or not name or listed is None or not (MIN_RENT <= rent <= MAX_RENT) or COMMERCIAL.search(name):
+        return []
+    bhk = re.search(r"(\d)\s*BHK", name) or re.search(r"(\d)\s*RK", name)
+    sq = re.search(r"(\d{3,5}) Sq-?ft", name, re.I)
+    sqft = int(sq.group(1)) if sq else None
+    idm = re.search(r"&id=([0-9a-f]+)", url or "")
+    key = _key("magicbricks", name, sqft, listed) if loc else _key("magicbricks", "id:" + (idm.group(1) if idm else name), None, listed)
+    return [dict(listed=listed, bhk=int(bhk.group(1)) if bhk else None, sqft=sqft, rent=rent, title=name,
+                 portal="magicbricks", key=key, ptype=ptype_of(name),
+                 locality=re.sub(r"[^a-z0-9 ]+", "", loc.lower()).strip(), expires="")]
+
+
+def _attr_key(listed, rent, bhk, locality) -> tuple:
+    def num(x) -> str:
+        try:
+            return str(int(float(x)))
+        except (TypeError, ValueError):
+            return ""
+    loc = "" if locality is None or str(locality) == "nan" else str(locality)
+    return (str(listed)[:10], num(rent), num(bhk), loc)
+
+
+def _not_seen_in_panel(path: Path, rows: list[dict]) -> list[dict]:
+    """A MagicBricks detail page is often the same listing as one already on a list page (different title, same date, rent,
+    BHK and locality): keep the list-page row, do not count it twice."""
+    if not rows or not Path(path).exists():
+        return rows
+    df = pd.read_csv(path, dtype=str, keep_default_na=False)
+    df = df[~df.source_url.str.contains("/propertyDetails/", na=False)]
+    seen = {_attr_key(r.listed, r.rent, r.bhk, r.locality) for r in df.itertuples()}
+    return [r for r in rows if _attr_key(r["listed"], r["rent"], r["bhk"], r["locality"]) not in seen]
+
+
 def parse_squareyards(html: str) -> list[dict]:
     """SquareYards list page -> residential listings keyed by the portal's listing id."""
     out = []
@@ -141,9 +208,13 @@ def parse_squareyards(html: str) -> list[dict]:
 
 
 def discover(html: str, portal: str) -> set[str]:
-    """Residential rent list URLs linked from a list page (the crawl frontier)."""
-    pat = _MB_LIST if portal == "magicbricks" else _SQ_LIST
-    return {u for u in set(pat.findall(html)) if not _NONRES_URL.search(u.rsplit("/", 1)[-1])}
+    """Residential rent URLs linked from a list page (the crawl frontier): list pages, and for MagicBricks the individual
+    rental listing pages (propertyDetails/...FOR-Rent-...Rajkot&id=...), which carry their own rent."""
+    if portal == "magicbricks":
+        html = html.replace("&amp;", "&")
+        found = set(_MB_LIST.findall(html)) | set(_MB_DETAIL.findall(html))
+        return {u for u in found if not _NONRES_URL.search(u.rsplit("/", 1)[-1] if "/propertyDetails/" not in u else u)}
+    return {u for u in set(_SQ_LIST.findall(html)) if not _NONRES_URL.search(u.rsplit("/", 1)[-1])}
 
 
 # ----------------------------------------------------------------------------------------------------------------- the panel
@@ -213,7 +284,8 @@ def load_urls(root: Path) -> pd.DataFrame:
 
 def plan(urls: pd.DataFrame, budget: int) -> list[tuple[str, str]]:
     """Never-fetched URLs first, then the least recently fetched; at most `budget`."""
-    u = urls.assign(_k=urls.last_fetched.replace("", "0000-00-00")).sort_values(["_k", "portal"])
+    urls = urls[urls.portal.isin(PORTALS_IN_USE)]
+    u = urls.assign(_k=urls.last_fetched.replace("", "0000-00-00")).sort_values(["_k", "portal", "url"])
     return list(zip(u.portal, u.url))[:budget]
 
 
@@ -225,7 +297,8 @@ def accrue(client, root: Path, today: dt.date | None = None, budget: int = DEFAU
     stats = dict(urls_fetched=0, pages=0, parsed=0, new=0, discovered=0, blocked=None)
     found: dict[str, str] = {}
     for portal, u in plan(urls, budget):
-        pages = [u, u + "/page-2"] if portal == "magicbricks" else [u]
+        detail = portal == "magicbricks" and "/propertyDetails/" in u
+        pages = [u] if detail or portal != "magicbricks" else [u, u + "/page-2"]
         n_url = 0
         for pu in pages:
             r = client.get(pu)
@@ -234,12 +307,13 @@ def accrue(client, root: Path, today: dt.date | None = None, budget: int = DEFAU
             if r.status_code != 200:
                 stats["blocked"] = f"HTTP {r.status_code} from {pu}"
                 break
-            rows = parse_listings(r.text) if portal == "magicbricks" else parse_squareyards(r.text)
+            rows = _not_seen_in_panel(panel, parse_detail(r.text, pu)) if detail else (parse_listings(r.text) if portal == "magicbricks" else parse_squareyards(r.text))
             n, new = update_panel(panel, rows, pu, today)
             stats["pages"] += 1; stats["parsed"] += n; stats["new"] += new; n_url += n
-            for f in discover(r.text, portal):
-                found.setdefault(f, portal)
-            if portal != "magicbricks" or n < 25:          # page 2 exists only behind a full page 1
+            if not detail:
+                for f in discover(r.text, portal):
+                    found.setdefault(f, portal)
+            if detail or portal != "magicbricks" or n < 25:          # page 2 exists only behind a full page 1
                 break
         urls.loc[urls.url == u, ["last_fetched", "last_n"]] = [today.isoformat(), str(n_url)]
         stats["urls_fetched"] += 1
@@ -247,7 +321,7 @@ def accrue(client, root: Path, today: dt.date | None = None, budget: int = DEFAU
             break
     have = set(urls.url)
     room = max(0, MAX_URLS - len(urls))
-    add = [dict(portal=p, url=f, discovered_on=today.isoformat(), last_fetched="", last_n="") for f, p in sorted(found.items()) if f not in have][:room]
+    add = [dict(portal=p, url=f, discovered_on=today.isoformat(), last_fetched="", last_n="") for f, p in sorted(found.items()) if f not in have and p in PORTALS_IN_USE][:room]
     stats["discovered"] = len(add)
     out = pd.concat([x for x in (urls, pd.DataFrame(add, columns=URL_COLS)) if len(x)], ignore_index=True)
     (root / URLS_CSV).parent.mkdir(parents=True, exist_ok=True)

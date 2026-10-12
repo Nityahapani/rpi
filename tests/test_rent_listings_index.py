@@ -78,7 +78,8 @@ def test_discovery_keeps_residential_list_urls_and_the_plan_is_least_recently_fe
     urls = pd.DataFrame([dict(portal="magicbricks", url="a", discovered_on="seed", last_fetched="2026-10-08", last_n="30"),
                          dict(portal="magicbricks", url="b", discovered_on="seed", last_fetched="", last_n=""),
                          dict(portal="squareyards", url="c", discovered_on="seed", last_fetched="2026-10-01", last_n="9")])
-    assert [u for _, u in rl.plan(urls, 2)] == ["b", "c"]
+    # SquareYards is refused since 2026-10-12, so its URL is never planned; MagicBricks order is least-recently-fetched first
+    assert [u for _, u in rl.plan(urls, 2)] == ["b", "a"]
 
 
 class _Resp:
@@ -175,3 +176,35 @@ def test_screen_on_the_real_panel_reports_a_verdict_and_never_departs_from_the_m
         m = level_series(ROOT)
         common = sc.index.intersection(m.index)
         assert len(common) >= 14 and np.allclose(sc[common], m[common])
+
+
+def test_detail_page_gives_one_listing_with_rent_from_description_and_posted_date():
+    # MagicBricks individual rental page: offers.price is 0, the rent sits in the schema description (added 2026-10-12)
+    html = ('<script type="application/ld+json">{"@type":["Product","RealEstateListing"],'
+            '"name":"1 BHK Flat 380 Sq-ft For Rent in VB Nageshwar City, Jamnagar Road, Rajkot",'
+            '"description":"Find this 1 BHK Flat for rent in VB Nageshwar City, Jamnagar Road, Rajkot. The monthly rent is \u20b96000. Click",'
+            '"offers":{"price":0},"mainEntity":{"address":{"addressLocality":"Jamnagar Road"}}}</script>'
+            '<span>Posted on<!-- -->: <!-- -->Oct 04, 2026</span>')
+    rows = rl.parse_detail(html)
+    assert len(rows) == 1
+    assert rows[0]["rent"] == 6000 and rows[0]["bhk"] == 1 and rows[0]["sqft"] == 380
+    assert rows[0]["listed"] == "2026-10-04" and rows[0]["locality"] == "jamnagar road"
+
+
+def test_discover_keeps_rajkot_listing_pages_and_amp_escaped_detail_links():
+    html = ('<a href="https://www.magicbricks.com/propertyDetails/1-BHK-380-Sq-ft-Multistorey-Apartment-FOR-Rent-Jamnagar-Road-in-Rajkot&amp;id=4d423834383231303431">x</a>'
+            '<a href="https://www.magicbricks.com/office-space-for-rent-in-rajkot-pppfr">y</a>')
+    found = rl.discover(html, "magicbricks")
+    assert found == {"https://www.magicbricks.com/propertyDetails/1-BHK-380-Sq-ft-Multistorey-Apartment-FOR-Rent-Jamnagar-Road-in-Rajkot&id=4d423834383231303431"}
+
+
+def test_detail_row_is_dropped_when_the_same_listing_is_already_on_a_list_page(tmp_path):
+    panel = tmp_path / "rent_listings.csv"
+    list_row = dict(listed="2026-09-24", bhk=1, sqft=None, rent=5000.0, title="1 BHK Flat for Rent in X, Rajkot", portal="magicbricks",
+                    key="k1", ptype="flat", locality="x", expires="")
+    rl.update_panel(panel, [list_row], "https://www.magicbricks.com/flats-for-rent-in-rajkot-pppfr", dt.date(2026, 9, 25))
+    detail_row = dict(list_row, title="Rent 1 BHK House for Rent in Rajkot @ ₹5000/month", key="k2", ptype="house")
+    kept = rl._not_seen_in_panel(panel, [detail_row])
+    assert kept == []
+    other = dict(detail_row, rent=6000.0, key="k3")
+    assert rl._not_seen_in_panel(panel, [other]) == [other]
