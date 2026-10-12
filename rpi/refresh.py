@@ -344,6 +344,13 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             sw = hathway_broadband.switched_items(root)
             return f"{n} quotes; {msg}; " + (f"WIRED for {sw}" if sw else "SHADOW: no item switched, nothing reaches the index")
         _step("accrue:hathway_broadband", _hathway, results)
+    if not offline and (root / "data/onemg/pool.csv").exists():
+        def _onemg():
+            from .collectors import onemg_medicine
+            n, msg = onemg_medicine.accrue(PoliteClient(ua, min_delay=2.0, retries=1, session=session()), root)
+            sw = onemg_medicine.switched_items(root)
+            return f"{n} quotes; {msg}; " + (f"WIRED for {sw}" if sw else "SHADOW: no item switched, nothing reaches the index")
+        _step("accrue:onemg_medicine", _onemg, results)
     if not offline and (root / "data/green_mercado/pool.csv").exists():
         def _gm():
             from .collectors import green_mercado
@@ -356,7 +363,8 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     from .collectors.apple_store import AppleStoreCollector
     from .collectors.hathway_broadband import HathwayBroadbandCollector
     from .collectors.green_mercado import GreenMercadoCollector
-    for _src, _col in (("rajkot_shops", RajkotShopsCollector), ("rent_listings", RentListingsCollector), ("apple_store", AppleStoreCollector), ("hathway_broadband", HathwayBroadbandCollector), ("green_mercado", GreenMercadoCollector)):
+    from .collectors.onemg_medicine import OneMgMedicineCollector
+    for _src, _col in (("onemg_medicine", OneMgMedicineCollector), ("rajkot_shops", RajkotShopsCollector), ("rent_listings", RentListingsCollector), ("apple_store", AppleStoreCollector), ("hathway_broadband", HathwayBroadbandCollector), ("green_mercado", GreenMercadoCollector)):
         if switched_items(root, _src):
             collectors.append((_src, _col(root)))
     # Practo doctor fees (M003) are a SCREEN only (data/practo): the archive screen showed listed fees are stale and understate the official index (inventory AH), so no collector is registered.
