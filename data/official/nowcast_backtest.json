@@ -2,50 +2,50 @@
   "methods": {
     "zero_change": {
       "h1": {
-        "n": 11,
-        "rmse_pp": 0.736,
-        "bias_pp": -0.422
+        "n": 12,
+        "rmse_pp": 0.751,
+        "bias_pp": -0.461
       },
       "h2": {
-        "n": 10,
-        "rmse_pp": 1.378,
-        "bias_pp": -0.87
+        "n": 11,
+        "rmse_pp": 1.419,
+        "bias_pp": -0.953
       }
     },
     "own_trend": {
       "h1": {
-        "n": 11,
-        "rmse_pp": 0.617,
-        "bias_pp": -0.213
+        "n": 12,
+        "rmse_pp": 0.609,
+        "bias_pp": -0.238
       },
       "h2": {
-        "n": 10,
-        "rmse_pp": 1.134,
-        "bias_pp": -0.474
+        "n": 11,
+        "rmse_pp": 1.135,
+        "bias_pp": -0.535
       }
     },
     "own_trend_independents_exact": {
       "h1": {
-        "n": 11,
+        "n": 12,
         "rmse_pp": 0.051,
-        "bias_pp": -0.022
+        "bias_pp": -0.025
       },
       "h2": {
-        "n": 10,
+        "n": 11,
         "rmse_pp": 0.098,
-        "bias_pp": -0.048
+        "bias_pp": -0.052
       }
     },
     "old_division_peer_fill": {
       "h1": {
-        "n": 11,
-        "rmse_pp": 0.046,
-        "bias_pp": -0.03
+        "n": 12,
+        "rmse_pp": 0.044,
+        "bias_pp": -0.028
       },
       "h2": {
-        "n": 10,
-        "rmse_pp": 0.085,
-        "bias_pp": -0.062
+        "n": 11,
+        "rmse_pp": 0.082,
+        "bias_pp": -0.061
       }
     }
   },
@@ -60,21 +60,21 @@
     "h2_valid": true
   },
   "n_items": 66,
-  "n_months": 19,
+  "n_months": 20,
   "origin_range": [
     "2025-10",
-    "2026-08"
+    "2026-09"
   ],
   "note": "The 'independents exact' row assumes our independent items equal their official counterparts; real proxies are noisier, so it is an optimistic floor. The published band uses the conservative rule.",
   "band_short_sample": {
     "alpha": 0.1,
     "rule": "own_trend (conservative: independent items add no information)",
     "h1_abs_log": 0.01374,
-    "h1_n": 11,
+    "h1_n": 12,
     "h1_valid": true,
     "h2_abs_log": 0.02442,
-    "h2_n": 10,
+    "h2_n": 11,
     "h2_valid": true
   },
-  "generated": "2026-10-11"
+  "generated": "2026-10-12"
 }

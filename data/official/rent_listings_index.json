@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-11",
+ "generated": "2026-10-12",
  "item_id": "R001",
  "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
- "n_panel_rows": 410,
- "n_listings_used": 391,
+ "n_panel_rows": 417,
+ "n_listings_used": 398,
  "portals": {
-  "magicbricks": 390,
+  "magicbricks": 397,
   "squareyards": 1
  },
  "months": [
@@ -29,9 +29,9 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 110.19,
-   "lo90": 94.15,
-   "hi90": 124.32
+   "index": 110.71,
+   "lo90": 93.02,
+   "hi90": 125.65
   },
   {
    "month": "2026-09",
@@ -41,40 +41,40 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 110.75,
-   "lo90": 96.6,
-   "hi90": 123.69
+   "index": 110.45,
+   "lo90": 92.93,
+   "hi90": 124.76
   },
   {
    "month": "2026-10",
-   "n": 81,
+   "n": 88,
    "fresh_share": 1.0,
    "survivor": false,
    "complete": false,
    "qualified": true,
    "usable": false,
-   "index": 104.7,
-   "lo90": 90.58,
-   "hi90": 117.57
+   "index": 104.69,
+   "lo90": 90.1,
+   "hi90": 121.4
   }
  ],
  "qualified_consecutive": 4,
  "usable_consecutive": 0,
  "usable_months": [],
  "hedonic_coefficients": {
-  "const": 9.387,
-  "lsqft_c": 0.36,
-  "sqft_missing": 0.162,
+  "const": 9.388,
+  "lsqft_c": 0.367,
+  "sqft_missing": 0.157,
   "furnished_page": 0.139,
-  "bhk:0": -0.346,
-  "bhk:1": -0.532,
-  "bhk:3": 0.357,
-  "bhk:4": 0.774,
-  "type:house": -0.243,
-  "type:villa": -0.606,
-  "type:builder_floor": -0.086,
-  "type:room": -0.346,
-  "portal:squareyards": -0.08
+  "bhk:0": -0.345,
+  "bhk:1": -0.526,
+  "bhk:3": 0.355,
+  "bhk:4": 0.763,
+  "type:house": -0.246,
+  "type:villa": -0.601,
+  "type:builder_floor": -0.09,
+  "type:room": -0.345,
+  "portal:squareyards": -0.078
  },
  "asking_rent_revisions": {
   "listings_revised": 0,
@@ -238,14 +238,14 @@
  ],
  "listing_share_latest": 0.0,
  "gate_vs_official": {
-  "n_overlap": 20,
+  "n_overlap": 21,
   "corr": null,
-  "drift": 0.003,
-  "verdict": "pass",
+  "drift": 0.004,
+  "verdict": "fail",
   "gate": "trend",
-  "gap_cum_pp": -0.26,
-  "tol_cum_pp": 0.51,
-  "gap_12m_pp": -0.25,
+  "gap_cum_pp": -0.39,
+  "tol_cum_pp": 0.52,
+  "gap_12m_pp": -0.41,
   "tol_12m_pp": 0.41
  },
  "verdict": "accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)",
