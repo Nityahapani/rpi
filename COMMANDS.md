@@ -136,7 +136,7 @@ python3 -m pytest -q tests/test_shadowreport.py
 python3 -m pytest -q -k rajkot_shops
 ```
 
-Last full run: 325 passed, 2 skipped (the 2 skips need pdfplumber).
+Last full run: 320 passed, 2 skipped (the 2 skips need pdfplumber).
 
 `pytest.ini` restricts collection to `tests/`. `tests/test_live_sources.py` checks live sources and needs network access.
 

@@ -6,7 +6,7 @@ An independent, auto-updating, open-method consumer price index for Rajkot city,
 
 ```bash
 pip install -r requirements.txt
-python3 -m pytest -q                # 325 passed, 2 skipped (skips need pdfplumber)
+python3 -m pytest -q                # 320 passed, 2 skipped (skips need pdfplumber)
 python3 -m rpi refresh              # collect every source -> gate -> build -> audit -> publish (docs/)
 python3 -m rpi refresh --offline    # rebuild from data already in the repo (no network)
 python3 -m rpi demo                 # synthetic run -> docs_demo/index.html (watermarked DEMO)
