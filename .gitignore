@@ -11,3 +11,6 @@ data/raw/
 
 # econ module outputs: generated, uncommitted by default
 econ/outputs/
+
+# shadow report outputs: generated, uncommitted
+shadowreport/outputs/

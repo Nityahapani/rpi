@@ -112,14 +112,31 @@ Options: `--out DIR` (default `econ/outputs`).
 
 The item-level model (`econ/items_model.py`) and its nested evaluation are called from Python; see its docstrings.
 
+## 5b. Shadow report (`python3 -m shadowreport`)
+
+Shadow-only: reads the repo data and writes only under `shadowreport/outputs/` (git-ignored). Nothing here changes the published index, a switch or a gate.
+
+| Command | Purpose |
+|---|---|
+| `python3 -m shadowreport report` | Build the report, write `shadowreport/outputs/shadow_report.{json,md}`, print the summary (exit 0) |
+| `python3 -m shadowreport check` | Same, exit 1 when the overall status is `fail`, `out_of_band` or `stale` |
+| `python3 -m shadowreport feeds` | List the registered shadow feeds |
+
+Options: `--as-of YYYY-MM-DD` (default: today; sets the staleness test), `--root DIR` (default: this repo), `--out DIR` (default: `shadowreport/outputs`).
+
+Statuses, worst first: `fail`, `out_of_band`, `stale`, `no_quotes`, `pending`, `tracking`, `pass`. `inactive` is a known-closed source and does not count toward the overall status. The price band (±10%) and the 6-month overlap rule for rent are report settings in `shadowreport/feeds.py`.
+
 ## 6. Tests
 
 ```bash
 python3 -m pytest -q                       # whole suite
 python3 -m pytest -q tests/test_econ_dfm.py
 python3 -m pytest -q tests/test_green_mercado.py
+python3 -m pytest -q tests/test_shadowreport.py
 python3 -m pytest -q -k rajkot_shops
 ```
+
+Last full run: 325 passed, 2 skipped (the 2 skips need pdfplumber).
 
 `pytest.ini` restricts collection to `tests/`. `tests/test_live_sources.py` checks live sources and needs network access.
 

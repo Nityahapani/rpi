@@ -6,7 +6,7 @@ An independent, auto-updating, open-method consumer price index for Rajkot city,
 
 ```bash
 pip install -r requirements.txt
-python3 -m pytest -q                # 289 passed, 2 skipped (skips need pdfplumber)
+python3 -m pytest -q                # 325 passed, 2 skipped (skips need pdfplumber)
 python3 -m rpi refresh              # collect every source -> gate -> build -> audit -> publish (docs/)
 python3 -m rpi refresh --offline    # rebuild from data already in the repo (no network)
 python3 -m rpi demo                 # synthetic run -> docs_demo/index.html (watermarked DEMO)
@@ -14,6 +14,8 @@ python3 -m rpi probe                # which data hosts answer from this machine
 python3 -m econ report              # econometrics module: fit, backtest, breaks (writes econ/outputs/)
 python3 -m econ log                 # prospective test: log forecasts for unreleased months
 python3 -m econ score               # prospective test: score logged forecasts once MoSPI publishes
+python3 -m shadowreport report     # shadow-vs-actual report for every shadow feed (writes shadowreport/outputs/)
+python3 -m shadowreport check      # same, exit 1 if any feed is fail, out_of_band or stale
 ```
 
 ## Architecture
@@ -97,6 +99,14 @@ Nothing in `econ/` feeds the published index. It has three parts.
 2. **Item-level calibration** (`econ/items.py`, `econ/items_model.py`). Rpi item changes are matched to official item changes and calibrated pooled across items. On the 371 independent item-months, out-of-sample RMSE is 2.19 for the raw rpi change, 2.06 for ordinary least-squares calibration, and 1.93 for Huber (outlier-robust) calibration. The Huber choice was made on a development window, but the 2026 holdout was already visible when it was chosen, so this figure is optimistic. A nested test, which picks the Huber threshold inside each training window, gives 2.18 against 2.49 for raw, with a gap of −0.31 and a 95% interval of −0.66 to +0.005. That is a suggestive improvement, not a demonstrated one. The nested test is in the working tree and is not committed.
 
 3. **Prospective ledger** (`econ/ledger.py`, `econ/ledger/`). A candidate (the calibrated item model, frozen on the 412 independent item-months through 2026-08) is logged before each official release. The ledger is append-only, and each row records when it was issued and fingerprints of its inputs. Logged so far: September 2026 candidate +0.47% against baseline +0.64%, and October 2026 candidate +0.23% against baseline +0.25%. Both were issued 2026-10-10, before any official figure existed. The pre-registered decision rule needs 12 scored months: adopt the candidate only if its RMSE is lower than the baseline's and the 95% month-bootstrap interval of the gap lies entirely below zero. Until then, the status is "not decided" or "not established". The ledger is in git, so its timestamps can be checked.
+
+## Shadow report (`shadowreport/`, shadow only)
+
+Compares every shadow feed with its actual reference, where one exists, and gives each feed one status. Read-only over the repo data; it writes `shadowreport/outputs/shadow_report.{json,md}` (git-ignored) and changes nothing that feeds the index, a switch or a gate.
+
+Six feeds: 1mg Calpol (M001, against the NPPA tariff in `data/tariff_events.csv`), Hathway K003, Apple K002, Green Mercado, the Rajkot web shops (per-item gate verdicts from `data/official/shadow_sources.json`), and the rent listings panel (R001, median asking rent against the official house-rent series, judged with the same trend gate as R001 after 6 overlap months).
+
+Statuses, worst first: `fail`, `out_of_band`, `stale`, `no_quotes`, `pending`, `tracking`, `pass`. `inactive` marks a known-closed source (Green Mercado) and does not count toward the overall status. Price feeds are `out_of_band` when the latest gap to the reference is over 10%; that band is a report threshold, not a gate.
 
 ## Rent: a modelled series (`rpi/rentsignal.py`, `rpi/collectors/rent_signal.py`)
 Inputs are public Labour Bureau CPI-IW housing-group indices: all-India half-yearly 2020H2 to 2026H2, and a 78-centre panel 2020H2 to 2023H1 (`data/labour_bureau/`). No MoSPI value enters the signal. Rajkot's half-year step is the mean of two models, chosen by a rule fixed on panel forecast error before comparison with MoSPI: an empirically shrunk additive deviation from the all-India step, and a pooled-parameter Kalman time-varying ratio. Monthly timing within a half is a flat run-rate. The signal is never extrapolated: a new Labour Bureau row is needed each January and July. Derivation and caveats: `data/labour_bureau/RENT_SIGNAL_NOTES.md`. This is a model of rent, not observed rents, and housing includes owner-occupied and rent-free homes.
