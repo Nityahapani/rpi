@@ -1,17 +1,17 @@
 {
- "generated": "2026-10-12",
+ "generated": "2026-10-14",
  "item_id": "R001",
  "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
- "n_panel_rows": 417,
- "n_listings_used": 398,
+ "n_panel_rows": 543,
+ "n_listings_used": 517,
  "portals": {
-  "magicbricks": 397,
+  "magicbricks": 516,
   "squareyards": 1
  },
  "months": [
   {
    "month": "2026-07",
-   "n": 30,
+   "n": 31,
    "fresh_share": 0.0,
    "survivor": true,
    "complete": true,
@@ -23,58 +23,58 @@
   },
   {
    "month": "2026-08",
-   "n": 106,
+   "n": 134,
    "fresh_share": 0.0,
    "survivor": true,
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 110.71,
-   "lo90": 93.02,
-   "hi90": 125.65
+   "index": 108.85,
+   "lo90": 92.73,
+   "hi90": 123.1
   },
   {
    "month": "2026-09",
-   "n": 174,
-   "fresh_share": 0.414,
+   "n": 227,
+   "fresh_share": 0.357,
    "survivor": true,
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 110.45,
-   "lo90": 92.93,
-   "hi90": 124.76
+   "index": 107.54,
+   "lo90": 91.96,
+   "hi90": 120.52
   },
   {
    "month": "2026-10",
-   "n": 88,
+   "n": 125,
    "fresh_share": 1.0,
    "survivor": false,
    "complete": false,
    "qualified": true,
    "usable": false,
-   "index": 104.69,
-   "lo90": 90.1,
-   "hi90": 121.4
+   "index": 106.7,
+   "lo90": 91.39,
+   "hi90": 119.64
   }
  ],
  "qualified_consecutive": 4,
  "usable_consecutive": 0,
  "usable_months": [],
  "hedonic_coefficients": {
-  "const": 9.388,
-  "lsqft_c": 0.367,
-  "sqft_missing": 0.157,
-  "furnished_page": 0.139,
-  "bhk:0": -0.345,
-  "bhk:1": -0.526,
-  "bhk:3": 0.355,
-  "bhk:4": 0.763,
-  "type:house": -0.246,
-  "type:villa": -0.601,
-  "type:builder_floor": -0.09,
-  "type:room": -0.345,
-  "portal:squareyards": -0.078
+  "const": 9.476,
+  "lsqft_c": 0.415,
+  "sqft_missing": 0.096,
+  "furnished_page": 0.12,
+  "bhk:0": -0.367,
+  "bhk:1": -0.257,
+  "bhk:3": 0.364,
+  "bhk:4": 0.67,
+  "type:house": -0.336,
+  "type:villa": -0.497,
+  "type:builder_floor": -0.14,
+  "type:room": -0.367,
+  "portal:squareyards": -0.303
  },
  "asking_rent_revisions": {
   "listings_revised": 0,
