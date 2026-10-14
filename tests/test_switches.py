@@ -72,8 +72,12 @@ def test_settings_switches_agree_with_the_plan():
     assert sw.check_against_plan(plan) == []
     rules = sw.load()
     # F001/F004/F007/F016: user decision 2026-10-10 (rajkot_shops). K003: Hathway Surat broadband proxy, user decision 2026-10-10.
-    assert set(rules) == {"F001", "F004", "F007", "F016", "K003"}
+    # F002/F003/F005/F008/F021/F022/F023: the DoCA Rajkot centre takes over from the base month 2025-01 (2026-10-14) - its series is
+    # gate-validated over 150 months and covers the whole published window, so unlike a source that only starts accruing (the 2026-11
+    # rajkot_shops switches) there is no reason to keep feeding a non-Rajkot proxy for any published month.
+    assert set(rules) == {"F001", "F004", "F007", "F016", "K003", "F002", "F003", "F005", "F008", "F021", "F022", "F023"}
     assert rules["K003"] == ("hathway_broadband", "2026-11")
+    assert all(rules[i] == ("doca_rajkot", "2025-01") for i in ("F002", "F003", "F005", "F008", "F021", "F022", "F023"))
 
 
 def test_hathway_parser_reads_printed_plan_and_refuses_bad_pages():

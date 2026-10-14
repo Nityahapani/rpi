@@ -1,12 +1,12 @@
 # Rajkot Price Index - 2026-10
 
 
-- Reference month 2026-09: index **108.31**, YoY **6.57%**
-- Latest month 2026-10 (nowcast): index **108.48**  (95% CI 107.67-109.22)
-- Nowcast 90% band for 2026-10: **107.59 - 109.37** (split-conformal from a rolling-origin back-test on official data; conservative)
-- Month-on-month: **0.16%**
-- Year-on-year: **6.9%**
-- Weight with a real quote in this vintage, before any imputation: **65.5%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
+- Reference month 2026-09: index **108.76**, YoY **6.93%**
+- Latest month 2026-10 (nowcast): index **109.01**  (95% CI 108.43-109.74)
+- Nowcast 90% band for 2026-10: **108.12 - 109.9** (split-conformal from a rolling-origin back-test on official data; conservative)
+- Month-on-month: **0.22%**
+- Year-on-year: **7.17%**
+- Weight with a real quote in this vintage, before any imputation: **63.9%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
 
 ## What is independent vs official-linked
 - Official-linked stand-ins (MoSPI Gujarat-urban item indices) fill items with no independent source yet; they run to 2026-09. Their plan weight: 10.7%.
@@ -16,9 +16,9 @@
 ## Robustness variants (latest index level)
 | item | level |
 |---|---|
-| geks_jevons | 108.44 |
-| jevons_chain | 108.48 |
-| regular_price | 108.48 |
+| geks_jevons | 108.96 |
+| jevons_chain | 109.01 |
+| regular_price | 109.01 |
 
 ## Divisions (change since base)
 | item | % change |
@@ -26,8 +26,8 @@
 | Personal care & misc. | 23.01 |
 | Transport | 13.05 |
 | Restaurants & accommodation | 11.61 |
+| Food & non-alcoholic beverages | 10.9 |
 | Education | 10.29 |
-| Food & non-alcoholic beverages | 9.2 |
 | Information & communication | 8.06 |
 | Clothing & footwear | 5.48 |
 | Household goods & services | 5.39 |
@@ -35,4 +35,4 @@
 | Health | 3.08 |
 | Recreation & culture | 2.1 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261014T101053376824Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261014T173805314603Z._

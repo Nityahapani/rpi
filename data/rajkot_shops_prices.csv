@@ -51,3 +51,15 @@ date,store,item_id,variant_id,pack,price,regular_price,qty_base,base_unit,unit_p
 2026-10-10,rani_oil,F006,598,roundnut Oil 1-Ltr Pouch,204.0,204.0,1000.0,ml,204.0
 2026-10-10,rani_oil,F006,596,oundnut Oil 1-Ltr Bottle,207.0,207.0,1000.0,ml,207.0
 2026-10-10,rani_oil,F006,92, Groundnut Oil 5 Ltr Jar,950.0,950.0,5000.0,ml,190.0
+2026-10-14,rani_oil,F008,1234,nflower Oil 1-Ltr Bottle,197.0,197.0,1000.0,ml,197.0
+2026-10-14,rani_oil,F008,653,Sunflower Oil 15-Ltr Tin,2670.0,2670.0,15000.0,ml,178.0
+2026-10-14,rani_oil,F008,648,unflower Oil 1-Ltr Pouch,194.0,194.0,1000.0,ml,194.0
+2026-10-14,rani_oil,F008,87, Sunflower Oil 5-Ltr Jar,910.0,910.0,5000.0,ml,182.0
+2026-10-14,rani_oil,F007,646,Cottonseed Oil 15-Kg Tin,2740.0,2740.0,15000.0,g,182.6667
+2026-10-14,rani_oil,F007,638,Cottonseed Oil 5-Ltr Jar,890.0,890.0,5000.0,ml,178.0
+2026-10-14,rani_oil,F007,633,ttonseed Oil 1-Ltr Pouch,184.0,184.0,1000.0,ml,184.0
+2026-10-14,rani_oil,F007,626,tonseed Oil 1-Ltr Bottle,187.0,187.0,1000.0,ml,187.0
+2026-10-14,rani_oil,F006,610, Groundnut Oil 15-Kg Tin,3070.0,3070.0,15000.0,g,204.6667
+2026-10-14,rani_oil,F006,598,roundnut Oil 1-Ltr Pouch,204.0,204.0,1000.0,ml,204.0
+2026-10-14,rani_oil,F006,596,oundnut Oil 1-Ltr Bottle,207.0,207.0,1000.0,ml,207.0
+2026-10-14,rani_oil,F006,92, Groundnut Oil 5 Ltr Jar,970.0,970.0,5000.0,ml,194.0

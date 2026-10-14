@@ -311,8 +311,9 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             collectors.append(("doca_rajkot", DocaRetailCollector(client, store)))
             from .collectors.doca import DocaNationalCollector
             collectors.append(("doca_national", DocaNationalCollector(client, store)))
-            from .collectors.doca import DocaGujaratCollector
-            collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
+            from .collectors.doca import GUJARAT_WIRED, DocaGujaratCollector
+            if GUJARAT_WIRED:                     # retired 2026-10-14: potato moved to the Rajkot centre, leaving this panel nothing to carry
+                collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
     from .collectors.vishal_diary import VishalCollector       # PENDING-gate proxy (live diary only); reads the CSV, no network
     collectors.append(("vishal_diary", VishalCollector(root)))
     from .collectors.frc_fees import FrcSchoolFeeCollector    # regulator-approved Rajkot school fees (E001); reads data/frc/rajkot_fees.csv

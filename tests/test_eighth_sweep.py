@@ -70,7 +70,10 @@ class _Client:
 
 def test_collector_units_and_staleness():
     obs = list(doca.DocaRetailCollector(_Client(dt.date(2026, 10, 1))).collect(dt.date(2026, 10, 2)))
-    assert {o.item_id for o in obs} == {"F006", "F013", "F026"}
+    assert {o.item_id for o in obs} == {i for i, _ in doca.WIRED.values()}
+    # the ingest window must start with the official comparator, not the index base year: gate power is the months the proxy and the
+    # official series BOTH cover, so a 2025-01 window would throw away 11 of the comparator's 12 years (2026-10-14).
+    assert doca.START <= "2014-01-01"
     oil = [o for o in obs if o.item_id == "F006"][0]
     assert (oil.qty_base, oil.base_unit) == (1000.0, "ml") and oil.price == 50.0          # Rs per litre
     sugar = [o for o in obs if o.item_id == "F013"][0]
@@ -99,16 +102,25 @@ def test_every_planned_source_is_single_series_aware_and_doca_is_gated():
 
 
 def test_repo_wired_doca_items_have_a_gate_pass_history():
-    # the data committed in the repo must still satisfy the gate that justified wiring the three items
-    off = pd.read_csv(ROOT / "data/official/mospi_cpi2024_gujarat_urban.csv", dtype={"code": str})
-    off = off[off.level == "item"].pivot_table(index="period", columns="code", values="index_value", aggfunc="first")
-    mp = pd.read_csv(ROOT / "data/basket_official_map.csv", dtype=str, keep_default_na=False).set_index("item_id")
+    # Every item the plan feeds from the DoCA Rajkot centre must pass the gate on the repository's own data, judged against the
+    # LONG spliced official comparator (2026-10-14: the CPI2024 file alone caps every verdict at ~21 months, which is too short to
+    # distinguish a tracking series from a drifting one).
+    from rpi.collectors.doca import official_items, START
+    root = ROOT
+    assert START <= "2014-01-01"                      # the ingest window must cover the comparator, not just the index base year
+    off = official_items(root)
     conn = db.connect(ROOT / "data/rpi.sqlite")
-    for item in ("F006", "F013", "F026"):
+    wired = {item for item, _ in doca.WIRED.values()}
+    assert set(pd.read_csv(ROOT / "data/source_plan.csv", dtype=str, keep_default_na=False)
+               .query("primary_source == 'doca_rajkot'").item_id) == wired
+    for item in sorted(wired):
         q = pd.read_sql_query("SELECT substr(o.obs_date,1,7) m, AVG(o.unit_price) v FROM observations o JOIN products p ON p.sku_id=o.sku_id "
                               "WHERE p.item_id=? AND p.source_id='doca_rajkot' GROUP BY 1", conn, params=[item]).set_index("m")["v"]
-        assert len(q) >= 18
-        assert judge(q, off[mp.loc[item, "official_item_code"]].dropna())["verdict"] == "pass", item
+        if not len(q):
+            continue                                   # first refresh after a promotion has not ingested it yet
+        j = judge(q, off[item].dropna() if item in off.columns else pd.Series(dtype=float))
+        assert j["verdict"] == "pass", (item, j)
+        assert j["n_overlap"] >= 18                    # and the pass must rest on a real overlap, not two points that happen to agree
 
 
 def test_coverage_split_has_separate_retail_bucket(tmp_path):

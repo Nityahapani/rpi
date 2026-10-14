@@ -3,8 +3,8 @@
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
-   "last_quote": "2026-10-10",
-   "n_quotes": 52,
+   "last_quote": "2026-10-14",
+   "n_quotes": 64,
    "items": [
     {
      "item_id": "F001",
@@ -20,7 +20,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -34,7 +39,7 @@
      "item_id": "F002",
      "name": "Rice (basmati) packaged",
      "weight_pct": 2.49,
-     "current_source": "doca_national",
+     "current_source": "doca_rajkot",
      "already_switched": false,
      "months": 1,
      "first_month": "2026-10",
@@ -44,7 +49,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -58,7 +68,7 @@
      "item_id": "F003",
      "name": "Tur dal packaged",
      "weight_pct": 0.88,
-     "current_source": "doca_national",
+     "current_source": "doca_rajkot",
      "already_switched": false,
      "months": 1,
      "first_month": "2026-10",
@@ -68,7 +78,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -92,7 +107,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -106,7 +126,7 @@
      "item_id": "F005",
      "name": "Chana dal packaged",
      "weight_pct": 0.19,
-     "current_source": "doca_national",
+     "current_source": "doca_rajkot",
      "already_switched": false,
      "months": 1,
      "first_month": "2026-10",
@@ -116,7 +136,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -140,7 +165,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -164,7 +194,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -178,7 +213,7 @@
      "item_id": "F008",
      "name": "Sunflower oil",
      "weight_pct": 1.98,
-     "current_source": "doca_national",
+     "current_source": "doca_rajkot",
      "already_switched": false,
      "months": 1,
      "first_month": "2026-10",
@@ -188,7 +223,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -212,7 +252,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -236,7 +281,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -260,7 +310,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -291,7 +346,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 0,
@@ -322,7 +382,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -353,7 +418,12 @@
       "n_overlap": 0,
       "corr": null,
       "drift": null,
-      "verdict": "pending"
+      "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": []
      },
      "vs_current_input": {
       "n_overlap": 1,

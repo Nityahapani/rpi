@@ -74,19 +74,27 @@ def test_superseded_local_feeds_stay_out_of_the_index():
     assert got == {"b", "c", "f"}
 
 
-def test_four_national_items_are_wired_and_proxy():
+def test_national_panel_keeps_only_the_items_without_a_passing_rajkot_series():
+    # 2026-10-14: F002/F003/F005/F008 left this panel for the Rajkot centre (they pass the long-window gate there and the panel is a
+    # proxy); what remains is exactly the items no Rajkot series can carry, and the plan must agree with the collector.
     import pandas as pd
     from rpi.collectors.doca import NATIONAL_WIRED
-    assert {v[0] for v in NATIONAL_WIRED.values()} >= {"F003", "F005", "F020", "F024"}
+    assert {v[0] for v in NATIONAL_WIRED.values()} == {"F011", "F020", "F024"}
     p = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
-    assert all(p.loc[i, "primary_source"] == "doca_national" for i in ("F003", "F005", "F020", "F024"))
+    assert all(p.loc[i, "primary_source"] == "doca_national" for i in ("F011", "F020", "F024"))
+    assert all(p.loc[i, "primary_source"] == "doca_rajkot" for i in ("F002", "F003", "F005", "F008"))
 
 
-def test_potato_is_wired_to_the_gujarat_panel():
+def test_gujarat_panel_is_retired_and_potato_moved_to_the_rajkot_centre():
+    # 2026-10-14: the Rajkot centre passes the gate for potato over 150 months under the long comparator, so the most local passing
+    # series wins and the Gujarat panel - whose only item this was - is empty and unregistered (rpi/refresh.py).
     import pandas as pd
-    from rpi.collectors.doca import GUJARAT_WIRED
-    assert {v[0] for v in GUJARAT_WIRED.values()} == {"F021"}
+    from rpi.collectors.doca import GUJARAT_WIRED, WIRED
+    assert GUJARAT_WIRED == {}
+    assert {i for i, _ in WIRED.values() if i == "F021"}
     p = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
-    assert p.loc["F021", "primary_source"] == "doca_gujarat"
+    assert p.loc["F021", "primary_source"] == "doca_rajkot"
+    assert "doca_gujarat" not in set(p.primary_source)
+    # the old short-window screen said otherwise; it is retained for provenance only
     s = pd.read_csv("data/official/doca_panel_screen.csv", dtype={"doca_commodity": str}).set_index("item_id")
-    assert s.loc["F021", "wire_to"] == "gujarat" and s.loc["F021", "rajkot_verdict"] != "pass"      # most local passing panel wins
+    assert s.loc["F021", "wire_to"] == "gujarat" and s.loc["F021", "rajkot_verdict"] != "pass"

@@ -45,6 +45,13 @@ F004 = ["rajkot_shops", "2026-11"]
 F007 = ["rajkot_shops", "2026-11"]
 F016 = ["rajkot_shops", "2026-11"]
 K003 = ["hathway_broadband", "2026-11"]
+F002 = ["doca_rajkot", "2025-01"]
+F003 = ["doca_rajkot", "2025-01"]
+F005 = ["doca_rajkot", "2025-01"]
+F008 = ["doca_rajkot", "2025-01"]
+F021 = ["doca_rajkot", "2025-01"]
+F022 = ["doca_rajkot", "2025-01"]
+F023 = ["doca_rajkot", "2025-01"]
 
 [index.min_matched_by_tier]
 C = 1                       # administered prices (tariffs) have ONE legitimate quote by design

@@ -10,14 +10,23 @@ the DoCA series is only ingested if every commodity agrees (see rpi/refresh.py `
 What the data is: one reporter's quote per commodity per day for a standard local variety, in whole rupees, often unchanged for weeks
 (70-99% of day-to-day changes are zero).  It is a genuine Rajkot RETAIL price but a coarse and sticky one, and 'standard quality'
 is not our fixed brand.  Hence a per-item gate against the official Gujarat-urban item index (rpi/proxy_check.judge) decides which
-items are wired; the rest are screened every run and only reported (status.json:doca_screen).  Observed 2026-10-02: groundnut oil,
-sugar and gur pass; atta, tur, sunflower oil, potato, tomato, brinjal fail by 16-60 points of cumulative drift.
+items are wired; the rest are screened every run and only reported (status.json:doca_screen).
+
+WINDOW (changed 2026-10-14).  START is now the first month of the official comparator, not the index base year.  The collector used to
+ingest from 2025-01-01, which threw away 16 years of Rajkot prices and - because validate:proxies judges a proxy on the months present
+in BOTH the proxy series and the official series - left every verdict resting on about 21 months, too short to separate a tracking
+series from a drifting one.  The published index is unaffected by the wider window (rpi/index/engine.py drops quotes dated before
+project.base_period), so the extra history exists purely to give the gate power.  Several commodities are quoted for the same basket
+item (the five edible oils all feed F008); the index and the gate both treat those as matched SKUs of the one item (panel.py
+quotes_to_arrays -> Jevons over matched quotes; proxy_check.chain_series), so a multi-commodity item is a panel and needs no special
+case here.
 """
 from __future__ import annotations
 
 import datetime as dt
 import json
 import re
+from pathlib import Path
 
 import pandas as pd
 
@@ -28,13 +37,29 @@ MIRROR = "https://cpi.reclaimchennai.city"
 CENTRE_ID = 454                       # RAJKOT (Gujarat) in the mirror's centre list
 DOCA_HOME = "https://fcainfoweb.nic.in/"
 SOURCE_ID = "doca_rajkot"
-START = "2025-01-01"
+START = "2014-01-01"                  # first month of the official item comparator; earlier DoCA months can add no gate power
+# The balanced PANELS keep the short window: their rule is "centres quoted on EVERY day since the start", and over 12 years centres
+# enter and leave, so a long start leaves 0 columns intact (observed 2026-10-14: doca_national 0 centres, doca_gujarat 2).  The panels
+# exist to carry the handful of items no Rajkot series can (F011/F020/F024) and need no long history of their own.
+PANEL_START = "2025-01-01"
 
-# DoCA commodity id -> (basket item, unit label). WIRED = passed the gate on 2026-10-02 (and is re-gated every refresh).
-WIRED = {16: ("F006", "L"), 37: ("F013", "kg"), 38: ("F026", "kg")}
+# DoCA commodity id -> (basket item, unit label).  WIRED = accepted by the gate over the LONG window AND a strictly better evidence class
+# than the incumbent source; the rest are screened every run and only reported.  Several ids may feed one item (that is a panel).
+WIRED = {1: ("F002", "kg"), 10: ("F005", "kg"), 11: ("F003", "kg"), 16: ("F006", "L"),
+         17: ("F008", "L"), 18: ("F008", "L"), 19: ("F008", "L"), 20: ("F008", "L"), 21: ("F008", "L"),
+         22: ("F021", "kg"), 23: ("F022", "kg"), 24: ("F023", "kg"),
+         37: ("F013", "kg"), 38: ("F026", "kg")}
 # Screened every run, reported, never ingested.
-CANDIDATES = {4: "F001", 11: "F003", 13: "F004", 10: "F005", 20: "F008", 35: "F011", 34: "F012", 39: "F014", 40: "F015",
-              32: "F016", 22: "F021", 23: "F022", 24: "F023", 41: "F024", 25: "F025", 36: "F020", 1: "F002"}
+# PROMOTION_RULE (fixed 2026-10-14; applied as a data edit in data/source_plan.csv, never in code):
+#   a DoCA Rajkot-centre series replaces an item's primary source only when it passes a gate leg over the long window AND the incumbent
+#   is a PROXY (non-Rajkot) source.  It never replaces an administered local price (F009 milk sits on the Sumul/Amul MRP through
+#   `tariff`: a regulated Rajkot price beats a sticky single quote) and never displaces another Rajkot-local retail feed that is still
+#   accruing (rajkot_shops F001/F004/F016, judgeable about 2027-04) - same evidence class, and their own accrual is the point.
+#   Applied 2026-10-14: F002 rice (commodity 1, leg C), F003 tur (11, leg B), F005 chana (10, legs A+B) and F008 edible oils
+#   (panel 17/18/19/20/21, leg B) move doca_national -> doca_rajkot; F006/F013/F026 stay.  Diagnostics: status.json:doca_screen.
+CANDIDATES = {3: "F001", 4: "F001", 5: "F001", 6: "F001", 13: "F004", 33: "F009",
+              25: "F025", 26: "F016", 27: "F016", 28: "F016", 29: "F016", 30: "F016", 31: "F016", 32: "F016",
+              34: "F012", 35: "F011", 36: "F020", 39: "F014", 40: "F015", 41: "F024"}
 
 
 def parse_history(text: str) -> list[tuple[dt.date, float]]:
@@ -51,13 +76,57 @@ def parse_history(text: str) -> list[tuple[dt.date, float]]:
 # A national panel is NOT a Rajkot price: it is reported in the PROXY bucket, never as direct/retail-local.
 # NATIONAL_WIRED passed the gate on 2026-10-02 with the Rajkot centre failing (corr / drift in data/official/doca_panel_screen.csv)
 # and is re-gated every refresh (validate:proxies).
-NATIONAL_WIRED = {1: ("F002", "kg"), 20: ("F008", "L"), 35: ("F011", "100g"),
-                  11: ("F003", "kg"), 10: ("F005", "kg"), 36: ("F020", "dozen"), 41: ("F024", "kg")}
+# F002/F003/F005/F008 moved to the Rajkot centre on 2026-10-14 (PROMOTION_RULE above): the centre passes the long-window gate for
+# all four, so only the commodities with no passing Rajkot series are still taken from a national panel.
+NATIONAL_WIRED = {35: ("F011", "100g"), 36: ("F020", "dozen"), 41: ("F024", "kg")}
 NATIONAL_CANDIDATES = {34: "F012", 39: "F014", 40: "F015", 32: "F016"}      # not independent through any other feed; screened every run
 # GUJARAT panel: the same balanced-panel rule restricted to the Gujarat centres of the feed (state field of /api/meta). Wired only where the Rajkot
 # centre fails, the Gujarat panel passes the gate (data/official/doca_panel_screen.csv, wire_to == gujarat) -> most local passing panel wins.
-GUJARAT_WIRED = {22: ("F021", "kg")}
+# RETIRED 2026-10-14: potato (the only item this panel carried) moved to the Rajkot centre, which passes the gate for it; the
+# collector is registered only while this table is non-empty (rpi/refresh.py), so an empty panel cannot quietly publish nothing.
+GUJARAT_WIRED: dict = {}
 SERIES_LIMIT = 1200                                                                 # API maximum; the default (400 days) silently truncates
+
+
+def official_items(root) -> pd.DataFrame:
+    """Official Gujarat-urban item index by BASKET ITEM (columns = item_id), longest available history.
+
+    Prefers data/official/official_item_spliced.csv (CPI2012 2014-01..2025-12 spliced with CPI2024, built by
+    scripts/build_official_spliced.py) because the CPI2024 file alone starts in 2025-01 and would cap every verdict at ~21 months.
+    Falls back to the raw CPI2024 file (columns = official item code) when the splice has not been built yet.
+    """
+    sp = root / "data/official/official_item_spliced.csv"
+    if sp.exists():
+        d = pd.read_csv(sp)
+        return d.pivot_table(index="period", columns="item_id", values="index_value", aggfunc="first")
+    off = pd.read_csv(root / "data/official/mospi_cpi2024_gujarat_urban.csv", dtype={"code": str})
+    return off[off.level == "item"].pivot_table(index="period", columns="code", values="index_value", aggfunc="first")
+
+
+def _gate_series(client, root, cid: int, item: str, store=None, source_id: str = SOURCE_ID, centre: bool = True):
+    """Fetch one DoCA series (Rajkot centre or all-India panel) and gate it against the item's official index."""
+    from ..proxy_check import judge
+    if centre:
+        url = f"{MIRROR}/api/centre/{CENTRE_ID}/history?commodity={cid}&start={START}&end={dt.date.today().isoformat()}"
+    else:
+        url = f"{MIRROR}/api/mapseries?commodity={cid}&start={PANEL_START}&end={dt.date.today().isoformat()}&limit={SERIES_LIMIT}"
+    r = client.get(url)
+    if r.status_code != 200:
+        return None, None, {"item_id": item, "doca_commodity": cid, "verdict": "fetch_failed"}
+    if store is not None:
+        store.save(source_id + "_screen", r.url, None, r.content, r.status_code, "json")
+    if centre:
+        s = pd.Series({pd.Timestamp(d): p for d, p in parse_history(r.text)})
+        if s.empty:
+            return None, None, {"item_id": item, "doca_commodity": cid, "verdict": "no_data"}
+        m = s.groupby(s.index.to_period("M")).mean()
+        stale = round(float((s.diff() == 0).mean()), 2)
+    else:
+        lvl = panel_level(parse_mapseries(r.text))
+        m = lvl.groupby(lvl.index.to_period("M")).mean()
+        stale = round(float((lvl.diff() == 0).mean()), 2)
+    m.index = m.index.astype(str)
+    return m, stale, {"item_id": item, "doca_commodity": cid}
 
 
 def parse_mapseries(text: str) -> pd.DataFrame:
@@ -141,7 +210,7 @@ class DocaNationalCollector(_WebCollector):
 
     def collect(self, on_date):
         for cid, (item, unit) in NATIONAL_WIRED.items():
-            url = f"{MIRROR}/api/mapseries?commodity={cid}&start={START}&end={on_date.isoformat()}&limit={SERIES_LIMIT}"
+            url = f"{MIRROR}/api/mapseries?commodity={cid}&start={PANEL_START}&end={on_date.isoformat()}&limit={SERIES_LIMIT}"
             lvl = panel_level(parse_mapseries(self._get(url, self.source_id)))
             last = lvl.index.max().date()
             if (on_date - last).days > self.MAX_AGE_DAYS:
@@ -162,7 +231,7 @@ class DocaGujaratCollector(_WebCollector):
         meta = json.loads(self._get(f"{MIRROR}/api/meta", self.source_id))
         centres = [str(c["id"]) for c in meta["centres"] if c.get("state") == "Gujarat"]
         for cid, (item, unit) in GUJARAT_WIRED.items():
-            url = f"{MIRROR}/api/mapseries?commodity={cid}&start={START}&end={on_date.isoformat()}&limit={SERIES_LIMIT}"
+            url = f"{MIRROR}/api/mapseries?commodity={cid}&start={PANEL_START}&end={on_date.isoformat()}&limit={SERIES_LIMIT}"
             lvl = panel_level(parse_mapseries(self._get(url, self.source_id)), centres)
             last = lvl.index.max().date()
             if (on_date - last).days > self.MAX_AGE_DAYS:
@@ -173,56 +242,36 @@ class DocaGujaratCollector(_WebCollector):
                                       item, "DOCA:Gujarat", float(p), qty_base=1000.0, base_unit="g")
 
 
-def screen_national(client, official_csv, mapping_csv, store=None, start: str = "2025-01-01") -> list[dict]:
-    """Gate the national panel for NATIONAL_CANDIDATES (report only)."""
+def screen_national(client, official_csv, mapping_csv, store=None, start: str = START) -> list[dict]:
+    """Gate the all-India panel for NATIONAL_CANDIDATES (report only)."""
     from ..proxy_check import judge
-    mp = pd.read_csv(mapping_csv, dtype=str, keep_default_na=False).set_index("item_id")
-    off = pd.read_csv(official_csv, dtype={"code": str})
-    off = off[off.level == "item"].pivot_table(index="period", columns="code", values="index_value", aggfunc="first")
+    root = Path(official_csv).resolve().parents[2]
+    off = official_items(root)
     out = []
     for cid, item in NATIONAL_CANDIDATES.items():
-        r = client.get(f"{MIRROR}/api/mapseries?commodity={cid}&start={start}&end={dt.date.today().isoformat()}&limit={SERIES_LIMIT}")
-        if r.status_code != 200:
-            out.append({"item_id": item, "doca_commodity": cid, "verdict": "fetch_failed"})
-            continue
-        if store is not None:
-            store.save("doca_national_screen", r.url, None, r.content, r.status_code, "json")
-        lvl = panel_level(parse_mapseries(r.text))
-        m = lvl.groupby(lvl.index.to_period("M")).mean()
-        m.index = m.index.astype(str)
-        code = mp.loc[item, "official_item_code"]
-        j = judge(m, off[code].dropna() if code in off.columns else pd.Series(dtype=float))
-        j.update(item_id=item, doca_commodity=cid, panel="all-India")
+        m, _, row = _gate_series(client, root, cid, item, store, source_id="doca_national", centre=False)
+        if m is None:
+            out.append(row); continue
+        o = off[item].dropna() if item in off.columns else pd.Series(dtype=float)
+        j = judge(m, o)
+        j.update(row, panel="all-India")
         out.append(j)
     return out
 
 
-def screen_candidates(client, official_csv, mapping_csv, store=None, start: str = "2025-01-01") -> list[dict]:
-    """Gate every NOT-yet-wired DoCA commodity against its official item index; report verdicts (never ingests)."""
+def screen_candidates(client, official_csv, mapping_csv, store=None, start: str = START) -> list[dict]:
+    """Gate every NOT-yet-wired DoCA commodity against its official item index; report verdicts and the leg that carried them."""
     from ..proxy_check import judge
-    mp = pd.read_csv(mapping_csv, dtype=str, keep_default_na=False).set_index("item_id")
-    off = pd.read_csv(official_csv, dtype={"code": str})
-    off = off[off.level == "item"].pivot_table(index="period", columns="code", values="index_value", aggfunc="first")
-    today = dt.date.today().isoformat()
+    root = Path(official_csv).resolve().parents[2]
+    off = official_items(root)
     out = []
     for cid, item in CANDIDATES.items():
-        r = client.get(f"{MIRROR}/api/centre/{CENTRE_ID}/history?commodity={cid}&start={start}&end={today}")
-        if r.status_code != 200:
-            out.append({"item_id": item, "doca_commodity": cid, "verdict": "fetch_failed"})
-            continue
-        if store is not None:
-            store.save(SOURCE_ID + "_screen", r.url, None, r.content, r.status_code, "json")
-        s = pd.Series({pd.Timestamp(d): p for d, p in parse_history(r.text)})
-        if s.empty:
-            out.append({"item_id": item, "doca_commodity": cid, "verdict": "no_data"})
-            continue
-        m = s.groupby(s.index.to_period("M")).mean()
-        m.index = m.index.astype(str)
-        code = mp.loc[item, "official_item_code"] if item in mp.index else ""
-        o = off[code].dropna() if code in off.columns else pd.Series(dtype=float)
+        m, stale, row = _gate_series(client, root, cid, item, store)
+        if m is None:
+            out.append(row); continue
+        o = off[item].dropna() if item in off.columns else pd.Series(dtype=float)
         j = judge(m, o)
-        j.update(item_id=item, doca_commodity=cid, official_item=mp.loc[item, "official_item_name"] if item in mp.index else "",
-                 stale_share=round(float((s.diff() == 0).mean()), 2),
+        j.update(row, panel="rajkot-centre", stale_share=stale,
                  doca_change_pct=round(float(m.iloc[-1] / m.iloc[0] * 100 - 100), 1) if len(m) > 1 else None)
         out.append(j)
     return out

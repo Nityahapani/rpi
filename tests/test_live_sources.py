@@ -282,11 +282,12 @@ def test_plan_wires_new_sources_everywhere():
     from rpi.index.engine import SINGLE_SERIES_SOURCES
     from rpi.proxy_check import PROXY_SOURCES
     plan = pd.read_csv(ROOT / "data/source_plan.csv", dtype=str).set_index("item_id")
-    # F001, F004 were wired to the Rajkot web shops on 2026-10-10 (yard inputs before); F003, F005 keep the gate-passing DoCA national panel
+    # F001, F004 were wired to the Rajkot web shops on 2026-10-10 (yard inputs before); F003, F005, F002, F008 were promoted from the
+    # DoCA national panel to the Rajkot centre on 2026-10-14 (PROMOTION_RULE, rpi/collectors/doca.py).
     for it in ("F001", "F004"):
         assert plan.loc[it, "primary_source"] == "rajkot_shops" and plan.loc[it, "class"] == "independent"
-    assert plan.loc["F003", "primary_source"] == "doca_national" and plan.loc["F003", "class"] == "independent"  # superseded
-    assert plan.loc["F005", "primary_source"] == "doca_national" and plan.loc["F005", "class"] == "independent"  # yard board superseded
+    for it in ("F002", "F003", "F005", "F008"):
+        assert plan.loc[it, "primary_source"] == "doca_rajkot" and plan.loc[it, "class"] == "independent"  # superseded the india panel / yard board
     for src in ("mandi_rajkot_apmc", "mandi_rajkot_veg", "yard_rajkot_board"):
         assert src in BACKFILL_SOURCES and src in SINGLE_SERIES_SOURCES and src in PROXY_SOURCES
     assert set(w.ACROP_MARKETS) == {"mandi_rajkot_apmc", "mandi_rajkot_veg"}
@@ -414,7 +415,7 @@ def test_acrop_chana_is_retired_and_plan_points_to_board():
     from rpi.refresh import RETIRED_SERIES
     assert "F005" not in ACROP_MARKETS["mandi_rajkot_apmc"][2] and ("mandi_rajkot_apmc", "F005") in RETIRED_SERIES
     plan = pd.read_csv(ROOT / "data/source_plan.csv", dtype=str).set_index("item_id")
-    assert plan.loc["F005", "primary_source"] == "doca_national"  # yard board superseded (rpi/superseded.py)
+    assert plan.loc["F005", "primary_source"] == "doca_rajkot"  # yard board superseded (rpi/superseded.py), then promoted to the Rajkot centre
     import tomllib
     cfg = tomllib.loads((ROOT / "config/settings.toml").read_text())
     assert cfg["index"]["min_days_by_source"]["yard_rajkot_board"] >= 5
