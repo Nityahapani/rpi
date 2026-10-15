@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-15",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
@@ -274,8 +274,8 @@
    "weight_pct_covered": 12.38
   },
   "apple_store": {
-   "last_quote": "2026-10-10",
-   "n_quotes": 1,
+   "last_quote": "2026-10-15",
+   "n_quotes": 2,
    "items": [
     {
      "item_id": "K002",
@@ -305,8 +305,8 @@
    "weight_pct_covered": 0.59
   },
   "hathway_broadband": {
-   "last_quote": "2026-10-14",
-   "n_quotes": 4,
+   "last_quote": "2026-10-15",
+   "n_quotes": 5,
    "items": [
     {
      "item_id": "K003",
@@ -336,8 +336,8 @@
    "weight_pct_covered": 0.12
   },
   "onemg_medicine": {
-   "last_quote": "2026-10-14",
-   "n_quotes": 2,
+   "last_quote": "2026-10-15",
+   "n_quotes": 3,
    "items": [
     {
      "item_id": "M001",
