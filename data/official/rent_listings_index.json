@@ -1,11 +1,11 @@
 {
- "generated": "2026-10-15",
+ "generated": "2026-10-16",
  "item_id": "R001",
  "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
- "n_panel_rows": 545,
- "n_listings_used": 519,
+ "n_panel_rows": 562,
+ "n_listings_used": 533,
  "portals": {
-  "magicbricks": 518,
+  "magicbricks": 532,
   "squareyards": 1
  },
  "months": [
@@ -29,56 +29,56 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 109.08,
-   "lo90": 91.48,
-   "hi90": 125.6
+   "index": 105.14,
+   "lo90": 91.09,
+   "hi90": 117.62
   },
   {
    "month": "2026-09",
-   "n": 228,
-   "fresh_share": 0.355,
+   "n": 230,
+   "fresh_share": 0.352,
    "survivor": true,
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 107.98,
-   "lo90": 91.76,
-   "hi90": 121.2
+   "index": 105.51,
+   "lo90": 92.66,
+   "hi90": 116.77
   },
   {
    "month": "2026-10",
-   "n": 126,
+   "n": 138,
    "fresh_share": 1.0,
    "survivor": false,
    "complete": false,
    "qualified": true,
    "usable": false,
-   "index": 107.04,
-   "lo90": 89.62,
-   "hi90": 120.8
+   "index": 104.3,
+   "lo90": 90.36,
+   "hi90": 115.25
   }
  ],
  "qualified_consecutive": 4,
  "usable_consecutive": 0,
  "usable_months": [],
  "hedonic_coefficients": {
-  "const": 9.472,
-  "lsqft_c": 0.405,
-  "sqft_missing": 0.096,
-  "furnished_page": 0.129,
-  "bhk:0": -0.366,
-  "bhk:1": -0.252,
-  "bhk:3": 0.367,
-  "bhk:4": 0.677,
-  "type:house": -0.337,
-  "type:villa": -0.505,
-  "type:builder_floor": -0.14,
-  "type:room": -0.366,
-  "portal:squareyards": -0.31
+  "const": 9.476,
+  "lsqft_c": 0.502,
+  "sqft_missing": 0.104,
+  "furnished_page": 0.134,
+  "bhk:0": -0.387,
+  "bhk:1": -0.244,
+  "bhk:3": 0.345,
+  "bhk:4": 0.618,
+  "type:house": -0.338,
+  "type:villa": -0.423,
+  "type:builder_floor": -0.115,
+  "type:room": -0.387,
+  "portal:squareyards": -0.267
  },
  "asking_rent_revisions": {
-  "listings_revised": 0,
-  "median_change_pct": null
+  "listings_revised": 3,
+  "median_change_pct": 14.29
  },
  "stock_candidate": [
   {
