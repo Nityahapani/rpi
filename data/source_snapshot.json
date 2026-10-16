@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/Nityahapani/rpi",
+  "branch": "main",
+  "bot_commit": "e9bd9455cce702747c2701b6b6992dce65d47ec4",
+  "bot_commit_time_utc": "2026-10-16T09:49:42Z",
+  "bot_run_id": "20261016T094753877494Z",
+  "bot_database_sha256_before_integration": "9026e116851473fd739a5adb198354916dab110a7b2998f8df0a1784e14edd63",
+  "merged_history": {
+    "source": "DoCA Rajkot observations/products only from the pre-refresh integration database",
+    "source_database_sha256": "d439bf2b1727ee98b1df5b6942371109401bbb3a5abae7ef8ff16837cbb44ac0",
+    "observation_period": "2014-01-01..2026-10-14",
+    "conflict_policy": "Keep the Oct 16 target row on every duplicate; add only missing DoCA Rajkot rows; do not import other sources or raw-snapshot IDs."
+  },
+  "preservation_check": {
+    "non_doca_content_sha256_before_and_after_merge": "b377ffd69ecde4aaf5c1cb2b32f26b79164e44dfafb1e3855f71341e4e8f8c97",
+    "bot_snapshot_counts_before_merge": {
+      "products": 344,
+      "observations": 9187,
+      "raw_snapshots": 1836
+    },
+    "counts_after_doca_history_merge_before_rebuild": {
+      "products": 355,
+      "observations": 62950,
+      "raw_snapshots": 1836
+    }
+  }
+}

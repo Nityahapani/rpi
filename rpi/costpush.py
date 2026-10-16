@@ -10,7 +10,7 @@ Pre-registration (the discipline that makes the gate meaningful).  The cost shar
 industry cost structure BEFORE the model was compared with the official D001/D003 indices; there is NOTHING fitted to the official series.  Because the
 parameters are not estimated on it, the whole overlap with the official index is an out-of-sample test.  The unchanged proxy gate (>= 6 overlapping months,
 corr of monthly log changes >= 0.5, |drift| <= 0.10) decides whether the series is allowed to count.  Alternative specifications are reported only as
-robustness diagnostics (`sensitivity`); they never replace the pre-registered one.
+robustness diagnostics (`sensitivity`); they never replace the pre-registered one. This source-specific screen remains an A-only monthly test, not the general A/B/C validator used for active sources.
 
   target_t  = sum_k s_k * ln(input_k,t / input_k,0)                (shares sum to 1)
   ln P_t    = ln P_{t-1} + LAMBDA * (target_t - ln P_{t-1})         (partial adjustment, P_0 = 1)
@@ -96,7 +96,7 @@ def model(conn, root, item_id: str, months: list[str], spec: dict | None = None,
 
 def screen(conn, root, official_csv) -> list[dict]:
     """Run the pre-registered model for D003 and D001 through the unchanged gate; add robustness rows (never adopted) for context."""
-    from .proxy_check import judge
+    from .proxy_check import judge_monthly
     off = pd.read_csv(official_csv, dtype={"code": str})
     off = off[off.level == "item"]
     rows = []
@@ -106,7 +106,7 @@ def screen(conn, root, official_csv) -> list[dict]:
         months = list(o.index)
         for tag, lam in (("pre-registered", LAMBDA), ("robustness lam=0.15", 0.15), ("robustness lam=0.60", 0.60), ("robustness lam=1.00", 1.0)):
             p = model(conn, root, it, months, lam=lam)
-            j = judge(p, o)
+            j = judge_monthly(p, o)
             lo, lp = np.log(o), np.log(p.reindex(months))
             rows.append(dict(item_id=it, spec=tag, lam=lam, n_overlap=j["n_overlap"], corr_mom=j["corr"], drift=j["drift"], verdict=j["verdict"],
                              corr_3m=round(float(lp.diff(3).corr(lo.diff(3))), 2), level_corr=round(float(lp.corr(lo)), 2),

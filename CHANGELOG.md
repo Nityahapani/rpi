@@ -4,6 +4,36 @@ The sections below are the README's running sweep log up to 2026-10-06, kept ver
 were true when written and are **superseded** by the current README and by `data/official/source_inventory_2026-10-02.md` (sections A-AJ). Later work (sweeps 28-30: hierarchical
 item weights, Vishal clothing, FRC school fees, cinema and salon diaries, the rent signal) is documented in that inventory, sections AF-AJ. The 2026-10-07 methods round (pre-registered scoring, fused series, pooling, vegetable drivers) is section AK.
 
+## 2026-10-16 — DoCA historical gate on preserved bot snapshot
+
+Completed on `Nityahapani/rpi` `main`, starting from bot commit `e9bd9455cce702747c2701b6b6992dce65d47ec4` (run `20261016T094753877494Z`). The resulting manifest is `data/source_snapshot.json`; the offline build run is `20261016T115235171390Z`.
+
+- Rebuilt the 9,897-row, 66-item CPI2012/CPI2024 comparator through 2026-09; `validate_proxies()` requires it and fails closed if it is missing.
+- Gate A/B/C statuses are reported independently. B requires at least three paired calendar-aligned 12-month changes and has no separate `n >= 24` floor; C requires `n >= 24`, log-level R², slope and recent 24-month drift with the exact t-24 anchor. Any passing leg passes; otherwise the overall result remains pending if any applicable leg is unevaluable and fails only once all applicable legs fail.
+- Kept pre-registered monthly-only diagnostics (rent-model correlation variants and the cost-push screen) explicitly on leg A, so the overall A/B/C verdict does not silently redefine their original estimand.
+- Restricted the prospective first-seen ledger to newly observed periods from the 2025-01 live index era; existing items advance from their latest stamped month, and newly gated items are stamped only at the latest live month. CPI2012 history is not marked as a new official arrival.
+- Merged only DoCA Rajkot product/observation history (2014-01..2026-10-14) from the older integration DB, keeping the Oct 16 target row on conflicts. `doca_rajkot` now has 55,300 observations, with F002/F003/F005/F008/F021/F022/F023 promoted from 2025-01; F025 remains Gondal. Balanced panels stay at 2025-01.
+- F008's five DoCA commodities (17–21) form one matched-SKU item gate. The Oct 16 screen has 34 commodity diagnostics; all five component rows are labelled `combined_pool_component`.
+- F022/F023 official-link products intentionally have zero observations after the 2014-01 cutoff; no official-history backfill was added. Final DB: 355 products, 62,910 observations and 1,836 raw snapshots; 40 overlapping official-link observations were trimmed on rebuild.
+- Gates: 14 pass, 27 pending and one R001 trend-gate fail; all seven newly promoted DoCA items pass (F002 C; the other six B+C).
+- Same-snapshot pre-promotion vs current index: Sep 108.309→108.095 (−0.214), Oct 108.462→108.324 (−0.138), max absolute difference 0.950 in Jul 2026. Current Oct nowcast is 108.324 (+0.213% MoM, +7.168% YoY; 90% band 107.443–109.213).
+- The offline rebuild reported the stale R003 register, R001 trend failure and F013/F026 prospective CUSUM flags; automatic demotion remains off. No API-key source or primary data collection was used.
+- Full test suite: **336 passed, 2 skipped** (6 non-failing warnings); the monthly-A versus overall A/B/C verdict policies and snapshot provenance are covered by tests.
+
+## 2026-10-15 — pre-refresh DoCA integration (superseded)
+
+Completed after the 14 Oct daily-bot data refresh. The work used that source snapshot; it did not fetch or replace daily source data.
+
+- Built `data/official/official_item_spliced.csv` from CPI2012 Gujarat-urban item history and the CPI2024 overlap/newer segment: **9,897 rows, 66 items, 2014-01..2026-09**. `validate_proxies()` now requires this long comparator and fails closed if it is absent.
+- Implemented independent monthly A, 12-month-change B and level-fit C legs. B is eligible at three paired annual changes without a separate `n >= 24` floor. C requires `n >= 24`, log-level `R² >= 0.5`, slope 0.5–1.5 and last-24-calendar-month drift <= 0.10. A fixed proportional level offset is allowed because the index chains relatives. If no leg passes, the overall verdict remains `pending` while any applicable leg is unevaluable; it fails only when A/B/C have all been evaluated and failed. A missing exact C drift anchor keeps that leg pending.
+- Started DoCA Rajkot centre history at 2014-01-01 without changing balanced-panel `PANEL_START=2025-01-01` or the index base. Promoted F002/F003/F005/F008/F021/F022/F023 to `doca_rajkot` from 2025-01; F025 remains on Gondal. The Amul milk tariff and Rajkot-local shop feeds still accruing were retained.
+- F008 uses commodity IDs 17/18/19/20/21 together as one matched-SKU item-level series. The panel screen now labels those five rows as `combined_pool_component`; its individual commodity `wire_to` results are diagnostic only. The actual item gate is the single F008 row in `docs/data/proxy_validation.csv`.
+- F022/F023 `official_link` observations were trimmed at their 2014-01 independent cutoff. Their zero-observation official-link products are intentional; their active DoCA series have 150 official-comparator months each. No official history was backfilled.
+- Gate summary: **42 active series; 14 pass, 27 pending, 1 fail (R001's separate rent trend gate)**. Passing newly promoted legs: F002 C; F003/F005/F008/F021/F022/F023 B+C. Independent plan weight **89.30849%**; direct plus Rajkot-retail **37.59469%**, +8.64676 points from the pre-promotion plan.
+- Published offline index run `20261015T144226004552Z`: Oct 2026 **108.330** (+0.22% MoM, +7.17% YoY), 90% nowcast band 107.448–109.219; Sep **108.095** (+6.94% YoY). Same-snapshot pre-promotion-source counterfactual: Oct 108.495→108.330 (−0.165), Sep 108.309→108.095 (−0.214); maximum absolute level difference 0.95 in Jul. The older published Oct value 109.007 also includes the superseded-feed-filter correction and is not a pure source-choice counterfactual.
+- Preserved the bot's warehouse snapshot: products 356, observations 63,109 and raw snapshots 1,958 were unchanged across the index rebuild. A temporary-copy offline refresh smoke test rebuilt the splice, validated 14/27/1 pass/pending/fail, built and published, and left DoCA observation counts unchanged.
+- The full suite passed **333 tests, 2 skipped** (6 non-failing warnings). No primary data collection or API-key source was used.
+
 ## Status as of 2026-10-02 (superseded)
 
 **One command updates everything:** `python -m rpi refresh` (daily via GitHub Actions cron 10:30 IST, or `scripts/cron_example.txt`).

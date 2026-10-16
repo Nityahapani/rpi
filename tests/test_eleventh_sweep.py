@@ -61,32 +61,58 @@ def test_chai_is_proxy_with_conservative_step():
     assert b.loc[b.item_id == "D002", "tier"].iloc[0] == "C"
 
 
-def test_superseded_local_feeds_stay_out_of_the_index():
+def test_superseded_local_feeds_stay_out_and_promoted_doca_rows_stay_in():
     import sqlite3
     from rpi.superseded import sql_clause, SUPERSEDED_ITEMS
-    assert set(SUPERSEDED_ITEMS) == {"F003", "F005", "F020", "F021", "F024"}
+    assert set(SUPERSEDED_ITEMS) == {"F003", "F005", "F020", "F021", "F022", "F023", "F024"}
     c = sqlite3.connect(":memory:")
     c.executescript("CREATE TABLE products(sku_id, item_id, source_id);"
-                    "INSERT INTO products VALUES('a','F003','mandi_rajkot_apmc'),('b','F003','doca_national'),"
-                    "('c','F006','doca_rajkot'),('d','F020','necc_ahmedabad'),"
-                    "('e','F021','mandi_gondal'),('f','F021','doca_gujarat');")
+                    "INSERT INTO products VALUES"
+                    "('a','F003','mandi_rajkot_apmc'),('b','F003','doca_national'),('c','F003','doca_rajkot'),"
+                    "('d','F006','doca_rajkot'),('e','F020','necc_ahmedabad'),('f','F020','doca_national'),"
+                    "('g','F021','mandi_gondal'),('h','F021','doca_gujarat'),('i','F021','doca_rajkot'),"
+                    "('j','F022','mandi_gondal'),('k','F022','doca_rajkot'),"
+                    "('l','F023','mandi_rajkot_veg'),('m','F023','doca_rajkot');")
     got = {r[0] for r in c.execute("SELECT sku_id FROM products p WHERE " + sql_clause("p"))}
-    assert got == {"b", "c", "f"}
+    assert got == {"b", "c", "d", "f", "h", "i", "k", "m"}
 
 
-def test_four_national_items_are_wired_and_proxy():
+def test_national_panel_keeps_only_the_items_without_a_passing_rajkot_series():
+    # 2026-10-14: F002/F003/F005/F008 left this panel for the Rajkot centre (they pass the long-window gate there and the panel is a
+    # proxy); what remains is exactly the items no Rajkot series can carry, and the plan must agree with the collector.
     import pandas as pd
     from rpi.collectors.doca import NATIONAL_WIRED
-    assert {v[0] for v in NATIONAL_WIRED.values()} >= {"F003", "F005", "F020", "F024"}
+    assert {v[0] for v in NATIONAL_WIRED.values()} == {"F011", "F020", "F024"}
     p = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
-    assert all(p.loc[i, "primary_source"] == "doca_national" for i in ("F003", "F005", "F020", "F024"))
+    assert all(p.loc[i, "primary_source"] == "doca_national" for i in ("F011", "F020", "F024"))
+    assert all(p.loc[i, "primary_source"] == "doca_rajkot" for i in ("F002", "F003", "F005", "F008"))
 
 
-def test_potato_is_wired_to_the_gujarat_panel():
+def test_F008_panel_rows_are_component_diagnostics_not_five_independent_gates():
     import pandas as pd
-    from rpi.collectors.doca import GUJARAT_WIRED
-    assert {v[0] for v in GUJARAT_WIRED.values()} == {"F021"}
+    screen = pd.read_csv("data/official/doca_panel_screen.csv", dtype={"item_id": str, "doca_commodity": str})
+    components = screen[(screen.item_id == "F008") & screen.doca_commodity.isin({"17", "18", "19", "20", "21"})]
+    assert len(components) == 5
+    assert set(components.screen_scope) == {"combined_pool_component"}
+    assert components.active_gate_basis.str.contains("one matched-SKU chain").all()
+    # The active validator has one pooled item result, distinct from the five component screens.
+    gate = pd.read_csv("docs/data/proxy_validation.csv", dtype=str, keep_default_na=False)
+    item = gate[gate.item_id == "F008"]
+    assert len(item) == 1 and item.iloc[0].verdict == "pass"
+    assert item.iloc[0].legs == "B+C" and item.iloc[0].n_overlap == "150"
+
+
+def test_gujarat_panel_is_retired_and_potato_moved_to_the_rajkot_centre():
+    # 2026-10-14: Rajkot potato passes on the long comparator, so the most-local-pass
+    # rule chooses the centre and retires the Gujarat panel (its only wired item).
+    import pandas as pd
+    from rpi.collectors.doca import GUJARAT_WIRED, WIRED
+    assert GUJARAT_WIRED == {}
+    assert any(i == "F021" for i, _ in WIRED.values())
     p = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
-    assert p.loc["F021", "primary_source"] == "doca_gujarat"
-    s = pd.read_csv("data/official/doca_panel_screen.csv", dtype={"doca_commodity": str}).set_index("item_id")
-    assert s.loc["F021", "wire_to"] == "gujarat" and s.loc["F021", "rajkot_verdict"] != "pass"      # most local passing panel wins
+    assert p.loc["F021", "primary_source"] == "doca_rajkot"
+    assert "doca_gujarat" not in set(p.primary_source)
+    s = pd.read_csv("data/official/doca_panel_screen.csv", dtype={"doca_commodity": str})
+    potato = s[(s.item_id == "F021") & (s.doca_commodity.astype(int) == 22)].iloc[0]
+    assert potato.wire_to == "rajkot" and potato.rajkot_verdict == "pass"
+    assert "B" in potato.rajkot_legs and "C" in potato.rajkot_legs

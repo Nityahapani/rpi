@@ -26,6 +26,82 @@ from .fuel_events import update_file
 from .http_compat import session
 
 OFFICIAL_CSV = "data/official/mospi_cpi2024_gujarat_urban.csv"
+OFFICIAL_SPLICED_CSV = "data/official/official_item_spliced.csv"
+
+
+def build_official_item_splice(root: Path) -> str:
+    """Rebuild the long item comparator from the checked-in CPI2012/CPI2024 inputs."""
+    from scripts.build_official_spliced import build
+
+    frame, report = build(root)
+    out = root / OFFICIAL_SPLICED_CSV
+    frame.to_csv(out, index=False)
+    return (f"{len(frame)} rows, {frame.item_id.nunique()} items, "
+            f"{frame.period.min()}..{frame.period.max()}, {len(report)} item splice offsets -> {out}")
+
+
+PROXY_VALIDATION_COLUMNS = (
+    "item_id", "source_id", "gate_type", "n_overlap", "proxy_months",
+    "official_months_after_proxy_start", "corr", "drift", "corr_12m", "r2",
+    "slope", "drift_recent", "verdict", "legs", "leg_status",
+)
+
+
+def write_proxy_validation(path: Path, rows: list[dict]) -> Path:
+    """Write a stable, auditable CSV view of every active proxy verdict and A/B/C leg."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    flat = []
+    for result in rows:
+        row = {key: result.get(key) for key in PROXY_VALIDATION_COLUMNS}
+        legs = result.get("legs") or []
+        row["legs"] = "+".join(legs) if isinstance(legs, (list, tuple)) else str(legs)
+        status = result.get("leg_status") or {}
+        row["leg_status"] = json.dumps(status, sort_keys=True, separators=(",", ":"))
+        flat.append(row)
+    pd.DataFrame(flat, columns=PROXY_VALIDATION_COLUMNS).to_csv(path, index=False)
+    return path
+
+
+def source_snapshot_metadata(root: Path) -> dict | None:
+    """Load provenance for the upstream daily-bot snapshot used by this rebuild, if recorded."""
+    path = root / "data/source_snapshot.json"
+    if not path.exists():
+        return None
+    with path.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _prereg_official_arrivals(root: Path, official_by_item: dict[str, pd.Series], live_start: str = "2025-01") -> dict[str, pd.Series]:
+    """Select only newly observed live-era CPI months for the prospective first-seen ledger.
+
+    A long historical splice is necessary for gate diagnostics and volatility estimates,
+    but must not make CPI2012 archive months look like fresh official releases. For a
+    newly gated item with no first-seen history, bootstrap only its latest available
+    live-era month; for existing items, include only months after the last month recorded.
+    """
+    seen_path = Path(root) / "data/preregistered/official_seen.csv"
+    if seen_path.exists():
+        seen = pd.read_csv(seen_path, dtype={"item_id": str, "period": str}, keep_default_na=False)
+        last_seen = seen.groupby("item_id")["period"].max().to_dict() if len(seen) else {}
+    else:
+        last_seen = {}
+    arrivals: dict[str, pd.Series] = {}
+    for item, series in official_by_item.items():
+        s = pd.Series(series).dropna().sort_index()
+        labels = pd.Index(s.index.astype(str))
+        live = labels >= live_start
+        s = s.loc[live]
+        labels = labels[live]
+        if not len(s):
+            arrivals[item] = s
+            continue
+        if item in last_seen:
+            arrivals[item] = s.loc[labels > last_seen[item]]
+        else:
+            latest = labels.max()
+            arrivals[item] = s.loc[labels == latest]
+    return arrivals
 
 
 def _step(name, fn, results):
@@ -274,6 +350,17 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
         _step("official:cpi_iw_centres", lambda: refresh_cpi_iw_centres(root, client), results)
         _step("tariff:fuel_lpg_update", lambda: refresh_fuel(root, client), results)
         _step("tariff:mrp_live", lambda: refresh_mrp(root, client), results)
+
+    splice_state = {"ok": False}
+
+    def _splice_step():
+        msg = build_official_item_splice(root)
+        splice_state["ok"] = True
+        return msg
+
+    # Always rebuild, including offline refreshes, so validation cannot silently use
+    # a stale/short comparator after the CPI2024 source file changes.
+    _step("official:spliced_item", _splice_step, results)
     _step("tariff:registers", lambda: refresh_registers(root), results)
 
     ingest.load_basket(conn, pd.read_csv(root / settings["paths"]["basket"], dtype={"division": str}))
@@ -311,8 +398,9 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             collectors.append(("doca_rajkot", DocaRetailCollector(client, store)))
             from .collectors.doca import DocaNationalCollector
             collectors.append(("doca_national", DocaNationalCollector(client, store)))
-            from .collectors.doca import DocaGujaratCollector
-            collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
+            from .collectors.doca import GUJARAT_WIRED, DocaGujaratCollector
+            if GUJARAT_WIRED:                     # retired 2026-10-14: potato moved to the Rajkot centre, leaving this panel nothing to carry
+                collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
     from .collectors.vishal_diary import VishalCollector       # PENDING-gate proxy (live diary only); reads the CSV, no network
     collectors.append(("vishal_diary", VishalCollector(root)))
     from .collectors.frc_fees import FrcSchoolFeeCollector    # regulator-approved Rajkot school fees (E001); reads data/frc/rajkot_fees.csv
@@ -393,13 +481,22 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     proxies: list[dict] = []
 
     def _proxy_step():
+        proxy_csv = root / settings["paths"]["out"] / "data" / "proxy_validation.csv"
+        if not splice_state["ok"]:
+            # Do not leave yesterday's verdicts looking current when the required comparator failed to build.
+            write_proxy_validation(proxy_csv, [])
+            raise RuntimeError("long official comparator was not rebuilt; proxy validation is unsafe")
         from .proxy_check import validate_proxies
-        proxies.extend(validate_proxies(conn, root / OFFICIAL_CSV, root / "data/basket_official_map.csv", root / "data/source_plan.csv"))
+        proxies.extend(validate_proxies(
+            conn, root / OFFICIAL_CSV, root / "data/basket_official_map.csv", root / "data/source_plan.csv",
+            spliced_csv=root / OFFICIAL_SPLICED_CSV,
+        ))
+        write_proxy_validation(proxy_csv, proxies)
         bad = [p["item_id"] for p in proxies if p["verdict"] == "fail"]
         pend = sum(p["verdict"] == "pending" for p in proxies)
         if bad:
             raise RuntimeError(f"PROXY FAILS VALIDATION vs official item index: {bad}")
-        return f"{sum(p['verdict'] == 'pass' for p in proxies)} pass, {pend} pending (<6 overlapping months), 0 fail"
+        return f"{sum(p['verdict'] == 'pass' for p in proxies)} pass, {pend} pending (insufficient series overlap), 0 fail"
     _step("validate:proxies", _proxy_step, results)
 
     shadow_summary: dict = {}
@@ -417,10 +514,14 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
     def _prereg():
         from . import prereg
         from .proxy_check import validate_proxies as _vp
+        if not splice_state["ok"]:
+            raise RuntimeError("long official comparator was not rebuilt; preregistration is unsafe")
         ser: dict = {}
-        _vp(conn, root / OFFICIAL_CSV, root / "data/basket_official_map.csv", root / "data/source_plan.csv", series_out=ser)
+        _vp(conn, root / OFFICIAL_CSV, root / "data/basket_official_map.csv", root / "data/source_plan.csv",
+            series_out=ser, spliced_csv=root / OFFICIAL_SPLICED_CSV)
         n_new = prereg.log_predictions(root, ser)
-        n_seen = prereg.log_official_arrivals(root, {k: v[1] for k, v in ser.items()})
+        live_arrivals = _prereg_official_arrivals(root, {k: v[1] for k, v in ser.items()})
+        n_seen = prereg.log_official_arrivals(root, live_arrivals)
         sc = prereg.score(root, {k: v[1] for k, v in ser.items()})
         card = prereg.scorecard(sc)
         card.to_csv(root / prereg.SCORECARD, index=False)
@@ -607,6 +708,16 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
         _post_publish(root, settings, out, results)
     out["coverage"] = coverage_split(conn, root / "data/source_plan.csv")
     out["proxy_validation"] = proxies
+    out["gate_summary"] = {
+        "series": len(proxies),
+        "pass": sum(p.get("verdict") == "pass" for p in proxies),
+        "pending": sum(p.get("verdict") == "pending" for p in proxies),
+        "fail": sum(p.get("verdict") == "fail" for p in proxies),
+        "comparator": OFFICIAL_SPLICED_CSV,
+        "verdict_rule": "pass if any leg passes; otherwise pending while any applicable leg is unevaluable; fail only when A, B, and C have all been evaluated and failed",
+    }
+    out["run_mode"] = "offline rebuild; no network source collectors" if offline else "full source refresh"
+    out["source_snapshot"] = source_snapshot_metadata(root)
     out["cross_checks"] = xchecks
     out["doca_mirror_check"] = doca_state["check"]
     out["doca_screen"] = doca_screen

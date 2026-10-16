@@ -95,14 +95,14 @@ def compare_halves(root, beta: float) -> pd.DataFrame:
 
 
 def screen(root) -> dict:
-    from .proxy_check import judge
+    from .proxy_check import judge_monthly
     df = load(root)
     b = beta_rajkot(df)
     o = official_rent(root)
     out = dict(item_id="R001", beta=b, variants={})
     for tag, bt in (("pre-registered (Rajkot-calibrated)", b["beta"]), ("robustness: beta at 5th pct", b["lo"]), ("robustness: beta at 95th pct", b["hi"]), ("robustness: all-India housing as is (beta=1)", 1.0)):
         sig = monthly_signal(df, bt, first=o.index[0], last=o.index[-1])
-        j = judge(sig, o)
+        j = judge_monthly(sig, o)
         lg_s, lg_o = np.log(sig.reindex(o.index)), np.log(o)
         j.update(beta=bt, yoy_signal_pct=round(100 * (lg_s.iloc[-1] - lg_s.iloc[-13]), 2), yoy_official_pct=round(100 * (lg_o.iloc[-1] - lg_o.iloc[-13]), 2),
                  cum_signal_pct=round(100 * (lg_s.iloc[-1] - lg_s.iloc[0]), 2), cum_official_pct=round(100 * (lg_o.iloc[-1] - lg_o.iloc[0]), 2))
@@ -115,7 +115,7 @@ def screen(root) -> dict:
     for tag, bt_ in (("v2 (chosen after v1 failed): time-varying beta, Kalman", tv["beta"]), ("v2 band: beta - 1.645 se_forward", max(tv["beta"] - 1.645 * tv["se_forward"], 0.0)),
                      ("v2 band: beta + 1.645 se_forward", tv["beta"] + 1.645 * tv["se_forward"])):
         sig = monthly_signal(df, bt_, first=o.index[0], last=o.index[-1])
-        j = judge(sig, o)
+        j = judge_monthly(sig, o)
         lg_s, lg_o = np.log(sig.reindex(o.index)), np.log(o)
         j.update(beta=round(bt_, 3), yoy_signal_pct=round(100 * (lg_s.iloc[-1] - lg_s.iloc[-13]), 2), yoy_official_pct=round(100 * (lg_o.iloc[-1] - lg_o.iloc[-13]), 2),
                  cum_signal_pct=round(100 * (lg_s.iloc[-1] - lg_s.iloc[0]), 2), cum_official_pct=round(100 * (lg_o.iloc[-1] - lg_o.iloc[0]), 2))
@@ -308,12 +308,12 @@ def ensemble_signal(root, first="2025-01", last="2026-10", col="ensemble_pct") -
 
 
 def screen_v3(root) -> dict:
-    from .proxy_check import judge
+    from .proxy_check import judge_monthly
     o = official_rent(root)
     res = {}
     for tag, col in (("panel-selected ensemble (E4+E5)", "ensemble_pct"), ("all-five equal-weight ensemble", "ensemble_all_pct")):
         sig = ensemble_signal(root, first=o.index[0], last=o.index[-1], col=col)
-        j = judge(sig, o)
+        j = judge_monthly(sig, o)
         lg_s, lg_o = np.log(sig.reindex(o.index)), np.log(o)
         j.update(yoy_signal_pct=round(float(100 * (lg_s.iloc[-1] - lg_s.iloc[-13])), 2), yoy_official_pct=round(float(100 * (lg_o.iloc[-1] - lg_o.iloc[-13])), 2),
                  cum_signal_pct=round(float(100 * (lg_s.iloc[-1] - lg_s.iloc[0])), 2), cum_official_pct=round(float(100 * (lg_o.iloc[-1] - lg_o.iloc[0])), 2))

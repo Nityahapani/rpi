@@ -1,34 +1,10 @@
 {
   "steps": [
     {
-      "step": "official:mospi_cpi",
+      "step": "official:spliced_item",
       "status": "ok",
-      "seconds": 1.8,
-      "detail": "up to date (5787 rows for 2026); latest 2026-09"
-    },
-    {
-      "step": "official:labour_bureau",
-      "status": "error",
-      "seconds": 1.0,
-      "detail": "RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed"
-    },
-    {
-      "step": "official:cpi_iw_centres",
-      "status": "error",
-      "seconds": 1.0,
-      "detail": "RobotsDisallowed: could not fetch robots.txt for https://www.labourbureau.gov.in; refusing to proceed"
-    },
-    {
-      "step": "tariff:fuel_lpg_update",
-      "status": "ok",
-      "seconds": 4.9,
-      "detail": "no price changes"
-    },
-    {
-      "step": "tariff:mrp_live",
-      "status": "ok",
-      "seconds": 30.5,
-      "detail": "3745 products read; 0 price change(s); 8 pool SKU(s) missing from feed; promoted into index: none"
+      "seconds": 0.3,
+      "detail": "9897 rows, 66 items, 2014-01..2026-09, 66 item splice offsets -> /tmp/rpi-target/data/official/official_item_spliced.csv"
     },
     {
       "step": "tariff:registers",
@@ -49,100 +25,10 @@
       "detail": "nothing to prune"
     },
     {
-      "step": "check:doca_mirror",
-      "status": "error",
-      "seconds": 8.3,
-      "detail": "RuntimeError: DoCA mirror NOT verified, DoCA feed skipped: mirror unreachable; [{'commodity': '*', 'verdict': 'mirror_unreachable'}]"
-    },
-    {
-      "step": "accrue:rajkot_shops",
-      "status": "ok",
-      "seconds": 7.6,
-      "detail": "0 quotes; green_force: RuntimeError: GET failed after 1 attempts: HTTP 429; hathi_masala: RuntimeError: GET failed after 1 attempts: HTTP 429; rani_oil: HTTP 403 from https://www.ranioil.com (page 1); store skipped this run; WIRED for ['F001', 'F004', 'F007', 'F016']"
-    },
-    {
-      "step": "accrue:apple_store",
-      "status": "ok",
-      "seconds": 0.5,
-      "detail": "0 quotes; apple.com HTTP 403; SHADOW: no item switched, nothing reaches the index"
-    },
-    {
-      "step": "accrue:hathway_broadband",
-      "status": "ok",
-      "seconds": 2.1,
-      "detail": "1 quotes; ok; WIRED for ['K003']"
-    },
-    {
-      "step": "accrue:onemg_medicine",
-      "status": "ok",
-      "seconds": 1.2,
-      "detail": "1 quotes; ok; SHADOW: no item switched, nothing reaches the index"
-    },
-    {
-      "step": "accrue:green_mercado",
-      "status": "ok",
-      "seconds": 14.1,
-      "detail": "0 quotes; skipped: ['F021 store closed', 'F022 store closed', 'F023 store closed', 'F025 store closed']; SHADOW: no item switched, nothing reaches the index"
-    },
-    {
       "step": "ingest:tariff",
       "status": "ok",
-      "seconds": 1.7,
+      "seconds": 1.6,
       "detail": "{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:gr_metals",
-      "status": "ok",
-      "seconds": 2.4,
-      "detail": "{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:mandi_gondal",
-      "status": "ok",
-      "seconds": 10.3,
-      "detail": "{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:mandi_rajkot_apmc",
-      "status": "ok",
-      "seconds": 12.4,
-      "detail": "{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:mandi_rajkot_veg",
-      "status": "ok",
-      "seconds": 13.7,
-      "detail": "{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:mandi_rajkot_district",
-      "status": "ok",
-      "seconds": 38.2,
-      "detail": "{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 101, 'accepted': 101, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:yard_rajkot_board",
-      "status": "ok",
-      "seconds": 2.4,
-      "detail": "{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:gr_png",
-      "status": "ok",
-      "seconds": 0.5,
-      "detail": "{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:necc_ahmedabad",
-      "status": "ok",
-      "seconds": 1.3,
-      "detail": "{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}"
-    },
-    {
-      "step": "ingest:dmart_ahmedabad",
-      "status": "ok",
-      "seconds": 2.4,
-      "detail": "{'source': 'dmart_ahmedabad', 'status': 'error', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'DmartBlocked: HTTP 403 from digital.dmart.in for category 240235 (rate-limit/WAF or unreachable from this network); DMart skipped'}"
     },
     {
       "step": "ingest:vishal_diary",
@@ -171,7 +57,7 @@
     {
       "step": "ingest:rent_signal",
       "status": "ok",
-      "seconds": 2.9,
+      "seconds": 3.5,
       "detail": "{'source': 'rent_signal', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}"
     },
     {
@@ -190,138 +76,102 @@
       "step": "ingest:official_link",
       "status": "ok",
       "seconds": 0.1,
-      "detail": "{'source': 'official_link', 'status': 'ok', 'records': 814, 'accepted': 814, 'rejected': 0, 'message': ''}"
+      "detail": "{'source': 'official_link', 'status': 'ok', 'records': 774, 'accepted': 774, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "trim:official_overlap",
       "status": "ok",
-      "seconds": 0.0,
-      "detail": "no official/independent overlap"
-    },
-    {
-      "step": "crosscheck:apmc",
-      "status": "ok",
-      "seconds": 2.7,
-      "detail": "Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_acrop_row_for_date"
-    },
-    {
-      "step": "crosscheck:ibja",
-      "status": "error",
-      "seconds": 3.2,
-      "detail": "RuntimeError: IBJA CROSS-CHECK DISAGREES (goodreturns outside the pre-set band around the IBJA benchmark): ['P006']"
+      "seconds": 0.1,
+      "detail": "trimmed 40 official stand-in obs overlapping independent months"
     },
     {
       "step": "validate:proxies",
       "status": "error",
-      "seconds": 0.4,
+      "seconds": 1.4,
       "detail": "RuntimeError: PROXY FAILS VALIDATION vs official item index: ['R001']"
     },
     {
       "step": "screen:shadow_sources",
       "status": "ok",
-      "seconds": 0.2,
+      "seconds": 1.1,
       "detail": "rajkot_shops: 11 items (12.38% of weight), last quote 2026-10-10, gate {'pass': 0, 'fail': 0, 'pending': 11}; apple_store: 1 items (0.59% of weight), last quote 2026-10-15, gate {'pass': 0, 'fail': 0, 'pending': 1}; hathway_broadband: 1 items (0.12% of weight), last quote 2026-10-16, gate {'pass': 0"
     },
     {
       "step": "log:prereg",
       "status": "error",
-      "seconds": 0.4,
-      "detail": "RuntimeError: PREREG CUSUM FLAG: logged 16 new prediction(s), 62 official item-month(s) stamped; 13 target(s) scored over 13 item(s); flagged ['F013', 'F026']"
-    },
-    {
-      "step": "screen:doca_retail",
-      "status": "ok",
-      "seconds": 32.1,
-      "detail": "17 unwired DoCA series screened; eligible to wire: none"
-    },
-    {
-      "step": "screen:doca_national",
-      "status": "ok",
-      "seconds": 8.0,
-      "detail": "; eligible to wire: none"
+      "seconds": 1.4,
+      "detail": "RuntimeError: PREREG CUSUM FLAG: logged 16 new prediction(s), 42 official item-month(s) stamped; 13 target(s) scored over 13 item(s); flagged ['F013', 'F026']"
     },
     {
       "step": "screen:jockey_mrp",
       "status": "ok",
-      "seconds": 4.1,
-      "detail": "C001 fail (n=21, corr=-0.42, drift=0.055, 25 SKUs); C002 fail (n=21, corr=0.19, drift=0.071, 13 SKUs)"
-    },
-    {
-      "step": "accrue:rent_listings",
-      "status": "ok",
-      "seconds": 49.5,
-      "detail": "17 new listing(s)/revision(s) from 25 page(s) of 18 list URL(s) (615 known, 6 newly discovered); 4 month(s) with >=25 kept listings; the panel feeds the SHADOW R001 candidate (screen:rent_listings_index)"
-    },
-    {
-      "step": "accrue:mrp_diary",
-      "status": "ok",
-      "seconds": 18.9,
-      "detail": "15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)"
+      "seconds": 4.2,
+      "detail": "C001 pending (n=21, corr=-0.42, drift=0.055, 25 SKUs); C002 pending (n=21, corr=0.19, drift=0.071, 13 SKUs)"
     },
     {
       "step": "screen:ceat_tyres",
       "status": "ok",
-      "seconds": 29.1,
-      "detail": "47/47 pool SKUs quoted; T006 pass (n=13, corr=0.5, drift=0.028, 119 SKUs); diagnostic only, not wired"
+      "seconds": 0.1,
+      "detail": "offline: archive history only; T006 pass (n=13, corr=0.5, drift=0.028, 119 SKUs); diagnostic only, not wired"
     },
     {
       "step": "screen:vishal_clothing",
       "status": "ok",
-      "seconds": 87.1,
-      "detail": "43/44 pool products priced; 1 unreadable; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
+      "seconds": 0.1,
+      "detail": "offline: archive history only; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
     },
     {
       "step": "screen:practo_doctor_fees",
       "status": "ok",
-      "seconds": 106.1,
-      "detail": "180/180 pool doctor-clinics priced; M003 pending (n=0, corr=None, drift=None, 0 doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)"
+      "seconds": 0.0,
+      "detail": "offline; M003 pending (n=0, corr=None, drift=None, 0 doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)"
     },
     {
       "step": "screen:district_cinema",
       "status": "ok",
-      "seconds": 14.3,
-      "detail": "0/8 theatres priced (8 skipped: weekend page, <3 evening 2D shows, or unreadable); S001 pending (n=0, corr=None, drift=None, 0 theatres); WIRED as a pending-gate proxy"
+      "seconds": 0.0,
+      "detail": "offline; S001 pending (n=0, corr=None, drift=None, 0 theatres); WIRED as a pending-gate proxy"
     },
     {
       "step": "screen:fresha_salon",
       "status": "ok",
-      "seconds": 0.3,
-      "detail": "103/103 pool services priced; P004 pending (n=2, corr=None, drift=None, 88 services, ONE venue); WIRED as a pending-gate proxy"
+      "seconds": 0.0,
+      "detail": "offline; P004 pending (n=2, corr=None, drift=None, 88 services, ONE venue); WIRED as a pending-gate proxy"
     },
     {
       "step": "screen:costpush_model",
       "status": "ok",
-      "seconds": 0.5,
+      "seconds": 1.7,
       "detail": "D003 fail (n=20, corr=0.15, drift=0.077); D001 fail (n=20, corr=0.24, drift=0.074); MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)"
     },
     {
       "step": "screen:rent_signal",
       "status": "ok",
-      "seconds": 9.9,
+      "seconds": 11.5,
       "detail": "R001 WIRED (independent MODELLED, primary_source=rent_signal). Trend gate z=1.645: fail (cum gap -0.39 vs tol 0.52pp, 12m -0.41 vs 0.41pp); the monthly-correlation gate fails for every trend-type signal (v1 -0.28, v2 -0.28, v3 -0.28), which is why R001 uses the trend gate."
     },
     {
       "step": "screen:rent_listings_index",
       "status": "ok",
-      "seconds": 9.7,
+      "seconds": 9.9,
       "detail": "533 listings; listing share of the 12-month window 0%; trend gate fail; accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)"
     },
     {
       "step": "evaluate:nowcast",
       "status": "ok",
-      "seconds": 0.4,
+      "seconds": 0.5,
       "detail": "own-trend h1 RMSE 0.609pp (zero 0.751, old peer-fill 0.044); 90% band +/-0.82% (h1), +/-1.36% (h2)"
     },
     {
       "step": "build",
       "status": "ok",
       "seconds": 0,
-      "detail": "run 20261016T094753877494Z"
+      "detail": "run 20261016T115235171390Z"
     },
     {
       "step": "audit",
       "status": "ok",
-      "seconds": 1.8,
+      "seconds": 1.4,
       "detail": "{\"n_months\": 21, \"items_with_official_index\": 64, \"weight_share_with_official_index_pct\": 99.99657, \"rmse\": 0.30403510689798696, \"max_abs_error\": 1.0230771805472898, \"cum_change_replicated_pct\": 7.946"
     },
     {
@@ -334,7 +184,7 @@
       "step": "benchmark:cpi_iw",
       "status": "ok",
       "seconds": 0.0,
-      "detail": "ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.45), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.31"
+      "detail": "ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.5), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.14"
     },
     {
       "step": "check:regulatory_events",
@@ -349,29 +199,29 @@
       "detail": "logged 1 nowcast(s); 1 month(s) scored against later official data"
     }
   ],
-  "run_id": "20261016T094753877494Z",
+  "run_id": "20261016T115235171390Z",
   "publish": {
     "latest_period": "2026-10",
-    "index": 108.46,
-    "mom_pct": 0.14,
-    "yoy_pct": 6.88,
+    "index": 108.32,
+    "mom_pct": 0.21,
+    "yoy_pct": 7.17,
     "ci_95": [
-      107.66,
-      109.2
+      107.69,
+      109.06
     ],
     "ci_note": null,
     "reference_period": "2026-09",
     "nowcast_periods": [
       "2026-10"
     ],
-    "reference_index": 108.31,
-    "reference_yoy_pct": 6.57,
+    "reference_index": 108.09,
+    "reference_yoy_pct": 6.94,
     "nowcast_band_90": [
-      107.58,
-      109.35
+      107.44,
+      109.21
     ],
     "observed_weight_share": 0.655,
-    "run_id": "20261016T094753877494Z",
+    "run_id": "20261016T115235171390Z",
     "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
     "demo": false,
     "coverage_split": {
@@ -382,9 +232,9 @@
       },
       "independent_split_pct": {
         "direct (administered tariff / spot / PNG)": 22.1,
-        "retail quotes (DoCA Rajkot centre reports + Rajkot web shops; gated vs official)": 6.8,
+        "retail quotes (DoCA Rajkot centre reports + Rajkot web shops; gated vs official)": 15.5,
         "modelled (R001 rent: Labour Bureau housing-group model, trend-gated vs official; not an observed price)": 19.0,
-        "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 41.4
+        "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 32.7
       },
       "ref_period": "2026-09",
       "latest_period": "2026-10",
@@ -402,22 +252,22 @@
         "2025-05",
         "2026-08"
       ],
-      "mom_corr_rpi_vs_cpi_iw_rajkot": 0.31,
+      "mom_corr_rpi_vs_cpi_iw_rajkot": 0.14,
       "mom_corr_mospi_gu_vs_cpi_iw_rajkot": 0.51,
-      "mean_abs_mom_gap_pp_rpi_vs_cpi_iw": 0.39,
+      "mean_abs_mom_gap_pp_rpi_vs_cpi_iw": 0.42,
       "longest_run": [
         "2025-05",
         "2026-04"
       ],
       "cum_pct_over_longest_run": {
         "cpi_iw_rajkot": 2.44,
-        "rpi": 2.08,
+        "rpi": 1.99,
         "mospi_gu_general": 2.16
       },
       "yoy_pct_at": {
         "period": "2026-08",
         "cpi_iw_rajkot": 3.54,
-        "rpi": 5.45,
+        "rpi": 5.5,
         "mospi_gu_general": 4.68
       },
       "gujarat_centres_yoy_pct": {
@@ -532,7 +382,7 @@
   ],
   "nowcast_realtime_score": {
     "n_scored": 1,
-    "mean_abs_error_pct": 0.313,
+    "mean_abs_error_pct": 0.417,
     "rows": [
       {
         "period": "2026-09",
@@ -540,8 +390,8 @@
         "logged_on": "2026-10-02",
         "h": 1,
         "nowcast": 108.885,
-        "realised": 108.309,
-        "error_pct": 0.532
+        "realised": 108.095,
+        "error_pct": 0.731
       },
       {
         "period": "2026-09",
@@ -549,8 +399,8 @@
         "logged_on": "2026-10-11",
         "h": 1,
         "nowcast": 108.207,
-        "realised": 108.309,
-        "error_pct": -0.094
+        "realised": 108.095,
+        "error_pct": 0.104
       }
     ]
   },
@@ -562,9 +412,9 @@
     },
     "independent_split_pct": {
       "direct (administered tariff / spot / PNG)": 22.1,
-      "retail quotes (DoCA Rajkot centre reports + Rajkot web shops; gated vs official)": 6.8,
+      "retail quotes (DoCA Rajkot centre reports + Rajkot web shops; gated vs official)": 15.5,
       "modelled (R001 rent: Labour Bureau housing-group model, trend-gated vs official; not an observed price)": 19.0,
-      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 41.4
+      "proxy (wholesale mandi / NECC / DoCA national / DMart Ahmedabad shelf / regulated ceiling; see proxy_validation)": 32.7
     },
     "ref_period": "2026-09",
     "latest_period": "2026-10",
@@ -575,258 +425,632 @@
   "proxy_validation": [
     {
       "item_id": "F001",
+      "source_id": "rajkot_shops",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F002",
-      "n_overlap": 21,
-      "corr": 0.71,
-      "drift": 0.02,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": -0.08,
+      "drift": 0.162,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.04,
+      "r2": 0.534,
+      "slope": 1.118,
+      "drift_recent": 0.018,
+      "legs": [
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "fail",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F003",
-      "n_overlap": 21,
-      "corr": 0.91,
-      "drift": 0.039,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.43,
+      "drift": 0.102,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.9,
+      "r2": 0.845,
+      "slope": 1.084,
+      "drift_recent": 0.071,
+      "legs": [
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F004",
+      "source_id": "rajkot_shops",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F005",
-      "n_overlap": 21,
-      "corr": 0.86,
-      "drift": 0.031,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.66,
+      "drift": 0.129,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.91,
+      "r2": 0.921,
+      "slope": 1.337,
+      "drift_recent": 0.021,
+      "legs": [
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F006",
-      "n_overlap": 21,
-      "corr": 0.55,
-      "drift": 0.014,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.58,
+      "drift": 0.011,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.78,
+      "r2": 0.897,
+      "slope": 1.081,
+      "drift_recent": 0.026,
+      "legs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F007",
+      "source_id": "rajkot_shops",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F008",
-      "n_overlap": 21,
-      "corr": 0.74,
-      "drift": 0.029,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.57,
+      "drift": 0.167,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.87,
+      "r2": 0.961,
+      "slope": 1.315,
+      "drift_recent": 0.032,
+      "legs": [
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F010",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F011",
+      "source_id": "doca_national",
       "n_overlap": 21,
       "corr": 0.65,
       "drift": 0.006,
       "verdict": "pass",
+      "corr_12m": 0.6,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [
+        "A",
+        "B"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pending"
+      },
       "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "official_months_after_proxy_start": 21,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F012",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F013",
-      "n_overlap": 21,
-      "corr": 0.87,
-      "drift": 0.008,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.52,
+      "drift": 0.099,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.9,
+      "r2": 0.907,
+      "slope": 1.109,
+      "drift_recent": 0.024,
+      "legs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F014",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F015",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F016",
+      "source_id": "rajkot_shops",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F017",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F018",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F019",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F020",
+      "source_id": "doca_national",
       "n_overlap": 21,
       "corr": 0.88,
       "drift": 0.004,
       "verdict": "pass",
+      "corr_12m": 0.05,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [
+        "A"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "fail",
+        "C": "pending"
+      },
       "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "official_months_after_proxy_start": 21,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F021",
-      "n_overlap": 21,
-      "corr": 0.62,
-      "drift": 0.031,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.57,
+      "drift": 0.287,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.81,
+      "r2": 0.723,
+      "slope": 0.993,
+      "drift_recent": 0.079,
+      "legs": [
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F022",
-      "n_overlap": 1,
-      "corr": null,
-      "drift": null,
-      "verdict": "pending",
-      "proxy_months": 2,
-      "official_months_after_proxy_start": 1
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.68,
+      "drift": 0.277,
+      "verdict": "pass",
+      "corr_12m": 0.82,
+      "r2": 0.714,
+      "slope": 1.083,
+      "drift_recent": 0.013,
+      "legs": [
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F023",
-      "n_overlap": 1,
-      "corr": null,
-      "drift": null,
-      "verdict": "pending",
-      "proxy_months": 2,
-      "official_months_after_proxy_start": 1
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.78,
+      "drift": 0.547,
+      "verdict": "pass",
+      "corr_12m": 0.64,
+      "r2": 0.639,
+      "slope": 0.956,
+      "drift_recent": 0.034,
+      "legs": [
+        "B",
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "pass",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F024",
+      "source_id": "doca_national",
       "n_overlap": 21,
       "corr": 0.54,
       "drift": 0.085,
       "verdict": "pass",
+      "corr_12m": 0.4,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [
+        "A"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "fail",
+        "C": "pending"
+      },
       "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "official_months_after_proxy_start": 21,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F025",
+      "source_id": "mandi_gondal",
       "n_overlap": 1,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 2,
-      "official_months_after_proxy_start": 1
+      "official_months_after_proxy_start": 1,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "F026",
-      "n_overlap": 21,
-      "corr": 0.54,
-      "drift": 0.063,
+      "source_id": "doca_rajkot",
+      "n_overlap": 150,
+      "corr": 0.19,
+      "drift": 0.25,
       "verdict": "pass",
-      "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "corr_12m": 0.42,
+      "r2": 0.664,
+      "slope": 0.62,
+      "drift_recent": 0.036,
+      "legs": [
+        "C"
+      ],
+      "leg_status": {
+        "A": "fail",
+        "B": "fail",
+        "C": "pass"
+      },
+      "proxy_months": 154,
+      "official_months_after_proxy_start": 150,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "C001",
+      "source_id": "vishal_diary",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "C002",
+      "source_id": "vishal_diary",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "C003",
+      "source_id": "vishal_diary",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "R001",
+      "source_id": "rent_signal",
       "n_overlap": 21,
       "corr": null,
       "drift": 0.004,
@@ -837,358 +1061,331 @@
       "gap_12m_pp": -0.41,
       "tol_12m_pp": 0.41,
       "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "official_months_after_proxy_start": 21,
+      "gate_type": "trend",
+      "legs": [],
+      "leg_status": {
+        "A": "n/a",
+        "B": "n/a",
+        "C": "n/a"
+      }
     },
     {
       "item_id": "H001",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "H002",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "H003",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "H004",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "M002",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "K003",
+      "source_id": "hathway_broadband",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "S001",
+      "source_id": "district_cinema",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "E001",
+      "source_id": "frc_rajkot",
       "n_overlap": 21,
       "corr": 0.63,
       "drift": 0.003,
       "verdict": "pass",
+      "corr_12m": -0.89,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [
+        "A"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "fail",
+        "C": "pending"
+      },
       "proxy_months": 22,
-      "official_months_after_proxy_start": 21
+      "official_months_after_proxy_start": 21,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "E003",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "P001",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "P002",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "P003",
+      "source_id": "dmart_ahmedabad",
       "n_overlap": 0,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 1,
-      "official_months_after_proxy_start": 0
+      "official_months_after_proxy_start": 0,
+      "gate_type": "A/B/C"
     },
     {
       "item_id": "P004",
+      "source_id": "fresha_salon",
       "n_overlap": 2,
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "proxy_months": 3,
-      "official_months_after_proxy_start": 19
+      "official_months_after_proxy_start": 19,
+      "gate_type": "A/B/C"
     }
   ],
-  "cross_checks": [
-    {
-      "board": "Rajkot",
-      "item_id": "F001",
-      "crop": "\u0a98\u0a89\u0a82 \u0ab2\u0acb\u0a95\u0ab5\u0aa8",
-      "date": "2026-10-15",
-      "verdict": "agree",
-      "yard_low_per20kg": 550.0,
-      "yard_high_per20kg": 640.0,
-      "acrop_modal_per20kg": 576.0,
-      "acrop_date": "2026-10-15"
+  "gate_summary": {
+    "series": 42,
+    "pass": 14,
+    "pending": 27,
+    "fail": 1,
+    "comparator": "data/official/official_item_spliced.csv",
+    "verdict_rule": "pass if any leg passes; otherwise pending while any applicable leg is unevaluable; fail only when A, B, and C have all been evaluated and failed"
+  },
+  "run_mode": "offline rebuild; no network source collectors",
+  "source_snapshot": {
+    "repository": "https://github.com/Nityahapani/rpi",
+    "branch": "main",
+    "bot_commit": "e9bd9455cce702747c2701b6b6992dce65d47ec4",
+    "bot_commit_time_utc": "2026-10-16T09:49:42Z",
+    "bot_run_id": "20261016T094753877494Z",
+    "bot_database_sha256_before_integration": "9026e116851473fd739a5adb198354916dab110a7b2998f8df0a1784e14edd63",
+    "merged_history": {
+      "source": "DoCA Rajkot observations/products only from the pre-refresh integration database",
+      "source_database_sha256": "d439bf2b1727ee98b1df5b6942371109401bbb3a5abae7ef8ff16837cbb44ac0",
+      "observation_period": "2014-01-01..2026-10-14",
+      "conflict_policy": "Keep the Oct 16 target row on every duplicate; add only missing DoCA Rajkot rows; do not import other sources or raw-snapshot IDs."
     },
-    {
-      "board": "Rajkot",
-      "item_id": "F003",
-      "crop": "\u0aa4\u0ac1\u0ab5\u0ac7\u0ab0",
-      "date": "2026-10-15",
-      "verdict": "agree",
-      "yard_low_per20kg": 1460.0,
-      "yard_high_per20kg": 1920.0,
-      "acrop_modal_per20kg": 1852.0,
-      "acrop_date": "2026-10-15"
-    },
-    {
-      "board": "Rajkot",
-      "item_id": "F004",
-      "crop": "\u0aae\u0a97",
-      "date": "2026-10-15",
-      "verdict": "agree",
-      "yard_low_per20kg": 1500.0,
-      "yard_high_per20kg": 1875.0,
-      "acrop_modal_per20kg": 1650.0,
-      "acrop_date": "2026-10-15"
-    },
-    {
-      "board": "Gondal",
-      "item_id": "F001",
-      "crop": "\u0a98\u0a89\u0a82 \u0ab2\u0acb\u0a95\u0ab5\u0aa8",
-      "date": "2026-10-15",
-      "verdict": "agree",
-      "yard_low_per20kg": 540.0,
-      "yard_high_per20kg": 646.0,
-      "acrop_modal_per20kg": 577.0,
-      "acrop_date": "2026-10-13"
-    },
-    {
-      "board": "Gondal",
-      "item_id": "F003",
-      "crop": "\u0aa4\u0ac1\u0ab5\u0ac7\u0ab0",
-      "date": "2026-10-15",
-      "verdict": "agree",
-      "yard_low_per20kg": 601.0,
-      "yard_high_per20kg": 1961.0,
-      "acrop_modal_per20kg": 1981.0,
-      "acrop_date": "2026-10-13"
-    },
-    {
-      "board": "Gondal",
-      "item_id": "F004",
-      "crop": "\u0aae\u0a97",
-      "date": "2026-10-15",
-      "verdict": "agree",
-      "yard_low_per20kg": 1276.0,
-      "yard_high_per20kg": 2051.0,
-      "acrop_modal_per20kg": 1676.0,
-      "acrop_date": "2026-10-13"
-    },
-    {
-      "board": "Gondal",
-      "item_id": "F005",
-      "crop": "\u0a9a\u0aa3\u0abe",
-      "date": "2026-10-15",
-      "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 1116.0,
-      "yard_high_per20kg": 1511.0
+    "preservation_check": {
+      "non_doca_content_sha256_before_and_after_merge": "b377ffd69ecde4aaf5c1cb2b32f26b79164e44dfafb1e3855f71341e4e8f8c97",
+      "bot_snapshot_counts_before_merge": {
+        "products": 344,
+        "observations": 9187,
+        "raw_snapshots": 1836
+      },
+      "counts_after_doca_history_merge_before_rebuild": {
+        "products": 355,
+        "observations": 62950,
+        "raw_snapshots": 1836
+      }
     }
-  ],
-  "doca_mirror_check": [
-    {
-      "commodity": "*",
-      "verdict": "mirror_unreachable"
-    }
-  ],
-  "doca_screen": [
-    {
-      "item_id": "F001",
-      "doca_commodity": 4,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F003",
-      "doca_commodity": 11,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F004",
-      "doca_commodity": 13,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F005",
-      "doca_commodity": 10,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F008",
-      "doca_commodity": 20,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F011",
-      "doca_commodity": 35,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F012",
-      "doca_commodity": 34,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F014",
-      "doca_commodity": 39,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F015",
-      "doca_commodity": 40,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F016",
-      "doca_commodity": 32,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F021",
-      "doca_commodity": 22,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F022",
-      "doca_commodity": 23,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F023",
-      "doca_commodity": 24,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F024",
-      "doca_commodity": 41,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F025",
-      "doca_commodity": 25,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F020",
-      "doca_commodity": 36,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F002",
-      "doca_commodity": 1,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F012",
-      "doca_commodity": 34,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F014",
-      "doca_commodity": 39,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F015",
-      "doca_commodity": 40,
-      "verdict": "fetch_failed"
-    },
-    {
-      "item_id": "F016",
-      "doca_commodity": 32,
-      "verdict": "fetch_failed"
-    }
-  ],
-  "rent_listings_monthly": [
-    {
-      "month": "2026-07",
-      "n_listings": 34,
-      "n_kept": 31,
-      "median_rent_psf": 20.0,
-      "median_rent_2bhk": 13000.0,
-      "n_2bhk": 12,
-      "median_rent_3bhk": 25000.0,
-      "n_3bhk": 8
-    },
-    {
-      "month": "2026-08",
-      "n_listings": 150,
-      "n_kept": 141,
-      "median_rent_psf": 16.7,
-      "median_rent_2bhk": 11000.0,
-      "n_2bhk": 31,
-      "median_rent_3bhk": 19500.0,
-      "n_3bhk": 84
-    },
-    {
-      "month": "2026-09",
-      "n_listings": 233,
-      "n_kept": 230,
-      "median_rent_psf": 17.5,
-      "median_rent_2bhk": 12000.0,
-      "n_2bhk": 68,
-      "median_rent_3bhk": 25000.0,
-      "n_3bhk": 85
-    },
-    {
-      "month": "2026-10",
-      "n_listings": 142,
-      "n_kept": 138,
-      "median_rent_psf": 16.7,
-      "median_rent_2bhk": 12600.0,
-      "n_2bhk": 67,
-      "median_rent_3bhk": 18000.0,
-      "n_3bhk": 28
-    }
-  ],
+  },
+  "cross_checks": [],
+  "doca_mirror_check": [],
+  "doca_screen": [],
+  "rent_listings_monthly": [],
   "rent_listings_index": {
     "n_listings_used": 533,
     "usable_months": [],
@@ -1258,7 +1455,17 @@
       "n_overlap": 21,
       "corr": -0.42,
       "drift": 0.055,
-      "verdict": "fail"
+      "verdict": "pending",
+      "corr_12m": -0.7,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "fail",
+        "B": "fail",
+        "C": "pending"
+      }
     },
     {
       "item_id": "C002",
@@ -1267,7 +1474,17 @@
       "n_overlap": 21,
       "corr": 0.19,
       "drift": 0.071,
-      "verdict": "fail"
+      "verdict": "pending",
+      "corr_12m": -0.21,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "fail",
+        "B": "fail",
+        "C": "pending"
+      }
     }
   ],
   "ceat_screen": [
@@ -1276,6 +1493,18 @@
       "corr": 0.5,
       "drift": 0.028,
       "verdict": "pass",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [
+        "A"
+      ],
+      "leg_status": {
+        "A": "pass",
+        "B": "pending",
+        "C": "pending"
+      },
       "item_id": "T006",
       "n_skus": 119,
       "months": 13
@@ -1331,6 +1560,16 @@
       "corr": null,
       "drift": null,
       "verdict": "pending",
+      "corr_12m": null,
+      "r2": null,
+      "slope": null,
+      "drift_recent": null,
+      "legs": [],
+      "leg_status": {
+        "A": "pending",
+        "B": "pending",
+        "C": "pending"
+      },
       "item_id": "P004",
       "n_skus": 88
     }

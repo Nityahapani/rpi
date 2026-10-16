@@ -1,12 +1,16 @@
-"""Items whose index series now comes from ONE gated source, so their older local feeds stay in the database as diagnostics
-but are kept out of the index, the proxy gate and the independent-start cut-offs.
+"""One-source index/gate exclusions for replaced local feeds.
 
-Reason: F003/F005/F020/F024 were fed by short local wholesale feeds (Rajkot/Gondal yards, NECC) that had about one month of
-history and could not be gated against the official item index (proxy_validation: 'pending'). The DoCA all-India retail panel
-has 22 months and passes the gate (F021 potato: the Gujarat-centres panel, the most local panel that passes) (see data/official/doca_panel_screen.csv), so it is the primary series. Mixing the two
-price levels inside one Jevons item would be wrong, hence this exclusion."""
-SUPERSEDED_ITEMS = ("F003", "F005", "F020", "F021", "F024")
-KEEP_SOURCES = ("doca_national", "doca_gujarat", "official_link", "tariff")
+When a basket item is promoted to a better single source, its older feeds remain
+in the warehouse for diagnostics but must not enter the published index, proxy gate,
+or independent-start cut-offs. The DoCA Rajkot centre now carries F002/F003/F005/F006/F008/
+F013/F021/F022/F023/F026; F011/F020/F024 remain on the national DoCA panel. For F003/F005/
+F021/F022/F023, the replaced short wholesale/Gujarat-panel/yard feeds stay excluded. F020's
+NECC feed and F024's older non-national inputs are also excluded, while their active national
+DoCA panel remains eligible. The switch rules separately prevent former DoCA national/Gujarat
+feeds from being used after the 2025-01 base for items moved to Rajkot.
+"""
+SUPERSEDED_ITEMS = ("F003", "F005", "F020", "F021", "F022", "F023", "F024")
+KEEP_SOURCES = ("doca_national", "doca_gujarat", "doca_rajkot", "official_link", "tariff")
 
 
 def sql_clause(alias: str = "p") -> str:

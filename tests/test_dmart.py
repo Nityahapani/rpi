@@ -69,6 +69,7 @@ def test_ceat_tyre_screen_is_recorded_and_not_wired():
     off = pd.read_csv("data/official/mospi_cpi2024_gujarat_urban.csv", dtype={"code": str})
     o = off[(off.level == "item") & (off.code == "07.2.1.1.1.01")].set_index("period").index_value
     j = judge(s.ceat_chain, o)
-    assert j["verdict"] == "fail" and j["drift"] < 0.05           # near miss on correlation only
+    assert j["verdict"] == "pending" and j["drift"] < 0.05      # monthly leg fails; longer legs are not yet evaluable
+    assert j["leg_status"] == {"A": "fail", "B": "pending", "C": "pending"}
     plan = pd.read_csv("data/source_plan.csv", dtype=str).set_index("item_id")
     assert plan.loc["T006", "primary_source"] == "official_link"   # not wired: the gate decides
