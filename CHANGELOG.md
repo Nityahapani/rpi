@@ -4,6 +4,13 @@ The sections below are the README's running sweep log up to 2026-10-06, kept ver
 were true when written and are **superseded** by the current README and by `data/official/source_inventory_2026-10-02.md` (sections A-AJ). Later work (sweeps 28-30: hierarchical
 item weights, Vishal clothing, FRC school fees, cinema and salon diaries, the rent signal) is documented in that inventory, sections AF-AJ. The 2026-10-07 methods round (pre-registered scoring, fused series, pooling, vegetable drivers) is section AK.
 
+## 2026-10-16 — leakage-aware item-model backtest (shadow only)
+
+- Added an item-level source panel rebuilt from active raw quotes, using causal chain-Jevons changes; `official_link` and imputed relatives are excluded, while exact source/official matches are retained. The panel has **505 item-months across 27 items and 20 months** (2025-02..2026-09).
+- Expanded the candidate set with identity-shrunk Huber, recency-weighted Huber, a robust median offset and through-origin Huber, alongside pooled/fixed/nested Huber and hierarchical/state-space models. Through-origin Huber has the lowest archive pseudo-OOS basket RMSE (**2.938** vs raw **3.498**) over 12 months, but historical source fetches post-date many test months, so this is not real-time evidence.
+- Strict first-seen replay has one eligible official arrival (Sep 2026, first seen 2026-10-16) and 13 source-supported test items: raw RMSE **3.628**, median offset **3.642**, nested Huber **5.628**, and hierarchical state-space **6.913**. One month cannot establish a winner; no method was adopted and the published index, source gates, and frozen prospective ledger were left unchanged.
+- Methods, vintage audit, score tables and limitations: `econ/experiments/ITEM_BACKTEST.md`. Added nine targeted tests. Full suite: **345 passed, 2 skipped** (six non-failing warnings) after refreshing the public DoCA diagnostic screen.
+
 ## 2026-10-16 — DoCA historical gate on preserved bot snapshot
 
 Completed on `Nityahapani/rpi` `main`, starting from bot commit `e9bd9455cce702747c2701b6b6992dce65d47ec4` (run `20261016T094753877494Z`). The resulting manifest is `data/source_snapshot.json`; the offline build run is `20261016T115235171390Z`.

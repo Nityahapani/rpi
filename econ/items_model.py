@@ -1,35 +1,39 @@
-"""Item-level calibration models for the rpi-to-official relationship, and their evaluation.
+"""Legacy item-level calibration helpers; audited experiments live in econ.experiments.items_backtest.
 
-Development window: official months before 2026-01. Holdout: 2026-01 .. 2026-08.
-Variants are chosen on the development window only. The frozen prospective model in econ/ledger is
-not touched and is not one of these variants.
-
-Test data are the clean item-months (rpi item change differs from the official item change);
-back-filled identical months carry no independent information (see econ/items.py).
+The primary backtest rebuilds a causal, non-official source panel and preserves observations
+that happen to equal their official target. The functions retained here support older analysis
+notebooks; their former fixed development/holdout summary should not be cited as current
+vintage-safe evidence. The frozen prospective ledger in econ/ledger is separate and unchanged.
 """
 from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 
-from econ.items import load_items
+from econ.experiments.source_panel import load_source_panel
 
-DEV_END = "2026-01"           # months strictly before this are development
+DEV_END = "2026-01"           # retained for the legacy summary table; the nested runner is preferred
 SHRINK_K = 10.0               # per-item shrinkage strength (fixed in advance, not tuned)
 VAR_FLOOR_SD = 0.2            # items whose rpi change has sd below this (percent) use the pooled slope
 HUBER_C = 1.345
 
 
-def clean_panel(lag: int = 0) -> pd.DataFrame:
-    """Rows (period, item_id, quality, x, y). lag=1 pairs the official change with the previous rpi change."""
-    L = load_items().long.copy()
+def clean_panel(lag: int = 0, *, as_of: str | None = None) -> pd.DataFrame:
+    """Observed non-official item changes only; exact x==y rows are retained.
+
+    Inputs are rebuilt from active raw-source quotes with the causal chain-Jevons method.
+    Official-link rows and imputed months are absent by construction, rather than being
+    screened after seeing the official target. ``lag=1`` pairs y_t with source change x_{t-1}.
+    """
+    L = load_source_panel(as_of=as_of).copy()
     if lag:
-        from econ.items import _rpi_item_mom
-        xm = _rpi_item_mom().shift(lag)                  # x_{t-lag}, aligned to the official month t
-        xl = xm.rename_axis("period").reset_index().melt(id_vars="period", var_name="item_id", value_name="x_lag")
-        L = L.merge(xl, on=["period", "item_id"], how="left").dropna(subset=["x_lag"])
+        shifted = L[["item_id", "period", "x"]].copy()
+        shifted["period"] = (pd.PeriodIndex(shifted.period, freq="M") + int(lag)).astype(str)
+        shifted = shifted.rename(columns={"x": "x_lag"})
+        L = L.merge(shifted, on=["item_id", "period"], how="inner")
         L["x"] = L["x_lag"]
-    L = L[(L.x - L.y).abs() >= 1e-6]
+        L = L.drop(columns="x_lag")
+    L["w"] = L["weight"]
     return L.reset_index(drop=True)
 
 

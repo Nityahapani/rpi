@@ -104,13 +104,14 @@ Shadow-only: reads pipeline outputs and writes only under `econ/outputs/` (git-i
 | `python3 -m econ compare` | Compare variants |
 | `python3 -m econ breaks` | Structural-break checks |
 | `python3 -m econ report` | Write the report |
+| `python3 -m econ items-backtest` | Run source-only expanding item backtests: Huber, shrinkage, recency weighting, robust offset, through-origin, hierarchical and state-space candidates; write outputs under `econ/outputs/items_backtest/` |
 | `python3 -m econ freeze` | Freeze the prospective forecasts |
 | `python3 -m econ log` | Show the forecast log |
 | `python3 -m econ score` | Score forecasts whose outcome is now published |
 
 Options: `--out DIR` (default `econ/outputs`).
 
-The item-level model (`econ/items_model.py`) and its nested evaluation are called from Python; see its docstrings.
+The item-level backtest uses raw non-`official_link` quotes, causal chain-Jevons changes, and no imputation or target-residual screening. Its archive-based folds are chronological but are not vintage-safe when source records were fetched after those historical months. A separate strict replay filters `fetched_at` to before each non-bootstrap official arrival date; same-day inputs are excluded. Neither experiment changes the published index or the frozen prospective ledger. See `econ/experiments/ITEM_BACKTEST.md` for current results and limitations.
 
 ## 5b. Shadow report (`python3 -m shadowreport`)
 
@@ -136,7 +137,7 @@ python3 -m pytest -q tests/test_shadowreport.py
 python3 -m pytest -q -k rajkot_shops
 ```
 
-Last full run: 320 passed, 2 skipped (the 2 skips need pdfplumber).
+Last full run after adding the calibration candidates: **345 passed, 2 skipped, 6 non-failing warnings**. The DoCA diagnostic screen was regenerated from the current public panel before this run.
 
 `pytest.ini` restricts collection to `tests/`. `tests/test_live_sources.py` checks live sources and needs network access.
 

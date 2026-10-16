@@ -1,6 +1,7 @@
-"""python3 -m econ {fit,compare,breaks,report} [--out DIR]
+"""python3 -m econ {fit,compare,breaks,report,items-backtest,freeze,log,score} [--out DIR]
 
-All commands are read-only on the pipeline. Results go to econ/outputs/ (uncommitted by default).
+Analysis commands read pipeline data and write reports under econ/outputs/ (ignored by git).
+The prospective-ledger commands are separate and maintain econ/ledger/ explicitly.
 """
 from __future__ import annotations
 
@@ -98,9 +99,26 @@ def cmd_report(p, out: Path) -> None:
     print(f"\nwrote {out/'summary.json'}")
 
 
+def cmd_items_backtest(out: Path) -> None:
+    from econ.experiments.items_backtest import write_outputs
+    tables = write_outputs(out)
+    print("source-only causal item panel:")
+    if len(tables["source_panel"]):
+        p = tables["source_panel"]
+        print(f"  {len(p)} item-months; {p.item_id.nunique()} items; {p.period.nunique()} months; "
+              f"{int(p.same_as_official.sum())} exact-to-official observations retained")
+    print("\narchive-based expanding folds (exploratory; not vintage-safe):")
+    print(tables["archive_scores"].round(3).to_string(index=False))
+    print("\nstrict non-bootstrap release replay:")
+    print(tables["strict_audit"].to_string(index=False))
+    if len(tables["strict_scores"]):
+        print(tables["strict_scores"].round(3).to_string(index=False))
+    print(f"\noutputs written to {out}")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="python3 -m econ", description=__doc__.split("\n")[0])
-    ap.add_argument("command", choices=["fit", "compare", "breaks", "report", "freeze", "log", "score"])
+    ap.add_argument("command", choices=["fit", "compare", "breaks", "report", "items-backtest", "freeze", "log", "score"])
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT, help="output directory (default econ/outputs)")
     args = ap.parse_args(argv)
     if args.command in ("freeze", "log", "score"):
@@ -114,6 +132,10 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  {r['period']}: candidate {r['forecast']:+.3f}  baseline {r['baseline']:+.3f}  issued {r['issued_at']}")
         else:
             print(json.dumps(ledger.score(), indent=2, default=str))
+        return 0
+    if args.command == "items-backtest":
+        out = args.out / "items_backtest" if args.out == DEFAULT_OUT else args.out
+        cmd_items_backtest(_out(out))
         return 0
     p = load_panel()
     out = _out(args.out)
