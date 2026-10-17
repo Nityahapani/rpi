@@ -1,11 +1,11 @@
 {
   "latest_period": "2026-10",
-  "index": 108.32,
-  "mom_pct": 0.21,
-  "yoy_pct": 7.17,
+  "index": 108.34,
+  "mom_pct": 0.23,
+  "yoy_pct": 7.18,
   "ci_95": [
-    107.69,
-    109.06
+    107.87,
+    109.76
   ],
   "ci_note": null,
   "reference_period": "2026-09",
@@ -15,11 +15,11 @@
   "reference_index": 108.09,
   "reference_yoy_pct": 6.94,
   "nowcast_band_90": [
-    107.44,
-    109.21
+    107.46,
+    109.23
   ],
   "observed_weight_share": 0.655,
-  "run_id": "20261016T115235171390Z",
+  "run_id": "20261017T092012467967Z",
   "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
   "demo": false,
   "coverage_split": {

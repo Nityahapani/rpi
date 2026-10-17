@@ -1,10 +1,10 @@
 {
- "generated": "2026-10-14",
+ "generated": "2026-10-17",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
-   "last_quote": "2026-10-14",
-   "n_quotes": 64,
+   "last_quote": "2026-10-10",
+   "n_quotes": 52,
    "items": [
     {
      "item_id": "F001",
@@ -25,7 +25,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -54,7 +59,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -83,7 +93,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -112,7 +127,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -141,7 +161,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -170,7 +195,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -199,7 +229,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -228,7 +263,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -257,7 +297,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -286,7 +331,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -315,7 +365,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -329,8 +384,8 @@
    "weight_pct_covered": 12.38
   },
   "apple_store": {
-   "last_quote": "2026-10-10",
-   "n_quotes": 1,
+   "last_quote": "2026-10-15",
+   "n_quotes": 2,
    "items": [
     {
      "item_id": "K002",
@@ -351,7 +406,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 0,
@@ -365,8 +425,8 @@
    "weight_pct_covered": 0.59
   },
   "hathway_broadband": {
-   "last_quote": "2026-10-14",
-   "n_quotes": 4,
+   "last_quote": "2026-10-17",
+   "n_quotes": 7,
    "items": [
     {
      "item_id": "K003",
@@ -387,7 +447,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
@@ -401,8 +466,8 @@
    "weight_pct_covered": 0.12
   },
   "onemg_medicine": {
-   "last_quote": "2026-10-14",
-   "n_quotes": 2,
+   "last_quote": "2026-10-17",
+   "n_quotes": 5,
    "items": [
     {
      "item_id": "M001",
@@ -423,7 +488,12 @@
       "r2": null,
       "slope": null,
       "drift_recent": null,
-      "legs": []
+      "legs": [],
+      "leg_status": {
+       "A": "pending",
+       "B": "pending",
+       "C": "pending"
+      }
      },
      "vs_current_input": {
       "n_overlap": 1,
