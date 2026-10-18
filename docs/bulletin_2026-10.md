@@ -2,9 +2,9 @@
 
 
 - Reference month 2026-09: index **108.09**, YoY **6.94%**
-- Latest month 2026-10 (nowcast): index **108.34**  (95% CI 107.87-109.76)
-- Nowcast 90% band for 2026-10: **107.46 - 109.23** (split-conformal from a rolling-origin back-test on official data; conservative)
-- Month-on-month: **0.23%**
+- Latest month 2026-10 (nowcast): index **108.34**  (95% CI 107.84-109.76)
+- Nowcast 90% band for 2026-10: **107.45 - 109.22** (split-conformal from a rolling-origin back-test on official data; conservative)
+- Month-on-month: **0.22%**
 - Year-on-year: **7.18%**
 - Weight with a real quote in this vintage, before any imputation: **65.5%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
 
@@ -23,11 +23,11 @@
 ## Divisions (change since base)
 | item | % change |
 |---|---|
-| Personal care & misc. | 22.87 |
-| Transport | 13.05 |
+| Personal care & misc. | 22.84 |
+| Transport | 13.02 |
 | Restaurants & accommodation | 11.61 |
 | Education | 10.29 |
-| Food & non-alcoholic beverages | 8.78 |
+| Food & non-alcoholic beverages | 8.77 |
 | Information & communication | 8.06 |
 | Clothing & footwear | 5.48 |
 | Household goods & services | 5.39 |
@@ -35,4 +35,4 @@
 | Health | 3.08 |
 | Recreation & culture | 2.1 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261017T092012467967Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261018T093800857070Z._

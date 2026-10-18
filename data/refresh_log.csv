@@ -2032,3 +2032,62 @@ publish,ok,0.0,docs,2026-10-17T09:22:27+00:00
 benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.5), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.14",2026-10-17T09:22:27+00:00
 check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through 0.04 (official_muted); D002 pass-through 0.1 (official_muted); K002 pass-through 0.14 (official_muted); K002 pass-through 0.05 (official_muted); K002 pass-thro,2026-10-17T09:22:27+00:00
 log:nowcast_vintages,ok,0.0,logged 1 nowcast(s); 1 month(s) scored against later official data,2026-10-17T09:22:27+00:00
+official:mospi_cpi,ok,1.7,up to date (5787 rows for 2026); latest 2026-09,2026-10-18T09:40:21+00:00
+official:labour_bureau,ok,12.3,2026-08 already loaded,2026-10-18T09:40:21+00:00
+official:cpi_iw_centres,ok,2.0,0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08,2026-10-18T09:40:21+00:00
+tariff:fuel_lpg_update,ok,4.9,"T001: +1 daily price-change event(s), latest 101.57 on 2026-10-17; T002: +1 daily price-change event(s), latest 97.71 on 2026-10-17",2026-10-18T09:40:21+00:00
+tariff:mrp_live,ok,30.4,3740 products read; 0 price change(s); 8 pool SKU(s) missing from feed; promoted into index: none,2026-10-18T09:40:21+00:00
+official:spliced_item,ok,0.2,"9897 rows, 66 items, 2014-01..2026-09, 66 item splice offsets -> /home/runner/work/rpi/rpi/data/official/official_item_spliced.csv",2026-10-18T09:40:21+00:00
+tariff:registers,error,0.0,"RuntimeError: STALE REGISTER: R003: last change 2026-06-07 (133 d ago, review cycle 120 d) - LPG monthly revision (auto-checked from goodreturns)",2026-10-18T09:40:21+00:00
+reset:tariff_series,ok,0.0,cleared 265 tariff observation(s) for rebuild from registers,2026-10-18T09:40:21+00:00
+prune:official_link,ok,0.0,nothing to prune,2026-10-18T09:40:21+00:00
+check:doca_mirror,error,7.4,"RuntimeError: DoCA mirror NOT verified, DoCA feed skipped: mirror unreachable; [{'commodity': '*', 'verdict': 'mirror_unreachable'}]",2026-10-18T09:40:21+00:00
+accrue:rajkot_shops,ok,7.3,"0 quotes; green_force: RuntimeError: GET failed after 1 attempts: HTTP 429; hathi_masala: RuntimeError: GET failed after 1 attempts: HTTP 429; rani_oil: HTTP 403 from https://www.ranioil.com (page 1); store skipped this run; WIRED for ['F001', 'F004', 'F007', 'F016']",2026-10-18T09:40:21+00:00
+accrue:apple_store,ok,0.1,"0 quotes; apple.com HTTP 403; SHADOW: no item switched, nothing reaches the index",2026-10-18T09:40:21+00:00
+accrue:hathway_broadband,ok,2.4,1 quotes; ok; WIRED for ['K003'],2026-10-18T09:40:21+00:00
+accrue:onemg_medicine,ok,0.9,"1 quotes; ok; SHADOW: no item switched, nothing reaches the index",2026-10-18T09:40:21+00:00
+accrue:green_mercado,ok,13.9,"0 quotes; skipped: ['F021 store closed', 'F022 store closed', 'F023 store closed', 'F025 store closed']; SHADOW: no item switched, nothing reaches the index",2026-10-18T09:40:21+00:00
+ingest:tariff,ok,2.4,"{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:gr_metals,ok,2.2,"{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:mandi_gondal,ok,10.2,"{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:mandi_rajkot_apmc,ok,14.8,"{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:mandi_rajkot_veg,ok,15.0,"{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:mandi_rajkot_district,ok,34.4,"{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 100, 'accepted': 100, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:yard_rajkot_board,ok,2.0,"{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:gr_png,ok,0.5,"{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:necc_ahmedabad,ok,1.6,"{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:dmart_ahmedabad,ok,0.8,"{'source': 'dmart_ahmedabad', 'status': 'error', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'DmartBlocked: HTTP 403 from digital.dmart.in for category 240235 (rate-limit/WAF or unreachable from this network); DMart skipped'}",2026-10-18T09:40:21+00:00
+ingest:vishal_diary,ok,0.0,"{'source': 'vishal_diary', 'status': 'ok', 'records': 132, 'accepted': 132, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:frc_rajkot,ok,0.1,"{'source': 'frc_rajkot', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:district_cinema,ok,0.0,"{'source': 'district_cinema', 'status': 'ok', 'records': 7, 'accepted': 7, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:fresha_salon,ok,0.0,"{'source': 'fresha_salon', 'status': 'ok', 'records': 377, 'accepted': 377, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:rent_signal,ok,4.7,"{'source': 'rent_signal', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:rajkot_shops,ok,0.0,"{'source': 'rajkot_shops', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:hathway_broadband,ok,0.0,"{'source': 'hathway_broadband', 'status': 'ok', 'records': 8, 'accepted': 8, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+ingest:official_link,ok,0.1,"{'source': 'official_link', 'status': 'ok', 'records': 774, 'accepted': 774, 'rejected': 0, 'message': ''}",2026-10-18T09:40:21+00:00
+trim:official_overlap,ok,0.1,no official/independent overlap,2026-10-18T09:40:21+00:00
+crosscheck:apmc,ok,2.7,"Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=agree, Gondal:F003=agree, Gondal:F004=agree, Gondal:F005=no_data",2026-10-18T09:40:21+00:00
+crosscheck:ibja,error,1.8,RuntimeError: IBJA CROSS-CHECK DISAGREES (goodreturns outside the pre-set band around the IBJA benchmark): ['P006'],2026-10-18T09:40:21+00:00
+validate:proxies,error,1.3,RuntimeError: PROXY FAILS VALIDATION vs official item index: ['R001'],2026-10-18T09:40:21+00:00
+screen:shadow_sources,ok,1.0,"rajkot_shops: 11 items (12.38% of weight), last quote 2026-10-10, gate {'pass': 0, 'fail': 0, 'pending': 11}; apple_store: 1 items (0.59% of weight), last quote 2026-10-15, gate {'pass': 0, 'fail': 0, 'pending': 1}; hathway_broadband: 1 items (0.12% of weight), last quote 2026-10-18, gate {'pass': 0",2026-10-18T09:40:21+00:00
+log:prereg,error,1.4,"RuntimeError: PREREG CUSUM FLAG: logged 16 new prediction(s), 0 official item-month(s) stamped; 13 target(s) scored over 13 item(s); flagged ['F013', 'F026']",2026-10-18T09:40:21+00:00
+screen:doca_retail,ok,38.1,20 unwired DoCA series screened; eligible to wire: none,2026-10-18T09:40:21+00:00
+screen:doca_national,ok,8.0,; eligible to wire: none,2026-10-18T09:40:21+00:00
+screen:jockey_mrp,ok,5.8,"C001 pending (n=21, corr=-0.42, drift=0.055, 25 SKUs); C002 pending (n=21, corr=0.19, drift=0.071, 13 SKUs)",2026-10-18T09:40:21+00:00
+accrue:rent_listings,ok,45.1,"7 new listing(s)/revision(s) from 18 page(s) of 18 list URL(s) (619 known, 3 newly discovered); 4 month(s) with >=25 kept listings; the panel feeds the SHADOW R001 candidate (screen:rent_listings_index)",2026-10-18T09:40:21+00:00
+accrue:mrp_diary,ok,18.6,"15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)",2026-10-18T09:40:21+00:00
+screen:ceat_tyres,ok,24.7,"47/47 pool SKUs quoted; T006 pass (n=13, corr=0.5, drift=0.028, 119 SKUs); diagnostic only, not wired",2026-10-18T09:40:21+00:00
+screen:vishal_clothing,ok,86.9,"43/44 pool products priced; 1 unreadable; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)",2026-10-18T09:40:21+00:00
+screen:practo_doctor_fees,ok,103.7,"180/180 pool doctor-clinics priced; M003 pending (n=0, corr=None, drift=None, 0 doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)",2026-10-18T09:40:21+00:00
+screen:district_cinema,ok,14.2,"0/8 theatres priced (8 skipped: weekend page, <3 evening 2D shows, or unreadable); S001 pending (n=0, corr=None, drift=None, 0 theatres); WIRED as a pending-gate proxy",2026-10-18T09:40:21+00:00
+screen:fresha_salon,ok,0.3,"103/103 pool services priced; P004 pending (n=2, corr=None, drift=None, 88 services, ONE venue); WIRED as a pending-gate proxy",2026-10-18T09:40:21+00:00
+screen:costpush_model,ok,1.6,"D003 fail (n=20, corr=0.15, drift=0.077); D001 fail (n=20, corr=0.24, drift=0.074); MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)",2026-10-18T09:40:21+00:00
+screen:rent_signal,ok,15.9,"R001 WIRED (independent MODELLED, primary_source=rent_signal). Trend gate z=1.645: fail (cum gap -0.39 vs tol 0.52pp, 12m -0.41 vs 0.41pp); the monthly-correlation gate fails for every trend-type signal (v1 -0.28, v2 -0.28, v3 -0.28), which is why R001 uses the trend gate.",2026-10-18T09:40:21+00:00
+screen:rent_listings_index,ok,10.9,"546 listings; listing share of the 12-month window 0%; trend gate fail; accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)",2026-10-18T09:40:21+00:00
+evaluate:nowcast,ok,0.5,"own-trend h1 RMSE 0.609pp (zero 0.751, old peer-fill 0.044); 90% band +/-0.82% (h1), +/-1.36% (h2)",2026-10-18T09:40:21+00:00
+build,ok,0.0,run 20261018T093800857070Z,2026-10-18T09:40:21+00:00
+audit,ok,2.4,"{""n_months"": 21, ""items_with_official_index"": 64, ""weight_share_with_official_index_pct"": 99.99657, ""rmse"": 0.30403510689798696, ""max_abs_error"": 1.0230771805472898, ""cum_change_replicated_pct"": 7.946",2026-10-18T09:40:21+00:00
+publish,ok,0.0,docs,2026-10-18T09:40:21+00:00
+benchmark:cpi_iw,ok,0.0,"ok; YoY at {'period': '2026-08', 'cpi_iw_rajkot': np.float64(3.54), 'rpi': np.float64(5.5), 'mospi_gu_general': np.float64(4.68)}; MoM corr 0.14",2026-10-18T09:40:21+00:00
+check:regulatory_events,ok,0.0,F011 pass-through 0.46 (official_muted); F012 pass-through 0.46 (official_muted); M001 pass-through 0.13 (official_muted); T004 pass-through 0.04 (official_muted); D002 pass-through 0.1 (official_muted); K002 pass-through 0.14 (official_muted); K002 pass-through 0.05 (official_muted); K002 pass-thro,2026-10-18T09:40:21+00:00
+log:nowcast_vintages,ok,0.0,logged 1 nowcast(s); 1 month(s) scored against later official data,2026-10-18T09:40:21+00:00
