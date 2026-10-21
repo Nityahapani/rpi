@@ -5,7 +5,7 @@
 - Latest month 2026-10 (nowcast): index **108.33**  (95% CI 107.79-109.75)
 - Nowcast 90% band for 2026-10: **107.45 - 109.22** (split-conformal from a rolling-origin back-test on official data; conservative)
 - Month-on-month: **0.22%**
-- Year-on-year: **7.18%**
+- Year-on-year: **7.17%**
 - Weight with a real quote in this vintage, before any imputation: **65.5%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
 
 ## What is independent vs official-linked
@@ -23,7 +23,7 @@
 ## Divisions (change since base)
 | item | % change |
 |---|---|
-| Personal care & misc. | 22.78 |
+| Personal care & misc. | 22.74 |
 | Transport | 13.04 |
 | Restaurants & accommodation | 11.61 |
 | Education | 10.29 |
@@ -35,4 +35,4 @@
 | Health | 3.08 |
 | Recreation & culture | 2.1 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261020T100711520642Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261021T100939957682Z._
