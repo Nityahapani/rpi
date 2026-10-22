@@ -1,10 +1,10 @@
 {
- "generated": "2026-10-21",
+ "generated": "2026-10-22",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
-   "last_quote": "2026-10-21",
-   "n_quotes": 108,
+   "last_quote": "2026-10-22",
+   "n_quotes": 136,
    "items": [
     {
      "item_id": "F001",
@@ -425,8 +425,8 @@
    "weight_pct_covered": 0.59
   },
   "hathway_broadband": {
-   "last_quote": "2026-10-21",
-   "n_quotes": 11,
+   "last_quote": "2026-10-22",
+   "n_quotes": 12,
    "items": [
     {
      "item_id": "K003",
@@ -466,8 +466,8 @@
    "weight_pct_covered": 0.12
   },
   "onemg_medicine": {
-   "last_quote": "2026-10-21",
-   "n_quotes": 9,
+   "last_quote": "2026-10-22",
+   "n_quotes": 10,
    "items": [
     {
      "item_id": "M001",

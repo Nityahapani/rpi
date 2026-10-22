@@ -3,44 +3,44 @@
     {
       "step": "official:mospi_cpi",
       "status": "ok",
-      "seconds": 1.6,
+      "seconds": 1.7,
       "detail": "up to date (5787 rows for 2026); latest 2026-09"
     },
     {
       "step": "official:labour_bureau",
       "status": "ok",
-      "seconds": 12.6,
+      "seconds": 12.5,
       "detail": "2026-08 already loaded"
     },
     {
       "step": "official:cpi_iw_centres",
       "status": "ok",
-      "seconds": 1.9,
+      "seconds": 2.0,
       "detail": "0 centre-month value(s) added/changed; Rajkot series +0 month(s) in official_series.csv; latest 2026-08"
     },
     {
       "step": "tariff:fuel_lpg_update",
       "status": "ok",
-      "seconds": 5.0,
+      "seconds": 4.8,
       "detail": "no price changes"
     },
     {
       "step": "tariff:mrp_live",
       "status": "ok",
       "seconds": 30.4,
-      "detail": "3731 products read; 0 price change(s); 9 pool SKU(s) missing from feed; promoted into index: none"
+      "detail": "3724 products read; 0 price change(s); 9 pool SKU(s) missing from feed; promoted into index: none"
     },
     {
       "step": "official:spliced_item",
       "status": "ok",
-      "seconds": 0.2,
+      "seconds": 0.1,
       "detail": "9897 rows, 66 items, 2014-01..2026-09, 66 item splice offsets -> /home/runner/work/rpi/rpi/data/official/official_item_spliced.csv"
     },
     {
       "step": "tariff:registers",
       "status": "error",
       "seconds": 0.0,
-      "detail": "RuntimeError: STALE REGISTER: R003: last change 2026-06-07 (136 d ago, review cycle 120 d) - LPG monthly revision (auto-checked from goodreturns)"
+      "detail": "RuntimeError: STALE REGISTER: R003: last change 2026-06-07 (137 d ago, review cycle 120 d) - LPG monthly revision (auto-checked from goodreturns)"
     },
     {
       "step": "reset:tariff_series",
@@ -57,13 +57,13 @@
     {
       "step": "check:doca_mirror",
       "status": "error",
-      "seconds": 6.9,
+      "seconds": 8.0,
       "detail": "RuntimeError: DoCA mirror NOT verified, DoCA feed skipped: mirror unreachable; [{'commodity': '*', 'verdict': 'mirror_unreachable'}]"
     },
     {
       "step": "accrue:rajkot_shops",
       "status": "ok",
-      "seconds": 2.3,
+      "seconds": 2.6,
       "detail": "28 quotes; green_force 22/22 priced; hathi_masala 6/6 priced; rani_oil: HTTP 403 from https://www.ranioil.com (page 1); store skipped this run; WIRED for ['F001', 'F004', 'F007', 'F016']"
     },
     {
@@ -75,79 +75,79 @@
     {
       "step": "accrue:hathway_broadband",
       "status": "ok",
-      "seconds": 2.4,
+      "seconds": 2.3,
       "detail": "1 quotes; ok; WIRED for ['K003']"
     },
     {
       "step": "accrue:onemg_medicine",
       "status": "ok",
-      "seconds": 1.1,
+      "seconds": 1.2,
       "detail": "1 quotes; ok; SHADOW: no item switched, nothing reaches the index"
     },
     {
       "step": "accrue:green_mercado",
       "status": "ok",
-      "seconds": 13.4,
+      "seconds": 14.1,
       "detail": "0 quotes; skipped: ['F021 store closed', 'F022 store closed', 'F023 store closed', 'F025 store closed']; SHADOW: no item switched, nothing reaches the index"
     },
     {
       "step": "ingest:tariff",
       "status": "ok",
-      "seconds": 1.9,
+      "seconds": 1.0,
       "detail": "{'source': 'tariff', 'status': 'ok', 'records': 265, 'accepted': 265, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:gr_metals",
       "status": "ok",
-      "seconds": 2.6,
+      "seconds": 2.4,
       "detail": "{'source': 'gr_metals', 'status': 'ok', 'records': 20, 'accepted': 20, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_gondal",
       "status": "ok",
-      "seconds": 10.0,
+      "seconds": 11.0,
       "detail": "{'source': 'mandi_gondal', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_rajkot_apmc",
       "status": "ok",
-      "seconds": 8.7,
+      "seconds": 7.0,
       "detail": "{'source': 'mandi_rajkot_apmc', 'status': 'ok', 'records': 30, 'accepted': 30, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_rajkot_veg",
       "status": "ok",
-      "seconds": 14.6,
+      "seconds": 7.4,
       "detail": "{'source': 'mandi_rajkot_veg', 'status': 'ok', 'records': 40, 'accepted': 40, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:mandi_rajkot_district",
       "status": "ok",
-      "seconds": 26.2,
-      "detail": "{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 99, 'accepted': 99, 'rejected': 0, 'message': ''}"
+      "seconds": 21.8,
+      "detail": "{'source': 'mandi_rajkot_district', 'status': 'ok', 'records': 96, 'accepted': 96, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:yard_rajkot_board",
       "status": "ok",
-      "seconds": 2.3,
+      "seconds": 2.1,
       "detail": "{'source': 'yard_rajkot_board', 'status': 'ok', 'records': 1, 'accepted': 1, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:gr_png",
       "status": "ok",
-      "seconds": 0.5,
+      "seconds": 0.4,
       "detail": "{'source': 'gr_png', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:necc_ahmedabad",
       "status": "ok",
-      "seconds": 1.5,
+      "seconds": 1.3,
       "detail": "{'source': 'necc_ahmedabad', 'status': 'ok', 'records': 29, 'accepted': 29, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:dmart_ahmedabad",
       "status": "ok",
-      "seconds": 1.7,
+      "seconds": 1.9,
       "detail": "{'source': 'dmart_ahmedabad', 'status': 'error', 'records': 0, 'accepted': 0, 'rejected': 0, 'message': 'DmartBlocked: HTTP 403 from digital.dmart.in for category 240235 (rate-limit/WAF or unreachable from this network); DMart skipped'}"
     },
     {
@@ -159,7 +159,7 @@
     {
       "step": "ingest:frc_rajkot",
       "status": "ok",
-      "seconds": 0.1,
+      "seconds": 0.0,
       "detail": "{'source': 'frc_rajkot', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}"
     },
     {
@@ -177,20 +177,20 @@
     {
       "step": "ingest:rent_signal",
       "status": "ok",
-      "seconds": 3.9,
+      "seconds": 1.9,
       "detail": "{'source': 'rent_signal', 'status': 'ok', 'records': 22, 'accepted': 22, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:rajkot_shops",
       "status": "ok",
       "seconds": 0.0,
-      "detail": "{'source': 'rajkot_shops', 'status': 'ok', 'records': 44, 'accepted': 44, 'rejected': 0, 'message': ''}"
+      "detail": "{'source': 'rajkot_shops', 'status': 'ok', 'records': 56, 'accepted': 56, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:hathway_broadband",
       "status": "ok",
       "seconds": 0.0,
-      "detail": "{'source': 'hathway_broadband', 'status': 'ok', 'records': 11, 'accepted': 11, 'rejected': 0, 'message': ''}"
+      "detail": "{'source': 'hathway_broadband', 'status': 'ok', 'records': 12, 'accepted': 12, 'rejected': 0, 'message': ''}"
     },
     {
       "step": "ingest:official_link",
@@ -201,37 +201,37 @@
     {
       "step": "trim:official_overlap",
       "status": "ok",
-      "seconds": 0.1,
+      "seconds": 0.0,
       "detail": "no official/independent overlap"
     },
     {
       "step": "crosscheck:apmc",
       "status": "ok",
       "seconds": 2.8,
-      "detail": "Rajkot:F001=no_acrop_row_for_date, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=no_acrop_row_for_date, Gondal:F003=no_acrop_row_for_date, Gondal:F004=no_acrop_row_for_date, Gondal:F005=no_data"
+      "detail": "Rajkot:F001=agree, Rajkot:F003=agree, Rajkot:F004=agree, Gondal:F001=no_acrop_row_for_date, Gondal:F003=no_acrop_row_for_date, Gondal:F004=no_acrop_row_for_date, Gondal:F005=no_acrop_row_for_date"
     },
     {
       "step": "crosscheck:ibja",
       "status": "error",
-      "seconds": 1.8,
+      "seconds": 1.9,
       "detail": "RuntimeError: IBJA CROSS-CHECK DISAGREES (goodreturns outside the pre-set band around the IBJA benchmark): ['P006']"
     },
     {
       "step": "validate:proxies",
       "status": "error",
-      "seconds": 1.1,
+      "seconds": 0.7,
       "detail": "RuntimeError: PROXY FAILS VALIDATION vs official item index: ['R001']"
     },
     {
       "step": "screen:shadow_sources",
       "status": "ok",
-      "seconds": 0.9,
-      "detail": "rajkot_shops: 11 items (12.38% of weight), last quote 2026-10-21, gate {'pass': 0, 'fail': 0, 'pending': 11}; apple_store: 1 items (0.59% of weight), last quote 2026-10-15, gate {'pass': 0, 'fail': 0, 'pending': 1}; hathway_broadband: 1 items (0.12% of weight), last quote 2026-10-21, gate {'pass': 0"
+      "seconds": 0.6,
+      "detail": "rajkot_shops: 11 items (12.38% of weight), last quote 2026-10-22, gate {'pass': 0, 'fail': 0, 'pending': 11}; apple_store: 1 items (0.59% of weight), last quote 2026-10-15, gate {'pass': 0, 'fail': 0, 'pending': 1}; hathway_broadband: 1 items (0.12% of weight), last quote 2026-10-22, gate {'pass': 0"
     },
     {
       "step": "log:prereg",
       "status": "error",
-      "seconds": 1.2,
+      "seconds": 0.7,
       "detail": "RuntimeError: PREREG CUSUM FLAG: logged 16 new prediction(s), 0 official item-month(s) stamped; 13 target(s) scored over 13 item(s); flagged ['F013', 'F026']"
     },
     {
@@ -249,85 +249,85 @@
     {
       "step": "screen:jockey_mrp",
       "status": "ok",
-      "seconds": 4.7,
+      "seconds": 2.6,
       "detail": "C001 pending (n=21, corr=-0.42, drift=0.055, 25 SKUs); C002 pending (n=21, corr=0.19, drift=0.071, 13 SKUs)"
     },
     {
       "step": "accrue:rent_listings",
       "status": "ok",
-      "seconds": 55.1,
-      "detail": "4 new listing(s)/revision(s) from 28 page(s) of 18 list URL(s) (630 known, 5 newly discovered); 4 month(s) with >=25 kept listings; the panel feeds the SHADOW R001 candidate (screen:rent_listings_index)"
+      "seconds": 47.9,
+      "detail": "12 new listing(s)/revision(s) from 24 page(s) of 18 list URL(s) (636 known, 6 newly discovered); 4 month(s) with >=25 kept listings; the panel feeds the SHADOW R001 candidate (screen:rent_listings_index)"
     },
     {
       "step": "accrue:mrp_diary",
       "status": "ok",
-      "seconds": 18.6,
+      "seconds": 18.9,
       "detail": "15 SKU quote(s) today; H003: 9 SKUs, 3 month(s) since 2025-08, median Rs 150; H004: 6 SKUs, 1 month(s) since 2026-10, median Rs 2012; 0 price change(s) seen; diagnostic only (no verified Jan-2025 baseline; flat series cannot pass the gate)"
     },
     {
       "step": "screen:ceat_tyres",
       "status": "ok",
-      "seconds": 24.9,
+      "seconds": 74.3,
       "detail": "47/47 pool SKUs quoted; T006 pass (n=13, corr=0.5, drift=0.028, 119 SKUs); diagnostic only, not wired"
     },
     {
       "step": "screen:vishal_clothing",
       "status": "ok",
-      "seconds": 87.1,
+      "seconds": 87.5,
       "detail": "43/44 pool products priced; 1 unreadable; C001 pending (n=0, corr=None, drift=None, 0 SKUs); C002 pending (n=0, corr=None, drift=None, 0 SKUs); C003 pending (n=0, corr=None, drift=None, 0 SKUs); WIRED as a pending-gate proxy (gate cannot be judged before ~Apr 2027)"
     },
     {
       "step": "screen:practo_doctor_fees",
       "status": "ok",
-      "seconds": 110.2,
+      "seconds": 105.6,
       "detail": "180/180 pool doctor-clinics priced; M003 pending (n=0, corr=None, drift=None, 0 doctor-clinics); SCREEN ONLY, not wired (archive screen: listed fees stale, understate the official index)"
     },
     {
       "step": "screen:district_cinema",
       "status": "ok",
-      "seconds": 14.2,
+      "seconds": 14.3,
       "detail": "0/8 theatres priced (8 skipped: weekend page, <3 evening 2D shows, or unreadable); S001 pending (n=0, corr=None, drift=None, 0 theatres); WIRED as a pending-gate proxy"
     },
     {
       "step": "screen:fresha_salon",
       "status": "ok",
-      "seconds": 0.8,
+      "seconds": 0.7,
       "detail": "103/103 pool services priced; P004 pending (n=2, corr=None, drift=None, 88 services, ONE venue); WIRED as a pending-gate proxy"
     },
     {
       "step": "screen:costpush_model",
       "status": "ok",
-      "seconds": 1.4,
+      "seconds": 1.0,
       "detail": "D003 fail (n=20, corr=0.15, drift=0.077); D001 fail (n=20, corr=0.24, drift=0.074); MODELLED proxy, SCREEN ONLY unless it passes the unchanged gate (not wired)"
     },
     {
       "step": "screen:rent_signal",
       "status": "ok",
-      "seconds": 13.3,
+      "seconds": 6.6,
       "detail": "R001 WIRED (independent MODELLED, primary_source=rent_signal). Trend gate z=1.645: fail (cum gap -0.39 vs tol 0.52pp, 12m -0.41 vs 0.41pp); the monthly-correlation gate fails for every trend-type signal (v1 -0.28, v2 -0.28, v3 -0.28), which is why R001 uses the trend gate."
     },
     {
       "step": "screen:rent_listings_index",
       "status": "ok",
-      "seconds": 12.9,
-      "detail": "563 listings; listing share of the 12-month window 0%; trend gate fail; accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)"
+      "seconds": 6.0,
+      "detail": "573 listings; listing share of the 12-month window 0%; trend gate fail; accruing: listing share of the 12-month window 0%; usable months so far none (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-10 and the month after)"
     },
     {
       "step": "evaluate:nowcast",
       "status": "ok",
-      "seconds": 0.5,
+      "seconds": 0.3,
       "detail": "own-trend h1 RMSE 0.609pp (zero 0.751, old peer-fill 0.044); 90% band +/-0.82% (h1), +/-1.36% (h2)"
     },
     {
       "step": "build",
       "status": "ok",
       "seconds": 0,
-      "detail": "run 20261021T100939957682Z"
+      "detail": "run 20261022T100858820632Z"
     },
     {
       "step": "audit",
       "status": "ok",
-      "seconds": 1.9,
+      "seconds": 1.1,
       "detail": "{\"n_months\": 21, \"items_with_official_index\": 64, \"weight_share_with_official_index_pct\": 99.99657, \"rmse\": 0.30403510689798696, \"max_abs_error\": 1.0230771805472898, \"cum_change_replicated_pct\": 7.946"
     },
     {
@@ -355,15 +355,15 @@
       "detail": "logged 1 nowcast(s); 1 month(s) scored against later official data"
     }
   ],
-  "run_id": "20261021T100939957682Z",
+  "run_id": "20261022T100858820632Z",
   "publish": {
     "latest_period": "2026-10",
     "index": 108.33,
-    "mom_pct": 0.22,
+    "mom_pct": 0.21,
     "yoy_pct": 7.17,
     "ci_95": [
-      107.79,
-      109.75
+      107.78,
+      109.76
     ],
     "ci_note": null,
     "reference_period": "2026-09",
@@ -377,7 +377,7 @@
       109.22
     ],
     "observed_weight_share": 0.655,
-    "run_id": "20261021T100939957682Z",
+    "run_id": "20261022T100858820632Z",
     "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
     "demo": false,
     "coverage_split": {
@@ -1543,66 +1543,70 @@
       "board": "Rajkot",
       "item_id": "F001",
       "crop": "\u0a98\u0a89\u0a82 \u0ab2\u0acb\u0a95\u0ab5\u0aa8",
-      "date": "2026-10-21",
-      "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 566.0,
-      "yard_high_per20kg": 636.0
+      "date": "2026-10-22",
+      "verdict": "agree",
+      "yard_low_per20kg": 560.0,
+      "yard_high_per20kg": 624.0,
+      "acrop_modal_per20kg": 577.0,
+      "acrop_date": "2026-10-21"
     },
     {
       "board": "Rajkot",
       "item_id": "F003",
       "crop": "\u0aa4\u0ac1\u0ab5\u0ac7\u0ab0",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "verdict": "agree",
-      "yard_low_per20kg": 1480.0,
-      "yard_high_per20kg": 2000.0,
-      "acrop_modal_per20kg": 1830.0,
-      "acrop_date": "2026-10-19"
+      "yard_low_per20kg": 1400.0,
+      "yard_high_per20kg": 1976.0,
+      "acrop_modal_per20kg": 1850.0,
+      "acrop_date": "2026-10-21"
     },
     {
       "board": "Rajkot",
       "item_id": "F004",
       "crop": "\u0aae\u0a97",
-      "date": "2026-10-21",
+      "date": "2026-10-22",
       "verdict": "agree",
-      "yard_low_per20kg": 1180.0,
-      "yard_high_per20kg": 1818.0,
-      "acrop_modal_per20kg": 1434.0,
-      "acrop_date": "2026-10-19"
+      "yard_low_per20kg": 1300.0,
+      "yard_high_per20kg": 1960.0,
+      "acrop_modal_per20kg": 1545.0,
+      "acrop_date": "2026-10-21"
     },
     {
       "board": "Gondal",
       "item_id": "F001",
       "crop": "\u0a98\u0a89\u0a82 \u0ab2\u0acb\u0a95\u0ab5\u0aa8",
-      "date": "2026-10-19",
+      "date": "2026-10-21",
       "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 528.0,
-      "yard_high_per20kg": 610.0
+      "yard_low_per20kg": 550.0,
+      "yard_high_per20kg": 650.0
     },
     {
       "board": "Gondal",
       "item_id": "F003",
       "crop": "\u0aa4\u0ac1\u0ab5\u0ac7\u0ab0",
-      "date": "2026-10-19",
+      "date": "2026-10-21",
       "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 1076.0,
+      "yard_low_per20kg": 801.0,
       "yard_high_per20kg": 2001.0
     },
     {
       "board": "Gondal",
       "item_id": "F004",
       "crop": "\u0aae\u0a97",
-      "date": "2026-10-19",
+      "date": "2026-10-21",
       "verdict": "no_acrop_row_for_date",
-      "yard_low_per20kg": 776.0,
-      "yard_high_per20kg": 1771.0
+      "yard_low_per20kg": 726.0,
+      "yard_high_per20kg": 1726.0
     },
     {
       "board": "Gondal",
       "item_id": "F005",
       "crop": "\u0a9a\u0aa3\u0abe",
-      "date": "2026-10-19",
-      "verdict": "no_data"
+      "date": "2026-10-21",
+      "verdict": "no_acrop_row_for_date",
+      "yard_low_per20kg": 1101.0,
+      "yard_high_per20kg": 1501.0
     }
   ],
   "doca_mirror_check": [
@@ -1766,17 +1770,17 @@
     },
     {
       "month": "2026-10",
-      "n_listings": 173,
-      "n_kept": 168,
+      "n_listings": 183,
+      "n_kept": 178,
       "median_rent_psf": 16.7,
       "median_rent_2bhk": 12500.0,
-      "n_2bhk": 85,
+      "n_2bhk": 91,
       "median_rent_3bhk": 19000.0,
       "n_3bhk": 30
     }
   ],
   "rent_listings_index": {
-    "n_listings_used": 563,
+    "n_listings_used": 573,
     "usable_months": [],
     "qualified_consecutive": 4,
     "usable_consecutive": 0,
@@ -1798,7 +1802,7 @@
     "rajkot_shops": {
       "items": 11,
       "weight_pct": 12.38,
-      "last_quote": "2026-10-21",
+      "last_quote": "2026-10-22",
       "gate": {
         "pass": 0,
         "fail": 0,
@@ -1818,7 +1822,7 @@
     "hathway_broadband": {
       "items": 1,
       "weight_pct": 0.12,
-      "last_quote": "2026-10-21",
+      "last_quote": "2026-10-22",
       "gate": {
         "pass": 0,
         "fail": 0,
@@ -1828,7 +1832,7 @@
     "onemg_medicine": {
       "items": 1,
       "weight_pct": 1.52,
-      "last_quote": "2026-10-21",
+      "last_quote": "2026-10-22",
       "gate": {
         "pass": 0,
         "fail": 0,
@@ -1840,7 +1844,7 @@
     {
       "item_id": "C001",
       "n_skus": 25,
-      "last": 100.52,
+      "last": 100.53,
       "n_overlap": 21,
       "corr": -0.42,
       "drift": 0.055,
