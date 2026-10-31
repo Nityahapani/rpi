@@ -1,10 +1,10 @@
 {
- "generated": "2026-10-30",
+ "generated": "2026-10-31",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
-   "last_quote": "2026-10-30",
-   "n_quotes": 360,
+   "last_quote": "2026-10-31",
+   "n_quotes": 388,
    "items": [
     {
      "item_id": "F001",
@@ -466,8 +466,8 @@
    "weight_pct_covered": 0.12
   },
   "onemg_medicine": {
-   "last_quote": "2026-10-30",
-   "n_quotes": 18,
+   "last_quote": "2026-10-31",
+   "n_quotes": 19,
    "items": [
     {
      "item_id": "M001",
