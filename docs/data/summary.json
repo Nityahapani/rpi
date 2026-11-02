@@ -20,7 +20,7 @@
     110.16
   ],
   "observed_weight_share": 0.532,
-  "run_id": "20261101T115823213586Z",
+  "run_id": "20261102T133106117689Z",
   "weights_source": "APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices",
   "demo": false,
   "coverage_split": {
@@ -39,6 +39,6 @@
     "latest_period": "2026-11",
     "observed_weight_pct_ref": 99.2,
     "independent_weight_pct_ref": 65.9,
-    "independent_weight_pct_latest": 59.1
+    "independent_weight_pct_latest": 62.6
   }
 }
