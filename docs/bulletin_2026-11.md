@@ -2,11 +2,11 @@
 
 
 - Reference month 2026-09: index **108.1**, YoY **6.94%**
-- Latest month 2026-11 (nowcast): index **108.54**  (95% CI 107.95-110.05)
-- Nowcast 90% band for 2026-11: **107.08 - 110.03** (split-conformal from a rolling-origin back-test on official data; conservative)
-- Month-on-month: **0.22%**
-- Year-on-year: **6.9%**
-- Weight with a real quote in this vintage, before any imputation: **54.0%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
+- Latest month 2026-11 (nowcast): index **108.52**  (95% CI 107.68-110.05)
+- Nowcast 90% band for 2026-11: **107.05 - 110.0** (split-conformal from a rolling-origin back-test on official data; conservative)
+- Month-on-month: **0.2%**
+- Year-on-year: **6.88%**
+- Weight with a real quote in this vintage, before any imputation: **54.6%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
 
 ## What is independent vs official-linked
 - Official-linked stand-ins (MoSPI Gujarat-urban item indices) fill items with no independent source yet; they run to 2026-09. Their plan weight: 10.7%.
@@ -17,17 +17,17 @@
 | item | level |
 |---|---|
 | geks_jevons | 108.61 |
-| jevons_chain | 108.54 |
-| regular_price | 108.54 |
+| jevons_chain | 108.52 |
+| regular_price | 108.52 |
 
 ## Divisions (change since base)
 | item | % change |
 |---|---|
-| Personal care & misc. | 19.62 |
+| Personal care & misc. | 19.71 |
 | Transport | 12.87 |
 | Restaurants & accommodation | 12.02 |
 | Education | 10.62 |
-| Food & non-alcoholic beverages | 9.53 |
+| Food & non-alcoholic beverages | 9.43 |
 | Information & communication | 8.2 |
 | Clothing & footwear | 5.82 |
 | Household goods & services | 5.73 |
@@ -35,4 +35,4 @@
 | Health | 3.42 |
 | Recreation & culture | 2.47 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261105T131153187296Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261106T130012823311Z._
