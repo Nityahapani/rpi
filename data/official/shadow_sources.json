@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-06",
+ "generated": "2026-11-07",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
-   "last_quote": "2026-11-06",
-   "n_quotes": 556,
+   "last_quote": "2026-11-07",
+   "n_quotes": 596,
    "items": [
     {
      "item_id": "F001",
@@ -67,9 +67,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": 0.0
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -101,9 +101,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": -1.04
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -169,9 +169,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": -0.94
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -182,9 +182,9 @@
      "weight_pct": 0.76,
      "current_source": "doca_rajkot",
      "already_switched": false,
-     "months": 1,
+     "months": 2,
      "first_month": "2026-10",
-     "last_month": "2026-10",
+     "last_month": "2026-11",
      "n_skus": 4,
      "gate_vs_official": {
       "n_overlap": 0,
@@ -203,9 +203,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": 2.71
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -216,9 +216,9 @@
      "weight_pct": 0.07,
      "current_source": "rajkot_shops",
      "already_switched": true,
-     "months": 1,
+     "months": 2,
      "first_month": "2026-10",
-     "last_month": "2026-10",
+     "last_month": "2026-11",
      "n_skus": 4,
      "gate_vs_official": {
       "n_overlap": 0,
@@ -237,9 +237,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": -0.0
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -250,9 +250,9 @@
      "weight_pct": 1.98,
      "current_source": "doca_rajkot",
      "already_switched": false,
-     "months": 1,
+     "months": 2,
      "first_month": "2026-10",
-     "last_month": "2026-10",
+     "last_month": "2026-11",
      "n_skus": 4,
      "gate_vs_official": {
       "n_overlap": 0,
@@ -271,9 +271,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": -2.05
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -305,9 +305,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": 0.0
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -373,9 +373,9 @@
       }
      },
      "vs_current_input": {
-      "n_overlap": 1,
+      "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": null
+      "cum_gap_pp": 0.0
      },
      "judgeable_from": "2027-04",
      "status": "accruing (0/6 months overlap the official index; judgeable from about 2027-04)"
@@ -425,8 +425,8 @@
    "weight_pct_covered": 0.59
   },
   "hathway_broadband": {
-   "last_quote": "2026-11-06",
-   "n_quotes": 26,
+   "last_quote": "2026-11-07",
+   "n_quotes": 27,
    "items": [
     {
      "item_id": "K003",
@@ -466,8 +466,8 @@
    "weight_pct_covered": 0.12
   },
   "onemg_medicine": {
-   "last_quote": "2026-11-06",
-   "n_quotes": 25,
+   "last_quote": "2026-11-07",
+   "n_quotes": 26,
    "items": [
     {
      "item_id": "M001",
