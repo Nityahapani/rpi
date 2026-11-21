@@ -53,6 +53,22 @@ F021 = ["doca_rajkot", "2025-01"]
 F022 = ["doca_rajkot", "2025-01"]
 F023 = ["doca_rajkot", "2025-01"]
 
+E003 = ["instamart_rajkot", "2026-12"]
+F010 = ["instamart_rajkot", "2026-12"]
+F012 = ["instamart_rajkot", "2026-12"]
+F014 = ["instamart_rajkot", "2026-12"]
+F015 = ["instamart_rajkot", "2026-12"]
+F017 = ["instamart_rajkot", "2026-12"]
+F018 = ["instamart_rajkot", "2026-12"]
+F019 = ["instamart_rajkot", "2026-12"]
+H001 = ["instamart_rajkot", "2026-12"]
+H002 = ["instamart_rajkot", "2026-12"]
+H003 = ["instamart_rajkot", "2026-12"]
+M002 = ["instamart_rajkot", "2026-12"]
+P001 = ["instamart_rajkot", "2026-12"]
+P002 = ["instamart_rajkot", "2026-12"]
+P003 = ["instamart_rajkot", "2026-12"]
+
 [index.min_matched_by_tier]
 C = 1                       # administered prices (tariffs) have ONE legitimate quote by design
 B = 1                       # benchmark series (e.g. gold) may be single-quote

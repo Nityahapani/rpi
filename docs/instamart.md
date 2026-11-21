@@ -1,10 +1,10 @@
 # Instamart Rajkot: a Rajkot retail shelf for packaged goods
 
-> **Status 2026-11-21: collector built and unit-tested, NOT WIRED.** No item is routed to this source in
-> `data/source_plan.csv`, because no pool and no prices have been collected yet: Swiggy rate-limited this
-> machine's IP (HTTP 202) after the reconnaissance sessions. The store and its priced tiles were read live; the
-> full harvest was not. The figures in this note are the *intended* coverage, not measured coverage — the
-> published coverage split still reports the old shelf.
+> **Status 2026-11-21: WIRED for 15 items, gate pending, index switch from 2026-12.** The first live harvest
+> succeeded (pod 1395731, home/v2 offsets 1-6, 270 SKUs): 3 of the 15 items had a matching SKU on the shelf that day
+> (F014, H001, H002) and are accruing in `data/instamart_prices.csv`. The other 12 are routed here but have **no
+> observation yet** — their DMart quotes stop at the switch month, so they carry forward the official stand-in until
+> a SKU appears. The published split reports retail 27.4 % on that basis; only 3.7 points of it is measured today.
 
 Every packaged good in the basket used to be priced outside Rajkot: DMart Ready serves **no** Rajkot pincode
 (`/api/v1/pincodes/search/360001` -> 0 stores on 2026-11-21; 380001 Ahmedabad -> 13), and Vishal is a national e-store.

@@ -213,6 +213,10 @@ async def _harvest(offsets=MAX_OFFSET, headed: bool = False) -> list[dict]:
 
 
 def harvest() -> list[dict]:
+    try:
+        import playwright.async_api  # noqa: F401
+    except ModuleNotFoundError as e:   # the daily runner indexes the accrued CSV without a browser; accrual is optional there
+        raise InstamartBlocked("playwright is not installed on this machine; accrual skipped") from e
     return asyncio.run(_harvest())
 
 

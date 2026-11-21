@@ -75,9 +75,14 @@ def test_settings_switches_agree_with_the_plan():
     # F002/F003/F005/F008/F021/F022/F023: the DoCA Rajkot centre takes over from the base month 2025-01 (2026-10-14) - its series is
     # gate-validated over 150 months and covers the whole published window, so unlike a source that only starts accruing (the 2026-11
     # rajkot_shops switches) there is no reason to keep feeding a non-Rajkot proxy for any published month.
-    assert set(rules) == {"F001", "F004", "F007", "F016", "K003", "F002", "F003", "F005", "F008", "F021", "F022", "F023"}
+    # The 15 Instamart rows: 2026-11-21, first Rajkot shelf with a real harvest; switch month 2026-12 because offsets 1-6 gave a
+    # single day of quotes, so the link month 2026-11 is the accrual month itself.
+    instamart = {"F014", "F017", "P001", "P002", "P003", "H001", "H002", "F018", "F012", "F010",
+                 "F019", "F015", "H003", "E003", "M002"}
+    assert set(rules) == {"F001", "F004", "F007", "F016", "K003", "F002", "F003", "F005", "F008", "F021", "F022", "F023"} | instamart
     assert rules["K003"] == ("hathway_broadband", "2026-11")
     assert all(rules[i] == ("doca_rajkot", "2025-01") for i in ("F002", "F003", "F005", "F008", "F021", "F022", "F023"))
+    assert all(rules[i] == ("instamart_rajkot", "2026-12") for i in instamart)
     assert plan.set_index("item_id").loc["F025", "primary_source"] == "mandi_gondal"
     # The reference master must not contradict the live plan after source promotions.
     master = pd.read_csv(ROOT / "registry/items.csv", dtype=str, keep_default_na=False).set_index("item_id")
