@@ -99,7 +99,11 @@ def test_F008_panel_rows_are_component_diagnostics_not_five_independent_gates():
     gate = pd.read_csv("docs/data/proxy_validation.csv", dtype=str, keep_default_na=False)
     item = gate[gate.item_id == "F008"]
     assert len(item) == 1 and item.iloc[0].verdict == "pass"
-    assert item.iloc[0].legs == "B+C" and item.iloc[0].n_overlap == "150"
+    # the overlap count is the length of the shared official window and grows with each published month (151 as at 2026-10)
+    n_overlap = int(item.iloc[0].n_overlap)
+    assert item.iloc[0].legs == "B+C" and n_overlap >= 150
+    rajkot = gate[(gate.item_id.isin(["F002", "F003", "F005", "F013", "F021", "F022"]))]
+    assert (rajkot.n_overlap.astype(int) - n_overlap).abs().max() <= 1   # same official window for every Rajkot-centre item
 
 
 def test_gujarat_panel_is_retired_and_potato_moved_to_the_rajkot_centre():

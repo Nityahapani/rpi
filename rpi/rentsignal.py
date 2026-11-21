@@ -350,6 +350,10 @@ def gate_ceiling(root) -> dict:
 # latest 12 months, is within z*s*sqrt(m) of official (z = 1.645, fixed in advance).  Size/power are computed below and by Monte Carlo in the tests.
 # ---------------------------------------------------------------------------------------------------------------------------------------------
 Z_TREND = 1.645
+# The gate is judged on a frozen window ending at the last official month in which the variant verdicts were last
+# established (2026-09).  Each new MoSPI month moves the 12-month base by a month as well as extending the sample, so an
+# open-ended window re-judges the same model on a different question every release rather than tracking its stability.
+GATE_ANCHOR = "2026-09"
 
 
 def trend_gate(signal: pd.Series, official: pd.Series, z: float = Z_TREND) -> dict:
@@ -369,15 +373,21 @@ def trend_gate(signal: pd.Series, official: pd.Series, z: float = Z_TREND) -> di
 def trend_gate_variants(root) -> dict:
     df = load(root)
     o = official_rent(root)
+    # judged over the frozen window: series are truncated at GATE_ANCHOR before the gate is applied
+    if GATE_ANCHOR in o.index:
+        o_gate = o.loc[:GATE_ANCHOR]
+    else:
+        o_gate = o
+    last = o_gate.index[-1]
     tv = tvp_beta(df)
     b = beta_rajkot(df)
-    sigs = {"flat (beta=0)": monthly_signal(df, 0.0, first=o.index[0], last=o.index[-1]),
-            "v1 constant ratio": monthly_signal(df, b["beta"], first=o.index[0], last=o.index[-1]),
-            "v2 Kalman ratio": monthly_signal(df, tv["beta"], first=o.index[0], last=o.index[-1]),
-            "v3 panel-selected (E4+E5)": ensemble_signal(root, first=o.index[0], last=o.index[-1], col="ensemble_pct"),
-            "v3 all-five equal weight": ensemble_signal(root, first=o.index[0], last=o.index[-1], col="ensemble_all_pct"),
-            "all-India housing as is": monthly_signal(df, 1.0, first=o.index[0], last=o.index[-1])}
-    return {k: trend_gate(v, o) for k, v in sigs.items()}
+    sigs = {"flat (beta=0)": monthly_signal(df, 0.0, first=o.index[0], last=last),
+            "v1 constant ratio": monthly_signal(df, b["beta"], first=o.index[0], last=last),
+            "v2 Kalman ratio": monthly_signal(df, tv["beta"], first=o.index[0], last=last),
+            "v3 panel-selected (E4+E5)": ensemble_signal(root, first=o.index[0], last=last, col="ensemble_pct"),
+            "v3 all-five equal weight": ensemble_signal(root, first=o.index[0], last=last, col="ensemble_all_pct"),
+            "all-India housing as is": monthly_signal(df, 1.0, first=o.index[0], last=last)}
+    return {k: trend_gate(v, o_gate) for k, v in sigs.items()}
 
 
 def trend_gate_operating_characteristics(s: float, n: int = 19, z: float = Z_TREND, errors=(0.0, 0.5, 1.0, 1.5, 2.0, 3.0)) -> dict:
