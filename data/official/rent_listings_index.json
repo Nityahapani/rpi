@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-07",
+ "generated": "2026-11-21",
  "item_id": "R001",
  "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
- "n_panel_rows": 721,
- "n_listings_used": 676,
+ "n_panel_rows": 722,
+ "n_listings_used": 677,
  "portals": {
-  "magicbricks": 675,
+  "magicbricks": 676,
   "squareyards": 1
  },
  "months": [
@@ -29,9 +29,9 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 106.33,
-   "lo90": 90.24,
-   "hi90": 116.61
+   "index": 106.43,
+   "lo90": 92.13,
+   "hi90": 118.82
   },
   {
    "month": "2026-09",
@@ -41,21 +41,21 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 110.11,
-   "lo90": 94.58,
-   "hi90": 120.68
+   "index": 110.25,
+   "lo90": 94.95,
+   "hi90": 121.36
   },
   {
    "month": "2026-10",
-   "n": 253,
-   "fresh_share": 0.988,
+   "n": 254,
+   "fresh_share": 0.984,
    "survivor": false,
    "complete": true,
    "qualified": true,
    "usable": true,
-   "index": 102.48,
-   "lo90": 87.18,
-   "hi90": 111.96
+   "index": 102.18,
+   "lo90": 89.21,
+   "hi90": 111.31
   },
   {
    "month": "2026-11",
@@ -65,9 +65,9 @@
    "complete": false,
    "qualified": true,
    "usable": false,
-   "index": 102.6,
-   "lo90": 83.85,
-   "hi90": 116.53
+   "index": 102.73,
+   "lo90": 84.38,
+   "hi90": 118.94
   }
  ],
  "qualified_consecutive": 5,
@@ -77,19 +77,19 @@
  ],
  "hedonic_coefficients": {
   "const": 9.44,
-  "lsqft_c": 0.435,
-  "sqft_missing": 0.048,
-  "furnished_page": 0.145,
-  "bhk:0": -0.53,
-  "bhk:1": -0.251,
-  "bhk:3": 0.371,
-  "bhk:4": 0.786,
-  "type:house": -0.291,
-  "type:villa": -0.435,
+  "lsqft_c": 0.434,
+  "sqft_missing": 0.046,
+  "furnished_page": 0.146,
+  "bhk:0": -0.526,
+  "bhk:1": -0.245,
+  "bhk:3": 0.368,
+  "bhk:4": 0.788,
+  "type:house": -0.294,
+  "type:villa": -0.436,
   "type:builder_floor": -0.126,
-  "type:studio": -0.391,
-  "type:room": -0.161,
-  "portal:squareyards": -0.337
+  "type:studio": -0.392,
+  "type:room": -0.162,
+  "portal:squareyards": -0.34
  },
  "asking_rent_revisions": {
   "listings_revised": 6,
@@ -260,15 +260,15 @@
  ],
  "listing_share_latest": 0.0,
  "gate_vs_official": {
-  "n_overlap": 21,
+  "n_overlap": 22,
   "corr": null,
   "drift": 0.004,
   "verdict": "fail",
   "gate": "trend",
-  "gap_cum_pp": -0.39,
-  "tol_cum_pp": 0.52,
-  "gap_12m_pp": -0.41,
-  "tol_12m_pp": 0.41
+  "gap_cum_pp": -0.42,
+  "tol_cum_pp": 0.53,
+  "gap_12m_pp": -0.59,
+  "tol_12m_pp": 0.4
  },
  "verdict": "accruing: listing share of the 12-month window 0%; usable months so far ['2026-10'] (the first usable month-on-month change needs two consecutive complete, non-survivor months; the first such pair can be 2026-11 and the month after)",
  "note": "SHADOW: R001 stays on rent_signal (modelled) until the verdict says 'ready' and the switch is recorded in data/source_plan.csv"

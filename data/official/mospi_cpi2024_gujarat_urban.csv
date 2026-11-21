@@ -1,12 +1,655 @@
 period,state,sector,level,code,name,index_value,inflation_pct,imputation,division,group,class,sub_class,item
-2026-09,Gujarat,Urban,general,,CPI (General),108.15,4.67,,CPI (General),,,,
-2026-09,Gujarat,Urban,division,01,Food and beverages,110.58,6.0,,Food and beverages,,,,
+2026-10,Gujarat,Urban,general,,CPI (General),108.55,5.46,,CPI (General),,,,
+2026-10,Gujarat,Urban,division,01,Food and beverages,110.98,7.75,,Food and beverages,,,,
+2026-10,Gujarat,Urban,division,02,"Paan, tobacco and intoxicants",105.73,2.65,,"Paan, tobacco and intoxicants",,,,
+2026-10,Gujarat,Urban,division,03,Clothing and footwear,108.6,5.01,,Clothing and footwear,,,,
+2026-10,Gujarat,Urban,division,04,"Housing, water, electricity, gas and other fuels",104.29,2.58,,"Housing, water, electricity, gas and other fuels",,,,
+2026-10,Gujarat,Urban,division,05,"Furnishings, household equipment and routine household maintenance",106.27,3.92,,"Furnishings, household equipment and routine household maintenance",,,,
+2026-10,Gujarat,Urban,division,06,Health,106.82,2.23,,Health,,,,
+2026-10,Gujarat,Urban,division,07,Transport,107.56,6.63,,Transport,,,,
+2026-10,Gujarat,Urban,division,08,Information and communication,106.0,2.71,,Information and communication,,,,
+2026-10,Gujarat,Urban,division,09,"Recreation, sport and culture",102.51,1.87,,"Recreation, sport and culture",,,,
+2026-10,Gujarat,Urban,division,10,Education services,110.34,5.0,,Education services,,,,
+2026-10,Gujarat,Urban,division,11,Restaurants and accommodation services,115.04,9.35,,Restaurants and accommodation services,,,,
+2026-10,Gujarat,Urban,division,13,"Personal care, social protection and miscellaneous goods and services",113.96,6.26,,"Personal care, social protection and miscellaneous goods and services",,,,
+2026-10,Gujarat,Urban,group,01.1,Food,111.36,8.27,,Food and beverages,Food,,,
+2026-10,Gujarat,Urban,group,01.2,Beverages,106.09,1.28,,Food and beverages,Beverages,,,
+2026-10,Gujarat,Urban,group,01.3,Services for processing primary goods for food,107.45,2.42,,Food and beverages,Services for processing primary goods for food,,,
+2026-10,Gujarat,Urban,group,02.3,Paan and tobacco,105.73,2.65,,"Paan, tobacco and intoxicants",Paan and tobacco,,,
+2026-10,Gujarat,Urban,group,03.1,Clothing,109.38,5.54,,Clothing and footwear,Clothing,,,
+2026-10,Gujarat,Urban,group,03.2,Footwear,103.71,1.63,,Clothing and footwear,Footwear,,,
+2026-10,Gujarat,Urban,group,04.1,Actual rental payments made for housing,104.95,2.66,,"Housing, water, electricity, gas and other fuels",Actual rental payments made for housing,,,
+2026-10,Gujarat,Urban,group,04.3,"Maintenance, repair and security of the dwelling",104.76,2.62,,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling",,,
+2026-10,Gujarat,Urban,group,04.4,Water supply and miscellaneous services relating to the dwelling,101.34,0.13,,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,,,
+2026-10,Gujarat,Urban,group,04.5,"Electricity, gas and other fuels",101.82,2.37,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",,,
+2026-10,Gujarat,Urban,group,05.1,"Furniture, furnishings, and loose carpets",107.5,5.09,,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets",,,
+2026-10,Gujarat,Urban,group,05.2,Household textiles,108.74,4.96,,"Furnishings, household equipment and routine household maintenance",Household textiles,,,
+2026-10,Gujarat,Urban,group,05.3,Household appliances,104.61,4.6,,"Furnishings, household equipment and routine household maintenance",Household appliances,,,
+2026-10,Gujarat,Urban,group,05.4,"Glassware, tableware and household utensils",111.3,8.1,,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils",,,
+2026-10,Gujarat,Urban,group,05.5,Tools and equipment for house and garden,102.06,1.3,,"Furnishings, household equipment and routine household maintenance",Tools and equipment for house and garden,,,
+2026-10,Gujarat,Urban,group,05.6,Goods and services for routine household maintenance,105.51,2.78,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,,,
+2026-10,Gujarat,Urban,group,06.1,Medicines and health products,106.33,1.5,,Health,Medicines and health products,,,
+2026-10,Gujarat,Urban,group,06.2,Outpatient care services,107.86,3.15,,Health,Outpatient care services,,,
+2026-10,Gujarat,Urban,group,06.3,Inpatient care services,107.28,3.28,,Health,Inpatient care services,,,
+2026-10,Gujarat,Urban,group,06.4,Other health services,106.56,2.74,,Health,Other health services,,,
+2026-10,Gujarat,Urban,group,07.1,Purchase of vehicles,99.81,2.1,,Transport,Purchase of vehicles,,,
+2026-10,Gujarat,Urban,group,07.2,Operation of personal transport equipment,108.56,8.12,,Transport,Operation of personal transport equipment,,,
+2026-10,Gujarat,Urban,group,07.3,Passenger transport services,107.34,3.85,,Transport,Passenger transport services,,,
+2026-10,Gujarat,Urban,group,07.4,Transport services for goods,114.14,6.87,,Transport,Transport services for goods,,,
+2026-10,Gujarat,Urban,group,08.1,Information and communication equipment,104.97,9.69,,Information and communication,Information and communication equipment,,,
+2026-10,Gujarat,Urban,group,08.3,Information and communication services,106.23,1.26,,Information and communication,Information and communication services,,,
+2026-10,Gujarat,Urban,group,09.1,Recreational durables,103.45,3.79,,"Recreation, sport and culture",Recreational durables,,,
+2026-10,Gujarat,Urban,group,09.2,Other recreational goods,107.08,4.56,,"Recreation, sport and culture",Other recreational goods,,,
+2026-10,Gujarat,Urban,group,09.3,Garden products and pets,102.45,0.83,,"Recreation, sport and culture",Garden products and pets,,,
+2026-10,Gujarat,Urban,group,09.4,Recreational services,100.62,0.73,,"Recreation, sport and culture",Recreational services,,,
+2026-10,Gujarat,Urban,group,09.5,Cultural goods,100.36,1.74,,"Recreation, sport and culture",Cultural goods,,,
+2026-10,Gujarat,Urban,group,09.6,Cultural services,107.66,3.79,,"Recreation, sport and culture",Cultural services,,,
+2026-10,Gujarat,Urban,group,09.7,"Newspapers, books and stationery",102.48,2.27,,"Recreation, sport and culture","Newspapers, books and stationery",,,
+2026-10,Gujarat,Urban,group,10.1,Early childhood and primary education,111.48,5.66,,Education services,Early childhood and primary education,,,
+2026-10,Gujarat,Urban,group,10.2,Secondary education,108.68,3.09,,Education services,Secondary education,,,
+2026-10,Gujarat,Urban,group,10.4,Higher education,108.99,5.05,,Education services,Higher education,,,
+2026-10,Gujarat,Urban,group,10.5,Education not defined by level,109.66,4.91,,Education services,Education not defined by level,,,
+2026-10,Gujarat,Urban,group,11.1,Food and beverage serving services,115.06,9.36,,Restaurants and accommodation services,Food and beverage serving services,,,
+2026-10,Gujarat,Urban,group,11.2,Accommodation services,104.5,2.17,,Restaurants and accommodation services,Accommodation services,,,
+2026-10,Gujarat,Urban,group,13.1,Personal care,107.13,3.09,,"Personal care, social protection and miscellaneous goods and services",Personal care,,,
+2026-10,Gujarat,Urban,group,13.2,Other personal effects,144.77,18.64,,"Personal care, social protection and miscellaneous goods and services",Other personal effects,,,
+2026-10,Gujarat,Urban,group,13.9,Other services,106.23,0.48,,"Personal care, social protection and miscellaneous goods and services",Other services,,,
+2026-10,Gujarat,Urban,class,01.1.1,Cereals and cereal products,107.3,3.53,,Food and beverages,Food,Cereals and cereal products,,
+2026-10,Gujarat,Urban,class,01.1.2,"Meat, fresh, chilled or frozen",111.46,12.05,,Food and beverages,Food,"Meat, fresh, chilled or frozen",,
+2026-10,Gujarat,Urban,class,01.1.3,Fish and other seafood,110.99,4.78,,Food and beverages,Food,Fish and other seafood,,
+2026-10,Gujarat,Urban,class,01.1.4,"Milk, other dairy products and eggs",108.32,4.31,,Food and beverages,Food,"Milk, other dairy products and eggs",,
+2026-10,Gujarat,Urban,class,01.1.5,Oils and fats,121.88,14.24,,Food and beverages,Food,Oils and fats,,
+2026-10,Gujarat,Urban,class,01.1.6,Fruits and nuts,122.74,15.66,,Food and beverages,Food,Fruits and nuts,,
+2026-10,Gujarat,Urban,class,01.1.7,"Vegetables, tubers, plantains, cooking bananas and pulses",107.07,7.85,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",,
+2026-10,Gujarat,Urban,class,01.1.8,"Sugar, confectionery and desserts",115.38,11.21,,Food and beverages,Food,"Sugar, confectionery and desserts",,
+2026-10,Gujarat,Urban,class,01.1.9,Ready-made food and other food products,107.89,9.5,,Food and beverages,Food,Ready-made food and other food products,,
+2026-10,Gujarat,Urban,class,01.2.1,Fruit and vegetable juices,107.39,2.7,,Food and beverages,Beverages,Fruit and vegetable juices,,
+2026-10,Gujarat,Urban,class,01.2.2,Coffee and coffee substitutes,107.59,-4.35,,Food and beverages,Beverages,Coffee and coffee substitutes,,
+2026-10,Gujarat,Urban,class,01.2.3,"Tea, maté and other plant-derived products for infusion",109.41,1.48,,Food and beverages,Beverages,"Tea, maté and other plant-derived products for infusion",,
+2026-10,Gujarat,Urban,class,01.2.9,Other beverages,103.17,0.69,,Food and beverages,Beverages,Other beverages,,
+2026-10,Gujarat,Urban,class,01.2.4,Cocoa drinks,103.33,0.8,,Food and beverages,Beverages,Cocoa drinks,,
+2026-10,Gujarat,Urban,class,01.2.5,Water,100.7,0.87,,Food and beverages,Beverages,Water,,
+2026-10,Gujarat,Urban,class,01.2.6,Soft drinks,98.7,-0.78,,Food and beverages,Beverages,Soft drinks,,
+2026-10,Gujarat,Urban,class,01.3.0,Services for processing primary goods for food,107.45,2.42,,Food and beverages,Services for processing primary goods for food,Services for processing primary goods for food,,
+2026-10,Gujarat,Urban,class,02.3.0,Paan and other tobacco products,105.73,2.65,,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,,
+2026-10,Gujarat,Urban,class,03.1.1,Clothing materials,108.36,5.44,,Clothing and footwear,Clothing,Clothing materials,,
+2026-10,Gujarat,Urban,class,03.1.2,Garments,109.2,5.74,,Clothing and footwear,Clothing,Garments,,
+2026-10,Gujarat,Urban,class,03.1.3,Other articles of clothing and clothing accessories,104.38,1.55,,Clothing and footwear,Clothing,Other articles of clothing and clothing accessories,,
+2026-10,Gujarat,Urban,class,03.1.4,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing",112.8,6.07,,Clothing and footwear,Clothing,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing",,
+2026-10,Gujarat,Urban,class,03.2.1,Shoes and other footwear,103.71,1.63,,Clothing and footwear,Footwear,Shoes and other footwear,,
+2026-10,Gujarat,Urban,class,04.1.1,Actual rental payments made by tenants for main residence,104.95,2.66,,"Housing, water, electricity, gas and other fuels",Actual rental payments made for housing,Actual rental payments made by tenants for main residence,,
+2026-10,Gujarat,Urban,class,04.3.1,Security equipment and materials for dwelling maintenance and repair,112.24,7.02,,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling",Security equipment and materials for dwelling maintenance and repair,,
+2026-10,Gujarat,Urban,class,04.3.2,"Services for the maintenance, repair and security of the dwelling",104.28,2.33,,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling",,
+2026-10,Gujarat,Urban,class,04.4.1,Water supply,100.99,0.26,,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,Water supply,,
+2026-10,Gujarat,Urban,class,04.4.4,Other services related to the dwelling,102.96,-0.43,,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,Other services related to the dwelling,,
+2026-10,Gujarat,Urban,class,04.5.1,Electricity,98.17,-0.28,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Electricity,,
+2026-10,Gujarat,Urban,class,04.5.2,Gas,111.29,8.64,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Gas,,
+2026-10,Gujarat,Urban,class,04.5.4,Solid fuels,103.99,7.68,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,,
+2026-10,Gujarat,Urban,class,05.1.1,"Furniture, furnishings and loose carpets",107.5,5.09,,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",,
+2026-10,Gujarat,Urban,class,05.2.1,Household textiles,108.74,4.96,,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,,
+2026-10,Gujarat,Urban,class,05.3.1,Major electric and other household appliances,103.77,4.59,,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,,
+2026-10,Gujarat,Urban,class,05.3.2,Small household appliances,106.16,4.63,,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,,
+2026-10,Gujarat,Urban,class,05.4.0,"Glassware, tableware and household utensils",111.3,8.1,,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",,
+2026-10,Gujarat,Urban,class,05.5.2,Non-motorized tools and miscellaneous accessories,102.06,1.3,,"Furnishings, household equipment and routine household maintenance",Tools and equipment for house and garden,Non-motorized tools and miscellaneous accessories,,
+2026-10,Gujarat,Urban,class,05.6.1,Non-durable household goods,105.88,2.87,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,,
+2026-10,Gujarat,Urban,class,05.6.2,Domestic services and household services,104.92,2.64,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,,
+2026-10,Gujarat,Urban,class,06.1.1,Medicines,106.42,1.43,,Health,Medicines and health products,Medicines,,
+2026-10,Gujarat,Urban,class,06.1.2,Medical products,102.33,0.62,,Health,Medicines and health products,Medical products,,
+2026-10,Gujarat,Urban,class,06.1.3,Assistive products,105.28,3.31,,Health,Medicines and health products,Assistive products,,
+2026-10,Gujarat,Urban,class,06.2.3,Other outpatient care services,107.86,3.15,,Health,Outpatient care services,Other outpatient care services,,
+2026-10,Gujarat,Urban,class,06.3.1,Inpatient curative and rehabilitative services,107.28,3.28,,Health,Inpatient care services,Inpatient curative and rehabilitative services,,
+2026-10,Gujarat,Urban,class,06.4.1,Diagnostic imaging services and medical laboratory services,106.56,2.74,,Health,Other health services,Diagnostic imaging services and medical laboratory services,,
+2026-10,Gujarat,Urban,class,07.1.1,Motor cars,96.19,0.02,,Transport,Purchase of vehicles,Motor cars,,
+2026-10,Gujarat,Urban,class,07.1.2,Motorcycles,103.06,3.96,,Transport,Purchase of vehicles,Motorcycles,,
+2026-10,Gujarat,Urban,class,07.1.3,Bicycles,102.87,2.53,,Transport,Purchase of vehicles,Bicycles,,
+2026-10,Gujarat,Urban,class,07.2.1,Parts and accessories for personal transport equipment,108.76,5.66,,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,,
+2026-10,Gujarat,Urban,class,07.2.2,Fuels and lubricants for personal transport equipment,108.56,8.18,,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,,
+2026-10,Gujarat,Urban,class,07.3.1,Passenger transport by railway,106.76,3.35,,Transport,Passenger transport services,Passenger transport by railway,,
+2026-10,Gujarat,Urban,class,07.3.2,Passenger transport by road,106.28,4.04,,Transport,Passenger transport services,Passenger transport by road,,
+2026-10,Gujarat,Urban,class,07.3.3,Passenger transport by air,126.17,3.1,,Transport,Passenger transport services,Passenger transport by air,,
+2026-10,Gujarat,Urban,class,07.4.1,Postal and courier services,114.14,6.87,,Transport,Transport services for goods,Postal and courier services,,
+2026-10,Gujarat,Urban,class,08.1.1,Telephone instrument (landline),101.04,0.81,,Information and communication,Information and communication equipment,Telephone instrument (landline),,
+2026-10,Gujarat,Urban,class,08.1.2,Mobile handset,105.58,11.11,,Information and communication,Information and communication equipment,Mobile handset,,
+2026-10,Gujarat,Urban,class,08.1.3,Information processing equipment,111.61,12.06,,Information and communication,Information and communication equipment,Information processing equipment,,
+2026-10,Gujarat,Urban,class,08.1.4,Audio-visual devices,99.31,3.02,,Information and communication,Information and communication equipment,Audio-visual devices,,
+2026-10,Gujarat,Urban,class,08.1.5,Unrecorded recording media,131.23,27.62,,Information and communication,Information and communication equipment,Unrecorded recording media,,
+2026-10,Gujarat,Urban,class,08.3.3,Internet access provision services and online storage services,106.42,2.39,,Information and communication,Information and communication services,Internet access provision services and online storage services,,
+2026-10,Gujarat,Urban,class,08.3.4,Telephone charges: mobile and landline,108.06,1.34,,Information and communication,Information and communication services,Telephone charges: mobile and landline,,
+2026-10,Gujarat,Urban,class,08.3.9,Other information and communication services,101.93,0.85,,Information and communication,Information and communication services,Other information and communication services,,
+2026-10,Gujarat,Urban,class,09.1.1,Photographic and cinematographic equipment and optical instruments,103.45,3.79,,"Recreation, sport and culture",Recreational durables,Photographic and cinematographic equipment and optical instruments,,
+2026-10,Gujarat,Urban,class,09.2.1,"Games, toys and hobby-related articles",105.84,5.29,,"Recreation, sport and culture",Other recreational goods,"Games, toys and hobby-related articles",,
+2026-10,Gujarat,Urban,class,09.2.2,"Sporting, camping and open-air recreation equipment",107.3,4.43,,"Recreation, sport and culture",Other recreational goods,"Sporting, camping and open-air recreation equipment",,
+2026-10,Gujarat,Urban,class,09.3.1,"Garden products, plants and flowers",101.88,0.25,,"Recreation, sport and culture",Garden products and pets,"Garden products, plants and flowers",,
+2026-10,Gujarat,Urban,class,09.3.2,Pets and pet products,105.48,3.92,,"Recreation, sport and culture",Garden products and pets,Pets and pet products,,
+2026-10,Gujarat,Urban,class,09.4.6,Recreational and sporting services,100.62,0.73,,"Recreation, sport and culture",Recreational services,Recreational and sporting services,,
+2026-10,Gujarat,Urban,class,09.5.1,Musical instruments,100.36,1.74,,"Recreation, sport and culture",Cultural goods,Musical instruments,,
+2026-10,Gujarat,Urban,class,09.6.1,"Services provided by cinemas, theatres and concert venues",107.86,3.68,,"Recreation, sport and culture",Cultural services,"Services provided by cinemas, theatres and concert venues",,
+2026-10,Gujarat,Urban,class,09.6.3,Photographic services,106.52,4.45,,"Recreation, sport and culture",Cultural services,Photographic services,,
+2026-10,Gujarat,Urban,class,09.7.1,Books,103.05,3.25,,"Recreation, sport and culture","Newspapers, books and stationery",Books,,
+2026-10,Gujarat,Urban,class,09.7.2,Newspapers and periodicals,101.85,0.93,,"Recreation, sport and culture","Newspapers, books and stationery",Newspapers and periodicals,,
+2026-10,Gujarat,Urban,class,09.7.4,Stationery and drawing materials,101.66,1.05,,"Recreation, sport and culture","Newspapers, books and stationery",Stationery and drawing materials,,
+2026-10,Gujarat,Urban,class,10.1.0,Early childhood and primary education,111.48,5.66,,Education services,Early childhood and primary education,Early childhood and primary education,,
+2026-10,Gujarat,Urban,class,10.2.0,Secondary education,108.68,3.09,,Education services,Secondary education,Secondary education,,
+2026-10,Gujarat,Urban,class,10.4.0,Higher education,108.99,5.05,,Education services,Higher education,Higher education,,
+2026-10,Gujarat,Urban,class,10.5.0,Education not defined by level,109.66,4.91,,Education services,Education not defined by level,Education not defined by level,,
+2026-10,Gujarat,Urban,class,11.1.1,"Restaurants, cafés and the like",115.06,9.36,,Restaurants and accommodation services,Food and beverage serving services,"Restaurants, cafés and the like",,
+2026-10,Gujarat,Urban,class,11.2.0,Accommodation services,104.5,2.17,,Restaurants and accommodation services,Accommodation services,Accommodation services,,
+2026-10,Gujarat,Urban,class,13.1.1,Appliances for personal care,103.46,1.26,,"Personal care, social protection and miscellaneous goods and services",Personal care,Appliances for personal care,,
+2026-10,Gujarat,Urban,class,13.1.2,"Other appliances, articles and products for personal care",106.39,2.18,,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care",,
+2026-10,Gujarat,Urban,class,13.1.3,Hairdressing salons and personal grooming establishments,110.14,6.77,,"Personal care, social protection and miscellaneous goods and services",Personal care,Hairdressing salons and personal grooming establishments,,
+2026-10,Gujarat,Urban,class,13.2.1,Jewellery and watches,156.2,22.32,,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,,
+2026-10,Gujarat,Urban,class,13.2.9,Other personal effects n.e.c.,104.73,2.55,,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Other personal effects n.e.c.,,
+2026-10,Gujarat,Urban,class,13.9.0,Other services,106.23,0.48,,"Personal care, social protection and miscellaneous goods and services",Other services,Other services,,
+2026-10,Gujarat,Urban,sub_class,01.1.1.1,Cereals,110.03,5.9,,Food and beverages,Food,Cereals and cereal products,Cereals,
+2026-10,Gujarat,Urban,sub_class,01.1.1.2,Flour of cereals,109.1,2.32,,Food and beverages,Food,Cereals and cereal products,Flour of cereals,
+2026-10,Gujarat,Urban,sub_class,01.1.1.3,Bread and bakery products,101.39,0.74,,Food and beverages,Food,Cereals and cereal products,Bread and bakery products,
+2026-10,Gujarat,Urban,sub_class,01.1.1.4,Breakfast cereals,105.66,2.05,,Food and beverages,Food,Cereals and cereal products,Breakfast cereals,
+2026-10,Gujarat,Urban,sub_class,01.1.1.5,"Macaroni, noodles, couscous and similar pasta products",106.09,2.7,,Food and beverages,Food,Cereals and cereal products,"Macaroni, noodles, couscous and similar pasta products",
+2026-10,Gujarat,Urban,sub_class,01.1.1.9,Other milled cereal and grain products,108.63,2.53,,Food and beverages,Food,Cereals and cereal products,Other milled cereal and grain products,
+2026-10,Gujarat,Urban,sub_class,01.1.2.2,"Meat, fresh, chilled or frozen",111.46,12.05,,Food and beverages,Food,"Meat, fresh, chilled or frozen","Meat, fresh, chilled or frozen",
+2026-10,Gujarat,Urban,sub_class,01.1.3.1,Fish and prawn,110.99,4.78,,Food and beverages,Food,Fish and other seafood,Fish and prawn,
+2026-10,Gujarat,Urban,sub_class,01.1.4.1,Milk: liquid,108.44,4.19,,Food and beverages,Food,"Milk, other dairy products and eggs",Milk: liquid,
+2026-10,Gujarat,Urban,sub_class,01.1.4.3,Milk: condensed/ powder,104.03,2.94,,Food and beverages,Food,"Milk, other dairy products and eggs",Milk: condensed/ powder,
+2026-10,Gujarat,Urban,sub_class,01.1.4.5,Cheese,103.92,2.42,,Food and beverages,Food,"Milk, other dairy products and eggs",Cheese,
+2026-10,Gujarat,Urban,sub_class,01.1.4.6,"Curd, Yoghurt and similar products",104.67,2.13,,Food and beverages,Food,"Milk, other dairy products and eggs","Curd, Yoghurt and similar products",
+2026-10,Gujarat,Urban,sub_class,01.1.4.7,Milk-based dessert and beverages,110.9,6.98,,Food and beverages,Food,"Milk, other dairy products and eggs",Milk-based dessert and beverages,
+2026-10,Gujarat,Urban,sub_class,01.1.4.8,Eggs,109.75,5.01,,Food and beverages,Food,"Milk, other dairy products and eggs",Eggs,
+2026-10,Gujarat,Urban,sub_class,01.1.4.9,Other dairy products,103.34,3.66,,Food and beverages,Food,"Milk, other dairy products and eggs",Other dairy products,
+2026-10,Gujarat,Urban,sub_class,01.1.5.1,Vegetable oils,128.03,17.03,,Food and beverages,Food,Oils and fats,Vegetable oils,
+2026-10,Gujarat,Urban,sub_class,01.1.5.2,Butter and other oils and fats derived from milk,105.36,6.01,,Food and beverages,Food,Oils and fats,Butter and other oils and fats derived from milk,
+2026-10,Gujarat,Urban,sub_class,01.1.5.3,Margarine and similar preparations,122.26,7.56,,Food and beverages,Food,Oils and fats,Margarine and similar preparations,
+2026-10,Gujarat,Urban,sub_class,01.1.6.1,"Dates, figs and tropical fruits, fresh",103.36,0.12,,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",
+2026-10,Gujarat,Urban,sub_class,01.1.6.2,"Citrus fruits, fresh",155.07,64.81,,Food and beverages,Food,Fruits and nuts,"Citrus fruits, fresh",
+2026-10,Gujarat,Urban,sub_class,01.1.6.3,"Stone fruits and pome fruits, fresh",113.85,20.03,,Food and beverages,Food,Fruits and nuts,"Stone fruits and pome fruits, fresh",
+2026-10,Gujarat,Urban,sub_class,01.1.6.4,"Berries, fresh",150.42,42.3,,Food and beverages,Food,Fruits and nuts,"Berries, fresh",
+2026-10,Gujarat,Urban,sub_class,01.1.6.5,"Other fruits, fresh",165.41,28.75,,Food and beverages,Food,Fruits and nuts,"Other fruits, fresh",
+2026-10,Gujarat,Urban,sub_class,01.1.6.7,"Fruits, dried and dehydrated",144.64,16.52,,Food and beverages,Food,Fruits and nuts,"Fruits, dried and dehydrated",
+2026-10,Gujarat,Urban,sub_class,01.1.6.8,"Nuts, in shell or shelled",122.2,13.26,,Food and beverages,Food,Fruits and nuts,"Nuts, in shell or shelled",
+2026-10,Gujarat,Urban,sub_class,01.1.7.1,"Leafy or stem vegetables, fresh or chilled",120.26,-4.89,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Leafy or stem vegetables, fresh or chilled",
+2026-10,Gujarat,Urban,sub_class,01.1.7.2,"Fruit-bearing vegetables, fresh or chilled",102.81,-0.15,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled",
+2026-10,Gujarat,Urban,sub_class,01.1.7.3,"Green leguminous vegetables, fresh or chilled",125.93,-2.8,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Green leguminous vegetables, fresh or chilled",
+2026-10,Gujarat,Urban,sub_class,01.1.7.4,"Other vegetables, fresh or chilled",120.28,42.96,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",
+2026-10,Gujarat,Urban,sub_class,01.1.7.5,"Tubers, plantains and cooking bananas, fresh or chilled",85.18,-2.59,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Tubers, plantains and cooking bananas, fresh or chilled",
+2026-10,Gujarat,Urban,sub_class,01.1.7.6,Pulses,94.42,7.01,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,
+2026-10,Gujarat,Urban,sub_class,01.1.7.9,"Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",104.79,1.91,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",
+2026-10,Gujarat,Urban,sub_class,01.1.8.1,Cane sugar and beet sugar,129.08,23.72,,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,
+2026-10,Gujarat,Urban,sub_class,01.1.8.3,"Jams, marmalades, fruit jellies, purées and pastes, and honey",108.44,1.43,,Food and beverages,Food,"Sugar, confectionery and desserts","Jams, marmalades, fruit jellies, purées and pastes, and honey",
+2026-10,Gujarat,Urban,sub_class,01.1.8.5,"Chocolate, cocoa and cocoa-based food products",106.29,-0.12,,Food and beverages,Food,"Sugar, confectionery and desserts","Chocolate, cocoa and cocoa-based food products",
+2026-10,Gujarat,Urban,sub_class,01.1.8.6,"Ice, ice cream and sorbets",101.5,1.83,,Food and beverages,Food,"Sugar, confectionery and desserts","Ice, ice cream and sorbets",
+2026-10,Gujarat,Urban,sub_class,01.1.8.9,Other sugar confectionery and desserts,116.17,8.54,,Food and beverages,Food,"Sugar, confectionery and desserts",Other sugar confectionery and desserts,
+2026-10,Gujarat,Urban,sub_class,01.1.9.1,Ready-made food,108.65,3.02,,Food and beverages,Food,Ready-made food and other food products,Ready-made food,
+2026-10,Gujarat,Urban,sub_class,01.1.9.2,Baby food,104.0,0.96,,Food and beverages,Food,Ready-made food and other food products,Baby food,
+2026-10,Gujarat,Urban,sub_class,01.1.9.3,"Salt, condiments and sauces",109.25,4.51,,Food and beverages,Food,Ready-made food and other food products,"Salt, condiments and sauces",
+2026-10,Gujarat,Urban,sub_class,01.1.9.4,"Spices, culinary herbs and seeds",106.98,12.42,,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",
+2026-10,Gujarat,Urban,sub_class,01.1.9.9,Other food products n.e.c.,110.54,6.17,,Food and beverages,Food,Ready-made food and other food products,Other food products n.e.c.,
+2026-10,Gujarat,Urban,sub_class,01.2.1.0,Fruit and vegetable juices,107.39,2.7,,Food and beverages,Beverages,Fruit and vegetable juices,Fruit and vegetable juices,
+2026-10,Gujarat,Urban,sub_class,01.2.2.0,Coffee: powder,107.59,-4.35,,Food and beverages,Beverages,Coffee and coffee substitutes,Coffee: powder,
+2026-10,Gujarat,Urban,sub_class,01.2.3.0,Tea: leaf,109.41,1.48,,Food and beverages,Beverages,"Tea, maté and other plant-derived products for infusion",Tea: leaf,
+2026-10,Gujarat,Urban,sub_class,01.2.9.0,Other beverages,103.17,0.69,,Food and beverages,Beverages,Other beverages,Other beverages,
+2026-10,Gujarat,Urban,sub_class,01.2.4.0,Cocoa drinks,103.33,0.8,,Food and beverages,Beverages,Cocoa drinks,Cocoa drinks,
+2026-10,Gujarat,Urban,sub_class,01.2.5.0,Packaged water,100.7,0.87,,Food and beverages,Beverages,Water,Packaged water,
+2026-10,Gujarat,Urban,sub_class,01.2.6.0,Soda drinks,98.7,-0.78,,Food and beverages,Beverages,Soft drinks,Soda drinks,
+2026-10,Gujarat,Urban,sub_class,01.3.0.0,Services for processing primary goods for food,107.45,2.42,,Food and beverages,Services for processing primary goods for food,Services for processing primary goods for food,Services for processing primary goods for food,
+2026-10,Gujarat,Urban,sub_class,02.3.0.1,Cigarettes,121.06,19.83,,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Cigarettes,
+2026-10,Gujarat,Urban,sub_class,02.3.0.9,Paan and other tobacco products,104.54,1.35,,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,
+2026-10,Gujarat,Urban,sub_class,03.1.1.0,Clothing materials,108.36,5.44,,Clothing and footwear,Clothing,Clothing materials,Clothing materials,
+2026-10,Gujarat,Urban,sub_class,03.1.2.1,Garments for men or boys,109.15,5.86,,Clothing and footwear,Clothing,Garments,Garments for men or boys,
+2026-10,Gujarat,Urban,sub_class,03.1.2.2,Garments for women or girls,109.27,5.69,,Clothing and footwear,Clothing,Garments,Garments for women or girls,
+2026-10,Gujarat,Urban,sub_class,03.1.2.3,Garments for infants (under 2 years of age),110.63,6.36,,Clothing and footwear,Clothing,Garments,Garments for infants (under 2 years of age),
+2026-10,Gujarat,Urban,sub_class,03.1.2.4,School uniforms,108.52,5.27,,Clothing and footwear,Clothing,Garments,School uniforms,
+2026-10,Gujarat,Urban,sub_class,03.1.3.1,Other articles of clothing,104.38,1.55,,Clothing and footwear,Clothing,Other articles of clothing and clothing accessories,Other articles of clothing,
+2026-10,Gujarat,Urban,sub_class,03.1.4.1,"Cleaning, ironing, dry cleaning and dyeing of clothing",109.23,5.7,,Clothing and footwear,Clothing,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing","Cleaning, ironing, dry cleaning and dyeing of clothing",
+2026-10,Gujarat,Urban,sub_class,03.1.4.2,"Repair, tailoring and hire of clothing",114.09,6.21,,Clothing and footwear,Clothing,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing","Repair, tailoring and hire of clothing",
+2026-10,Gujarat,Urban,sub_class,03.2.1.1,Footwear for men,101.31,0.02,,Clothing and footwear,Footwear,Shoes and other footwear,Footwear for men,
+2026-10,Gujarat,Urban,sub_class,03.2.1.2,Footwear for women,104.47,2.76,,Clothing and footwear,Footwear,Shoes and other footwear,Footwear for women,
+2026-10,Gujarat,Urban,sub_class,03.2.1.3,Footwear for infants and children,106.31,2.51,,Clothing and footwear,Footwear,Shoes and other footwear,Footwear for infants and children,
+2026-10,Gujarat,Urban,sub_class,04.1.1.0,Actual rental payments made by tenants for main residence,104.95,2.66,,"Housing, water, electricity, gas and other fuels",Actual rental payments made for housing,Actual rental payments made by tenants for main residence,Actual rental payments made by tenants for main residence,
+2026-10,Gujarat,Urban,sub_class,04.3.1.1,Materials for the maintenance and repair of the dwelling,112.24,7.02,,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling",Security equipment and materials for dwelling maintenance and repair,Materials for the maintenance and repair of the dwelling,
+2026-10,Gujarat,Urban,sub_class,04.3.2.0,"Services for the maintenance, repair and security of the dwelling",104.28,2.33,,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling",
+2026-10,Gujarat,Urban,sub_class,04.4.1.1,Water charges,100.99,0.26,,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,Water supply,Water charges,
+2026-10,Gujarat,Urban,sub_class,04.4.4.9,Other services related to the dwelling n.e.c.,102.96,-0.43,,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,Other services related to the dwelling,Other services related to the dwelling n.e.c.,
+2026-10,Gujarat,Urban,sub_class,04.5.1.0,Electricity,98.17,-0.28,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Electricity,Electricity,
+2026-10,Gujarat,Urban,sub_class,04.5.2.2,LPG Cylinders and Piped natural gas,111.29,8.64,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Gas,LPG Cylinders and Piped natural gas,
+2026-10,Gujarat,Urban,sub_class,04.5.4.1,Coal,109.85,2.88,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Coal,
+2026-10,Gujarat,Urban,sub_class,04.5.4.2,Firewood and chips,97.0,0.35,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Firewood and chips,
+2026-10,Gujarat,Urban,sub_class,04.5.4.3,Charcoal,106.45,2.81,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Charcoal,
+2026-10,Gujarat,Urban,sub_class,04.5.4.9,Other solid fuels,109.34,13.49,,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Other solid fuels,
+2026-10,Gujarat,Urban,sub_class,05.1.1.1,Household furniture,110.87,7.5,,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Household furniture,
+2026-10,Gujarat,Urban,sub_class,05.1.1.3,Lighting equipment,101.56,1.18,,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Lighting equipment,
+2026-10,Gujarat,Urban,sub_class,05.1.1.4,"Furnishings, loose carpets and rugs",106.03,2.93,,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets","Furnishings, loose carpets and rugs",
+2026-10,Gujarat,Urban,sub_class,05.2.1.1,Furnishing fabrics and curtains,107.68,4.34,,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Furnishing fabrics and curtains,
+2026-10,Gujarat,Urban,sub_class,05.2.1.2,Bed linen and bedding,108.81,5.01,,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,
+2026-10,Gujarat,Urban,sub_class,05.3.1.1,Major kitchen appliances,106.63,6.46,,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Major kitchen appliances,
+2026-10,Gujarat,Urban,sub_class,05.3.1.2,Major laundry appliances,99.82,2.26,,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Major laundry appliances,
+2026-10,Gujarat,Urban,sub_class,05.3.1.3,Heaters and air conditioners,102.92,4.87,,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Heaters and air conditioners,
+2026-10,Gujarat,Urban,sub_class,05.3.1.9,Other major household appliances,103.39,2.72,,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,
+2026-10,Gujarat,Urban,sub_class,05.3.2.1,Small appliances for the cooking and processing of food,105.86,4.21,,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Small appliances for the cooking and processing of food,
+2026-10,Gujarat,Urban,sub_class,05.3.2.9,Other small household appliances,106.27,4.78,,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Other small household appliances,
+2026-10,Gujarat,Urban,sub_class,05.4.0.1,"Glassware, crystal ware, ceramic ware and china ware",107.64,3.28,,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils","Glassware, crystal ware, ceramic ware and china ware",
+2026-10,Gujarat,Urban,sub_class,05.4.0.3,Kitchen utensils and articles,111.59,8.47,,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,
+2026-10,Gujarat,Urban,sub_class,05.5.2.2,Miscellaneous accessories,102.06,1.3,,"Furnishings, household equipment and routine household maintenance",Tools and equipment for house and garden,Non-motorized tools and miscellaneous accessories,Miscellaneous accessories,
+2026-10,Gujarat,Urban,sub_class,05.6.1.1,Household cleaning and maintenance products,106.57,3.26,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Household cleaning and maintenance products,
+2026-10,Gujarat,Urban,sub_class,05.6.1.9,Other non-durable household goods,104.79,2.23,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,
+2026-10,Gujarat,Urban,sub_class,05.6.2.1,Domestic services provided by paid staff,104.43,3.09,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,Domestic services provided by paid staff,
+2026-10,Gujarat,Urban,sub_class,05.6.2.9,Other consumer services excluding conveyance,105.06,2.51,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,Other consumer services excluding conveyance,
+2026-10,Gujarat,Urban,sub_class,06.1.1.1,Medicines and vaccines,106.44,1.42,,Health,Medicines and health products,Medicines,Medicines and vaccines,
+2026-10,Gujarat,Urban,sub_class,06.1.1.2,Health supplements,104.56,2.55,,Health,Medicines and health products,Medicines,Health supplements,
+2026-10,Gujarat,Urban,sub_class,06.1.2.1,Medical diagnostic products,100.95,-0.02,,Health,Medicines and health products,Medical products,Medical diagnostic products,
+2026-10,Gujarat,Urban,sub_class,06.1.2.2,Family planning devices,104.66,1.48,,Health,Medicines and health products,Medical products,Family planning devices,
+2026-10,Gujarat,Urban,sub_class,06.1.2.3,Treatment devices for personal use,100.07,0.43,,Health,Medicines and health products,Medical products,Treatment devices for personal use,
+2026-10,Gujarat,Urban,sub_class,06.1.3.1,Assistive products for vision,105.64,3.62,,Health,Medicines and health products,Assistive products,Assistive products for vision,
+2026-10,Gujarat,Urban,sub_class,06.1.3.2,Assistive products for hearing and communication,103.88,2.33,,Health,Medicines and health products,Assistive products,Assistive products for hearing and communication,
+2026-10,Gujarat,Urban,sub_class,06.1.3.3,Assistive products for mobility and daily living,100.78,-0.61,,Health,Medicines and health products,Assistive products,Assistive products for mobility and daily living,
+2026-10,Gujarat,Urban,sub_class,06.2.3.1,Outpatient curative and rehabilitative services,107.86,3.15,,Health,Outpatient care services,Other outpatient care services,Outpatient curative and rehabilitative services,
+2026-10,Gujarat,Urban,sub_class,06.3.1.0,Inpatient curative and rehabilitative services,107.28,3.28,,Health,Inpatient care services,Inpatient curative and rehabilitative services,Inpatient curative and rehabilitative services,
+2026-10,Gujarat,Urban,sub_class,06.4.1.0,Diagnostic imaging services and medical laboratory services,106.56,2.74,,Health,Other health services,Diagnostic imaging services and medical laboratory services,Diagnostic imaging services and medical laboratory services,
+2026-10,Gujarat,Urban,sub_class,07.1.1.1,Motor car and jeep,96.19,0.02,,Transport,Purchase of vehicles,Motor cars,Motor car and jeep,
+2026-10,Gujarat,Urban,sub_class,07.1.2.0,Motor cycle and scooter,103.06,3.96,,Transport,Purchase of vehicles,Motorcycles,Motor cycle and scooter,
+2026-10,Gujarat,Urban,sub_class,07.1.3.0,Bicycle,102.87,2.53,,Transport,Purchase of vehicles,Bicycles,Bicycle,
+2026-10,Gujarat,Urban,sub_class,07.2.1.1,Tyres and tubes,108.63,5.53,,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Tyres and tubes,
+2026-10,Gujarat,Urban,sub_class,07.2.1.2,Parts for personal transport equipment,102.59,4.7,,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Parts for personal transport equipment,
+2026-10,Gujarat,Urban,sub_class,07.2.1.3,Accessories for personal transport equipment,109.73,6.22,,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Accessories for personal transport equipment,
+2026-10,Gujarat,Urban,sub_class,07.2.2.1,Diesel,108.22,8.56,,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,Diesel,
+2026-10,Gujarat,Urban,sub_class,07.2.2.2,Petrol,107.39,7.7,,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,Petrol,
+2026-10,Gujarat,Urban,sub_class,07.2.2.3,Other fuels for personal transport equipment,118.19,11.5,,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,Other fuels for personal transport equipment,
+2026-10,Gujarat,Urban,sub_class,07.3.1.1,Passenger transport by train,104.01,2.4,,Transport,Passenger transport services,Passenger transport by railway,Passenger transport by train,
+2026-10,Gujarat,Urban,sub_class,07.3.1.2,Passenger transport by rapid transit and tram,108.02,3.77,,Transport,Passenger transport services,Passenger transport by railway,Passenger transport by rapid transit and tram,
+2026-10,Gujarat,Urban,sub_class,07.3.2.1,Passenger transport by bus and coach,107.68,4.09,,Transport,Passenger transport services,Passenger transport by road,Passenger transport by bus and coach,
+2026-10,Gujarat,Urban,sub_class,07.3.2.2,Passenger transport by taxi and hired vehicle with driver,103.35,1.52,,Transport,Passenger transport services,Passenger transport by road,Passenger transport by taxi and hired vehicle with driver,
+2026-10,Gujarat,Urban,sub_class,07.3.2.3,Passenger transport for students to and from school,107.64,4.16,,Transport,Passenger transport services,Passenger transport by road,Passenger transport for students to and from school,
+2026-10,Gujarat,Urban,sub_class,07.3.2.9,Other passenger transport by road,105.83,4.09,,Transport,Passenger transport services,Passenger transport by road,Other passenger transport by road,
+2026-10,Gujarat,Urban,sub_class,07.3.3.1,"Passenger transport by air, domestic",126.17,3.1,,Transport,Passenger transport services,Passenger transport by air,"Passenger transport by air, domestic",
+2026-10,Gujarat,Urban,sub_class,07.4.1.2,Courier and parcel delivery services,114.14,6.87,,Transport,Transport services for goods,Postal and courier services,Courier and parcel delivery services,
+2026-10,Gujarat,Urban,sub_class,08.1.1.0,Telephone instrument (landline),101.04,0.81,,Information and communication,Information and communication equipment,Telephone instrument (landline),Telephone instrument (landline),
+2026-10,Gujarat,Urban,sub_class,08.1.2.0,Mobile handset,105.58,11.11,,Information and communication,Information and communication equipment,Mobile handset,Mobile handset,
+2026-10,Gujarat,Urban,sub_class,08.1.3.1,"Computers, laptops and tablets including Software",111.61,12.06,,Information and communication,Information and communication equipment,Information processing equipment,"Computers, laptops and tablets including Software",
+2026-10,Gujarat,Urban,sub_class,08.1.4.0,Audio-visual devices,99.31,3.02,,Information and communication,Information and communication equipment,Audio-visual devices,Audio-visual devices,
+2026-10,Gujarat,Urban,sub_class,08.1.5.0,Unrecorded recording media,131.23,27.62,,Information and communication,Information and communication equipment,Unrecorded recording media,Unrecorded recording media,
+2026-10,Gujarat,Urban,sub_class,08.3.3.0,Internet expenses,106.42,2.39,,Information and communication,Information and communication services,Internet access provision services and online storage services,Internet expenses,
+2026-10,Gujarat,Urban,sub_class,08.3.4.0,Telephone charges: mobile and landline,108.06,1.34,,Information and communication,Information and communication services,Telephone charges: mobile and landline,Telephone charges: mobile and landline,
+2026-10,Gujarat,Urban,sub_class,08.3.9.2,Subscriptions to streaming services,101.93,0.85,,Information and communication,Information and communication services,Other information and communication services,Subscriptions to streaming services,
+2026-10,Gujarat,Urban,sub_class,09.1.1.1,Camera and photographic equipment,103.45,3.79,,"Recreation, sport and culture",Recreational durables,Photographic and cinematographic equipment and optical instruments,Camera and photographic equipment,
+2026-10,Gujarat,Urban,sub_class,09.2.1.1,Other goods for recreation,105.84,5.29,,"Recreation, sport and culture",Other recreational goods,"Games, toys and hobby-related articles",Other goods for recreation,
+2026-10,Gujarat,Urban,sub_class,09.2.2.1,Sporting equipment,107.3,4.43,,"Recreation, sport and culture",Other recreational goods,"Sporting, camping and open-air recreation equipment",Sporting equipment,
+2026-10,Gujarat,Urban,sub_class,09.3.1.2,"Plants, seeds and flowers",101.88,0.25,,"Recreation, sport and culture",Garden products and pets,"Garden products, plants and flowers","Plants, seeds and flowers",
+2026-10,Gujarat,Urban,sub_class,09.3.2.1,Pets,105.48,3.92,,"Recreation, sport and culture",Garden products and pets,Pets and pet products,Pets,
+2026-10,Gujarat,Urban,sub_class,09.4.6.1,Recreational and leisure services,100.72,0.7,,"Recreation, sport and culture",Recreational services,Recreational and sporting services,Recreational and leisure services,
+2026-10,Gujarat,Urban,sub_class,09.4.6.2,Services associated with the practice of sports,99.48,1.16,,"Recreation, sport and culture",Recreational services,Recreational and sporting services,Services associated with the practice of sports,
+2026-10,Gujarat,Urban,sub_class,09.5.1.0,Musical instruments,100.36,1.74,,"Recreation, sport and culture",Cultural goods,Musical instruments,Musical instruments,
+2026-10,Gujarat,Urban,sub_class,09.6.1.0,"Cinema, theatre",107.86,3.68,,"Recreation, sport and culture",Cultural services,"Services provided by cinemas, theatres and concert venues","Cinema, theatre",
+2026-10,Gujarat,Urban,sub_class,09.6.3.0,Photography,106.52,4.45,,"Recreation, sport and culture",Cultural services,Photographic services,Photography,
+2026-10,Gujarat,Urban,sub_class,09.7.1.1,Educational books and textbooks,103.05,3.25,,"Recreation, sport and culture","Newspapers, books and stationery",Books,Educational books and textbooks,
+2026-10,Gujarat,Urban,sub_class,09.7.2.1,Newspapers and periodicals,101.85,0.93,,"Recreation, sport and culture","Newspapers, books and stationery",Newspapers and periodicals,Newspapers and periodicals,
+2026-10,Gujarat,Urban,sub_class,09.7.4.0,Stationery and drawing materials,101.66,1.05,,"Recreation, sport and culture","Newspapers, books and stationery",Stationery and drawing materials,Stationery and drawing materials,
+2026-10,Gujarat,Urban,sub_class,10.1.0.2,Primary education,111.48,5.66,,Education services,Early childhood and primary education,Early childhood and primary education,Primary education,
+2026-10,Gujarat,Urban,sub_class,10.2.0.0,Secondary education,108.68,3.09,,Education services,Secondary education,Secondary education,Secondary education,
+2026-10,Gujarat,Urban,sub_class,10.4.0.0,Higher education,108.99,5.05,,Education services,Higher education,Higher education,Higher education,
+2026-10,Gujarat,Urban,sub_class,10.5.0.1,Private tutor/ coaching centre and other educational expenses,109.66,4.91,,Education services,Education not defined by level,Education not defined by level,Private tutor/ coaching centre and other educational expenses,
+2026-10,Gujarat,Urban,sub_class,11.1.1.1,"Restaurants, cafés and the like – with full service",111.56,7.44,,Restaurants and accommodation services,Food and beverage serving services,"Restaurants, cafés and the like","Restaurants, cafés and the like – with full service",
+2026-10,Gujarat,Urban,sub_class,11.1.1.2,"Restaurants, cafés and the like – with limited service",116.05,9.89,,Restaurants and accommodation services,Food and beverage serving services,"Restaurants, cafés and the like","Restaurants, cafés and the like – with limited service",
+2026-10,Gujarat,Urban,sub_class,11.2.0.1,"Hotels, motels, inns and similar accommodation services",104.5,2.17,,Restaurants and accommodation services,Accommodation services,Accommodation services,"Hotels, motels, inns and similar accommodation services",
+2026-10,Gujarat,Urban,sub_class,13.1.1.1,Purchase of appliances for personal care,103.46,1.26,,"Personal care, social protection and miscellaneous goods and services",Personal care,Appliances for personal care,Purchase of appliances for personal care,
+2026-10,Gujarat,Urban,sub_class,13.1.2.0,"Other appliances, articles and products for personal care",106.39,2.18,,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",
+2026-10,Gujarat,Urban,sub_class,13.1.3.2,Personal grooming treatments,110.14,6.77,,"Personal care, social protection and miscellaneous goods and services",Personal care,Hairdressing salons and personal grooming establishments,Personal grooming treatments,
+2026-10,Gujarat,Urban,sub_class,13.2.1.1,Purchase of jewellery and watches,156.2,22.32,,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,Purchase of jewellery and watches,
+2026-10,Gujarat,Urban,sub_class,13.2.9.1,"Travel goods, baby articles and other personal effects n.e.c.",104.73,2.55,,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Other personal effects n.e.c.,"Travel goods, baby articles and other personal effects n.e.c.",
+2026-10,Gujarat,Urban,sub_class,13.9.0.2,Religious services,101.14,1.08,,"Personal care, social protection and miscellaneous goods and services",Other services,Other services,Religious services,
+2026-10,Gujarat,Urban,sub_class,13.9.0.9,Other services n.e.c.,109.09,0.18,,"Personal care, social protection and miscellaneous goods and services",Other services,Other services,Other services n.e.c.,
+2026-10,Gujarat,Urban,item,01.1.1.1.1.01,Rice,112.71,8.98,N,Food and beverages,Food,Cereals and cereal products,Cereals,Rice
+2026-10,Gujarat,Urban,item,01.1.1.1.1.02,Wheat,107.37,3.14,N,Food and beverages,Food,Cereals and cereal products,Cereals,Wheat
+2026-10,Gujarat,Urban,item,01.1.1.1.1.03,Jowar and its products,108.38,8.76,N,Food and beverages,Food,Cereals and cereal products,Cereals,Jowar and its products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.04,Ragi and its products,110.5,5.74,N,Food and beverages,Food,Cereals and cereal products,Cereals,Ragi and its products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.05,Bajra and its products,109.65,0.99,N,Food and beverages,Food,Cereals and cereal products,Cereals,Bajra and its products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.06,Maize and its products,104.85,0.26,N,Food and beverages,Food,Cereals and cereal products,Cereals,Maize and its products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.07,Small millets and its products,126.62,23.41,N,Food and beverages,Food,Cereals and cereal products,Cereals,Small millets and its products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.08,Barley and its products,107.68,6.1,N,Food and beverages,Food,Cereals and cereal products,Cereals,Barley and its products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.09,Other cereals and products,114.07,12.01,N,Food and beverages,Food,Cereals and cereal products,Cereals,Other cereals and products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.10,Other wheat products,107.14,1.21,N,Food and beverages,Food,Cereals and cereal products,Cereals,Other wheat products
+2026-10,Gujarat,Urban,item,01.1.1.1.1.11,Rice PDS,100.0,0.0,N,Food and beverages,Food,Cereals and cereal products,Cereals,Rice PDS
+2026-10,Gujarat,Urban,item,01.1.1.1.1.12,Wheat PDS,100.0,0.0,N,Food and beverages,Food,Cereals and cereal products,Cereals,Wheat PDS
+2026-10,Gujarat,Urban,item,01.1.1.2.1.01,Wheat atta,109.09,2.27,N,Food and beverages,Food,Cereals and cereal products,Flour of cereals,Wheat atta
+2026-10,Gujarat,Urban,item,01.1.1.2.1.02,Maida,109.24,4.08,N,Food and beverages,Food,Cereals and cereal products,Flour of cereals,Maida
+2026-10,Gujarat,Urban,item,01.1.1.3.1.01,Biscuits,98.53,-0.68,N,Food and beverages,Food,Cereals and cereal products,Bread and bakery products,Biscuits
+2026-10,Gujarat,Urban,item,01.1.1.3.1.02,"Chips , nachos, puffs, wafers, etc.",99.82,-0.48,N,Food and beverages,Food,Cereals and cereal products,Bread and bakery products,"Chips , nachos, puffs, wafers, etc."
+2026-10,Gujarat,Urban,item,01.1.1.3.1.03,"Cake, pastry",109.38,6.47,N,Food and beverages,Food,Cereals and cereal products,Bread and bakery products,"Cake, pastry"
+2026-10,Gujarat,Urban,item,01.1.1.3.1.04,Bread (bakery),110.07,3.4,N,Food and beverages,Food,Cereals and cereal products,Bread and bakery products,Bread (bakery)
+2026-10,Gujarat,Urban,item,01.1.1.4.1.01,Breakfast cereals,103.79,1.06,N,Food and beverages,Food,Cereals and cereal products,Breakfast cereals,Breakfast cereals
+2026-10,Gujarat,Urban,item,01.1.1.4.1.02,Muri,109.82,4.54,N,Food and beverages,Food,Cereals and cereal products,Breakfast cereals,Muri
+2026-10,Gujarat,Urban,item,01.1.1.4.1.03,Other rice products,108.82,-0.1,N,Food and beverages,Food,Cereals and cereal products,Breakfast cereals,Other rice products
+2026-10,Gujarat,Urban,item,01.1.1.5.1.01,Noodles,106.05,2.65,N,Food and beverages,Food,Cereals and cereal products,"Macaroni, noodles, couscous and similar pasta products",Noodles
+2026-10,Gujarat,Urban,item,01.1.1.5.1.02,Vermicelli (sewai),107.34,3.89,N,Food and beverages,Food,Cereals and cereal products,"Macaroni, noodles, couscous and similar pasta products",Vermicelli (sewai)
+2026-10,Gujarat,Urban,item,01.1.1.9.1.01,"Suji, rawa",107.78,1.29,N,Food and beverages,Food,Cereals and cereal products,Other milled cereal and grain products,"Suji, rawa"
+2026-10,Gujarat,Urban,item,01.1.1.9.1.02,Chidwa,109.27,3.46,N,Food and beverages,Food,Cereals and cereal products,Other milled cereal and grain products,Chidwa
+2026-10,Gujarat,Urban,item,01.1.2.2.1.01,Chicken,110.48,12.62,N,Food and beverages,Food,"Meat, fresh, chilled or frozen","Meat, fresh, chilled or frozen",Chicken
+2026-10,Gujarat,Urban,item,01.1.2.2.1.02,Goat meat/ mutton,113.74,9.43,N,Food and beverages,Food,"Meat, fresh, chilled or frozen","Meat, fresh, chilled or frozen",Goat meat/ mutton
+2026-10,Gujarat,Urban,item,01.1.2.2.1.03,Beef/ buffalo meat,119.28,18.23,N,Food and beverages,Food,"Meat, fresh, chilled or frozen","Meat, fresh, chilled or frozen",Beef/ buffalo meat
+2026-10,Gujarat,Urban,item,01.1.2.2.1.05,"Others: birds, crab,oyster, etc.",112.08,12.72,N,Food and beverages,Food,"Meat, fresh, chilled or frozen","Meat, fresh, chilled or frozen","Others: birds, crab,oyster, etc."
+2026-10,Gujarat,Urban,item,01.1.3.1.1.01,Fish and prawn,110.99,4.78,N,Food and beverages,Food,Fish and other seafood,Fish and prawn,Fish and prawn
+2026-10,Gujarat,Urban,item,01.1.4.1.1.01,Milk: liquid,108.44,4.19,N,Food and beverages,Food,"Milk, other dairy products and eggs",Milk: liquid,Milk: liquid
+2026-10,Gujarat,Urban,item,01.1.4.3.1.01,Milk: condensed/ powder,104.03,2.94,N,Food and beverages,Food,"Milk, other dairy products and eggs",Milk: condensed/ powder,Milk: condensed/ powder
+2026-10,Gujarat,Urban,item,01.1.4.5.1.01,Paneer,104.46,2.92,N,Food and beverages,Food,"Milk, other dairy products and eggs",Cheese,Paneer
+2026-10,Gujarat,Urban,item,01.1.4.5.1.02,Cheese,100.12,-1.08,N,Food and beverages,Food,"Milk, other dairy products and eggs",Cheese,Cheese
+2026-10,Gujarat,Urban,item,01.1.4.6.1.01,"Curd, yogurt",107.94,4.29,N,Food and beverages,Food,"Milk, other dairy products and eggs","Curd, Yoghurt and similar products","Curd, yogurt"
+2026-10,Gujarat,Urban,item,01.1.4.6.1.02,Butter milk,103.38,1.18,N,Food and beverages,Food,"Milk, other dairy products and eggs","Curd, Yoghurt and similar products",Butter milk
+2026-10,Gujarat,Urban,item,01.1.4.6.1.03,Lassi,101.85,1.07,N,Food and beverages,Food,"Milk, other dairy products and eggs","Curd, Yoghurt and similar products",Lassi
+2026-10,Gujarat,Urban,item,01.1.4.7.1.01,Tea: cups,109.22,6.61,N,Food and beverages,Food,"Milk, other dairy products and eggs",Milk-based dessert and beverages,Tea: cups
+2026-10,Gujarat,Urban,item,01.1.4.7.1.02,Prepared sweets- milk based,115.95,7.92,N,Food and beverages,Food,"Milk, other dairy products and eggs",Milk-based dessert and beverages,Prepared sweets- milk based
+2026-10,Gujarat,Urban,item,01.1.4.7.1.03,Coffee: cups,112.0,8.19,N,Food and beverages,Food,"Milk, other dairy products and eggs",Milk-based dessert and beverages,Coffee: cups
+2026-10,Gujarat,Urban,item,01.1.4.8.1.01,Eggs,109.75,5.01,N,Food and beverages,Food,"Milk, other dairy products and eggs",Eggs,Eggs
+2026-10,Gujarat,Urban,item,01.1.4.9.1.01,Other milk products,103.34,3.66,N,Food and beverages,Food,"Milk, other dairy products and eggs",Other dairy products,Other milk products
+2026-10,Gujarat,Urban,item,01.1.5.1.1.01,Refined oil,136.21,16.59,N,Food and beverages,Food,Oils and fats,Vegetable oils,Refined oil
+2026-10,Gujarat,Urban,item,01.1.5.1.1.02,Mustard oil,128.15,10.3,N,Food and beverages,Food,Oils and fats,Vegetable oils,Mustard oil
+2026-10,Gujarat,Urban,item,01.1.5.1.1.03,Groundnut oil,109.85,19.84,N,Food and beverages,Food,Oils and fats,Vegetable oils,Groundnut oil
+2026-10,Gujarat,Urban,item,01.1.5.1.1.04,Coconut oil,127.42,6.99,N,Food and beverages,Food,Oils and fats,Vegetable oils,Coconut oil
+2026-10,Gujarat,Urban,item,01.1.5.1.1.05,Edible oil,134.38,15.23,N,Food and beverages,Food,Oils and fats,Vegetable oils,Edible oil
+2026-10,Gujarat,Urban,item,01.1.5.1.1.06,Edible oil PDS,100.0,0.0,N,Food and beverages,Food,Oils and fats,Vegetable oils,Edible oil PDS
+2026-10,Gujarat,Urban,item,01.1.5.2.1.01,Ghee,105.29,6.04,N,Food and beverages,Food,Oils and fats,Butter and other oils and fats derived from milk,Ghee
+2026-10,Gujarat,Urban,item,01.1.5.2.1.02,Butter,107.13,5.27,N,Food and beverages,Food,Oils and fats,Butter and other oils and fats derived from milk,Butter
+2026-10,Gujarat,Urban,item,01.1.5.3.1.01,Vanaspati and margarine,122.26,7.56,N,Food and beverages,Food,Oils and fats,Margarine and similar preparations,Vanaspati and margarine
+2026-10,Gujarat,Urban,item,01.1.6.1.1.01,Banana,115.99,13.61,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Banana
+2026-10,Gujarat,Urban,item,01.1.6.1.1.02,Mango,60.39,-32.48,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Mango
+2026-10,Gujarat,Urban,item,01.1.6.1.1.03,Green coconut,147.89,14.76,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Green coconut
+2026-10,Gujarat,Urban,item,01.1.6.1.1.04,Coconut,141.3,1.17,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Coconut
+2026-10,Gujarat,Urban,item,01.1.6.1.1.05,Papaya,126.08,15.9,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Papaya
+2026-10,Gujarat,Urban,item,01.1.6.1.1.06,Guava,147.2,41.59,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Guava
+2026-10,Gujarat,Urban,item,01.1.6.1.1.07,Pineapple,112.91,7.2,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Pineapple
+2026-10,Gujarat,Urban,item,01.1.6.1.1.08,Fig: anjeer,107.42,-2.4,N,Food and beverages,Food,Fruits and nuts,"Dates, figs and tropical fruits, fresh",Fig: anjeer
+2026-10,Gujarat,Urban,item,01.1.6.2.1.01,Orange and sweet lime (mausami),149.74,23.77,N,Food and beverages,Food,Fruits and nuts,"Citrus fruits, fresh",Orange and sweet lime (mausami)
+2026-10,Gujarat,Urban,item,01.1.6.2.1.02,Lemon,158.0,99.3,N,Food and beverages,Food,Fruits and nuts,"Citrus fruits, fresh",Lemon
+2026-10,Gujarat,Urban,item,01.1.6.3.1.01,Apple,112.67,20.49,N,Food and beverages,Food,Fruits and nuts,"Stone fruits and pome fruits, fresh",Apple
+2026-10,Gujarat,Urban,item,01.1.6.3.1.02,Litchi,122.75,-15.7,N,Food and beverages,Food,Fruits and nuts,"Stone fruits and pome fruits, fresh",Litchi
+2026-10,Gujarat,Urban,item,01.1.6.3.1.03,Pears/ nashpati,139.69,20.05,N,Food and beverages,Food,Fruits and nuts,"Stone fruits and pome fruits, fresh",Pears/ nashpati
+2026-10,Gujarat,Urban,item,01.1.6.3.1.04,Apricot,110.14,5.63,N,Food and beverages,Food,Fruits and nuts,"Stone fruits and pome fruits, fresh",Apricot
+2026-10,Gujarat,Urban,item,01.1.6.4.1.01,Berries,150.42,42.3,N,Food and beverages,Food,Fruits and nuts,"Berries, fresh",Berries
+2026-10,Gujarat,Urban,item,01.1.6.5.1.01,Grapes,233.73,64.52,N,Food and beverages,Food,Fruits and nuts,"Other fruits, fresh",Grapes
+2026-10,Gujarat,Urban,item,01.1.6.5.1.02,Watermelon,124.16,6.38,N,Food and beverages,Food,Fruits and nuts,"Other fruits, fresh",Watermelon
+2026-10,Gujarat,Urban,item,01.1.6.5.1.03,Kharbooza,119.26,6.2,N,Food and beverages,Food,Fruits and nuts,"Other fruits, fresh",Kharbooza
+2026-10,Gujarat,Urban,item,01.1.6.5.1.04,Singara,114.03,-8.89,N,Food and beverages,Food,Fruits and nuts,"Other fruits, fresh",Singara
+2026-10,Gujarat,Urban,item,01.1.6.5.1.05,Other fresh fruits,159.6,18.66,N,Food and beverages,Food,Fruits and nuts,"Other fruits, fresh",Other fresh fruits
+2026-10,Gujarat,Urban,item,01.1.6.7.1.01,Dates,130.03,22.8,N,Food and beverages,Food,Fruits and nuts,"Fruits, dried and dehydrated",Dates
+2026-10,Gujarat,Urban,item,01.1.6.7.1.02,Raisin (kishmish) and monacca,138.32,10.25,N,Food and beverages,Food,Fruits and nuts,"Fruits, dried and dehydrated",Raisin (kishmish) and monacca
+2026-10,Gujarat,Urban,item,01.1.6.7.1.03,Coconut: copra,183.72,20.51,N,Food and beverages,Food,Fruits and nuts,"Fruits, dried and dehydrated",Coconut: copra
+2026-10,Gujarat,Urban,item,01.1.6.7.1.04,Other dry fruits,104.34,2.05,N,Food and beverages,Food,Fruits and nuts,"Fruits, dried and dehydrated",Other dry fruits
+2026-10,Gujarat,Urban,item,01.1.6.8.1.01,Groundnut,112.08,14.59,N,Food and beverages,Food,Fruits and nuts,"Nuts, in shell or shelled",Groundnut
+2026-10,Gujarat,Urban,item,01.1.6.8.1.02,Cashew nut,116.98,6.02,N,Food and beverages,Food,Fruits and nuts,"Nuts, in shell or shelled",Cashew nut
+2026-10,Gujarat,Urban,item,01.1.6.8.1.03,Other nuts,131.4,16.9,N,Food and beverages,Food,Fruits and nuts,"Nuts, in shell or shelled",Other nuts
+2026-10,Gujarat,Urban,item,01.1.7.1.1.01,Cauliflower,109.73,-9.5,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Leafy or stem vegetables, fresh or chilled",Cauliflower
+2026-10,Gujarat,Urban,item,01.1.7.1.1.02,Cabbage,100.4,-1.64,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Leafy or stem vegetables, fresh or chilled",Cabbage
+2026-10,Gujarat,Urban,item,01.1.7.1.1.03,Palak and other leafy vegetables,157.97,-2.74,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Leafy or stem vegetables, fresh or chilled",Palak and other leafy vegetables
+2026-10,Gujarat,Urban,item,01.1.7.2.1.01,Tomato,98.06,3.16,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled",Tomato
+2026-10,Gujarat,Urban,item,01.1.7.2.1.02,Lady's finger,103.59,-0.34,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled",Lady's finger
+2026-10,Gujarat,Urban,item,01.1.7.2.1.03,Brinjal,114.84,-0.58,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled",Brinjal
+2026-10,Gujarat,Urban,item,01.1.7.2.1.04,Green chillies,99.58,6.95,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled",Green chillies
+2026-10,Gujarat,Urban,item,01.1.7.2.1.05,"Gourd, pumpkin",95.23,-10.97,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled","Gourd, pumpkin"
+2026-10,Gujarat,Urban,item,01.1.7.2.1.06,Parwal/patal and Kundru,102.05,-1.77,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Fruit-bearing vegetables, fresh or chilled",Parwal/patal and Kundru
+2026-10,Gujarat,Urban,item,01.1.7.3.1.01,Beans and Barbati,103.65,0.88,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Green leguminous vegetables, fresh or chilled",Beans and Barbati
+2026-10,Gujarat,Urban,item,01.1.7.3.1.02,Peas,178.57,-7.44,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Green leguminous vegetables, fresh or chilled",Peas
+2026-10,Gujarat,Urban,item,01.1.7.4.1.01,Onion,152.03,109.31,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",Onion
+2026-10,Gujarat,Urban,item,01.1.7.4.1.02,Garlic,78.51,57.92,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",Garlic
+2026-10,Gujarat,Urban,item,01.1.7.4.1.03,Carrot,126.01,-2.07,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",Carrot
+2026-10,Gujarat,Urban,item,01.1.7.4.1.04,Radish,123.66,-2.92,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",Radish
+2026-10,Gujarat,Urban,item,01.1.7.4.1.05,Jackfruit,97.83,-8.01,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",Jackfruit
+2026-10,Gujarat,Urban,item,01.1.7.4.1.06,Other vegetables,105.22,0.47,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Other vegetables, fresh or chilled",Other vegetables
+2026-10,Gujarat,Urban,item,01.1.7.5.1.01,Potato,85.18,-2.59,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Tubers, plantains and cooking bananas, fresh or chilled",Potato
+2026-10,Gujarat,Urban,item,01.1.7.6.1.01,"Arhar, tur",86.18,10.97,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,"Arhar, tur"
+2026-10,Gujarat,Urban,item,01.1.7.6.1.02,Moong,98.5,3.16,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Moong
+2026-10,Gujarat,Urban,item,01.1.7.6.1.03,Urd,104.48,8.81,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Urd
+2026-10,Gujarat,Urban,item,01.1.7.6.1.04,Masur,101.7,1.55,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Masur
+2026-10,Gujarat,Urban,item,01.1.7.6.1.05,Gram: split,105.72,8.3,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Gram: split
+2026-10,Gujarat,Urban,item,01.1.7.6.1.06,Gram: whole,103.4,5.69,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Gram: whole
+2026-10,Gujarat,Urban,item,01.1.7.6.1.07,"Peas, chickpeas",91.25,-5.95,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,"Peas, chickpeas"
+2026-10,Gujarat,Urban,item,01.1.7.6.1.08,Other pulses,100.76,1.87,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Other pulses
+2026-10,Gujarat,Urban,item,01.1.7.6.1.09,Pulses PDS,100.0,0.0,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,Pulses PDS
+2026-10,Gujarat,Urban,item,01.1.7.9.1.01,Besan and Gram products,104.76,2.46,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",Besan and Gram products
+2026-10,Gujarat,Urban,item,01.1.7.9.1.02,Pickles,105.34,0.75,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",Pickles
+2026-10,Gujarat,Urban,item,01.1.7.9.1.03,Other pulse products,101.5,2.53,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",Other pulse products
+2026-10,Gujarat,Urban,item,01.1.8.1.1.01,Sugar,131.19,25.4,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Sugar
+2026-10,Gujarat,Urban,item,01.1.8.1.1.02,Jaggery (gur),122.6,18.52,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Jaggery (gur)
+2026-10,Gujarat,Urban,item,01.1.8.1.1.03,Sugar PDS,100.0,0.0,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Sugar PDS
+2026-10,Gujarat,Urban,item,01.1.8.3.1.01,Jam/ jelly,110.5,1.15,N,Food and beverages,Food,"Sugar, confectionery and desserts","Jams, marmalades, fruit jellies, purées and pastes, and honey",Jam/ jelly
+2026-10,Gujarat,Urban,item,01.1.8.3.1.02,Honey,105.15,1.91,N,Food and beverages,Food,"Sugar, confectionery and desserts","Jams, marmalades, fruit jellies, purées and pastes, and honey",Honey
+2026-10,Gujarat,Urban,item,01.1.8.5.1.01,"Chocolates, etc.",106.29,-0.12,N,Food and beverages,Food,"Sugar, confectionery and desserts","Chocolate, cocoa and cocoa-based food products","Chocolates, etc."
+2026-10,Gujarat,Urban,item,01.1.8.6.1.01,Ice-cream,101.5,1.83,N,Food and beverages,Food,"Sugar, confectionery and desserts","Ice, ice cream and sorbets",Ice-cream
+2026-10,Gujarat,Urban,item,01.1.8.9.1.01,Prepared sweets - non milk based,116.09,8.45,N,Food and beverages,Food,"Sugar, confectionery and desserts",Other sugar confectionery and desserts,Prepared sweets - non milk based
+2026-10,Gujarat,Urban,item,01.1.8.9.1.02,"Candy, misri",125.01,17.29,N,Food and beverages,Food,"Sugar, confectionery and desserts",Other sugar confectionery and desserts,"Candy, misri"
+2026-10,Gujarat,Urban,item,01.1.9.1.1.01,Other served processed food,112.59,6.2,N,Food and beverages,Food,Ready-made food and other food products,Ready-made food,Other served processed food
+2026-10,Gujarat,Urban,item,01.1.9.1.1.02,Other packaged processed food,100.61,-3.58,N,Food and beverages,Food,Ready-made food and other food products,Ready-made food,Other packaged processed food
+2026-10,Gujarat,Urban,item,01.1.9.2.1.01,Baby food,104.0,0.96,N,Food and beverages,Food,Ready-made food and other food products,Baby food,Baby food
+2026-10,Gujarat,Urban,item,01.1.9.3.1.01,Salt,110.96,5.68,N,Food and beverages,Food,Ready-made food and other food products,"Salt, condiments and sauces",Salt
+2026-10,Gujarat,Urban,item,01.1.9.3.1.02,Sauce and Mayonnaise,102.86,0.08,N,Food and beverages,Food,Ready-made food and other food products,"Salt, condiments and sauces",Sauce and Mayonnaise
+2026-10,Gujarat,Urban,item,01.1.9.3.1.03,Salt PDS,100.0,0.0,N,Food and beverages,Food,Ready-made food and other food products,"Salt, condiments and sauces",Salt PDS
+2026-10,Gujarat,Urban,item,01.1.9.4.1.01,Dry chillies,108.33,19.81,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Dry chillies
+2026-10,Gujarat,Urban,item,01.1.9.4.1.02,Cumin (jeera),82.36,2.87,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Cumin (jeera)
+2026-10,Gujarat,Urban,item,01.1.9.4.1.03,Coriander (dhania),116.53,12.82,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Coriander (dhania)
+2026-10,Gujarat,Urban,item,01.1.9.4.1.04,Ginger,108.45,45.78,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Ginger
+2026-10,Gujarat,Urban,item,01.1.9.4.1.05,Turmeric,115.08,8.94,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Turmeric
+2026-10,Gujarat,Urban,item,01.1.9.4.1.06,Curry powder,105.66,5.49,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Curry powder
+2026-10,Gujarat,Urban,item,01.1.9.4.1.07,Black pepper,114.96,4.99,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Black pepper
+2026-10,Gujarat,Urban,item,01.1.9.4.1.08,Tamarind,119.01,5.6,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Tamarind
+2026-10,Gujarat,Urban,item,01.1.9.4.1.09,Oilseeds,111.88,9.47,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Oilseeds
+2026-10,Gujarat,Urban,item,01.1.9.4.1.10,Poppy seeds,113.33,2.92,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Poppy seeds
+2026-10,Gujarat,Urban,item,01.1.9.4.1.11,Other spices,110.43,4.08,N,Food and beverages,Food,Ready-made food and other food products,"Spices, culinary herbs and seeds",Other spices
+2026-10,Gujarat,Urban,item,01.1.9.9.1.01,"Papad, bhujia, namkeen, mixture and chanachur",110.61,6.2,N,Food and beverages,Food,Ready-made food and other food products,Other food products n.e.c.,"Papad, bhujia, namkeen, mixture and chanachur"
+2026-10,Gujarat,Urban,item,01.1.9.9.1.02,Health supplements (probiotic tablet and drinks),107.37,4.58,N,Food and beverages,Food,Ready-made food and other food products,Other food products n.e.c.,Health supplements (probiotic tablet and drinks)
+2026-10,Gujarat,Urban,item,01.2.1.0.1.01,Fruit juice,107.39,2.7,N,Food and beverages,Beverages,Fruit and vegetable juices,Fruit and vegetable juices,Fruit juice
+2026-10,Gujarat,Urban,item,01.2.2.0.1.01,Coffee: powder,107.59,-4.35,N,Food and beverages,Beverages,Coffee and coffee substitutes,Coffee: powder,Coffee: powder
+2026-10,Gujarat,Urban,item,01.2.3.0.1.01,Tea: leaf,109.41,1.48,N,Food and beverages,Beverages,"Tea, maté and other plant-derived products for infusion",Tea: leaf,Tea: leaf
+2026-10,Gujarat,Urban,item,01.2.9.0.1.02,Health drinks,105.07,1.68,N,Food and beverages,Beverages,Other beverages,Other beverages,Health drinks
+2026-10,Gujarat,Urban,item,01.2.9.0.1.01,Health supplements (protein powder),99.78,-2.35,N,Food and beverages,Beverages,Other beverages,Other beverages,Health supplements (protein powder)
+2026-10,Gujarat,Urban,item,01.2.9.0.1.03,Other cold beverages,93.97,-4.06,N,Food and beverages,Beverages,Other beverages,Other beverages,Other cold beverages
+2026-10,Gujarat,Urban,item,01.2.4.0.1.01,Beverages: cocoa and chocolate drink,103.33,0.8,N,Food and beverages,Beverages,Cocoa drinks,Cocoa drinks,Beverages: cocoa and chocolate drink
+2026-10,Gujarat,Urban,item,01.2.5.0.1.01,Packaged water,100.7,0.87,N,Food and beverages,Beverages,Water,Packaged water,Packaged water
+2026-10,Gujarat,Urban,item,01.2.6.0.1.01,Soda drinks,98.7,-0.78,N,Food and beverages,Beverages,Soft drinks,Soda drinks,Soda drinks
+2026-10,Gujarat,Urban,item,01.3.0.0.2.01,Grinding/ husking charges,107.45,2.42,N,Food and beverages,Services for processing primary goods for food,Services for processing primary goods for food,Services for processing primary goods for food,Grinding/ husking charges
+2026-10,Gujarat,Urban,item,02.3.0.1.1.01,Cigarettes,121.06,19.83,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Cigarettes,Cigarettes
+2026-10,Gujarat,Urban,item,02.3.0.9.1.01,"Gutka, zarda, kimam, surti",99.84,-1.78,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,"Gutka, zarda, kimam, surti"
+2026-10,Gujarat,Urban,item,02.3.0.9.1.02,Paan: finished,110.93,5.91,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Paan: finished
+2026-10,Gujarat,Urban,item,02.3.0.9.1.03,Bidi,110.86,6.61,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Bidi
+2026-10,Gujarat,Urban,item,02.3.0.9.1.04,Ingredients for paan,104.01,2.63,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Ingredients for paan
+2026-10,Gujarat,Urban,item,02.3.0.9.1.05,Leaf tobacco,101.13,-0.37,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Leaf tobacco
+2026-10,Gujarat,Urban,item,02.3.0.9.1.06,Paan: leaf,109.01,9.23,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Paan: leaf
+2026-10,Gujarat,Urban,item,02.3.0.9.1.07,Hookah tobacco,101.61,1.7,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Hookah tobacco
+2026-10,Gujarat,Urban,item,02.3.0.9.1.08,Snuff,101.09,-1.71,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Snuff
+2026-10,Gujarat,Urban,item,02.3.0.9.1.09,Other tobacco products,105.38,1.49,N,"Paan, tobacco and intoxicants",Paan and tobacco,Paan and other tobacco products,Paan and other tobacco products,Other tobacco products
+2026-10,Gujarat,Urban,item,03.1.1.0.1.01,Clothing materials,108.36,5.44,N,Clothing and footwear,Clothing,Clothing materials,Clothing materials,Clothing materials
+2026-10,Gujarat,Urban,item,03.1.2.1.1.01,"Shirts, T-shirts, Kurta (gents)",109.75,6.49,N,Clothing and footwear,Clothing,Garments,Garments for men or boys,"Shirts, T-shirts, Kurta (gents)"
+2026-10,Gujarat,Urban,item,03.1.2.1.1.02,"Trousers, jeans, track pant, shorts (gents)",108.54,5.73,N,Clothing and footwear,Clothing,Garments,Garments for men or boys,"Trousers, jeans, track pant, shorts (gents)"
+2026-10,Gujarat,Urban,item,03.1.2.1.1.03,"Coat, jacket, blazer, sweater, sweatshirts and windcheater (gents)",106.07,2.16,N,Clothing and footwear,Clothing,Garments,Garments for men or boys,"Coat, jacket, blazer, sweater, sweatshirts and windcheater (gents)"
+2026-10,Gujarat,Urban,item,03.1.2.1.1.04,Dhoti/ Lungi,110.09,4.62,N,Clothing and footwear,Clothing,Garments,Garments for men or boys,Dhoti/ Lungi
+2026-10,Gujarat,Urban,item,03.1.2.1.1.05,Other garments for men or boys,110.0,6.07,N,Clothing and footwear,Clothing,Garments,Garments for men or boys,Other garments for men or boys
+2026-10,Gujarat,Urban,item,03.1.2.2.1.01,Saree,114.68,7.24,N,Clothing and footwear,Clothing,Garments,Garments for women or girls,Saree
+2026-10,Gujarat,Urban,item,03.1.2.2.1.02,"Tops, shrugs, kurti (ladies)",109.01,6.26,N,Clothing and footwear,Clothing,Garments,Garments for women or girls,"Tops, shrugs, kurti (ladies)"
+2026-10,Gujarat,Urban,item,03.1.2.2.1.03,"Trousers, jeans, slawars, Skirts (ladies)",107.89,5.43,N,Clothing and footwear,Clothing,Garments,Garments for women or girls,"Trousers, jeans, slawars, Skirts (ladies)"
+2026-10,Gujarat,Urban,item,03.1.2.2.1.04,"Coat, jacket, blazer, sweater, sweatshirts and windcheater  (ladies)",103.38,0.79,N,Clothing and footwear,Clothing,Garments,Garments for women or girls,"Coat, jacket, blazer, sweater, sweatshirts and windcheater  (ladies)"
+2026-10,Gujarat,Urban,item,03.1.2.2.1.05,Other garments for women or girls,107.96,5.14,N,Clothing and footwear,Clothing,Garments,Garments for women or girls,Other garments for women or girls
+2026-10,Gujarat,Urban,item,03.1.2.3.1.01,Garments for infants,110.63,6.36,N,Clothing and footwear,Clothing,Garments,Garments for infants (under 2 years of age),Garments for infants
+2026-10,Gujarat,Urban,item,03.1.2.4.1.01,School uniforms,108.52,5.27,N,Clothing and footwear,Clothing,Garments,School uniforms,School uniforms
+2026-10,Gujarat,Urban,item,03.1.3.1.1.01,"Gamchha, towel and handkerchief",105.33,1.74,N,Clothing and footwear,Clothing,Other articles of clothing and clothing accessories,Other articles of clothing,"Gamchha, towel and handkerchief"
+2026-10,Gujarat,Urban,item,03.1.3.1.1.02,Shawl and chaddar,106.53,3.59,N,Clothing and footwear,Clothing,Other articles of clothing and clothing accessories,Other articles of clothing,Shawl and chaddar
+2026-10,Gujarat,Urban,item,03.1.3.1.1.03,Other articles of clothing (including knitting wool),102.35,0.68,N,Clothing and footwear,Clothing,Other articles of clothing and clothing accessories,Other articles of clothing,Other articles of clothing (including knitting wool)
+2026-10,Gujarat,Urban,item,03.1.4.1.2.01,"Washerman, laundry, ironing, dry cleaning and dyeing",109.23,5.7,N,Clothing and footwear,Clothing,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing","Cleaning, ironing, dry cleaning and dyeing of clothing","Washerman, laundry, ironing, dry cleaning and dyeing"
+2026-10,Gujarat,Urban,item,03.1.4.2.2.01,Tailor,114.09,6.21,N,Clothing and footwear,Clothing,"Cleaning, ironing, dry cleaning, dyeing, repair, tailoring and hire of clothing","Repair, tailoring and hire of clothing",Tailor
+2026-10,Gujarat,Urban,item,03.2.1.1.1.01,Footwear for men,101.31,0.02,N,Clothing and footwear,Footwear,Shoes and other footwear,Footwear for men,Footwear for men
+2026-10,Gujarat,Urban,item,03.2.1.2.1.01,Footwear for women,104.47,2.76,N,Clothing and footwear,Footwear,Shoes and other footwear,Footwear for women,Footwear for women
+2026-10,Gujarat,Urban,item,03.2.1.3.1.01,Footwear for infants and children,106.31,2.51,N,Clothing and footwear,Footwear,Shoes and other footwear,Footwear for infants and children,Footwear for infants and children
+2026-10,Gujarat,Urban,item,04.1.1.0.2.01,House Rent,104.95,2.66,N,"Housing, water, electricity, gas and other fuels",Actual rental payments made for housing,Actual rental payments made by tenants for main residence,Actual rental payments made by tenants for main residence,House Rent
+2026-10,Gujarat,Urban,item,04.3.1.1.1.01,"Plugs, switches and other electrical fittings",112.24,7.02,N,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling",Security equipment and materials for dwelling maintenance and repair,Materials for the maintenance and repair of the dwelling,"Plugs, switches and other electrical fittings"
+2026-10,Gujarat,Urban,item,04.3.2.0.2.01,Residential building and land (minor repairs),105.03,2.34,N,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling",Residential building and land (minor repairs)
+2026-10,Gujarat,Urban,item,04.3.2.0.2.02,"Repair charges for non-durables (electricity charges, plumbing charges etc.)",104.98,4.51,N,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling","Repair charges for non-durables (electricity charges, plumbing charges etc.)"
+2026-10,Gujarat,Urban,item,04.3.2.0.2.03,Watchmen/security guard,110.54,5.58,N,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling",Watchmen/security guard
+2026-10,Gujarat,Urban,item,04.3.2.0.2.04,Other consumer rent,101.98,0.82,N,"Housing, water, electricity, gas and other fuels","Maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling","Services for the maintenance, repair and security of the dwelling",Other consumer rent
+2026-10,Gujarat,Urban,item,04.4.1.1.2.01,Water charges,100.99,0.26,N,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,Water supply,Water charges,Water charges
+2026-10,Gujarat,Urban,item,04.4.4.9.2.01,Sweeper,102.96,-0.43,N,"Housing, water, electricity, gas and other fuels",Water supply and miscellaneous services relating to the dwelling,Other services related to the dwelling,Other services related to the dwelling n.e.c.,Sweeper
+2026-10,Gujarat,Urban,item,04.5.1.0.2.01,Electricity charges,98.17,-0.28,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Electricity,Electricity,Electricity charges
+2026-10,Gujarat,Urban,item,04.5.2.2.1.01,LPG cylinder and piped natural gas,111.29,8.64,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Gas,LPG Cylinders and Piped natural gas,LPG cylinder and piped natural gas
+2026-10,Gujarat,Urban,item,04.5.4.1.1.01,Coal,109.85,2.88,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Coal,Coal
+2026-10,Gujarat,Urban,item,04.5.4.2.1.01,Firewood and chips,97.0,0.35,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Firewood and chips,Firewood and chips
+2026-10,Gujarat,Urban,item,04.5.4.3.1.01,Charcoal,106.45,2.81,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Charcoal,Charcoal
+2026-10,Gujarat,Urban,item,04.5.4.9.1.01,Dung cake,99.54,-0.56,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Other solid fuels,Dung cake
+2026-10,Gujarat,Urban,item,04.5.4.9.1.02,Fuel (biogas and gobar gas),109.45,13.66,N,"Housing, water, electricity, gas and other fuels","Electricity, gas and other fuels",Solid fuels,Other solid fuels,Fuel (biogas and gobar gas)
+2026-10,Gujarat,Urban,item,05.1.1.1.1.01,"Chair, stool, bench and table",110.03,6.91,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Household furniture,"Chair, stool, bench and table"
+2026-10,Gujarat,Urban,item,05.1.1.1.1.02,Almirah and dressing table,110.36,7.52,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Household furniture,Almirah and dressing table
+2026-10,Gujarat,Urban,item,05.1.1.1.1.03,Bedstead,111.6,7.42,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Household furniture,Bedstead
+2026-10,Gujarat,Urban,item,05.1.1.1.1.04,Other furniture and fixtures,112.06,8.41,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Household furniture,Other furniture and fixtures
+2026-10,Gujarat,Urban,item,05.1.1.3.1.01,"Lantern, lamp, electric lampshade and emergency light",100.35,1.02,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Lighting equipment,"Lantern, lamp, electric lampshade and emergency light"
+2026-10,Gujarat,Urban,item,05.1.1.3.1.02,"Other electric bulb, tubelight and decorative lights",101.61,1.19,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets",Lighting equipment,"Other electric bulb, tubelight and decorative lights"
+2026-10,Gujarat,Urban,item,05.1.1.4.1.01,"Carpet, daree and other floor mattings",107.7,3.76,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets","Furnishings, loose carpets and rugs","Carpet, daree and other floor mattings"
+2026-10,Gujarat,Urban,item,05.1.1.4.1.02,"Paintings, drawings and engravings",102.73,1.23,N,"Furnishings, household equipment and routine household maintenance","Furniture, furnishings, and loose carpets","Furniture, furnishings and loose carpets","Furnishings, loose carpets and rugs","Paintings, drawings and engravings"
+2026-10,Gujarat,Urban,item,05.2.1.1.1.01,"Cloth for upholstery, curtains, tablecloth etc.",107.68,4.34,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Furnishing fabrics and curtains,"Cloth for upholstery, curtains, tablecloth etc."
+2026-10,Gujarat,Urban,item,05.2.1.2.1.01,Bed sheet and bed cover,109.34,5.34,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,Bed sheet and bed cover
+2026-10,Gujarat,Urban,item,05.2.1.2.1.02,Rug and blanket,107.38,4.18,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,Rug and blanket
+2026-10,Gujarat,Urban,item,05.2.1.2.1.03,Pillow and cushion,109.23,4.89,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,Pillow and cushion
+2026-10,Gujarat,Urban,item,05.2.1.2.1.04,Quilt and mattress,107.69,4.08,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,Quilt and mattress
+2026-10,Gujarat,Urban,item,05.2.1.2.1.05,Mosquito net,109.32,4.64,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,Mosquito net
+2026-10,Gujarat,Urban,item,05.2.1.2.1.06,Bedding,109.6,6.39,N,"Furnishings, household equipment and routine household maintenance",Household textiles,Household textiles,Bed linen and bedding,Bedding
+2026-10,Gujarat,Urban,item,05.3.1.1.1.01,Refrigerator/freezers,104.18,4.81,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Major kitchen appliances,Refrigerator/freezers
+2026-10,Gujarat,Urban,item,05.3.1.1.1.02,"stove, gas burner and induction",111.72,9.82,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Major kitchen appliances,"stove, gas burner and induction"
+2026-10,Gujarat,Urban,item,05.3.1.2.1.01,Washing machine,99.82,2.26,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Major laundry appliances,Washing machine
+2026-10,Gujarat,Urban,item,05.3.1.3.1.01,Air conditioner,102.64,6.21,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Heaters and air conditioners,Air conditioner
+2026-10,Gujarat,Urban,item,05.3.1.3.1.02,Air cooler,103.9,3.15,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Heaters and air conditioners,Air cooler
+2026-10,Gujarat,Urban,item,05.3.1.3.1.03,Geysers and sterilizers,102.6,-1.15,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Heaters and air conditioners,Geysers and sterilizers
+2026-10,Gujarat,Urban,item,05.3.1.3.1.04,Electric air heaters and blowers,105.39,1.4,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Heaters and air conditioners,Electric air heaters and blowers
+2026-10,Gujarat,Urban,item,05.3.1.3.1.05,"Ventilation system such as exhaust, chimney, etc.",106.61,6.07,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Heaters and air conditioners,"Ventilation system such as exhaust, chimney, etc."
+2026-10,Gujarat,Urban,item,05.3.1.9.1.01,Water purifier,99.1,0.52,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,Water purifier
+2026-10,Gujarat,Urban,item,05.3.1.9.1.02,"Inverter, generators and stabilizers",104.68,3.88,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,"Inverter, generators and stabilizers"
+2026-10,Gujarat,Urban,item,05.3.1.9.1.03,Sewing machine,105.61,3.28,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,Sewing machine
+2026-10,Gujarat,Urban,item,05.3.1.9.1.04,Air purifier,104.64,1.36,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,Air purifier
+2026-10,Gujarat,Urban,item,05.3.1.9.1.05,Other machines for household work,108.77,7.01,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,Other machines for household work
+2026-10,Gujarat,Urban,item,05.3.1.9.1.06,Other durables,109.25,5.61,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Major electric and other household appliances,Other major household appliances,Other durables
+2026-10,Gujarat,Urban,item,05.3.2.1.1.01,"Mixer/grinder, juicer and food processor",105.98,4.2,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Small appliances for the cooking and processing of food,"Mixer/grinder, juicer and food processor"
+2026-10,Gujarat,Urban,item,05.3.2.1.1.02,Other cooking/ household appliances,105.64,4.23,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Small appliances for the cooking and processing of food,Other cooking/ household appliances
+2026-10,Gujarat,Urban,item,05.3.2.9.1.01,Electric fan,108.6,6.73,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Other small household appliances,Electric fan
+2026-10,Gujarat,Urban,item,05.3.2.9.1.02,Bathroom and sanitary equipment,104.01,2.73,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Other small household appliances,Bathroom and sanitary equipment
+2026-10,Gujarat,Urban,item,05.3.2.9.1.03,"Electric iron, heater, toaster, micro-oven, electric kettle, vacuum cleaner and other electric heating appliances",104.57,3.69,N,"Furnishings, household equipment and routine household maintenance",Household appliances,Small household appliances,Other small household appliances,"Electric iron, heater, toaster, micro-oven, electric kettle, vacuum cleaner and other electric heating appliances"
+2026-10,Gujarat,Urban,item,05.4.0.1.1.01,Glassware,107.64,3.28,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils","Glassware, crystal ware, ceramic ware and china ware",Glassware
+2026-10,Gujarat,Urban,item,05.4.0.3.1.01,Bucket and other plastic goods,108.36,7.24,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,Bucket and other plastic goods
+2026-10,Gujarat,Urban,item,05.4.0.3.1.02,Stainless steel utensils,117.96,12.19,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,Stainless steel utensils
+2026-10,Gujarat,Urban,item,05.4.0.3.1.03,Water bottle/feeding bottle,105.14,3.82,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,Water bottle/feeding bottle
+2026-10,Gujarat,Urban,item,05.4.0.3.1.04,"Casseroles, thermos, flask and thermoware",110.79,8.1,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,"Casseroles, thermos, flask and thermoware"
+2026-10,Gujarat,Urban,item,05.4.0.3.1.05,"Other metal utensils (non-stick cookware, etc.)",112.5,9.0,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,"Other metal utensils (non-stick cookware, etc.)"
+2026-10,Gujarat,Urban,item,05.4.0.3.1.06,Other crockery and utensils,109.25,7.01,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,Other crockery and utensils
+2026-10,Gujarat,Urban,item,05.4.0.3.1.07,Pressure cooker/ pressure pan,116.64,9.82,N,"Furnishings, household equipment and routine household maintenance","Glassware, tableware and household utensils","Glassware, tableware and household utensils",Kitchen utensils and articles,Pressure cooker/ pressure pan
+2026-10,Gujarat,Urban,item,05.5.2.2.1.01,"LED bulb, CFL bulbs",98.24,-0.6,N,"Furnishings, household equipment and routine household maintenance",Tools and equipment for house and garden,Non-motorized tools and miscellaneous accessories,Miscellaneous accessories,"LED bulb, CFL bulbs"
+2026-10,Gujarat,Urban,item,05.5.2.2.1.02,Electric batteries,108.9,3.71,N,"Furnishings, household equipment and routine household maintenance",Tools and equipment for house and garden,Non-motorized tools and miscellaneous accessories,Miscellaneous accessories,Electric batteries
+2026-10,Gujarat,Urban,item,05.5.2.2.1.03,Other minor durable-type goods,105.54,3.92,N,"Furnishings, household equipment and routine household maintenance",Tools and equipment for house and garden,Non-motorized tools and miscellaneous accessories,Miscellaneous accessories,Other minor durable-type goods
+2026-10,Gujarat,Urban,item,05.6.1.1.1.01,Washing soap/soda/powder/liquid detergent,105.11,3.15,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Household cleaning and maintenance products,Washing soap/soda/powder/liquid detergent
+2026-10,Gujarat,Urban,item,05.6.1.1.1.02,"Floor cleaner, toilet cleaner",111.3,4.19,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Household cleaning and maintenance products,"Floor cleaner, toilet cleaner"
+2026-10,Gujarat,Urban,item,05.6.1.1.1.03,Other washing requisites,104.2,1.46,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Household cleaning and maintenance products,Other washing requisites
+2026-10,Gujarat,Urban,item,05.6.1.9.1.01,Incense (agarbatti) and room freshener,103.17,2.98,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,Incense (agarbatti) and room freshener
+2026-10,Gujarat,Urban,item,05.6.1.9.1.02,"Mosquito repellent, insecticide, anti-rodent, etc.",107.96,2.47,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,"Mosquito repellent, insecticide, anti-rodent, etc."
+2026-10,Gujarat,Urban,item,05.6.1.9.1.03,"Earthenware, paperware, thermocol plates, etc.",106.64,3.67,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,"Earthenware, paperware, thermocol plates, etc."
+2026-10,Gujarat,Urban,item,05.6.1.9.1.04,Matchbox,104.04,1.56,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,Matchbox
+2026-10,Gujarat,Urban,item,05.6.1.9.1.05,Candle,100.26,-0.25,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,Candle
+2026-10,Gujarat,Urban,item,05.6.1.9.1.06,Other petty articles,103.7,1.11,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,Other non-durable household goods,Other petty articles
+2026-10,Gujarat,Urban,item,05.6.2.1.2.01,Domestic helper/cook,103.96,3.08,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,Domestic services provided by paid staff,Domestic helper/cook
+2026-10,Gujarat,Urban,item,05.6.2.1.2.02,Driver,107.23,3.23,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,Domestic services provided by paid staff,Driver
+2026-10,Gujarat,Urban,item,05.6.2.1.2.03,"Attendant, babysitter",101.33,1.29,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,Domestic services provided by paid staff,"Attendant, babysitter"
+2026-10,Gujarat,Urban,item,05.6.2.9.2.01,Other consumer services excluding conveyance,105.06,2.51,N,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,Other consumer services excluding conveyance,Other consumer services excluding conveyance
+2026-10,Gujarat,Urban,item,06.1.1.1.1.01,Medicine,106.44,1.42,N,Health,Medicines and health products,Medicines,Medicines and vaccines,Medicine
+2026-10,Gujarat,Urban,item,06.1.1.2.1.01,Health supplements (chawanprash),104.56,2.55,N,Health,Medicines and health products,Medicines,Health supplements,Health supplements (chawanprash)
+2026-10,Gujarat,Urban,item,06.1.2.1.1.01,Other medical equipment,100.95,-0.02,N,Health,Medicines and health products,Medical products,Medical diagnostic products,Other medical equipment
+2026-10,Gujarat,Urban,item,06.1.2.2.1.01,Family planning devices,104.66,1.48,N,Health,Medicines and health products,Medical products,Family planning devices,Family planning devices
+2026-10,Gujarat,Urban,item,06.1.2.3.1.01,Nebulizer,100.07,0.43,N,Health,Medicines and health products,Medical products,Treatment devices for personal use,Nebulizer
+2026-10,Gujarat,Urban,item,06.1.3.1.1.01,"Spectacles/goggles, contact lenses",105.64,3.62,N,Health,Medicines and health products,Assistive products,Assistive products for vision,"Spectacles/goggles, contact lenses"
+2026-10,Gujarat,Urban,item,06.1.3.2.1.01,Hearing aids and orthopaedic equipment,103.88,2.33,N,Health,Medicines and health products,Assistive products,Assistive products for hearing and communication,Hearing aids and orthopaedic equipment
+2026-10,Gujarat,Urban,item,06.1.3.3.1.01,Massager,100.85,-0.76,N,Health,Medicines and health products,Assistive products,Assistive products for mobility and daily living,Massager
+2026-10,Gujarat,Urban,item,06.1.3.3.1.02,Wheelchair,99.86,1.3,N,Health,Medicines and health products,Assistive products,Assistive products for mobility and daily living,Wheelchair
+2026-10,Gujarat,Urban,item,06.2.3.1.2.01,Doctor's/surgeon's fee,108.52,3.46,N,Health,Outpatient care services,Other outpatient care services,Outpatient curative and rehabilitative services,Doctor's/surgeon's fee
+2026-10,Gujarat,Urban,item,06.2.3.1.2.02,Other medical expenses,103.87,1.3,N,Health,Outpatient care services,Other outpatient care services,Outpatient curative and rehabilitative services,Other medical expenses
+2026-10,Gujarat,Urban,item,06.3.1.0.2.01,Hospital and nursing home charges,107.28,3.28,N,Health,Inpatient care services,Inpatient curative and rehabilitative services,Inpatient curative and rehabilitative services,Hospital and nursing home charges
+2026-10,Gujarat,Urban,item,06.4.1.0.2.01,"X-ray, ECG and pathological test",106.56,2.74,N,Health,Other health services,Diagnostic imaging services and medical laboratory services,Diagnostic imaging services and medical laboratory services,"X-ray, ECG and pathological test"
+2026-10,Gujarat,Urban,item,07.1.1.1.1.01,Motor car and jeep,96.19,0.02,N,Transport,Purchase of vehicles,Motor cars,Motor car and jeep,Motor car and jeep
+2026-10,Gujarat,Urban,item,07.1.2.0.1.01,Motor cycle and scooter,103.06,3.96,N,Transport,Purchase of vehicles,Motorcycles,Motor cycle and scooter,Motor cycle and scooter
+2026-10,Gujarat,Urban,item,07.1.3.0.1.01,Bicycle,102.87,2.53,N,Transport,Purchase of vehicles,Bicycles,Bicycle,Bicycle
+2026-10,Gujarat,Urban,item,07.2.1.1.1.01,Tyres and tubes,108.63,5.53,N,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Tyres and tubes,Tyres and tubes
+2026-10,Gujarat,Urban,item,07.2.1.2.1.01,Other transport equipment,102.59,4.7,N,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Parts for personal transport equipment,Other transport equipment
+2026-10,Gujarat,Urban,item,07.2.1.3.1.01,Helmet,109.73,6.22,N,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Accessories for personal transport equipment,Helmet
+2026-10,Gujarat,Urban,item,07.2.2.1.1.01,Diesel,108.22,8.56,N,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,Diesel,Diesel
+2026-10,Gujarat,Urban,item,07.2.2.2.1.01,Petrol,107.39,7.7,N,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,Petrol,Petrol
+2026-10,Gujarat,Urban,item,07.2.2.3.1.01,Other natural gas (CNG),118.19,11.5,N,Transport,Operation of personal transport equipment,Fuels and lubricants for personal transport equipment,Other fuels for personal transport equipment,Other natural gas (CNG)
+2026-10,Gujarat,Urban,item,07.3.1.1.2.01,Rail fare,104.01,2.4,N,Transport,Passenger transport services,Passenger transport by railway,Passenger transport by train,Rail fare
+2026-10,Gujarat,Urban,item,07.3.1.2.2.01,Bus/tram fare: occasional,108.02,3.77,N,Transport,Passenger transport services,Passenger transport by railway,Passenger transport by rapid transit and tram,Bus/tram fare: occasional
+2026-10,Gujarat,Urban,item,07.3.2.1.2.01,Bus/tram fare for commuting to work: daily,107.52,3.89,N,Transport,Passenger transport services,Passenger transport by road,Passenger transport by bus and coach,Bus/tram fare for commuting to work: daily
+2026-10,Gujarat,Urban,item,07.3.2.1.2.02,Bus fare for commuting to work: periodic,108.01,4.47,N,Transport,Passenger transport services,Passenger transport by road,Passenger transport by bus and coach,Bus fare for commuting to work: periodic
+2026-10,Gujarat,Urban,item,07.3.2.2.2.01,Taxi fare,103.12,0.69,N,Transport,Passenger transport services,Passenger transport by road,Passenger transport by taxi and hired vehicle with driver,Taxi fare
+2026-10,Gujarat,Urban,item,07.3.2.2.2.02,"Car/bus hired for ceremonial occasion, picnic, etc",103.8,3.2,N,Transport,Passenger transport services,Passenger transport by road,Passenger transport by taxi and hired vehicle with driver,"Car/bus hired for ceremonial occasion, picnic, etc"
+2026-10,Gujarat,Urban,item,07.3.2.3.2.01,"Bus fare for school, college: periodic",107.49,4.63,N,Transport,Passenger transport services,Passenger transport by road,Passenger transport for students to and from school,"Bus fare for school, college: periodic"
+2026-10,Gujarat,Urban,item,07.3.2.3.2.02,"Bus /tram fare for school, college: daily",107.99,3.14,N,Transport,Passenger transport services,Passenger transport by road,Passenger transport for students to and from school,"Bus /tram fare for school, college: daily"
+2026-10,Gujarat,Urban,item,07.3.2.9.2.01,Auto-rickshaw/e-rickshaw fare,104.71,3.3,N,Transport,Passenger transport services,Passenger transport by road,Other passenger transport by road,Auto-rickshaw/e-rickshaw fare
+2026-10,Gujarat,Urban,item,07.3.2.9.2.02,Rickshaw fare,95.64,0.0,N,Transport,Passenger transport services,Passenger transport by road,Other passenger transport by road,Rickshaw fare
+2026-10,Gujarat,Urban,item,07.3.2.9.2.03,Other conveyance expenses,108.84,6.07,N,Transport,Passenger transport services,Passenger transport by road,Other passenger transport by road,Other conveyance expenses
+2026-10,Gujarat,Urban,item,07.3.3.1.2.01,Airfare,126.17,3.1,N,Transport,Passenger transport services,Passenger transport by air,"Passenger transport by air, domestic",Airfare
+2026-10,Gujarat,Urban,item,07.4.1.2.2.01,"Postage, couriers and money order",114.14,6.87,N,Transport,Transport services for goods,Postal and courier services,Courier and parcel delivery services,"Postage, couriers and money order"
+2026-10,Gujarat,Urban,item,08.1.1.0.1.01,Telephone instrument (landline),101.04,0.81,N,Information and communication,Information and communication equipment,Telephone instrument (landline),Telephone instrument (landline),Telephone instrument (landline)
+2026-10,Gujarat,Urban,item,08.1.2.0.1.01,Mobile handset,105.58,11.11,N,Information and communication,Information and communication equipment,Mobile handset,Mobile handset,Mobile handset
+2026-10,Gujarat,Urban,item,08.1.3.1.1.01,PC/ Laptop/ tablet and other peripherals incl. software,111.61,12.06,N,Information and communication,Information and communication equipment,Information processing equipment,"Computers, laptops and tablets including Software",PC/ Laptop/ tablet and other peripherals incl. software
+2026-10,Gujarat,Urban,item,08.1.4.0.1.01,Television,97.45,3.85,N,Information and communication,Information and communication equipment,Audio-visual devices,Audio-visual devices,Television
+2026-10,Gujarat,Urban,item,08.1.4.0.1.02,"Headphone, earphone, ear pod, airpod and bluetooth devices",101.19,2.23,N,Information and communication,Information and communication equipment,Audio-visual devices,Audio-visual devices,"Headphone, earphone, ear pod, airpod and bluetooth devices"
+2026-10,Gujarat,Urban,item,08.1.5.0.1.01,Pen-drive and external hard disk,131.23,27.62,N,Information and communication,Information and communication equipment,Unrecorded recording media,Unrecorded recording media,Pen-drive and external hard disk
+2026-10,Gujarat,Urban,item,08.3.3.0.2.01,Internet expenses,106.42,2.39,N,Information and communication,Information and communication services,Internet access provision services and online storage services,Internet expenses,Internet expenses
+2026-10,Gujarat,Urban,item,08.3.4.0.2.01,Telephone charges: mobile,108.07,1.35,N,Information and communication,Information and communication services,Telephone charges: mobile and landline,Telephone charges: mobile and landline,Telephone charges: mobile
+2026-10,Gujarat,Urban,item,08.3.4.0.2.02,Telephone charges: landline,100.0,0.0,N,Information and communication,Information and communication services,Telephone charges: mobile and landline,Telephone charges: mobile and landline,Telephone charges: landline
+2026-10,Gujarat,Urban,item,08.3.9.2.1.01,Cable TV/DTH/set top box,101.83,0.72,N,Information and communication,Information and communication services,Other information and communication services,Subscriptions to streaming services,Cable TV/DTH/set top box
+2026-10,Gujarat,Urban,item,08.3.9.2.2.02,Online media service provider/streaming services,102.89,2.03,N,Information and communication,Information and communication services,Other information and communication services,Subscriptions to streaming services,Online media service provider/streaming services
+2026-10,Gujarat,Urban,item,09.1.1.1.1.01,Camera and photographic equipment,103.45,3.79,N,"Recreation, sport and culture",Recreational durables,Photographic and cinematographic equipment and optical instruments,Camera and photographic equipment,Camera and photographic equipment
+2026-10,Gujarat,Urban,item,09.2.1.1.1.01,Other goods for recreation,105.84,5.29,N,"Recreation, sport and culture",Other recreational goods,"Games, toys and hobby-related articles",Other goods for recreation,Other goods for recreation
+2026-10,Gujarat,Urban,item,09.2.2.1.1.01,Sports goods,107.99,4.63,N,"Recreation, sport and culture",Other recreational goods,"Sporting, camping and open-air recreation equipment",Sporting equipment,Sports goods
+2026-10,Gujarat,Urban,item,09.2.2.1.1.02,Exercise equipment,101.78,3.46,N,"Recreation, sport and culture",Other recreational goods,"Sporting, camping and open-air recreation equipment",Sporting equipment,Exercise equipment
+2026-10,Gujarat,Urban,item,09.2.2.1.1.03,Other sports goods,104.61,3.54,N,"Recreation, sport and culture",Other recreational goods,"Sporting, camping and open-air recreation equipment",Sporting equipment,Other sports goods
+2026-10,Gujarat,Urban,item,09.3.1.2.1.01,Flower (fresh),101.88,0.25,N,"Recreation, sport and culture",Garden products and pets,"Garden products, plants and flowers","Plants, seeds and flowers",Flower (fresh)
+2026-10,Gujarat,Urban,item,09.3.2.1.1.01,Pet animals,105.48,3.92,N,"Recreation, sport and culture",Garden products and pets,Pets and pet products,Pets,Pet animals
+2026-10,Gujarat,Urban,item,09.4.6.1.2.01,"Other entertainment (mela, fair, picnic, etc.)",100.72,0.7,N,"Recreation, sport and culture",Recreational services,Recreational and sporting services,Recreational and leisure services,"Other entertainment (mela, fair, picnic, etc.)"
+2026-10,Gujarat,Urban,item,09.4.6.2.2.01,"Club, gym, swimming fees and other subscriptions",99.48,1.16,N,"Recreation, sport and culture",Recreational services,Recreational and sporting services,Services associated with the practice of sports,"Club, gym, swimming fees and other subscriptions"
+2026-10,Gujarat,Urban,item,09.5.1.0.1.01,Musical instruments,100.36,1.74,N,"Recreation, sport and culture",Cultural goods,Musical instruments,Musical instruments,Musical instruments
+2026-10,Gujarat,Urban,item,09.6.1.0.2.01,"Cinema, theatre",107.86,3.68,N,"Recreation, sport and culture",Cultural services,"Services provided by cinemas, theatres and concert venues","Cinema, theatre","Cinema, theatre"
+2026-10,Gujarat,Urban,item,09.6.3.0.1.01,Photography,106.52,4.45,N,"Recreation, sport and culture",Cultural services,Photographic services,Photography,Photography
+2026-10,Gujarat,Urban,item,09.7.1.1.1.01,Books/ journals,103.05,3.25,N,"Recreation, sport and culture","Newspapers, books and stationery",Books,Educational books and textbooks,Books/ journals
+2026-10,Gujarat,Urban,item,09.7.2.1.1.01,Newspapers and periodicals,101.85,0.93,N,"Recreation, sport and culture","Newspapers, books and stationery",Newspapers and periodicals,Newspapers and periodicals,Newspapers and periodicals
+2026-10,Gujarat,Urban,item,09.7.4.0.1.01,Stationery,101.66,1.05,N,"Recreation, sport and culture","Newspapers, books and stationery",Stationery and drawing materials,Stationery and drawing materials,Stationery
+2026-10,Gujarat,Urban,item,10.1.0.2.2.01,Tuition fees (Primary/Upper Primary class),111.48,5.66,N,Education services,Early childhood and primary education,Early childhood and primary education,Primary education,Tuition fees (Primary/Upper Primary class)
+2026-10,Gujarat,Urban,item,10.2.0.0.2.01,Tuition fees (Secondary/Upper Secondary class),108.68,3.09,N,Education services,Secondary education,Secondary education,Secondary education,Tuition fees (Secondary/Upper Secondary class)
+2026-10,Gujarat,Urban,item,10.4.0.0.2.01,Tuition fees (Higher education),108.99,5.05,N,Education services,Higher education,Higher education,Higher education,Tuition fees (Higher education)
+2026-10,Gujarat,Urban,item,10.5.0.1.2.01,Private tutor/ coaching centre,110.79,5.55,N,Education services,Education not defined by level,Education not defined by level,Private tutor/ coaching centre and other educational expenses,Private tutor/ coaching centre
+2026-10,Gujarat,Urban,item,10.5.0.1.2.02,Other educational expenses,103.17,1.14,N,Education services,Education not defined by level,Education not defined by level,Private tutor/ coaching centre and other educational expenses,Other educational expenses
+2026-10,Gujarat,Urban,item,11.1.1.1.1.01,Cooked meals,111.56,7.44,N,Restaurants and accommodation services,Food and beverage serving services,"Restaurants, cafés and the like","Restaurants, cafés and the like – with full service",Cooked meals
+2026-10,Gujarat,Urban,item,11.1.1.2.1.01,Cooked snacks,116.05,9.89,N,Restaurants and accommodation services,Food and beverage serving services,"Restaurants, cafés and the like","Restaurants, cafés and the like – with limited service",Cooked snacks
+2026-10,Gujarat,Urban,item,11.2.0.1.2.01,Hotel lodging charges,104.5,2.17,N,Restaurants and accommodation services,Accommodation services,Accommodation services,"Hotels, motels, inns and similar accommodation services",Hotel lodging charges
+2026-10,Gujarat,Urban,item,13.1.1.1.1.01,Other personal goods,103.46,1.26,N,"Personal care, social protection and miscellaneous goods and services",Personal care,Appliances for personal care,Purchase of appliances for personal care,Other personal goods
+2026-10,Gujarat,Urban,item,13.1.2.0.1.01,"Toilet soap, body-wash, hand-wash, shower gel and face-wash",104.21,0.38,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Toilet soap, body-wash, hand-wash, shower gel and face-wash"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.02,"Perfume, body spray, deodorant and roll-ons",105.58,3.23,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Perfume, body spray, deodorant and roll-ons"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.03,"Powder, cream, body lotion and moisturizers",107.22,2.34,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Powder, cream, body lotion and moisturizers"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.04,"Toothpaste, mouthwash and toothbrush",107.72,2.01,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Toothpaste, mouthwash and toothbrush"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.05,Hair oil and hair colour,109.24,3.83,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Hair oil and hair colour
+2026-10,Gujarat,Urban,item,13.1.2.0.1.06,"Shampoo, conditioner, hair serum/gel and hair cream",105.36,-0.04,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Shampoo, conditioner, hair serum/gel and hair cream"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.07,Sanitary napkins,103.25,0.97,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Sanitary napkins
+2026-10,Gujarat,Urban,item,13.1.2.0.1.08,Baby products,108.26,4.82,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Baby products
+2026-10,Gujarat,Urban,item,13.1.2.0.1.09,"Shaving blades, shaving stick and razor",107.39,3.57,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Shaving blades, shaving stick and razor"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.10,"Shaving cream, shaving foam, aftershave lotion and aftershave balm",102.79,1.52,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care","Shaving cream, shaving foam, aftershave lotion and aftershave balm"
+2026-10,Gujarat,Urban,item,13.1.2.0.1.11,Sanitizer,112.91,5.72,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Sanitizer
+2026-10,Gujarat,Urban,item,13.1.2.0.1.12,Weighing machine,101.55,1.65,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Weighing machine
+2026-10,Gujarat,Urban,item,13.1.2.0.1.13,Other beauty products,109.91,4.54,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Other beauty products
+2026-10,Gujarat,Urban,item,13.1.2.0.1.14,Other toilet articles,103.65,0.8,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Other toilet articles
+2026-10,Gujarat,Urban,item,13.1.2.0.1.15,Other hair products,101.78,0.67,N,"Personal care, social protection and miscellaneous goods and services",Personal care,"Other appliances, articles and products for personal care","Other appliances, articles and products for personal care",Other hair products
+2026-10,Gujarat,Urban,item,13.1.3.2.2.01,"Barber, beautician and spas",110.14,6.77,N,"Personal care, social protection and miscellaneous goods and services",Personal care,Hairdressing salons and personal grooming establishments,Personal grooming treatments,"Barber, beautician and spas"
+2026-10,Gujarat,Urban,item,13.2.1.1.1.01,Gold /diamond /platinum jewellery,167.55,19.95,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,Purchase of jewellery and watches,Gold /diamond /platinum jewellery
+2026-10,Gujarat,Urban,item,13.2.1.1.1.02,Silver jewellery,257.61,56.93,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,Purchase of jewellery and watches,Silver jewellery
+2026-10,Gujarat,Urban,item,13.2.1.1.1.03,"Clock, watch, smartwatch and fitness tracker",105.94,4.25,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,Purchase of jewellery and watches,"Clock, watch, smartwatch and fitness tracker"
+2026-10,Gujarat,Urban,item,13.2.1.1.1.04,"Jewels, pearls, precious stones",123.58,11.67,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,Purchase of jewellery and watches,"Jewels, pearls, precious stones"
+2026-10,Gujarat,Urban,item,13.2.1.1.1.05,Other jewellery and ornaments,104.96,1.66,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Jewellery and watches,Purchase of jewellery and watches,Other jewellery and ornaments
+2026-10,Gujarat,Urban,item,13.2.9.1.1.01,"Back-pack, handbags, vanity bags, purse and clutch",103.37,2.19,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Other personal effects n.e.c.,"Travel goods, baby articles and other personal effects n.e.c.","Back-pack, handbags, vanity bags, purse and clutch"
+2026-10,Gujarat,Urban,item,13.2.9.1.1.02,"Suitcase, trolley bag, duffle bag and trunk",108.0,4.72,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Other personal effects n.e.c.,"Travel goods, baby articles and other personal effects n.e.c.","Suitcase, trolley bag, duffle bag and trunk"
+2026-10,Gujarat,Urban,item,13.2.9.1.1.03,Umbrella and Raincoat,102.69,-0.35,N,"Personal care, social protection and miscellaneous goods and services",Other personal effects,Other personal effects n.e.c.,"Travel goods, baby articles and other personal effects n.e.c.",Umbrella and Raincoat
+2026-10,Gujarat,Urban,item,13.9.0.2.2.01,Priest,101.14,1.08,N,"Personal care, social protection and miscellaneous goods and services",Other services,Other services,Religious services,Priest
+2026-10,Gujarat,Urban,item,13.9.0.9.2.01,Photocopying charges,110.75,0.0,N,"Personal care, social protection and miscellaneous goods and services",Other services,Other services,Other services n.e.c.,Photocopying charges
+2026-10,Gujarat,Urban,item,13.9.0.9.2.02,Legal expenses,103.71,0.8,N,"Personal care, social protection and miscellaneous goods and services",Other services,Other services,Other services n.e.c.,Legal expenses
+2026-09,Gujarat,Urban,general,,CPI (General),108.14,4.67,,CPI (General),,,,
+2026-09,Gujarat,Urban,division,01,Food and beverages,110.57,6.0,,Food and beverages,,,,
 2026-09,Gujarat,Urban,division,02,"Paan, tobacco and intoxicants",105.61,2.87,,"Paan, tobacco and intoxicants",,,,
 2026-09,Gujarat,Urban,division,03,Clothing and footwear,107.62,3.81,,Clothing and footwear,,,,
 2026-09,Gujarat,Urban,division,04,"Housing, water, electricity, gas and other fuels",103.98,2.33,,"Housing, water, electricity, gas and other fuels",,,,
 2026-09,Gujarat,Urban,division,05,"Furnishings, household equipment and routine household maintenance",105.58,3.11,,"Furnishings, household equipment and routine household maintenance",,,,
 2026-09,Gujarat,Urban,division,06,Health,106.52,1.87,,Health,,,,
-2026-09,Gujarat,Urban,division,07,Transport,107.28,6.16,,Transport,,,,
+2026-09,Gujarat,Urban,division,07,Transport,107.28,6.17,,Transport,,,,
 2026-09,Gujarat,Urban,division,08,Information and communication,105.42,2.04,,Information and communication,,,,
 2026-09,Gujarat,Urban,division,09,"Recreation, sport and culture",102.4,1.89,,"Recreation, sport and culture",,,,
 2026-09,Gujarat,Urban,division,10,Education services,110.28,4.97,,Education services,,,,
@@ -32,7 +675,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,group,06.2,Outpatient care services,107.68,4.01,,Health,Outpatient care services,,,
 2026-09,Gujarat,Urban,group,06.3,Inpatient care services,106.98,3.08,,Health,Inpatient care services,,,
 2026-09,Gujarat,Urban,group,06.4,Other health services,106.21,2.77,,Health,Other health services,,,
-2026-09,Gujarat,Urban,group,07.1,Purchase of vehicles,99.56,-3.29,,Transport,Purchase of vehicles,,,
+2026-09,Gujarat,Urban,group,07.1,Purchase of vehicles,99.58,-3.27,,Transport,Purchase of vehicles,,,
 2026-09,Gujarat,Urban,group,07.2,Operation of personal transport equipment,108.49,8.03,,Transport,Operation of personal transport equipment,,,
 2026-09,Gujarat,Urban,group,07.3,Passenger transport services,106.44,4.09,,Transport,Passenger transport services,,,
 2026-09,Gujarat,Urban,group,07.4,Transport services for goods,114.1,14.06,,Transport,Transport services for goods,,,
@@ -58,10 +701,10 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,class,01.1.2,"Meat, fresh, chilled or frozen",108.58,8.29,,Food and beverages,Food,"Meat, fresh, chilled or frozen",,
 2026-09,Gujarat,Urban,class,01.1.3,Fish and other seafood,110.66,4.35,,Food and beverages,Food,Fish and other seafood,,
 2026-09,Gujarat,Urban,class,01.1.4,"Milk, other dairy products and eggs",107.7,3.74,,Food and beverages,Food,"Milk, other dairy products and eggs",,
-2026-09,Gujarat,Urban,class,01.1.5,Oils and fats,120.3,10.83,,Food and beverages,Food,Oils and fats,,
+2026-09,Gujarat,Urban,class,01.1.5,Oils and fats,120.3,10.84,,Food and beverages,Food,Oils and fats,,
 2026-09,Gujarat,Urban,class,01.1.6,Fruits and nuts,125.15,11.41,,Food and beverages,Food,Fruits and nuts,,
 2026-09,Gujarat,Urban,class,01.1.7,"Vegetables, tubers, plantains, cooking bananas and pulses",106.67,5.19,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",,
-2026-09,Gujarat,Urban,class,01.1.8,"Sugar, confectionery and desserts",116.17,11.9,,Food and beverages,Food,"Sugar, confectionery and desserts",,
+2026-09,Gujarat,Urban,class,01.1.8,"Sugar, confectionery and desserts",116.06,11.8,,Food and beverages,Food,"Sugar, confectionery and desserts",,
 2026-09,Gujarat,Urban,class,01.1.9,Ready-made food and other food products,107.61,8.94,,Food and beverages,Food,Ready-made food and other food products,,
 2026-09,Gujarat,Urban,class,01.2.1,Fruit and vegetable juices,107.75,2.92,,Food and beverages,Beverages,Fruit and vegetable juices,,
 2026-09,Gujarat,Urban,class,01.2.2,Coffee and coffee substitutes,107.47,-4.81,,Food and beverages,Beverages,Coffee and coffee substitutes,,
@@ -94,12 +737,12 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,class,05.6.1,Non-durable household goods,105.3,2.36,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Non-durable household goods,,
 2026-09,Gujarat,Urban,class,05.6.2,Domestic services and household services,104.66,2.67,,"Furnishings, household equipment and routine household maintenance",Goods and services for routine household maintenance,Domestic services and household services,,
 2026-09,Gujarat,Urban,class,06.1.1,Medicines,106.08,0.44,,Health,Medicines and health products,Medicines,,
-2026-09,Gujarat,Urban,class,06.1.2,Medical products,101.91,-0.41,,Health,Medicines and health products,Medical products,,
+2026-09,Gujarat,Urban,class,06.1.2,Medical products,101.9,-0.42,,Health,Medicines and health products,Medical products,,
 2026-09,Gujarat,Urban,class,06.1.3,Assistive products,105.17,3.35,,Health,Medicines and health products,Assistive products,,
 2026-09,Gujarat,Urban,class,06.2.3,Other outpatient care services,107.68,4.01,,Health,Outpatient care services,Other outpatient care services,,
 2026-09,Gujarat,Urban,class,06.3.1,Inpatient curative and rehabilitative services,106.98,3.08,,Health,Inpatient care services,Inpatient curative and rehabilitative services,,
 2026-09,Gujarat,Urban,class,06.4.1,Diagnostic imaging services and medical laboratory services,106.21,2.77,,Health,Other health services,Diagnostic imaging services and medical laboratory services,,
-2026-09,Gujarat,Urban,class,07.1.1,Motor cars,96.02,-5.77,,Transport,Purchase of vehicles,Motor cars,,
+2026-09,Gujarat,Urban,class,07.1.1,Motor cars,96.07,-5.72,,Transport,Purchase of vehicles,Motor cars,,
 2026-09,Gujarat,Urban,class,07.1.2,Motorcycles,102.74,-1.21,,Transport,Purchase of vehicles,Motorcycles,,
 2026-09,Gujarat,Urban,class,07.1.3,Bicycles,102.13,1.1,,Transport,Purchase of vehicles,Bicycles,,
 2026-09,Gujarat,Urban,class,07.2.1,Parts and accessories for personal transport equipment,107.39,3.6,,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,,
@@ -110,7 +753,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,class,07.4.1,Postal and courier services,114.1,14.06,,Transport,Transport services for goods,Postal and courier services,,
 2026-09,Gujarat,Urban,class,08.1.1,Telephone instrument (landline),102.3,2.2,,Information and communication,Information and communication equipment,Telephone instrument (landline),,
 2026-09,Gujarat,Urban,class,08.1.2,Mobile handset,102.24,6.77,,Information and communication,Information and communication equipment,Mobile handset,,
-2026-09,Gujarat,Urban,class,08.1.3,Information processing equipment,110.36,9.74,,Information and communication,Information and communication equipment,Information processing equipment,,
+2026-09,Gujarat,Urban,class,08.1.3,Information processing equipment,110.2,9.58,,Information and communication,Information and communication equipment,Information processing equipment,,
 2026-09,Gujarat,Urban,class,08.1.4,Audio-visual devices,98.53,-0.02,,Information and communication,Information and communication equipment,Audio-visual devices,,
 2026-09,Gujarat,Urban,class,08.1.5,Unrecorded recording media,128.25,24.42,,Information and communication,Information and communication equipment,Unrecorded recording media,,
 2026-09,Gujarat,Urban,class,08.3.3,Internet access provision services and online storage services,106.16,2.22,,Information and communication,Information and communication services,Internet access provision services and online storage services,,
@@ -172,7 +815,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,sub_class,01.1.7.5,"Tubers, plantains and cooking bananas, fresh or chilled",84.97,5.04,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Tubers, plantains and cooking bananas, fresh or chilled",
 2026-09,Gujarat,Urban,sub_class,01.1.7.6,Pulses,91.2,2.5,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses",Pulses,
 2026-09,Gujarat,Urban,sub_class,01.1.7.9,"Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",103.26,0.88,,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",
-2026-09,Gujarat,Urban,sub_class,01.1.8.1,Cane sugar and beet sugar,131.96,27.22,,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,
+2026-09,Gujarat,Urban,sub_class,01.1.8.1,Cane sugar and beet sugar,131.68,26.95,,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,
 2026-09,Gujarat,Urban,sub_class,01.1.8.3,"Jams, marmalades, fruit jellies, purées and pastes, and honey",107.89,0.49,,Food and beverages,Food,"Sugar, confectionery and desserts","Jams, marmalades, fruit jellies, purées and pastes, and honey",
 2026-09,Gujarat,Urban,sub_class,01.1.8.5,"Chocolate, cocoa and cocoa-based food products",106.26,-0.31,,Food and beverages,Food,"Sugar, confectionery and desserts","Chocolate, cocoa and cocoa-based food products",
 2026-09,Gujarat,Urban,sub_class,01.1.8.6,"Ice, ice cream and sorbets",101.52,0.59,,Food and beverages,Food,"Sugar, confectionery and desserts","Ice, ice cream and sorbets",
@@ -236,14 +879,14 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,sub_class,06.1.1.2,Health supplements,103.71,1.22,,Health,Medicines and health products,Medicines,Health supplements,
 2026-09,Gujarat,Urban,sub_class,06.1.2.1,Medical diagnostic products,100.61,-1.44,,Health,Medicines and health products,Medical products,Medical diagnostic products,
 2026-09,Gujarat,Urban,sub_class,06.1.2.2,Family planning devices,104.12,0.9,,Health,Medicines and health products,Medical products,Family planning devices,
-2026-09,Gujarat,Urban,sub_class,06.1.2.3,Treatment devices for personal use,99.72,-0.42,,Health,Medicines and health products,Medical products,Treatment devices for personal use,
+2026-09,Gujarat,Urban,sub_class,06.1.2.3,Treatment devices for personal use,99.65,-0.49,,Health,Medicines and health products,Medical products,Treatment devices for personal use,
 2026-09,Gujarat,Urban,sub_class,06.1.3.1,Assistive products for vision,105.52,3.78,,Health,Medicines and health products,Assistive products,Assistive products for vision,
 2026-09,Gujarat,Urban,sub_class,06.1.3.2,Assistive products for hearing and communication,102.9,0.93,,Health,Medicines and health products,Assistive products,Assistive products for hearing and communication,
 2026-09,Gujarat,Urban,sub_class,06.1.3.3,Assistive products for mobility and daily living,100.84,-1.86,,Health,Medicines and health products,Assistive products,Assistive products for mobility and daily living,
 2026-09,Gujarat,Urban,sub_class,06.2.3.1,Outpatient curative and rehabilitative services,107.68,4.01,,Health,Outpatient care services,Other outpatient care services,Outpatient curative and rehabilitative services,
 2026-09,Gujarat,Urban,sub_class,06.3.1.0,Inpatient curative and rehabilitative services,106.98,3.08,,Health,Inpatient care services,Inpatient curative and rehabilitative services,Inpatient curative and rehabilitative services,
 2026-09,Gujarat,Urban,sub_class,06.4.1.0,Diagnostic imaging services and medical laboratory services,106.21,2.77,,Health,Other health services,Diagnostic imaging services and medical laboratory services,Diagnostic imaging services and medical laboratory services,
-2026-09,Gujarat,Urban,sub_class,07.1.1.1,Motor car and jeep,96.02,-5.77,,Transport,Purchase of vehicles,Motor cars,Motor car and jeep,
+2026-09,Gujarat,Urban,sub_class,07.1.1.1,Motor car and jeep,96.07,-5.72,,Transport,Purchase of vehicles,Motor cars,Motor car and jeep,
 2026-09,Gujarat,Urban,sub_class,07.1.2.0,Motor cycle and scooter,102.74,-1.21,,Transport,Purchase of vehicles,Motorcycles,Motor cycle and scooter,
 2026-09,Gujarat,Urban,sub_class,07.1.3.0,Bicycle,102.13,1.1,,Transport,Purchase of vehicles,Bicycles,Bicycle,
 2026-09,Gujarat,Urban,sub_class,07.2.1.1,Tyres and tubes,107.11,3.47,,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Tyres and tubes,
@@ -262,7 +905,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,sub_class,07.4.1.2,Courier and parcel delivery services,114.1,14.06,,Transport,Transport services for goods,Postal and courier services,Courier and parcel delivery services,
 2026-09,Gujarat,Urban,sub_class,08.1.1.0,Telephone instrument (landline),102.3,2.2,,Information and communication,Information and communication equipment,Telephone instrument (landline),Telephone instrument (landline),
 2026-09,Gujarat,Urban,sub_class,08.1.2.0,Mobile handset,102.24,6.77,,Information and communication,Information and communication equipment,Mobile handset,Mobile handset,
-2026-09,Gujarat,Urban,sub_class,08.1.3.1,"Computers, laptops and tablets including Software",110.36,9.74,,Information and communication,Information and communication equipment,Information processing equipment,"Computers, laptops and tablets including Software",
+2026-09,Gujarat,Urban,sub_class,08.1.3.1,"Computers, laptops and tablets including Software",110.2,9.58,,Information and communication,Information and communication equipment,Information processing equipment,"Computers, laptops and tablets including Software",
 2026-09,Gujarat,Urban,sub_class,08.1.4.0,Audio-visual devices,98.53,-0.02,,Information and communication,Information and communication equipment,Audio-visual devices,Audio-visual devices,
 2026-09,Gujarat,Urban,sub_class,08.1.5.0,Unrecorded recording media,128.25,24.42,,Information and communication,Information and communication equipment,Unrecorded recording media,Unrecorded recording media,
 2026-09,Gujarat,Urban,sub_class,08.3.3.0,Internet expenses,106.16,2.22,,Information and communication,Information and communication services,Internet access provision services and online storage services,Internet expenses,
@@ -338,7 +981,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,item,01.1.4.8.1.01,Eggs,110.11,6.49,N,Food and beverages,Food,"Milk, other dairy products and eggs",Eggs,Eggs
 2026-09,Gujarat,Urban,item,01.1.4.9.1.01,Other milk products,102.75,2.69,N,Food and beverages,Food,"Milk, other dairy products and eggs",Other dairy products,Other milk products
 2026-09,Gujarat,Urban,item,01.1.5.1.1.01,Refined oil,134.53,13.67,N,Food and beverages,Food,Oils and fats,Vegetable oils,Refined oil
-2026-09,Gujarat,Urban,item,01.1.5.1.1.02,Mustard oil,125.47,8.7,N,Food and beverages,Food,Oils and fats,Vegetable oils,Mustard oil
+2026-09,Gujarat,Urban,item,01.1.5.1.1.02,Mustard oil,125.54,8.76,N,Food and beverages,Food,Oils and fats,Vegetable oils,Mustard oil
 2026-09,Gujarat,Urban,item,01.1.5.1.1.03,Groundnut oil,107.73,15.77,N,Food and beverages,Food,Oils and fats,Vegetable oils,Groundnut oil
 2026-09,Gujarat,Urban,item,01.1.5.1.1.04,Coconut oil,123.89,4.6,N,Food and beverages,Food,Oils and fats,Vegetable oils,Coconut oil
 2026-09,Gujarat,Urban,item,01.1.5.1.1.05,Edible oil,134.01,13.51,N,Food and beverages,Food,Oils and fats,Vegetable oils,Edible oil
@@ -403,7 +1046,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,item,01.1.7.9.1.01,Besan and Gram products,102.36,-0.11,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",Besan and Gram products
 2026-09,Gujarat,Urban,item,01.1.7.9.1.02,Pickles,105.46,2.84,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",Pickles
 2026-09,Gujarat,Urban,item,01.1.7.9.1.03,Other pulse products,100.48,0.91,N,Food and beverages,Food,"Vegetables, tubers, plantains, cooking bananas and pulses","Vegetables, tubers, plantains, cooking bananas and pulses ground, and in other preparations",Other pulse products
-2026-09,Gujarat,Urban,item,01.1.8.1.1.01,Sugar,134.94,29.77,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Sugar
+2026-09,Gujarat,Urban,item,01.1.8.1.1.01,Sugar,134.59,29.43,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Sugar
 2026-09,Gujarat,Urban,item,01.1.8.1.1.02,Jaggery (gur),122.39,18.91,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Jaggery (gur)
 2026-09,Gujarat,Urban,item,01.1.8.1.1.03,Sugar PDS,100.0,0.0,N,Food and beverages,Food,"Sugar, confectionery and desserts",Cane sugar and beet sugar,Sugar PDS
 2026-09,Gujarat,Urban,item,01.1.8.3.1.01,Jam/ jelly,109.77,0.05,N,Food and beverages,Food,"Sugar, confectionery and desserts","Jams, marmalades, fruit jellies, purées and pastes, and honey",Jam/ jelly
@@ -549,7 +1192,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,item,06.1.1.2.1.01,Health supplements (chawanprash),103.71,1.22,N,Health,Medicines and health products,Medicines,Health supplements,Health supplements (chawanprash)
 2026-09,Gujarat,Urban,item,06.1.2.1.1.01,Other medical equipment,100.61,-1.44,N,Health,Medicines and health products,Medical products,Medical diagnostic products,Other medical equipment
 2026-09,Gujarat,Urban,item,06.1.2.2.1.01,Family planning devices,104.12,0.9,N,Health,Medicines and health products,Medical products,Family planning devices,Family planning devices
-2026-09,Gujarat,Urban,item,06.1.2.3.1.01,Nebulizer,99.72,-0.42,N,Health,Medicines and health products,Medical products,Treatment devices for personal use,Nebulizer
+2026-09,Gujarat,Urban,item,06.1.2.3.1.01,Nebulizer,99.65,-0.49,N,Health,Medicines and health products,Medical products,Treatment devices for personal use,Nebulizer
 2026-09,Gujarat,Urban,item,06.1.3.1.1.01,"Spectacles/goggles, contact lenses",105.52,3.78,N,Health,Medicines and health products,Assistive products,Assistive products for vision,"Spectacles/goggles, contact lenses"
 2026-09,Gujarat,Urban,item,06.1.3.2.1.01,Hearing aids and orthopaedic equipment,102.9,0.93,N,Health,Medicines and health products,Assistive products,Assistive products for hearing and communication,Hearing aids and orthopaedic equipment
 2026-09,Gujarat,Urban,item,06.1.3.3.1.01,Massager,100.95,-2.03,N,Health,Medicines and health products,Assistive products,Assistive products for mobility and daily living,Massager
@@ -558,7 +1201,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,item,06.2.3.1.2.02,Other medical expenses,103.8,0.56,N,Health,Outpatient care services,Other outpatient care services,Outpatient curative and rehabilitative services,Other medical expenses
 2026-09,Gujarat,Urban,item,06.3.1.0.2.01,Hospital and nursing home charges,106.98,3.08,N,Health,Inpatient care services,Inpatient curative and rehabilitative services,Inpatient curative and rehabilitative services,Hospital and nursing home charges
 2026-09,Gujarat,Urban,item,06.4.1.0.2.01,"X-ray, ECG and pathological test",106.21,2.77,N,Health,Other health services,Diagnostic imaging services and medical laboratory services,Diagnostic imaging services and medical laboratory services,"X-ray, ECG and pathological test"
-2026-09,Gujarat,Urban,item,07.1.1.1.1.01,Motor car and jeep,96.02,-5.77,N,Transport,Purchase of vehicles,Motor cars,Motor car and jeep,Motor car and jeep
+2026-09,Gujarat,Urban,item,07.1.1.1.1.01,Motor car and jeep,96.07,-5.72,N,Transport,Purchase of vehicles,Motor cars,Motor car and jeep,Motor car and jeep
 2026-09,Gujarat,Urban,item,07.1.2.0.1.01,Motor cycle and scooter,102.74,-1.21,N,Transport,Purchase of vehicles,Motorcycles,Motor cycle and scooter,Motor cycle and scooter
 2026-09,Gujarat,Urban,item,07.1.3.0.1.01,Bicycle,102.13,1.1,N,Transport,Purchase of vehicles,Bicycles,Bicycle,Bicycle
 2026-09,Gujarat,Urban,item,07.2.1.1.1.01,Tyres and tubes,107.11,3.47,N,Transport,Operation of personal transport equipment,Parts and accessories for personal transport equipment,Tyres and tubes,Tyres and tubes
@@ -582,7 +1225,7 @@ period,state,sector,level,code,name,index_value,inflation_pct,imputation,divisio
 2026-09,Gujarat,Urban,item,07.4.1.2.2.01,"Postage, couriers and money order",114.1,14.06,N,Transport,Transport services for goods,Postal and courier services,Courier and parcel delivery services,"Postage, couriers and money order"
 2026-09,Gujarat,Urban,item,08.1.1.0.1.01,Telephone instrument (landline),102.3,2.2,N,Information and communication,Information and communication equipment,Telephone instrument (landline),Telephone instrument (landline),Telephone instrument (landline)
 2026-09,Gujarat,Urban,item,08.1.2.0.1.01,Mobile handset,102.24,6.77,N,Information and communication,Information and communication equipment,Mobile handset,Mobile handset,Mobile handset
-2026-09,Gujarat,Urban,item,08.1.3.1.1.01,PC/ Laptop/ tablet and other peripherals incl. software,110.36,9.74,N,Information and communication,Information and communication equipment,Information processing equipment,"Computers, laptops and tablets including Software",PC/ Laptop/ tablet and other peripherals incl. software
+2026-09,Gujarat,Urban,item,08.1.3.1.1.01,PC/ Laptop/ tablet and other peripherals incl. software,110.2,9.58,N,Information and communication,Information and communication equipment,Information processing equipment,"Computers, laptops and tablets including Software",PC/ Laptop/ tablet and other peripherals incl. software
 2026-09,Gujarat,Urban,item,08.1.4.0.1.01,Television,96.31,-0.97,N,Information and communication,Information and communication equipment,Audio-visual devices,Audio-visual devices,Television
 2026-09,Gujarat,Urban,item,08.1.4.0.1.02,"Headphone, earphone, ear pod, airpod and bluetooth devices",100.76,0.92,N,Information and communication,Information and communication equipment,Audio-visual devices,Audio-visual devices,"Headphone, earphone, ear pod, airpod and bluetooth devices"
 2026-09,Gujarat,Urban,item,08.1.5.0.1.01,Pen-drive and external hard disk,128.25,24.42,N,Information and communication,Information and communication equipment,Unrecorded recording media,Unrecorded recording media,Pen-drive and external hard disk
