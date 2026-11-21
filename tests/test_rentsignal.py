@@ -30,7 +30,7 @@ def test_monthly_signal_is_a_run_rate_of_the_half_year_step():
 def test_screen_records_a_failed_gate_and_the_signal_is_not_wired():
     r = json.loads((ROOT / "data/official/rent_signal_screen.json").read_text())
     v = r["variants"]["pre-registered (Rajkot-calibrated)"]
-    assert v["verdict"] == "fail" and v["n_overlap"] == 21   # snapshot 2026-10-12 (Sep 2026 CPI added): gate fails
+    assert v["verdict"] == "fail" and v["n_overlap"] >= 21   # snapshot 2026-10-12 was 21; the window grows with each official month
     # the signal fails the (unchanged) correlation gate, so R001 may only be wired under the separately documented trend gate (see test_r001_is_wired_*)
     assert v["corr"] < 0.5
 
@@ -81,7 +81,7 @@ def test_v3_fails_the_unchanged_correlation_gate_on_correlation_only():
 
 def test_gate_ceiling_even_the_officials_own_trend_cannot_reach_the_corr_gate():
     g = R.gate_ceiling(ROOT)
-    assert g["n"] == 20 and g["corr_official_own_linear_trend_oracle"] < 0.5 and g["corr_interpolated"] < 0.5 and g["corr_staircase"] < 0.5   # snapshot 2026-10-12 (one more official month)
+    assert g["n"] >= 20 and g["corr_official_own_linear_trend_oracle"] < 0.5 and g["corr_interpolated"] < 0.5 and g["corr_staircase"] < 0.5   # snapshot 2026-10-12 was 20
     assert g["official_sd_pct"] > 0.3 * g["official_mean_pct"] and g["official_lag1_autocorr"] < 0.3
 
 

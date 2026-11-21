@@ -122,7 +122,10 @@ def test_prereg_arrival_ledger_is_not_backfilled_from_the_2014_splice():
     seen = pd.read_csv(ROOT / "data/preregistered/official_seen.csv", dtype={"item_id": str, "period": str})
     assert len(seen) > 0
     assert seen.period.min() >= "2025-01"
-    assert set(seen.loc[seen.item_id == "K003", "period"]) <= {"2026-09"}
+    # K003 became gate-eligible in 2026-09, so no earlier month may ever be backfilled. Later months are expected: each
+    # one is logged when the official value first arrives (2026-10 arrived 2026-11-21).
+    assert set(seen.loc[seen.item_id == "K003", "period"]) <= {"2026-09", "2026-10", "2026-11", "2026-12"}
+    assert seen.loc[seen.item_id == "K003", "period"].min() >= "2026-09"
 
 
 def test_prereg_arrival_selection_skips_history_for_newly_gated_items(tmp_path):
