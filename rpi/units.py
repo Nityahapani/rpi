@@ -16,17 +16,22 @@ _UNITS = {
 }
 _NUM = r"(\d+(?:\.\d+)?)"
 _MULTI = re.compile(rf"{_NUM}\s*[x×*]\s*{_NUM}\s*-?\s*([a-z]+)")
+_MULTI_UNIT_FIRST = re.compile(rf"{_NUM}\s*-?\s*([a-z]+)\s*[x×*]\s*{_NUM}")   # '1.5 kg x 2', '250 ml x 2'
 _SINGLE = re.compile(rf"{_NUM}\s*-?\s*([a-z]+)")          # '-?' : storefront pack labels such as '15-Ltr Tin', '1-Ltr Pouch', '15-Kg Tin'
 _PACK_OF = re.compile(r"(?:pack|set|box) of (\d+)")
 
 
 def parse_quantity(text: str):
-    """Parse '6 x 100 g', '1.5 L', 'Atta 5kg', 'pack of 4' -> (qty_in_base_units, base_unit) or None."""
+    """Parse '6 x 100 g', '1.5 kg x 2', '1.5 L', 'Atta 5kg', 'pack of 4' -> (qty_in_base_units, base_unit) or None."""
     t = (text or "").lower().replace(",", "")
     m = _MULTI.search(t)
     if m and m.group(3) in _UNITS:
         base, f = _UNITS[m.group(3)]
         return float(m.group(1)) * float(m.group(2)) * f, base
+    m = _MULTI_UNIT_FIRST.search(t)
+    if m and m.group(2) in _UNITS:
+        base, f = _UNITS[m.group(2)]
+        return float(m.group(1)) * float(m.group(3)) * f, base
     for m in _SINGLE.finditer(t):
         u = m.group(2)
         if u in _UNITS and _UNITS[u][0] in ("g", "ml"):

@@ -1,0 +1,4 @@
+sku_id,name,brand,pack,price,regular_price,in_stock,weight_g,item_id,qty_base,base_unit,selected_on
+NLZSRLLU46,Tata Tea Premium Black Tea Desh Ki Chai Unique Blend Crafted For Chai Lovers,Tata Tea,1.5 kg x 2,1079.0,1520.0,True,3000,F014,3000.0,g,2026-11-21
+JTNVGKDT9X,Ariel Power Gel Liquid Detergent Top Load,Ariel,4 kg,601.0,765.0,True,4000,H001,4000.0,g,2026-11-21
+UT1GU1XB25,Vim Liquid Dishwash (Lemon Freshness),Vim,3 ltr,435.0,545.0,True,3000,H002,3000.0,ml,2026-11-21

@@ -1,0 +1,152 @@
+{
+ "cards": [
+  {
+   "card": {
+    "gridElements": {
+     "infoWithStyle": {
+      "items": [
+       {
+        "displayName": "Indian Tomato",
+        "brand": "Fruits and Vegetables",
+        "inStock": true,
+        "variations": [
+         {
+          "skuId": "KFOYW0P0CZ",
+          "quantityDescription": "500 g",
+          "displayName": "Indian Tomato",
+          "price": {
+           "mrp": {
+            "currencyCode": "INR",
+            "units": "39",
+            "nanos": 0
+           },
+           "offerPrice": {
+            "currencyCode": "INR",
+            "units": "31",
+            "nanos": 0
+           }
+          },
+          "inventory": {
+           "inStock": true
+          },
+          "weightInGrams": 500,
+          "podId": "1395731"
+         }
+        ]
+       },
+       {
+        "displayName": "Tata Tea Gold",
+        "brand": "Tata Tea",
+        "inStock": true,
+        "variations": [
+         {
+          "skuId": "TEAGOLD1KG",
+          "quantityDescription": "1 kg",
+          "displayName": "Tata Tea Gold",
+          "price": {
+           "mrp": {
+            "currencyCode": "INR",
+            "units": "690",
+            "nanos": 0
+           },
+           "offerPrice": {
+            "currencyCode": "INR",
+            "units": "621",
+            "nanos": 0
+           }
+          },
+          "inventory": {
+           "inStock": true
+          },
+          "weightInGrams": 1000,
+          "podId": "1395731"
+         },
+         {
+          "skuId": "TEAGOLD500",
+          "quantityDescription": "500 g",
+          "displayName": "Tata Tea Gold",
+          "price": {
+           "mrp": {
+            "currencyCode": "INR",
+            "units": "360",
+            "nanos": 0
+           },
+           "offerPrice": {
+            "currencyCode": "INR",
+            "units": "342",
+            "nanos": 0
+           }
+          },
+          "inventory": {
+           "inStock": false
+          },
+          "weightInGrams": 500,
+          "podId": "1395731"
+         }
+        ]
+       },
+       {
+        "displayName": "Colgate Strong Teeth",
+        "brand": "Colgate",
+        "inStock": true,
+        "variations": [
+         {
+          "skuId": "COLGATE200",
+          "quantityDescription": "200 g",
+          "displayName": "Colgate Strong Teeth",
+          "price": {
+           "mrp": {
+            "currencyCode": "INR",
+            "units": "120",
+            "nanos": 0
+           },
+           "offerPrice": {
+            "currencyCode": "INR",
+            "units": "99",
+            "nanos": 0
+           }
+          },
+          "inventory": {
+           "inStock": true
+          },
+          "weightInGrams": 200,
+          "podId": "1395731"
+         }
+        ]
+       },
+       {
+        "displayName": "Random Unmapped Thing",
+        "brand": "X",
+        "inStock": true,
+        "variations": [
+         {
+          "skuId": "ZZZ1",
+          "quantityDescription": "1 pc",
+          "displayName": "Random Unmapped Thing",
+          "price": {
+           "mrp": {
+            "currencyCode": "INR",
+            "units": "50",
+            "nanos": 0
+           },
+           "offerPrice": {
+            "currencyCode": "INR",
+            "units": "45",
+            "nanos": 0
+           }
+          },
+          "inventory": {
+           "inStock": true
+          },
+          "weightInGrams": 1,
+          "podId": "1395731"
+         }
+        ]
+       }
+      ]
+     }
+    }
+   }
+  }
+ ]
+}

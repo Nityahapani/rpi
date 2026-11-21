@@ -43,11 +43,11 @@ PROXY_SOURCES = (
 # Multi-SKU pools are chained over matched SKUs. DoCA Rajkot commodity ids 17/18/19/20/21
 # jointly represent F008 edible oils; they are not averaged as price levels.
 MULTI_SKU_SOURCES = (
-    "dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon", "rajkot_shops", "doca_rajkot",
+    "dmart_ahmedabad", "vishal_diary", "district_cinema", "fresha_salon", "rajkot_shops", "doca_rajkot", "instamart_rajkot",
 )
 # Genuine retail-price series at the Rajkot centre or Rajkot web shops. These are gated
 # separately from direct administered/spot prices and from non-local proxy sources.
-RETAIL_SOURCES = ("doca_rajkot", "rajkot_shops")
+RETAIL_SOURCES = ("doca_rajkot", "rajkot_shops", "instamart_rajkot")
 MODELLED_SOURCES = ("rent_signal", "rent_listings")
 GATED_SOURCES = PROXY_SOURCES + RETAIL_SOURCES + MODELLED_SOURCES
 # Regulated ceilings/rate cards are not observed paid prices; count them as proxies.

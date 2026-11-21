@@ -401,6 +401,21 @@ def run_refresh(root: Path, settings: dict, offline: bool = False, bootstrap_rep
             from .collectors.doca import GUJARAT_WIRED, DocaGujaratCollector
             if GUJARAT_WIRED:                     # retired 2026-10-14: potato moved to the Rajkot centre, leaving this panel nothing to carry
                 collectors.append(("doca_gujarat", DocaGujaratCollector(client, store)))
+    # Instamart Rajkot: accrual needs a real browser (see rpi/collectors/instamart.py); ingestion replays the accrued
+    # CSV, so a runner without a browser still indexes what this machine collected. Accrual failure never blocks the run.
+    if not offline and (root / "data/instamart/pool.csv").exists():
+        def _instamart():
+            from .collectors import instamart
+            try:
+                n, msg = instamart.accrue(root / instamart.LIVE, root / instamart.POOL)
+            except instamart.InstamartBlocked as e:
+                raise RuntimeError(f"accrual skipped this run: {e}") from e
+            return f"{msg}; switched items {instamart.switched_items(root) or 'none'}"
+        _step("accrue:instamart_rajkot", _instamart, results)
+    if (root / "data/instamart/pool.csv").exists():
+        from .collectors.instamart import InstamartCollector   # replays data/instamart_prices.csv; no network
+        collectors.append(("instamart_rajkot", InstamartCollector(root)))
+
     from .collectors.vishal_diary import VishalCollector       # PENDING-gate proxy (live diary only); reads the CSV, no network
     collectors.append(("vishal_diary", VishalCollector(root)))
     from .collectors.frc_fees import FrcSchoolFeeCollector    # regulator-approved Rajkot school fees (E001); reads data/frc/rajkot_fees.csv
