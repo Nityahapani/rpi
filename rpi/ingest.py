@@ -57,8 +57,24 @@ def persist(conn, observations, snapshot_id: int | None = None) -> tuple[int, in
                  title=excluded.title, qty_base=excluded.qty_base, base_unit=excluded.base_unit""",
             (sku_id, o.source_id, o.source_sku, o.item_id, o.title, o.qty_base, o.base_unit, d, d))
         reg = o.regular_price if o.regular_price else o.price
+        # Upsert, preserving the original fetch vintage: collectors that re-yield
+        # full history on every run (e.g. DoCA since 2014-01) must not move
+        # fetched_at forward for unchanged prices, or as-of/vintage replays
+        # (econ.experiments.source_panel) lose the whole history. A revised
+        # price (or stock status) is new information, so it gets the new stamp.
         conn.execute(
-            """INSERT OR REPLACE INTO observations VALUES(?,?,?,?,?,?,?,?,?,?,?,?)""",
+            """INSERT INTO observations(obs_date, sku_id, pincode, price, regular_price,
+                 unit_price, regular_unit_price, in_stock, on_promo, delivery_fee, snapshot_id, fetched_at)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?)
+               ON CONFLICT(obs_date, sku_id, pincode) DO UPDATE SET
+                 price=excluded.price, regular_price=excluded.regular_price,
+                 unit_price=excluded.unit_price, regular_unit_price=excluded.regular_unit_price,
+                 in_stock=excluded.in_stock, on_promo=excluded.on_promo,
+                 delivery_fee=excluded.delivery_fee, snapshot_id=excluded.snapshot_id,
+                 fetched_at=CASE WHEN observations.price IS NOT excluded.price
+                                   OR observations.regular_price IS NOT excluded.regular_price
+                                   OR observations.in_stock IS NOT excluded.in_stock
+                                 THEN excluded.fetched_at ELSE observations.fetched_at END""",
             (d, sku_id, o.pincode, o.price, reg,
              unit_price(o.price, o.qty_base, o.base_unit), unit_price(reg, o.qty_base, o.base_unit),
              int(o.in_stock), int(o.on_promo), o.delivery_fee, snapshot_id, fetched))
