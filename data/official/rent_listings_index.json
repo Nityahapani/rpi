@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-25",
+ "generated": "2026-11-26",
  "item_id": "R001",
  "stock_rule": "dlog S = dlog M + mean_12(usable dlog N - dlog M)",
- "n_panel_rows": 730,
- "n_listings_used": 685,
+ "n_panel_rows": 732,
+ "n_listings_used": 686,
  "portals": {
-  "magicbricks": 684,
+  "magicbricks": 685,
   "squareyards": 1
  },
  "months": [
@@ -29,9 +29,9 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 106.65,
-   "lo90": 93.45,
-   "hi90": 118.02
+   "index": 106.76,
+   "lo90": 93.0,
+   "hi90": 117.82
   },
   {
    "month": "2026-09",
@@ -41,9 +41,9 @@
    "complete": true,
    "qualified": true,
    "usable": false,
-   "index": 109.85,
-   "lo90": 96.72,
-   "hi90": 121.12
+   "index": 109.98,
+   "lo90": 98.6,
+   "hi90": 120.79
   },
   {
    "month": "2026-10",
@@ -53,21 +53,21 @@
    "complete": true,
    "qualified": true,
    "usable": true,
-   "index": 102.55,
-   "lo90": 91.26,
-   "hi90": 112.56
+   "index": 102.53,
+   "lo90": 90.76,
+   "hi90": 112.22
   },
   {
    "month": "2026-11",
-   "n": 36,
-   "fresh_share": 0.972,
+   "n": 37,
+   "fresh_share": 0.946,
    "survivor": false,
    "complete": false,
    "qualified": true,
    "usable": false,
-   "index": 109.0,
-   "lo90": 92.94,
-   "hi90": 123.52
+   "index": 107.39,
+   "lo90": 90.13,
+   "hi90": 123.45
   }
  ],
  "qualified_consecutive": 5,
@@ -77,19 +77,19 @@
  ],
  "hedonic_coefficients": {
   "const": 9.452,
-  "lsqft_c": 0.476,
-  "sqft_missing": 0.01,
-  "furnished_page": 0.147,
-  "bhk:0": -0.534,
-  "bhk:1": -0.293,
-  "bhk:3": 0.347,
+  "lsqft_c": 0.475,
+  "sqft_missing": 0.007,
+  "furnished_page": 0.148,
+  "bhk:0": -0.53,
+  "bhk:1": -0.288,
+  "bhk:3": 0.346,
   "bhk:4": 0.746,
-  "type:house": -0.258,
-  "type:villa": -0.389,
-  "type:builder_floor": -0.118,
-  "type:studio": -0.373,
-  "type:room": -0.136,
-  "portal:squareyards": -0.323
+  "type:house": -0.261,
+  "type:villa": -0.39,
+  "type:builder_floor": -0.12,
+  "type:studio": -0.378,
+  "type:room": -0.138,
+  "portal:squareyards": -0.325
  },
  "asking_rent_revisions": {
   "listings_revised": 6,
