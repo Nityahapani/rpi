@@ -2,10 +2,10 @@
 
 
 - Reference month 2026-10: index **108.31**, YoY **7.15%**
-- Latest month 2026-11 (nowcast): index **107.86**  (95% CI 107.18-108.59)
-- Nowcast 90% band for 2026-11: **106.99 - 108.75** (split-conformal from a rolling-origin back-test on official data; conservative)
+- Latest month 2026-11 (nowcast): index **107.86**  (95% CI 107.18-108.6)
+- Nowcast 90% band for 2026-11: **106.98 - 108.74** (split-conformal from a rolling-origin back-test on official data; conservative)
 - Month-on-month: **-0.41%**
-- Year-on-year: **6.23%**
+- Year-on-year: **6.22%**
 - Weight with a real quote in this vintage, before any imputation: **69.0%** (the rest of this month's basket is filled by the rules below or by an official stand-in - it is NOT the same as the share that is independent of MoSPI)
 
 ## What is independent vs official-linked
@@ -23,16 +23,16 @@
 ## Divisions (change since base)
 | item | % change |
 |---|---|
-| Personal care & misc. | 17.57 |
+| Personal care & misc. | 17.47 |
 | Transport | 12.87 |
 | Restaurants & accommodation | 12.49 |
 | Education | 10.62 |
 | Information & communication | 8.78 |
-| Food & non-alcoholic beverages | 7.48 |
+| Food & non-alcoholic beverages | 7.46 |
 | Clothing & footwear | 5.82 |
 | Household goods & services | 5.73 |
 | Housing, water, electricity, fuels | 4.55 |
 | Health | 3.31 |
 | Recreation & culture | 2.44 |
 
-_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261127T150251162504Z._
+_Weights: APPROX: MoSPI CPI2024 all-India urban group shares x Gujarat-urban division weights implied from official indices (ridge lambda=0.001, hold-out RMSE 0.013 idx pts vs 0.133 for all-India weights); within-group weights recovered node by node from the published official index tree (rpi/hierweights.py, blocked-CV ridge, top-down redistribution of unmapped branches); covers 92.8% of basket | price-updated to 2025-01 with official item indices. Run: 20261128T141516567000Z._

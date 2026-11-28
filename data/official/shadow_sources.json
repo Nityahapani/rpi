@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-27",
+ "generated": "2026-11-28",
  "rule": "shadow only: a candidate feeds the index after a recorded switch of primary_source in data/source_plan.csv, once it passes proxy_check.judge against the official item index",
  "candidates": {
   "rajkot_shops": {
-   "last_quote": "2026-11-27",
-   "n_quotes": 876,
+   "last_quote": "2026-11-28",
+   "n_quotes": 916,
    "items": [
     {
      "item_id": "F001",
@@ -103,7 +103,7 @@
      "vs_current_input": {
       "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": -2.41
+      "cum_gap_pp": -2.49
      },
      "judgeable_from": "2027-04",
      "status": "accruing (1/6 months overlap the official index; judgeable from about 2027-04)"
@@ -171,7 +171,7 @@
      "vs_current_input": {
       "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": -2.4
+      "cum_gap_pp": -2.44
      },
      "judgeable_from": "2027-04",
      "status": "accruing (1/6 months overlap the official index; judgeable from about 2027-04)"
@@ -205,7 +205,7 @@
      "vs_current_input": {
       "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": 1.94
+      "cum_gap_pp": 1.89
      },
      "judgeable_from": "2027-04",
      "status": "accruing (1/6 months overlap the official index; judgeable from about 2027-04)"
@@ -239,7 +239,7 @@
      "vs_current_input": {
       "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": -0.37
+      "cum_gap_pp": -0.53
      },
      "judgeable_from": "2027-04",
      "status": "accruing (1/6 months overlap the official index; judgeable from about 2027-04)"
@@ -273,7 +273,7 @@
      "vs_current_input": {
       "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": -2.54
+      "cum_gap_pp": -2.48
      },
      "judgeable_from": "2027-04",
      "status": "accruing (1/6 months overlap the official index; judgeable from about 2027-04)"
@@ -425,8 +425,8 @@
    "weight_pct_covered": 0.59
   },
   "hathway_broadband": {
-   "last_quote": "2026-11-27",
-   "n_quotes": 34,
+   "last_quote": "2026-11-28",
+   "n_quotes": 35,
    "items": [
     {
      "item_id": "K003",
@@ -466,8 +466,8 @@
    "weight_pct_covered": 0.12
   },
   "onemg_medicine": {
-   "last_quote": "2026-11-27",
-   "n_quotes": 33,
+   "last_quote": "2026-11-28",
+   "n_quotes": 34,
    "items": [
     {
      "item_id": "M001",
@@ -498,7 +498,7 @@
      "vs_current_input": {
       "n_overlap": 2,
       "corr_mom": null,
-      "cum_gap_pp": -0.31
+      "cum_gap_pp": 0.0
      },
      "judgeable_from": "2027-04",
      "status": "accruing (1/6 months overlap the official index; judgeable from about 2027-04)"
